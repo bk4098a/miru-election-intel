@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서유럽 선거·투표기술 현황 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #3b82f6;
+    --accent2: #10b981;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+    --text: #e2e8f0;
+    --muted: #8892a4;
+    --border: #2d3348;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.5; }
+
+  header { background: linear-gradient(135deg, #1e2440 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 28px 32px 20px; }
+  header h1 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+  header p { color: var(--muted); margin-top: 4px; font-size: 12px; }
+  .meta { display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+  .meta-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 11px; }
+  .meta-item span { color: var(--muted); display: block; }
+  .meta-item strong { color: #fff; font-size: 18px; }
+
+  .container { padding: 24px 32px; }
+
+  /* Summary cards */
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .card-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 6px; }
+  .card-value { font-size: 28px; font-weight: 700; }
+  .card-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .blue { color: var(--accent); }
+  .green { color: var(--accent2); }
+  .yellow { color: var(--warn); }
+  .red { color: var(--danger); }
+
+  /* MIRU insights */
+  .insights { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 24px; }
+  .insights h2 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #fff; }
+  .insight-row { display: flex; gap: 8px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .insight-row:last-child { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .badge-high { background: #1e3a2f; color: #34d399; border: 1px solid #10b98140; }
+  .badge-med { background: #2d2510; color: #fbbf24; border: 1px solid #f59e0b40; }
+  .badge-low { background: #1e1b2e; color: #a78bfa; border: 1px solid #8b5cf640; }
+  .badge-warn { background: #2d1515; color: #f87171; border: 1px solid #ef444440; }
+  .insight-text { font-size: 12px; color: var(--text); }
+
+  /* Table */
+  .section-title { font-size: 15px; font-weight: 600; margin: 24px 0 12px; color: #fff; }
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+  thead th { background: var(--surface2); color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; padding: 10px 12px; text-align: left; position: sticky; top: 0; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--surface2); }
+  td { padding: 9px 12px; font-size: 12px; vertical-align: top; }
+
+  .flag { font-size: 18px; line-height: 1; }
+  .country-name { font-weight: 600; color: #fff; }
+  .country-iso { font-size: 10px; color: var(--muted); }
+
+  .chip { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+  .chip-paper { background: #1a2535; color: #93c5fd; border: 1px solid #3b82f630; }
+  .chip-evm { background: #1a2a1a; color: #86efac; border: 1px solid #22c55e30; }
+  .chip-mixed { background: #2a2010; color: #fcd34d; border: 1px solid #f59e0b30; }
+  .chip-na { background: #221520; color: #c084fc; border: 1px solid #a855f730; }
+
+  .yn { font-weight: 700; }
+  .y { color: var(--accent2); }
+  .n { color: var(--muted); }
+  .limited { color: var(--warn); font-size: 10px; }
+
+  .conf-high { color: var(--accent2); font-size: 10px; font-weight: 600; }
+  .conf-med { color: var(--warn); font-size: 10px; font-weight: 600; }
+  .conf-low { color: var(--danger); font-size: 10px; font-weight: 600; }
+
+  .notes-cell { font-size: 11px; color: var(--muted); max-width: 280px; line-height: 1.4; }
+  .source-link { color: var(--accent); text-decoration: none; font-size: 10px; }
+  .source-link:hover { text-decoration: underline; }
+
+  .date-cell { white-space: nowrap; font-size: 11px; }
+  .date-past { color: var(--muted); }
+  .date-upcoming { color: var(--warn); font-weight: 600; }
+
+  /* Method breakdown chart */
+  .chart-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .chart-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .chart-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .bar-label { font-size: 11px; color: var(--text); width: 100px; flex-shrink: 0; }
+  .bar-track { flex: 1; background: var(--surface2); border-radius: 4px; height: 10px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .bar-count { font-size: 11px; color: var(--muted); width: 30px; text-align: right; flex-shrink: 0; }
+
+  .timeline { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 24px; }
+  .timeline-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+  .tl-item { display: flex; gap: 12px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid var(--border); }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-date { font-size: 11px; color: var(--warn); font-weight: 600; width: 90px; flex-shrink: 0; }
+  .tl-country { font-size: 12px; color: #fff; font-weight: 600; width: 100px; flex-shrink: 0; }
+  .tl-desc { font-size: 11px; color: var(--muted); }
+
+  footer { padding: 24px 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>서유럽 선거·투표기술 현황 2026</h1>
+  <p>Western Europe Election Technology Survey — MIRU Systems Market Intelligence</p>
+  <div class="meta">
+    <div class="meta-item"><span>조사 대상국</span><strong>23</strong></div>
+    <div class="meta-item"><span>민주적 선거 실시국</span><strong>22</strong></div>
+    <div class="meta-item"><span>EVM 사용국</span><strong>1</strong></div>
+    <div class="meta-item"><span>e-Voting 시범국</span><strong>2</strong></div>
+    <div class="meta-item"><span>조사 기준일</span><strong style="font-size:13px">2026-06-22</strong></div>
+    <div class="meta-item"><span>주요 출처</span><strong style="font-size:11px">ODIHR · IDEA · Wikipedia</strong></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Summary cards -->
+  <div class="summary-grid">
+    <div class="card">
+      <div class="card-label">종이투표 전용</div>
+      <div class="card-value blue">20</div>
+      <div class="card-sub">전체의 87%</div>
+    </div>
+    <div class="card">
+      <div class="card-label">EVM 사용국</div>
+      <div class="card-value green">1</div>
+      <div class="card-sub">벨기에 (Smartmatic)</div>
+    </div>
+    <div class="card">
+      <div class="card-label">e-Voting 시범</div>
+      <div class="card-value yellow">2</div>
+      <div class="card-sub">스위스·프랑스(해외)</div>
+    </div>
+    <div class="card">
+      <div class="card-label">생체인식 도입국</div>
+      <div class="card-value red">0</div>
+      <div class="card-sub">GDPR 환경 전무</div>
+    </div>
+    <div class="card">
+      <div class="card-label">선거 없음</div>
+      <div class="card-value" style="color:var(--muted)">1</div>
+      <div class="card-sub">바티칸(콘클라베)</div>
+    </div>
+    <div class="card">
+      <div class="card-label">EVM 폐기 이력국</div>
+      <div class="card-value red">4</div>
+      <div class="card-sub">프랑스·독일·네덜란드·아일랜드</div>
+    </div>
+  </div>
+
+  <!-- MIRU Insights -->
+  <div class="insights">
+    <h2>MIRU 시장 인사이트</h2>
+    <div class="insight-row">
+      <span class="badge badge-high">핵심 기회</span>
+      <span class="insight-text"><strong>벨기에 (BEL)</strong> — Smartmatic bSmart 500 EVM 계약 갱신 시기 모니터링 필요. 플랑드르+브뤼셀+왈로니아 전역 약 1,349개 투표소 대상. 다음 연방선거 2029년, 계약 갱신 논의는 2026~2027년 예상.</span>
+    </div>
+    <div class="insight-row">
+      <span class="badge badge-med">관심 추적</span>
+      <span class="insight-text"><strong>스위스 (CHE)</strong> — Swiss Post e-voting 파일럿 확대 중. 2023년 3개 칸톤→2024년 Graubünden 추가. 장기적으로 연방 규모 확대 시 조달 가능성. 현재 소프트웨어 중심이지만 인프라 파트너십 기회 검토.</span>
+    </div>
+    <div class="insight-row">
+      <span class="badge badge-low">장기 모니터링</span>
+      <span class="insight-text"><strong>프랑스 (FRA)</strong> — 해외 인터넷투표(iVote) 2024 총선 적용, 약 150만 해외 유권자 대상. 국내 재도입 정치적 저항 강하나, 해외투표 인프라 현대화 조달 가능성 잠재.</span>
+    </div>
+    <div class="insight-row">
+      <span class="badge badge-warn">진입 장벽</span>
+      <span class="insight-text"><strong>독일·네덜란드·아일랜드</strong> — EVM 위헌 판결 또는 의회 결의로 전자투표 폐기. 재도입 가능성 극히 낮음. 단기 영업 대상 제외 권고.</span>
+    </div>
+    <div class="insight-row">
+      <span class="badge badge-med">임박 선거</span>
+      <span class="insight-text"><strong>스웨덴 2026-09-13 · 노르웨이 2025-09-08</strong> — 종이투표 유지 예정이나 선거관리 조달(인쇄, 물류, 집계 소프트웨어) 기회 확인 필요.</span>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="chart-section">
+    <div class="chart-box">
+      <div class="chart-title">투표 방식 분포</div>
+      <div class="bar-row">
+        <div class="bar-label">종이투표 (Paper)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:87%;background:#3b82f6;"></div></div>
+        <div class="bar-count">20</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">혼합 (Mixed)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:4%;background:#f59e0b;"></div></div>
+        <div class="bar-count">1</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">EVM</div>
+        <div class="bar-track"><div class="bar-fill" style="width:4%;background:#10b981;"></div></div>
+        <div class="bar-count">1</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">선거 없음 (N/A)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:4%;background:#8b5cf6;"></div></div>
+        <div class="bar-count">1</div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">기술 도입 현황</div>
+      <div class="bar-row">
+        <div class="bar-label">생체 유권자등록</div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:#ef4444;"></div></div>
+        <div class="bar-count">0</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">생체 본인확인</div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:#ef4444;"></div></div>
+        <div class="bar-count">0</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">전자결과전송</div>
+        <div class="bar-track"><div class="bar-fill" style="width:4%;background:#3b82f6;"></div></div>
+        <div class="bar-count">1</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">e-Voting (제한포함)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:9%;background:#f59e0b;"></div></div>
+        <div class="bar-count">2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming elections timeline -->
+  <div class="timeline">
+    <div class="timeline-title">임박 선거 일정 (2025~2027)</div>
+    <div class="tl-item"><div class="tl-date">2025-09-08</div><div class="tl-country">🇳🇴 노르웨이</div><div class="tl-desc">의회 총선 (Storting) — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2026-09-13</div><div class="tl-country">🇸🇪 스웨덴</div><div class="tl-desc">의회 총선 (Riksdag) — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2027-04-18</div><div class="tl-country">🇫🇮 핀란드</div><div class="tl-desc">의회 총선 (Eduskunta) — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2027-04</div><div class="tl-country">🇦🇩 안도라</div><div class="tl-desc">총의회 선거 (Consell General) — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2027-07</div><div class="tl-country">🇫🇷 프랑스</div><div class="tl-desc">국민의회 총선 — 종이투표 (해외 인터넷투표 병행)</div></div>
+    <div class="tl-item"><div class="tl-date">2027-08</div><div class="tl-country">🇪🇸 스페인</div><div class="tl-desc">국회 총선 (최대 기한) — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2027-09</div><div class="tl-country">🇮🇹 이탈리아</div><div class="tl-desc">의회 총선 — 종이투표</div></div>
+    <div class="tl-item"><div class="tl-date">2027-10</div><div class="tl-country">🇨🇭 스위스</div><div class="tl-desc">연방의회 선거 — 종이투표 + e-voting 파일럿</div></div>
+    <div class="tl-item"><div class="tl-date">2027-11</div><div class="tl-country">🇳🇱 네덜란드</div><div class="tl-desc">하원 총선 — 종이투표</div></div>
+  </div>
+
+  <!-- Main table -->
+  <div class="section-title">국가별 상세 현황 (23개국)</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>국가</th>
+          <th>선거</th>
+          <th>최근 선거</th>
+          <th>다음 예정</th>
+          <th>투표 방식</th>
+          <th>생체등록</th>
+          <th>생체확인</th>
+          <th>전자전송</th>
+          <th>e-Voting</th>
+          <th>주요 벤더</th>
+          <th>신뢰도</th>
+          <th>비고</th>
+          <th>출처</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="flag">🇫🇷</div><div class="country-name">France</div><div class="country-iso">FRA</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-07-07</div></td>
+          <td><div class="date-cell date-upcoming">2027-06</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="limited">Limited</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">EVM 2017 폐지→종이투표 복귀. 해외 거주자 인터넷투표(iVote) 유지. 2024-07-07 총선(2차 결선투표).</td>
+          <td><a class="source-link" href="https://odihr.osce.org/odihr/elections/france" target="_blank">ODIHR</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇩🇪</div><div class="country-name">Germany</div><div class="country-iso">DEU</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2025-02-23</div></td>
+          <td><div class="date-cell date-upcoming">2029-09</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">2009 헌법재판소 전자투표기 위헌 판결. 순수 종이투표 유지. 2025-02-23 연방의회 총선.</td>
+          <td><a class="source-link" href="https://www.bundeswahlleiter.de/" target="_blank">Bundeswahlleiter</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇳🇱</div><div class="country-name">Netherlands</div><div class="country-iso">NLD</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-11-22</div></td>
+          <td><div class="date-cell date-upcoming">2027-11</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">2017년 소프트웨어 해킹 우려로 EVM 폐지. 연필+종이투표, 수작업 개표. 2023-11-22 총선.</td>
+          <td><a class="source-link" href="https://www.kiesraad.nl/" target="_blank">Kiesraad</a></td>
+        </tr>
+        <tr style="background:#1a2218;">
+          <td><div class="flag">🇧🇪</div><div class="country-name">Belgium</div><div class="country-iso">BEL</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-06-09</div></td>
+          <td><div class="date-cell date-upcoming">2029-06</div></td>
+          <td><span class="chip chip-evm">EVM</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn y">Y</span></td>
+          <td><span class="yn y">Y</span></td>
+          <td style="color:#86efac;font-weight:600;">Smartmatic / Stesud</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">bSmart 500 터치스크린+QR 프린터. 플랑드르·브뤼셀=Smartmatic, 왈로니아=Stesud. 약 1,349개 투표소. 2029년 계약 갱신 검토 필요.</td>
+          <td><a class="source-link" href="https://www.smartmatic.com/featured-case-studies/belgium-custom-voting-solution-enables-seamless-election-experiences-for-all-2/" target="_blank">Smartmatic</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇱🇺</div><div class="country-name">Luxembourg</div><div class="country-iso">LUX</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-10-08</div></td>
+          <td><div class="date-cell date-upcoming">2028-10</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">종이투표(panachage 허용). 60석 하원. 2023-10-08 선거. CSV-DP 연정.</td>
+          <td><a class="source-link" href="https://elections.public.lu/" target="_blank">elections.public.lu</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇦🇹</div><div class="country-name">Austria</div><div class="country-iso">AUT</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-09-29</div></td>
+          <td><div class="date-cell date-upcoming">2029-09</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">전자투표 법적 근거 없음. 종이투표+우편투표 광범위 허용. 2024-09-29 총선(FPÖ 제1당).</td>
+          <td><a class="source-link" href="https://odihr.osce.org/odihr/elections/austria/575838" target="_blank">ODIHR</a></td>
+        </tr>
+        <tr style="background:#1a1f18;">
+          <td><div class="flag">🇨🇭</div><div class="country-name">Switzerland</div><div class="country-iso">CHE</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-10-22</div></td>
+          <td><div class="date-cell date-upcoming">2027-10</div></td>
+          <td><span class="chip chip-mixed">Mixed</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="limited">Limited</span></td>
+          <td style="color:#fcd34d;">Swiss Post</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">종이우편투표 기본. Swiss Post e-voting 2023년~ 일부 칸톤 파일럿(~6.5만명). 2024년 Graubünden 추가.</td>
+          <td><a class="source-link" href="https://www.post.ch/en/about-us/profile/swiss-post-and-politics/swiss-post-in-the-digital-world/e-voting-electronic-vote-casting-for-switzerland" target="_blank">Swiss Post</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇱🇮</div><div class="country-name">Liechtenstein</div><div class="country-iso">LIE</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2025-02-09</div></td>
+          <td><div class="date-cell date-upcoming">2029-02</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">25석 란드탁. 97% 우편투표. 투표소 90분만 운영. 소규모 직접민주주의.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2025_Liechtenstein_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇲🇨</div><div class="country-name">Monaco</div><div class="country-iso">MCO</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-02-05</div></td>
+          <td><div class="date-cell date-upcoming">2028-02</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-med">Med</span></td>
+          <td class="notes-cell">국민협의회(Conseil National) 24석. 혼합제(다수결+비례). 종이투표.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2023_Monegasque_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇦🇩</div><div class="country-name">Andorra</div><div class="country-iso">AND</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-04-02</div></td>
+          <td><div class="date-cell date-upcoming">2027-04</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-med">Med</span></td>
+          <td class="notes-cell">총의회(Consell General) 28석. 교구 14석+전국 14석. 종이투표.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2023_Andorran_parliamentary_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇪🇸</div><div class="country-name">Spain</div><div class="country-iso">ESP</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-07-23</div></td>
+          <td><div class="date-cell date-upcoming">2027-08</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">종이투표(정당이 인쇄·배포). ODIHR 긍정 평가. 우편투표 허용. 2023-07-23 총선.</td>
+          <td><a class="source-link" href="https://odihr.osce.org/odihr/elections/spain/563427" target="_blank">ODIHR</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇵🇹</div><div class="country-name">Portugal</div><div class="country-iso">PRT</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2025-05-18</div></td>
+          <td><div class="date-cell date-upcoming">2029-05</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">순수 종이투표. 온라인투표 없음. 2025-05-18 총선(3번째 조기선거). 다음 2029년 예정.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2025_Portuguese_legislative_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇮🇹</div><div class="country-name">Italy</div><div class="country-iso">ITA</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2022-09-25</div></td>
+          <td><div class="date-cell date-upcoming">2027-09</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">약 50,000개 투표소, 수작업 개표. 하원=분홍, 상원=노랑 투표용지. 2022-09-25 총선.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2022_Italian_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇲🇹</div><div class="country-name">Malta</div><div class="country-iso">MLT</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2026-05-30</div></td>
+          <td><div class="date-cell date-upcoming">2031-05</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">STV(단기이양식) 비례대표. 13선거구×5석. 종이투표+수작업 선호이전 집계. 2026-05-30 조기총선(Labour 재집권).</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2026_Maltese_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇸🇲</div><div class="country-name">San Marino</div><div class="country-iso">SMR</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-06-09</div></td>
+          <td><div class="date-cell date-upcoming">2029-06</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-med">Med</span></td>
+          <td class="notes-cell">대총의회(Consiglio Grande e Generale) 60석. 비례대표. 종이투표. 2024-06-09 총선.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2024_San_Marino_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇻🇦</div><div class="country-name">Vatican</div><div class="country-iso">VAT</div></td>
+          <td><span class="yn n">N</span></td>
+          <td><div class="date-cell">—</div></td>
+          <td><div class="date-cell">—</div></td>
+          <td><span class="chip chip-na">N/A</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">민주적 정기선거 없음. 교황 선출은 추기경단 콘클라베. 2025-05 콘클라베→레오 14세 선출.</td>
+          <td><a class="source-link" href="https://www.vaticannews.va/en/pope/news/2025-05/conclave-how-a-pope-is-elected.html" target="_blank">Vatican News</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇮🇪</div><div class="country-name">Ireland</div><div class="country-iso">IRL</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-11-29</div></td>
+          <td><div class="date-cell date-upcoming">2029-11</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">STV 비례대표. 종이+연필. 전자투표기 2002~2009 시범 후 폐기. 2024-11-29 총선.</td>
+          <td><a class="source-link" href="https://www.electoralcommission.ie/irelands-voting-system/" target="_blank">Electoral Commission</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇬🇧</div><div class="country-name">United Kingdom</div><div class="country-iso">GBR</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-07-04</div></td>
+          <td><div class="date-cell date-upcoming">2029-07</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">FPTP 소선거구제. 종이투표+연필. 수작업 개표. 650석. 2024-07-04 총선(Labour 압승).</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2024_United_Kingdom_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇮🇸</div><div class="country-name">Iceland</div><div class="country-iso">ISL</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2024-11-30</div></td>
+          <td><div class="date-cell date-upcoming">2028-11</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">알팅(Althing) 63석 비례대표(6선거구). 종이투표. 2024-11-30 총선.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2024_Icelandic_parliamentary_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇳🇴</div><div class="country-name">Norway</div><div class="country-iso">NOR</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2021-09-13</div></td>
+          <td><div class="date-cell date-upcoming">2025-09-08</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">인터넷투표 2017년 중단. 종이투표(봉투+인장 방식). 2025-09-08 총선 예정(임박).</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇩🇰</div><div class="country-name">Denmark</div><div class="country-iso">DNK</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2026-03-24</div></td>
+          <td><div class="date-cell date-upcoming">2030-03</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">종이투표. 전문가 그룹이 전자투표 지속 반대. 2026-03-24 총선(Folketing 179석).</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2026_Danish_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇸🇪</div><div class="country-name">Sweden</div><div class="country-iso">SWE</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2022-09-11</div></td>
+          <td><div class="date-cell date-upcoming">2026-09-13</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">색상별 종이투표(릭스다그=노랑). 온라인투표 검토 중이나 보안 우려로 중단. 2026-09-13 총선 예정.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2026_Swedish_general_election" target="_blank">Wikipedia</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag">🇫🇮</div><div class="country-name">Finland</div><div class="country-iso">FIN</div></td>
+          <td><span class="yn y">Y</span></td>
+          <td><div class="date-cell date-past">2023-04-02</div></td>
+          <td><div class="date-cell date-upcoming">2027-04-18</div></td>
+          <td><span class="chip chip-paper">Paper</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td><span class="yn n">N</span></td>
+          <td>None</td>
+          <td><span class="conf-high">High</span></td>
+          <td class="notes-cell">빈 카드에 후보번호 직접 기입. 200석 에두스쿤타. 사전투표 활성화. 2023-04-02 총선.</td>
+          <td><a class="source-link" href="https://en.wikipedia.org/wiki/2023_Finnish_parliamentary_election" target="_blank">Wikipedia</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  MIRU Systems — Election Opportunity Radar | 조사 기준일: 2026-06-22 | 출처: ODIHR, International IDEA, 각국 선관위, Wikipedia
+</footer>
+
+</body>
+</html>

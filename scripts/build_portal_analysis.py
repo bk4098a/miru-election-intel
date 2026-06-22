@@ -1,0 +1,497 @@
+"""
+71개 포털 크롤링 사전 분석 결과를 DB에 저장
+에이전트 4개 분석 결과 통합
+"""
+import sqlite3, csv, pathlib, sys, io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+DB_PATH = pathlib.Path("data/election_technology_world.db")
+CSV_PATH = pathlib.Path("data/portal_analysis.csv")
+
+SCHEMA = """
+CREATE TABLE IF NOT EXISTS portal_analysis (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    country_ko TEXT,
+    iso3 TEXT,
+    voting_method TEXT,
+    portal_name TEXT,
+    url TEXT,
+    http_status TEXT,
+    site_type TEXT,
+    data_location TEXT,
+    crawl_method TEXT,
+    api_endpoint TEXT,
+    extract_fields TEXT,
+    sql_feasibility TEXT,   -- High / Med / Low / N/A
+    priority TEXT,          -- P1 / P2 / P3 / Skip
+    already_implemented INTEGER DEFAULT 0,
+    notes TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_pa_feasibility ON portal_analysis(sql_feasibility);
+CREATE INDEX IF NOT EXISTS idx_pa_priority ON portal_analysis(priority);
+"""
+
+# (country_ko, iso3, voting_method, portal_name, url,
+#  http_status, site_type, data_location, crawl_method,
+#  api_endpoint, extract_fields, sql_feasibility, priority, already_implemented, notes)
+DATA = [
+    # ===== DRE =====
+    ("브라질","BRA","DRE","PNCP (Compras.gov.br)","https://pncp.gov.br/app/editais",
+     "200","REST API (공개)","JSON 응답","API 직접 호출",
+     "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes?dataInicial=&dataFinal=&pagina=1",
+     "공고번호,제목,발주기관,마감일,금액,URL","High","P1",0,
+     "OCDS 유사 구조. 인증 불필요. 페이지당 20건. totalRegistros 필드로 전체 건수 파악"),
+
+    ("브라질","BRA","DRE","TSE 조달공고","https://www.tse.jus.br/transparencia/gestao-de-contratacoes",
+     "빈응답(WAF)","JS-SPA + WAF","JS 렌더 후 테이블","Playwright",
+     "없음(XHR 탐색 필요)",
+     "계약번호,객체,공급업체,금액,기간","Med","P2",0,
+     "Cloudflare WAF 차단 추정. Playwright + User-Agent 우회 필요"),
+
+    ("파라과이","PRY","DRE","DNCP (Contrataciones)","https://www.contrataciones.gov.py/",
+     "200","REST API (OCDS)","JSON 응답","API 직접 호출 (이미 구현)",
+     "https://www.contrataciones.gov.py/datos/api/v3/doc/",
+     "공고번호,제목,발주기관,마감일,금액,상태","High","P1",1,
+     "parse_paraguay_dncp() 이미 구현 완료. OCDS v1.1 표준"),
+
+    ("베네수엘라","VEN","DRE","SNC","https://www.snc.gob.ve/",
+     "200","정적HTML","HTML 테이블 (불안정)","requests(정적)",
+     "없음",
+     "공고번호,제목,발주기관,마감일","Low","P3",0,
+     "실질 공개입찰 거의 없음. CNE-Smartmatic 독점계약. 모니터링 의미 낮음"),
+
+    ("베네수엘라","VEN","DRE","CNE","https://www.cne.gob.ve/",
+     "ECONNREFUSED","접근불가","—","불가",
+     "없음","—","Low","Skip",0,
+     "연결 거부. 외부 IP 차단. 크롤링 불가"),
+
+    # ===== EVM =====
+    ("DRC(콩고)","COD","EVM","ARMP (marchepublic.cd)","https://marchepublic.cd/",
+     "502","서버 오류(일시적)","HTML 테이블(복구 후)","requests(정적)",
+     "없음(복구 후 재확인)",
+     "공고번호,제목,발주기관,마감일,유형","Med","P2",0,
+     "502 Bad Gateway — 서버 불안정. 복구 후 정적 HTML 파싱 가능. Miru 공급국이므로 모니터링 필수"),
+
+    ("부탄","BTN","EVM","e-GP Bhutan","https://www.egp.gov.bt/",
+     "200","정적HTML (서버사이드)","HTML 테이블","requests(정적)",
+     "https://www.egp.gov.bt/resources/common/TenderListing.jsp?h=t",
+     "공고번호,제목,발주기관,게시일,마감일,상태","Med","P2",0,
+     "JSP 서버사이드 렌더. JavaScript 최소. TenderListing.jsp 직접 접근"),
+
+    ("부탄","BTN","EVM","ECB Tender","https://www.ecb.bt/tender-information/",
+     "200","WordPress 정적HTML","HTML 목록+PDF","requests(정적)",
+     "없음(WordPress REST API 가능: /wp-json/wp/v2/posts?categories=tender)",
+     "제목,게시일,마감일,PDF링크","High","P1",0,
+     "WordPress. /wp-json/wp/v2/ API로 JSON 추출 가능. 소규모(10건 미만)"),
+
+    ("인도","IND","EVM","eProcure (CPPP)","https://eprocure.gov.in/eprocure/app",
+     "200","정적HTML","HTML 테이블 (15분 주기 갱신)","requests(정적)",
+     "없음(직접 파싱)",
+     "공고번호,제목,발주기관,입찰마감일,문서비용","Med","P2",0,
+     "ECI EVM 조달은 BEL·ECIL 정부간 직접계약이 주. eProcure에서 유지보수 등 부수 공고"),
+
+    ("인도","IND","EVM","ECI Tender","https://www.eci.gov.in/notification/tenders",
+     "403","Cloudflare/WAF 차단","—","Playwright (WAF 우회)",
+     "없음",
+     "제목,게시일,마감일,PDF링크","Low","P3",0,
+     "403 Forbidden. eProcure 대체 권장. ECI 직접 조달은 드묾"),
+
+    ("알바니아","ALB","EVM","APP e-Procurement","https://app.gov.al/e-procurement/",
+     "200","JSF 정적HTML","HTML 테이블","requests(정적)",
+     "없음(직접 파싱)",
+     "공고번호,제목,발주기관,마감일,유형,금액","Med","P2",0,
+     "JSF ViewState 처리 필요. Smartmatic EVM 계약갱신 공고 게시처"),
+
+    ("알바니아","ALB","EVM","KQZ (CEC Albania)","https://kqz.gov.al/",
+     "200","WordPress 정적HTML","게시판 목록","requests(정적)",
+     "/wp-json/wp/v2/posts?search=prokurimi",
+     "제목,게시일,PDF링크","High","P1",0,
+     "WordPress. 조달 관련 포스트 카테고리 필터로 추출. 소규모"),
+
+    ("벨기에","BEL","EVM","e-Notification Belgium","https://enot.publicprocurement.be/enot-war/",
+     "ECONNREFUSED","접근불가(방화벽)","—","TED EU API 대체",
+     "TED API: https://ted.europa.eu/api/v3.0/notices/search (이미 구현)",
+     "공고번호,제목,발주기관,마감일,금액","Med","P2",1,
+     "직접 접근 불가. 그러나 TED(유럽조달저널) API에 벨기에 공고 포함 → 기존 TED 파서로 대체"),
+
+    ("오만","OMN","EVM","Tender Board Oman","https://etendering.tenderboard.gov.om",
+     "200","정적HTML+JS","HTML 테이블 (탭/필터)","requests + JS탭처리",
+     "없음(직접 파싱 또는 Playwright)",
+     "공고번호,제목,발주기관,마감일,상태(Active/Closed)","Med","P2",0,
+     "2023 완전디지털화. 내무부 선거장비 공고 포함. 아랍어/영어 병행"),
+
+    ("UAE","ARE","EVM","Federal e-Procurement","https://procurement.gov.ae",
+     "200","JS-SPA (Vue/React 추정)","JS 렌더 후 테이블","Playwright",
+     "없음(XHR 탐색 필요)",
+     "공고번호,제목,발주기관,마감일,금액","Med","P2",0,
+     "2021년 개설. NEC 선거 조달 건수 적음(FNC 선거 소규모)"),
+
+    ("UAE","ARE","EVM","UAE NEC","https://uaenec.ae/en",
+     "200","정적HTML","정보성 사이트","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "NEC는 감독기관. 조달 공고 없음. procurement.gov.ae가 실제 조달처"),
+
+    # ===== OMR =====
+    ("가나","GHA","OMR","Ghana e-Procurement (GHANEPS)","https://www.ghaneps.gov.gh/epps/home.do",
+     "200","Struts 정적HTML","HTML 테이블 (93건+, 10건/페이지)","requests(정적)",
+     "https://www.ghaneps.gov.gh/epps/quickSearchAction.do?searchSelect=6",
+     "공고번호(resourceId),제목,발주기관,마감일,절차유형,상태,PDF링크","High","P1",0,
+     "Struts 구형 프레임워크. 정적 HTML 테이블. 93건 공개. 키워드 필터 가능"),
+
+    ("가나","GHA","OMR","EC Ghana","https://ec.gov.gh/",
+     "200","WordPress","보도자료만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "조달공고 없음. 선거정보·보도자료 사이트. GHANEPS가 실제 조달처"),
+
+    ("남아공","ZAF","OMR","eTenders Treasury","https://etenders.treasury.gov.za/",
+     "404","접근불가","—","—",
+     "없음",
+     "—","Low","Skip",0,
+     "404 Not Found. URL 변경됐을 가능성. 대안: https://www.etenders.gov.za/"),
+
+    ("남아공","ZAF","OMR","IEC South Africa","https://www.elections.org.za/",
+     "403","Cloudflare 차단","—","Playwright+UA변경",
+     "없음",
+     "공고번호,제목,마감일,금액","Low","P3",0,
+     "403. IEC는 자체 조달공고 게시(VotaQuotes 등). Playwright 우회 시 가능"),
+
+    ("도미니카공화국","DOM","OMR","DGCP ComprasDominicana","https://www.dgcp.gob.do/consultas/",
+     "200","HTML+JS SPA","JS 렌더 후 테이블","Playwright",
+     "대안: https://datosabiertos.dgcp.gob.do/api/ (오픈API)",
+     "공고번호,제목,발주기관,마감일,금액,상태","Med","P2",0,
+     "오픈데이터 API(datosabiertos.dgcp.gob.do) 별도 존재. API 우선 탐색 권장"),
+
+    ("도미니카공화국","DOM","OMR","JCE","https://jce.gob.do/",
+     "405","GET 불허","—","POST 또는 Playwright",
+     "없음",
+     "—","Low","P3",0,
+     "405 Method Not Allowed. GET 차단. JCE 자체 조달은 DGCP 통합 가능성"),
+
+    ("몽골","MNG","OMR","State Procurement (tender.gov.mn)","https://www.tender.gov.mn/en",
+     "403","접근차단","—","우회(VPN/Playwright)",
+     "대안: http://www.e-tender.mn/en/tenders/ (HTTP 허용)",
+     "공고번호,제목,발주기관,마감일","Low","P3",0,
+     "403. e-tender.mn(부)으로 대체. HTTP(80포트) 허용됨"),
+
+    ("몽골","MNG","OMR","GPA e-Tender (e-tender.mn)","http://www.e-tender.mn/en/tenders/",
+     "301→HTTP","정적HTML (HTTP 허용)","HTML 목록",
+     "requests (verify=False, HTTP)",
+     "없음",
+     "공고번호,제목,발주기관,마감일,유형","Med","P2",0,
+     "HTTPS→HTTP 다운그레이드. requests로 접근 가능. SSL 검증 비활성화 필요"),
+
+    ("몽골","MNG","OMR","GEC Mongolia","https://m-election.mn/en",
+     "200","정적HTML","선거정보만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "조달 공고 없음. 선거 결과/일정 정보 사이트"),
+
+    ("필리핀","PHL","OMR","PhilGEPS","https://notices.philgeps.gov.ph/",
+     "5xx(일시적)","ASP.NET WebForms","HTML 테이블 (복구 후)","Playwright",
+     "없음(직접 파싱)",
+     "공고번호,제목,발주기관,마감일,금액","Med","P2",0,
+     "서버 오류(일시적). 복구 후 Playwright 자동화. COMELEC 기관 필터 필요. Miru 계약 모니터링"),
+
+    ("필리핀","PHL","OMR","COMELEC Procurement","https://www.comelec.gov.ph/?r=Procurement",
+     "200","JS-SPA (?r= 라우팅)","JS 렌더 후 목록","Playwright",
+     "백엔드 REST API 존재 가능(XHR 탐색 필요)",
+     "제목,게시일,마감일,PDF링크","Med","P2",0,
+     "?r=Procurement 라우팅. XHR 인터셉트로 REST API 발굴 가능하면 API 직접 호출로 전환"),
+
+    ("대한민국","KOR","OMR","나라장터 (G2B)","https://www.g2b.go.kr/",
+     "302→SSO","JS-SPA + OIDC 인증","SSO 강제 리다이렉트","공공데이터포털 API",
+     "https://apis.data.go.kr/1230000/BidPublicInfoService04/getBidPblancListInfoServcPPSSrch01",
+     "공고번호,제목,발주기관,마감일,금액","Med","P2",0,
+     "직접 접근 불가(SSO). 공공데이터포털 API(API키 필요) 대체. 이미 config에 eva.g2b.go.kr 등록"),
+
+    ("대한민국","KOR","OMR","EVA G2B","https://eva.g2b.go.kr/",
+     "200","JS-SPA","전자계약 관리 (입찰공고 아님)","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "전자계약 관리 시스템. 입찰공고 없음. G2B 나라장터가 입찰공고"),
+
+    ("대한민국","KOR","OMR","중앙선거관리위원회","https://www.nec.go.kr/site/eng/main.do",
+     "200","정적HTML+JS","조달공고 없음","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "선거행정 정보 사이트. 조달은 나라장터/G2B 통해 발주"),
+
+    ("불가리아","BGR","OMR","eOP Bulgaria","https://app.eop.bg/today",
+     "403","접근차단","—","TED EU API 대체",
+     "TED API (이미 구현)",
+     "—","Low","P3",0,
+     "403. TED(유럽조달저널)에 불가리아 공고 포함. 기존 TED 파서 활용"),
+
+    ("불가리아","BGR","OMR","CIK Bulgaria","https://www.cik.bg/bg/zop",
+     "SSL오류","SSL 인증서 문제","HTML 목록(SSL 우회 후)","requests (verify=False)",
+     "없음",
+     "제목,게시일,마감일,PDF링크","Med","P2",0,
+     "fetcher.py의 SSL retry 패턴(verify=False) 그대로 적용. /bg/zop=공공조달 섹션"),
+
+    ("조지아","GEO","OMR","SPA Procurement Georgia","https://tenders.procurement.gov.ge/public/#/en/projects?type=tender",
+     "SSL만료","JS-SPA + SSL 만료","—","접근불가(SSL)",
+     "대안: https://opendata.spa.ge (오픈데이터)",
+     "공고번호,제목,발주기관,마감일,금액","Low","P3",0,
+     "SSL 인증서 만료. opendata.spa.ge 오픈데이터 API 별도 탐색 필요"),
+
+    ("조지아","GEO","OMR","CEC Georgia (cesko.ge)","https://cesko.ge/",
+     "403","접근차단","—","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "403. 선거위원회 정보 사이트. 조달은 SPA(국가조달청) 통해 발주"),
+
+    ("바레인","BHR","OMR","Tender Board Bahrain","https://etendering.tenderboard.gov.bh",
+     "200","정적HTML+JS 탭","HTML 테이블 직접 노출 (Published 62건, Opened 3240건+)","requests(정적)",
+     "없음(직접 파싱)",
+     "공고번호([N]/2026/BTB),발주기관,잔여시간,상태(Published/Opened/Cancelled)","High","P1",0,
+     "정적 HTML 테이블. 명시적 REST API 없음. 공고 3,240건+ 누적. 아랍어/영어 병행"),
+
+    # ===== Mixed =====
+    ("이라크","IRQ","Mixed","IHEC Iraq","https://ihec.iq/en/",
+     "200","정적HTML (CMS)","PDF 저장소 (실시간 공고 없음)","requests(정적)",
+     "없음",
+     "제목,게시일,PDF링크","Low","P3",0,
+     "IHEC 공식 사이트. 별도 조달포털 없음. 공고는 이메일로 접수. 뉴스/보도자료만"),
+
+    ("이라크","IRQ","Mixed","MoP Iraq (계획부)","https://mop.gov.iq/en/general-government-contracts-department",
+     "200","정적HTML","규정 문서만 (입찰공고 아님)","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "계획부 계약규정 페이지. 입찰공고 없음. IHEC 단일 e-GP 없음"),
+
+    ("이란","IRN","Mixed","SETAD Iran","https://setadiran.ir/setad/cms",
+     "ECONNREFUSED","접근불가","—","불가",
+     "없음",
+     "—","Low","Skip",0,
+     "연결 거부. 외부 IP 전면 차단. 국제제재 + 페르시아어 전용. 크롤링 불가"),
+
+    ("이란","IRN","Mixed","MoI Iran (내무부)","https://keshvar.moi.ir/",
+     "403","접근차단","—","불가",
+     "없음",
+     "—","Low","Skip",0,
+     "403 Forbidden. 외부 IP 차단. 이란 모니터링 불가"),
+
+    ("키르기스스탄","KGZ","Mixed","zakupki.gov.kg","https://zakupki.gov.kg",
+     "200","JSF 정적HTML","HTML 테이블 (전 필드 노출)","requests(정적) + JSF ViewState",
+     "OCDS 대시보드: https://ocds.zakupki.gov.kg",
+     "공고번호,제목,발주기관,마감일,금액,상태","High","P1",0,
+     "Miru Systems CEC 명의 공고. 전기관 의무게시. OCDS 대시보드도 존재"),
+
+    ("키르기스스탄","KGZ","Mixed","CEC Kyrgyzstan (shailoo.gov.kg)","https://www.shailoo.gov.kg",
+     "200","정적HTML","조달공고 없음","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "CEC 정보 사이트. 조달은 zakupki.gov.kg 경유. 직접 입찰 없음"),
+
+    ("카자흐스탄","KAZ","Mixed","goszakup.gov.kz","https://www.goszakup.gov.kz/",
+     "200","REST API (v2/v3)","JSON 응답","API 직접 호출",
+     "https://ows.goszakup.gov.kz/v3/trd-buy?filter[name]=election&limit=50",
+     "공고번호,제목,발주기관,마감일,금액,상태,카테고리","High","P1",0,
+     "REST API v2/v3 공식 존재. 656만건+ DB. filter[name]=election 파라미터 직접 쿼리. 러시아어/카자흐어"),
+
+    ("카자흐스탄","KAZ","Mixed","CEC Kazakhstan","https://election.gov.kz/eng/",
+     "200","정적HTML","선거정보만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "CEC 정보 사이트. 조달은 goszakup.gov.kz 경유"),
+
+    ("우즈베키스탄","UZB","Mixed","xarid.uzex.uz","https://xarid.uzex.uz/",
+     "200","JS-SPA (React 추정)","JS 렌더 후 데이터","Playwright",
+     "XHR 탐색 필요",
+     "공고번호,제목,발주기관,마감일,금액","Med","P2",0,
+     "EVM 파일럿 후속 조달 모니터링 필요. JS-SPA. XHR 인터셉트로 API 발굴 권장"),
+
+    ("우즈베키스탄","UZB","Mixed","CEC Uzbekistan (saylov.uz)","https://saylov.uz/en",
+     "200","정적HTML","선거정보만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "CEC 정보 사이트. 조달은 xarid.uzex.uz 경유"),
+
+    ("케냐","KEN","Mixed","Tenders.go.ke (PPIP)","https://tenders.go.ke/tenders",
+     "200","JS-SPA","JS 렌더 후 테이블","Playwright",
+     "XHR 탐색 필요 (REST API 가능성)",
+     "공고번호,제목,발주기관,마감일,금액,범주","Med","P2",0,
+     "JS-SPA. 정적 크롤 무효. Smartmatic KIEMS BVD 계약 모니터링 필요"),
+
+    ("케냐","KEN","Mixed","IEBC Kenya","https://www.iebc.or.ke/",
+     "SSL오류","SSL 인증서 오류","HTML (SSL 우회 후)","requests (verify=False)",
+     "없음",
+     "제목,게시일,마감일,PDF링크","Med","P2",0,
+     "fetcher.py SSL retry 패턴 적용. IEBC는 자체 조달공고 게시"),
+
+    ("아르헨티나","ARG","Mixed","COMPR.AR","https://comprar.gob.ar",
+     "200","JS-SPA (GridView)","JS 렌더 후 GridView 테이블","Playwright",
+     "대안: https://datosabiertos.compraspublicas.gob.ar/PLIEG/",
+     "공고번호,제목,발주기관,마감일,금액,절차유형","Med","P2",0,
+     "오픈데이터 API(datosabiertos) 별도 탐색 권장. DINE 발주 공고 포함"),
+
+    ("아르헨티나","ARG","Mixed","Cámara Electoral","https://www.electoral.gob.ar",
+     "ECONNREFUSED","접근불가","—","불가",
+     "없음",
+     "—","Low","Skip",0,
+     "연결 거부. 사법부 독립 도메인. 직접 크롤링 불가"),
+
+    ("엘살바도르","SLV","Mixed","COMPRASAL","https://www.comprasal.gob.sv/",
+     "200","JSF 정적HTML","HTML 테이블","Playwright (JSF ViewState)",
+     "없음",
+     "공고번호,제목,발주기관,마감일,금액,유형","Med","P2",0,
+     "JSF 기반. ViewState 처리 + Playwright. TSE 기관명으로 필터"),
+
+    ("엘살바도르","SLV","Mixed","TSE El Salvador","https://tse.gob.sv/",
+     "403","접근차단","—","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "403. TSE 조달은 COMPRASAL 통해 발주"),
+
+    ("온두라스","HND","Mixed","Honducompras","https://honducompras.gob.hn/",
+     "403","접근차단","—","Playwright + 헤더 조작",
+     "없음",
+     "공고번호,제목,발주기관,마감일","Low","P3",0,
+     "403. User-Agent + Referer 헤더 조작 후 재시도. Smartmatic VIU 2만대 계약 모니터링 필요"),
+
+    ("자메이카","JAM","Mixed","GOJEP","https://www.gojep.gov.jm/",
+     "200","정적HTML (JSF)","HTML 테이블","requests(정적)",
+     "없음",
+     "공고번호,제목,발주기관,게시일,마감일,유형","High","P1",0,
+     "정적 HTML. 로그인 불필요. EOJ 기관코드 id=1936 필터 가능"),
+
+    ("자메이카","JAM","Mixed","GOJEP EOJ 기관페이지","https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936",
+     "200","정적HTML (JSF)","HTML 테이블 (EOJ 한정)","requests(정적)",
+     "없음",
+     "공고번호,제목,게시일,마감일,유형","High","P1",0,
+     "Electoral Office of Jamaica 기관 직접 페이지. id=1936. 가장 직접적인 EOJ 조달 모니터링"),
+
+    ("자메이카","JAM","Mixed","EOJ Official","https://www.eoj.com.jm/",
+     "소켓실패","접근불가","—","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "소켓 연결 실패. GOJEP이 실제 조달처"),
+
+    ("파나마","PAN","Mixed","PanamaCompra","https://www.panamacompra.gob.pa/Inicio/",
+     "200","AngularJS SPA","JS 렌더 후 테이블","Playwright",
+     "XHR 탐색 후 REST API 직접 호출 가능성",
+     "공고번호,제목,발주기관,마감일,금액,방법","Med","P2",0,
+     "AngularJS SPA. XHR 인터셉트로 REST API 발굴 권장. TE Panama 기관 필터"),
+
+    ("미국","USA","Mixed","SAM.gov","https://sam.gov/opportunities",
+     "200","REST API (공개)","JSON 응답 (이미 구현)","API 직접 호출 (이미 구현)",
+     "https://api.sam.gov/opportunities/v2/search?title=election+equipment&limit=25&offset=0&postedFrom=&postedTo=",
+     "공고번호,제목,발주기관,마감일,금액,NAICS코드","High","P1",1,
+     "이미 parsers.py에 구현 완료. SAMGOV_API_KEY 환경변수"),
+
+    ("미국","USA","Mixed","EAC","https://www.eac.gov/",
+     "200","정적HTML","정보성 사이트(조달없음)","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "EAC는 가이드라인/인증 기관. 조달 없음. SAM.gov가 실제 조달처"),
+
+    ("보스니아","BIH","Mixed","eJN Bosnia","https://www.ejn.gov.ba/Announcement/Search",
+     "200","정적HTML + POST API","POST JSON API","API 직접 호출 (POST)",
+     "POST https://www.ejn.gov.ba/api/Announcement/Search {page:1,pageSize:20,sortBy:1}",
+     "공고번호,제목,발주기관,마감일,금액,유형,상태","Med","P2",0,
+     "GET 405 → POST 전용. POST payload로 JSON 응답. Smartmatic €38.1M 계약 모니터링"),
+
+    ("보스니아","BIH","Mixed","CIK BiH (izbori.ba)","https://www.izbori.ba/Default.aspx?Lang=8",
+     "200","정적HTML (ASP.NET)","선거결과/정보만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "선거결과 정보 사이트. 조달은 eJN 통해 발주"),
+
+    ("에스토니아","EST","Mixed","Riigihangete Register","https://riigihanked.riik.ee",
+     "401","Open Data API 존재 가능","JSON (API 키 후)","API 직접 호출",
+     "대안: https://riigihanked.riik.ee/rhr/api/public/v3/procurements?searchText=valimine",
+     "공고번호,제목,발주기관,마감일,금액,상태","Med","P2",0,
+     "401이지만 공개 API /rhr/api/public/v3/ 존재 가능성. valimine=선거(에스토니아어)로 검색"),
+
+    ("에스토니아","EST","Mixed","State Electoral Office (valimised.ee)","https://www.valimised.ee/en",
+     "200","정적HTML","선거정보만","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "선거사무소 정보 사이트. 조달은 Riigihangete 통해 발주"),
+
+    ("북마케도니아","MKD","Mixed","e-nabavki.gov.mk","https://www.e-nabavki.gov.mk/",
+     "403","접근차단","—","Playwright + 헤더",
+     "없음",
+     "공고번호,제목,발주기관,마감일,금액","Low","P3",0,
+     "403. 북마케도니아 전자조달 포털. Playwright 재시도 권장"),
+
+    ("북마케도니아","MKD","Mixed","SEC Macedonia (sec.mk)","https://www.sec.mk/",
+     "200","정적HTML","조달공고 있음 (/javni-nabavki-2/)","requests(정적)",
+     "/javni-nabavki-2/ 섹션",
+     "제목,게시일,마감일,PDF링크","Med","P2",0,
+     "선거위가 /javni-nabavki-2/ 섹션에 직접 조달공고 게시. 소규모"),
+
+    ("스위스","CHE","Mixed","SIMAP Switzerland","https://www.simap.ch/en",
+     "200","정적HTML+검색폼","검색폼 결과 HTML 테이블","Playwright (검색폼)",
+     "없음(폼 기반)",
+     "공고번호,제목,발주기관,마감일,금액,칸톤","Med","P2",0,
+     "연방+주 공동 플랫폼. 검색어=Wahlsystem/Vote/Élection. 다국어(DE/FR/IT/EN)"),
+
+    ("스위스","CHE","Mixed","Bundeskanzlei e-Voting","https://www.bk.admin.ch/bk/en/home/politische-rechte/e-voting.html",
+     "200","정적HTML","정책/정보만 (조달없음)","—",
+     "없음",
+     "—","N/A","Skip",0,
+     "정책 페이지. 실제 조달은 SIMAP 통해 Swiss Post 등이 발주"),
+]
+
+def build():
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("DROP TABLE IF EXISTS portal_analysis")
+    conn.executescript(SCHEMA)
+    conn.executemany("""
+        INSERT INTO portal_analysis
+        (country_ko, iso3, voting_method, portal_name, url,
+         http_status, site_type, data_location, crawl_method,
+         api_endpoint, extract_fields, sql_feasibility, priority,
+         already_implemented, notes)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    """, DATA)
+    conn.commit()
+
+    total = conn.execute("SELECT COUNT(*) FROM portal_analysis").fetchone()[0]
+    by_f = dict(conn.execute("SELECT sql_feasibility, COUNT(*) FROM portal_analysis GROUP BY sql_feasibility").fetchall())
+    by_p = dict(conn.execute("SELECT priority, COUNT(*) FROM portal_analysis GROUP BY priority ORDER BY priority").fetchall())
+    high_list = conn.execute("""
+        SELECT country_ko, portal_name, url, crawl_method, api_endpoint, notes
+        FROM portal_analysis WHERE sql_feasibility='High' AND priority NOT IN ('Skip')
+        ORDER BY already_implemented DESC, country_ko
+    """).fetchall()
+    conn.close()
+    return total, by_f, by_p, high_list
+
+def export_csv():
+    fields = ["country_ko","iso3","voting_method","portal_name","url",
+              "http_status","site_type","data_location","crawl_method",
+              "api_endpoint","extract_fields","sql_feasibility","priority",
+              "already_implemented","notes"]
+    with open(CSV_PATH, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(fields)
+        writer.writerows(DATA)
+
+if __name__ == "__main__":
+    total, by_f, by_p, high_list = build()
+    export_csv()
+
+    print(f"\n{'='*65}")
+    print(f"포털 크롤링 사전 분석 DB 완성")
+    print(f"{'='*65}")
+    print(f"총 {total}개 포털 분석\n")
+    print(f"[SQL 저장 가능성]")
+    for k in ['High','Med','Low','N/A']:
+        print(f"  {k}: {by_f.get(k,0)}개")
+    print(f"\n[우선순위]")
+    for k in ['P1','P2','P3','Skip']:
+        print(f"  {k}: {by_p.get(k,0)}개")
+    print(f"\n[P1 즉시 구현 가능 포털]")
+    for r in high_list:
+        impl = "★이미구현" if r[3] else ""
+        print(f"  {r[0]} | {r[1]} {impl}")
+        print(f"    크롤방식: {r[3]}")
+        if r[4]:
+            print(f"    API: {r[4][:80]}")
+    print(f"\nDB: {DB_PATH}")
+    print(f"CSV: {CSV_PATH}")

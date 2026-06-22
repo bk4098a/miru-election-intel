@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유럽 50개국 선거·투표기술 현황 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2d3148;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #6366f1;
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --orange: #f97316;
+    --blue: #3b82f6;
+    --teal: #14b8a6;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6; }
+
+  header { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%); padding: 40px 32px 32px; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  header p { color: #a5b4fc; font-size: 13px; }
+  .meta { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+  .meta span { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #c7d2fe; }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 24px 16px; }
+
+  /* Summary cards */
+  .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+  .card .num { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+  .card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .c-green { color: var(--green); }
+  .c-yellow { color: var(--yellow); }
+  .c-red { color: var(--red); }
+  .c-blue { color: var(--blue); }
+  .c-purple { color: var(--purple); }
+  .c-teal { color: var(--teal); }
+  .c-orange { color: var(--orange); }
+
+  /* Filter bar */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+  .filters label { font-size: 12px; color: var(--muted); margin-right: 4px; }
+  select, input[type=text] { background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 10px; font-size: 12px; outline: none; }
+  select:focus, input:focus { border-color: var(--accent); }
+  .filter-btn { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.4); color: #a5b4fc; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; }
+  .filter-btn:hover { background: rgba(99,102,241,0.3); }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+  thead th { background: #161929; color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 10px 12px; text-align: left; position: sticky; top: 0; z-index: 1; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
+  thead th:hover { color: var(--text); }
+  tbody tr { border-bottom: 1px solid #1e2235; }
+  tbody tr:hover { background: rgba(99,102,241,0.06); }
+  tbody td { padding: 9px 12px; font-size: 13px; vertical-align: middle; }
+  .country-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .iso { font-size: 10px; color: var(--muted); background: rgba(255,255,255,0.06); border-radius: 3px; padding: 1px 4px; font-family: monospace; }
+
+  /* Badges */
+  .badge { display: inline-block; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 600; }
+  .badge-Y { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+  .badge-Limited { background: rgba(234,179,8,0.15); color: #fbbf24; border: 1px solid rgba(234,179,8,0.3); }
+  .badge-N { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+  .badge-Paper { background: rgba(148,163,184,0.1); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.2); }
+  .badge-OMR { background: rgba(20,184,166,0.15); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.3); }
+  .badge-EVM { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+  .badge-Mixed { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
+  .badge-Internet { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+  .badge-NA { background: rgba(100,116,139,0.1); color: #64748b; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 2px; }
+  .dot-Y { background: var(--green); }
+  .dot-N { background: #374151; }
+  .dot-Limited { background: var(--yellow); }
+  .dot-High { background: var(--green); }
+  .dot-Med { background: var(--yellow); }
+  .dot-Low { background: var(--red); }
+
+  /* Legend + insight */
+  .sections { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  @media(max-width: 700px) { .sections { grid-template-columns: 1fr; } }
+  .section-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .section-box h3 { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .insight-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .insight-item:last-child { border-bottom: none; }
+  .insight-icon { font-size: 18px; flex-shrink: 0; width: 28px; text-align: center; }
+  .insight-body { font-size: 12px; color: var(--muted); }
+  .insight-body strong { color: var(--text); display: block; margin-bottom: 2px; }
+  .legend-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid #1e2235; font-size: 12px; }
+  .legend-row:last-child { border-bottom: none; }
+
+  /* Opportunity table */
+  .opp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .opp-table th { color: var(--muted); font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  .opp-table td { padding: 8px 8px; border-bottom: 1px solid #1a1d27; vertical-align: top; }
+  .priority-Critical { color: #f87171; font-weight: 700; }
+  .priority-Watch { color: #fbbf24; font-weight: 600; }
+  .priority-Monitor { color: #60a5fa; }
+
+  /* Notes tooltip */
+  .notes-cell { max-width: 220px; white-space: normal; font-size: 11px; color: var(--muted); }
+  .source-link { color: #818cf8; text-decoration: none; font-size: 11px; }
+  .source-link:hover { text-decoration: underline; }
+
+  .hidden { display: none !important; }
+  .count-label { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .sort-arrow { opacity: 0.4; font-size: 10px; }
+  .sort-active .sort-arrow { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>유럽 50개국 선거 · 투표기술 현황</h1>
+  <p>Election Opportunity Radar — MIRU Systems | 공식 소스(ODIHR, IDEA, Venice Commission) 기반 조사</p>
+  <div class="meta">
+    <span>조사 기준: 2026-06</span>
+    <span>대상: 50개국</span>
+    <span>소스: ODIHR / IDEA / Venice Commission / 각국 선관위</span>
+    <span>i-Voting 선도: 에스토니아 (51.1%)</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="card"><div class="num c-green">42</div><div class="label">민주적 선거 (Y)</div></div>
+    <div class="card"><div class="num c-yellow">6</div><div class="label">제한적 (Limited)</div></div>
+    <div class="card"><div class="num c-red">1</div><div class="label">선거 없음 (N)</div></div>
+    <div class="card"><div class="num c-teal">4</div><div class="label">OMR / EVM</div></div>
+    <div class="card"><div class="num c-blue">2</div><div class="label">i-Voting (전자투표)</div></div>
+    <div class="card"><div class="num c-orange">5</div><div class="label">생체인식 도입</div></div>
+    <div class="card"><div class="num c-purple">35</div><div class="label">전자 결과전송</div></div>
+  </div>
+
+  <!-- Insights + Legend -->
+  <div class="sections">
+    <div class="section-box">
+      <h3>MIRU 영업 기회 요약</h3>
+      <div class="insight-item">
+        <div class="insight-icon">🔴</div>
+        <div class="insight-body">
+          <strong>Bosnia (2026-10-04 임박) — EUR 38.1M</strong>
+          Smartmatic 생체인식+스캐너 전국 도입 계약 체결. OHR 강제 선거법 개정으로 확정.
+        </div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-icon">🔴</div>
+        <div class="insight-body">
+          <strong>Albania — 전국 EVM 확대 법제화</strong>
+          Smartmatic EVM + Innovatrics 지문확인. 2029년까지 단계 확대 의무화.
+        </div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-icon">🟡</div>
+        <div class="insight-body">
+          <strong>Georgia — Smartmatic bScan1800 도입 완료(74.6%)</strong>
+          VIU-800 생체 유권자 등록기 포함. 잔여 25.4% 투표소 추가 확대 여지.
+        </div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-icon">🟡</div>
+        <div class="insight-body">
+          <strong>Latvia (2026-10-03) + Bulgaria — 단기 모니터링</strong>
+          라트비아: 광학스캔 도입 초기 논의. 불가리아: OMR 전환 논쟁 및 재조달 가능성.
+        </div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-icon">🔵</div>
+        <div class="insight-body">
+          <strong>Armenia (2026-06-07 선거 완료) — 차기 대비</strong>
+          VAD 사용 중, 생체 유권자등록 시스템 미도입 → 차기 선거 대비 잠재 기회.
+        </div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-icon">⚪</div>
+        <div class="insight-body">
+          <strong>Ukraine — 종전 후 재건 수요</strong>
+          계엄령으로 선거 중단. 종전 후 선거 시스템 현대화 대규모 수요 예상.
+        </div>
+      </div>
+    </div>
+    <div class="section-box">
+      <h3>투표 방식 범례 & 통계</h3>
+      <div class="legend-row"><span class="badge badge-Paper">Paper</span><span style="margin-left:8px;color:var(--text);font-weight:600">43개국</span><span style="margin-left:auto;color:var(--muted);font-size:11px">종이투표 전용</span></div>
+      <div class="legend-row"><span class="badge badge-OMR">OMR</span><span style="margin-left:8px;color:var(--text);font-weight:600">2개국</span><span style="margin-left:auto;color:var(--muted);font-size:11px">Georgia, Bulgaria</span></div>
+      <div class="legend-row"><span class="badge badge-EVM">EVM</span><span style="margin-left:8px;color:var(--text);font-weight:600">2개국</span><span style="margin-left:auto;color:var(--muted);font-size:11px">Belgium, Albania</span></div>
+      <div class="legend-row"><span class="badge badge-Mixed">Mixed</span><span style="margin-left:8px;color:var(--text);font-weight:600">5개국</span><span style="margin-left:auto;color:var(--muted);font-size:11px">Estonia, Switzerland, France, Latvia, North Macedonia</span></div>
+      <br>
+      <h3>진입 장벽 국가 (재도입 불가)</h3>
+      <div class="legend-row"><span style="color:var(--red);font-size:12px">✖</span><span style="margin-left:8px;font-size:12px">Germany — 2009 헌재 위헌</span></div>
+      <div class="legend-row"><span style="color:var(--red);font-size:12px">✖</span><span style="margin-left:8px;font-size:12px">Netherlands — 2008 Nedap DRE 전면 폐지</span></div>
+      <div class="legend-row"><span style="color:var(--red);font-size:12px">✖</span><span style="margin-left:8px;font-size:12px">Ireland — 2009 EVM 폐지</span></div>
+      <div class="legend-row"><span style="color:var(--red);font-size:12px">✖</span><span style="margin-left:8px;font-size:12px">France — 2017 EVM 폐지 (해외 인터넷투표만 유지)</span></div>
+      <div class="legend-row"><span style="color:var(--red);font-size:12px">✖</span><span style="margin-left:8px;font-size:12px">Norway — 2014 인터넷투표 파일럿 중단</span></div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <label>검색:</label>
+    <input type="text" id="searchInput" placeholder="국가명 검색..." oninput="filterTable()">
+    <label>선거 유형:</label>
+    <select id="elecFilter" onchange="filterTable()">
+      <option value="">전체</option>
+      <option value="Y">Y — 민주적</option>
+      <option value="Limited">Limited — 제한적</option>
+      <option value="N">N — 없음</option>
+    </select>
+    <label>투표 방식:</label>
+    <select id="methodFilter" onchange="filterTable()">
+      <option value="">전체</option>
+      <option value="Paper">Paper</option>
+      <option value="OMR">OMR</option>
+      <option value="EVM">EVM</option>
+      <option value="Mixed">Mixed</option>
+    </select>
+    <label>생체확인:</label>
+    <select id="bioFilter" onchange="filterTable()">
+      <option value="">전체</option>
+      <option value="bio-Y">생체확인 있음</option>
+      <option value="bio-N">생체확인 없음</option>
+    </select>
+    <label>전자투표:</label>
+    <select id="evotingFilter" onchange="filterTable()">
+      <option value="">전체</option>
+      <option value="Y">전자투표 있음</option>
+      <option value="N">없음</option>
+    </select>
+    <button class="filter-btn" onclick="clearFilters()">초기화</button>
+  </div>
+  <div class="count-label" id="countLabel">50개국 표시 중</div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table id="mainTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">국가 <span class="sort-arrow">↕</span></th>
+          <th onclick="sortTable(1)">ISO <span class="sort-arrow">↕</span></th>
+          <th onclick="sortTable(2)">선거 <span class="sort-arrow">↕</span></th>
+          <th onclick="sortTable(3)">최근 선거 <span class="sort-arrow">↕</span></th>
+          <th onclick="sortTable(4)">다음 선거 <span class="sort-arrow">↕</span></th>
+          <th onclick="sortTable(5)">투표 방식 <span class="sort-arrow">↕</span></th>
+          <th title="biometric_voter_reg">생체등록 <span class="sort-arrow">↕</span></th>
+          <th title="biometric_voter_verify">생체확인 <span class="sort-arrow">↕</span></th>
+          <th title="electronic_results_tx">전자결과전송 <span class="sort-arrow">↕</span></th>
+          <th title="evoting">전자투표 <span class="sort-arrow">↕</span></th>
+          <th>주요 벤더</th>
+          <th>신뢰도</th>
+          <th>비고</th>
+          <th>출처</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+const data = [
+  ["Albania","ALB","Y","2025-05-11","2029-05","EVM","N","Y","Y","N","Smartmatic+Innovatrics","High","Smartmatic EVM + Innovatrics 지문 본인확인; 전국 단계적 확대 법제화","https://odihr.osce.org/odihr/elections/590610"],
+  ["Andorra","AND","Y","2023-04-02","2027-04","Paper","N","N","N","N","None","High","소규모 공국; 전자화 계획 없음","https://www.electionguide.org/elections/id/4032/"],
+  ["Armenia","ARM","Y","2026-06-07","2030","Paper","N","N","N","N","None (VAD)","High","VAD(전자 유권자 명부 단말기) 사용; 생체등록 시스템 미도입","https://odihr.osce.org/node/662896"],
+  ["Austria","AUT","Y","2024-09-29","2029-09","Paper","N","N","Y","N","None","High","우편투표 광범위 사용; 전자투표 법적 미허용","https://www.bmi.gv.at/412/"],
+  ["Azerbaijan","AZE","Limited","2024-09-01","2029-09","Paper","N","N","N","N","None","High","ODIHR: 민주적 선거 기준 미충족; 제한적 경쟁","https://odihr.osce.org/odihr/elections/azerbaijan/586800"],
+  ["Belarus","BLR","Limited","2025-01-26","2030","Paper","N","N","N","N","None","High","루카셴코 권위주의 체제; ODIHR 참관 불허","https://freedomhouse.org/country/belarus/freedom-world/2025"],
+  ["Belgium","BEL","Y","2024-06-09","2029-06","EVM","N","N","Y","N","Smartmatic (bSmart 500)","High","전국 EVM 의무 사용; Stesud/Smartmatic 공급; DRE 방식","https://elections.fgov.be/"],
+  ["Bosnia and Herzegovina","BIH","Y","2022-10-02","2026-10-04","Mixed","N","Y","Y","N","Smartmatic","High","2026년 EUR 38.1M 계약; 지문 본인확인+스캐너 전국 도입","https://www.biometricupdate.com/202605/bosnia-moves-toward-nationwide-biometric-voting-for-2026-elections"],
+  ["Bulgaria","BGR","Y","2024-10-27","2027-10","OMR","N","N","Y","N","Smartmatic (Ciela Norma)","High","DRE→OMR 전환 논쟁 중; 2025년 재도입 법안 통과","https://www.bta.bg/en/news/bulgaria/1028151-machine-voting-in-bulgaria-timeline"],
+  ["Croatia","HRV","Y","2024-04-17","2028-04","Paper","N","N","Y","N","None","High","APIS 전자 유권자명부; 결과 전자전송","https://odihr.osce.org/odihr/elections/croatia/581797"],
+  ["Cyprus","CYP","Y","2026-05-24","2028-05","Paper","N","N","Y","N","None","High","자동 유권자 등록 개혁 진행 중; 디지털 신분증 앱 도입","https://www.gov.cy/moi-elections/en/"],
+  ["Czech Republic","CZE","Y","2025-10-03","2029-10","Paper","N","N","Y","N","None","High","우편투표 부재; 완전 종이투표","https://en.wikipedia.org/wiki/2025_Czech_parliamentary_election"],
+  ["Denmark","DNK","Y","2022-11-01","2026-11","Paper","N","N","Y","N","None","High","전자 유권자명부 태블릿 사용; 결과 전자전송","https://www.dst.dk/en/Statistik/emner/borgere/valg"],
+  ["Estonia","EST","Y","2023-03-05","2027-03-07","Mixed","N","N","Y","Y","RIA (자체)","High","i-Voting 2005 도입; 2023년 51.1%(313,514명) 인터넷투표; 오픈소스 IVXV","https://www.valimised.ee/en/internet-voting-estonia"],
+  ["Finland","FIN","Y","2023-04-02","2027-04","Paper","N","N","Y","N","None","High","전자 유권자명부; 결과 전자전송; 전자투표 법적 미허용","https://vaalit.fi/en/"],
+  ["France","FRA","Y","2024-07-07","2027-06","Mixed","N","N","Y","Limited","None","High","2017년 EVM 폐지→종이복귀; 재외국민 인터넷투표 제한적 유지(~140만 명)","https://www.interieur.gouv.fr/Elections"],
+  ["Georgia","GEO","Y","2024-10-26","2028-10","OMR","Y","N","Y","N","Smartmatic (bScan1800+VIU-800)","High","2024년 2,263개 투표소(74.6%) 전자화; VIU-800 생체 유권자 등록기 도입","https://www.smartmatic.com/us/all-case-studies/georgia-a-gradual-path-to-election-modernization/"],
+  ["Germany","DEU","Y","2025-02-23","2029-02","Paper","N","N","Y","N","None","High","2009년 헌법재판소 EVM 위헌 판결; 완전 종이투표 유지","https://www.bundeswahlleiter.de/"],
+  ["Greece","GRC","Y","2023-06-25","2027-06","Paper","N","N","Y","N","SingularLogic","High","SingularLogic SRT 시스템(1981~); 태블릿 21,500대 결과 전송","https://www.osce.org/odihr/elections/greece/558303"],
+  ["Hungary","HUN","Y","2026-04-06","2030-04","Paper","N","N","Y","N","None","High","완전 종이투표; 전자화 계획 없음","https://www.valasztas.hu/en/2026-parliamentary-elections"],
+  ["Iceland","ISL","Y","2024-11-30","2028-11","Paper","N","N","Y","N","None","High","알팅 선거; 완전 종이투표","https://www.althingi.is/"],
+  ["Ireland","IRL","Y","2024-11-29","2029-11","Paper","N","N","Y","N","None","High","2009년 EVM 폐지; 종이투표 복귀","https://www.electoralcommission.ie/"],
+  ["Italy","ITA","Y","2022-09-25","2027-04","Paper","N","N","Y","N","None","High","완전 종이투표; 수기개표","https://elezioni.interno.gov.it/"],
+  ["Kosovo","XKX","Y","2025-02-09","2026-06","Paper","N","N","Y","N","None","High","18개월 내 3회 선거; 정치 불안으로 디지털화 지연","https://en.wikipedia.org/wiki/2026_Kosovan_parliamentary_election"],
+  ["Latvia","LVA","Y","2022-10-01","2026-10-03","Mixed","N","N","Y","N","None","Med","광학스캔 도입 초기 논의 단계; 2026년 선거 모니터링 필요","https://www.cvk.lv/en/saeima-elections"],
+  ["Liechtenstein","LIE","Y","2025-02-09","2029-02","Paper","N","N","N","N","None","High","우편투표 96.6%; 사실상 우편선거 국가","https://www.idea.int/node/161200"],
+  ["Lithuania","LTU","Y","2024-10-13","2028-10","Paper","N","N","Y","N","None","High","전자투표 연구 '위험성 더 높다' 결론(2023)","https://www.vrk.lt/en/2024-seimo/rezultatai"],
+  ["Luxembourg","LUX","Y","2023-10-08","2028-10","Paper","N","N","Y","N","None","High","전자투표 법적 미허용; 완전 종이투표","https://elections.public.lu/"],
+  ["Malta","MLT","Y","2022-03-26","2027-03","Paper","N","N","Y","N","None","High","단기이양식 투표(STV); 완전 종이투표","https://electoral.gov.mt/"],
+  ["Moldova","MDA","Y","2025-09-28","2029-09","Paper","N","N","Y","N","None","High","완전 종이투표; 전자투표 계획 없음","https://www.osce.org/odihr/elections/moldova/588014"],
+  ["Monaco","MCO","Y","2023-02-05","2028-02","Paper","N","N","N","N","None","High","국민의회(Conseil National) 선거; 소규모","https://www.electionguide.org/elections/id/4022/"],
+  ["Montenegro","MNE","Y","2023-06-11","2027-06","Paper","N","N","Y","N","None","High","완전 종이투표","https://www.ifes.org/tools-resources/election-snapshots/elections-montenegro-2023-parliamentary-elections"],
+  ["Netherlands","NLD","Y","2023-11-22","2027-11","Paper","N","N","Y","N","None","High","2007~2008년 Nedap DRE 전면 폐지; 종이+빨간 연필","https://www.kiesraad.nl/"],
+  ["North Macedonia","MKD","Y","2024-05-08","2028-05","Mixed","N","Y","Y","N","None","Med","2021년~ 지문 본인확인 도입; 초기 오류 이력 있어 교체 수요 잠재","https://www.rferl.org/a/north-macedonia-holds-local-elections/31514998.html"],
+  ["Norway","NOR","Y","2025-09-08","2029-09","Paper","N","N","Y","N","None","High","2011~2013년 인터넷투표 파일럿 후 2014년 중단","https://www.ssb.no/en/valg"],
+  ["Poland","POL","Y","2023-10-15","2027-10","Paper","N","N","Y","N","None","High","완전 종이투표; 전자화 계획 없음","https://odihr.osce.org/odihr/elections/poland/565426"],
+  ["Portugal","PRT","Y","2024-03-10","2028-03","Paper","N","N","Y","N","None","High","완전 종이투표","https://www.cne.pt/"],
+  ["Romania","ROU","Y","2024-11-24","2028-11","Paper","N","N","Y","N","None","High","SIMPV 투표율 전자전송; 2024년 블록체인 결과 검증 도입","https://rm.coe.int/168059c085"],
+  ["Russia","RUS","Limited","2024-03-15","2026-09-20","Mixed","N","N","Y","Limited","자체 (DEG/Exonum)","High","DEG 블록체인 전자투표 27개+ 지역; 소스코드 비공개; 독립 참관 불가","https://www.russian-election-monitor.org/online-elections-in-russia-what-to-expect-from-them.html"],
+  ["San Marino","SMR","Y","2024-06-09","2029-06","Paper","N","N","N","N","None","High","소규모 공화국; 완전 종이투표","https://www.electionguide.org/elections/id/4297/"],
+  ["Serbia","SRB","Y","2023-12-17","2027-12","Paper","N","N","Y","N","None","High","완전 종이투표; ODIHR 부정 선거 우려 지적","https://odihr.osce.org/odihr/elections/serbia/563502"],
+  ["Slovakia","SVK","Y","2023-09-30","2027-09","Paper","N","N","Y","N","None","High","완전 종이투표; 인터넷투표 없음","https://odihr.osce.org/odihr/elections/slovakia/563646"],
+  ["Slovenia","SVN","Y","2022-04-24","2026-04","Paper","N","N","Y","N","None","High","완전 종이투표","https://www.dvk-rs.si/"],
+  ["Spain","ESP","Y","2023-07-23","2027-07","Paper","N","N","Y","N","None","High","완전 종이투표; 생체화 계획 없음","https://www.jec.es/"],
+  ["Sweden","SWE","Y","2022-09-11","2026-09-13","Paper","N","N","Y","N","None","High","완전 종이투표; 전자투표 논의 없음","https://www.val.se/"],
+  ["Switzerland","CHE","Y","2023-10-22","2027-10","Mixed","N","N","Y","Limited","Swiss Post","High","2023년 재도입; 4개 칸톤 파일럿; 해외 스위스인 60% 전자투표; 전국 확대 검토 중","https://www.post.ch/en/about-us/news/2024/a-year-of-e-voting"],
+  ["Turkey","TUR","Y","2023-05-28","2028-05-14","Paper","N","N","Y","N","YSK (SEÇSİS)","High","YSK 자체 SEÇSİS 시스템; 6,400만 유권자; 진입장벽 높음","https://odihr.osce.org/odihr/elections/turkiye/553963"],
+  ["Ukraine","UKR","Limited","2019-07-21","TBD","Paper","N","N","N","N","None","High","계엄령으로 선거 전면 중단; 종전 후 재건 수요 예상","https://www.jurist.org/news/2025/02/ukraine-parliament-affirms-no-elections-during-wartime-under-martial-law/"],
+  ["United Kingdom","GBR","Y","2024-07-04","2029-07","Paper","N","N","Y","N","None","High","완전 종이투표; FPTP 방식","https://www.electoralcommission.org.uk/"],
+  ["Vatican","VAT","N","","","N/A","N","N","N","N","None","High","민주적 국가선거 없음; 교황 콘클라베는 추기경단 비밀투표","https://www.vaticannews.va/en/pope/news/2025-05/conclave-how-a-pope-is-elected.html"],
+];
+
+function getMethodBadge(m) {
+  const cls = ['Paper','OMR','EVM','Mixed','Internet','NA'].includes(m) ? `badge-${m}` : 'badge-NA';
+  return `<span class="badge ${cls}">${m}</span>`;
+}
+function getElecBadge(v) {
+  return `<span class="badge badge-${v}">${v}</span>`;
+}
+function getDot(v) {
+  const cls = v === 'Y' ? 'dot-Y' : v === 'Limited' ? 'dot-Limited' : 'dot-N';
+  return `<span class="dot ${cls}"></span>${v}`;
+}
+function getConfDot(v) {
+  const cls = v === 'High' ? 'dot-High' : v === 'Med' ? 'dot-Med' : 'dot-Low';
+  return `<span class="dot ${cls}"></span>${v}`;
+}
+
+function renderTable(rows) {
+  const tb = document.getElementById('tableBody');
+  tb.innerHTML = rows.map(r => {
+    const [country, iso, elec, last, next, method, bioReg, bioVerify, ertx, evoting, vendor, conf, notes, src] = r;
+    return `<tr
+      data-country="${country.toLowerCase()}"
+      data-elec="${elec}"
+      data-method="${method.split('+')[0]}"
+      data-bio="${bioVerify}"
+      data-evoting="${evoting}">
+      <td><span class="country-name">${country}</span></td>
+      <td><span class="iso">${iso}</span></td>
+      <td>${getElecBadge(elec)}</td>
+      <td>${last||'—'}</td>
+      <td>${next||'—'}</td>
+      <td>${getMethodBadge(method)}</td>
+      <td>${getDot(bioReg)}</td>
+      <td>${getDot(bioVerify)}</td>
+      <td>${getDot(ertx)}</td>
+      <td>${getDot(evoting)}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:140px;white-space:normal">${vendor}</td>
+      <td>${getConfDot(conf)}</td>
+      <td class="notes-cell">${notes}</td>
+      <td><a href="${src}" target="_blank" class="source-link">링크↗</a></td>
+    </tr>`;
+  }).join('');
+  document.getElementById('countLabel').textContent = `${rows.length}개국 표시 중`;
+}
+
+function filterTable() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const elec = document.getElementById('elecFilter').value;
+  const method = document.getElementById('methodFilter').value;
+  const bio = document.getElementById('bioFilter').value;
+  const evoting = document.getElementById('evotingFilter').value;
+  const filtered = data.filter(r => {
+    const country = r[0].toLowerCase();
+    const iso = r[1].toLowerCase();
+    if (search && !country.includes(search) && !iso.includes(search)) return false;
+    if (elec && r[2] !== elec) return false;
+    if (method && !r[5].includes(method)) return false;
+    if (bio === 'bio-Y' && r[7] !== 'Y') return false;
+    if (bio === 'bio-N' && r[7] === 'Y') return false;
+    if (evoting && r[9] !== evoting && !(evoting === 'Y' && r[9] === 'Limited')) return false;
+    return true;
+  });
+  renderTable(filtered);
+}
+
+function clearFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('elecFilter').value = '';
+  document.getElementById('methodFilter').value = '';
+  document.getElementById('bioFilter').value = '';
+  document.getElementById('evotingFilter').value = '';
+  renderTable(data);
+}
+
+let sortDir = {};
+function sortTable(col) {
+  const dir = sortDir[col] === 'asc' ? 'desc' : 'asc';
+  sortDir = { [col]: dir };
+  const sorted = [...data].sort((a, b) => {
+    const va = a[col] || '';
+    const vb = b[col] || '';
+    return dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+  renderTable(sorted);
+}
+
+renderTable(data);
+</script>
+</body>
+</html>

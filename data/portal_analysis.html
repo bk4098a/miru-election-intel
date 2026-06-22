@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기계투표 35개국 포털 크롤링 사전 분석</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',Arial,sans-serif;background:#f4f5f9;color:#222;font-size:13px}
+header{background:#1a237e;color:#fff;padding:22px 36px 16px}
+header h1{font-size:19px;font-weight:700;margin-bottom:4px}
+header p{font-size:11px;opacity:.7}
+.badge{display:inline-block;background:rgba(255,255,255,.15);border-radius:9px;padding:1px 9px;font-size:10px;margin-left:7px}
+
+.topbar{display:flex;gap:10px;padding:14px 36px;background:#fff;border-bottom:1px solid #e0e3ef;flex-wrap:wrap;align-items:center}
+.stat{text-align:center;padding:0 12px}
+.stat .n{font-size:26px;font-weight:800;line-height:1}
+.stat .l{font-size:10px;color:#888;margin-top:2px}
+.n-high{color:#2e7d32}.n-med{color:#e65100}.n-low{color:#c62828}.n-na{color:#999}.n-blue{color:#1a237e}
+.dvd{width:1px;background:#e5e5e5;margin:4px 0}
+
+.wrap{max-width:1400px;margin:0 auto;padding:18px 36px}
+h2{font-size:14px;font-weight:700;color:#1a237e;margin:22px 0 8px;padding-left:8px;border-left:4px solid #1a237e;display:flex;align-items:center;gap:8px}
+
+/* priority blocks */
+.p1-block{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:10px;padding:14px 18px;margin-bottom:20px}
+.p1-block h3{font-size:13px;color:#1b5e20;margin-bottom:10px}
+.p2-block{background:#fff8e1;border:1px solid #ffe082;border-radius:10px;padding:14px 18px;margin-bottom:20px}
+.p2-block h3{font-size:13px;color:#e65100;margin-bottom:10px}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.07);border-left:4px solid #ccc}
+.card.high{border-left-color:#2e7d32}
+.card.med{border-left-color:#e65100}
+.card.low{border-left-color:#c62828}
+.card .cname{font-size:12px;font-weight:700;color:#1a237e;margin-bottom:4px}
+.card .pname{font-size:11px;color:#555;margin-bottom:6px}
+.card .url a{font-size:11px;color:#0277bd;word-break:break-all}
+.card .tags{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}
+.tag{display:inline-block;padding:1px 7px;border-radius:7px;font-size:10px;font-weight:600}
+.t-api{background:#e3f2fd;color:#0277bd}
+.t-static{background:#e8f5e9;color:#2e7d32}
+.t-playwright{background:#fff3e0;color:#e65100}
+.t-blocked{background:#fce4ec;color:#c62828}
+.t-done{background:#f3e5f5;color:#6a1b9a}
+.t-miru{background:#fff8e1;color:#f57f17;font-weight:800}
+.card .api{font-size:10px;color:#555;background:#f5f5f5;padding:4px 7px;border-radius:4px;margin-top:6px;word-break:break-all;font-family:monospace}
+.card .note{font-size:10px;color:#777;margin-top:5px;line-height:1.5}
+
+/* full table */
+.tbl-wrap{overflow-x:auto;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+th{background:#e8eaf6;color:#283593;font-weight:700;padding:7px 10px;text-align:left;white-space:nowrap;position:sticky;top:0}
+td{padding:5px 10px;border-bottom:1px solid #f2f2f2;vertical-align:middle}
+tr:hover td{background:#f8f9ff}
+tr:last-child td{border:none}
+.f-high{color:#2e7d32;font-weight:700}
+.f-med{color:#e65100;font-weight:600}
+.f-low{color:#c62828}
+.f-na{color:#999}
+.p-p1{background:#c8e6c9;color:#1b5e20;padding:1px 6px;border-radius:5px;font-size:10px;font-weight:700}
+.p-p2{background:#ffe082;color:#5d4037;padding:1px 6px;border-radius:5px;font-size:10px;font-weight:700}
+.p-p3{background:#ffcdd2;color:#c62828;padding:1px 6px;border-radius:5px;font-size:10px;font-weight:700}
+.p-skip{background:#f5f5f5;color:#bbb;padding:1px 6px;border-radius:5px;font-size:10px}
+.impl{background:#f3e5f5;color:#6a1b9a;padding:1px 5px;border-radius:4px;font-size:10px;font-weight:700}
+.miru-row td{background:#fff8e1!important}
+td a{color:#0277bd;text-decoration:none;font-size:11px}
+td a:hover{text-decoration:underline}
+
+.vm-chip{display:inline-block;padding:1px 7px;border-radius:7px;font-size:10px;font-weight:700;color:#fff}
+.dre{background:#7b1fa2}.evm{background:#1565c0}.omr{background:#00695c}.mixed{background:#e65100}
+
+.legend{display:flex;gap:20px;font-size:11px;color:#666;padding:10px 0;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:5px}
+
+footer{text-align:center;padding:18px;color:#bbb;font-size:11px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>기계투표 35개국 포털 크롤링 사전 분석 <span class="badge">2026-06-22</span></h1>
+  <p>66개 포털 실접근 분석 — HTTP 상태·사이트 구조·크롤링 방식·SQL 저장 가능성</p>
+</header>
+
+<div class="topbar">
+  <div class="stat"><div class="n n-blue">66</div><div class="l">분석 포털</div></div>
+  <div class="dvd"></div>
+  <div class="stat"><div class="n n-high">11</div><div class="l">High (즉시)</div></div>
+  <div class="stat"><div class="n n-med">24</div><div class="l">Med (조건부)</div></div>
+  <div class="stat"><div class="n n-low">15</div><div class="l">Low (어려움)</div></div>
+  <div class="stat"><div class="n n-na">16</div><div class="l">N/A (조달없음)</div></div>
+  <div class="dvd"></div>
+  <div class="stat"><div class="n" style="color:#1b5e20">11</div><div class="l">P1 즉시구현</div></div>
+  <div class="stat"><div class="n" style="color:#e65100">24</div><div class="l">P2 단기구현</div></div>
+  <div class="stat"><div class="n" style="color:#c62828">10</div><div class="l">P3 장기/우회</div></div>
+  <div class="stat"><div class="n" style="color:#bbb">21</div><div class="l">Skip</div></div>
+  <div class="dvd"></div>
+  <div class="stat"><div class="n" style="color:#6a1b9a">3</div><div class="l">이미 구현</div></div>
+</div>
+
+<div class="wrap">
+
+<!-- P1 -->
+<h2>🟢 P1 — 즉시 구현 가능 (11개 포털)</h2>
+<div class="p1-block">
+  <h3>API 직접 호출 또는 정적 HTML — 추가 개발 3~8시간 예상</h3>
+  <div class="card-grid">
+
+    <div class="card high">
+      <div class="cname">🇧🇷 브라질 <span class="vm-chip dre">DRE</span></div>
+      <div class="pname">PNCP (Compras.gov.br)</div>
+      <div class="url"><a href="https://pncp.gov.br/app/editais" target="_blank">pncp.gov.br</a></div>
+      <div class="tags"><span class="tag t-api">REST API</span><span class="tag t-static">JSON 응답</span></div>
+      <div class="api">GET https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes?pagina=1</div>
+      <div class="note">인증 불필요. 페이지당 20건. OCDS 유사 구조. parse_brazil_pncp() 신규 작성 필요</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇵🇾 파라과이 <span class="vm-chip dre">DRE</span></div>
+      <div class="pname">DNCP (Contrataciones) <span class="tag t-done">★구현완료</span></div>
+      <div class="url"><a href="https://www.contrataciones.gov.py/" target="_blank">contrataciones.gov.py</a></div>
+      <div class="tags"><span class="tag t-api">OCDS API</span></div>
+      <div class="api">parse_paraguay_dncp() — 이미 구현</div>
+      <div class="note">OCDS v1.1 표준. 추가 작업 불필요</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇧🇹 부탄 <span class="vm-chip evm">EVM</span></div>
+      <div class="pname">ECB Tender (ecb.bt)</div>
+      <div class="url"><a href="https://www.ecb.bt/tender-information/" target="_blank">ecb.bt/tender-information</a></div>
+      <div class="tags"><span class="tag t-static">WordPress 정적HTML</span></div>
+      <div class="api">WordPress API: /wp-json/wp/v2/posts?categories=tender</div>
+      <div class="note">소규모(10건 미만). WordPress REST API로 JSON 직접 추출 가능</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇦🇱 알바니아 <span class="vm-chip evm">EVM</span></div>
+      <div class="pname">KQZ (CEC Albania)</div>
+      <div class="url"><a href="https://kqz.gov.al/" target="_blank">kqz.gov.al</a></div>
+      <div class="tags"><span class="tag t-static">WordPress 정적HTML</span></div>
+      <div class="api">/wp-json/wp/v2/posts?search=prokurimi (조달 키워드)</div>
+      <div class="note">Smartmatic EVM 계약갱신 공고. WordPress 카테고리 필터로 추출</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇬🇭 가나 <span class="vm-chip omr">OMR</span></div>
+      <div class="pname">GHANEPS (PPA)</div>
+      <div class="url"><a href="https://www.ghaneps.gov.gh/epps/home.do" target="_blank">ghaneps.gov.gh</a></div>
+      <div class="tags"><span class="tag t-static">Struts HTML 테이블</span></div>
+      <div class="api">https://www.ghaneps.gov.gh/epps/quickSearchAction.do?searchSelect=6</div>
+      <div class="note">93건 공개. 10건/페이지. 공고번호(resourceId) 직접 파싱. Thales/STL 계약 모니터링</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇧🇭 바레인 <span class="vm-chip omr">OMR</span></div>
+      <div class="pname">Tender Board Bahrain</div>
+      <div class="url"><a href="https://etendering.tenderboard.gov.bh" target="_blank">etendering.tenderboard.gov.bh</a></div>
+      <div class="tags"><span class="tag t-static">HTML 테이블 직접노출</span></div>
+      <div class="api">없음 — HTML 직접 파싱 (3,240건+)</div>
+      <div class="note">정적 HTML. Published 62건 / Opened 3,240건+. 공고번호 패턴: [N]/2026/BTB</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇯🇲 자메이카 <span class="vm-chip mixed">Mixed</span></div>
+      <div class="pname">GOJEP + EOJ 기관페이지</div>
+      <div class="url"><a href="https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936" target="_blank">GOJEP/EOJ (id=1936)</a></div>
+      <div class="tags"><span class="tag t-static">JSF 정적HTML</span></div>
+      <div class="api">id=1936 = Electoral Office of Jamaica 기관코드</div>
+      <div class="note">정적 HTML. 로그인 불필요. EVIS e-pollbook 계약 모니터링</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇺🇸 미국 <span class="vm-chip mixed">Mixed</span></div>
+      <div class="pname">SAM.gov <span class="tag t-done">★구현완료</span></div>
+      <div class="url"><a href="https://sam.gov/opportunities" target="_blank">sam.gov</a></div>
+      <div class="tags"><span class="tag t-api">REST API</span></div>
+      <div class="api">api.sam.gov/opportunities/v2/search?title=election+equipment</div>
+      <div class="note">SAMGOV_API_KEY 환경변수. 이미 parsers.py 구현 완료</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇰🇬 키르기스스탄 <span class="vm-chip mixed">Mixed</span></div>
+      <div class="pname">zakupki.gov.kg <span class="tag t-miru">MIRU</span></div>
+      <div class="url"><a href="https://zakupki.gov.kg" target="_blank">zakupki.gov.kg</a></div>
+      <div class="tags"><span class="tag t-static">JSF HTML 테이블</span></div>
+      <div class="api">OCDS 대시보드: ocds.zakupki.gov.kg (별도 탐색 필요)</div>
+      <div class="note">Miru Systems CEC 명의 공고. 전필드 HTML 노출. ViewState 처리 필요</div>
+    </div>
+
+    <div class="card high">
+      <div class="cname">🇰🇿 카자흐스탄 <span class="vm-chip mixed">Mixed</span></div>
+      <div class="pname">goszakup.gov.kz</div>
+      <div class="url"><a href="https://www.goszakup.gov.kz/" target="_blank">goszakup.gov.kz</a></div>
+      <div class="tags"><span class="tag t-api">REST API v2/v3</span></div>
+      <div class="api">https://ows.goszakup.gov.kz/v3/trd-buy?filter[name]=election&amp;limit=50</div>
+      <div class="note">656만건+ DB. filter[name] 파라미터로 직접 쿼리. 러시아어/카자흐어</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- P2 -->
+<h2>🟡 P2 — 조건부 가능 (24개 포털, Playwright 또는 추가분석)</h2>
+<div class="p2-block">
+  <h3>Playwright 자동화 또는 POST API / SSL 우회 등 추가 개발 필요</h3>
+  <div class="card-grid">
+
+    <div class="card med">
+      <div class="cname">🇧🇷 브라질 <span class="vm-chip dre">DRE</span></div><div class="pname">TSE 조달공고</div>
+      <div class="url"><a href="https://www.tse.jus.br/transparencia/gestao-de-contratacoes" target="_blank">tse.jus.br/transparencia</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span><span class="tag t-blocked">WAF차단</span></div>
+      <div class="note">Cloudflare WAF. User-Agent 우회 + Playwright 필요</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇨🇩 DRC(콩고) <span class="vm-chip evm">EVM</span> <span class="tag t-miru">MIRU</span></div><div class="pname">ARMP (marchepublic.cd)</div>
+      <div class="url"><a href="https://marchepublic.cd/" target="_blank">marchepublic.cd</a></div>
+      <div class="tags"><span class="tag t-static">requests(복구 후)</span><span class="tag t-blocked">502 일시적</span></div>
+      <div class="note">502 Bad Gateway — 서버 복구 후 정적 HTML 파싱 가능. Miru 공급국 필수 모니터링</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇧🇹 부탄 <span class="vm-chip evm">EVM</span></div><div class="pname">e-GP Bhutan</div>
+      <div class="url"><a href="https://www.egp.gov.bt/resources/common/TenderListing.jsp?h=t" target="_blank">egp.gov.bt</a></div>
+      <div class="tags"><span class="tag t-static">JSP 서버사이드</span></div>
+      <div class="note">TenderListing.jsp 직접 접근. JavaScript 최소. requests 파싱 가능</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇮🇳 인도 <span class="vm-chip evm">EVM</span></div><div class="pname">eProcure (CPPP)</div>
+      <div class="url"><a href="https://eprocure.gov.in/eprocure/app" target="_blank">eprocure.gov.in</a></div>
+      <div class="tags"><span class="tag t-static">HTML 테이블</span></div>
+      <div class="note">15분 주기 갱신. EVM은 BEL·ECIL 정부간 직접계약이 주. 유지보수 등 부수 공고</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇦🇱 알바니아 <span class="vm-chip evm">EVM</span></div><div class="pname">APP e-Procurement</div>
+      <div class="url"><a href="https://app.gov.al/e-procurement/" target="_blank">app.gov.al/e-procurement</a></div>
+      <div class="tags"><span class="tag t-static">JSF HTML</span></div>
+      <div class="note">JSF ViewState 처리. Smartmatic EVM 계약갱신 공고 게시처</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇧🇪 벨기에 <span class="vm-chip evm">EVM</span></div><div class="pname">e-Notification (TED 대체)</div>
+      <div class="url"><a href="https://enot.publicprocurement.be/enot-war/" target="_blank">enot.publicprocurement.be</a></div>
+      <div class="tags"><span class="tag t-blocked">직접접근불가</span><span class="tag t-done">TED구현완료</span></div>
+      <div class="note">직접 접근 불가(ECONNREFUSED). 기존 TED EU API 파서로 대체 — 벨기에 공고 포함</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇴🇲 오만 <span class="vm-chip evm">EVM</span></div><div class="pname">Tender Board Oman</div>
+      <div class="url"><a href="https://etendering.tenderboard.gov.om" target="_blank">etendering.tenderboard.gov.om</a></div>
+      <div class="tags"><span class="tag t-static">HTML 테이블+JS탭</span></div>
+      <div class="note">아랍어/영어 병행. 내무부 선거장비 공고 포함. 2023 완전디지털화</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇦🇪 UAE <span class="vm-chip evm">EVM</span></div><div class="pname">Federal e-Procurement</div>
+      <div class="url"><a href="https://procurement.gov.ae" target="_blank">procurement.gov.ae</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span></div>
+      <div class="note">JS-SPA. XHR 인터셉트 후 REST API 직접 호출로 전환 가능</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇩🇴 도미니카공화국 <span class="vm-chip omr">OMR</span></div><div class="pname">DGCP ComprasDominicana</div>
+      <div class="url"><a href="https://www.dgcp.gob.do/consultas/" target="_blank">dgcp.gob.do</a></div>
+      <div class="tags"><span class="tag t-api">오픈API 대안</span></div>
+      <div class="api">https://datosabiertos.dgcp.gob.do/api/ (오픈데이터 API)</div>
+      <div class="note">오픈데이터 API 우선 탐색. Playwright 대비책</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇲🇳 몽골 <span class="vm-chip omr">OMR</span></div><div class="pname">GPA e-Tender</div>
+      <div class="url"><a href="http://www.e-tender.mn/en/tenders/" target="_blank">e-tender.mn (HTTP)</a></div>
+      <div class="tags"><span class="tag t-static">requests (HTTP/80)</span></div>
+      <div class="note">HTTPS→HTTP 다운그레이드. verify=False + HTTP 허용. tender.gov.mn(주)는 403</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇵🇭 필리핀 <span class="vm-chip omr">OMR</span> <span class="tag t-miru">MIRU</span></div><div class="pname">PhilGEPS</div>
+      <div class="url"><a href="https://notices.philgeps.gov.ph/" target="_blank">philgeps.gov.ph</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span><span class="tag t-blocked">5xx 일시적</span></div>
+      <div class="note">서버 오류(일시적). Miru ACM 11만대 계약 모니터링 필수</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇵🇭 필리핀 <span class="vm-chip omr">OMR</span> <span class="tag t-miru">MIRU</span></div><div class="pname">COMELEC Procurement</div>
+      <div class="url"><a href="https://www.comelec.gov.ph/?r=Procurement" target="_blank">comelec.gov.ph/Procurement</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span></div>
+      <div class="note">XHR 인터셉트로 REST API 발굴 가능. ?r= 라우팅 SPA</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇰🇷 대한민국 <span class="vm-chip omr">OMR</span> <span class="tag t-miru">MIRU</span></div><div class="pname">나라장터 (G2B)</div>
+      <div class="url"><a href="https://www.g2b.go.kr/" target="_blank">g2b.go.kr</a></div>
+      <div class="tags"><span class="tag t-api">공공데이터API</span></div>
+      <div class="api">apis.data.go.kr/1230000/BidPublicInfoService04/ (API 키 필요)</div>
+      <div class="note">직접접근 불가(SSO). 공공데이터포털 API 키 신청 필요</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇧🇬 불가리아 <span class="vm-chip omr">OMR</span></div><div class="pname">CIK Bulgaria (/zop)</div>
+      <div class="url"><a href="https://www.cik.bg/bg/zop" target="_blank">cik.bg/bg/zop</a></div>
+      <div class="tags"><span class="tag t-static">requests (verify=False)</span></div>
+      <div class="note">SSL 인증서 문제. fetcher.py의 SSL retry 패턴 그대로 적용. /zop=조달 섹션</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇺🇿 우즈베키스탄 <span class="vm-chip mixed">Mixed</span></div><div class="pname">xarid.uzex.uz</div>
+      <div class="url"><a href="https://xarid.uzex.uz/" target="_blank">xarid.uzex.uz</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span></div>
+      <div class="note">JS-SPA(React). XHR 인터셉트 → REST API 발굴. EVM 파일럿 후속 모니터링</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇰🇪 케냐 <span class="vm-chip mixed">Mixed</span></div><div class="pname">Tenders.go.ke (PPIP)</div>
+      <div class="url"><a href="https://tenders.go.ke/tenders" target="_blank">tenders.go.ke</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span></div>
+      <div class="note">JS-SPA. 정적 크롤 무효. Smartmatic KIEMS BVD 계약 모니터링</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇰🇪 케냐 <span class="vm-chip mixed">Mixed</span></div><div class="pname">IEBC Kenya</div>
+      <div class="url"><a href="https://www.iebc.or.ke/" target="_blank">iebc.or.ke</a></div>
+      <div class="tags"><span class="tag t-static">requests (verify=False)</span></div>
+      <div class="note">SSL 인증서 오류. fetcher.py SSL retry 패턴 적용. IEBC 자체 조달공고 게시</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇦🇷 아르헨티나 <span class="vm-chip mixed">Mixed</span></div><div class="pname">COMPR.AR</div>
+      <div class="url"><a href="https://comprar.gob.ar" target="_blank">comprar.gob.ar</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span><span class="tag t-api">오픈데이터 대안</span></div>
+      <div class="api">https://datosabiertos.compraspublicas.gob.ar/PLIEG/</div>
+      <div class="note">오픈데이터 API(PLIEG) 우선 탐색. DINE 발주 공고</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇸🇻 엘살바도르 <span class="vm-chip mixed">Mixed</span></div><div class="pname">COMPRASAL</div>
+      <div class="url"><a href="https://www.comprasal.gob.sv/" target="_blank">comprasal.gob.sv</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span></div>
+      <div class="note">JSF ViewState + Playwright. TSE 기관명 필터</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇵🇦 파나마 <span class="vm-chip mixed">Mixed</span></div><div class="pname">PanamaCompra</div>
+      <div class="url"><a href="https://www.panamacompra.gob.pa/Inicio/" target="_blank">panamacompra.gob.pa</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright</span><span class="tag t-api">REST API 가능</span></div>
+      <div class="note">AngularJS SPA. XHR 인터셉트로 REST API 발굴 권장</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇧🇦 보스니아 <span class="vm-chip mixed">Mixed</span></div><div class="pname">eJN Bosnia</div>
+      <div class="url"><a href="https://www.ejn.gov.ba/Announcement/Search" target="_blank">ejn.gov.ba</a></div>
+      <div class="tags"><span class="tag t-api">POST API</span></div>
+      <div class="api">POST https://www.ejn.gov.ba/api/Announcement/Search {page:1,pageSize:20}</div>
+      <div class="note">GET 405 → POST 전용. Smartmatic €38.1M 계약 모니터링</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇪🇪 에스토니아 <span class="vm-chip mixed">Mixed</span></div><div class="pname">Riigihangete Register</div>
+      <div class="url"><a href="https://riigihanked.riik.ee" target="_blank">riigihanked.riik.ee</a></div>
+      <div class="tags"><span class="tag t-api">공개 API 가능</span></div>
+      <div class="api">/rhr/api/public/v3/procurements?searchText=valimine (탐색 필요)</div>
+      <div class="note">401이나 공개 API 존재 가능. valimine=선거(에스토니아어)</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇲🇰 북마케도니아 <span class="vm-chip mixed">Mixed</span></div><div class="pname">SEC Macedonia (/javni-nabavki-2/)</div>
+      <div class="url"><a href="https://www.sec.mk/" target="_blank">sec.mk</a></div>
+      <div class="tags"><span class="tag t-static">requests(정적)</span></div>
+      <div class="note">선거위 직접 /javni-nabavki-2/ 섹션에 조달공고 게시. 소규모</div>
+    </div>
+
+    <div class="card med">
+      <div class="cname">🇨🇭 스위스 <span class="vm-chip mixed">Mixed</span></div><div class="pname">SIMAP</div>
+      <div class="url"><a href="https://www.simap.ch/en" target="_blank">simap.ch</a></div>
+      <div class="tags"><span class="tag t-playwright">Playwright+검색폼</span></div>
+      <div class="note">검색어=Wahlsystem/Vote/Élection. 연방+주 공동. 다국어(DE/FR/IT/EN)</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 전체 분석표 -->
+<h2>📋 전체 분석 결과표</h2>
+<div class="tbl-wrap">
+<table>
+<tr>
+  <th>국가</th><th>방식</th><th>포털명</th><th>HTTP</th><th>사이트유형</th>
+  <th>크롤방식</th><th>API 엔드포인트</th><th>가능성</th><th>우선순위</th><th>비고</th>
+</tr>
+
+<!-- DRE -->
+<tr><td>🇧🇷 브라질</td><td><span class="vm-chip dre">DRE</span></td><td><a href="https://pncp.gov.br/app/editais" target="_blank">PNCP</a></td><td>200</td><td>REST API</td><td>API 호출</td><td class="api" style="font-size:10px">pncp.gov.br/api/consulta/v1/contratacoes/publicacoes</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>신규 파서 필요</td></tr>
+<tr><td>🇧🇷 브라질</td><td><span class="vm-chip dre">DRE</span></td><td><a href="https://www.tse.jus.br/transparencia/gestao-de-contratacoes" target="_blank">TSE</a></td><td>WAF</td><td>JS-SPA+WAF</td><td>Playwright</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>WAF 우회</td></tr>
+<tr class="miru-row"><td>🇵🇾 파라과이</td><td><span class="vm-chip dre">DRE</span></td><td><a href="https://www.contrataciones.gov.py/" target="_blank">DNCP</a></td><td>200</td><td>REST API(OCDS)</td><td><span class="impl">★구현완료</span></td><td>OCDS v1.1</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>parse_paraguay_dncp()</td></tr>
+<tr><td>🇻🇪 베네수엘라</td><td><span class="vm-chip dre">DRE</span></td><td><a href="https://www.snc.gob.ve/" target="_blank">SNC</a></td><td>200</td><td>정적HTML(불안정)</td><td>requests</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>독점계약</td></tr>
+<tr><td>🇻🇪 베네수엘라</td><td><span class="vm-chip dre">DRE</span></td><td>CNE</td><td>ECONNREF</td><td>접근불가</td><td>불가</td><td>—</td><td class="f-na">N/A</td><td><span class="p-skip">Skip</span></td><td>연결거부</td></tr>
+
+<!-- EVM -->
+<tr class="miru-row"><td>🇨🇩 DRC(콩고)</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://marchepublic.cd/" target="_blank">ARMP</a></td><td>502</td><td>일시오류</td><td>requests(복구후)</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Miru 필수</td></tr>
+<tr><td>🇧🇹 부탄</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://www.egp.gov.bt/resources/common/TenderListing.jsp?h=t" target="_blank">e-GP Bhutan</a></td><td>200</td><td>JSP 정적</td><td>requests</td><td>TenderListing.jsp</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>ECB 대비</td></tr>
+<tr><td>🇧🇹 부탄</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://www.ecb.bt/tender-information/" target="_blank">ECB Tender</a></td><td>200</td><td>WordPress</td><td>requests+WP-API</td><td>/wp-json/wp/v2/posts</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>소규모</td></tr>
+<tr><td>🇮🇳 인도</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://eprocure.gov.in/eprocure/app" target="_blank">eProcure</a></td><td>200</td><td>정적HTML</td><td>requests</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>직접계약多</td></tr>
+<tr><td>🇮🇳 인도</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://www.eci.gov.in/notification/tenders" target="_blank">ECI</a></td><td>403</td><td>WAF</td><td>Playwright</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>eProcure 대체</td></tr>
+<tr><td>🇦🇱 알바니아</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://app.gov.al/e-procurement/" target="_blank">APP</a></td><td>200</td><td>JSF HTML</td><td>requests+ViewState</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Smartmatic계약</td></tr>
+<tr><td>🇦🇱 알바니아</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://kqz.gov.al/" target="_blank">KQZ</a></td><td>200</td><td>WordPress</td><td>requests+WP-API</td><td>/wp-json/wp/v2/posts?search=prokurimi</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>—</td></tr>
+<tr><td>🇧🇪 벨기에</td><td><span class="vm-chip evm">EVM</span></td><td>e-Notification</td><td>ECONNREF</td><td>접근불가</td><td><span class="impl">TED구현완료</span></td><td>TED EU API</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>TED 대체</td></tr>
+<tr><td>🇴🇲 오만</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://etendering.tenderboard.gov.om" target="_blank">Tender Board</a></td><td>200</td><td>HTML+JS탭</td><td>requests</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>아랍어/영어</td></tr>
+<tr><td>🇦🇪 UAE</td><td><span class="vm-chip evm">EVM</span></td><td><a href="https://procurement.gov.ae" target="_blank">연방조달</a></td><td>200</td><td>JS-SPA</td><td>Playwright</td><td>XHR 탐색</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>—</td></tr>
+
+<!-- OMR -->
+<tr><td>🇬🇭 가나</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.ghaneps.gov.gh/epps/home.do" target="_blank">GHANEPS</a></td><td>200</td><td>Struts HTML</td><td>requests</td><td>quickSearchAction.do?searchSelect=6</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>93건+</td></tr>
+<tr><td>🇿🇦 남아공</td><td><span class="vm-chip omr">OMR</span></td><td>eTenders</td><td>404</td><td>접근불가</td><td>URL재확인</td><td>—</td><td class="f-low">Low</td><td><span class="p-skip">Skip</span></td><td>URL변경됨</td></tr>
+<tr><td>🇿🇦 남아공</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.elections.org.za/" target="_blank">IEC ZA</a></td><td>403</td><td>Cloudflare</td><td>Playwright</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>—</td></tr>
+<tr><td>🇩🇴 도미니카</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.dgcp.gob.do/consultas/" target="_blank">DGCP</a></td><td>200</td><td>HTML+SPA</td><td>오픈API우선</td><td>datosabiertos.dgcp.gob.do/api/</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>오픈API 탐색</td></tr>
+<tr><td>🇲🇳 몽골</td><td><span class="vm-chip omr">OMR</span></td><td><a href="http://www.e-tender.mn/en/tenders/" target="_blank">e-Tender (HTTP)</a></td><td>301→HTTP</td><td>정적HTML</td><td>requests(HTTP)</td><td>/en/tenders/</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>HTTP만 허용</td></tr>
+<tr class="miru-row"><td>🇵🇭 필리핀</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://notices.philgeps.gov.ph/" target="_blank">PhilGEPS</a></td><td>5xx</td><td>ASP.NET</td><td>Playwright</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Miru 필수</td></tr>
+<tr class="miru-row"><td>🇵🇭 필리핀</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.comelec.gov.ph/?r=Procurement" target="_blank">COMELEC</a></td><td>200</td><td>JS-SPA</td><td>Playwright</td><td>XHR 탐색</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Miru 필수</td></tr>
+<tr class="miru-row"><td>🇰🇷 한국</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.g2b.go.kr/" target="_blank">나라장터</a></td><td>SSO</td><td>JS-SPA+OIDC</td><td>공공데이터API</td><td>apis.data.go.kr/1230000/...</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>API 키 필요</td></tr>
+<tr><td>🇧🇬 불가리아</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://www.cik.bg/bg/zop" target="_blank">CIK /zop</a></td><td>SSL오류</td><td>SSL문제</td><td>verify=False</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>SSL retry</td></tr>
+<tr><td>🇬🇪 조지아</td><td><span class="vm-chip omr">OMR</span></td><td>SPA Georgia</td><td>SSL만료</td><td>JS-SPA+SSL만료</td><td>opendata.spa.ge</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>인증서만료</td></tr>
+<tr><td>🇧🇭 바레인</td><td><span class="vm-chip omr">OMR</span></td><td><a href="https://etendering.tenderboard.gov.bh" target="_blank">Tender Board BH</a></td><td>200</td><td>HTML 테이블</td><td>requests</td><td>없음(직접파싱)</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>3,240건+</td></tr>
+
+<!-- Mixed -->
+<tr class="miru-row"><td>🇮🇶 이라크</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://ihec.iq/en/" target="_blank">IHEC</a></td><td>200</td><td>CMS 정적</td><td>requests</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>PDF만,이메일접수</td></tr>
+<tr><td>🇮🇷 이란</td><td><span class="vm-chip mixed">Mixed</span></td><td>SETAD</td><td>ECONNREF</td><td>접근불가</td><td>불가</td><td>—</td><td class="f-low">Low</td><td><span class="p-skip">Skip</span></td><td>제재</td></tr>
+<tr class="miru-row"><td>🇰🇬 키르기스스탄</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://zakupki.gov.kg" target="_blank">zakupki.gov.kg</a></td><td>200</td><td>JSF HTML</td><td>requests+ViewState</td><td>ocds.zakupki.gov.kg</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>Miru 필수</td></tr>
+<tr><td>🇰🇿 카자흐스탄</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.goszakup.gov.kz/" target="_blank">goszakup</a></td><td>200</td><td>REST API v3</td><td>API 호출</td><td>ows.goszakup.gov.kz/v3/trd-buy?filter[name]=election</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>656만건+</td></tr>
+<tr><td>🇺🇿 우즈베키스탄</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://xarid.uzex.uz/" target="_blank">xarid.uzex.uz</a></td><td>200</td><td>JS-SPA</td><td>Playwright</td><td>XHR 탐색</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>EVM 파일럿</td></tr>
+<tr><td>🇰🇪 케냐</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://tenders.go.ke/tenders" target="_blank">Tenders.go.ke</a></td><td>200</td><td>JS-SPA</td><td>Playwright</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Smartmatic</td></tr>
+<tr><td>🇰🇪 케냐</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.iebc.or.ke/" target="_blank">IEBC</a></td><td>SSL오류</td><td>SSL문제</td><td>verify=False</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>SSL retry</td></tr>
+<tr><td>🇦🇷 아르헨티나</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://comprar.gob.ar" target="_blank">COMPR.AR</a></td><td>200</td><td>JS-SPA</td><td>Playwright/API</td><td>datosabiertos.compraspublicas.gob.ar</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>오픈API탐색</td></tr>
+<tr><td>🇸🇻 엘살바도르</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.comprasal.gob.sv/" target="_blank">COMPRASAL</a></td><td>200</td><td>JSF</td><td>Playwright</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>JSF ViewState</td></tr>
+<tr><td>🇭🇳 온두라스</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://honducompras.gob.hn/" target="_blank">Honducompras</a></td><td>403</td><td>차단</td><td>Playwright+헤더</td><td>—</td><td class="f-low">Low</td><td><span class="p-p3">P3</span></td><td>Smartmatic VIU</td></tr>
+<tr><td>🇯🇲 자메이카</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936" target="_blank">GOJEP/EOJ</a></td><td>200</td><td>JSF 정적</td><td>requests</td><td>id=1936 (EOJ)</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>직접접근</td></tr>
+<tr><td>🇵🇦 파나마</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.panamacompra.gob.pa/Inicio/" target="_blank">PanamaCompra</a></td><td>200</td><td>AngularJS SPA</td><td>Playwright</td><td>XHR 탐색</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>—</td></tr>
+<tr><td>🇺🇸 미국</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://sam.gov/opportunities" target="_blank">SAM.gov</a></td><td>200</td><td>REST API</td><td><span class="impl">★구현완료</span></td><td>api.sam.gov/opportunities/v2/search</td><td class="f-high">High</td><td><span class="p-p1">P1</span></td><td>구현완료</td></tr>
+<tr><td>🇧🇦 보스니아</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.ejn.gov.ba/Announcement/Search" target="_blank">eJN Bosnia</a></td><td>200</td><td>POST API</td><td>POST JSON</td><td>POST /api/Announcement/Search</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>Smartmatic€38M</td></tr>
+<tr><td>🇪🇪 에스토니아</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://riigihanked.riik.ee" target="_blank">Riigihangete</a></td><td>401</td><td>공개API가능</td><td>API 탐색</td><td>/rhr/api/public/v3/procurements</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>API탐색필요</td></tr>
+<tr><td>🇲🇰 북마케도니아</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.sec.mk/" target="_blank">SEC</a></td><td>200</td><td>정적HTML</td><td>requests</td><td>/javni-nabavki-2/</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>선거위 직접게시</td></tr>
+<tr><td>🇨🇭 스위스</td><td><span class="vm-chip mixed">Mixed</span></td><td><a href="https://www.simap.ch/en" target="_blank">SIMAP</a></td><td>200</td><td>검색폼</td><td>Playwright</td><td>—</td><td class="f-med">Med</td><td><span class="p-p2">P2</span></td><td>다국어</td></tr>
+
+</table>
+</div>
+
+<div style="background:#e3f2fd;border-left:4px solid #1565c0;padding:12px 18px;border-radius:6px;margin:16px 0;font-size:12px;line-height:1.8">
+  <strong>🔑 Miru Systems 핵심 모니터링 포털 개발 우선순위:</strong><br>
+  <b>P1 (즉시):</b> 키르기스스탄 zakupki.gov.kg → 카자흐스탄 goszakup.gov.kz → 파라과이 DNCP(완료) → SAM.gov(완료)<br>
+  <b>P2 (단기):</b> DRC marchepublic.cd (502 복구 후) → 필리핀 PhilGEPS/COMELEC → 이라크 IHEC<br>
+  <b>API 발굴 필요:</b> 자메이카 GOJEP, 보스니아 eJN(POST), 에스토니아 Riigihangete, 아르헨티나 COMPR.AR
+</div>
+
+</div>
+<footer>Miru Systems Election Opportunity Radar | 포털 크롤링 사전분석 2026-06-22 | 66개 포털 · 4개 에이전트 병렬분석</footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아시아-태평양 선거 기술 현황 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3250;
+    --accent: #4f8ef7;
+    --green: #2ecc71;
+    --yellow: #f39c12;
+    --red: #e74c3c;
+    --text: #e8eaf0;
+    --muted: #8b90a8;
+    --miru: #00c9a7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; line-height: 1.5; }
+
+  header { background: linear-gradient(135deg, #0d1b3e 0%, #1a1d27 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; }
+  header h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  header p { color: var(--muted); font-size: 13px; }
+  .badge { display: inline-block; background: var(--miru); color: #000; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
+
+  .controls { padding: 16px 32px; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+  .controls input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 12px; font-size: 13px; width: 220px; }
+  .controls input:focus { outline: none; border-color: var(--accent); }
+  .controls select { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 10px; font-size: 12px; }
+  .controls label { color: var(--muted); font-size: 11px; display: block; margin-bottom: 3px; }
+  .stat-pills { margin-left: auto; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 14px; font-size: 12px; color: var(--muted); }
+  .pill span { color: var(--text); font-weight: 600; }
+
+  .legend { padding: 10px 32px 14px; display: flex; gap: 18px; flex-wrap: wrap; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .legend-item { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+
+  .table-wrap { overflow-x: auto; padding: 0 32px 40px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; white-space: nowrap; }
+  thead th { background: var(--surface); border-bottom: 2px solid var(--border); padding: 9px 10px; text-align: left; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; cursor: pointer; user-select: none; position: sticky; top: 0; z-index: 2; }
+  thead th:hover { color: var(--text); }
+  thead th.sort-asc::after { content: ' ▲'; color: var(--accent); }
+  thead th.sort-desc::after { content: ' ▼'; color: var(--accent); }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr.miru-row { background: rgba(0,201,167,.06); }
+  tbody tr.miru-row:hover { background: rgba(0,201,167,.13); }
+  td { padding: 8px 10px; vertical-align: middle; }
+
+  .country-cell { font-weight: 600; color: #fff; min-width: 130px; }
+  .date-cell { font-size: 12px; color: var(--muted); min-width: 95px; }
+  .date-cell.has-date { color: var(--text); }
+
+  .tag { display: inline-block; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 600; }
+  .tag-y   { background: rgba(46,204,113,.15); color: var(--green); border: 1px solid rgba(46,204,113,.3); }
+  .tag-lim { background: rgba(243,156,18,.15);  color: var(--yellow); border: 1px solid rgba(243,156,18,.3); }
+  .tag-n   { background: rgba(231,76,60,.15);   color: var(--red);    border: 1px solid rgba(231,76,60,.3); }
+  .tag-evm   { background: rgba(124,92,191,.2);  color: #b48fff; border: 1px solid rgba(124,92,191,.4); }
+  .tag-omr   { background: rgba(79,142,247,.2);  color: #7ab8ff; border: 1px solid rgba(79,142,247,.4); }
+  .tag-paper { background: rgba(139,144,168,.1); color: var(--muted); border: 1px solid var(--border); }
+  .tag-mixed { background: rgba(0,201,167,.15);  color: var(--miru);  border: 1px solid rgba(0,201,167,.3); }
+  .tag-high  { background: rgba(46,204,113,.12); color: var(--green); font-size:10px; }
+  .tag-med   { background: rgba(243,156,18,.12); color: var(--yellow);font-size:10px; }
+  .tag-low   { background: rgba(231,76,60,.12);  color: var(--red);   font-size:10px; }
+
+  .bool-y       { color: var(--green); font-weight: 700; font-size:14px; }
+  .bool-n       { color: var(--border); font-size:14px; }
+  .bool-partial { color: var(--yellow); font-size: 12px; font-weight:600; }
+
+  .vendor-cell  { max-width: 160px; white-space: normal; line-height: 1.3; font-size: 12px; }
+  .miru-vendor  { color: var(--miru); font-weight: 700; }
+  .notes-cell   { max-width: 260px; white-space: normal; line-height: 1.35; color: var(--muted); font-size: 11px; }
+  .no-results   { padding: 48px; text-align: center; color: var(--muted); }
+  .export-btn   { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 7px 18px; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .export-btn:hover { background: #3a7ae0; }
+
+  @media (max-width:768px){
+    header,.controls,.table-wrap,.legend{padding-left:12px;padding-right:12px;}
+    .stat-pills{margin-left:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>아시아-태평양 선거 기술 현황 2026 <span class="badge">MIRU CONFIDENTIAL</span></h1>
+  <p>44개국 · 3-에이전트 병렬 조사 + 교차검증 · 기준일 2026-06-22 · International IDEA / IFES / OSCE / 각국 선거위원회</p>
+</header>
+
+<div class="controls">
+  <div><label>국가·벤더 검색</label><input type="text" id="searchInput" placeholder="Philippines, MIRU, OMR..."></div>
+  <div><label>선거 유형</label>
+    <select id="fe"><option value="">전체</option><option value="Y">Y (민주적)</option><option value="Limited">Limited</option><option value="N">N (없음)</option></select>
+  </div>
+  <div><label>투표 방식</label>
+    <select id="fm"><option value="">전체</option><option value="Paper">Paper</option><option value="OMR">OMR</option><option value="EVM">EVM</option><option value="Mixed">Mixed</option></select>
+  </div>
+  <div><label>생체등록(BVR)</label>
+    <select id="fbvr"><option value="">전체</option><option value="Y">Y</option><option value="N">N</option></select>
+  </div>
+  <div><label>전자결과전송(ERT)</label>
+    <select id="fert"><option value="">전체</option><option value="Y">Y</option><option value="N">N</option></select>
+  </div>
+  <div><label>MIRU 관련</label>
+    <select id="fmiru"><option value="">전체</option><option value="miru">MIRU만</option></select>
+  </div>
+  <div><button class="export-btn" onclick="exportCSV()">CSV 다운로드</button></div>
+  <div class="stat-pills">
+    <div class="pill">표시 <span id="shownCount">44</span>/44</div>
+    <div class="pill">민주적 <span style="color:var(--green)">28</span></div>
+    <div class="pill">형식적 <span style="color:var(--yellow)">10</span></div>
+    <div class="pill">없음 <span style="color:var(--red)">6</span></div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="tag tag-y">Y</span> 민주적 정기선거</div>
+  <div class="legend-item"><span class="tag tag-lim">Limited</span> 형식적·경쟁제한</div>
+  <div class="legend-item"><span class="tag tag-n">N</span> 선거 없음</div>
+  <div class="legend-item"><span class="tag tag-evm">EVM</span> 전자투표기</div>
+  <div class="legend-item"><span class="tag tag-omr">OMR</span> 광학스캐너</div>
+  <div class="legend-item"><span class="tag tag-mixed">Mixed</span> 혼합방식</div>
+  <div class="legend-item" style="color:var(--miru)">★ MIRU 기존·확인 고객</div>
+  <div class="legend-item">● Y &nbsp; ◐ Partial &nbsp; ○ N</div>
+</div>
+
+<div class="table-wrap">
+<table id="mainTable">
+<thead>
+<tr>
+  <th onclick="sort(0)">국가</th>
+  <th onclick="sort(1)">ISO3</th>
+  <th onclick="sort(2)">선거</th>
+  <th onclick="sort(3)">최근선거</th>
+  <th onclick="sort(4)">차기선거</th>
+  <th onclick="sort(5)">투표방식</th>
+  <th onclick="sort(6)" title="Biometric Voter Registration">BVR</th>
+  <th onclick="sort(7)" title="Biometric Voter Verification at polling">BVV</th>
+  <th onclick="sort(8)" title="Electronic Results Transmission">ERT</th>
+  <th onclick="sort(9)" title="e-Voting (direct)">e투표</th>
+  <th onclick="sort(10)">주요 벤더</th>
+  <th onclick="sort(11)">신뢰도</th>
+  <th onclick="sort(12)">출처</th>
+  <th>비고</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+<div id="noRes" class="no-results" style="display:none">조건에 맞는 국가가 없습니다.</div>
+</div>
+
+<script>
+// [country, iso3, has_elections, last_elec, next_elec, method, bvr, bvv, ert, evoting, vendor, conf, source, notes, isMiru]
+const RAW = [
+["Afghanistan","AFG","N","2019-09-28","","Paper","N","N","N","N","","Low","IFES/IEC","2021년 탈레반 집권 후 선거 중단. IEC 해체.",false],
+["Australia","AUS","Y","2025-05-03","2028-05","Mixed","N","N","N","N","AEC/Fujifilm (상원 스캔)","High","aec.gov.au","하원 종이투표 수개표. 상원 Fujifilm OCR 스캔. 2025.5.3 총선 완료.",false],
+["Bangladesh","BGD","Y","2026-02-12","","Paper","Y","N","Limited","N","HID Global (NID)","High","ecs.gov.bd","EVM 2025.7 영구 폐기(Tk 940크로르). 생체 NID 기반 등록.",false],
+["Bhutan","BTN","Y","2024-01-09","2028","EVM","N","N","Y","Y","BEL + ECIL (인도)","High","ecb.bt","ECB 공식 EVM 규정 운용. BEL+ECIL 제조. 5년 주기.",false],
+["Brunei","BRN","N","","","N/A","N","N","N","N","","High","N/A","1962년 이후 국가선거 없음. 절대 군주제.",false],
+["Cambodia","KHM","Limited","2023-07-23","2027-07","Paper","Y","N","N","N","NEC","High","necelect.org.kh","CPP 단독집권. 야당 해산으로 실질 경쟁 없음.",false],
+["China","CHN","Limited","2023-03-05","2028","Mixed","N","N","Limited","N","CNNIC/중국과학원","High","npc.gov.cn","전국인민대표대회 간접선거. 공산당 일당제.",false],
+["Fiji","FJI","Y","2022-12-14","2026-11","Paper","Y","N","N","N","FEO/ESI","High","feo.org.fj","ESI 납품. 생체 유권자 등록 완료. 2026 선거 준비 중.",false],
+["India","IND","Y","2024-04-19","2029","EVM","N","N","Y","Y","BEL + ECIL","High","eci.gov.in","M3 EVM 전국 사용(100만대+). BEL+ECIL 제조(BHEL 아님). VVPat 병행. EPIC 사진 ID 있으나 지문·홍채 전면 미시행.",false],
+["Indonesia","IDN","Y","2024-02-14","2029-02","Paper","Y","N","Y","N","KPU 자체개발(Sirekap)","High","kpu.go.id","e-KTP 생체 등록. Sirekap=C용지 OCR→KPU서버. 2024년 1223개소 오류.",false],
+["Japan","JPN","Y","2025-07-27","2029-07","Paper","N","N","N","N","Murata Machinery(분류기)","High","soumu.go.jp","종이투표 수개표. 분류기 보조. 2025.7 참의원선거 완료.",false],
+["Kazakhstan","KAZ","Limited","2023-11-19","2027","Paper","N","N","N","N","CEC","High","election.gov.kz","OSCE 민주성 비판. 2026.4 CEC 전자투표 공식 불채택 선언.",false],
+["Kiribati","KIR","Y","2024-08-14","2028-08","Paper","N","N","N","N","ECD","Med","IFES/ECD","33개 환초 분산 물류 도전. 종이투표 수개표.",false],
+["Kyrgyzstan","KGZ","Limited","2024-11-24","2029","Mixed","Y","Y","Y","N","MIRU Systems (한국)","High","shailoo.gov.kg","MIRU 5-in-1(BVR+지문현장인증+OMR+ERT) 배치 완료. Smartmatic는 2015 소규모 파일럿만.",true],
+["Laos","LAO","Limited","2026-02-21","","Paper","N","N","N","N","LPRP/NEO","High","laos-gov","LPRP 일당제. 2026.2 완료. 실질 경쟁 없음.",false],
+["Malaysia","MYS","Y","2022-11-19","2027-11","Paper","N","N","N","N","SPR/EC","High","spr.gov.my","GE15 완료. 생체인증 현장확인 제안단계(미시행). GE16 2027-2028.",false],
+["Maldives","MDV","Y","2024-03-17","2029-03","Paper","Y","N","N","N","EC Maldives","High","elections.gov.mv","2024 의회선거 완료. 생체 유권자 등록. 소도서 물류 과제.",false],
+["Marshall Islands","MHL","Y","2023-11-20","2027-11","Paper","N","N","N","N","ESO","Med","IFES","미국 Compact 국가. 종이투표. 인구 4만명.",false],
+["Micronesia","FSM","Y","2023-03-07","2027-03","Paper","N","N","N","N","EC-FSM","Med","IFES","미국 Compact 국가. 종이투표. 4개 주 연방제. 대통령 간선.",false],
+["Mongolia","MNG","Y","2024-06-28","2028","OMR","Y","Y","Y","N","Dominion Voting Systems (ImageCast)","High","gec.gov.mn","Dominion ImageCast PCOS 3300대. 2012년부터. 계약 만기 임박. 생체 현장인증.",false],
+["Myanmar","MMR","Limited","2025-11-30","","EVM","Y","Y","Y","Y","미공개(군부 조달)","Low","UEC","2021 쿠데타 후 군부 통제. MEVM 도입(2025-26). 블록체인 ERT. 국제사회 사기선거 규탄.",false],
+["Nauru","NRU","Y","2025-08-24","2028","Paper","N","N","N","N","Nauru EC","Med","IFES","인구 1만명. 종이투표.",false],
+["Nepal","NPL","Y","2026-03-15","2031","Paper","Y","N","Limited","N","미공개","High","election.gov.np","생체 국민ID 기반 등록. NID-유권자명부 통합. i-Voting 파일럿 검토.",false],
+["New Zealand","NZL","Y","2023-10-14","2026-11-07","Paper","N","N","N","N","Electoral Commission NZ","High","elections.org.nz","종이투표 수개표. 2026.11.7 총선 확정. 온라인 유권자등록만.",false],
+["North Korea","PRK","Limited","2024-10-27","","Paper","N","N","N","N","","High","KCNA","찬반투표만. 단일후보. 실질 선거 아님.",false],
+["Pakistan","PAK","Y","2024-02-08","2029","Paper","Y","Limited","Y","N","NADRA Technologies","High","ecp.gov.pk","NADRA 생체 NID 기반 등록. 2024 RTS 결과전송 논란. 현장 생체인증 제한적.",false],
+["Palau","PLW","Y","2024-11-05","2028-11","OMR","N","N","N","N","ES&S 계열","Med","Palau EC","태평양 유일 광학스캐너 국가. 인구 1.8만명.",false],
+["Papua New Guinea","PNG","Y","2022-07-04","2027","Paper","N","N","N","N","PNGEC","Med","pngec.org.pg","500만+ 유권자. BVR 전무. 2027 도입 계획.",false],
+["Philippines","PHL","Y","2025-05-12","2028-05","OMR","Y","Y","Y","N","MIRU Systems (한국)","High","comelec.gov.ph","2025 Smartmatic 퇴출→MIRU ACM 110,620대(₱17.9B). FASTrAC ERT. VVPAT.",true],
+["Samoa","WSM","Y","2025-04-09","2030-04","Paper","Y","N","N","N","Samoa OEC","Med","oec.gov.ws","2025 BVR 신규 도입. 종이투표.",false],
+["Singapore","SGP","Y","2025-05-03","2030-05","Paper","N","N","N","N","ELD","High","eld.gov.sg","ELD 운영. 종이투표. 2025.5.3 총선 완료. PAP 60년 집권.",false],
+["Solomon Islands","SLB","Y","2024-04-17","2028","Paper","Y","N","N","N","SIEC","High","siec.gov.sb","2024 총선 완료. BVR 있음. ERT 없음. 2028 공백 기회.",false],
+["South Korea","KOR","Y","2025-06-03","2026-06","OMR","N","Limited","Y","N","MIRU Systems + NEC","High","nec.go.kr","종이투표+OMR 개표기. 2025.6.3 대선 완료. 2026.6 지방선거.",true],
+["Sri Lanka","LKA","Y","2024-11-14","2029","Paper","N","N","Limited","N","없음","High","elections.gov.lk","2024 대선+총선. 생체화 0%. 현대화 모멘텀.",false],
+["Taiwan","TWN","Y","2024-01-13","2028-01","Paper","N","N","N","N","Chunghwa Telecom(집계만)","High","cec.gov.tw","종이투표 수개표. 전산집계만. 강한 투명성 신뢰.",false],
+["Tajikistan","TJK","Limited","2026-03-01","","Paper","N","N","N","N","없음","High","OSCE/ODIHR","라흐몬 30년 집권. OSCE 민주성 비판.",false],
+["Thailand","THA","Y","2023-05-14","2027","Paper","N","N","Limited","N","ECT","High","ect.go.th","종이투표 수개표. ECT Report는 집계 소프트웨어(OMR 아님). 2027 총선 예정.",false],
+["Timor-Leste","TLS","Y","2023-05-22","2027-05","Paper","Y","N","N","N","STAE","High","stae.gov.tl","STAE 운영. 생체 유권자등록. 종이투표. 인구 130만.",false],
+["Tonga","TON","Y","2024-11-18","2029-11","Paper","N","N","N","N","Tonga ERO","Med","IFES","종이투표. 인구 10만명. 귀족 9석+국민대표 17석.",false],
+["Turkmenistan","TKM","N","2024-03-26","","Paper","N","N","N","N","","High","OSCE/ODIHR","베르디무하메도프 세습 독재. OSCE 민주성 0점. 형식적 선거.",false],
+["Tuvalu","TUV","Y","2024-01-26","2028","Paper","N","N","N","N","Tuvalu EC","Med","IFES","인구 1.1만명. 최소규모 민주주의. 종이투표.",false],
+["Uzbekistan","UZB","Limited","2024-10-27","2030","Mixed","Partial","N","Y","N","CEC (파일럿 37대)","Med","CEC Uzbekistan","2024 총선 EVM 37대 파일럿. 주투표는 종이. 2026 대선 전국확대 미확정.",false],
+["Vanuatu","VUT","Y","2024-01-16","2028","Paper","Partial","N","N","N","UNDP (VEEP III)","High","vanuatuec.com","UNDP VEEP III 진행중. 부분 BVR. 빈번한 정치불안.",false],
+["Vietnam","VNM","Limited","2026-05-22","","Paper","Y","N","N","N","국영(Viettel)","High","elections.gov.vn","VNeID 앱 기반 생체등록(Project 06, 2026 최초 적용). CPV 일당제. 2026.5 의회선거 완료.",false],
+];
+
+let sortCol=0, sortDir=1, filtered=[...RAW];
+
+const elecTag = v => v==="Y" ? `<span class="tag tag-y">Y</span>` : v==="Limited" ? `<span class="tag tag-lim">Limited</span>` : `<span class="tag tag-n">N</span>`;
+const methodTag = v => {
+  if(v==="EVM") return `<span class="tag tag-evm">EVM</span>`;
+  if(v==="OMR") return `<span class="tag tag-omr">OMR</span>`;
+  if(v==="Mixed") return `<span class="tag tag-mixed">Mixed</span>`;
+  if(v==="N/A") return `<span style="color:var(--muted)">N/A</span>`;
+  return `<span class="tag tag-paper">Paper</span>`;
+};
+const boolCell = v => v==="Y" ? `<span class="bool-y">●</span>` : (v==="Limited"||v==="Partial") ? `<span class="bool-partial">◐</span>` : `<span class="bool-n">○</span>`;
+const confTag  = v => v==="High" ? `<span class="tag tag-high">High</span>` : v==="Med" ? `<span class="tag tag-med">Med</span>` : `<span class="tag tag-low">Low</span>`;
+
+function render() {
+  const tbody = document.getElementById("tbody");
+  const noRes = document.getElementById("noRes");
+  document.getElementById("shownCount").textContent = filtered.length;
+  if(!filtered.length){ tbody.innerHTML=""; noRes.style.display=""; return; }
+  noRes.style.display="none";
+  tbody.innerHTML = filtered.map(r => {
+    const isMiru = r[14];
+    const vendor = r[10] ? (isMiru||r[10].includes("MIRU") ? `<span class="miru-vendor">${r[10]}</span>` : r[10]) : `<span style="color:var(--border)">—</span>`;
+    return `<tr${isMiru?" class='miru-row'":""}>
+      <td class="country-cell">${r[0]}${isMiru?' <span style="color:var(--miru);font-size:11px">★</span>':''}</td>
+      <td style="color:var(--muted);font-size:11px">${r[1]}</td>
+      <td>${elecTag(r[2])}</td>
+      <td class="date-cell ${r[3]?'has-date':''}">${r[3]||'—'}</td>
+      <td class="date-cell ${r[4]?'has-date':''}">${r[4]||'—'}</td>
+      <td>${methodTag(r[5])}</td>
+      <td style="text-align:center">${boolCell(r[6])}</td>
+      <td style="text-align:center">${boolCell(r[7])}</td>
+      <td style="text-align:center">${boolCell(r[8])}</td>
+      <td style="text-align:center">${boolCell(r[9])}</td>
+      <td class="vendor-cell">${vendor}</td>
+      <td>${confTag(r[11])}</td>
+      <td style="font-size:11px;color:var(--muted)">${r[12]||'—'}</td>
+      <td class="notes-cell">${r[13]}</td>
+    </tr>`;
+  }).join("");
+}
+
+function applyFilters() {
+  const q    = document.getElementById("searchInput").value.toLowerCase();
+  const fe   = document.getElementById("fe").value;
+  const fm   = document.getElementById("fm").value;
+  const fbvr = document.getElementById("fbvr").value;
+  const fert = document.getElementById("fert").value;
+  const fmiru= document.getElementById("fmiru").value;
+  filtered = RAW.filter(r => {
+    if(q && !r.slice(0,14).join(" ").toLowerCase().includes(q)) return false;
+    if(fe   && r[2] !== fe)  return false;
+    if(fm   && !r[5].includes(fm)) return false;
+    if(fbvr && r[6] !== fbvr) return false;
+    if(fert && r[8] !== fert) return false;
+    if(fmiru==="miru" && !r[14]) return false;
+    return true;
+  });
+  filtered.sort((a,b) => (a[sortCol]||"").localeCompare(b[sortCol]||"") * sortDir);
+  render();
+}
+
+function sort(col) {
+  document.querySelectorAll("thead th").forEach((th,i)=>th.classList.remove("sort-asc","sort-desc"));
+  sortDir = sortCol===col ? -sortDir : 1;
+  sortCol = col;
+  document.querySelectorAll("thead th")[col].classList.add(sortDir===1?"sort-asc":"sort-desc");
+  applyFilters();
+}
+
+function exportCSV() {
+  const hdr = "country,iso3,has_elections,last_election_date,next_election_date,voting_method,biometric_voter_reg,biometric_voter_verify,electronic_results_tx,evoting,vendor,confidence,source,notes\n";
+  const rows = filtered.map(r=>r.slice(0,14).map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob(["﻿"+hdr+rows],{type:"text/csv;charset=utf-8"}));
+  a.download = "apac_election_tech_2026.csv"; a.click();
+}
+
+["searchInput","fe","fm","fbvr","fert","fmiru"].forEach(id=>document.getElementById(id).addEventListener("input",applyFilters));
+filtered = [...RAW].sort((a,b)=>a[0].localeCompare(b[0]));
+render();
+</script>
+</body>
+</html>

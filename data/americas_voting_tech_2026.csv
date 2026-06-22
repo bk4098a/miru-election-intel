@@ -1,0 +1,36 @@
+country,iso3,has_elections,last_election_date,next_election_date,voting_method,biometric_voter_reg,biometric_voter_verify,electronic_results_tx,evoting,vendor,confidence,source,notes
+Antigua and Barbuda,ATG,Y,2023-01-18,2028-01-18,Paper,N,N,N,N,,Medium,OAS EOM 2023 / IFES electionguide.org,단순 다수결 17개 선거구; 전자화 없음
+Argentina,ARG,Y,2025-10-26,2027-10-24,Mixed,Y,Y,Partial,Partial,"Smartmatic(생체인증); MSA(CABA BUE)",High,argentina.gob.ar / Smartmatic case study,전국=Boleta Única de Papel(종이); CABA 한정 BUE(전자종이투표); 생체인증(Smartmatic) 전국 적용; TREP은 예비결과만 전자전송
+Bahamas,BHS,Y,2026-05-12,2031-05,Paper,Partial,Partial,N,N,CBN(생체카드),High,Biometric Update 2026-01 / electionguide.org,2026년 신규 생체인식 투표ID카드 도입; 전자투표 없음; e-pollbook 법제화됐으나 미배치
+Barbados,BRB,Y,2026-02-11,2031-02,Paper,Partial,N,N,N,,High,Electoral & Boundaries Commission Barbados / IFES 2026,자동등록(전국 ID 연동); 투표소 생체인증 없음
+Belize,BLZ,Y,2025-03-12,2030-03,Paper,N,N,N,N,,High,Elections and Boundaries Department Belize / IFES 2025,완전 종이 수기투표; 생체 등록 없음
+Bolivia,BOL,Y,2025-08-17,2026-03,Paper,Y,Partial,Y,N,Smartmatic(생체등록); TSE DNTIC(SIREPRE),High,OAS EOM Bolivia 2025 / EU EOM Bolivia 2025,"전국 종이투표; 생체 유권자 등록(Smartmatic 구축); SIREPRE(모바일 앱 스캔→집계) 2025년 첫 운용; 투표소 현장 단말기 전면 배치는 미확인"
+Brazil,BRA,Y,2022-10-30,2026-10-04,DRE,Y,Y,Y,Y,TSE(자체개발),High,tse.jus.br / international.tse.jus.br,"전국 DRE 1996년 도입; 약 1.41억명(89%) 지문등록 완료; 투표소 지문 실시간 인증; 암호화 위성/인터넷 결과전송; VVPAT 없음"
+Canada,CAN,Y,2025-04-28,2029-04,Paper,N,N,N,N,Elections Canada(자체),High,elections.ca / Wikipedia 2025 Canadian federal election,완전 종이 수기투표; 2인 개표원 수작업 집계; 전자화 없음
+Chile,CHL,Y,2025-11-16,2029-11,Paper,Partial,N,Y,N,SERVEL(자체),High,SERVEL servel.cl / Wikipedia 2025 Chilean election,자동 유권자 등록(국가 ID 기반); 투표소 생체인증 없음; 전자 개표 집계 공개(수기 개표 후 입력)
+Colombia,COL,Y,2026-05-31,2030-05,Paper,Y,Partial,Y,N,Registraduría자체(과거 Indra),High,Registraduría Nacional / MOE Colombia 2026,"종이 수기투표; 지문 AFIS+안면인식 cédula; 투표소 현장 단말기 전면배치 미확인; TREP 2시간 내 90% 결과 공개"
+Costa Rica,CRI,Y,2026-02-02,2030-02,Paper,Y,N,Y,N,TSE자체+TREP,Medium,TSE Costa Rica / OAS EOM 2026,종이 수기투표; 국가 ID 연동 자동등록; TREP 전자 결과 전송; 투표소 생체인증 없음
+Cuba,CUB,Limited,2023-03-26,2028-03,Paper,N,N,N,N,ONA(국가선거위),High,Freedom House 2025 / Wikipedia Cuba elections,단일정당 비경쟁 선거; 국회가 국가평의회 의장(원수) 선출; Díaz-Canel 2023 재선임
+Dominica,DMA,Y,2022-12-06,2027-12,Paper,N,N,N,N,,Medium,IFES electionguide.org / OAS EOM 2022,완전 종이 수기투표; 생체 시스템 없음
+Dominican Republic,DOM,Y,2024-05-19,2028-05,OMR,Y,N,Y,N,JCE자체관리,High,JCE jce.gob.do / IFES 2024,"OMR 광학스캔 투표; 생체인식 cédula(9.4백만장 갱신 진행중); 전자 개표결과 전송; 투표소 생체인증 없음"
+Ecuador,ECU,Y,2025-02-09,2029-02,Mixed,Y,Y,Y,Partial,CNE자체(SIER),High,CNE cne.gob.ec / EU EOM Ecuador 2025,"국내=종이투표; 해외=텔레마틱 전자투표(2023년 97,000명 시범); 생체 cédula 지문스캐너(일부 오작동); SIER 전자결과 시스템"
+El Salvador,SLV,Y,2024-02-04,2027-02-28,Mixed,Y,Y,Y,Partial,Indra(해외투표 플랫폼),Medium,OAS EOM El Salvador 2024 / Latina Republic 2024,"국내=종이; 해외=인터넷투표(74만명)+DRE(81개 영사관센터); 안면인식 생체인증(해외); TREP; 2024 OAS 기술 불규칙성 지적"
+Grenada,GRD,Y,2022-06-23,2027-06,Paper,Partial,N,N,N,,Medium,IFES electionguide.org / Commonwealth 2022,생체 유권자 명부 존재; 투표소 인증 없음; 완전 종이투표
+Guatemala,GTM,Y,2023-06-25,2027-06,Paper,N,N,Y,N,TREP직접계약(논란),Medium,IFES Guatemala 2023 / OAS EOM 2023,"종이투표+TREP 스캔; 생체 입찰 2회 취소; 검찰의 TREP 소스코드 개입 논란; 2027년 재정비 예정"
+Guyana,GUY,Y,2025-09-01,2030-09,Paper,N,N,Y,N,,High,Commonwealth EOM Guyana 2025 / Demerara Waves 2025,"종이투표; 전자결과 전송; 생체 등록 없음(2025 Commonwealth 관찰단이 다음 주기 도입 권고)"
+Haiti,HTI,Limited,2016-11-20,2026-08-30,Paper,Partial,N,N,N,,Low,Haitian Times 2026 / Haiti Policy House 2026,"2016년 이후 선거 미실시; 과도위원회 통치; CIN 생체카드(지문+홍채+사진) 존재; 2026-08-30 선거 계획(불확실)"
+Honduras,HND,Y,2025-11-30,2029-11,Paper,Y,Y,Y,N,Smartmatic(VIU 핸드헬드),High,Smartmatic / EU EOM Honduras 2025 / CEPR 2025,"종이투표+OCR/TREP; Smartmatic VIU 핸드헬드 20,000대(지문+안면인식); Starlink 위성 연결; 집계 중 57% 시점 시스템 다운; 집계표 14% 불일치 재검토"
+Jamaica,JAM,Y,2025-09-03,2030-09,Mixed,Y,Partial,N,N,ECJ EVIS; Tech5/Pangea ABIS,High,IFES EVIS assessment / Jamaica Observer 2025,"종이투표+EVIS 파일럿(7/63개 선거구); Tech5/Pangea ABIS 생체등록; 전전자 결과전송 없음"
+Mexico,MEX,Y,2024-06-02,2027-06-06,Paper,Y,N,Y,N,Veridos(구 G+D) ID카드,High,INE ine.mx / Wikipedia 2027 Mexican election,"완전 종이 수기투표; INE 카드(10지문+안면+QR); 투표소 지문스캐너 없음; PREP 예비결과 전자전송"
+Nicaragua,NIC,Limited,2021-11-07,2026-11,Paper,Unknown,Unknown,Unknown,N,CSE(정권통제),Low,BTI 2026 / WOLA Nicaragua / Freedom House 2025,"FSLN 단일지배; 야당 후보 전원 체포; 2026 선거 예정이나 비경쟁; 독립 기술 데이터 없음"
+Panama,PAN,Y,2024-05-05,2029-05,Mixed,Y,Y,Y,Partial,TE자체+IDEA기술지원,Medium,TE tribunal-electoral.gob.pa / IDEA Panama 2024,"국내=종이+DRE 파일럿(2019년 10테이블); 해외=인터넷투표(12.2만표); 생체 디지털ID(Face ID) Decree 43/2024; PLAGEL 2025-2029 계획"
+Paraguay,PRY,Y,2023-04-30,2026-10-04,DRE,Y,N,Y,Y,브라질TSE기기+TSJE소프트웨어,High,TSJE elecciones.gov.py / TEDIC 2023,"전국 DRE 전자투표(2021년 전면도입); 지문 AFIS 선거인명부; 투표소 생체인증 2023 시범 후 철회(재추진 중); TREP 전자전송"
+Peru,PER,Y,2026-04-12,2031,Mixed,Y,Y,Y,Partial,Smartmatic(DRE+플랫폼),High,ONPE onpe.gob.pe / Andina 2026 / Smartmatic Peru,"대부분 종이+일부 DRE; DNIe(전자주민증) NFC 기반; 군경 파견 의무 전자투표; 2026년 디지털 투표 플랫폼 시범확대; ONPE 전자집계"
+Saint Kitts and Nevis,KNA,Y,2022-08-05,2027-08,Paper,N,N,N,N,,Medium,IFES electionguide.org / OAS 2022,완전 종이투표; 생체 시스템 없음
+Saint Lucia,LCA,Y,2025-12-01,2030-12,Paper,N,N,N,N,,High,IFES electionguide.org / Electoral Department St Lucia,완전 종이투표; 생체 시스템 없음
+Saint Vincent and the Grenadines,VCT,Y,2025-11-27,2030-11,Paper,N,N,N,N,,High,IFES electionguide.org / OAS EOM 2025,완전 종이투표; 생체 시스템 없음
+Suriname,SUR,Y,2025-05-25,2030-05,Paper,N,N,N,N,,High,OAS EOM Suriname 2025,완전 종이투표; 생체 시스템 없음
+Trinidad and Tobago,TTO,Y,2025-04-28,2030-04,Paper,N,N,N,N,,High,Elections & Boundaries Commission EBC / IFES 2025,완전 종이투표; 생체 시스템 없음
+United States,USA,Y,2024-11-05,2026-11-03,Mixed,N,N,Y,N,"ES&S; Dominion Voting; Hart InterCivic; Unisyn",High,EAC EAVS 2024 / Verified Voting verifiedvoting.org,"주별 상이; ~92.5% 종이기반(OMR 또는 BMD+용지); 7.5% 여전히 DRE; TX/IN/MS/TN 2026까지 DRE 폐지 입법"
+Uruguay,URY,Y,2024-10-27,2029-10,Paper,Partial,N,Y,N,Corte Electoral자체,High,Corte Electoral corteelectoral.gub.uy / Wikipedia 2024 Uruguayan election,"종이투표; 자동 유권자 등록; 2024-06-30 내부선거에서 553회로 생체 파일럿(지문스캔) 실시; 전자 개표결과 공개; 전면 생체인증은 미도입"
+Venezuela,VEN,Limited,2025-05-25,Unknown,DRE,Y,Y,Y,Y,"Smartmatic(2004~2017→CNE자체관리)",Medium,Carter Center Venezuela 2024 / Venezuelanalysis 2025,"DRE 터치스크린+VVPAT 종이영수증; captahuellas 지문인식기; 2024 대선 결과 국제기관이 국제기준 미달 판정; 2026-01 마두로 체포 후 정치 혼란"

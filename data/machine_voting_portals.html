@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기계투표 35개국 입찰 포털 DB</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Apple SD Gothic Neo','Noto Sans KR',Arial,sans-serif; background:#f5f6fa; color:#222; font-size:13px; }
+header { background:#1a237e; color:#fff; padding:24px 36px 18px; }
+header h1 { font-size:20px; font-weight:700; margin-bottom:5px; }
+header p { font-size:12px; opacity:.7; }
+.badge { display:inline-block; background:rgba(255,255,255,.15); border-radius:10px; padding:2px 10px; font-size:11px; margin-left:8px; }
+
+.bar { display:flex; gap:12px; padding:16px 36px; background:#fff; border-bottom:1px solid #e0e3ef; flex-wrap:wrap; }
+.stat { text-align:center; }
+.stat .n { font-size:28px; font-weight:800; color:#1a237e; line-height:1; }
+.stat .l { font-size:10px; color:#888; margin-top:3px; }
+.divv { width:1px; background:#e0e3ef; margin:4px 0; }
+
+.container { max-width:1400px; margin:0 auto; padding:20px 36px; }
+h2 { font-size:14px; font-weight:700; color:#1a237e; margin:24px 0 10px; padding-left:9px; border-left:4px solid #1a237e; }
+
+.chip { display:inline-block; padding:2px 8px; border-radius:8px; font-size:10px; font-weight:700; color:#fff; }
+.dre { background:#7b1fa2; }
+.evm { background:#1565c0; }
+.omr { background:#00695c; }
+.mixed { background:#e65100; }
+
+.section { background:#fff; border-radius:10px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,.06); overflow:hidden; }
+.sec-header { display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid #f0f0f0; }
+.sec-header h3 { font-size:13px; color:#1a237e; }
+.sec-count { font-size:11px; color:#888; }
+
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#e8eaf6; color:#283593; font-weight:700; padding:7px 12px; text-align:left; white-space:nowrap; }
+td { padding:6px 12px; border-bottom:1px solid #f5f5f5; vertical-align:middle; }
+tr:hover td { background:#f8f9ff; }
+tr:last-child td { border-bottom:none; }
+
+.miru { background:#fff3e0 !important; }
+.miru-tag { background:#f57f17; color:#fff; padding:1px 5px; border-radius:5px; font-size:10px; font-weight:700; margin-left:3px; }
+.high { color:#2e7d32; font-weight:700; }
+.med { color:#e65100; }
+.low { color:#999; }
+
+.type-tag { display:inline-block; padding:1px 7px; border-radius:8px; font-size:10px; font-weight:600; }
+.t1 { background:#e3f2fd; color:#0277bd; }  /* 국가조달 */
+.t2 { background:#e8f5e9; color:#2e7d32; }  /* EMB조달 */
+.t3 { background:#fce4ec; color:#c62828; }  /* 선거위 */
+
+a { color:#1565c0; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+.flag { font-size:16px; }
+.lang { font-size:10px; background:#f5f5f5; padding:1px 5px; border-radius:4px; color:#666; }
+.exist { font-size:10px; background:#e8eaf6; padding:1px 5px; border-radius:4px; color:#283593; }
+
+.legend { display:flex; gap:16px; font-size:11px; padding:10px 18px; border-top:1px solid #f0f0f0; }
+.legend-item { display:flex; align-items:center; gap:5px; }
+.dot { width:10px; height:10px; border-radius:50%; }
+</style>
+</head>
+<body>
+<header>
+  <h1>기계투표 35개국 입찰 포털 DB <span class="badge">2026-06-22</span></h1>
+  <p>투표 시 전자장비(EVM/OMR/DRE/Mixed) 사용 국가의 공공조달 포털 및 선거위원회 입찰 URL — 71개 포털 수록</p>
+</header>
+
+<div class="bar">
+  <div class="stat"><div class="n">35</div><div class="l">기계투표 국가</div></div>
+  <div class="divv"></div>
+  <div class="stat"><div class="n">71</div><div class="l">포털 총수</div></div>
+  <div class="stat"><div class="n">57</div><div class="l">High 우선순위</div></div>
+  <div class="stat"><div class="n">39</div><div class="l">기존 config 연동</div></div>
+  <div class="stat"><div class="n">32</div><div class="l">신규 추가</div></div>
+  <div class="divv"></div>
+  <div class="stat"><div class="n" style="color:#7b1fa2">3</div><div class="l">DRE 국가</div></div>
+  <div class="stat"><div class="n" style="color:#1565c0">7</div><div class="l">EVM 국가</div></div>
+  <div class="stat"><div class="n" style="color:#00695c">9</div><div class="l">OMR 국가</div></div>
+  <div class="stat"><div class="n" style="color:#e65100">16</div><div class="l">Mixed 국가</div></div>
+</div>
+
+<div class="container">
+
+<!-- DRE -->
+<h2><span class="chip dre">DRE</span> 직접전자기록 터치스크린 — 3개국</h2>
+<div class="section">
+<table>
+<tr><th>국가</th><th>포털유형</th><th>포털명</th><th>URL</th><th>언어</th><th>우선</th><th>비고</th></tr>
+<tr><td>🇧🇷 브라질</td><td><span class="type-tag t1">국가조달</span></td><td>PNCP (Compras.gov.br)</td><td><a href="https://pncp.gov.br/app/editais" target="_blank">pncp.gov.br</a></td><td><span class="lang">pt</span></td><td class="high">High</td><td>연방 전기관 의무. CRAWL-176</td></tr>
+<tr><td>🇧🇷 브라질</td><td><span class="type-tag t2">EMB조달</span></td><td>TSE 조달공고</td><td><a href="https://www.tse.jus.br/transparencia/gestao-de-contratacoes" target="_blank">tse.jus.br/transparencia</a></td><td><span class="lang">pt</span></td><td class="high">High</td><td>DRE 유지보수 계약. CRAWL-104</td></tr>
+<tr><td>🇧🇷 브라질</td><td><span class="type-tag t1">국가조달(구)</span></td><td>ComprasNet</td><td><a href="https://www.gov.br/compras/pt-br" target="_blank">gov.br/compras</a></td><td><span class="lang">pt</span></td><td class="med">Med</td><td>→PNCP 전환 중. CRAWL-103</td></tr>
+<tr><td>🇵🇾 파라과이</td><td><span class="type-tag t1">국가조달</span></td><td>DNCP (Contrataciones)</td><td><a href="https://www.contrataciones.gov.py/" target="_blank">contrataciones.gov.py</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>OCDS API 제공. Miru 타깃. CRAWL-146</td></tr>
+<tr><td>🇻🇪 베네수엘라</td><td><span class="type-tag t1">국가조달</span></td><td>SNC</td><td><a href="https://www.snc.gob.ve/" target="_blank">snc.gob.ve</a></td><td><span class="lang">es</span></td><td class="low">Low</td><td>접근 불안정. 공개입찰 거의 없음</td></tr>
+<tr><td>🇻🇪 베네수엘라</td><td><span class="type-tag t3">선거위</span></td><td>CNE</td><td><a href="https://www.cne.gob.ve/" target="_blank">cne.gob.ve</a></td><td><span class="lang">es</span></td><td class="low">Low</td><td>CNE-Smartmatic 독점. 공개입찰 드묾</td></tr>
+</table>
+</div>
+
+<!-- EVM -->
+<h2><span class="chip evm">EVM</span> 전자투표기 — 7개국</h2>
+<div class="section">
+<table>
+<tr><th>국가</th><th>포털유형</th><th>포털명</th><th>URL</th><th>언어</th><th>우선</th><th>비고</th></tr>
+<tr class="miru"><td>🇨🇩 DRC (콩고) <span class="miru-tag">MIRU</span></td><td><span class="type-tag t1">국가조달</span></td><td>ARMP (marchepublic.cd)</td><td><a href="https://marchepublic.cd/" target="_blank">marchepublic.cd</a></td><td><span class="lang">fr</span></td><td class="high">High</td><td>Miru BMS 공급. CRAWL-130</td></tr>
+<tr><td>🇧🇹 부탄</td><td><span class="type-tag t1">국가조달</span></td><td>e-GP Bhutan</td><td><a href="https://www.egp.gov.bt/" target="_blank">egp.gov.bt</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>전기관 의무. BEL+ECIL(인도산) EVM</td></tr>
+<tr><td>🇧🇹 부탄</td><td><span class="type-tag t2">EMB조달</span></td><td>ECB Tender</td><td><a href="https://www.ecb.bt/tender-information/" target="_blank">ecb.bt/tender-information</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>Election Commission Bhutan 자체 입찰</td></tr>
+<tr><td>🇮🇳 인도</td><td><span class="type-tag t1">국가조달</span></td><td>eProcure</td><td><a href="https://eprocure.gov.in/eprocure/app" target="_blank">eprocure.gov.in</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>CRAWL-050. EVM=BEL·ECIL 정부간 직접계약</td></tr>
+<tr><td>🇮🇳 인도</td><td><span class="type-tag t2">EMB조달</span></td><td>ECI Tender</td><td><a href="https://www.eci.gov.in/notification/tenders" target="_blank">eci.gov.in/notification/tenders</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>인도 선거위원회 공식 입찰 페이지. CRAWL-169</td></tr>
+<tr><td>🇦🇱 알바니아</td><td><span class="type-tag t1">국가조달</span></td><td>APP e-Procurement</td><td><a href="https://app.gov.al/e-procurement/" target="_blank">app.gov.al/e-procurement</a></td><td><span class="lang">sq</span></td><td class="high">High</td><td>Smartmatic+Innovatrics EVM. CRAWL-085</td></tr>
+<tr><td>🇦🇱 알바니아</td><td><span class="type-tag t3">선거위</span></td><td>KQZ (CEC)</td><td><a href="https://kqz.gov.al/" target="_blank">kqz.gov.al</a></td><td><span class="lang">sq/en</span></td><td class="high">High</td><td>중앙선거위원회. CRAWL-086</td></tr>
+<tr><td>🇧🇪 벨기에</td><td><span class="type-tag t1">국가조달</span></td><td>e-Notification</td><td><a href="https://enot.publicprocurement.be/enot-war/" target="_blank">enot.publicprocurement.be</a></td><td><span class="lang">nl/fr</span></td><td class="high">High</td><td>Smartmatic bSmart500 계약갱신 공고 게시</td></tr>
+<tr><td>🇴🇲 오만</td><td><span class="type-tag t1">국가조달</span></td><td>Tender Board Oman</td><td><a href="https://etendering.tenderboard.gov.om" target="_blank">etendering.tenderboard.gov.om</a></td><td><span class="lang">ar/en</span></td><td class="high">High</td><td>내무부 선거장비 조달 통합. 2023 완전디지털화</td></tr>
+<tr><td>🇦🇪 UAE</td><td><span class="type-tag t1">국가조달</span></td><td>Federal e-Procurement</td><td><a href="https://procurement.gov.ae" target="_blank">procurement.gov.ae</a></td><td><span class="lang">ar/en</span></td><td class="med">Med</td><td>NEC 자체 조달 없음. 연방 통합</td></tr>
+<tr><td>🇦🇪 UAE</td><td><span class="type-tag t3">선거위</span></td><td>UAE NEC</td><td><a href="https://uaenec.ae/en" target="_blank">uaenec.ae</a></td><td><span class="lang">ar/en</span></td><td class="med">Med</td><td>National Elections Committee</td></tr>
+</table>
+</div>
+
+<!-- OMR -->
+<h2><span class="chip omr">OMR</span> 광학마크인식 스캐너 — 9개국</h2>
+<div class="section">
+<table>
+<tr><th>국가</th><th>포털유형</th><th>포털명</th><th>URL</th><th>언어</th><th>우선</th><th>비고</th></tr>
+<tr><td>🇬🇭 가나</td><td><span class="type-tag t1">국가조달</span></td><td>Ghana e-Procurement</td><td><a href="https://www.ghaneps.gov.gh/epps/home.do" target="_blank">ghaneps.gov.gh</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>CRAWL-025</td></tr>
+<tr><td>🇬🇭 가나</td><td><span class="type-tag t3">선거위</span></td><td>EC Ghana</td><td><a href="https://ec.gov.gh/" target="_blank">ec.gov.gh</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>BVMS/OMR 조달공고 직접 게시. CRAWL-026</td></tr>
+<tr><td>🇿🇦 남아공</td><td><span class="type-tag t1">국가조달</span></td><td>eTenders Treasury</td><td><a href="https://etenders.treasury.gov.za/" target="_blank">etenders.treasury.gov.za</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>CRAWL-031</td></tr>
+<tr><td>🇿🇦 남아공</td><td><span class="type-tag t3">선거위</span></td><td>IEC South Africa</td><td><a href="https://www.elections.org.za/" target="_blank">elections.org.za</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>VMD R566M 계약. CRAWL-032</td></tr>
+<tr><td>🇩🇴 도미니카공화국</td><td><span class="type-tag t1">국가조달</span></td><td>DGCP</td><td><a href="https://www.dgcp.gob.do/consultas/" target="_blank">dgcp.gob.do</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>CRAWL-100</td></tr>
+<tr><td>🇩🇴 도미니카공화국</td><td><span class="type-tag t3">선거위</span></td><td>JCE</td><td><a href="https://jce.gob.do/" target="_blank">jce.gob.do</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>OMR+생체 직접 조달. CRAWL-101</td></tr>
+<tr><td>🇲🇳 몽골</td><td><span class="type-tag t1">국가조달</span></td><td>State Procurement</td><td><a href="https://www.tender.gov.mn/en" target="_blank">tender.gov.mn</a></td><td><span class="lang">mn/en</span></td><td class="high">High</td><td>Dominion ImageCast 운영국</td></tr>
+<tr><td>🇲🇳 몽골</td><td><span class="type-tag t3">선거위</span></td><td>GEC Mongolia</td><td><a href="https://m-election.mn/en" target="_blank">m-election.mn</a></td><td><span class="lang">mn/en</span></td><td class="high">High</td><td>일반선거위원회</td></tr>
+<tr class="miru"><td>🇵🇭 필리핀 <span class="miru-tag">MIRU</span></td><td><span class="type-tag t1">국가조달</span></td><td>PhilGEPS</td><td><a href="https://notices.philgeps.gov.ph/" target="_blank">philgeps.gov.ph</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>ACM 11만대 ₱17.9B. CRAWL-053</td></tr>
+<tr class="miru"><td>🇵🇭 필리핀 <span class="miru-tag">MIRU</span></td><td><span class="type-tag t2">EMB조달</span></td><td>COMELEC Procurement</td><td><a href="https://www.comelec.gov.ph/?r=Procurement" target="_blank">comelec.gov.ph/Procurement</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>COMELEC 직접 공고. CRAWL-054</td></tr>
+<tr class="miru"><td>🇰🇷 대한민국 <span class="miru-tag">MIRU</span></td><td><span class="type-tag t1">국가조달</span></td><td>나라장터 (G2B)</td><td><a href="https://www.g2b.go.kr/" target="_blank">g2b.go.kr</a></td><td><span class="lang">ko</span></td><td class="high">High</td><td>OMR 개표기 조달. CRAWL-153</td></tr>
+<tr class="miru"><td>🇰🇷 대한민국 <span class="miru-tag">MIRU</span></td><td><span class="type-tag t3">선거위</span></td><td>중앙선거관리위원회</td><td><a href="https://www.nec.go.kr/site/eng/main.do" target="_blank">nec.go.kr</a></td><td><span class="lang">ko/en</span></td><td class="high">High</td><td>NEC. CRAWL-071</td></tr>
+<tr><td>🇧🇬 불가리아</td><td><span class="type-tag t1">국가조달</span></td><td>eOP</td><td><a href="https://app.eop.bg/today" target="_blank">app.eop.bg</a></td><td><span class="lang">bg</span></td><td class="high">High</td><td>Ciela Norma OMR. CRAWL-161</td></tr>
+<tr><td>🇧🇬 불가리아</td><td><span class="type-tag t3">선거위</span></td><td>CIK Bulgaria</td><td><a href="https://www.cik.bg/bg/zop" target="_blank">cik.bg/zop</a></td><td><span class="lang">bg</span></td><td class="high">High</td><td>선거위 /zop 조달섹션. CRAWL-160</td></tr>
+<tr><td>🇬🇪 조지아</td><td><span class="type-tag t1">국가조달</span></td><td>SPA Georgia</td><td><a href="https://tenders.procurement.gov.ge/public/#/en/projects?type=tender" target="_blank">procurement.gov.ge</a></td><td><span class="lang">en/ka</span></td><td class="high">High</td><td>bScan1800Plus 4876대. CRAWL-166</td></tr>
+<tr><td>🇬🇪 조지아</td><td><span class="type-tag t3">선거위</span></td><td>CEC Georgia</td><td><a href="https://cesko.ge/" target="_blank">cesko.ge</a></td><td><span class="lang">ka</span></td><td class="high">High</td><td>CRAWL-077</td></tr>
+<tr><td>🇧🇭 바레인</td><td><span class="type-tag t1">국가조달</span></td><td>Tender Board Bahrain</td><td><a href="https://etendering.tenderboard.gov.bh" target="_blank">etendering.tenderboard.gov.bh</a></td><td><span class="lang">ar/en</span></td><td class="high">High</td><td>OMR 개표. 야당 배제 선거</td></tr>
+</table>
+</div>
+
+<!-- Mixed -->
+<h2><span class="chip mixed">Mixed</span> 종이+전자 병행 — 16개국</h2>
+<div class="section">
+<table>
+<tr><th>국가</th><th>지역</th><th>포털유형</th><th>포털명</th><th>URL</th><th>언어</th><th>우선</th><th>비고</th></tr>
+<tr class="miru"><td>🇮🇶 이라크 <span class="miru-tag">MIRU</span></td><td>중동</td><td><span class="type-tag t3">선거위</span></td><td>IHEC Iraq</td><td><a href="https://ihec.iq/en/" target="_blank">ihec.iq</a></td><td><span class="lang">ar/en</span></td><td class="high">High</td><td>Miru+Thales. 별도 포털 없음→이메일</td></tr>
+<tr><td>🇮🇶 이라크</td><td>중동</td><td><span class="type-tag t1">국가조달</span></td><td>MoP Iraq</td><td><a href="https://mop.gov.iq/en/general-government-contracts-department" target="_blank">mop.gov.iq</a></td><td><span class="lang">ar/en</span></td><td class="med">Med</td><td>계획부 포털. 단일 e-GP 없음</td></tr>
+<tr class="miru"><td>🇰🇬 키르기스스탄 <span class="miru-tag">MIRU</span></td><td>중앙아</td><td><span class="type-tag t1">국가조달</span></td><td>zakupki.gov.kg</td><td><a href="https://zakupki.gov.kg" target="_blank">zakupki.gov.kg</a></td><td><span class="lang">ru/ky</span></td><td class="high">High</td><td>Miru 5-in-1. CEC 명의 공고</td></tr>
+<tr class="miru"><td>🇰🇬 키르기스스탄 <span class="miru-tag">MIRU</span></td><td>중앙아</td><td><span class="type-tag t3">선거위</span></td><td>CEC Kyrgyzstan</td><td><a href="https://www.shailoo.gov.kg" target="_blank">shailoo.gov.kg</a></td><td><span class="lang">ky/ru</span></td><td class="high">High</td><td>중앙선거위원회</td></tr>
+<tr><td>🇰🇿 카자흐스탄</td><td>중앙아</td><td><span class="type-tag t1">국가조달</span></td><td>goszakup.gov.kz</td><td><a href="https://www.goszakup.gov.kz/" target="_blank">goszakup.gov.kz</a></td><td><span class="lang">ru/kz</span></td><td class="high">High</td><td>CRAWL-065</td></tr>
+<tr><td>🇺🇿 우즈베키스탄</td><td>중앙아</td><td><span class="type-tag t1">국가조달</span></td><td>xarid.uzex.uz</td><td><a href="https://xarid.uzex.uz/" target="_blank">xarid.uzex.uz</a></td><td><span class="lang">uz/ru</span></td><td class="high">High</td><td>EVM 파일럿 후속 모니터링. CRAWL-062</td></tr>
+<tr><td>🇰🇪 케냐</td><td>아프리카</td><td><span class="type-tag t1">국가조달</span></td><td>Tenders.go.ke</td><td><a href="https://tenders.go.ke/tenders" target="_blank">tenders.go.ke</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>Smartmatic KIEMS. CRAWL-022</td></tr>
+<tr><td>🇰🇪 케냐</td><td>아프리카</td><td><span class="type-tag t3">선거위</span></td><td>IEBC Kenya</td><td><a href="https://www.iebc.or.ke/" target="_blank">iebc.or.ke</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>CRAWL-023</td></tr>
+<tr><td>🇦🇷 아르헨티나</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>COMPR.AR</td><td><a href="https://comprar.gob.ar" target="_blank">comprar.gob.ar</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>DINE 발주 공고</td></tr>
+<tr><td>🇦🇷 아르헨티나</td><td>아메리카</td><td><span class="type-tag t3">선거위</span></td><td>Cámara Electoral</td><td><a href="https://www.electoral.gob.ar" target="_blank">electoral.gob.ar</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>사법부 독립 조달</td></tr>
+<tr><td>🇸🇻 엘살바도르</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>COMPRASAL</td><td><a href="https://www.comprasal.gob.sv/" target="_blank">comprasal.gob.sv</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>TSE 입찰 게시</td></tr>
+<tr><td>🇭🇳 온두라스</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>Honducompras</td><td><a href="https://honducompras.gob.hn/" target="_blank">honducompras.gob.hn</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>Smartmatic VIU. CRAWL-148</td></tr>
+<tr><td>🇯🇲 자메이카</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>GOJEP</td><td><a href="https://www.gojep.gov.jm/" target="_blank">gojep.gov.jm</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>EOJ id=1936</td></tr>
+<tr><td>🇯🇲 자메이카</td><td>아메리카</td><td><span class="type-tag t2">EMB조달</span></td><td>EOJ on GOJEP</td><td><a href="https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936" target="_blank">GOJEP/EOJ</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>Electoral Office 직접 페이지</td></tr>
+<tr><td>🇵🇦 파나마</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>PanamaCompra</td><td><a href="https://www.panamacompra.gob.pa/Inicio/" target="_blank">panamacompra.gob.pa</a></td><td><span class="lang">es</span></td><td class="high">High</td><td>CRAWL-147</td></tr>
+<tr><td>🇺🇸 미국</td><td>아메리카</td><td><span class="type-tag t1">국가조달</span></td><td>SAM.gov</td><td><a href="https://sam.gov/opportunities" target="_blank">sam.gov</a></td><td><span class="lang">en</span></td><td class="high">High</td><td>연방 조달허브. CRAWL-106</td></tr>
+<tr><td>🇧🇦 보스니아</td><td>유럽</td><td><span class="type-tag t1">국가조달</span></td><td>eJN Bosnia</td><td><a href="https://www.ejn.gov.ba/Announcement/Search" target="_blank">ejn.gov.ba</a></td><td><span class="lang">bs/sr</span></td><td class="high">High</td><td>Smartmatic €38.1M. CRAWL-164</td></tr>
+<tr><td>🇧🇦 보스니아</td><td>유럽</td><td><span class="type-tag t3">선거위</span></td><td>CIK BiH</td><td><a href="https://www.izbori.ba/Default.aspx?Lang=8" target="_blank">izbori.ba</a></td><td><span class="lang">bs/en</span></td><td class="high">High</td><td>중앙선거위. CRAWL-165</td></tr>
+<tr><td>🇪🇪 에스토니아</td><td>유럽</td><td><span class="type-tag t1">국가조달</span></td><td>Riigihangete Register</td><td><a href="https://riigihanked.riik.ee" target="_blank">riigihanked.riik.ee</a></td><td><span class="lang">et</span></td><td class="high">High</td><td>i-Voting 51.1%</td></tr>
+<tr><td>🇲🇰 북마케도니아</td><td>유럽</td><td><span class="type-tag t1">국가조달</span></td><td>e-nabavki</td><td><a href="https://www.e-nabavki.gov.mk/" target="_blank">e-nabavki.gov.mk</a></td><td><span class="lang">mk</span></td><td class="high">High</td><td>CRAWL-143</td></tr>
+<tr><td>🇨🇭 스위스</td><td>유럽</td><td><span class="type-tag t1">국가조달</span></td><td>SIMAP</td><td><a href="https://www.simap.ch/en" target="_blank">simap.ch</a></td><td><span class="lang">de/fr/it</span></td><td class="high">High</td><td>연방+주 공동. Bundeskanzlei 입찰</td></tr>
+<tr><td>🇮🇷 이란</td><td>중동</td><td><span class="type-tag t1">국가조달</span></td><td>SETAD Iran</td><td><a href="https://setadiran.ir/setad/cms" target="_blank">setadiran.ir</a></td><td><span class="lang">fa</span></td><td class="low">Low</td><td>페르시아어 전용. 국제제재. Login 필요</td></tr>
+</table>
+</div>
+
+<div style="background:#fff3e0;border-left:4px solid #f57f17;padding:12px 18px;border-radius:6px;margin-top:16px;font-size:12px;">
+  <strong>🟠 Miru Systems 핵심 모니터링 포털:</strong>
+  필리핀(PhilGEPS·COMELEC) / 이라크(IHEC) / 키르기스스탄(zakupki.gov.kg) / DRC(marchepublic.cd) / 한국(G2B) — 5개국 7개 포털
+</div>
+
+</div>
+<footer style="text-align:center;padding:20px;color:#aaa;font-size:11px;">
+  Miru Systems Election Opportunity Radar | 데이터 기준 2026-06-22 | 기존 config 39개 + 신규 32개 포털
+</footer>
+</body>
+</html>

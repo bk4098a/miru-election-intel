@@ -1,0 +1,9 @@
+country,iso3,has_elections,last_election_date,next_election_date,voting_method,biometric_voter_reg,biometric_voter_verify,electronic_results_tx,evoting,vendor,confidence,source,notes
+Greece,GRC,Y,2023-06-25,2027-03-01,Paper,N,N,Y,N,SingularLogic,High,https://www.osce.org/odihr/elections/greece/558303,"주민등록 기반 자동등록. SingularLogic의 SRT(Secure Results Transmission) 시스템으로 전자 결과 전송(태블릿 21500대). 생체인식 없음. 다음 선거 2027년 3월 예정."
+Cyprus,CYP,Y,2026-05-24,2028-01-01,Paper,N,N,Y,N,None,High,https://www.gov.cy/moi-elections/en/,"2026.05.24 의회선거 실시(56석). 종이투표+수동개표. 디지털 신분증 앱(Digital Citizen) 신규 허용. 생체인식 없음. 전자결과전송 사용(당일 밤 98% 집계). 다음 대선 2028년 예정."
+Turkey,TUR,Y,2023-05-28,2028-05-14,Paper,N,N,Y,N,YSK (SECSIS),High,https://odihr.osce.org/odihr/elections/turkiye/553963,"2023.05.14(+결선 05.28) 대선·총선 동시 실시. 종이투표·수동개표. YSK의 SEÇSİS 전자결과전송시스템 운용. 생체인식 없음. 광학스캔 미도입. 다음 총선·대선 2028.05.14 예정."
+San Marino,SMR,Y,2024-06-09,2029-06-01,Paper,N,N,N,N,None,High,https://www.electionguide.org/elections/id/4297/,"대평의회(Grand and General Council) 60석, 5년 임기. 비례대표제(d'Hondt). 종이투표·수동개표. 전자결과전송 없음. 생체인식 없음. 다음 선거 2029년 6월경 예정."
+Monaco,MCO,Y,2023-02-05,2028-02-01,Paper,N,N,N,N,None,High,https://www.electionguide.org/elections/id/4022/,"국민회의(National Council) 24석. 혼합제(다수대표 16석+비례 8석). 종이투표. 5년 임기. 다음 선거 2028년 2월경 예정. 선거감시기관 미파견(소국)."
+Andorra,AND,Y,2023-04-02,2027-04-01,Paper,N,N,N,N,None,High,https://www.electionguide.org/elections/id/4032/,"일반평의회(General Council) 28석. 혼합제(교구별 14석+전국비례 14석). 종이투표 2표 병용. 우편투표·사전투표(judicial vote) 가능. 다음 선거 2027년 4월 예정."
+Vatican,VAT,N,,,N/A,N,N,N,N,None,High,https://www.vaticannews.va/en/pope/news/2025-05/conclave-how-a-pope-is-elected.html,"민주적 국가선거 없음. 교황 선출은 추기경단 비밀콘클라베(종이투표). 시민 참정권 해당 없음."
+Liechtenstein,LIE,Y,2025-02-09,2029-02-01,Paper,N,N,N,N,None,High,https://www.idea.int/node/161200,"의회(Landtag) 25석. 비례대표제(2개 선거구). 투표는 법적 의무. 2025년 선거 기준 96.6%가 우편투표 이용. 투표소는 선거일 90분만 운영. 생체인식 없음. 전자전송 없음. 다음 선거 2029년 예정."

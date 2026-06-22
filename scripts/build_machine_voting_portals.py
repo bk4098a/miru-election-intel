@@ -1,0 +1,169 @@
+"""
+기계투표 35개국 조달 포털 DB 구축
+sources: 기존 crawler config + 에이전트 리서치 결과
+"""
+import sqlite3, csv, pathlib, sys, io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+DB_PATH = pathlib.Path("data/election_technology_world.db")
+CSV_PATH = pathlib.Path("data/machine_voting_portals.csv")
+
+SCHEMA = """
+CREATE TABLE IF NOT EXISTS machine_voting_portals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    country TEXT,
+    country_ko TEXT,
+    iso3 TEXT,
+    region TEXT,
+    voting_method TEXT,      -- OMR/EVM/DRE/Mixed
+    portal_type TEXT,        -- 국가조달/EMB조달/선거위/EMB정보
+    portal_name TEXT,
+    url TEXT,
+    language TEXT,           -- en/ko/ar/fr/ru/etc
+    access TEXT,             -- Open/Login/Restricted
+    crawl_id TEXT,           -- 기존 config ID if exists
+    priority TEXT,           -- High/Med/Low
+    notes TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_mvp_iso3 ON machine_voting_portals(iso3);
+CREATE INDEX IF NOT EXISTS idx_mvp_method ON machine_voting_portals(voting_method);
+"""
+
+# 35개국 포털 데이터
+# (country, country_ko, iso3, region, voting_method, portal_type, portal_name, url, language, access, crawl_id, priority, notes)
+PORTALS = [
+    # ===== DRE (3개국) =====
+    ("Brazil","브라질","BRA","Americas","DRE","국가조달","Compras.gov.br (PNCP)","https://pncp.gov.br/app/editais","pt","Open","CRAWL-176","High","연방 전기관 의무게시. PNCP=Portal Nacional de Contratações Públicas"),
+    ("Brazil","브라질","BRA","Americas","DRE","EMB조달","TSE 조달공고","https://www.tse.jus.br/transparencia/gestao-de-contratacoes","pt","Open","CRAWL-104","High","TSE 직접 조달공고 페이지. DRE 장비 유지보수 계약 게시"),
+    ("Brazil","브라질","BRA","Americas","DRE","국가조달(구)","ComprasNet","https://www.gov.br/compras/pt-br","pt","Open","CRAWL-103","Med","구 ComprasNet → PNCP 전환 중. 병행 운영"),
+    ("Paraguay","파라과이","PRY","Americas","DRE","국가조달","DNCP (Contrataciones)","https://www.contrataciones.gov.py/","es","Open","CRAWL-146","High","OCDS 표준 API 제공. Miru 타깃 포털"),
+    ("Venezuela","베네수엘라","VEN","Americas","DRE","국가조달","SNC (Servicio Nacional de Contrataciones)","https://www.snc.gob.ve/","es","Open","","Low","접근 불안정. 실질 공개입찰 거의 없음. CNE-Smartmatic 독점"),
+    ("Venezuela","베네수엘라","VEN","Americas","DRE","선거위","CNE","https://www.cne.gob.ve/","es","Open","","Low","독립 조달 URL 미확인. 입찰공고 공개 사례 드묾"),
+
+    # ===== EVM (7개국) =====
+    ("DRC","콩고(DRC)","COD","Africa","EVM","국가조달","ARMP (marchepublic.cd)","https://marchepublic.cd/","fr","Open","CRAWL-130","High","Miru 공급국. ARMP=Autorité de Régulation des Marchés Publics"),
+    ("Bhutan","부탄","BTN","Asia-Pacific","EVM","국가조달","e-GP Bhutan","https://www.egp.gov.bt/","en","Open","","High","재무부 전자조달. 전기관 의무 게시"),
+    ("Bhutan","부탄","BTN","Asia-Pacific","EVM","EMB조달","ECB Tender","https://www.ecb.bt/tender-information/","en","Open","","High","Election Commission of Bhutan 자체 입찰 페이지"),
+    ("India","인도","IND","Asia-Pacific","EVM","국가조달","eProcure (GeM/CPPP)","https://eprocure.gov.in/eprocure/app","en","Open","CRAWL-050","High","ECI EVM 조달은 BEL·ECIL 직접계약(정부간). eProcure에 공고"),
+    ("India","인도","IND","Asia-Pacific","EVM","EMB조달","ECI Tender","https://www.eci.gov.in/notification/tenders","en","Open","CRAWL-169","High","인도 선거위원회 공식 입찰 공고 페이지"),
+    ("India","인도","IND","Asia-Pacific","EVM","국가조달(부)","CPPP","https://democppp.nic.in/cppp8/home","en","Open","CRAWL-052","Med","Central Public Procurement Portal"),
+    ("Albania","알바니아","ALB","Europe","EVM","국가조달","APP e-Procurement","https://app.gov.al/e-procurement/","sq","Open","CRAWL-085","High","Public Procurement Agency. Smartmatic EVM 계약 공고"),
+    ("Albania","알바니아","ALB","Europe","EVM","선거위","KQZ (CEC Albania)","https://kqz.gov.al/","sq/en","Open","CRAWL-086","High","중앙선거위원회. 조달공고 APP 포털 경유"),
+    ("Belgium","벨기에","BEL","Europe","EVM","국가조달","e-Notification (publicprocurement.be)","https://enot.publicprocurement.be/enot-war/","nl/fr","Open","","High","연방+지방 전기관 의무게시. Smartmatic 계약갱신 공고"),
+    ("Belgium","벨기에","BEL","Europe","EVM","국가조달(제출)","e-Tendering Belgium","https://www.publicprocurement.be/etendering/home.do","nl/fr","Open","","Med","입찰서 제출용"),
+    ("Oman","오만","OMN","Middle East","EVM","국가조달","Tender Board Oman","https://etendering.tenderboard.gov.om","ar/en","Open","","High","내무부 선거장비 조달은 Tender Board 통합. 2023 완전디지털화"),
+    ("UAE","아랍에미리트","ARE","Middle East","EVM","국가조달","Federal e-Procurement UAE","https://procurement.gov.ae","ar/en","Open","","Med","NEC는 자체 조달 없음. 연방기관 procurement.gov.ae 통합"),
+    ("UAE","아랍에미리트","ARE","Middle East","EVM","선거위","UAE NEC","https://uaenec.ae/en","ar/en","Open","","Med","National Elections Committee. FNC 선거 감독"),
+
+    # ===== OMR (9개국) =====
+    ("Ghana","가나","GHA","Africa","OMR","국가조달","Ghana e-Procurement","https://www.ghaneps.gov.gh/epps/home.do","en","Open","CRAWL-025","High","PPA(Public Procurement Authority). EC Ghana 입찰도 여기 게시"),
+    ("Ghana","가나","GHA","Africa","OMR","선거위","EC Ghana","https://ec.gov.gh/","en","Open","CRAWL-026","High","Electoral Commission. BVMS/OMR 조달공고 직접 게시"),
+    ("South Africa","남아공","ZAF","Africa","OMR","국가조달","eTenders Treasury","https://etenders.treasury.gov.za/","en","Open","CRAWL-031","High","국고부 전자입찰. IEC 조달공고도 여기"),
+    ("South Africa","남아공","ZAF","Africa","OMR","선거위","IEC South Africa","https://www.elections.org.za/","en","Open","CRAWL-032","High","VMD 입찰공고 직접 게시. Ren-Form Litho R566M 계약"),
+    ("Dominican Republic","도미니카공화국","DOM","Americas","OMR","국가조달","DGCP Dominican Republic","https://www.dgcp.gob.do/consultas/","es","Open","CRAWL-100","High","Dirección General de Contrataciones Públicas"),
+    ("Dominican Republic","도미니카공화국","DOM","Americas","OMR","선거위","JCE (Junta Central Electoral)","https://jce.gob.do/","es","Open","CRAWL-101","High","JCE 직접 OMR+생체 장비 조달"),
+    ("Mongolia","몽골","MNG","Asia-Pacific","OMR","국가조달","State Procurement Platform","https://www.tender.gov.mn/en","mn/en","Open","","High","국가조달청 공식. GEC 입찰도 여기 게시"),
+    ("Mongolia","몽골","MNG","Asia-Pacific","OMR","국가조달(부)","GPA e-Tender","https://www.e-tender.mn/en","mn/en","Open","","Med","Government Procurement Agency"),
+    ("Mongolia","몽골","MNG","Asia-Pacific","OMR","선거위","GEC Mongolia","https://m-election.mn/en","mn/en","Open","","High","General Election Commission. Dominion ImageCast 운영"),
+    ("Philippines","필리핀","PHL","Asia-Pacific","OMR","국가조달","PhilGEPS","https://notices.philgeps.gov.ph/","en","Open","CRAWL-053","High","Miru ACM 110,620대 ₱17.9B. 필리핀 전자조달 허브"),
+    ("Philippines","필리핀","PHL","Asia-Pacific","OMR","EMB조달","COMELEC Procurement","https://www.comelec.gov.ph/?r=Procurement","en","Open","CRAWL-054","High","COMELEC 직접 입찰공고. Miru 계약 공개"),
+    ("Philippines","필리핀","PHL","Asia-Pacific","OMR","EMB조달","COMELEC Latest Updates","https://www.comelec.gov.ph/index.html?r=Procurement/LatestUpdates","en","Open","CRAWL-172","High","최신 조달공고 직접 링크"),
+    ("South Korea","대한민국","KOR","Asia-Pacific","OMR","국가조달","나라장터 (G2B)","https://www.g2b.go.kr/","ko","Open","CRAWL-153","High","선거청 OMR 개표기 조달. Miru Systems 공급"),
+    ("South Korea","대한민국","KOR","Asia-Pacific","OMR","국가조달(구)","EVA G2B","https://eva.g2b.go.kr/","ko","Open","CRAWL-070","High","G2B 선거 전용 서브도메인"),
+    ("South Korea","대한민국","KOR","Asia-Pacific","OMR","선거위","중앙선거관리위원회","https://www.nec.go.kr/site/eng/main.do","ko/en","Open","CRAWL-071","High","NEC. 입찰은 G2B 경유"),
+    ("Bulgaria","불가리아","BGR","Europe","OMR","국가조달","eOP (app.eop.bg)","https://app.eop.bg/today","bg","Open","CRAWL-161","High","전자조달 포털. Ciela Norma OMR 계약"),
+    ("Bulgaria","불가리아","BGR","Europe","OMR","선거위","CIK Bulgaria","https://www.cik.bg/bg/zop","bg","Open","CRAWL-160","High","CIK=ЦИК 선거위. /zop=공공조달 섹션"),
+    ("Georgia","조지아","GEO","Europe","OMR","국가조달","SPA Procurement Georgia","https://tenders.procurement.gov.ge/public/#/en/projects?type=tender","en/ka","Open","CRAWL-166","High","Smartmatic bScan1800Plus 4876대 계약 공고"),
+    ("Georgia","조지아","GEO","Europe","OMR","선거위","CEC Georgia","https://cesko.ge/","ka","Open","CRAWL-077","High","중앙선거위원회"),
+    ("Bahrain","바레인","BHR","Middle East","OMR","국가조달","Tender Board Bahrain","https://etendering.tenderboard.gov.bh","ar/en","Open","","High","OMR 스캐너 개표. 야당 배제 형식적 선거"),
+    ("Bahrain","바레인","BHR","Middle East","OMR","국가조달(홈)","Tender Board Homepage","https://www.tenderboard.gov.bh","ar/en","Open","","Med","국가조달위원회 홈페이지"),
+
+    # ===== Mixed (16개국) =====
+    ("Iraq","이라크","IRQ","Middle East","Mixed","선거위","IHEC Iraq","https://ihec.iq/en/","ar/en","Open","","High","독립선거고등위원회. Miru+Thales 공급. 별도 조달포털 없음→이메일"),
+    ("Iraq","이라크","IRQ","Middle East","Mixed","국가조달","MoP Iraq (계획부)","https://mop.gov.iq/en/general-government-contracts-department","ar/en","Open","","Med","IHEC 조달은 분산. 계획부 포털 참고. 단일 e-GP 없음"),
+    ("Kyrgyzstan","키르기스스탄","KGZ","Central Asia","Mixed","국가조달","zakupki.gov.kg","https://zakupki.gov.kg","ru/ky","Open","","High","재무부 관할. Miru 장비 CEC 명의 공고. 전기관 의무"),
+    ("Kyrgyzstan","키르기스스탄","KGZ","Central Asia","Mixed","선거위","CEC Kyrgyzstan","https://www.shailoo.gov.kg","ky/ru","Open","","High","중앙선거위원회. 입찰은 zakupki.gov.kg 경유"),
+    ("Kazakhstan","카자흐스탄","KAZ","Central Asia","Mixed","국가조달","goszakup.gov.kz","https://www.goszakup.gov.kz/","ru/kz","Open","CRAWL-065","High","국가조달시스템. CEC 입찰도 여기 게시"),
+    ("Kazakhstan","카자흐스탄","KAZ","Central Asia","Mixed","선거위","CEC Kazakhstan","https://election.gov.kz/eng/","kz/ru/en","Open","CRAWL-066","High","중앙선거위원회"),
+    ("Uzbekistan","우즈베키스탄","UZB","Central Asia","Mixed","국가조달","xarid.uzex.uz","https://xarid.uzex.uz/","uz/ru","Open","CRAWL-062","High","EVM 파일럿 후속 조달 모니터링 필요"),
+    ("Uzbekistan","우즈베키스탄","UZB","Central Asia","Mixed","선거위","CEC Uzbekistan","https://saylov.uz/en","uz/ru/en","Open","CRAWL-063","High","중앙선거위원회"),
+    ("Kenya","케냐","KEN","Africa","Mixed","국가조달","Tenders.go.ke","https://tenders.go.ke/tenders","en","Open","CRAWL-022","High","Smartmatic KIEMS BVD+결과전송. PPRA 관할"),
+    ("Kenya","케냐","KEN","Africa","Mixed","선거위","IEBC Kenya","https://www.iebc.or.ke/","en","Open","CRAWL-023","High","독립선거경계위원회. 자체 입찰공고 게시"),
+    ("Argentina","아르헨티나","ARG","Americas","Mixed","국가조달","COMPR.AR","https://comprar.gob.ar","es","Open","","High","연방 전기관 의무. DINE 발주 공고"),
+    ("Argentina","아르헨티나","ARG","Americas","Mixed","선거위","Cámara Nacional Electoral","https://www.electoral.gob.ar","es","Open","","High","국가선거법원. 사법부 독립 조달"),
+    ("El Salvador","엘살바도르","SLV","Americas","Mixed","국가조달","COMPRASAL","https://www.comprasal.gob.sv/","es","Open","","High","재무부 국가조달. TSE 입찰 여기 게시"),
+    ("El Salvador","엘살바도르","SLV","Americas","Mixed","선거위","TSE El Salvador","https://tse.gob.sv/","es","Open","","High","최고선거재판소. 생체DUI+결과전송"),
+    ("Honduras","온두라스","HND","Americas","Mixed","국가조달","Honducompras","https://honducompras.gob.hn/","es","Open","CRAWL-148","High","Smartmatic VIU 2만대. 2025 시스템다운 사고"),
+    ("Jamaica","자메이카","JAM","Americas","Mixed","국가조달","GOJEP","https://www.gojep.gov.jm/","en","Open","","High","Jamaica e-Procurement. EOJ id=1936"),
+    ("Jamaica","자메이카","JAM","Americas","Mixed","EMB조달","EOJ on GOJEP","https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936","en","Open","","High","GOJEP 내 Electoral Office of Jamaica 기관 페이지"),
+    ("Jamaica","자메이카","JAM","Americas","Mixed","선거위","EOJ Official","https://www.eoj.com.jm/","en","Open","","High","Electoral Office of Jamaica"),
+    ("Panama","파나마","PAN","Americas","Mixed","국가조달","PanamaCompra","https://www.panamacompra.gob.pa/Inicio/","es","Open","CRAWL-147","High","전기관 의무. TE 조달도 여기"),
+    ("United States","미국","USA","Americas","Mixed","국가조달","SAM.gov","https://sam.gov/opportunities","en","Open","CRAWL-106","High","연방 조달허브. EAC 관련 공고 모니터링"),
+    ("United States","미국","USA","Americas","Mixed","선거위","EAC (Election Assistance Commission)","https://www.eac.gov/","en","Open","CRAWL-107","Med","연방 선거지원위. 주별 조달은 각주 포털"),
+    ("Bosnia and Herzegovina","보스니아","BIH","Europe","Mixed","국가조달","eJN Bosnia","https://www.ejn.gov.ba/Announcement/Search","bs/sr/hr","Open","CRAWL-164","High","Smartmatic €38.1M. 전자공공조달 Journal"),
+    ("Bosnia and Herzegovina","보스니아","BIH","Europe","Mixed","선거위","CIK BiH","https://www.izbori.ba/Default.aspx?Lang=8","bs/en","Open","CRAWL-165","High","중앙선거위원회"),
+    ("Estonia","에스토니아","EST","Europe","Mixed","국가조달","Riigihangete Register","https://riigihanked.riik.ee","et","Open","","High","i-Voting 51.1%. RIK 조달도 여기"),
+    ("Estonia","에스토니아","EST","Europe","Mixed","선거위","State Electoral Office","https://www.valimised.ee/en","et/en","Open","","High","선거사무소. RIK=선거IT시스템 운영기관"),
+    ("North Macedonia","북마케도니아","MKD","Europe","Mixed","국가조달","e-nabavki.gov.mk","https://www.e-nabavki.gov.mk/","mk","Open","CRAWL-143","High","전자조달 포털. SEC 조달 게시"),
+    ("North Macedonia","북마케도니아","MKD","Europe","Mixed","선거위","SEC Macedonia","https://www.sec.mk/","mk/en","Open","","High","State Electoral Commission"),
+    ("Switzerland","스위스","CHE","Europe","Mixed","국가조달","SIMAP Switzerland","https://www.simap.ch/en","de/fr/it/en","Open","","High","연방+주 공동. Bundeskanzlei 입찰 여기"),
+    ("Switzerland","스위스","CHE","Europe","Mixed","선거위(e-voting)","Bundeskanzlei e-Voting","https://www.bk.admin.ch/bk/en/home/politische-rechte/e-voting.html","de/fr/it/en","Open","","Med","Swiss Post e-voting 파일럿 허가 감독"),
+    ("Iran","이란","IRN","Middle East","Mixed","국가조달","SETAD Iran","https://setadiran.ir/setad/cms","fa","Login","","Low","페르시아어 전용. 내무부가 선거장비 발주. 국제제재"),
+    ("Iran","이란","IRN","Middle East","Mixed","선거주관","MoI Iran (내무부)","https://keshvar.moi.ir/","fa","Open","","Low","선거국=내무부 산하. 독립 EMB 없음"),
+]
+
+def build():
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("DROP TABLE IF EXISTS machine_voting_portals")
+    conn.executescript(SCHEMA)
+
+    conn.executemany("""
+        INSERT INTO machine_voting_portals
+        (country, country_ko, iso3, region, voting_method, portal_type,
+         portal_name, url, language, access, crawl_id, priority, notes)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    """, PORTALS)
+    conn.commit()
+
+    total = conn.execute("SELECT COUNT(*) FROM machine_voting_portals").fetchone()[0]
+    by_method = dict(conn.execute("""
+        SELECT voting_method, COUNT(DISTINCT iso3)
+        FROM machine_voting_portals GROUP BY voting_method
+    """).fetchall())
+    by_country = conn.execute("""
+        SELECT COUNT(DISTINCT iso3) FROM machine_voting_portals
+    """).fetchone()[0]
+    high = conn.execute("SELECT COUNT(*) FROM machine_voting_portals WHERE priority='High'").fetchone()[0]
+    existing = conn.execute("SELECT COUNT(*) FROM machine_voting_portals WHERE crawl_id!=''").fetchone()[0]
+    new = total - existing
+
+    conn.close()
+    return total, by_method, by_country, high, existing, new
+
+def export_csv():
+    fields = ["country","country_ko","iso3","region","voting_method",
+              "portal_type","portal_name","url","language","access",
+              "crawl_id","priority","notes"]
+    with open(CSV_PATH, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(fields)
+        writer.writerows(PORTALS)
+
+if __name__ == "__main__":
+    total, by_method, by_country, high, existing, new = build()
+    export_csv()
+
+    print(f"\n{'='*60}")
+    print(f"기계투표 35개국 조달 포털 DB 완성")
+    print(f"{'='*60}")
+    print(f"총 포털 수: {total}개")
+    print(f"고유 국가:  {by_country}개국")
+    print(f"High 우선:  {high}개")
+    print(f"기존 config 연동: {existing}개")
+    print(f"신규 추가:  {new}개")
+    print(f"\n[투표방식별 국가수]")
+    for m, c in sorted(by_method.items()):
+        print(f"  {m}: {c}개국")
+    print(f"\nDB: {DB_PATH} (machine_voting_portals 테이블)")
+    print(f"CSV: {CSV_PATH}")

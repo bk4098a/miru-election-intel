@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전 세계 선거 기술 현황 분석 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif; background: #f5f6fa; color: #222; font-size: 14px; }
+  header { background: #1a237e; color: #fff; padding: 28px 40px 20px; }
+  header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  header p { font-size: 13px; opacity: .75; }
+  .badge { display: inline-block; background: rgba(255,255,255,.15); border-radius: 12px; padding: 2px 10px; font-size: 11px; margin-left: 10px; vertical-align: middle; }
+
+  .summary-bar { display: flex; gap: 16px; padding: 20px 40px; background: #fff; border-bottom: 1px solid #e0e3ef; flex-wrap: wrap; }
+  .stat { text-align: center; min-width: 100px; }
+  .stat .num { font-size: 32px; font-weight: 800; color: #1a237e; line-height: 1; }
+  .stat .lbl { font-size: 11px; color: #666; margin-top: 4px; }
+  .stat.green .num { color: #2e7d32; }
+  .stat.orange .num { color: #e65100; }
+  .stat.red .num { color: #c62828; }
+  .stat.blue .num { color: #0277bd; }
+  .divider { width: 1px; background: #e0e3ef; margin: 8px 0; }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 24px 40px; }
+  h2 { font-size: 15px; font-weight: 700; color: #1a237e; margin: 28px 0 12px; padding-left: 10px; border-left: 4px solid #1a237e; }
+  h3 { font-size: 13px; font-weight: 700; margin: 16px 0 8px; color: #333; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media(max-width:900px) { .grid2,.grid3 { grid-template-columns: 1fr; } }
+
+  .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+  .card h3 { color: #1a237e; }
+
+  .method-block { margin-bottom: 20px; }
+  .method-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .method-chip { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 11px; font-weight: 700; color: #fff; }
+  .chip-dre { background: #7b1fa2; }
+  .chip-evm { background: #1565c0; }
+  .chip-omr { background: #00695c; }
+  .chip-mixed { background: #e65100; }
+  .chip-internet { background: #6a1b9a; }
+  .chip-paper { background: #546e7a; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th { background: #e8eaf6; color: #283593; font-weight: 700; padding: 7px 10px; text-align: left; }
+  td { padding: 6px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  tr:hover td { background: #f8f9ff; }
+  .tag { display: inline-block; padding: 1px 7px; border-radius: 8px; font-size: 11px; font-weight: 600; }
+  .tag-y { background: #e8f5e9; color: #2e7d32; }
+  .tag-n { background: #fafafa; color: #999; border: 1px solid #ddd; }
+  .tag-ltd { background: #fff3e0; color: #e65100; }
+  .tag-partial { background: #e3f2fd; color: #0277bd; }
+
+  .miru-row td { background: #fff8e1 !important; }
+  .miru-label { background: #f57f17; color: #fff; padding: 1px 6px; border-radius: 6px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+
+  .region-section { margin-bottom: 12px; }
+  .region-name { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 4px; }
+  .country-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+  .pill { padding: 3px 10px; border-radius: 12px; font-size: 11px; background: #e8eaf6; color: #283593; }
+  .pill.miru { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+
+  .vendor-bar { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+  .vendor-name { font-size: 12px; font-weight: 700; min-width: 110px; }
+  .bar-track { flex: 1; background: #e8eaf6; border-radius: 4px; height: 18px; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 10px; color: #fff; font-weight: 700; }
+  .bar-miru { background: #f57f17; }
+  .bar-smartmatic { background: #1565c0; }
+  .bar-other { background: #546e7a; }
+  .bar-count { font-size: 11px; color: #555; margin-left: 6px; }
+
+  footer { text-align: center; padding: 24px; color: #aaa; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>전 세계 선거 기술 현황 분석 <span class="badge">2026-06-22</span></h1>
+  <p>출처: International IDEA · IFES · ODIHR · EU EOM · NDI · biometricupdate.com</p>
+</header>
+
+<div class="summary-bar">
+  <div class="stat"><div class="num">196</div><div class="lbl">조사 대상국</div></div>
+  <div class="divider"></div>
+  <div class="stat green"><div class="num">125</div><div class="lbl">민주적 정기선거 (Y)</div></div>
+  <div class="stat orange"><div class="num">53</div><div class="lbl">제한적/형식적 (Limited)</div></div>
+  <div class="stat red"><div class="num">18</div><div class="lbl">선거 없음 (N)</div></div>
+  <div class="divider"></div>
+  <div class="stat blue"><div class="num">35</div><div class="lbl">기계투표 국가</div></div>
+  <div class="stat blue"><div class="num">76</div><div class="lbl">생체유권자등록</div></div>
+  <div class="stat blue"><div class="num">16</div><div class="lbl">투표소 생체인증</div></div>
+  <div class="stat blue"><div class="num">76</div><div class="lbl">전자결과전송(Y국)</div></div>
+</div>
+
+<div class="container">
+
+  <!-- 섹션 1: 기계 투표 국가 -->
+  <h2>1. 투표 시 기계를 사용하는 국가 (35개국)</h2>
+  <p style="font-size:12px;color:#666;margin-bottom:16px;">종이투표지 없이 또는 병행하여 전자장비로 투표·집계하는 국가. 완전 종이+수개표 국가(150개국)는 제외.</p>
+
+  <div class="grid2">
+
+    <div class="card">
+      <div class="method-block">
+        <div class="method-title"><span class="method-chip chip-dre">DRE</span> 직접전자기록 터치스크린 — 3개국</div>
+        <table>
+          <tr><th>국가</th><th>벤더</th><th>특이사항</th></tr>
+          <tr><td>🇧🇷 브라질</td><td>TSE 자체개발</td><td>1996년 도입. 1.4억 유권자 전국</td></tr>
+          <tr><td>🇵🇾 파라과이</td><td>TSJE + 브라질기기</td><td>브라질 장비 + 자체 SW</td></tr>
+          <tr class="miru-row"><td>🇻🇪 베네수엘라</td><td>CNE 자체 (구Smartmatic)</td><td>2024 선거조작 의혹</td></tr>
+        </table>
+      </div>
+
+      <div class="method-block">
+        <div class="method-title"><span class="method-chip chip-evm">EVM</span> 전자투표기 — 7개국</div>
+        <table>
+          <tr><th>국가</th><th>벤더</th><th>특이사항</th></tr>
+          <tr class="miru-row"><td>🇨🇩 DRC(콩고)</td><td>Miru Systems <span class="miru-label">MIRU</span></td><td>BMS 터치스크린. 2018·2023</td></tr>
+          <tr><td>🇧🇹 부탄</td><td>BEL+ECIL (인도산)</td><td>EVM 1618대. 809개 투표소</td></tr>
+          <tr><td>🇮🇳 인도</td><td>BEL+ECIL</td><td>M3 EVM 전국. 세계 최대 규모</td></tr>
+          <tr><td>🇦🇱 알바니아</td><td>Smartmatic+Innovatrics</td><td>생체지문 인증 결합</td></tr>
+          <tr><td>🇧🇪 벨기에</td><td>Smartmatic bSmart500</td><td>의무투표. 1994년 도입</td></tr>
+          <tr><td>🇴🇲 오만</td><td>Intakhib 앱 (자체)</td><td>AI 얼굴인식+NFC 스마트카드</td></tr>
+          <tr><td>🇦🇪 UAE</td><td>ICA 자체</td><td>스마트ID 생체인증+EVM</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="method-block">
+        <div class="method-title"><span class="method-chip chip-omr">OMR</span> 광학마크인식 스캐너 — 9개국</div>
+        <table>
+          <tr><th>국가</th><th>벤더</th><th>특이사항</th></tr>
+          <tr><td>🇬🇭 가나</td><td>Thales+STL</td><td>2020 BVMS. Miru 입찰참가→Thales 낙찰</td></tr>
+          <tr><td>🇿🇦 남아공</td><td>Ren-Form Litho</td><td>VMD 4만대. R566.1M</td></tr>
+          <tr><td>🇩🇴 도미니카공화국</td><td>JCE 자체+생체cédula</td><td>OMR + 생체인증 결합</td></tr>
+          <tr><td>🇲🇳 몽골</td><td>Dominion ImageCast</td><td>OMR 광학스캐너</td></tr>
+          <tr class="miru-row"><td>🇵🇭 필리핀</td><td>Miru Systems (ACM) <span class="miru-label">MIRU</span></td><td>ACM 110,620대. ₱17.9B. Smartmatic 교체</td></tr>
+          <tr class="miru-row"><td>🇰🇷 대한민국</td><td>Miru Systems (개표기) <span class="miru-label">MIRU</span></td><td>2025-06-03 대선</td></tr>
+          <tr><td>🇧🇬 불가리아</td><td>Ciela Norma</td><td>전자투표 도입 논쟁 중</td></tr>
+          <tr><td>🇬🇪 조지아</td><td>Smartmatic bScan1800Plus</td><td>4,876대. 54.2M GEL</td></tr>
+          <tr><td>🇧🇭 바레인</td><td>전자스캐너</td><td>야당 배제 형식적 선거</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mixed 별도 -->
+  <div class="card" style="margin-top:20px;">
+    <div class="method-title"><span class="method-chip chip-mixed">Mixed</span> 종이+전자 병행 — 16개국</div>
+    <p style="font-size:11px;color:#888;margin-bottom:10px;">종이투표지를 사용하나 생체인증·전자집계·전자결과전송 등 일부 전자시스템 도입</p>
+    <table>
+      <tr><th>국가</th><th>지역</th><th>주요 시스템</th><th>벤더</th></tr>
+      <tr class="miru-row"><td>🇮🇶 이라크</td><td>중동</td><td>OMR + 지문+FRT 본인확인</td><td>Miru Systems/Thales <span class="miru-label">MIRU</span></td></tr>
+      <tr class="miru-row"><td>🇰🇬 키르기스스탄</td><td>중앙아시아</td><td>5-in-1(바이오+투표지인쇄+집계)</td><td>Miru Systems <span class="miru-label">MIRU</span></td></tr>
+      <tr><td>🇰🇿 카자흐스탄</td><td>중앙아시아</td><td>EVM + 종이 병행</td><td>Sailau</td></tr>
+      <tr><td>🇺🇿 우즈베키스탄</td><td>중앙아시아</td><td>EVM 파일럿 (타슈켄트 37대)</td><td>자체개발</td></tr>
+      <tr><td>🇰🇪 케냐</td><td>아프리카</td><td>KIEMS 생체인증+전자결과전송</td><td>Smartmatic</td></tr>
+      <tr><td>🇦🇷 아르헨티나</td><td>아메리카</td><td>BUE(볼레타 유니카 전자) 일부 주</td><td>자체</td></tr>
+      <tr><td>🇸🇻 엘살바도르</td><td>아메리카</td><td>생체DUI 인증+전자결과전송</td><td>TSE SV</td></tr>
+      <tr><td>🇭🇳 온두라스</td><td>아메리카</td><td>VIU 생체인증 (2만대)</td><td>Smartmatic</td></tr>
+      <tr><td>🇯🇲 자메이카</td><td>아메리카</td><td>EVIS 생체 e-pollbook</td><td>EVIS</td></tr>
+      <tr><td>🇵🇦 파나마</td><td>아메리카</td><td>종이+전자집계</td><td>TE Panama</td></tr>
+      <tr><td>🇺🇸 미국</td><td>아메리카</td><td>주별 상이 (OMR/DRE/BMD/종이)</td><td>ES&S/Dominion/Hart</td></tr>
+      <tr><td>🇧🇦 보스니아</td><td>유럽</td><td>전자투표록 + 집계 시스템</td><td>Smartmatic (€38.1M)</td></tr>
+      <tr><td>🇪🇪 에스토니아</td><td>유럽</td><td>i-Voting (2023년 51.1% 온라인)</td><td>RIA 자체</td></tr>
+      <tr><td>🇲🇰 북마케도니아</td><td>유럽</td><td>생체지문확인+혼합투표</td><td>SEC</td></tr>
+      <tr><td>🇨🇭 스위스</td><td>유럽</td><td>Swiss Post e-voting 파일럿</td><td>Swiss Post</td></tr>
+      <tr><td>🇮🇷 이란</td><td>중동</td><td>EVM 일부 (테헤란 등)</td><td>Smartmatic(보도)/국산</td></tr>
+    </table>
+  </div>
+
+  <!-- 섹션 2: Miru 공급 국가 -->
+  <h2>2. Miru Systems 현 공급 국가</h2>
+  <div class="card">
+    <table>
+      <tr><th>국가</th><th>제품</th><th>규모</th><th>계약 특이사항</th></tr>
+      <tr><td>🇰🇷 대한민국</td><td>OMR 개표기</td><td>—</td><td>2025-06-03 대선 공급</td></tr>
+      <tr><td>🇰🇬 키르기스스탄</td><td>PCOS 5-in-1 복합기</td><td>전국</td><td>2018 PCOS + 2024/25 AI-CCTV. 2027-01 대선 추가 수주 기회</td></tr>
+      <tr><td>🇮🇶 이라크</td><td>PCOS OMR + FRT</td><td>전국</td><td>2025 선거 FRT 신규 추가. Thales와 공동</td></tr>
+      <tr><td>🇵🇭 필리핀</td><td>ACM 자동개표기</td><td>110,620대</td><td>₱17.9B. Smartmatic 교체. 2025-05-12 중간선거 사용</td></tr>
+      <tr><td>🇨🇩 DRC (콩고)</td><td>BMS 터치스크린 EVM</td><td>전국</td><td>2018·2023 공급. 2028 대선 재계약 기회</td></tr>
+    </table>
+  </div>
+
+  <!-- 섹션 3: 벤더 비교 -->
+  <h2>3. 주요 벤더별 공급 국가 수 비교</h2>
+  <div class="card">
+    <div style="max-width:600px;">
+      <div class="vendor-bar">
+        <div class="vendor-name">Smartmatic</div>
+        <div class="bar-track"><div class="bar-fill bar-smartmatic" style="width:90%">9개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name" style="color:#f57f17;font-weight:800;">▶ Miru Systems</div>
+        <div class="bar-track"><div class="bar-fill bar-miru" style="width:50%">5개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">Laxton</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:40%">4개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">Dominion</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:20%">2개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">Thales (Gemalto)</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:20%">2개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">IDEMIA</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:20%">2개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">Neurotechnology</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:20%">2개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">BEL/ECIL (인도)</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:20%">2개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">Indra/Minsait</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:10%">1개국</div></div>
+      </div>
+      <div class="vendor-bar">
+        <div class="vendor-name">ES&S</div>
+        <div class="bar-track"><div class="bar-fill bar-other" style="width:10%">1개국</div></div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#999;margin-top:12px;">* 생체유권자등록(BVR) 전문 벤더(Neurotechnology, Laxton 등)는 BVR 공급국 기준. 기계투표 기준으로는 Smartmatic·Miru·Dominion·BEL/ECIL이 주요 플레이어.</p>
+  </div>
+
+  <!-- 섹션 4: 지역별 투표 실시국 전체 목록 -->
+  <h2>4. 민주적 정기선거 실시 국가 전체 (Y: 125개국)</h2>
+  <div class="card">
+    <div class="region-section">
+      <div class="region-name">유럽 (45개국)</div>
+      <div class="country-pills">
+        <span class="pill">알바니아</span><span class="pill">안도라</span><span class="pill">아르메니아</span><span class="pill">오스트리아</span><span class="pill">벨기에</span><span class="pill">보스니아</span><span class="pill">불가리아</span><span class="pill">크로아티아</span><span class="pill">키프로스</span><span class="pill">체코</span><span class="pill">덴마크</span><span class="pill">에스토니아</span><span class="pill">핀란드</span><span class="pill">프랑스</span><span class="pill">조지아</span><span class="pill">독일</span><span class="pill">그리스</span><span class="pill">헝가리</span><span class="pill">아이슬란드</span><span class="pill">아일랜드</span><span class="pill">이탈리아</span><span class="pill">코소보</span><span class="pill">라트비아</span><span class="pill">리히텐슈타인</span><span class="pill">리투아니아</span><span class="pill">룩셈부르크</span><span class="pill">몰타</span><span class="pill">몰도바</span><span class="pill">모나코</span><span class="pill">몬테네그로</span><span class="pill">네덜란드</span><span class="pill">북마케도니아</span><span class="pill">노르웨이</span><span class="pill">폴란드</span><span class="pill">포르투갈</span><span class="pill">루마니아</span><span class="pill">산마리노</span><span class="pill">세르비아</span><span class="pill">슬로바키아</span><span class="pill">슬로베니아</span><span class="pill">스페인</span><span class="pill">스웨덴</span><span class="pill">스위스</span><span class="pill">터키</span><span class="pill">영국</span>
+      </div>
+    </div>
+    <div class="region-section" style="margin-top:12px;">
+      <div class="region-name">아메리카 (31개국)</div>
+      <div class="country-pills">
+        <span class="pill">앤티가바부다</span><span class="pill">아르헨티나</span><span class="pill">바하마</span><span class="pill">바베이도스</span><span class="pill">벨리즈</span><span class="pill">볼리비아</span><span class="pill">브라질</span><span class="pill">캐나다</span><span class="pill">칠레</span><span class="pill">콜롬비아</span><span class="pill">코스타리카</span><span class="pill">도미니카</span><span class="pill">도미니카공화국</span><span class="pill">에콰도르</span><span class="pill">엘살바도르</span><span class="pill">그레나다</span><span class="pill">과테말라</span><span class="pill">가이아나</span><span class="pill">온두라스</span><span class="pill">자메이카</span><span class="pill">멕시코</span><span class="pill">파나마</span><span class="pill">파라과이</span><span class="pill">페루</span><span class="pill">세인트키츠</span><span class="pill">세인트루시아</span><span class="pill">세인트빈센트</span><span class="pill">수리남</span><span class="pill">트리니다드토바고</span><span class="pill">미국</span><span class="pill">우루과이</span>
+      </div>
+    </div>
+    <div class="region-section" style="margin-top:12px;">
+      <div class="region-name">아시아-태평양 (30개국)</div>
+      <div class="country-pills">
+        <span class="pill">호주</span><span class="pill">방글라데시</span><span class="pill">부탄</span><span class="pill">피지</span><span class="pill">인도</span><span class="pill">인도네시아</span><span class="pill">일본</span><span class="pill">키리바시</span><span class="pill">대한민국</span><span class="pill">마샬제도</span><span class="pill">몰디브</span><span class="pill">미크로네시아</span><span class="pill">몽골</span><span class="pill">나우루</span><span class="pill">네팔</span><span class="pill">뉴질랜드</span><span class="pill">팔라우</span><span class="pill">파푸아뉴기니</span><span class="pill miru">필리핀</span><span class="pill">사모아</span><span class="pill">싱가포르</span><span class="pill">솔로몬제도</span><span class="pill">스리랑카</span><span class="pill">대만</span><span class="pill">태국</span><span class="pill">동티모르</span><span class="pill">통가</span><span class="pill">투발루</span><span class="pill">바누아투</span><span class="pill">파키스탄</span>
+      </div>
+    </div>
+    <div class="region-section" style="margin-top:12px;">
+      <div class="region-name">아프리카 (16개국)</div>
+      <div class="country-pills">
+        <span class="pill">보츠와나</span><span class="pill">카보베르데</span><span class="pill">가나</span><span class="pill">감비아</span><span class="pill">레소토</span><span class="pill">라이베리아</span><span class="pill">마다가스카르</span><span class="pill">말라위</span><span class="pill">모리셔스</span><span class="pill">모잠비크</span><span class="pill">나미비아</span><span class="pill">나이지리아</span><span class="pill">상투메프린시페</span><span class="pill">세네갈</span><span class="pill">시에라리온</span><span class="pill">잠비아</span>
+      </div>
+    </div>
+    <div class="region-section" style="margin-top:12px;">
+      <div class="region-name">중동 (4개국)</div>
+      <div class="country-pills">
+        <span class="pill">이스라엘</span><span class="pill">레바논</span><span class="pill">터키</span><span class="pill miru">이라크</span>
+      </div>
+    </div>
+    <div class="region-section" style="margin-top:12px;">
+      <div class="region-name">중앙아시아 (1개국)</div>
+      <div class="country-pills">
+        <span class="pill">파키스탄</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 5: 선거 없는 국가 -->
+  <h2>5. 선거가 없거나 중단된 국가 (N: 18개국)</h2>
+  <div class="card">
+    <table>
+      <tr><th>국가</th><th>지역</th><th>사유</th></tr>
+      <tr><td>🇸🇦 사우디아라비아</td><td>중동</td><td>절대왕정. 슈라위원회 전원 임명</td></tr>
+      <tr><td>🇶🇦 카타르</td><td>중동</td><td>국가선거 없음. 슈라위원회 일부 선출</td></tr>
+      <tr><td>🇵🇸 팔레스타인</td><td>중동</td><td>2006년 이후 국가선거 없음. 가자 분쟁</td></tr>
+      <tr><td>🇸🇾 시리아</td><td>중동</td><td>2024-12 아사드 붕괴. 민주제도 미확립</td></tr>
+      <tr><td>🇾🇪 예멘</td><td>중동</td><td>내전. 2011년 이후 실질 선거 없음</td></tr>
+      <tr><td>🇱🇾 리비아</td><td>중동/아프리카</td><td>동·서부 분열. 국가선거 무기한 연기</td></tr>
+      <tr><td>🇸🇩 수단</td><td>아프리카</td><td>SAF-RSF 내전</td></tr>
+      <tr><td>🇸🇸 남수단</td><td>아프리카</td><td>2010년 이후 국가선거 미실시</td></tr>
+      <tr><td>🇪🇷 에리트레아</td><td>아프리카</td><td>1993년 이후 국가선거 전무</td></tr>
+      <tr><td>🇸🇿 에스와티니</td><td>아프리카</td><td>절대군주제. 정당 금지</td></tr>
+      <tr><td>🇬🇦 가봉</td><td>아프리카</td><td>2023 쿠데타. 선거 중단</td></tr>
+      <tr><td>🇧🇫 부르키나파소</td><td>아프리카</td><td>2022 쿠데타. 선거 중단</td></tr>
+      <tr><td>🇲🇱 말리</td><td>아프리카</td><td>2021 쿠데타. 선거 중단</td></tr>
+      <tr><td>🇳🇪 니제르</td><td>아프리카</td><td>2023 쿠데타. 선거 중단</td></tr>
+      <tr><td>🇨🇳 중국</td><td>아시아</td><td>인민대표대회 간선. 국가선거 없음</td></tr>
+      <tr><td>🇧🇳 브루나이</td><td>아시아</td><td>절대군주제. 국가선거 없음</td></tr>
+      <tr><td>🇰🇵 북한</td><td>아시아</td><td>단일후보 형식 선거 (실질 없음)</td></tr>
+      <tr><td>🇻🇦 바티칸</td><td>유럽</td><td>교황 임명제</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>Miru Systems — Election Opportunity Radar | 데이터 기준 2026-06-22</footer>
+</body>
+</html>
