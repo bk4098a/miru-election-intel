@@ -139,7 +139,7 @@ COUNTRIES = [
     ("BTN","Bhutan",         "부탄",          "apac",  "Yes",  "EVM",  "BEL/ECIL M2 EVM",             "BEL + ECIL",             "2008","National","High"),
     ("MNG","Mongolia",       "몽골",          "apac",  "Yes",  "OMR",  "Dominion ImageCast",           "Dominion Voting Systems","2012","National","High"),
     ("BEL","Belgium",        "벨기에",        "europe","Yes",  "EVM",  "bSmart500 / SAES-3370",        "Smartmatic",             "2024","Partial", "High"),
-    ("BGR","Bulgaria",       "불가리아",      "europe","Yes",  "DRE",  "A4-517 (BMD mode since 2022)", "Smartmatic / Ciela Norma","2020","National","High"),
+    ("BGR","Bulgaria",       "불가리아",      "europe","Yes",  "BMD",  "A4-517 (BMD mode since 2022)", "Smartmatic / Ciela Norma","2020","National","High"),
     ("BIH","Bosnia & Herz.", "보스니아",      "europe","Yes",  "OMR",  "SAES-1800Plus Scanner",        "Smartmatic",             "2026","National","High"),
     ("GEO","Georgia",        "조지아",        "europe","Yes",  "OMR",  "SAES-1800Plus bScan",          "Smartmatic",             "2023","National","High"),
     ("ALB","Albania",        "알바니아",      "europe","Pilot","EVM",  "Smartmatic A4-517",            "Smartmatic + Innovatrics","2025","Pilot",  "High"),
@@ -151,6 +151,7 @@ COUNTRIES = [
     ("ARG","Argentina",      "아르헨티나",    "americas","Pilot","BMD","BUE Boleta Única Electrónica", "Grupo MSA",              "2025","Partial", "High"),
     ("VEN","Venezuela",      "베네수엘라",    "americas","Yes","DRE",  "Smartmatic SAES3000",          "Smartmatic / Ex-Clé",    "2020","National","High"),
     ("COD","DR Congo",       "콩고민주공화국","americas","Yes","BMD",  "DEV (Dispositif Elec. Vote)",  "Miru Systems",           "2023","National","High"),
+    ("ZAF","South Africa",   "남아공",        "americas","Yes","OMR",  "Champtek VMD X-100 (DRE검토중)","Ren-Form / Champtek",   "2021","National","High"),
     ("IRQ","Iraq",           "이라크",        "mena",  "Yes",  "OMR",  "PCOS/CCOS Optical Scanner",   "Miru Systems",           "2017","National","High"),
     ("OMN","Oman",           "오만",          "mena",  "Yes",  "Internet","Intakhib Mobile App",       "uqudo / Oracle OCI",     "2023","National","High"),
     ("ARE","UAE",            "아랍에미리트",  "mena",  "Yes",  "Internet","Scytl Kiosk System",        "Scytl",                  "2023","Partial", "High"),
@@ -177,8 +178,8 @@ PORTALS = {
             ("CIK Bulgaria","https://www.cik.bg/bg/zop","Working",False)],
     "BIH": [("eJN Bosnia","https://next.ejn.gov.ba/en/announcements/procedure-notices?page=1&rows=10&searchByIsLatestVersion=True","Working",True),
             ("CIK BiH","https://www.izbori.ba/Default.aspx?Lang=8","Info",False)],
-    "GEO": [("SPA Procurement","https://tenders.procurement.gov.ge","Working",True),
-            ("SPA 메인","https://procurement.gov.ge/","Working",False)],
+    "GEO": [("TenderMonitor GEO","https://tendermonitor.ge/en","Working",True),
+            ("SPA 공식","https://tenders.procurement.gov.ge","Login",False)],
     "ALB": [("APP e-Procurement","https://app.gov.al/contract-notice/","Working",True),
             ("KQZ Albania","https://kqz.gov.al/","Info",False)],
     "EST": [("Riigihangete Reg.","https://riigihanked.riik.ee","Working",True),
@@ -195,6 +196,8 @@ PORTALS = {
             ("CNE","https://www.cne.gob.ve/","Dead",False)],
     "COD": [("ARMP / marchepublic","https://marchepublic.cd/","Working",True),
             ("CENI","https://www.ceni.cd/","Info",False)],
+    "ZAF": [("IEC VotaQuotes","https://votaquotes.elections.org.za/","Working",True),
+            ("e-Tenders IEC","https://www.etenders.gov.za/","Working",False)],
     "IRQ": [("IHEC Iraq","https://ihec.iq/tenders-and-contracts/","Working",True),
             ("MoP Iraq","https://mop.gov.iq/en/general-government-contracts-department","Info",False)],
     "OMN": [("Tender Board Oman","https://etendering.tenderboard.gov.om/product/publicDash?CTRL_STRDIRECTION=LTR","Working",True)],
@@ -211,14 +214,14 @@ PORTALS = {
 FLAGS = {
     "KOR":"🇰🇷","PHL":"🇵🇭","IND":"🇮🇳","BTN":"🇧🇹","MNG":"🇲🇳",
     "BEL":"🇧🇪","BGR":"🇧🇬","BIH":"🇧🇦","GEO":"🇬🇪","ALB":"🇦🇱","EST":"🇪🇪","CHE":"🇨🇭",
-    "BRA":"🇧🇷","USA":"🇺🇸","PRY":"🇵🇾","ARG":"🇦🇷","VEN":"🇻🇪","COD":"🇨🇩",
+    "BRA":"🇧🇷","USA":"🇺🇸","PRY":"🇵🇾","ARG":"🇦🇷","VEN":"🇻🇪","COD":"🇨🇩","ZAF":"🇿🇦",
     "IRQ":"🇮🇶","OMN":"🇴🇲","ARE":"🇦🇪","IRN":"🇮🇷","KGZ":"🇰🇬","UZB":"🇺🇿",
 }
 
 PANEL_META = {
     "apac":    ("Asia-Pacific","아시아·태평양",5),
     "europe":  ("Europe","유럽",7),
-    "americas":("Americas & Africa","아메리카·아프리카",6),
+    "americas":("Americas & Africa","아메리카·아프리카",7),
     "mena":    ("Middle East & Central Asia","중동·중앙아시아",6),
 }
 
@@ -238,7 +241,6 @@ COUNTRIES_BIO = [
     # iso3  name              name_ko         btype       vendor                  system                    year  scale      conf
     ("KEN","Kenya",          "케냐",          "bio+ert",  "Smartmatic / IDEMIA",  "KIEMS (BVD + RTS)",      "2022","National","High"),
     ("NGA","Nigeria",        "나이지리아",    "bio+ert",  "Laxton Group",         "BVAS + IREV",            "2023","National","High"),
-    ("ZAF","South Africa",   "남아공",        "bio",      "Ren-Form / Champtek",  "VMD X-100",              "2021","National","High"),
     ("GHA","Ghana",          "가나",          "bio+ert",  "Thales / HID Global",  "BVD + MARS App",         "2020","National","High"),
     ("TZA","Tanzania",       "탄자니아",      "bio",      "Idemia",               "BVR Kit",                "2020","National","Med"),
     ("UGA","Uganda",         "우간다",        "bio",      "EKEMP / Idemia",       "Biometric VR",           "2020","National","Med"),
@@ -255,7 +257,7 @@ COUNTRIES_BIO = [
 ]
 
 FLAGS_BIO = {
-    "KEN":"🇰🇪","NGA":"🇳🇬","ZAF":"🇿🇦","GHA":"🇬🇭","TZA":"🇹🇿","UGA":"🇺🇬",
+    "KEN":"🇰🇪","NGA":"🇳🇬","GHA":"🇬🇭","TZA":"🇹🇿","UGA":"🇺🇬",
     "ZMB":"🇿🇲","ZWE":"🇿🇼","SEN":"🇸🇳","CMR":"🇨🇲","SLE":"🇸🇱",
     "DOM":"🇩🇴","JAM":"🇯🇲","BGD":"🇧🇩","PAK":"🇵🇰","MOZ":"🇲🇿",
 }
@@ -265,8 +267,6 @@ PORTALS_BIO = {
             ("e-GP Kenya","https://egpkenya.go.ke/","Working",False)],
     "NGA": [("NOCOPO Nigeria","https://nocopo.bpp.gov.ng/","Working",True),
             ("INEC 조달","https://www.inecnigeria.org/","Dead",False)],
-    "ZAF": [("IEC VotaQuotes","https://votaquotes.elections.org.za/","Working",True),
-            ("e-Tenders IEC","https://www.etenders.gov.za/","Working",False)],
     "GHA": [("GHANEPS","https://www.ghaneps.gov.gh/","Working",True),
             ("PPA Ghana EC","https://tenders.ppa.gov.gh/agencies/111","Dead",False)],
     "TZA": [("NeST Procurement Plans","https://nest.go.tz/annual-procurement-plans","Working",True),
@@ -322,11 +322,11 @@ KPI_PORTAL_JSON = json.dumps({
             [r for r in COUNTRIES if "Miru" in r[7]], PORTALS, FLAGS)
     },
     "mv": {
-        "title":"기계투표 사용국 24 · 입찰 포털 바로가기",
+        "title":"기계투표 사용국 25 · 입찰 포털 바로가기",
         "items": _kpi_items(COUNTRIES, PORTALS, FLAGS)
     },
     "bio": {
-        "title":"생체인식·결과전송국 16 · 입찰 포털 바로가기",
+        "title":"생체인식·결과전송국 15 · 입찰 포털 바로가기",
         "items": _kpi_items(COUNTRIES_BIO, PORTALS_BIO, FLAGS_BIO, panel_key="bio")
     },
     "all": {
@@ -334,9 +334,9 @@ KPI_PORTAL_JSON = json.dumps({
         "items": [
             {"flag":"🌏","name":"Asia-Pacific 5개국","portal":"","url":"","panel":"apac"},
             {"flag":"🌍","name":"Europe 7개국","portal":"","url":"","panel":"europe"},
-            {"flag":"🌎","name":"Americas·Africa 6개국","portal":"","url":"","panel":"americas"},
+            {"flag":"🌎","name":"Americas·Africa 7개국","portal":"","url":"","panel":"americas"},
             {"flag":"🕌","name":"Middle East·Central Asia 6개국","portal":"","url":"","panel":"mena"},
-            {"flag":"💚","name":"생체인식·결과전송 16개국","portal":"","url":"","panel":"bio"},
+            {"flag":"💚","name":"생체인식·결과전송 15개국","portal":"","url":"","panel":"bio"},
         ]
     },
     "portals": {
@@ -352,9 +352,9 @@ KPI_PORTAL_JSON = json.dumps({
 # Scope-M: 투표·개표 기계화 국가 / 미국 제외 23개국 직접 집계 (COUNTRIES 리스트 기준)
 nonusa_vendor_chart = {
     "labels": ["Miru Systems","Smartmatic","BEL+ECIL","MSA 그룹","State/Public","기타·자체","Dominion","Positivo"],
-    "data":   [5,              6,           2,          2,         2,             4,          1,         1],
+    "data":   [5,              6,           2,          2,         2,             5,          1,         1],
     # Miru=5(KOR/PHL/IRQ/KGZ/COD) Smartmatic=6(BEL/BGR/BIH/GEO/ALB/VEN) BEL+ECIL=2(IND/BTN)
-    # MSA=2(PRY/ARG) State=2(EST/CHE) 기타=4(OMN/ARE/IRN/UZB) Dominion=1(MNG) Positivo=1(BRA)
+    # MSA=2(PRY/ARG) State=2(EST/CHE) 기타=5(OMN/ARE/IRN/UZB/ZAF) Dominion=1(MNG) Positivo=1(BRA)
     "colors": [B["primary"],B["slate"],B["accent"],B["navy80"],B["accent2"],"#BFC7D9",B["line"],B["steel"]],
 }
 
@@ -378,7 +378,7 @@ us_vendor_chart = {
 # Machine type bars
 type_chart = {
     "labels": ["OMR  광학스캐너","EVM  전자투표기","Internet  인터넷","DRE  직접기록","BMD  마킹장치","Mixed  혼합"],
-    "data":   [7,5,4,4,3,1],
+    "data":   [8,5,4,3,4,1],
     "colors": [MTYPE_COLOR["OMR"],MTYPE_COLOR["EVM"],MTYPE_COLOR["Internet"],
                MTYPE_COLOR["DRE"],MTYPE_COLOR["BMD"],MTYPE_COLOR["Mixed"]],
 }
@@ -398,7 +398,7 @@ WORLD_DOTS = json.dumps([
     _dot("BTN","부탄",27.5,90.4,"BEL+ECIL","M","EVM","🇧🇹"),
     _dot("MNG","몽골",46.9,103.8,"Dominion","M","ImageCast OMR","🇲🇳"),
     _dot("BEL","벨기에",50.8,4.5,"Smartmatic","M","bSmart500 EVM","🇧🇪"),
-    _dot("BGR","불가리아",42.7,25.5,"Smartmatic","M","A4-517 DRE","🇧🇬"),
+    _dot("BGR","불가리아",42.7,25.5,"Smartmatic","M","A4-517 BMD","🇧🇬"),
     _dot("BIH","보스니아",44.2,17.9,"Smartmatic","M","SAES-1800 OMR","🇧🇦"),
     _dot("GEO","조지아",42.3,43.4,"Smartmatic","M","bScan OMR","🇬🇪"),
     _dot("ALB","알바니아",41.2,20.2,"Smartmatic","M","A4-517 Pilot","🇦🇱"),
@@ -418,7 +418,7 @@ WORLD_DOTS = json.dumps([
     _dot("UZB","우즈베키스탄",41.4,64.6,"기타·자체","M","E-Saylov EVM Pilot","🇺🇿"),
     _dot("KEN","케냐",-1.3,36.9,"Bio/ERT","B+R","KIEMS 생체인식+ERT","🇰🇪"),
     _dot("NGA","나이지리아",9.1,8.7,"Bio/ERT","B+R","BVAS+IREV 생체+ERT","🇳🇬"),
-    _dot("ZAF","남아공",-28.7,24.7,"Bio/ERT","B","VMD X-100 생체인식","🇿🇦"),
+    _dot("ZAF","남아공",-28.7,24.7,"기타·자체","M","Champtek VMD X-100 OMR (DRE검토중)","🇿🇦"),
     _dot("GHA","가나",7.9,-1.0,"Bio/ERT","B+R","BVD+MARS 생체+ERT","🇬🇭"),
     _dot("TZA","탄자니아",-6.4,34.9,"Bio/ERT","B","BVR Kit 생체인식","🇹🇿"),
     _dot("UGA","우간다",1.4,32.3,"Bio/ERT","B","Biometric VR","🇺🇬"),
@@ -1190,7 +1190,7 @@ TICKER_ITEMS = [
     ("<strong>MNG 몽골</strong>", "Dominion ImageCast · 2012"),
     ("<strong>EST 에스토니아</strong>", "i-Voting · 2005∼현재 전세계 최초"),
     ("<strong>OMN 오만</strong>", "Intakhib 모바일 · 2023"),
-    ("<strong>검증완료</strong>", "24개국 51개 포털 · 2026-06-23 기준"),
+    ("<strong>검증완료</strong>", "25개국 53개 포털 · 2026-06-25 기준"),
 ]
 def ticker_html():
     items = "".join(
@@ -1247,7 +1247,7 @@ HTML = f"""<!DOCTYPE html>
   <div class="ov-hero">
     <div class="ov-inner">
       <div class="ov-eye">Election Technology Intelligence</div>
-      <h1 class="ov-h1">기계투표 <em>24개국</em><br>글로벌 조달 인텔리전스</h1>
+      <h1 class="ov-h1">기계투표 <em>25개국</em><br>글로벌 조달 인텔리전스</h1>
       <p class="ov-sub">전 세계 선거 기계화 현황 · 공급사 · 기기 · 조달 포털 — 검증일 2026.06.23</p>
       <div class="ov-kpis">
         <div class="kpi kpi-miru" data-kpi="miru" title="클릭하면 Miru 납품국 목록">
@@ -1294,7 +1294,7 @@ HTML = f"""<!DOCTYPE html>
       <div class="cbox">
         <div class="cbox-eye">Technology Breakdown · Scope-M</div>
         <div class="cbox-title">기술 유형별 국가 분포</div>
-        <div class="cbox-desc">24개국 · 기계투표 방식별 분류</div>
+        <div class="cbox-desc">25개국 · 기계투표 방식별 분류</div>
         <div class="type-dist" id="typeDist"></div>
         <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:7px">
           {"".join(f'<span style="font-size:10px;padding:2px 9px;background:{MTYPE_COLOR[t]};color:#fff">{t}</span>' for t in ["OMR","EVM","Internet","DRE","BMD","Mixed"])}
