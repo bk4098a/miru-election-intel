@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>System 1: Election Intelligence Report — 구조 정리</title>
+<style>
+:root {
+  --navy:    #05195E;
+  --navy2:   #0A2A6E;
+  --accent:  #123A9E;
+  --accent2: #AEB7D6;
+  --red:     #EB0414;
+  --green:   #24A148;
+  --fog:     #E9ECF4;
+  --fog2:    #F4F5FA;
+  --line:    #C7CEDC;
+  --slate:   #525252;
+  --steel:   #8C8C8C;
+  --charcoal:#161616;
+  --white:   #FFFFFF;
+  --font: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--fog2); color: var(--charcoal); font-size: 14px; line-height: 1.7; }
+
+/* NAV */
+.nav {
+  background: var(--navy);
+  border-bottom: 2px solid var(--red);
+  padding: 0 40px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-badge {
+  font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--red); border: 1px solid rgba(235,4,20,.4);
+  padding: 2px 8px;
+}
+.nav-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75); }
+.nav-date { margin-left: auto; font-size: 11px; color: rgba(255,255,255,.35); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #020e35 0%, var(--navy2) 50%, var(--navy) 100%);
+  padding: 52px 40px 44px;
+}
+.hero-eye {
+  font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-eye::before { content: ""; width: 20px; height: 1.5px; background: var(--red); }
+.hero h1 {
+  font-size: clamp(24px, 3.5vw, 38px); font-weight: 800;
+  color: var(--white); letter-spacing: -.03em; line-height: 1.2;
+  margin-bottom: 10px;
+}
+.hero h1 em { font-style: normal; color: #7eb8ff; }
+.hero p { font-size: 13px; color: rgba(255,255,255,.45); max-width: 680px; }
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat .n { font-size: 28px; font-weight: 800; color: var(--white); line-height: 1; }
+.hero-stat .n.blue { color: #7eb8ff; }
+.hero-stat .l { font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 3px; }
+
+/* MAIN LAYOUT */
+.main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+/* SECTION */
+.sec { margin-bottom: 36px; }
+.sec-eye {
+  font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px;
+}
+.sec-title {
+  font-size: 20px; font-weight: 700; color: var(--charcoal);
+  letter-spacing: -.02em; margin-bottom: 16px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+
+/* FLOW BOX */
+.flow-box {
+  background: var(--navy);
+  padding: 28px 32px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 2;
+  color: rgba(255,255,255,.75);
+  overflow-x: auto;
+}
+.flow-box .c-blue   { color: #7eb8ff; }
+.flow-box .c-green  { color: #6ee7b7; }
+.flow-box .c-red    { color: #fca5a5; }
+.flow-box .c-yellow { color: #fde68a; }
+.flow-box .c-gray   { color: rgba(255,255,255,.35); }
+
+/* CARD GRID */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-top: 3px solid var(--accent);
+}
+.card-label {
+  font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 8px;
+}
+.card-title { font-size: 15px; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
+.card-body { font-size: 12px; color: var(--slate); line-height: 1.8; }
+.card-body code {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  background: var(--fog);
+  padding: 1px 5px;
+  color: var(--navy);
+}
+
+/* TABLE */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th {
+  background: var(--navy); color: var(--white);
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  padding: 10px 14px; text-align: left;
+}
+.tbl td {
+  padding: 10px 14px; border-bottom: 1px solid var(--fog);
+  background: var(--white); vertical-align: top;
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl td:first-child { font-family: 'Courier New', monospace; font-size: 12px; color: var(--navy); font-weight: 600; }
+.tbl td.note { font-size: 11px; color: var(--steel); font-style: italic; }
+.tbl tr.new-row td { background: #f0fff4; }
+.tbl td .new-badge {
+  font-size: 9px; font-weight: 700; background: var(--green); color: var(--white);
+  padding: 1px 5px; margin-left: 6px; vertical-align: middle;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block; padding: 2px 8px;
+  font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--white);
+}
+.b-mv   { background: var(--navy); }
+.b-bio  { background: var(--green); }
+.b-ert  { background: var(--navy2); }
+.b-new  { background: var(--green); }
+
+/* CALLOUT */
+.callout {
+  border-left: 3px solid var(--red);
+  background: var(--white);
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--slate);
+}
+.callout strong { color: var(--charcoal); }
+.callout.info { border-left-color: var(--accent); }
+.callout.ok   { border-left-color: var(--green); }
+
+/* STEP */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 20px 0; border-bottom: 1px solid var(--fog);
+}
+.step:last-child { border-bottom: none; }
+.step-n {
+  width: 32px; height: 32px; flex-shrink: 0;
+  background: var(--navy); color: var(--white);
+  font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-n.green { background: var(--green); }
+.step-body { flex: 1; }
+.step-title { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+.step-desc { font-size: 12px; color: var(--slate); line-height: 1.7; }
+.step-desc code {
+  font-family: 'Courier New', monospace; font-size: 11px;
+  background: var(--fog); padding: 1px 5px; color: var(--navy);
+}
+
+/* PILL ROW */
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill {
+  padding: 4px 12px; font-size: 11px; font-weight: 600;
+  border: 1px solid var(--line); color: var(--slate); background: var(--white);
+}
+.pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.pill.green  { background: var(--green); color: var(--white); border-color: var(--green); }
+
+/* CMD */
+.cmd {
+  background: #0f172a; color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px; padding: 16px 20px;
+  border-left: 3px solid var(--red);
+  line-height: 2;
+}
+.cmd .c { color: #94a3b8; }
+.cmd .g { color: #6ee7b7; }
+
+/* CHANGELOG */
+.changelog { display: flex; flex-direction: column; gap: 0; }
+.cl-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 14px 0; border-bottom: 1px solid var(--fog);
+}
+.cl-item:last-child { border-bottom: none; }
+.cl-date { font-size: 11px; color: var(--steel); flex-shrink: 0; width: 86px; padding-top: 2px; }
+.cl-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: .1em;
+  padding: 2px 7px; flex-shrink: 0; margin-top: 2px;
+  color: var(--white);
+}
+.cl-tag.add { background: var(--green); }
+.cl-tag.fix { background: #D4870A; }
+.cl-tag.update { background: var(--accent); }
+.cl-text { font-size: 12px; color: var(--charcoal); flex: 1; line-height: 1.7; }
+
+/* FOOTER */
+footer {
+  background: var(--navy); color: rgba(255,255,255,.35);
+  padding: 18px 40px; font-size: 11px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <span class="nav-badge">Miru Systems</span>
+  <span class="nav-title">Election Intelligence · System 1 구조 정리</span>
+  <span class="nav-date">최종 업데이트 2026-06-23</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eye">Technical Documentation</div>
+  <h1>System 1: <em>Intelligence Report</em></h1>
+  <p>election_intel_report.html 생성 파이프라인 — 구조·데이터·설계 결정 정리<br>
+  TopoJSON 세계 지도 · US 타일맵 · KPI 팝업 · 7개 패널 · 포털 URL 검증 완료</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="n">816</div><div class="l">KB 단일 파일</div></div>
+    <div class="hero-stat"><div class="n blue">40</div><div class="l">국가 카드</div></div>
+    <div class="hero-stat"><div class="n">65</div><div class="l">포털 링크</div></div>
+    <div class="hero-stat"><div class="n blue">7</div><div class="l">탭 패널</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 1. 한 줄 요약 -->
+  <div class="sec">
+    <div class="sec-eye">Overview</div>
+    <div class="sec-title">무엇을 하는 시스템인가</div>
+    <div class="callout ok">
+      <strong>Python 스크립트 1개</strong>가 수동 검증된 데이터를 읽어
+      <strong>완전 자기완결형 HTML 파일</strong> 1개를 출력한다.<br>
+      서버·DB 서비스·빌드 툴 없음 — <code>python scripts/generate_intel_report.py</code> 한 줄로 끝.
+    </div>
+    <div class="pill-row">
+      <span class="pill active">입력: Python 리스트/딕셔너리</span>
+      <span class="pill active">처리: f-string 템플릿</span>
+      <span class="pill active">출력: HTML 816KB</span>
+      <span class="pill green">로고·Chart.js·TopoJSON·World Atlas 내장</span>
+      <span class="pill">서버 불필요</span>
+      <span class="pill">오프라인 동작</span>
+    </div>
+  </div>
+
+  <!-- 2. 실행 -->
+  <div class="sec">
+    <div class="sec-eye">Run</div>
+    <div class="sec-title">실행 방법</div>
+    <div class="cmd">
+      <span class="c"># 프로젝트 루트에서 실행</span><br>
+      python scripts/generate_intel_report.py<br>
+      <br>
+      <span class="c"># 최초 실행 시 (외부 라이브러리 캐시 다운로드)</span><br>
+      Chart.js 다운로드 중... <span class="g">완료</span>  <span class="c">→ data/_chartjs_cache.js</span><br>
+      topojson-client 다운로드 중... <span class="g">완료</span>  <span class="c">→ data/_topojson_cache.js</span><br>
+      world-atlas TopoJSON 다운로드 중... <span class="g">완료</span>  <span class="c">→ data/_worldatlas_cache.json</span><br>
+      <br>
+      <span class="c"># 이후 실행 (캐시 사용 — 인터넷 불필요)</span><br>
+      생성 완료: data/election_intel_report.html <span class="g">(816 KB)</span><br>
+      국가 카드: 40개<br>
+      포털 링크: 65개
+    </div>
+  </div>
+
+  <!-- 3. 데이터 흐름 -->
+  <div class="sec">
+    <div class="sec-eye">Architecture</div>
+    <div class="sec-title">데이터 흐름</div>
+    <div class="flow-box">
+<span class="c-blue">COUNTRIES</span>    <span class="c-gray">리스트 (24개국 · 기계투표)</span><br>
+<span class="c-blue">PORTALS</span>      <span class="c-gray">딕셔너리 (iso3 → 포털 목록)</span><br>
+<span class="c-green">COUNTRIES_BIO</span> <span class="c-gray">리스트 (16개국 · 생체인식/ERT)</span>     ─┐<br>
+<span class="c-green">PORTALS_BIO</span>   <span class="c-gray">딕셔너리 (iso3 → 포털 목록, 검증완료)</span>  │<br>
+<span class="c-yellow">ISO3_NUM</span>      <span class="c-gray">딕셔너리 (iso3 → TopoJSON numeric id)</span>   │<br>
+<br>
+                   ↓ Python 함수로 조립<br>
+<span class="c-yellow">country_card(row)</span>    <span class="c-gray">→ 국가 카드 1개 HTML</span><br>
+<span class="c-yellow">region_panel(pid)</span>    <span class="c-gray">→ 지역 패널 HTML (4개 지역)</span><br>
+<span class="c-yellow">bio_panel()</span>          <span class="c-gray">→ 생체인식·ERT 패널 HTML</span>   ←──────────┘<br>
+<span class="c-yellow">about_panel()</span>        <span class="c-gray">→ 제작 방법론 패널 HTML (신규)</span><br>
+<span class="c-yellow">KPI_PORTAL_JSON</span>      <span class="c-gray">→ KPI 블록 클릭 시 팝업 포털 링크 목록</span><br>
+<br>
+                   ↓ 외부 라이브러리 인라인 삽입<br>
+<span class="c-red">CHARTJS</span>       <span class="c-gray">Chart.js 4.4 번들 (공급사 차트)</span><br>
+<span class="c-red">TOPOJSON_JS</span>   <span class="c-gray">topojson-client 3 (국가 윤곽선 지도)</span><br>
+<span class="c-red">WORLD_ATLAS</span>   <span class="c-gray">Natural Earth 110m TopoJSON (국가 폴리곤)</span><br>
+<br>
+                   ↓ 모두 합쳐서<br>
+<span class="c-red">CSS</span>  <span class="c-gray">f-string (브랜드 팔레트 변수 주입)</span><br>
+<span class="c-red">HTML</span> <span class="c-gray">= f"""...{CSS}...{nav}...{panels}...{JS}..."""</span><br>
+<br>
+                   ↓ 파일 쓰기<br>
+<span class="c-green">data/election_intel_report.html</span>  <span class="c-gray">(816KB · 단일 파일 · 오프라인 동작)</span>
+    </div>
+  </div>
+
+  <!-- 4. 주요 기능 -->
+  <div class="sec">
+    <div class="sec-eye">Features</div>
+    <div class="sec-title">주요 기능 — 7개 탭 패널 구성</div>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+      <div class="card" style="border-top-color: var(--navy)">
+        <div class="card-label">Panel 1</div>
+        <div class="card-title">🌐 Global Overview</div>
+        <div class="card-body">
+          KPI 블록 (Miru 5 · 기계투표 24 · 생체인식 16 · 전체 40)<br>
+          클릭 → 팝업에 포털 링크 목록 표시<br><br>
+          세계 choropleth 지도 (TopoJSON)<br>
+          공급사 점유율 도넛 차트 (비미국 23개국)<br>
+          Breaking Intel 하단 티커
+        </div>
+      </div>
+      <div class="card" style="border-top-color: var(--accent)">
+        <div class="card-label">Panel 2–5</div>
+        <div class="card-title">🌏 지역별 4개 패널</div>
+        <div class="card-body">
+          Asia-Pacific 5개국 / Europe 7개국<br>
+          Americas·Africa 6개국 / MENA 6개국<br><br>
+          패널별 국가 카드 (기기·공급사·포털 링크)<br>
+          미국 카드: 주별 공급사 타일맵 + 수평 바 차트
+        </div>
+      </div>
+      <div class="card" style="border-top-color: var(--green)">
+        <div class="card-label">Panel 6</div>
+        <div class="card-title">🔍 생체인식·결과전송</div>
+        <div class="card-body">
+          16개국 카드 (bio / bio+ert 분류)<br>
+          케냐·나이지리아·남아공 등 아프리카 중심<br><br>
+          포털 URL 2026-06-23 전수 검증 완료<br>
+          (방글라데시 → eprocure.gov.bd 등 9개 교체)
+        </div>
+      </div>
+      <div class="card" style="border-top-color: var(--steel)">
+        <div class="card-label">Panel 7 (신규)</div>
+        <div class="card-title">ℹ️ About</div>
+        <div class="card-body">
+          데이터 소스 · 기술 스택 · 업데이트 정보<br>
+          크롤러 개발 현황 테이블 (7개 포털 이슈)<br><br>
+          팀 공유 시 "어떻게 만든 건지" 설명 패널
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 지도 렌더링 -->
+  <div class="sec">
+    <div class="sec-eye">Map Engine</div>
+    <div class="sec-title">세계 지도 — TopoJSON Choropleth</div>
+    <div class="callout info">
+      D3.js 미사용. TopoJSON client + 순수 Canvas API로 직접 구현.
+      Natural Earth 투영법(Natural Earth projection) 수식을 JS로 직접 계산.
+    </div>
+    <div class="flow-box" style="margin-top: 12px;">
+<span class="c-gray">// Natural Earth projection — 핵심 상수</span><br>
+<span class="c-yellow">const</span> NE_XMAX = <span class="c-blue">2.7353</span>;   <span class="c-gray">// π × 0.8707</span><br>
+<span class="c-yellow">const</span> NE_YMAX = <span class="c-blue">1.3401</span>;   <span class="c-gray">// lat=85°에서의 y값 (이전 0.85는 오류 → 북부 국가 잘림)</span><br>
+<br>
+<span class="c-gray">// 렌더링 흐름</span><br>
+1. <span class="c-green">WORLD_ATLAS</span> (인라인 JSON) → topojson.feature() → GeoJSON features<br>
+2. features 순회 → numeric id → <span class="c-blue">ISO3_NUM</span> 역방향 조회 → iso3<br>
+3. iso3가 COUNTRIES/COUNTRIES_BIO에 있으면 → 색상 결정 (기계투표/생체인식/Miru)<br>
+4. feature.arcs → 폴리곤 좌표 → project(lon, lat) → Canvas 경로<br>
+5. <span class="c-yellow">WORLD_DOTS</span> (40개국 좌표) → 점·레이블 오버레이<br>
+6. 마우스 hover → 툴팁 표시 (국가명·공급사·기기·포털)
+    </div>
+    <div class="callout" style="margin-top:12px;">
+      <strong>NE_YMAX = 0.85 버그:</strong> lat=60° (러시아·캐나다·북유럽)의 y값이 이미 0.85를 넘어서
+      캔버스 밖으로 나가 북부 국가들이 잘렸음. 정확한 값 1.3401로 수정 후 해결.
+    </div>
+  </div>
+
+  <!-- 6. 데이터 구조 -->
+  <div class="sec">
+    <div class="sec-eye">Data Structure</div>
+    <div class="sec-title">데이터 구조</div>
+
+    <p style="font-size:13px;color:var(--slate);margin-bottom:14px;">
+      모든 데이터는 Python 파일 안에 하드코딩된 리스트/딕셔너리.
+      SQLite DB는 참조만 하며 리포트 생성에 필수는 아님.
+    </p>
+
+    <table class="tbl" style="margin-bottom:20px;">
+      <tr><th colspan="3">COUNTRIES — 기계투표 24개국 (튜플 리스트)</th></tr>
+      <tr><th>필드</th><th>예시</th><th>설명</th></tr>
+      <tr><td>iso3</td><td>KOR</td><td class="note">ISO 3166-1 alpha-3</td></tr>
+      <tr><td>name</td><td>South Korea</td><td class="note">영문 국가명</td></tr>
+      <tr><td>name_ko</td><td>대한민국</td><td class="note">한국어 국가명</td></tr>
+      <tr><td>panel</td><td>apac</td><td class="note">소속 지역 패널 ID</td></tr>
+      <tr><td>mv</td><td>Yes / Pilot</td><td class="note">기계투표 실도입 여부</td></tr>
+      <tr><td>mtype</td><td>OMR</td><td class="note">기기 유형 (OMR/EVM/DRE/BMD/Internet/Mixed)</td></tr>
+      <tr><td>model</td><td>투표지분류기</td><td class="note">기기 모델명/제품명</td></tr>
+      <tr><td>vendor</td><td>Miru Systems</td><td class="note">공급사</td></tr>
+      <tr><td>year</td><td>2013</td><td class="note">최초 도입 연도</td></tr>
+      <tr><td>scale</td><td>National</td><td class="note">적용 범위</td></tr>
+      <tr><td>conf</td><td>High</td><td class="note">데이터 신뢰도</td></tr>
+    </table>
+
+    <table class="tbl" style="margin-bottom:20px;">
+      <tr><th colspan="3">PORTALS — 조달 포털 (딕셔너리 iso3 → 리스트)</th></tr>
+      <tr><th>필드</th><th>예시</th><th>설명</th></tr>
+      <tr><td>name</td><td>나라장터 G2B</td><td class="note">포털 표시명</td></tr>
+      <tr><td>url</td><td>https://g2b.go.kr/</td><td class="note">실제 접속 URL — 입찰 페이지 직링크 권장</td></tr>
+      <tr><td>status</td><td>Working</td><td class="note">Working / Dead / Login / JS / Blocked / Info</td></tr>
+      <tr><td>primary</td><td>True</td><td class="note">True면 KPI 팝업 · 국가 카드에서 최우선 표시</td></tr>
+    </table>
+
+    <table class="tbl">
+      <tr><th colspan="3">COUNTRIES_BIO — 생체인식·ERT 16개국 (튜플 리스트)</th></tr>
+      <tr><th>필드</th><th>예시</th><th>설명</th></tr>
+      <tr><td>btype</td><td>bio+ert</td><td class="note">bio (생체인식만) / ert (결과전송만) / bio+ert (둘 다)</td></tr>
+      <tr><td>vendor</td><td>Smartmatic / IDEMIA</td><td class="note">현재 경쟁사 공급사</td></tr>
+      <tr><td>system</td><td>KIEMS (BVD + RTS)</td><td class="note">시스템 명칭</td></tr>
+    </table>
+  </div>
+
+  <!-- 7. 분류 체계 -->
+  <div class="sec">
+    <div class="sec-eye">Classification</div>
+    <div class="sec-title">국가 분류 체계 — 왜 나눴는가</div>
+    <div class="card-grid">
+      <div class="card" style="border-top-color:var(--navy)">
+        <div class="card-label">Category A</div>
+        <div class="card-title"><span class="badge b-mv">기계투표</span> 24개국</div>
+        <div class="card-body">
+          투표 행위(ballot casting) 또는 개표(counting)가 <strong>기계로 처리</strong>됨.<br><br>
+          <code>OMR</code> 광학 스캐너 · <code>EVM</code> 전자투표기 ·
+          <code>DRE</code> 직접기록 · <code>BMD</code> 마킹장치 · <code>Internet</code>
+        </div>
+      </div>
+      <div class="card" style="border-top-color:var(--green)">
+        <div class="card-label">Category B</div>
+        <div class="card-title"><span class="badge b-bio">생체인식</span> 11개국</div>
+        <div class="card-body">
+          <strong>본인 확인만 전자화</strong> (지문·얼굴 인식).<br>
+          투표·개표는 종이 수개표.<br><br>
+          예: 케냐 KIEMS — 지문인식 후 종이 투표용지 교부, 수작업 개표.
+        </div>
+      </div>
+      <div class="card" style="border-top-color:var(--navy2)">
+        <div class="card-label">Category C (B와 겹침)</div>
+        <div class="card-title"><span class="badge b-ert">결과전송</span> 5개국</div>
+        <div class="card-body">
+          수개표 후 <strong>집계 결과만 전자 전송</strong>.<br>
+          투표·개표 자체는 수작업.<br><br>
+          예: 나이지리아 IREV, 케냐 Form 34A 사진 전송.
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <strong>이 분류가 중요한 이유:</strong>
+      케냐·남아공 같은 국가는 선거 현장에 전자기기가 보이기 때문에 "기계투표 국가"로 오해하기 쉽다.
+      그러나 투표·개표는 수작업이므로 <strong>Miru OMR 납품 대상이 아니다.</strong>
+      대신 생체인식 기기·결과전송 솔루션 납품 기회국으로 분류한다.
+    </div>
+  </div>
+
+  <!-- 8. 파이프라인 단계 -->
+  <div class="sec">
+    <div class="sec-eye">Pipeline</div>
+    <div class="sec-title">스크립트 실행 순서 (내부)</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <div class="step-title">로고 base64 인코딩</div>
+          <div class="step-desc">
+            <code>miru_white_logo_enhanced_transparent.png</code>을 읽어 base64 Data URL로 변환.
+            파일이 없으면 빈 문자열 처리 (로고 숨김). HTML에 인라인 삽입으로 단일 파일 유지.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <div class="step-title">외부 라이브러리 다운로드 (최초 1회)</div>
+          <div class="step-desc">
+            ① <code>chart.umd.min.js</code> → <code>data/_chartjs_cache.js</code><br>
+            ② <code>topojson-client.min.js</code> → <code>data/_topojson_cache.js</code><br>
+            ③ <code>countries-110m.json</code> (Natural Earth 110m) → <code>data/_worldatlas_cache.json</code><br>
+            이후 실행에서는 캐시를 읽어 HTML에 인라인 삽입. 다운로드 실패 시 CDN script 태그 fallback.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <div class="step-title">KPI 팝업 데이터 생성</div>
+          <div class="step-desc">
+            <code>_primary_url(iso3, portals)</code>: 각 국가의 primary=True이고 Working/Login/JS인 포털 URL 추출.<br>
+            <code>_kpi_items()</code>: COUNTRIES/COUNTRIES_BIO 순회 → flag·이름·포털명·URL 딕셔너리 리스트 생성.<br>
+            <code>KPI_PORTAL_JSON</code>: JSON 직렬화 → JS에서 KPI 클릭 팝업에 직접 사용.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <div class="step-title">카드 HTML 생성</div>
+          <div class="step-desc">
+            <code>country_card(row)</code>: COUNTRIES 튜플 1개 → 국가 카드 HTML.<br>
+            <code>bio_card(row)</code>: COUNTRIES_BIO 튜플 1개 → 생체인식 카드 HTML.<br>
+            포털 링크는 status에 따라 <code>&lt;a&gt;</code> (접근 가능) 또는 <code>&lt;span&gt;</code> (불가) 선택.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div class="step-body">
+          <div class="step-title">패널 HTML 생성 (7개)</div>
+          <div class="step-desc">
+            <code>region_panel("apac/europe/americas/mena")</code> 4개 + <code>bio_panel()</code> + <code>about_panel()</code><br>
+            Overview 패널은 하드코딩 (KPI 카드 + 세계 지도 canvas + 차트 canvas + US 타일맵 SVG).<br>
+            각 패널은 <code>&lt;div id="panel-{id}" class="panel"&gt;</code> 구조.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">6</div>
+        <div class="step-body">
+          <div class="step-title">CSS + HTML 조립</div>
+          <div class="step-desc">
+            CSS는 하나의 f-string. 브랜드 색상은 Python 딕셔너리 <code>B</code>에서 직접 주입.<br>
+            f-string 안 중괄호 규칙: CSS/JS 리터럴 중괄호는 <code>{{</code>/<code>}}</code> 이중 이스케이프 필수.<br>
+            Chart.js·TopoJSON·WorldAtlas 데이터 모두 인라인 삽입 → 단일 파일.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n green">7</div>
+        <div class="step-body">
+          <div class="step-title">파일 저장</div>
+          <div class="step-desc">
+            <code>data/election_intel_report.html</code>에 UTF-8로 저장. 816KB 단일 파일.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. UI 구조 -->
+  <div class="sec">
+    <div class="sec-eye">UI Logic</div>
+    <div class="sec-title">7개 패널 탭 전환 + KPI 팝업 구조</div>
+    <div class="flow-box">
+<span class="c-gray">/* 탭 전환 — CSS + JS 이중 제어 */</span><br>
+.panel        { display: none; }<br>
+.panel.active { display: block; }<br>
+<br>
+<span class="c-yellow">function</span> showPanel(panelId) {<br>
+  querySelectorAll('.panel').forEach(p => p.style.display = '<span class="c-red">none</span>');<br>
+  getElementById('panel-' + panelId).style.display = '<span class="c-green">block</span>';<br>
+}<br>
+<br>
+<span class="c-gray">/* KPI 팝업 — 클릭 시 포털 링크 목록 표시 */</span><br>
+<span class="c-blue">KPI_PORTAL_JSON</span> = { miru, mv, bio, all, portals }  <span class="c-gray">← Python에서 JSON으로 주입</span><br>
+<br>
+kpiEl.addEventListener('click', () => {<br>
+  <span class="c-yellow">const</span> data = KPI_PORTAL_JSON[kpiEl.dataset.kpi];<br>
+  popup.innerHTML = data.items.map(item => {<br>
+    <span class="c-gray">// item.url 있으면 → 새 탭에서 포털 열기</span><br>
+    <span class="c-gray">// item.panel 있으면 → 해당 패널로 이동</span><br>
+  });<br>
+  popup.style.display = '<span class="c-green">block</span>';<br>
+});
+    </div>
+    <div class="callout" style="margin-top:12px;">
+      <strong>CSS + JS 이중 제어를 쓰는 이유:</strong>
+      CSS <code>display:none</code>만 쓰면 특이성(specificity) 충돌로 일부 브라우저에서 패널이 동시에 보이는 버그 발생.
+      <code>style.display</code> 인라인 스타일은 모든 CSS 규칙보다 우선순위가 높아 확실하게 동작.
+    </div>
+  </div>
+
+  <!-- 10. 파일 구조 -->
+  <div class="sec">
+    <div class="sec-eye">File Map</div>
+    <div class="sec-title">관련 파일</div>
+    <table class="tbl">
+      <tr><th>파일</th><th>역할</th></tr>
+      <tr>
+        <td>scripts/generate_intel_report.py</td>
+        <td>리포트 생성 메인 스크립트. 모든 데이터·CSS·HTML이 이 파일 안에 있음.</td>
+      </tr>
+      <tr>
+        <td>data/election_intel_report.html</td>
+        <td>출력 파일 (816KB). <strong>이것만 공유하면 됨.</strong></td>
+      </tr>
+      <tr>
+        <td>miru_white_logo_enhanced_transparent.png</td>
+        <td>로고 원본. 스크립트 실행 시 base64로 변환되어 HTML에 내장됨.</td>
+      </tr>
+      <tr>
+        <td>data/_chartjs_cache.js</td>
+        <td>Chart.js 4.4 캐시 (자동 생성, git 제외). 없으면 CDN에서 자동 다운로드.</td>
+      </tr>
+      <tr class="new-row">
+        <td>data/_topojson_cache.js<span class="new-badge">NEW</span></td>
+        <td>topojson-client 3 캐시. 세계 지도 choropleth 렌더링에 사용.</td>
+      </tr>
+      <tr class="new-row">
+        <td>data/_worldatlas_cache.json<span class="new-badge">NEW</span></td>
+        <td>Natural Earth 110m TopoJSON. 국가 폴리곤 데이터 (~90KB). 없으면 CDN 자동 다운로드.</td>
+      </tr>
+      <tr>
+        <td>data/election_technology_world.db</td>
+        <td>SQLite 레퍼런스 DB (206개국). 리포트 생성에 직접 사용하지 않고 데이터 검증용 참조.</td>
+      </tr>
+      <tr>
+        <td>data/election_intel_tenders.db</td>
+        <td>크롤러 결과 누적 DB. crawler/crawl.py 실행 시 자동 생성·upsert.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 11. 포털 URL 검증 이력 -->
+  <div class="sec">
+    <div class="sec-eye">Portal Verification</div>
+    <div class="sec-title">포털 URL 검증 이력 — 2026-06-23</div>
+    <div class="callout ok">
+      <strong>전수 검증 완료:</strong> PORTALS (24개국) + PORTALS_BIO (16개국) 총 40개국 65개 포털.
+      규제기관 사이트 → 실거래 포털로 교체 9건, 도메인 오류 수정 1건.
+    </div>
+    <table class="tbl" style="margin-top:12px;">
+      <tr><th>국가</th><th>기존 URL</th><th>수정 URL</th><th>사유</th></tr>
+      <tr><td>케냐 KEN</td><td class="note">supplier.treasury.go.ke → tenders.go.ke</td><td>iebc.or.ke/procurement/ (IEBC)</td><td class="note">선거 기자재는 선관위(IEBC)가 직접 발주 — 일반 조달 포털 아님</td></tr>
+      <tr><td>나이지리아 NGA</td><td class="note">bpp.gov.ng/tenders</td><td>nocopo.bpp.gov.ng (NOCOPO)</td><td class="note">규제기관 웹사이트 → 실거래 포털</td></tr>
+      <tr><td>탄자니아 TZA</td><td class="note">ppra.go.tz</td><td>nest.go.tz (NeST)</td><td class="note">규제기관 → 전자조달 시스템(2022)</td></tr>
+      <tr><td>우간다 UGA</td><td class="note">ppda.go.ug</td><td>gpp.ppda.go.ug (GPP)</td><td class="note">규제기관 → 입찰공고 통합 포털</td></tr>
+      <tr><td>짐바브웨 ZWE</td><td class="note">praz.org.zw</td><td>egp.praz.org.zw (PRAZ eGP)</td><td class="note">2023년 출범 전자조달 시스템</td></tr>
+      <tr><td>세네갈 SEN</td><td class="note">dcmp.sn</td><td>marchespublics.sn</td><td class="note">규제기관 → 재무부 공식 입찰 포털</td></tr>
+      <tr><td>도미니카공화국 DOM</td><td class="note">dgcp.gob.do</td><td>comunidad.comprasdominicana.gob.do</td><td class="note">규제기관 정보 사이트 → 실입찰 SECP 시스템</td></tr>
+      <tr><td>방글라데시 BGD</td><td class="note">cptu.gov.bd (연결 불가)</td><td>eprocure.gov.bd (e-GP)</td><td class="note">CPTU → BPPA로 기관 개편, URL 변경</td></tr>
+      <tr><td>파키스탄 PAK</td><td class="note">ppra.org.pk</td><td>ppra.gov.pk</td><td class="note">비공식 .org 도메인 → 공식 .gov 도메인</td></tr>
+      <tr><td>알바니아 ALB</td><td class="note">app.gov.al/njoftimi-...</td><td>app.gov.al/contract-notice/</td><td class="note">경로 확인 불가 → 공식 계약공고 경로</td></tr>
+    </table>
+  </div>
+
+  <!-- 12. 데이터 업데이트 방법 -->
+  <div class="sec">
+    <div class="sec-eye">Maintenance</div>
+    <div class="sec-title">데이터 추가·수정 방법</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">A</div>
+        <div class="step-body">
+          <div class="step-title">기계투표 국가 추가</div>
+          <div class="step-desc">
+            <code>COUNTRIES</code> 리스트에 튜플 1줄 추가 →
+            <code>PORTALS</code>에 iso3 키로 포털 목록 추가 →
+            <code>FLAGS</code>에 국기 이모지 추가 →
+            <code>ISO3_NUM</code>에 numeric ID 추가 (TopoJSON 지도용) →
+            <code>PANEL_META</code> 해당 지역 카운트 수정.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">B</div>
+        <div class="step-body">
+          <div class="step-title">생체인식·ERT 국가 추가</div>
+          <div class="step-desc">
+            <code>COUNTRIES_BIO</code> 리스트에 튜플 추가 →
+            <code>PORTALS_BIO</code>에 포털 추가 →
+            <code>FLAGS_BIO</code>에 국기 이모지 추가 →
+            <code>ISO3_NUM</code>에 numeric ID 추가.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">C</div>
+        <div class="step-body">
+          <div class="step-title">포털 URL 변경</div>
+          <div class="step-desc">
+            <code>PORTALS[iso3]</code> 또는 <code>PORTALS_BIO[iso3]</code>에서 해당 튜플의 url·name·status 수정.<br>
+            status: <code>Working</code> / <code>Dead</code> / <code>Login</code> / <code>JS</code> / <code>Blocked</code> / <code>Info</code>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n green">D</div>
+        <div class="step-body">
+          <div class="step-title">수정 후 재생성</div>
+          <div class="step-desc">
+            <code>python scripts/generate_intel_report.py</code> 실행 → HTML 즉시 갱신. 캐시 파일 있으면 인터넷 불필요.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. 변경 이력 -->
+  <div class="sec">
+    <div class="sec-eye">Changelog</div>
+    <div class="sec-title">주요 변경 이력</div>
+    <div class="changelog">
+      <div class="cl-item">
+        <div class="cl-date">2026-06-23</div>
+        <div class="cl-tag fix">FIX</div>
+        <div class="cl-text">포털 URL 전수 재검증 — 9개국 규제기관 URL → 실거래 포털로 교체 (방글라데시·도미니카공화국·파키스탄 등)</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-23</div>
+        <div class="cl-tag add">ADD</div>
+        <div class="cl-text">ℹ️ About 탭 추가 — 데이터 소스·기술 스택·크롤러 개발 현황 패널 (팀 공유 시 설명 용도)</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-22</div>
+        <div class="cl-tag fix">FIX</div>
+        <div class="cl-text">세계 지도 NE_YMAX 버그 수정 (0.85 → 1.3401) — 캐나다·러시아·북유럽 잘림 현상 해결</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-22</div>
+        <div class="cl-tag add">ADD</div>
+        <div class="cl-text">KPI 블록 클릭 팝업 — 포털 링크 직접 열기 (기존: 패널 이동만)</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-21</div>
+        <div class="cl-tag add">ADD</div>
+        <div class="cl-text">TopoJSON choropleth 세계 지도 · US 타일맵 (12×8 SVG) 추가</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-21</div>
+        <div class="cl-tag add">ADD</div>
+        <div class="cl-text">생체인식·결과전송 16개국 패널 분리 (기존 기계투표 패널에서 독립)</div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-date">2026-06-20</div>
+        <div class="cl-tag add">ADD</div>
+        <div class="cl-text">최초 생성 — 24개국 기계투표 인텔리전스 리포트 v1</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>Miru Systems · Election Intelligence · System 1 Documentation · 2026-06-23</span>
+  <span>bhkim@mirusystems.com</span>
+</footer>
+
+</body>
+</html>
