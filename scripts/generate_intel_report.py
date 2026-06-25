@@ -295,6 +295,44 @@ PORTALS_BIO = {
             ("Portal Contratações","http://www.contratacoes.gov.mz/","Dead",False)],
 }
 
+# ─── Contract Intelligence (워크플로우 리서치 결과 2026-06-25) ────────────────
+# tier: CRITICAL(≤2026) / WATCH(2027) / MONITOR(2028-2029) / LONG(2030+) / UNKNOWN
+CONTRACT_DATA = {
+    "PRY": {"tier":"CRITICAL", "next_tender":"2027",      "contract_end":"2026",          "contract_type":"lease",    "notes":"임대 계약 10월 종료 → 2028 총선 입찰 예정. Miru 기존 참여사."},
+    "ARG": {"tier":"CRITICAL", "next_tender":"2027",      "contract_end":"2025",          "contract_type":"service",  "notes":"CABA 선거별 서비스 계약(MSA 단독입찰 ~$22M) → 2027 재입찰."},
+    "ARE": {"tier":"CRITICAL", "next_tender":"2026-2027", "contract_end":"2023",          "contract_type":"service",  "notes":"FNC 선거별 계약 (Scytl 4연속) → 2027 FNC 선거 입찰 2026년 개시."},
+    "OMN": {"tier":"CRITICAL", "next_tender":"2026-2027", "contract_end":"unknown",       "contract_type":"service",  "notes":"Shura 4년 주기 → 2027 선거 입찰 예상. Iraq 생체카메라 레퍼런스 활용 가능."},
+    "PHL": {"tier":"WATCH",    "next_tender":"2027",      "contract_end":"2025",          "contract_type":"lease",    "notes":"Miru P17.99B 임대 완료 → COMELEC 2028 ACM 입찰 2027년 예정 (4월 기술전시회 완료)."},
+    "BEL": {"tier":"WATCH",    "next_tender":"2026-2027", "contract_end":"2027",          "contract_type":"service",  "notes":"Smartmatic 15년 계약(2012) 만료 예정 → 2029 선거용 재입찰. EU 조달법 적용."},
+    "BGR": {"tier":"WATCH",    "next_tender":"2026-2027", "contract_end":"2024",          "contract_type":"purchase", "notes":"소프트웨어 보증 만료 → Ciela Norma 단독계약 대체 입법 논의중."},
+    "CHE": {"tier":"WATCH",    "next_tender":"2027-2028", "contract_end":"2027",          "contract_type":"pilot",    "notes":"Swiss Post 연방 라이선스 2027년 6월 만료 → 재심사. 경쟁입찰 없음."},
+    "BRA": {"tier":"WATCH",    "next_tender":"2027",      "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"UE2028 공청회 진행중(2026.6) → 2027 공식 입찰. 22만대 규모. 국내 JV 필요."},
+    "GEO": {"tier":"MONITOR",  "next_tender":"2027-2028", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"선거별 Smartmatic 조달(2025 $2.3M 추가) → 2028 의회선거 입찰."},
+    "ALB": {"tier":"MONITOR",  "next_tender":"2027-2029", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"EU 자금 $20M EVM 파일럿 → 전국 확대 미결정. 2027 지방/2029 의회."},
+    "MNG": {"tier":"MONITOR",  "next_tender":"2026-2028", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"2012년 Dominion 장비 14년 경과 → Liberty Vote 브랜드 변경이 진입 기회."},
+    "KOR": {"tier":"MONITOR",  "next_tender":"2027-2030", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"10년 주기 교체 (2013→2022) → 다음 교체 2027-2030. KRW 32.5B 규모."},
+    "COD": {"tier":"MONITOR",  "next_tender":"2027-2028", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"Miru $250M+ 장비 보유 → 2028 총선 교체/추가 조달. AS 계약 진행중."},
+    "IRQ": {"tier":"MONITOR",  "next_tender":"2028-2029", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"Miru ~$135M 장비 보유 → 2025년 생체카메라 추가. 10년 주기 2028-2029."},
+    "ZAF": {"tier":"MONITOR",  "next_tender":"2027-2030", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"VMD 2024 선거 오작동 → 교체 압박. DRE 도입 Green Paper 2026 결정 예정."},
+    "KGZ": {"tier":"MONITOR",  "next_tender":"2028-2030", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"Miru KOICA 자금 PCOS 5-in-1 → 2025 선거 재사용. 10년 수명 2028-2030."},
+    "BIH": {"tier":"LONG",     "next_tender":"2029-2030", "contract_end":"2030",          "contract_type":"purchase", "notes":"2026년 체결 4년 계약 74.5M BAM(38M EUR) → 2030 만료."},
+    "IND": {"tier":"LONG",     "next_tender":"2027-2030", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"국영제조사(BEL/ECIL) 직발주 → 민간입찰 없음. M3A 도입중."},
+    "BTN": {"tier":"LONG",     "next_tender":"2027-2028", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"2008/2013 BEL/ECIL 장비 18년 경과 → 2028 선거 전 교체. 인도 재조달 예상."},
+    "EST": {"tier":"LONG",     "next_tender":"unknown",   "contract_end":"owned/ongoing", "contract_type":"service",  "notes":"국가직영 오픈소스 i-Voting → Miru 진입 불가."},
+    "USA": {"tier":"LONG",     "next_tender":"2027-2030", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"카운티별 10년 교체 물결 2027-2030. GA Dominion(Liberty Vote) 2029 만료."},
+    "VEN": {"tier":"LONG",     "next_tender":"2030-2031", "contract_end":"owned/ongoing", "contract_type":"purchase", "notes":"OFAC 제재 ExClé 운영 → 불투명 조달. 다음 대선 2031."},
+    "IRN": {"tier":"UNKNOWN",  "next_tender":"unknown",   "contract_end":"unknown",       "contract_type":"pilot",    "notes":"소규모 파일럿 (4-8개 선거구) → 제재 환경. 진입 불가."},
+    "UZB": {"tier":"UNKNOWN",  "next_tender":"2027-2028", "contract_end":"unknown",       "contract_type":"pilot",    "notes":"37대 파일럿(2024) → 2029 의회선거 전 본격 입찰 예상 2027-2028."},
+}
+
+TIER_META = {
+    "CRITICAL": (B["red"],     "즉시 대응",  "🔴"),
+    "WATCH":    ("#D4870A",    "제안 준비",  "🟠"),
+    "MONITOR":  ("#4d9fff",    "모니터링",  "🔵"),
+    "LONG":     (B["steel"],   "장기 관찰",  "⚫"),
+    "UNKNOWN":  (B["accent2"], "정보 부족",  "⬜"),
+}
+
 # ─── KPI 팝업: 국가별 주요 조달 포털 URL 추출 ─────────────────────────────────
 def _primary_url(iso3, portals):
     for name, url, status, primary in portals.get(iso3, []):
@@ -486,6 +524,14 @@ def portal_html(iso3):
                      f'<span class="p-st">{lbl}</span>{c}')
     return "\n".join(lines)
 
+def contract_badge(iso3):
+    cd = CONTRACT_DATA.get(iso3)
+    if not cd: return ""
+    tier = cd["tier"]
+    col, lbl, icon = TIER_META.get(tier, (B["steel"], "?", ""))
+    nt = cd["next_tender"]
+    return f'<div class="contract-badge" style="border-top:1px solid {col}22;margin-top:6px;padding-top:6px"><span style="font-size:9px;color:{col};font-weight:600;letter-spacing:.05em">{icon} 다음입찰 {nt}</span><span style="font-size:9px;color:{col};opacity:.8;margin-left:6px">{lbl}</span></div>'
+
 def country_card(row):
     iso3,name,name_ko,panel,mv,mtype,model,vendor,year,scale,conf = row
     mc = MTYPE_COLOR.get(mtype, B["slate"])
@@ -493,6 +539,16 @@ def country_card(row):
     pilot_badge = '<span class="pilot-badge">PILOT</span>' if mv=="Pilot" else ""
     year_str = year or "—"
     scale_ko = {"National":"전국","Partial":"부분","Pilot":"시범"}.get(scale,scale)
+    cd = CONTRACT_DATA.get(iso3, {})
+    tier = cd.get("tier","")
+    tier_col = TIER_META.get(tier, (B["slate"],"",""))[0]
+    tier_lbl = TIER_META.get(tier, (B["slate"],"",""))[1]
+    tier_icon = TIER_META.get(tier, (B["slate"],"",""))[2]
+    next_t = cd.get("next_tender","—")
+    c_end  = cd.get("contract_end","—")
+    c_note = cd.get("notes","")
+    tier_badge = (f'<span class="tier-badge" style="background:{tier_col}18;color:{tier_col};border:1px solid {tier_col}44">'
+                  f'{tier_icon} {tier_lbl}</span>') if tier else ""
     return f"""
 <div class="ccard">
   <div class="ccard-head" style="border-left:3px solid {mc}">
@@ -508,7 +564,16 @@ def country_card(row):
     <div class="cc-row"><span class="cc-lbl">기기</span><span class="cc-val cc-model">{model}</span></div>
     <div class="cc-row"><span class="cc-lbl">계약연도</span><span class="cc-val">{year_str}</span></div>
     <div class="cc-row"><span class="cc-lbl">규모</span><span class="cc-val">{scale_ko}</span></div>
+    <div class="cc-row" style="margin-top:4px;align-items:flex-start">
+      <span class="cc-lbl" style="color:{tier_col}">다음입찰</span>
+      <span class="cc-val" style="color:{tier_col};font-weight:600">{next_t} {tier_badge}</span>
+    </div>
+    <div class="cc-row" style="margin-top:1px">
+      <span class="cc-lbl" style="font-size:9px;color:{B['steel']}">계약상태</span>
+      <span class="cc-val" style="font-size:9px;color:{B['steel']}">{c_end}</span>
+    </div>
   </div>
+  <div style="padding:0 12px 6px;font-size:9px;color:{B['steel']};line-height:1.4;opacity:.85">{c_note}</div>
   <div class="ccard-portals">
     <div class="p-label">조달 포털</div>
     {portal_html(iso3)}
@@ -552,6 +617,100 @@ def region_panel(pid):
   <div class="cards-grid">{cards}</div>
 </div>"""
 
+
+def opportunity_panel():
+    tiers = [
+        ("CRITICAL","즉시 대응 — 계약 만료 또는 입찰 진행중 (≤2026)"),
+        ("WATCH",   "제안 준비 — 1~2년 내 입찰 예상 (2027)"),
+        ("MONITOR", "모니터링 — 2~4년 내 입찰 예상 (2028–2029)"),
+        ("LONG",    "장기 관찰 — 5년+ 또는 구조적 폐쇄 시장"),
+        ("UNKNOWN", "정보 부족 — 파일럿·불투명 시장"),
+    ]
+    # country lookup
+    cmap = {r[0]:r for r in COUNTRIES}
+    def rows_for_tier(t):
+        items = [(iso3, cd) for iso3,cd in CONTRACT_DATA.items() if cd["tier"]==t]
+        rows_html = []
+        for iso3, cd in items:
+            cr = cmap.get(iso3)
+            if not cr: continue
+            name_ko = cr[2]; name = cr[1]; vendor = cr[7]; mtype = cr[5]
+            mc = MTYPE_COLOR.get(mtype, B["slate"])
+            flag = FLAGS.get(iso3,"🏳️")
+            miru_cls = "font-weight:600;color:#4d9fff" if "Miru" in vendor else ""
+            pname, purl = _primary_url(iso3, PORTALS)
+            portal_link = (f'<a href="{purl}" target="_blank" style="color:{B["green"]};font-size:10px">{pname}</a>'
+                           if purl else f'<span style="color:{B["steel"]};font-size:10px">—</span>')
+            rows_html.append(f"""
+<tr class="opp-row">
+  <td style="padding:8px 12px;white-space:nowrap">{flag} <strong>{name_ko}</strong> <span style="color:{B['steel']};font-size:10px">{iso3}</span></td>
+  <td style="padding:8px 12px"><span class="mtype-badge" style="background:{mc};font-size:9px">{mtype}</span></td>
+  <td style="padding:8px 12px;{miru_cls}">{vendor}</td>
+  <td style="padding:8px 12px;font-weight:600">{cd['next_tender']}</td>
+  <td style="padding:8px 12px;color:{B['steel']};font-size:10px">{cd['contract_end']}</td>
+  <td style="padding:8px 12px">{portal_link}</td>
+  <td style="padding:8px 12px;font-size:10px;color:{B['slate']};max-width:260px;line-height:1.4">{cd['notes']}</td>
+</tr>""")
+        return "".join(rows_html)
+
+    tier_sections = []
+    for tier_key, tier_desc in tiers:
+        col, lbl, icon = TIER_META[tier_key]
+        body = rows_for_tier(tier_key)
+        if not body: continue
+        tier_sections.append(f"""
+<div class="opp-tier" style="margin-bottom:24px">
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;background:{col}12;border-left:3px solid {col};margin-bottom:0">
+    <span style="font-size:14px">{icon}</span>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:{col};letter-spacing:.06em">{tier_key} — {lbl}</div>
+      <div style="font-size:10px;color:{B['steel']};margin-top:1px">{tier_desc}</div>
+    </div>
+  </div>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr style="background:{B['fog2']};color:{B['slate']}">
+        <th style="padding:6px 12px;text-align:left;font-weight:600">국가</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">유형</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">현재 공급사</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">다음입찰 예상</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">계약상태</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">포털</th>
+        <th style="padding:6px 12px;text-align:left;font-weight:600">메모</th>
+      </tr>
+    </thead>
+    <tbody>{body}</tbody>
+  </table>
+  </div>
+</div>""")
+
+    critical_cnt = sum(1 for cd in CONTRACT_DATA.values() if cd["tier"]=="CRITICAL")
+    watch_cnt    = sum(1 for cd in CONTRACT_DATA.values() if cd["tier"]=="WATCH")
+    return f"""
+<div id="panel-opportunity" class="panel">
+  <div class="ph">
+    <div class="ph-inner">
+      <div class="ph-left">
+        <div class="ph-eye">Business Development Intelligence</div>
+        <h2 class="ph-title">계약 만료 · 입찰 기회 파이프라인</h2>
+        <p class="ph-sub">25개 기계투표 국가 계약 리서치 기준 — 다음 입찰 예상 시점 긴급도별 분류 · 2026-06-25</p>
+      </div>
+      <div class="ph-stats">
+        <div class="ph-stat"><span class="ph-n" style="color:{B['red']}">{critical_cnt}</span><span class="ph-l">즉시 대응</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#D4870A">{watch_cnt}</span><span class="ph-l">제안 준비</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#4d9fff">7</span><span class="ph-l">모니터링</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:{B['steel']}">6</span><span class="ph-l">장기 관찰</span></div>
+      </div>
+    </div>
+    <div class="ph-pills">
+      <span style="font-size:10px;color:{B['steel']}">※ 리서치 신뢰도: High(공식발표) / Med(언론보도) / Low(추정) — 입찰 전 반드시 포털 재확인</span>
+    </div>
+  </div>
+  <div style="padding:24px clamp(12px,3vw,40px)">
+    {"".join(tier_sections)}
+  </div>
+</div>"""
 
 def bio_portal_html(iso3):
     lines = []
@@ -1013,6 +1172,11 @@ body{{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-
   font-size:8px;font-weight:700;letter-spacing:.1em;
   background:var(--red);color:var(--white);vertical-align:middle;
 }}
+.tier-badge{{
+  display:inline-block;padding:1px 6px;border-radius:3px;
+  font-size:9px;font-weight:600;letter-spacing:.06em;vertical-align:middle;margin-left:4px;
+}}
+.opp-row:hover{{background:var(--fog2);}}
 .ccard-body{{padding:11px 16px 10px;border-bottom:1px solid var(--fog);}}
 .cc-row{{display:flex;align-items:baseline;gap:8px;padding:4px 0;}}
 .cc-lbl{{
@@ -1233,6 +1397,7 @@ HTML = f"""<!DOCTYPE html>
     <button class="nav-tab" data-panel="americas">Americas &amp; Africa</button>
     <button class="nav-tab" data-panel="mena">Middle East &amp; Central Asia</button>
     <button class="nav-tab" data-panel="bio" style="color:rgba(255,255,255,.55);border-bottom-color:transparent;">🔍 생체인식·결과전송</button>
+    <button class="nav-tab" data-panel="opportunity" style="color:#D4870A;border-bottom-color:#D4870A44;font-weight:600">📊 입찰 파이프라인</button>
     <button class="nav-tab" data-panel="about" style="color:rgba(255,255,255,.4);border-bottom-color:transparent;font-size:11px;">ℹ️ About</button>
   </div>
   <div class="nav-kpis">
@@ -1256,19 +1421,24 @@ HTML = f"""<!DOCTYPE html>
           <div class="kpi-s">KOR · PHL · IRQ · KGZ · COD</div>
         </div>
         <div class="kpi" data-kpi="mv" title="클릭하면 기계투표 국가 목록">
-          <div class="kpi-n">24</div>
+          <div class="kpi-n">25</div>
           <div class="kpi-l">기계투표 사용국</div>
-          <div class="kpi-s">실도입 17 · 파일럿 3 — 투표·개표 기계화</div>
+          <div class="kpi-s">실도입 18 · 파일럿 3 — 투표·개표 기계화</div>
         </div>
         <div class="kpi" style="border-left:2px solid {B['green']}" data-kpi="bio" title="클릭하면 생체인식·ERT 국가 목록">
-          <div class="kpi-n" style="color:{B['green']}">16</div>
+          <div class="kpi-n" style="color:{B['green']}">15</div>
           <div class="kpi-l">생체인식·결과전송국</div>
-          <div class="kpi-s">e-Pollbook 11 · 생체+ERT 5 — 기계투표 미도입</div>
+          <div class="kpi-s">e-Pollbook 11 · 생체+ERT 4 — 기계투표 미도입</div>
         </div>
         <div class="kpi" data-kpi="all" title="클릭하면 전체 국가 목록">
           <div class="kpi-n">40</div>
           <div class="kpi-l">총 조달 대상국</div>
-          <div class="kpi-s">기계투표 24 + 생체인식·ERT 16</div>
+          <div class="kpi-s">기계투표 25 + 생체인식·ERT 15</div>
+        </div>
+        <div class="kpi" style="border-left:2px solid #D4870A;cursor:pointer" onclick="document.querySelector('[data-panel=opportunity]').click()" title="입찰 파이프라인으로 이동">
+          <div class="kpi-n" style="color:#D4870A">4</div>
+          <div class="kpi-l" style="color:#D4870A">즉시 대응국</div>
+          <div class="kpi-s">PRY·ARG·ARE·OMN — 입찰 진행중/임박</div>
         </div>
         <div class="kpi" data-kpi="portals" title="클릭하면 포털 현황으로 이동">
           <div class="kpi-n">71</div>
@@ -1400,7 +1570,10 @@ HTML = f"""<!DOCTYPE html>
 <!-- PANEL 6: Biometric / ERT -->
 {bio_panel()}
 
-<!-- PANEL 7: About -->
+<!-- PANEL 7: Opportunity Pipeline -->
+{opportunity_panel()}
+
+<!-- PANEL 8: About -->
 {about_panel()}
 
 <!-- FOOTER -->
@@ -1410,7 +1583,7 @@ HTML = f"""<!DOCTYPE html>
   border-top:1px solid rgba(255,255,255,.08);">
   <div style="display:flex;align-items:center;gap:14px;">
     {"<img src='" + LOGO_SRC + "' alt='Miru' style='height:20px;opacity:.6'>" if LOGO_SRC else ""}
-    <span>Election Technology Intelligence · 검증일 2026-06-23 · 40개국 71개 포털 (기계투표 24 + 생체인식·ERT 16)</span>
+    <span>Election Technology Intelligence · 검증일 2026-06-25 · 40개국 (기계투표 25 + 생체인식·ERT 15) · 계약 파이프라인 25개국</span>
   </div>
   <div style="text-align:right">내부 전략 문서 — 외부 배포 금지 · bhkim@mirusystems.com</div>
 </footer>
