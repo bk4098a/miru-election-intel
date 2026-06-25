@@ -5,8 +5,8 @@ from crawler.keywords import score, is_election_related
 
 BASE = 'https://etendering.tenderboard.gov.bh'
 SEARCH_URLS = [
+    f'{BASE}/',
     f'{BASE}/Home/PublishedOpenTenders',
-    f'{BASE}/Tender/Search?keyword=election',
     f'{BASE}/Tender/List',
 ]
 PORTAL = 'tenderboard.gov.bh'

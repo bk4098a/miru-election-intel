@@ -91,21 +91,19 @@ Matplotlib Miru 브랜드 테마 유틸리티. `data/*.html` 지역별 보고서
 | `goszakup.py` | 카자흐스탄 goszakup.gov.kz | ⚠️ API 토큰 필요 (`GOSZAKUP_TOKEN` 환경변수) |
 | `pncp.py` | 브라질 pncp.gov.br | ⚠️ ConnectionReset — TLS/WAF 이슈 |
 | `ghaneps.py` | 가나 ghaneps.gov.gh | ⚠️ 검색 기능 로그인 필요 |
-| `bahrain.py` | 바레인 etendering.tenderboard.gov.bh | 🔧 루트 URL 수정 필요 |
+| `bahrain.py` | 바레인 etendering.tenderboard.gov.bh | ✅ 루트 URL 수정 완료 |
 | `wp_portals.py` | 부탄 ECB / 알바니아 KQZ | ⚠️ ECB 타임아웃 / KQZ Next.js 재구축 |
 | `gojep.py` | 자메이카 GOJEP | ⚠️ JS 렌더링 필요 (Playwright 전환) |
 | `zakupki_kg.py` | 키르기스스탄 zakupki.gov.kg | 🔧 미테스트 |
+| `philgeps.py` | 필리핀 philgeps.gov.ph | ✅ 신규 — `/Indexes/` HTML 테이블 파싱 |
+| `g2b_korea.py` | 한국 나라장터 g2b.go.kr | ✅ 신규 — data.go.kr API (`G2B_SERVICE_KEY` 필요) |
+| `tenders_kenya.py` | 케냐 tenders.go.ke | ✅ 신규 — JSON API + HTML fallback |
 
 ---
 
 ## 즉시 해야 할 작업
 
-### 1. Bahrain 파서 수정 (30분)
-```python
-# bahrain.py: SEARCH_URLS를 루트 URL로 수정
-SEARCH_URLS = ['https://etendering.tenderboard.gov.bh/']
-# table[1]이 공개 입찰 테이블 (8행+)
-```
+### 1. ✅ Bahrain 파서 수정 — 완료
 
 ### 2. zakupki.gov.kg 테스트 (1~2시간)
 - OCDS API (`ocds.zakupki.gov.kg/api/`) 접근 여부 확인
@@ -116,17 +114,27 @@ SEARCH_URLS = ['https://etendering.tenderboard.gov.bh/']
 - `https://ows.goszakup.gov.kz` 에서 개발자 토큰 신청 → `.env`에 `GOSZAKUP_TOKEN=...`
 - 토큰 없이 쓸 수 있는 공개 웹 검색(`/ru/search/lots`) 파서 fallback 추가
 
-### 4. PNCP Brazil 엔드포인트 재확인
+### 4. Korea G2B API Key 발급 (외부 작업)
+- `https://www.data.go.kr` → 검색: "나라장터 입찰공고정보서비스" → 활용 신청
+- `.env`에 `G2B_SERVICE_KEY=...` 추가
+- 무료 발급, 승인 1~2일 소요
+
+### 5. PNCP Brazil 엔드포인트 재확인
 - 현재 `https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes` → ConnectionReset
 - 대안: `https://pncp.gov.br/api/pncp/v1/` 또는 공식 문서 `https://pncp.gov.br/app/api`
 
-### 5. KQZ Albania — Next.js 전환
+### 6. KQZ Albania — Next.js 전환
 - `kqz.gov.al` WordPress → Next.js 재구축됨. wp-json 경로 없음
 - `/procurimet` 또는 `/tendera` 경로 탐색 (SSR이면 requests 정적 파싱 가능)
 
-### 6. GOJEP Jamaica — Playwright 전환
+### 7. GOJEP Jamaica — Playwright 전환
 - `gojep.gov.jm` JSF 렌더링 필요
 - `python -m playwright install chromium` 후 파서 재작성
+
+### 8. 공고 검색 UI 사용법
+- 크롤 완료 후: `python scripts/gen_tenders_js.py` → `data/tenders_data.js` 생성
+- `data/tender_search.html` 브라우저에서 열기
+- 키워드·지역·카테고리·점수 필터 + 알람 설정 (localStorage)
 
 ---
 
