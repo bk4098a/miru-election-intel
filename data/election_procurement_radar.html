@@ -979,6 +979,34 @@ class App {
         </div>
       </div>`;
 
+    this._vendorSortKey='';
+    this._vendorSortDir=1;
+    this._mkVendorRow=(v,bg)=>{
+      const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6';
+      const ol=OVERLAP_KO[v.overlap]||'비경쟁';
+      const nc=(window.MIRU_VENDOR_NEWS?.vendors?.[v.slug]?.totalRelevant)||0;
+      const mkt=(v.overlap_markets||[]).map(m=>`<span style="font-size:9px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;color:var(--text2,#9aa6b5);">${m}</span>`).join(' ');
+      const cats=(v.categories||[]).slice(0,4).map(c=>`<span style="font-size:9px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;color:var(--text2,#9aa6b5);">${this.esc(c)}</span>`).join(' ');
+      const ncHtml=nc?`<span style="font-size:10px;font-weight:700;color:#3B86D6;background:#3B86D620;border:1px solid #3B86D644;border-radius:4px;padding:2px 7px;">${nc}</span>`:`<span style="color:var(--muted,#6b7787);font-size:10px;">—</span>`;
+      return `<tr style="border-bottom:1px solid var(--border,#222c3a);background:${bg};transition:background .1s;" onmouseenter="this.style.background='var(--hover,#161d28)'" onmouseleave="this.style.background='${bg}'">
+        <td style="padding:9px 14px;white-space:nowrap;"><div style="display:flex;align-items:center;gap:6px;"><span style="font-size:13px;">${v.flag||''}</span><div><div style="font-weight:600;font-size:11.5px;color:var(--text,#e7edf4);">${this.esc(v.name)}</div><div style="font-size:9px;color:var(--muted,#6b7787);margin-top:1px;">${this.esc(v.hq||'')}</div></div></div></td>
+        <td style="padding:9px 14px;white-space:nowrap;"><span style="font-size:9.5px;font-weight:700;color:${oc};background:${oc}18;border:1px solid ${oc}44;border-radius:4px;padding:2px 7px;">${ol}</span></td>
+        <td style="padding:9px 14px;text-align:center;font-weight:700;color:var(--text,#e7edf4);">${v.countries_count||0}</td>
+        <td style="padding:9px 14px;text-align:center;color:var(--text2,#9aa6b5);">${v.founded||'—'}</td>
+        <td style="padding:9px 14px;color:var(--text2,#9aa6b5);white-space:nowrap;">${this.esc(v.revenue||'—')}</td>
+        <td style="padding:9px 14px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${cats||'—'}</div></td>
+        <td style="padding:9px 14px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${mkt||'<span style="color:var(--muted,#6b7787);font-size:10px;">—</span>'}</div></td>
+        <td style="padding:9px 14px;text-align:center;">${ncHtml}</td>
+      </tr>`;
+    };
+    const thStyle='padding:10px 14px;font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--muted,#6b7787);text-transform:uppercase;white-space:nowrap;border-bottom:2px solid var(--border,#222c3a);';
+    const ths=[['name','회사','left'],['overlap','경쟁유형','left'],['countries_count','활동국가','center'],['founded','설립','center'],['revenue','매출','left'],[null,'제품군','left'],[null,'중복시장','left'],['news','뉴스','center']];
+    const thHtml=ths.map(([k,label,align])=>k
+      ?`<th class="vth" data-key="${k}" onclick="app.sortVendorTable('${k}')" style="${thStyle}text-align:${align};cursor:pointer;user-select:none;">${label} <span class="sarrow" style="color:#3B86D6;"></span></th>`
+      :`<th style="${thStyle}text-align:${align};cursor:default;">${label}</th>`
+    ).join('');
+    const initRows=VD.map((v,i)=>this._mkVendorRow(v,i%2?'transparent':'var(--card,#11161f)')).join('');
+
     el.innerHTML=`
       <div style="margin-bottom:24px;">
         <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">공급사 인텔리전스</div>
@@ -998,10 +1026,45 @@ class App {
           </div>
         </div>
       </div>
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">전체 비교 테이블</span>
+          <span style="font-size:10.5px;color:var(--muted,#6b7787);">— 헤더 클릭 시 정렬</span>
+        </div>
+        <div style="overflow-x:auto;border:1px solid var(--border,#222c3a);border-radius:10px;">
+          <table id="vendor-compare-table" style="width:100%;border-collapse:collapse;font-size:11.5px;">
+            <thead><tr style="background:var(--surface,#0c1119);">${thHtml}</tr></thead>
+            <tbody id="vendor-compare-tbody">${initRows}</tbody>
+          </table>
+        </div>
+      </div>
       ${section('직접 경쟁','#EB0513',directCnt,VD.filter(v=>v.overlap==='Direct'))}
       ${section('간접 경쟁 (시장 겹침)','#D4870A',indirectCnt,VD.filter(v=>v.overlap==='Indirect'))}
       ${section('비경쟁 (참고 프로파일)','#8A94A6',noneCnt,VD.filter(v=>v.overlap==='None'))}
     `;
+  }
+
+  sortVendorTable(key) {
+    const VD=window.MIRU_VENDOR_DATA||[];
+    this._vendorSortDir=key===this._vendorSortKey?-this._vendorSortDir:1;
+    this._vendorSortKey=key;
+    const parseRev=s=>{if(!s)return 0;const m=s.match(/([\d.]+)\s*([MBK]?)/i);if(!m)return 0;const n=parseFloat(m[1]);const u=(m[2]||'').toUpperCase();return u==='B'?n*1000:u==='K'?n/1000:n;};
+    const getVal=(v,k)=>{
+      if(k==='news')return(window.MIRU_VENDOR_NEWS?.vendors?.[v.slug]?.totalRelevant)||0;
+      if(k==='countries_count')return v.countries_count||0;
+      if(k==='revenue')return parseRev(v.revenue);
+      if(k==='founded')return parseInt(v.founded||0)||0;
+      if(k==='overlap'){const o={Direct:0,Indirect:1,None:2};return o[v.overlap]??2;}
+      return(v[k]||'').toString().toLowerCase();
+    };
+    const dir=this._vendorSortDir;
+    const sorted=[...VD].sort((a,b)=>{const av=getVal(a,key),bv=getVal(b,key);return typeof av==='number'?(av-bv)*dir:(av<bv?-1:av>bv?1:0)*dir;});
+    const tbody=document.getElementById('vendor-compare-tbody');
+    if(tbody)tbody.innerHTML=sorted.map((v,i)=>this._mkVendorRow(v,i%2?'transparent':'var(--card,#11161f)')).join('');
+    document.querySelectorAll('#vendor-compare-table .vth').forEach(th=>{
+      const arr=th.querySelector('.sarrow');
+      if(arr)arr.textContent=th.dataset.key===key?(dir===1?' ↑':' ↓'):'';
+    });
   }
 
   // ── Opportunity Pipeline view ─────────────────────────────────────────────
