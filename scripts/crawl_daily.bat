@@ -1,4 +1,6 @@
 @echo off
+chcp 65001 >nul
+set PYTHONIOENCODING=utf-8
 REM Miru Election Intel — Daily Crawler
 REM Scheduled: 11:00 KST (02:00 UTC) daily via Windows Task Scheduler
 REM Manual run: double-click or: scripts\crawl_daily.bat

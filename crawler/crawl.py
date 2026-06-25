@@ -40,7 +40,7 @@ def run(targets=None, dry_run=False, delay=1.0, mode='all'):
         try:
             records = parse_fn(country=country, iso3=iso3)
         except Exception as e:
-            print(f'  ERROR: {e}')
+            print(f'  ERROR: {str(e).encode("ascii", errors="replace").decode()}')
             records = []
 
         elapsed = time.time() - t0

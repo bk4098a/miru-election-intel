@@ -35,8 +35,9 @@ API_ENDPOINTS = [
 
 # Items per page — 50 keeps page count reasonable (~24 pages for 1,167 active).
 PERPAGE = 50
-# Maximum pages to fetch per endpoint (3 pages × 50 items = up to 150 items checked).
-MAX_PAGES = 3
+# Maximum pages to fetch per endpoint (1 page × 50 items per endpoint = fast scan).
+# Increase to 5+ if IEBC tenders appear on later pages.
+MAX_PAGES = 1
 # Seconds between requests — portal enforces 429 above ~1 req/s.
 REQUEST_DELAY = 2.0
 

@@ -182,10 +182,7 @@ def parse(country='South Korea', iso3='KOR'):
     """
     service_key = os.environ.get('G2B_SERVICE_KEY', '').strip()
     if not service_key:
-        print(
-            '  [g2b_korea] G2B_SERVICE_KEY not set — skipping\n'
-            '              Register free at https://www.data.go.kr → "나라장터 입찰공고정보서비스"'
-        )
+        print('  [g2b_korea] G2B_SERVICE_KEY not set - skipping (register at data.go.kr)')
         return []
 
     session = requests.Session()

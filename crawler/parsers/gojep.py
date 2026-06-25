@@ -19,8 +19,8 @@ def _is_relevant(text):
     return any(k in t for k in KEYWORDS)
 
 
-def _pw_fetch(url, wait_selector=None, timeout=30000):
-    """Fetch a page with Playwright and return (html, page_title)."""
+def _pw_fetch(url, wait_selector=None, timeout=45000):
+    """Fetch a JSF page with Playwright. Waits for table or 15s networkidle."""
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-gpu'])
@@ -31,13 +31,14 @@ def _pw_fetch(url, wait_selector=None, timeout=30000):
         page = ctx.new_page()
         try:
             page.goto(url, timeout=timeout, wait_until='domcontentloaded')
-            if wait_selector:
+            # Try waiting for table; if absent fall back to full networkidle
+            try:
+                page.wait_for_selector('table tr td', timeout=15000)
+            except Exception:
                 try:
-                    page.wait_for_selector(wait_selector, timeout=10000)
+                    page.wait_for_load_state('networkidle', timeout=15000)
                 except Exception:
                     pass
-            else:
-                page.wait_for_load_state('networkidle', timeout=10000)
             html = page.content()
         except Exception as e:
             print(f'  [gojep] Playwright error ({url}): {e}')
