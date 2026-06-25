@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Election Procurement Radar — Miru Systems</title>
+<style>
+@font-face{font-family:'Gmarket Sans';src:url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;height:100%;overflow:hidden;background:var(--bg,#0b1018);color:var(--text,#e7edf4);font-family:'Gmarket Sans',sans-serif;}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2,#2c3a4a);border-radius:6px}
+@keyframes mtick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes mring{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:.35;transform:scale(1.18)}}
+@keyframes mfade{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+@keyframes mrise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes mback{from{opacity:0}to{opacity:1}}
+#app{height:100vh;display:flex;flex-direction:column;}
+#top-bar{display:flex;align-items:center;gap:18px;height:56px;flex:0 0 56px;padding:0 20px;background:#04185F;position:relative;z-index:10;}
+#ticker{height:28px;flex:0 0 28px;display:flex;align-items:center;background:var(--panel,#11161f);border-bottom:1px solid var(--border,#222c3a);overflow:hidden;}
+#kpi-bar{display:flex;align-items:stretch;height:48px;flex:0 0 48px;background:var(--panel,#11161f);border-bottom:1px solid var(--border,#222c3a);padding:0 8px;overflow:hidden;}
+main{flex:1;min-height:0;display:flex;position:relative;}
+#map-view{flex:1;min-height:0;display:flex;}
+#stats-view{flex:1;min-height:0;overflow-y:auto;padding:24px 28px 44px;display:none;}
+#filters{flex:0 0 226px;background:var(--panel,#11161f);border-right:1px solid var(--border,#222c3a);overflow-y:auto;padding:16px 14px 28px;}
+#map-section{flex:1;min-width:0;display:flex;flex-direction:column;background:radial-gradient(125% 95% at 50% 0%,var(--mapbg2,#111a2c) 0%,var(--mapbg,#0b1018) 72%);}
+#map-container{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+#map-wrap{position:relative;width:100%;max-width:2200px;}
+#world-map{width:100%;height:auto;display:block;touch-action:none;user-select:none;}
+#detail-panel{flex:0 0 392px;background:var(--panel,#11161f);border-left:1px solid var(--border,#222c3a);overflow-y:auto;animation:mfade .26s ease;display:none;}
+#tooltip{position:absolute;pointer-events:none;background:var(--tooltipBg,#11161f);border:1px solid var(--border2,#2c3a4a);border-radius:9px;padding:9px 11px;min-width:142px;box-shadow:0 12px 30px var(--shadow,rgba(0,0,0,.5));z-index:5;display:none;transform:translate(-50%,-118%);}
+#zoom-controls{position:absolute;right:6px;bottom:6px;display:flex;flex-direction:column;gap:5px;z-index:4;}
+.zoom-btn{width:32px;height:32px;border-radius:8px;background:var(--panel,#11161f);border:1px solid var(--border2,#2c3a4a);color:var(--text,#e7edf4);font-size:18px;line-height:1;cursor:pointer;box-shadow:0 2px 8px var(--shadow,rgba(0,0,0,.4));font-family:inherit;}
+.zoom-btn:hover{border-color:#EB0513;color:#EB0513;}
+#map-legend{flex:0 0 auto;display:flex;align-items:center;gap:18px;padding:11px 22px;border-top:1px solid var(--border,#222c3a);background:var(--panel,#11161f);flex-wrap:wrap;}
+#drill-backdrop{display:none;position:fixed;left:0;right:0;top:132px;bottom:0;background:rgba(4,12,28,.45);z-index:20;cursor:pointer;}
+#drill-drawer{display:none;position:fixed;top:132px;right:0;bottom:0;width:432px;background:var(--panel,#11161f);border-left:1px solid var(--border,#222c3a);box-shadow:-12px 0 40px var(--shadow,rgba(0,0,0,.5));z-index:21;flex-direction:column;}
+.nav-tab{font-family:'Gmarket Sans',sans-serif;font-size:12.5px;padding:7px 15px;border-radius:7px;cursor:pointer;border:none;white-space:nowrap;transition:all .15s;}
+.nav-tab.active{background:#fff;color:#04185F;font-weight:700;}
+.nav-tab:not(.active){background:transparent;color:rgba(255,255,255,.72);font-weight:500;}
+.nav-tab:not(.active):hover{background:rgba(255,255,255,.1);}
+.chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-family:'Gmarket Sans',sans-serif;font-size:11px;border-radius:7px;padding:5px 9px;cursor:pointer;transition:all .12s;background:var(--chipbg,#0c1119);border:1px solid var(--border,#222c3a);color:var(--text,#e7edf4);}
+.chip.active{background:#04185F;border-color:#04185F;color:#fff;}
+.chip:hover:not(.active){border-color:#EB0513;}
+.chip-dot{width:7px;height:7px;border-radius:2px;display:inline-block;flex:0 0 7px;}
+.portal-card{background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:10px;padding:12px 13px;cursor:pointer;transition:border-color .15s,background .15s;}
+.portal-card:hover{border-color:#EB0513;background:var(--hover,#161d28);}
+.chart-row{display:flex;align-items:center;gap:11px;padding:7px 6px;border-radius:7px;cursor:pointer;transition:background .12s;}
+.chart-row:hover{background:var(--hover,#161d28);}
+.miru-card{background:var(--surface,#0c1119);border:1px solid rgba(235,5,19,.4);border-radius:10px;padding:13px;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+.miru-card:hover{border-color:#EB0513;box-shadow:0 2px 12px rgba(235,5,19,.18);}
+.drill-portal-card{display:block;background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:10px;padding:12px 13px;text-decoration:none;transition:border-color .15s,background .15s;}
+.drill-portal-card:hover{border-color:#EB0513;background:var(--hover,#161d28);}
+.miru-ring{transform-box:fill-box;transform-origin:center;animation:mring 2.4s ease-in-out infinite;pointer-events:none;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- TOP BAR -->
+  <header id="top-bar">
+    <div style="display:flex;align-items:center;gap:12px;flex:0 0 auto;">
+      <img src="../miru_white_logo_enhanced_transparent.png" alt="MIRU" style="height:20px;width:auto;display:block;" onerror="this.style.display='none'">
+      <div style="width:1px;height:24px;background:rgba(255,255,255,.22);"></div>
+      <div style="line-height:1.15;">
+        <div style="font-size:15px;font-weight:700;letter-spacing:.2px;color:#fff;">Market Intelligence</div>
+        <div style="font-size:8.5px;font-weight:500;letter-spacing:2px;color:rgba(255,255,255,.5);">ELECTION&nbsp;PROCUREMENT&nbsp;·&nbsp;GLOBAL</div>
+      </div>
+    </div>
+    <nav style="display:flex;gap:5px;margin-left:10px;">
+      <button id="tab-map" class="nav-tab active" onclick="app.setView('map')">지도</button>
+      <button id="tab-stats" class="nav-tab" onclick="app.setView('stats')">통계 · 인사이트</button>
+    </nav>
+    <div style="flex:1;"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(235,5,19,.55);border-radius:6px;flex:0 0 auto;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#EB0513;"></span>
+      <span style="font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.7);">CONFIDENTIAL</span>
+    </div>
+    <button id="theme-btn" onclick="app.toggleTheme()" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 11px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:7px;color:#fff;font-family:'Gmarket Sans',sans-serif;font-size:11.5px;cursor:pointer;flex:0 0 auto;transition:background .15s;">☀ 라이트</button>
+    <div style="position:relative;display:flex;align-items:center;flex:0 0 auto;">
+      <span style="position:absolute;left:11px;font-size:12px;color:rgba(255,255,255,.5);pointer-events:none;">⌕</span>
+      <input id="search-input" placeholder="국가 · 포털 · URL 검색" oninput="app.onQuery(event)" style="width:240px;height:34px;padding:0 12px 0 30px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:7px;color:#fff;font-family:'Gmarket Sans',sans-serif;font-size:12px;outline:none;transition:border-color .15s,background .15s;" onfocus="this.style.borderColor='#EB0513';this.style.background='rgba(255,255,255,.16)'" onblur="this.style.borderColor='rgba(255,255,255,.22)';this.style.background='rgba(255,255,255,.1)'">
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div id="ticker">
+    <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px;height:100%;padding:0 13px;background:#EB0513;font-size:9.5px;font-weight:500;letter-spacing:1.2px;color:#fff;z-index:2;">● LIVE FEED</div>
+    <div style="flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);">
+      <div id="ticker-track" style="display:inline-flex;align-items:center;white-space:nowrap;animation:mtick 64s linear infinite;will-change:transform;"></div>
+    </div>
+  </div>
+
+  <!-- KPI BAR -->
+  <div id="kpi-bar">
+    <div id="kpi-items" style="display:contents;"></div>
+    <div style="flex:1;"></div>
+    <div style="display:flex;align-items:center;padding:0 16px;font-size:10.5px;color:var(--muted,#6b7787);letter-spacing:.5px;white-space:nowrap;">DATA · 2026-06 · 35 COUNTRIES</div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- MAP VIEW -->
+    <div id="map-view">
+
+      <!-- FILTERS -->
+      <aside id="filters">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div style="font-size:11px;letter-spacing:1.4px;color:var(--muted,#6b7787);">FILTERS</div>
+          <button onclick="app.resetFilters()" style="background:none;border:none;color:var(--text2,#9aa6b5);font-size:10.5px;cursor:pointer;font-family:'Gmarket Sans',sans-serif;padding:0;">초기화</button>
+        </div>
+        <div style="font-size:11.5px;font-weight:700;margin-bottom:8px;color:var(--text,#e7edf4);">투표 방식</div>
+        <div id="method-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;"></div>
+        <div style="font-size:11.5px;font-weight:700;margin-bottom:8px;color:var(--text,#e7edf4);">지역</div>
+        <div id="region-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;"></div>
+        <div style="font-size:11.5px;font-weight:700;margin-bottom:8px;color:var(--text,#e7edf4);">공급사 / 경쟁 인텔</div>
+        <div id="vendor-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;"></div>
+        <div style="font-size:11.5px;font-weight:700;margin-bottom:8px;color:var(--text,#e7edf4);">우선순위</div>
+        <div id="priority-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;"></div>
+        <div style="padding:12px 13px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:9px;">
+          <div id="match-count" style="font-size:23px;font-weight:700;color:#EB0513;line-height:1;">0</div>
+          <div style="font-size:10.5px;color:var(--text2,#9aa6b5);margin-top:5px;">필터 일치 국가 · 지도에서 강조됨</div>
+        </div>
+      </aside>
+
+      <!-- MAP -->
+      <section id="map-section">
+        <div id="map-container">
+          <div id="map-wrap">
+            <svg id="world-map" viewBox="0 0 960 500">
+              <g id="map-g"></g>
+            </svg>
+            <div id="tooltip"></div>
+            <div id="zoom-controls">
+              <button class="zoom-btn" onclick="app.zoomBtn(1.4)" title="확대">＋</button>
+              <button class="zoom-btn" onclick="app.zoomBtn(1/1.4)" style="font-size:24px;padding-bottom:2px;" title="축소">−</button>
+              <button class="zoom-btn" onclick="app.zoomReset()" style="font-size:12px;" title="초기화">⤢</button>
+            </div>
+          </div>
+        </div>
+        <div id="map-legend">
+          <span style="font-size:10px;letter-spacing:1.3px;color:var(--muted,#6b7787);">투표방식</span>
+          <span class="leg-item" data-m="DRE" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:11px;height:11px;border-radius:3px;background:#9FC4ED;"></span>DRE 터치스크린</span>
+          <span class="leg-item" data-m="EVM" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:11px;height:11px;border-radius:3px;background:#3F86D6;"></span>EVM 버튼식</span>
+          <span class="leg-item" data-m="OMR" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:11px;height:11px;border-radius:3px;background:#5AA0E6;"></span>OMR 광학판독</span>
+          <span class="leg-item" data-m="Mixed" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:11px;height:11px;border-radius:3px;background:#2E6FC2;"></span>혼합형</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:11px;height:11px;border-radius:50%;border:2px solid #EB0513;"></span>Miru 공급국</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10.5px;color:var(--muted,#6b7787);">국가 클릭 · 휠/＋− 확대 · 드래그 이동</span>
+        </div>
+      </section>
+
+      <!-- DETAIL PANEL -->
+      <aside id="detail-panel"></aside>
+    </div>
+
+    <!-- STATS VIEW -->
+    <div id="stats-view">
+      <div style="max-width:1280px;margin:0 auto;">
+        <div style="margin-bottom:20px;">
+          <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">시장 인사이트</div>
+          <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">기계투표 35개국 · 71개 조달 포털 기준. <span style="color:#3B86D6;font-weight:500;">차트 막대를 클릭하면</span> 해당 분류의 포털과 바로가기 링크가 열립니다.</div>
+        </div>
+        <div id="charts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(370px,1fr));gap:16px;"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- DRILL DRAWER -->
+<div id="drill-backdrop" onclick="app.closeDrill()"></div>
+<div id="drill-drawer"></div>
+
+<script src="_topojson_cache.js"></script>
+<script src="_worldatlas_cache_js.js"></script>
+<script src="portals_data.js"></script>
+<script>
+class App {
+  constructor() {
+    this.state = {
+      view: 'map', theme: 'dark',
+      geoPaths: [], centroids: {}, markers: [],
+      selectedIso: null, selectedPortalId: null,
+      hoverIso: null, query: '',
+      f: { region: [], method: [], vendor: [], priority: [] },
+      drill: null, usState: null,
+      zoom: 1, panX: 0, panY: 0,
+      ready: false
+    };
+    this._drag = null; this._moved = false;
+    this.PORTALS = window.MIRU_PORTALS || [];
+    this.COUNTRIES = window.MIRU_COUNTRIES || [];
+    this.STATS = window.MIRU_ANALYSIS_STATS || {};
+    this.byId = {}; this.byNum = {}; this.byIso = {};
+    this.PORTALS.forEach(p => this.byId[p.id] = p);
+    this.COUNTRIES.forEach(c => { this.byNum[c.iso_num] = c; this.byIso[c.iso3] = c; });
+    this.applyTheme('dark');
+    this.renderTicker();
+    this.renderKPIs();
+    this.renderFilters();
+    this.bindEvents();
+    this.boot();
+  }
+
+  setState(u) {
+    const p = { ...this.state, f: { ...this.state.f } };
+    if (u.f) u.f = { ...this.state.f, ...u.f };
+    Object.assign(this.state, u);
+    this.update(p);
+  }
+
+  update(prev) {
+    const s = this.state;
+    if (prev.theme !== s.theme) { this.applyTheme(s.theme); if (s.ready) this.renderMapSVG(); }
+    if (prev.view !== s.view) this.switchView();
+    if (!prev.ready && s.ready) { this.renderMapSVG(); this.updateMatchCount(); if (s.view === 'stats') this.renderStats(); }
+    const fChanged = prev.query !== s.query || JSON.stringify(prev.f) !== JSON.stringify(s.f);
+    if (fChanged && s.ready) { this.updateMapColors(); this.updateMatchCount(); this.renderFilterChips(); }
+    if (prev.zoom !== s.zoom || prev.panX !== s.panX || prev.panY !== s.panY) this.updateMapTransform();
+    if (prev.hoverIso !== s.hoverIso) this.updateTooltip();
+    if (prev.selectedIso !== s.selectedIso || prev.selectedPortalId !== s.selectedPortalId) this.renderDetailPanel();
+    if (prev.usState !== s.usState) this.updateUSCaption();
+    if (prev.drill !== s.drill) this.renderDrill();
+  }
+
+  // ── Color maps ──────────────────────────────────────────────────────────
+  MC() {
+    const d = this.state.theme === 'dark';
+    return { OMR: d?'#5AA0E6':'#0A66B4', EVM: d?'#3F86D6':'#07377D', DRE: d?'#9FC4ED':'#5B8FCB', Mixed: d?'#2E6FC2':'#04185F' };
+  }
+  T() {
+    const d = this.state.theme === 'dark';
+    return d ? { land:'#26313f', landDim:'#1a222e', stroke:'#0b1018', blue:'#5AA0E6', navyTxt:'#e7edf4' }
+             : { land:'#DCE4EE', landDim:'#C6D0DE', stroke:'#FFFFFF', blue:'#0A66B4', navyTxt:'#04185F' };
+  }
+  MLAB() { return { DRE:'DRE 터치스크린', EVM:'EVM 버튼식', OMR:'OMR 광학판독', Mixed:'혼합형' }; }
+  RKO() { return { Americas:'아메리카', Europe:'유럽', 'Asia-Pacific':'아시아·태평양', 'Middle East':'중동', Africa:'아프리카', 'Central Asia':'중앙아시아' }; }
+  PRC() { return { High:'#0A66B4', Med:'#07377D', Low:'#8A94A6' }; }
+  PRKO() { return { High:'높음', Med:'중간', Low:'낮음' }; }
+  VLAB() { return { Miru:'Miru (자사)', Smartmatic:'Smartmatic', Dominion:'Dominion', Thales:'Thales', 'Ciela Norma':'Ciela Norma', 'Ren-Form':'Ren-Form' }; }
+
+  USTILES() {
+    return {
+      "AK":[0,0,"DOM"],"ME":[11,1,"ESS"],"WA":[0,1,"MIX"],"MT":[1,1,"ESS"],"ND":[2,1,"ESS"],"MN":[3,1,"ESS"],
+      "WI":[4,1,"MIX"],"MI":[5,1,"MIX"],"NY":[8,1,"MIX"],"VT":[9,1,"MIX"],"NH":[10,1,"MIX"],
+      "OR":[0,2,"MIX"],"ID":[1,2,"ESS"],"WY":[2,2,"ESS"],"SD":[3,2,"ESS"],"IA":[4,2,"ESS"],"IL":[5,2,"MIX"],"IN":[6,2,"ESS"],"OH":[7,2,"MIX"],
+      "PA":[8,2,"MIX"],"NJ":[9,2,"ESS"],"MA":[10,2,"ESS"],"RI":[11,2,"ESS"],
+      "CA":[0,3,"MIX"],"NV":[1,3,"MIX"],"CO":[2,3,"MIX"],"NE":[3,3,"ESS"],"MO":[4,3,"ESS"],"KY":[5,3,"MIX"],"WV":[6,3,"ESS"],"VA":[7,3,"ESS"],
+      "MD":[8,3,"ESS"],"DC":[9,3,"ESS"],"CT":[10,3,"ESS"],"DE":[11,3,"ESS"],
+      "AZ":[1,4,"MIX"],"UT":[2,4,"DOM"],"KS":[3,4,"CLR"],"AR":[4,4,"ESS"],"TN":[5,4,"ESS"],"NC":[6,4,"ESS"],"SC":[7,4,"ESS"],
+      "NM":[2,5,"ESS"],"OK":[3,5,"HART"],"MS":[4,5,"ESS"],"AL":[5,5,"ESS"],"GA":[6,5,"DOM"],
+      "TX":[3,6,"HART"],"LA":[4,6,"ESS"],"FL":[5,6,"ESS"],"HI":[0,7,"HART"]
+    };
+  }
+  USVDR() {
+    return { ESS:{label:'ES&S',color:'#04185F'}, DOM:{label:'Dominion',color:'#EB0513'}, HART:{label:'Hart',color:'#0A66B4'}, CLR:{label:'Clear Ballot',color:'#07377D'}, MIX:{label:'복수공급',color:'#8A94A6'} };
+  }
+  USNOTES() {
+    return { "AK":"Dominion 전주 단독","GA":"Dominion $107M 전주 단독 BMD+ICC","HI":"Hart Verity 전주 단독","OK":"Hart Verity 전주 단독","KS":"Clear Ballot 다수 카운티","IN":"ES&S iVotronic DRE (무용지)","TN":"ES&S iVotronic DRE (무용지)","NJ":"ES&S AVC Advantage DRE (무용지)","LA":"ES&S iVotronic DRE → 교체중","MS":"ES&S iVotronic DRE (무용지)","TX":"Hart 전통적 주도 (카운티별 선택)","FL":"ES&S 주도 (Miami-Dade=Dominion)" };
+  }
+
+  // ── Projection (Natural Earth / Robinson-like) ──────────────────────────
+  rawProject(lon, lat) {
+    const lam = lon*Math.PI/180, phi = lat*Math.PI/180;
+    const p2=phi*phi, p4=p2*p2;
+    const x=lam*(0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4)));
+    const y=phi*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)));
+    return [x,-y];
+  }
+
+  // ── Async map build ─────────────────────────────────────────────────────
+  async boot() {
+    const t0 = Date.now();
+    while (!window.topojson && Date.now()-t0 < 9000) await new Promise(r => setTimeout(r, 70));
+    if (!window.topojson) { console.warn('topojson not available'); return; }
+    try {
+      const world = window.WORLD_ATLAS || await fetch('_worldatlas_cache.json').then(r => r.json());
+      const fc = window.topojson.feature(world, world.objects.countries);
+      const W=960, H=500, pad=12;
+      let minX=Infinity, minY=Infinity, maxX=-Infinity, maxY=-Infinity;
+      const eachPoly = (geom, fn) => {
+        if (!geom) return;
+        if (geom.type==='Polygon') geom.coordinates.forEach(fn);
+        else if (geom.type==='MultiPolygon') geom.coordinates.forEach(poly => poly.forEach(fn));
+      };
+      fc.features.forEach(f => eachPoly(f.geometry, ring => ring.forEach(pt => {
+        const r = this.rawProject(pt[0],pt[1]);
+        if (r[0]<minX) minX=r[0]; if (r[0]>maxX) maxX=r[0];
+        if (r[1]<minY) minY=r[1]; if (r[1]>maxY) maxY=r[1];
+      })));
+      const k = Math.min((W-2*pad)/(maxX-minX),(H-2*pad)/(maxY-minY));
+      const tx = pad+(W-2*pad-k*(maxX-minX))/2-k*minX;
+      const ty = pad+(H-2*pad-k*(maxY-minY))/2-k*minY;
+      const proj = (lon, lat) => { const r=this.rawProject(lon,lat); return [tx+k*r[0],ty+k*r[1]]; };
+      const geoPaths=[], centroids={};
+      fc.features.forEach(f => {
+        const id = String(f.id).padStart(3,'0');
+        let d='', bestArea=-1, bestC=null;
+        eachPoly(f.geometry, ring => {
+          if (ring.length<2) return;
+          let seg='', sx=0, sy=0, n=0, area=0, px=0, py=0;
+          ring.forEach((pt,i) => {
+            const xy=proj(pt[0],pt[1]);
+            seg+=(i===0?'M':'L')+xy[0].toFixed(1)+','+xy[1].toFixed(1);
+            sx+=xy[0]; sy+=xy[1]; n++;
+            if (i>0) area+=px*xy[1]-xy[0]*py;
+            px=xy[0]; py=xy[1];
+          });
+          d+=seg+'Z';
+          const a=Math.abs(area);
+          if (a>bestArea) { bestArea=a; bestC=[sx/n,sy/n]; }
+        });
+        geoPaths.push({id,d});
+        if (bestC) centroids[id]=bestC;
+      });
+      const present = new Set(geoPaths.map(g => g.id));
+      const extra = {'048':[50.55,26.05]};
+      const markers = [];
+      this.COUNTRIES.forEach(c => {
+        if (c.iso_num && !present.has(c.iso_num) && extra[c.iso_num]) {
+          const xy = proj(extra[c.iso_num][0],extra[c.iso_num][1]);
+          markers.push({iso3:c.iso3,iso_num:c.iso_num,x:xy[0],y:xy[1]});
+          centroids[c.iso_num]=xy;
+        }
+      });
+      this.setState({geoPaths,centroids,markers,ready:true});
+    } catch(e) { console.error('map build failed',e&&e.message); }
+  }
+
+  // ── Map SVG rendering ────────────────────────────────────────────────────
+  renderMapSVG() {
+    const MC=this.MC(), T=this.T();
+    const anyF=this.anyFilter(), aSet=this.activeSet();
+    let html = '';
+    this.state.geoPaths.forEach(geo => {
+      const c = this.byNum[geo.id];
+      const isP = !!c;
+      const fill = isP ? ((anyF && !aSet.has(geo.id)) ? T.landDim : (MC[c.method]||MC.EVM)) : T.land;
+      const op = isP && anyF && !aSet.has(geo.id) ? '0.5' : '1';
+      const cur = isP ? 'pointer' : 'default';
+      html += `<path data-id="${geo.id}"${isP?` data-iso="${c.iso3}"`:''}fill="${fill}" stroke="${T.stroke}" stroke-width="0.5" vector-effect="non-scaling-stroke" d="${geo.d}" style="cursor:${cur};opacity:${op};transition:fill .2s,opacity .2s;"></path>`;
+    });
+    this.state.markers.forEach(m => {
+      const c=this.byNum[m.iso_num];
+      const fill=c?((anyF&&!aSet.has(m.iso_num))?T.landDim:(MC[c.method]||MC.EVM)):MC.EVM;
+      html += `<circle data-id="${m.iso_num}" data-iso="${m.iso3}" cx="${m.x.toFixed(1)}" cy="${m.y.toFixed(1)}" r="4" fill="${fill}" stroke="${T.stroke}" stroke-width="1.2" vector-effect="non-scaling-stroke" style="cursor:pointer;"></circle>`;
+    });
+    this.COUNTRIES.forEach(c => {
+      if (!c.isMiru) return;
+      const xy=this.state.centroids[c.iso_num];
+      if (!xy || (anyF && !aSet.has(c.iso_num))) return;
+      html += `<circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="13" fill="none" stroke="#EB0513" stroke-width="2.4" vector-effect="non-scaling-stroke" class="miru-ring" style="pointer-events:none;"></circle>`;
+      html += `<circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="3.4" fill="#EB0513" stroke="#fff" stroke-width="1" vector-effect="non-scaling-stroke" style="pointer-events:none;"></circle>`;
+    });
+    document.getElementById('map-g').innerHTML = html;
+    this.updateLegendColors();
+    this.updateMapTransform();
+  }
+
+  updateMapColors() {
+    if (!this.state.ready) return;
+    const MC=this.MC(), T=this.T(), anyF=this.anyFilter(), aSet=this.activeSet();
+    document.querySelectorAll('#map-g path[data-id]').forEach(el => {
+      const id=el.dataset.id, iso=el.dataset.iso;
+      if (!iso) { el.setAttribute('fill',T.land); return; }
+      const c=this.byNum[id];
+      if (!c) return;
+      const pass=aSet.has(id);
+      el.setAttribute('fill',(anyF&&!pass)?T.landDim:(MC[c.method]||MC.EVM));
+      el.style.opacity=(anyF&&!pass)?'0.5':'1';
+    });
+    document.querySelectorAll('#map-g circle[data-id]').forEach(el => {
+      const id=el.dataset.id, c=this.byNum[id];
+      if (!c) return;
+      const pass=aSet.has(id);
+      el.setAttribute('fill',(anyF&&!pass)?T.landDim:(MC[c.method]||MC.EVM));
+    });
+    // Rebuild miru rings
+    const miruRings = document.querySelectorAll('#map-g .miru-ring');
+    miruRings.forEach(el => { el.nextElementSibling?.remove(); el.remove(); });
+    this.COUNTRIES.forEach(c => {
+      if (!c.isMiru) return;
+      const xy=this.state.centroids[c.iso_num];
+      if (!xy || (anyF&&!aSet.has(c.iso_num))) return;
+      const g=document.getElementById('map-g');
+      const r1=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      r1.setAttribute('cx',xy[0].toFixed(1)); r1.setAttribute('cy',xy[1].toFixed(1));
+      r1.setAttribute('r','13'); r1.setAttribute('fill','none'); r1.setAttribute('stroke','#EB0513');
+      r1.setAttribute('stroke-width','2.4'); r1.setAttribute('vector-effect','non-scaling-stroke');
+      r1.setAttribute('class','miru-ring'); r1.style.pointerEvents='none'; g.appendChild(r1);
+      const r2=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      r2.setAttribute('cx',xy[0].toFixed(1)); r2.setAttribute('cy',xy[1].toFixed(1));
+      r2.setAttribute('r','3.4'); r2.setAttribute('fill','#EB0513'); r2.setAttribute('stroke','#fff');
+      r2.setAttribute('stroke-width','1'); r2.setAttribute('vector-effect','non-scaling-stroke');
+      r2.style.pointerEvents='none'; g.appendChild(r2);
+    });
+  }
+
+  updateMapTransform() {
+    const g=document.getElementById('map-g');
+    if (!g) return;
+    const s=this.state;
+    g.setAttribute('transform',`translate(${s.panX.toFixed(2)},${s.panY.toFixed(2)}) scale(${s.zoom.toFixed(3)})`);
+    const svg=document.getElementById('world-map');
+    if (svg) svg.style.cursor=s.zoom>1?'grab':'default';
+  }
+
+  updateTooltip() {
+    const tip=document.getElementById('tooltip');
+    const hc=this.state.hoverIso?this.byIso[this.state.hoverIso]:null;
+    if (!hc||!this.state.centroids[hc.iso_num]) { tip.style.display='none'; return; }
+    const xy=this.state.centroids[hc.iso_num];
+    const vx=this.state.panX+this.state.zoom*xy[0], vy=this.state.panY+this.state.zoom*xy[1];
+    const MC=this.MC(), MLAB=this.MLAB(), RKO=this.RKO();
+    tip.style.left=(vx/960*100)+'%';
+    tip.style.top=(vy/500*100)+'%';
+    tip.style.display='block';
+    tip.innerHTML=`
+      <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:9px;color:var(--muted,#6b7787);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 4px;">${hc.iso3}</span><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${hc.country_ko}</span></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:6px;"><span style="width:8px;height:8px;border-radius:2px;background:${MC[hc.method]||MC.EVM};"></span><span style="font-size:11px;color:var(--text2,#9aa6b5);">${MLAB[hc.method]||hc.method}</span></div>
+      <div style="font-size:10.5px;color:var(--muted,#6b7787);margin-top:4px;">포털 ${hc.count}개 · ${RKO[hc.region]||hc.region}</div>
+      ${hc.isMiru?'<div style="margin-top:5px;font-size:10px;color:#EB0513;font-weight:700;">● Miru 공급국</div>':''}
+    `;
+  }
+
+  updateLegendColors() {
+    const MC=this.MC();
+    document.querySelectorAll('.leg-item').forEach(el => {
+      const m=el.dataset.m;
+      const dot=el.querySelector('span');
+      if (dot && MC[m]) dot.style.background=MC[m];
+    });
+  }
+
+  // ── Ticker ───────────────────────────────────────────────────────────────
+  renderTicker() {
+    const VLAB=this.VLAB();
+    let items = [];
+    const seen={};
+    this.PORTALS.forEach(p => {
+      if (p.vendors&&p.vendors.length&&!seen[p.name]) {
+        seen[p.name]=1;
+        const v=p.vendors[0];
+        items.push({label:`${p.country_ko}  ${p.name}  —  ${VLAB[v]||v}`, color:p.isMiru?'#EB0513':'#C0863A'});
+      }
+    });
+    items = [...items,...items];
+    const track=document.getElementById('ticker-track');
+    track.innerHTML = items.map(t=>`<span style="display:inline-flex;align-items:center;gap:7px;padding:0 22px;font-size:11px;color:var(--text2,#9aa6b5);"><span style="width:6px;height:6px;border-radius:50%;background:${t.color};flex:0 0 6px;"></span>${this.esc(t.label)}</span>`).join('');
+  }
+
+  // ── KPIs ─────────────────────────────────────────────────────────────────
+  renderKPIs() {
+    const T=this.T(), STATS=this.STATS;
+    const miruCnt=this.COUNTRIES.filter(c=>c.isMiru).length;
+    const smartCnt=this.PORTALS.filter(p=>p.vendors&&p.vendors.includes('Smartmatic')).length;
+    const p1=(STATS.priority&&STATS.priority.P1)||0;
+    const kpis=[
+      {n:this.COUNTRIES.length,unit:'국',label:'추적 국가',color:'var(--text,#e7edf4)'},
+      {n:this.PORTALS.length,unit:'개',label:'조달 포털',color:'#5AA0E6'},
+      {n:miruCnt,unit:'국',label:'Miru 공급국',color:'#EB0513'},
+      {n:smartCnt,unit:'건',label:'Smartmatic 추적',color:'#C0863A'},
+      {n:p1,unit:'개',label:'즉시 크롤 가능 (P1)',color:'#5AA0E6'}
+    ];
+    document.getElementById('kpi-items').innerHTML = kpis.map(k=>`
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0 18px;border-right:1px solid var(--border,#222c3a);">
+        <div style="display:flex;align-items:baseline;gap:5px;"><span style="font-size:19px;font-weight:700;color:${k.color};line-height:1;">${k.n}</span><span style="font-size:10px;color:var(--muted,#6b7787);">${k.unit}</span></div>
+        <div style="font-size:10px;color:var(--text2,#9aa6b5);margin-top:3px;">${k.label}</div>
+      </div>`).join('');
+  }
+
+  // ── Filter chips ─────────────────────────────────────────────────────────
+  renderFilters() {
+    const MC=this.MC(), RKO=this.RKO(), PRKO=this.PRKO();
+    const mkChips = (containerId, group, items, dotFn) => {
+      const el=document.getElementById(containerId);
+      if (!el) return;
+      el.innerHTML = items.map(([key,label])=>`
+        <button class="chip${this.state.f[group].includes(key)?' active':''}" onclick="app.toggle('${group}','${key}')" data-group="${group}" data-key="${key}">
+          ${dotFn?`<span class="chip-dot" style="background:${dotFn(key)};"></span>`:''}${this.esc(label)}
+        </button>`).join('');
+    };
+    mkChips('method-chips','method',[['OMR','OMR'],['Mixed','혼합형'],['EVM','EVM'],['DRE','DRE']],k=>MC[k]);
+    mkChips('region-chips','region',Object.entries(RKO),null);
+    mkChips('vendor-chips','vendor',[['Miru','Miru (자사)'],['Smartmatic','Smartmatic'],['Dominion','Dominion'],['Thales','Thales']],null);
+    mkChips('priority-chips','priority',[['High','높음'],['Med','중간'],['Low','낮음']],null);
+    this.updateMatchCount();
+  }
+
+  renderFilterChips() { this.renderFilters(); }
+
+  updateMatchCount() {
+    const el=document.getElementById('match-count');
+    if (!el) return;
+    const anyF=this.anyFilter();
+    el.textContent = anyF ? this.activeSet().size : this.COUNTRIES.length;
+  }
+
+  // ── Theme ────────────────────────────────────────────────────────────────
+  applyTheme(theme) {
+    const d = theme==='dark';
+    const v = d ? {
+      '--bg':'#0b1018','--panel':'#11161f','--panel2':'#0e131b','--card':'#11161f',
+      '--border':'#222c3a','--border2':'#2c3a4a','--text':'#e7edf4','--text2':'#9aa6b5',
+      '--muted':'#6b7787','--surface':'#0c1119','--hover':'#161d28','--track':'#1a2330',
+      '--tooltipBg':'#11161f','--shadow':'rgba(0,0,0,.55)','--mapbg':'#0b1018','--mapbg2':'#121b2e','--chipbg':'#0c1119'
+    } : {
+      '--bg':'#EEF2F8','--panel':'#FFFFFF','--panel2':'#FAFBFC','--card':'#FFFFFF',
+      '--border':'#D8DEE9','--border2':'#C8D0DC','--text':'#161616','--text2':'#525252',
+      '--muted':'#8A94A6','--surface':'#F3F6FB','--hover':'#F8FAFD','--track':'#EEF2F8',
+      '--tooltipBg':'#FFFFFF','--shadow':'rgba(4,24,95,.16)','--mapbg':'#EEF3FA','--mapbg2':'#FFFFFF','--chipbg':'#FFFFFF'
+    };
+    const r=document.documentElement.style;
+    Object.keys(v).forEach(k=>r.setProperty(k,v[k]));
+    document.body.style.background=v['--bg'];
+    const btn=document.getElementById('theme-btn');
+    if (btn) btn.textContent=d?'☀ 라이트':'☾ 다크';
+  }
+
+  // ── View switching ────────────────────────────────────────────────────────
+  switchView() {
+    const v=this.state.view;
+    document.getElementById('map-view').style.display=v==='map'?'flex':'none';
+    document.getElementById('stats-view').style.display=v==='stats'?'block':'none';
+    document.getElementById('tab-map').className='nav-tab'+(v==='map'?' active':'');
+    document.getElementById('tab-stats').className='nav-tab'+(v==='stats'?' active':'');
+    if (v==='stats') this.renderStats();
+  }
+
+  // ── Detail panel ──────────────────────────────────────────────────────────
+  renderDetailPanel() {
+    const panel=document.getElementById('detail-panel');
+    const sel=this.state.selectedIso;
+    if (!sel) { panel.style.display='none'; return; }
+    const c=this.byIso[sel];
+    if (!c) { panel.style.display='none'; return; }
+    panel.style.display='block';
+    const MC=this.MC(), MLAB=this.MLAB(), RKO=this.RKO(), PRC=this.PRC(), PRKO=this.PRKO(), VLAB=this.VLAB();
+
+    const vendorBadges = c.vendors.map(v=>`<span style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:${v==='Miru'?'#EB0513':'var(--surface,#0c1119)'};color:${v==='Miru'?'#fff':'var(--text,#e7edf4)'};">${VLAB[v]||v}</span>`).join('');
+
+    const portals = c.portals.map(id=>this.byId[id]).filter(Boolean);
+    const detId = this.state.selectedPortalId;
+    const dp = detId!=null ? this.byId[detId] : null;
+
+    let content = `
+      <div style="padding:18px 18px 14px;border-bottom:1px solid var(--border,#222c3a);position:sticky;top:0;background:var(--panel,#11161f);z-index:2;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-size:10px;color:var(--text2,#9aa6b5);border:1px solid var(--border2,#2c3a4a);border-radius:4px;padding:2px 6px;">${c.iso3}</span>
+              <span style="font-weight:700;font-size:19px;color:var(--text,#e7edf4);">${c.country_ko}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:9px;">
+              <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--text,#e7edf4);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:20px;padding:3px 9px;"><span style="width:8px;height:8px;border-radius:2px;background:${MC[c.method]||MC.EVM};"></span>${MLAB[c.method]||c.method}</span>
+              <span style="font-size:11px;color:var(--muted,#6b7787);">${RKO[c.region]||c.region}</span>
+            </div>
+          </div>
+          <button onclick="app.closePanel()" style="background:var(--surface,#0c1119);border:1px solid var(--border2,#2c3a4a);border-radius:7px;width:28px;height:28px;color:var(--text2,#9aa6b5);cursor:pointer;font-size:14px;line-height:1;flex:0 0 auto;font-family:inherit;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">✕</button>
+        </div>
+        ${c.vendors.length?`<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;">${vendorBadges}</div>`:''}
+      </div>`;
+
+    if (c.iso3 === 'USA') {
+      content += this.buildUSATiles();
+    }
+
+    if (!dp) {
+      // Portal list
+      content += `<div style="padding:14px 16px;"><div style="font-size:11px;letter-spacing:1.2px;color:var(--muted,#6b7787);margin-bottom:11px;">조달 포털 ${c.count}건</div><div style="display:flex;flex-direction:column;gap:9px;">`;
+      portals.forEach(p => {
+        const host=this.host(p.url);
+        const prioColor=PRC[p.priority]||'#8A94A6';
+        content += `<div class="portal-card" onclick="app.selectPortal(${p.id})">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);line-height:1.3;">${this.esc(p.name)}</span>
+            <span style="width:8px;height:8px;border-radius:50%;background:${prioColor};flex:0 0 8px;" title="우선순위"></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:7px;flex-wrap:wrap;">
+            <span style="font-size:9.5px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 7px;">${this.esc(this.typeLabel(p.portal_type))}</span>
+            ${p.isMiru?'<span style="font-size:9.5px;font-weight:700;color:#fff;background:#EB0513;border-radius:4px;padding:2px 7px;">Miru</span>':''}
+            <span style="font-size:9.5px;color:var(--muted,#6b7787);">${p.lang||''}</span>
+          </div>
+          <div style="font-size:10px;color:#3B86D6;margin-top:7px;word-break:break-all;">${this.esc(host)}</div>
+        </div>`;
+      });
+      content += '</div></div>';
+    } else {
+      // Portal detail
+      const specs=[
+        {k:'포털 유형',v:dp.portal_type},
+        {k:'언어',v:dp.lang},
+        ...(dp.crawl_id?[{k:'크롤 ID',v:dp.crawl_id}]:[]),
+        ...(dp.site_type?[{k:'사이트 유형',v:dp.site_type}]:[]),
+        ...(dp.crawl_method?[{k:'수집 방식',v:dp.crawl_method}]:[]),
+        ...(dp.feasibility?[{k:'수집 가능성',v:dp.feasibility}]:[]),
+        ...(dp.api_endpoint&&dp.api_endpoint!=='없음'&&dp.api_endpoint!=='null'?[{k:'API',v:dp.api_endpoint}]:[])
+      ].filter(s=>s.v&&s.v!=='null');
+      const prioColor=PRC[dp.priority]||'#8A94A6';
+      const prioLabel=PRKO[dp.priority]||dp.priority||'—';
+      content += `<div style="padding:14px 16px 26px;animation:mrise .24s ease;">
+        <button onclick="app.backToCountry()" style="display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--text2,#9aa6b5);font-size:11.5px;cursor:pointer;padding:0;margin-bottom:14px;font-family:'Gmarket Sans',sans-serif;" onmouseenter="this.style.color='#EB0513'" onmouseleave="this.style.color=''">← 포털 목록</button>
+        <div style="font-size:16px;font-weight:700;color:var(--text,#e7edf4);line-height:1.35;">${this.esc(dp.name)}</div>
+        <div style="display:flex;align-items:center;gap:7px;margin-top:9px;flex-wrap:wrap;">
+          <span style="font-size:10px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:3px 8px;">${this.esc(this.typeLabel(dp.portal_type))}</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--text,#e7edf4);"><span style="width:7px;height:7px;border-radius:50%;background:${prioColor};"></span>우선순위 ${prioLabel}</span>
+          <span style="font-size:10px;color:var(--muted,#6b7787);">${dp.lang||''}</span>
+        </div>
+        <a href="${dp.url}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;height:42px;background:#EB0513;border-radius:9px;color:#fff;font-size:13px;font-weight:700;text-decoration:none;transition:filter .15s;" onmouseenter="this.style.filter='brightness(1.08)'" onmouseleave="this.style.filter=''">사이트 열기 ↗</a>
+        <div style="font-size:10px;color:var(--muted,#6b7787);margin-top:9px;word-break:break-all;text-align:center;">${this.esc(dp.url)}</div>
+        <div style="margin-top:18px;display:flex;flex-direction:column;gap:1px;background:var(--border,#222c3a);border:1px solid var(--border,#222c3a);border-radius:9px;overflow:hidden;">
+          ${specs.map(s=>`<div style="display:flex;background:var(--panel2,#0e131b);padding:10px 12px;gap:12px;"><span style="flex:0 0 96px;font-size:10.5px;color:var(--muted,#6b7787);">${s.k}</span><span style="flex:1;font-size:11.5px;color:var(--text,#e7edf4);word-break:break-word;">${this.esc(String(s.v))}</span></div>`).join('')}
+        </div>
+        ${dp.notes?`<div style="margin-top:14px;padding:12px 13px;background:var(--surface,#0c1119);border-left:3px solid #EB0513;border-radius:0 8px 8px 0;"><div style="font-size:9.5px;letter-spacing:1.1px;color:var(--muted,#6b7787);margin-bottom:6px;">분석 노트</div><div style="font-size:12px;color:var(--text2,#9aa6b5);line-height:1.7;">${this.esc(dp.notes)}</div></div>`:''}
+      </div>`;
+    }
+
+    panel.innerHTML = content;
+  }
+
+  buildUSATiles() {
+    const TILES=this.USTILES(), VDR=this.USVDR(), NOTES=this.USNOTES();
+    const tiles=Object.keys(TILES).map(code=>{
+      const t=TILES[code], vd=VDR[t[2]]||VDR.MIX;
+      const x=t[0]*29, y=t[1]*29;
+      return `<g style="cursor:pointer;" onmouseenter="app.setState({usState:{code:'${code}',vendor:'${vd.label.replace(/'/g,"\\'")}',note:'${(NOTES[code]||(vd.label+' 주력')).replace(/'/g,"\\'")}'}})">
+        <rect x="${x}" y="${y}" width="26" height="26" rx="3" fill="${vd.color}"></rect>
+        <text x="${x+13}" y="${y+13}" text-anchor="middle" dominant-baseline="central" font-family="Gmarket Sans" font-size="8.5" font-weight="700" fill="#fff" style="pointer-events:none;">${code}</text>
+      </g>`;
+    }).join('');
+    const VDR2=this.USVDR();
+    const legend=Object.keys(VDR2).map(k=>`<span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--text2,#9aa6b5);"><span style="width:10px;height:10px;border-radius:2px;background:${VDR2[k].color};"></span>${VDR2[k].label}</span>`).join('');
+    const sw=[['ES&S',20,'#04185F'],['Dominion',2,'#EB0513'],['Hart',2,'#0A66B4'],['Clear Ballot',1,'#07377D']];
+    const bars=sw.map(b=>`<div style="display:flex;align-items:center;gap:9px;"><span style="flex:0 0 78px;font-size:11px;color:var(--text,#e7edf4);">${b[0]}</span><div style="flex:1;height:14px;background:var(--track,#1a2330);border-radius:4px;overflow:hidden;"><div style="height:100%;width:${Math.max(5,b[1]/20*100)}%;background:${b[2]};border-radius:4px;"></div></div><span style="flex:0 0 20px;text-align:right;font-size:11px;font-weight:700;color:var(--text,#e7edf4);">${b[1]}</span></div>`).join('');
+    return `<div style="padding:15px 16px;border-bottom:1px solid var(--border,#222c3a);">
+      <div style="font-size:10px;letter-spacing:1px;color:var(--muted,#6b7787);margin-bottom:3px;">USA · STATE-LEVEL · EAC EAVS 2022</div>
+      <div style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);margin-bottom:10px;">주별 투표장비 공급사</div>
+      <svg viewBox="0 0 348 236" style="width:100%;height:auto;display:block;">${tiles}</svg>
+      <div id="us-caption" style="margin-top:8px;min-height:32px;padding:7px 10px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:7px;font-size:11px;color:var(--text2,#9aa6b5);line-height:1.5;">주에 마우스를 올리면 공급사·메모가 표시됩니다.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;">${legend}</div>
+      <div style="margin-top:14px;font-size:10px;color:var(--muted,#6b7787);letter-spacing:.4px;margin-bottom:7px;">주(State) 단독계약 수</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">${bars}</div>
+    </div>`;
+  }
+
+  updateUSCaption() {
+    const el=document.getElementById('us-caption');
+    if (!el) return;
+    const us=this.state.usState;
+    if (us) el.textContent=`${us.code} · ${us.vendor} — ${us.note}`;
+    else el.textContent='주에 마우스를 올리면 공급사·메모가 표시됩니다.';
+  }
+
+  // ── Stats view ────────────────────────────────────────────────────────────
+  renderStats() {
+    const MC=this.MC(), MLAB=this.MLAB(), RKO=this.RKO(), PRC=this.PRC(), PRKO=this.PRKO(), VLAB=this.VLAB();
+    const pct=(n,mx)=>mx?Math.max(4,Math.round(n/mx*100)):0;
+    this._dc = [];
+
+    const drillFor = (dimLabel, label, color, match) => {
+      const items=this.PORTALS.filter(match);
+      const cc=new Set(items.map(p=>p.iso3));
+      const idx=this._dc.length;
+      this._dc.push({show:true,dimLabel,label,color,count:items.length,countryCount:cc.size,items:items.map(p=>({iso3:p.iso3,country_ko:p.country_ko,name:p.name,typeLabel:this.typeLabel(p.portal_type),isMiru:p.isMiru,host:this.host(p.url),url:p.url}))});
+      return `app._od(${idx})`;
+    };
+
+    const mkRows=(data,mx)=>data.map(([key,label,count,color,match])=>`
+      <div class="chart-row" onclick="${drillFor(label,label,color,match)}">
+        <span style="flex:0 0 122px;font-size:11.5px;color:${color==='#EB0513'?'#EB0513':'var(--text,#e7edf4)'};font-weight:${color==='#EB0513'?'700':'500'};">${this.esc(label)}</span>
+        <div style="flex:1;height:18px;background:var(--track,#1a2330);border-radius:5px;overflow:hidden;"><div style="height:100%;width:${pct(count,mx)}%;background:${color};border-radius:5px;transition:width .5s;"></div></div>
+        <span style="flex:0 0 26px;text-align:right;font-size:12px;color:var(--text,#e7edf4);">${count}</span>
+        <span style="flex:0 0 10px;color:var(--muted,#6b7787);font-size:11px;">›</span>
+      </div>`).join('');
+
+    // Method
+    const mCount={}; this.PORTALS.forEach(p=>{const c=this.byIso[p.iso3];if(c)mCount[c.method]=(mCount[c.method]||0)+1;});
+    const mmx=Math.max(1,...Object.values(mCount));
+    const mRows=['Mixed','OMR','EVM','DRE'].map(m=>[m,MLAB[m],mCount[m]||0,MC[m],p=>(this.byIso[p.iso3]||{}).method===m]);
+
+    // Region
+    const rCount={}; this.PORTALS.forEach(p=>rCount[p.region]=(rCount[p.region]||0)+1);
+    const rOrder=['Americas','Europe','Asia-Pacific','Middle East','Africa','Central Asia'];
+    const rmx=Math.max(1,...rOrder.map(r=>rCount[r]||0));
+    const rRows=rOrder.map(r=>[r,RKO[r],rCount[r]||0,'#0A66B4',p=>p.region===r]);
+
+    // Vendor
+    const vCount={}; this.PORTALS.forEach(p=>p.vendors&&p.vendors.forEach(v=>vCount[v]=(vCount[v]||0)+1));
+    const vOrder=Object.keys(vCount).sort((a,b)=>vCount[b]-vCount[a]);
+    const vmx=Math.max(1,...Object.values(vCount));
+    const vRows=vOrder.map(v=>[v,VLAB[v]||v,vCount[v],v==='Miru'?'#EB0513':'#07377D',p=>p.vendors&&p.vendors.includes(v)]);
+
+    // Type
+    const tCount={}; this.PORTALS.forEach(p=>{const t=this.typeLabel(p.portal_type);tCount[t]=(tCount[t]||0)+1;});
+    const tOrder=Object.keys(tCount).sort((a,b)=>tCount[b]-tCount[a]);
+    const tmx=Math.max(1,...Object.values(tCount));
+    const tRows=tOrder.map(t=>[t,t,tCount[t],'#04185F',p=>this.typeLabel(p.portal_type)===t]);
+
+    // Priority
+    const pCount={}; this.PORTALS.forEach(p=>pCount[p.priority]=(pCount[p.priority]||0)+1);
+    const pOrder=['High','Med','Low'];
+    const pmx=Math.max(1,...pOrder.map(p=>pCount[p]||0));
+    const pRows=pOrder.map(p=>[p,PRKO[p]||p,pCount[p]||0,PRC[p],pp=>pp.priority===p]);
+
+    // Feasibility
+    const fMeta=[['High','높음 (즉시)','#0A66B4'],['Med','중간 (조건부)','#07377D'],['Low','낮음 (어려움)','#5B8FCB'],['N/A','조달 없음','#8A94A6'],['__none__','미분석','#C8D0DC']];
+    const fCount={}; this.PORTALS.forEach(p=>{const k=this.feasKey(p);fCount[k]=(fCount[k]||0)+1;});
+    const fmx=Math.max(1,...fMeta.map(m=>fCount[m[0]]||0));
+    const fRows=fMeta.filter(m=>(fCount[m[0]]||0)>0).map(m=>[m[0],m[1],fCount[m[0]]||0,m[2],p=>this.feasKey(p)===m[0]]);
+
+    const charts=[
+      {title:'투표 방식별 포털',unit:'PORTALS',rows:mRows,mx:mmx,note:null},
+      {title:'지역별 포털',unit:'PORTALS',rows:rRows,mx:rmx,note:null},
+      {title:'공급사 언급 · 경쟁 인텔',unit:'MENTIONS',rows:vRows,mx:vmx,note:'Miru와 Smartmatic이 추적 시장에서 가장 넓게 노출 — 두 공급사 관련 공고가 모니터링 1순위.'},
+      {title:'포털 유형',unit:'PORTALS',rows:tRows,mx:tmx,note:null},
+      {title:'조달 우선순위',unit:'PORTALS',rows:pRows,mx:pmx,note:null},
+      {title:'자동 수집(크롤링) 가능성',unit:'PORTALS',rows:fRows,mx:fmx,note:'High 등급은 API·정적 HTML로 즉시 자동 수집 가능. 막대를 클릭해 대상 포털을 확인하세요.'}
+    ];
+
+    const miruCards=this.COUNTRIES.filter(c=>c.isMiru).map(c=>`
+      <div class="miru-card" onclick="app.setView('map');app.setState({selectedIso:'${c.iso3}',selectedPortalId:null})">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:9px;color:var(--muted,#6b7787);border:1px solid var(--border2,#2c3a4a);border-radius:3px;padding:1px 5px;">${c.iso3}</span>
+          <span style="font-size:14px;font-weight:700;color:var(--text,#e7edf4);">${c.country_ko}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:8px;"><span style="width:7px;height:7px;border-radius:2px;background:${MC[c.method]||MC.EVM};"></span><span style="font-size:11px;color:var(--text2,#9aa6b5);">${MLAB[c.method]||c.method}</span></div>
+        <div style="font-size:11px;color:var(--muted,#6b7787);margin-top:7px;line-height:1.5;">${c.portals.map(id=>this.byId[id]?this.byId[id].name:'').filter(Boolean).join(' · ')}</div>
+      </div>`).join('');
+
+    document.getElementById('charts-grid').innerHTML =
+      charts.map(ch=>`
+        <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);">
+            <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${ch.title}</span>
+            <span style="font-size:10px;color:var(--muted,#6b7787);letter-spacing:.5px;">${ch.unit}</span>
+          </div>
+          <div style="padding:8px 10px;">
+            ${mkRows(ch.rows,ch.mx)}
+            ${ch.note?`<div style="padding:6px 6px 8px;font-size:11px;color:var(--text2,#9aa6b5);line-height:1.6;">${ch.note}</div>`:''}
+          </div>
+        </div>`).join('') +
+      `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;grid-column:1 / -1;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);">
+          <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);"><span style="color:#EB0513;">●</span> Miru 공급 / 모니터링 핵심 국가</span>
+          <span style="font-size:10px;color:var(--muted,#6b7787);letter-spacing:.5px;">PRIORITY WATCH</span>
+        </div>
+        <div style="padding:15px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:11px;">${miruCards}</div>
+      </div>`;
+  }
+
+  // ── Drill drawer ──────────────────────────────────────────────────────────
+  renderDrill() {
+    const bd=document.getElementById('drill-backdrop');
+    const dr=document.getElementById('drill-drawer');
+    const d=this.state.drill;
+    if (!d||!d.show) {
+      bd.style.display='none'; dr.style.display='none'; return;
+    }
+    bd.style.display='block'; dr.style.display='flex'; dr.style.animation='mfade .26s ease';
+    dr.innerHTML=`
+      <div style="padding:18px 18px 15px;border-bottom:1px solid var(--border,#222c3a);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="font-size:10px;letter-spacing:1px;color:var(--muted,#6b7787);">${this.esc(d.dimLabel)}</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;"><span style="width:11px;height:11px;border-radius:3px;background:${d.color};"></span><span style="font-size:18px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(d.label)}</span></div>
+            <div style="font-size:11.5px;color:var(--text2,#9aa6b5);margin-top:6px;">${d.count}개 포털 · ${d.countryCount}개국</div>
+          </div>
+          <button onclick="app.closeDrill()" style="background:var(--surface,#0c1119);border:1px solid var(--border2,#2c3a4a);border-radius:7px;width:28px;height:28px;color:var(--text2,#9aa6b5);cursor:pointer;font-size:14px;line-height:1;flex:0 0 auto;font-family:inherit;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">✕</button>
+        </div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:14px 16px 24px;">
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          ${(d.items||[]).map(p=>`
+            <a href="${p.url}" target="_blank" rel="noopener" class="drill-portal-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:9px;color:var(--muted,#6b7787);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;">${p.iso3}</span><span style="font-size:12px;font-weight:700;color:var(--text,#e7edf4);">${p.country_ko}</span></div>
+                <span style="color:#EB0513;font-size:13px;">↗</span>
+              </div>
+              <div style="font-size:13px;font-weight:500;color:var(--text,#e7edf4);margin-top:8px;line-height:1.3;">${this.esc(p.name)}</div>
+              <div style="display:flex;align-items:center;gap:7px;margin-top:7px;flex-wrap:wrap;">
+                <span style="font-size:9.5px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 7px;">${this.esc(p.typeLabel)}</span>
+                ${p.isMiru?'<span style="font-size:9.5px;font-weight:700;color:#fff;background:#EB0513;border-radius:4px;padding:2px 7px;">Miru</span>':''}
+                <span style="font-size:9.5px;color:#3B86D6;">${this.esc(p.host)}</span>
+              </div>
+            </a>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  // ── Map events ────────────────────────────────────────────────────────────
+  bindEvents() {
+    const svg=document.getElementById('world-map');
+    if (!svg) return;
+    svg.addEventListener('wheel', e=>{ e.preventDefault(); const r=e.currentTarget.getBoundingClientRect(); const sx=(e.clientX-r.left)/r.width*960, sy=(e.clientY-r.top)/r.height*500; this.zoomAt(sx,sy,e.deltaY<0?1.25:0.8); }, {passive:false});
+    svg.addEventListener('mousedown', e=>{ this._drag={x:e.clientX,y:e.clientY,px:this.state.panX,py:this.state.panY,rect:svg.getBoundingClientRect()}; this._moved=false; });
+    svg.addEventListener('mousemove', e=>{
+      if (this._drag) {
+        const dx=(e.clientX-this._drag.x)/this._drag.rect.width*960, dy=(e.clientY-this._drag.y)/this._drag.rect.height*500;
+        if (Math.abs(e.clientX-this._drag.x)+Math.abs(e.clientY-this._drag.y)>4) this._moved=true;
+        const cl=this.clampPan(this._drag.px+dx,this._drag.py+dy,this.state.zoom);
+        const g=document.getElementById('map-g');
+        if (g) g.setAttribute('transform',`translate(${cl[0].toFixed(2)},${cl[1].toFixed(2)}) scale(${this.state.zoom.toFixed(3)})`);
+        this.state.panX=cl[0]; this.state.panY=cl[1];
+        return;
+      }
+      // Hover detection
+      const target=e.target.closest('[data-id]');
+      const iso=target&&target.dataset.iso?target.dataset.iso:null;
+      if (iso!==this.state.hoverIso) this.setState({hoverIso:iso});
+    });
+    svg.addEventListener('mouseup', ()=>{ if (this._drag) { Object.assign(this.state,{panX:this.state.panX,panY:this.state.panY}); this._drag=null; } });
+    svg.addEventListener('mouseleave', ()=>{ this._drag=null; if (this.state.hoverIso) this.setState({hoverIso:null}); });
+    svg.addEventListener('click', e=>{
+      if (this._moved) { this._moved=false; return; }
+      const target=e.target.closest('[data-iso]');
+      if (target&&target.dataset.iso) this.selectCountry(target.dataset.iso);
+    });
+  }
+
+  clampPan(px,py,z) { const mx=960-960*z, my=500-500*z; return [Math.min(0,Math.max(mx,px)),Math.min(0,Math.max(my,py))]; }
+
+  zoomAt(sx,sy,factor) {
+    const z=Math.max(1,Math.min(7,this.state.zoom*factor));
+    const wx=(sx-this.state.panX)/this.state.zoom, wy=(sy-this.state.panY)/this.state.zoom;
+    const cl=this.clampPan(sx-wx*z,sy-wy*z,z);
+    this.setState({zoom:z,panX:cl[0],panY:cl[1]});
+    const svg=document.getElementById('world-map');
+    if (svg) svg.style.cursor=z>1?'grab':'default';
+  }
+
+  zoomBtn(f) { this.zoomAt(480,250,f); }
+  zoomReset() { this.setState({zoom:1,panX:0,panY:0}); }
+
+  // ── Actions ───────────────────────────────────────────────────────────────
+  setView(v) { this.setState({view:v}); }
+  toggleTheme() { const t=this.state.theme==='dark'?'light':'dark'; this.setState({theme:t}); }
+  onQuery(e) { this.setState({query:e.target.value}); }
+  toggle(group, key) {
+    const f={...this.state.f,[group]:[...this.state.f[group]]};
+    const i=f[group].indexOf(key);
+    if (i>=0) f[group].splice(i,1); else f[group].push(key);
+    this.setState({f});
+  }
+  resetFilters() {
+    this.setState({f:{region:[],method:[],vendor:[],priority:[]},query:''});
+    const si=document.getElementById('search-input');
+    if (si) si.value='';
+  }
+  selectCountry(iso) { this.setState({selectedIso:iso,selectedPortalId:null,usState:null,view:'map'}); }
+  selectPortal(id) { this.setState({selectedPortalId:id}); }
+  backToCountry() { this.setState({selectedPortalId:null}); }
+  closePanel() { this.setState({selectedIso:null,selectedPortalId:null}); }
+  _od(idx) { if (this._dc&&this._dc[idx]) this.setState({drill:this._dc[idx]}); }
+  openDrill(d) { this.setState({drill:{...d,show:true}}); }
+  closeDrill() { this.setState({drill:null}); }
+
+  // ── Filter helpers ─────────────────────────────────────────────────────────
+  anyFilter() { const f=this.state.f; return !!(f.region.length||f.method.length||f.vendor.length||f.priority.length||this.state.query.trim()); }
+  activeSet() {
+    const f=this.state.f, q=this.state.query.trim().toLowerCase(), s=new Set();
+    this.COUNTRIES.forEach(c=>{
+      if (f.region.length&&!f.region.includes(c.region)) return;
+      if (f.method.length&&!f.method.includes(c.method)) return;
+      if (f.vendor.length&&!c.vendors.some(v=>f.vendor.includes(v))) return;
+      if (f.priority.length) { const ps=c.portals.map(id=>this.byId[id]); if (!ps.some(p=>p&&f.priority.includes(p.priority))) return; }
+      if (q) { const hay=(c.country_ko+' '+c.country+' '+c.iso3+' '+c.portals.map(id=>this.byId[id]?(this.byId[id].name+' '+this.byId[id].url):'').join(' ')).toLowerCase(); if (!hay.includes(q)) return; }
+      s.add(c.iso_num);
+    });
+    return s;
+  }
+
+  // ── Utility ───────────────────────────────────────────────────────────────
+  host(u) { try { return new URL(u).host.replace(/^www\./,''); } catch(e) { return (u||'').replace(/^https?:\/\//,'').replace(/^www\./,'').split('/')[0]; } }
+  typeLabel(t) {
+    if (!t) return '포털';
+    if (t.startsWith('국가조달')) return '국가조달';
+    if (t.startsWith('선거위')||t.startsWith('선거주관')) return '선거관리위';
+    if (t.startsWith('EMB')) return '선거기관(EMB)';
+    return t;
+  }
+  feasKey(p) { return p.feasibility||'__none__'; }
+  esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+}
+
+const app = new App();
+</script>
+</body>
+</html>
