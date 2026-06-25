@@ -433,6 +433,67 @@ body{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-s
   font-size:11px;font-weight:600;
 }
 
+/* ── VENDOR CARDS ───────────────────────────── */
+.vendor-section{margin-bottom:32px;}
+.vs-header{
+  display:flex;align-items:center;padding:10px 16px;
+  margin-bottom:16px;
+}
+.vcards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:16px;
+}
+.vcard{
+  background:var(--white);border:1px solid var(--line);
+  display:flex;flex-direction:column;
+  transition:box-shadow .18s;
+}
+.vcard:hover{box-shadow:0 4px 20px rgba(5,25,94,.1);}
+.vcard-miru{border-color:var(--navy);box-shadow:0 0 0 2px var(--navy)22;}
+.vcard-head{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;border-bottom:1px solid var(--fog);
+}
+.vc-flag{font-size:22px;flex-shrink:0;}
+.vc-info{flex:1;min-width:0;}
+.vc-name{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.3;}
+.vc-hq{font-size:10px;color:var(--steel);margin-top:2px;}
+.vc-overlap{
+  font-size:9px;font-weight:700;letter-spacing:.08em;
+  padding:3px 8px;flex-shrink:0;white-space:nowrap;
+}
+.vcard-body{flex:1;padding:10px 14px;}
+.vc-row{display:flex;align-items:baseline;gap:6px;margin-bottom:3px;}
+.vc-lbl{font-size:9.5px;color:var(--accent2);font-weight:600;letter-spacing:.06em;width:46px;flex-shrink:0;}
+.vc-val{font-size:11px;color:var(--charcoal);}
+.vc-tag{
+  display:inline-block;font-size:9px;padding:1px 7px;margin:2px 2px 0 0;
+  background:var(--fog2);color:var(--slate);border:1px solid var(--line);
+}
+.vc-cat{
+  display:inline-block;font-size:9px;padding:1px 7px;margin:2px 2px 0 0;
+  background:var(--navy);color:#fff;
+}
+.vc-markets{
+  margin-top:6px;font-size:10px;color:var(--slate);
+  padding:4px 8px;background:var(--fog2);border-left:2px solid var(--red);
+}
+.vc-news{
+  margin-top:8px;font-size:10px;color:var(--slate);line-height:1.5;
+  border-top:1px solid var(--fog);padding-top:6px;font-style:italic;
+}
+.vcard-footer{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 14px;border-top:1px solid var(--fog);background:var(--fog2);
+}
+.vc-link{
+  font-size:10px;font-weight:600;color:var(--navy);
+  text-decoration:none;padding:3px 8px;border:1px solid var(--line);
+  background:var(--white);
+}
+.vc-link:hover{background:var(--navy);color:#fff;}
+
 /* ── RESPONSIVE ─────────────────────────────── */
 @media(max-width:960px){.chart-row{grid-template-columns:1fr;}}
 @media(max-width:700px){
@@ -440,6 +501,7 @@ body{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-s
   .cards-grid{grid-template-columns:1fr;}
   .nav-kpis{display:none;}
   .ph-inner{flex-direction:column;align-items:flex-start;}
+  .vcards-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -460,6 +522,7 @@ body{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-s
     <button class="nav-tab" data-panel="mena">Middle East &amp; Central Asia</button>
     <button class="nav-tab" data-panel="bio" style="color:rgba(255,255,255,.55);border-bottom-color:transparent;">🔍 생체인식·결과전송</button>
     <button class="nav-tab" data-panel="opportunity" style="color:#D4870A;border-bottom-color:#D4870A44;font-weight:600">📊 입찰 파이프라인</button>
+    <button class="nav-tab" data-panel="vendor" style="color:rgba(255,255,255,.7);border-bottom-color:transparent;">🏭 공급사 인텔리전스</button>
     <button class="nav-tab" data-panel="about" style="color:rgba(255,255,255,.4);border-bottom-color:transparent;font-size:11px;">ℹ️ About</button>
   </div>
   <div class="nav-kpis">
@@ -2232,7 +2295,581 @@ body{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-s
   </div>
 </div>
 
-<!-- PANEL 8: About -->
+<!-- PANEL 8: Vendor Intelligence -->
+
+<div id="panel-vendor" class="panel">
+  <div class="ph">
+    <div class="ph-inner">
+      <div class="ph-left">
+        <div class="ph-eye">Competitive Intelligence</div>
+        <h2 class="ph-title">공급사 인텔리전스</h2>
+        <p class="ph-sub">전 세계 선거기술 벤더 19개사 심층 분석 — 홈페이지·제품·재무·Miru 경쟁관계 · 2026-06-25</p>
+      </div>
+      <div class="ph-stats">
+        <div class="ph-stat"><span class="ph-n">19</span><span class="ph-l">분석 벤더</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#EB0414">0</span><span class="ph-l">직접 경쟁</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#D4870A">10</span><span class="ph-l">간접 경쟁</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#8C8C8C">9</span><span class="ph-l">비경쟁</span></div>
+      </div>
+    </div>
+    <div class="ph-pills">
+      <span class="tpill" style="background:#EB0414">직접 경쟁 — 동일 시장 입찰 경쟁</span>
+      <span class="tpill" style="background:#D4870A">간접 경쟁 — 인접 시장 겹침</span>
+      <span class="tpill" style="background:#8C8C8C">비경쟁 — 국가 독점 또는 다른 시장</span>
+    </div>
+  </div>
+  <div style="padding:24px clamp(12px,3vw,40px)">
+    
+    
+<div class="vendor-section">
+  <div class="vs-header" style="border-left:3px solid #D4870A;background:#D4870A0f">
+    <span style="font-size:12px;font-weight:700;color:#D4870A">🟠 간접 경쟁사 (시장 겹침)</span>
+    <span style="font-size:10px;color:#8C8C8C;margin-left:8px">10개 사</span>
+  </div>
+  <div class="vcards-grid">
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇬🇧</div>
+    <div class="vc-info">
+      <div class="vc-name">Smartmatic</div>
+      <div class="vc-hq">London, UK</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2000</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~600</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">24개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">BMD</span><span class="vc-cat">DRE</span><span class="vc-cat">OMR</span><span class="vc-cat">Biometric</span><span class="vc-cat">Internet</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">bSmart BMD 100/155</span><span class="vc-tag">SAES-1800plus VCM</span><span class="vc-tag">EMS/EMP Platform</span><span class="vc-tag">TIVI Internet Voting</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>PHL</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">35+개국 65억 표 처리 — 세계 최대 선거기술 풋프린트</li><li style="color:#525252;margin-bottom:3px">BMD·OMR·생체인식·인터넷투표 엔드투엔드 포트폴리오</li><li style="color:#525252;margin-bottom:3px">VVSG 2.0 최초 제출 — EAC 인증 공신력</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">SGO Corporation 형사기소(FCPA, 2025.10) — 필리핀 뇌물 혐의, 기각신청 계류중</li><li style="color:#525252;margin-bottom:3px">필리핀 시장 영구 상실 — COMELEC 2023 자격박탈 (Miru 2025 수주)</li><li style="color:#525252;margin-bottom:3px">미국 시장 Dominion 비경쟁 조항으로 사실상 LA카운티 단독만 가능</li></ul></div>
+    <div class="vc-news">FCPA 기소(2025.10) 기각신청 계류 / Newsmax 명예훼손 $40M 합의(2024) / Fox News 재판 2026년 예정</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.smartmatic.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.smartmatic.com/elections/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇺🇸</div>
+    <div class="vc-info">
+      <div class="vc-name">ES&S (Election Systems & Software)</div>
+      <div class="vc-hq">Omaha, NE, USA</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1979</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~700</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">6개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">OMR</span><span class="vc-cat">BMD</span><span class="vc-cat">DRE</span><span class="vc-cat">e-Pollbook</span><span class="vc-cat">EMS</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">DS300/450/950 OMR 스캐너</span><span class="vc-tag">ExpressVote BMD</span><span class="vc-tag">ExpressVote XL</span><span class="vc-tag">Electionware EMS</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>PHL</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">미국 시장 점유율 50~60% — 42개 주 4,500개 지자체</li><li style="color:#525252;margin-bottom:3px">투표등록·e-pollbook·OMR·BMD·개표 풀스택 번들</li><li style="color:#525252;margin-bottom:3px">EVS 7.0 VVSG 2.0 EAC 인증(2026.3) — 최신 표준 최초 인증</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">보안 취약점 지속 — 원격접속 프리인스톨(2018), 중국산 부품 우려</li><li style="color:#525252;margin-bottom:3px">텍사스 e-pollbook 인증 취소(2024.12) — 댈러스 오인쇄 사고</li><li style="color:#525252;margin-bottom:3px">보안 연구자 소송 — 독립감사 저해, 비당파 양쪽 비판 대상</li></ul></div>
+    <div class="vc-news">2024.12 텍사스 e-pollbook 인증취소 / 2025.12 EVS 7.0 EAC 제출 / 2026.3 VVSG 2.0 인증 승인</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.essvote.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.essvote.com/products/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇦🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">Grupo MSA / Comitia-MSA</div>
+      <div class="vc-hq">Buenos Aires, Argentina</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1995</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~100+</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">3개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">BMD</span><span class="vc-cat">Internet</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Vot.ar / BUE 전자투표용지</span><span class="vc-tag">Scytl InVote Gov 인터넷투표</span><span class="vc-tag">sVote (스위스 e-voting)</span><span class="vc-tag">선거결과 관리 플랫폼</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>ARG · PRY</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">아르헨티나 BUE 시장 25년 지배 — CABA 등 11개 이상 주</li><li style="color:#525252;margin-bottom:3px">2024.6 Scytl 인수로 1,000+ 미국 고객, 4개 대륙 IP 확보</li><li style="color:#525252;margin-bottom:3px">RFID 칩+종이 혼합 BUE — 감사 내역서 제공, ISO 9001 인증</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">기술 장애 반복 — 2023 CABA PASO '30년 최악' 판사 판정</li><li style="color:#525252;margin-bottom:3px">RFID 스마트폰 투표 증식 취약점, SSL 인증서 유출(2015)</li><li style="color:#525252;margin-bottom:3px">단독입찰 반복 패턴 — 파라과이 2025 불법시비 논란</li></ul></div>
+    <div class="vc-news">2024.6 Scytl 인수 / 2025.5 CABA $22M 단독입찰 / 2025.12 파라과이 $35M 단독낙찰 논란</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.msa.com.ar" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.scytl.com" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇪🇸</div>
+    <div class="vc-info">
+      <div class="vc-name">Scytl / Civica Election Services</div>
+      <div class="vc-hq">Barcelona (Scytl) / London (Civica)</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Subsidiary</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2001</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~125+200</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">30개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Internet</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Invote Gov 인터넷투표</span><span class="vc-tag">SOE Software ENR</span><span class="vc-tag">CESvotes 온라인투표(Civica)</span><span class="vc-tag">Xpress EMS(Civica)</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>ARE · PRY</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">암호화 인터넷투표 50+ 특허, 25년 R&D 선점</li><li style="color:#525252;margin-bottom:3px">SOE Software — 미국 24개 주 1,300개 선거구 ENR 제공</li><li style="color:#525252;margin-bottom:3px">UAE FNC 4연속(2006~) — 세계 최초 100% 디지털 국가선거 레퍼런스</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">노르웨이 2013 이중투표 취약점, 호주 2015 iVote 취약점으로 계약 상실</li><li style="color:#525252;margin-bottom:3px">2020년 파산(채무 €75M) — 2번의 소유권 변경으로 신뢰도 손상</li><li style="color:#525252;margin-bottom:3px">유럽·미국에서 인터넷투표 감사가능성 반대 여론 확산</li></ul></div>
+    <div class="vc-news">2024.6 COMITIA MSA에 인수 / 2025.12 파라과이 $35M 계약(BUE+인터넷투표)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.scytl.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.scytl.com/online-voting/invote/gov/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇫🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">IDEMIA (→ IN Groupe / Amadeus)</div>
+      <div class="vc-hq">Courbevoie, France</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2017</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~15,000</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">9개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">Software</span><span class="vc-cat">BVR</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">MorphoTablet 2S 생체인식 태블릿</span><span class="vc-tag">KIEMS(케냐 통합선거관리)</span><span class="vc-tag">RAVEC(말리 시민ID/유권자등록)</span><span class="vc-tag">BVR 키트</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>KEN · NGA · GHA · CIV · COD</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">아프리카 54개국 중 35개국+ 생체선거기술 — 최대 아프리카 풋프린트</li><li style="color:#525252;margin-bottom:3px">NIST 지문 전 벤치마크 1위(2025.3) — 정부조달 공신력</li><li style="color:#525252;margin-bottom:3px">ID스크린 태블릿 17만대 이상 배포 — 방대한 설치기반 락인</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">케냐 IEBC '노예 상태' 발언 — 지식이전 거부 비판 / 2017 KIEMS 실패 → 대통령선거 무효</li><li style="color:#525252;margin-bottom:3px">프랑스 검찰 뇌물수사 진행중(2022~ 카메룬·DRC·가봉·니제르·세네갈·우간다)</li><li style="color:#525252;margin-bottom:3px">분사 진행 — Smart Identity→IN Groupe(2025.7), IPS→Amadeus(2026.4 발표)</li></ul></div>
+    <div class="vc-news">2025.7 Smart Identity 부문 IN Groupe에 ~€1B 매각 / 2026.4 IPS 부문 Amadeus €1.2B 인수 발표(2027 완료 예정)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.idemia.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.idemia.com/enrollment-and-authentication" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇫🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">Thales Group (DIS / 구 Gemalto)</div>
+      <div class="vc-hq">La Défense, Paris, France</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Public (EPA:HO)</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1893</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~85,000</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">15개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Thales Election Suite</span><span class="vc-tag">Coesys Mobile Enrollment Station</span><span class="vc-tag">Thales ABIS</span><span class="vc-tag">DactyScan84c 생체인식 스캐너</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>COD · GHA · PHL</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">15개국+ 생체선거 배포 — 세계 최대 생체선거 벤더</li><li style="color:#525252;margin-bottom:3px">20년+ Gemalto 유산으로 프랑코폰 아프리카 깊은 관계</li><li style="color:#525252;margin-bottom:3px">€22B 그룹 규모 — 여권·국민ID→유권자등록 크로스셀</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">Gemalto 자회사 프랑스 사법조사(2022~) — 카메룬·DRC 등 뇌물 혐의</li><li style="color:#525252;margin-bottom:3px">투표기계(OMR·EVM·BMD) 없음 — 생체인식/유권자등록만</li><li style="color:#525252;margin-bottom:3px">방산·항공·사이버 등 전방위 대기업 — 선거기술 전문 집중도 낮음</li></ul></div>
+    <div class="vc-news">FY2025 €22.1B 매출 신기록 / Gemalto 프랑스 사법조사 지속(2022~) / HID Global 신분증 부문 Toppan에 매각(2025.1)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.thalesgroup.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.thalesgroup.com/en/solutions-catalogue/public-security/civil-identity/election-suite" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇳🇱</div>
+    <div class="vc-info">
+      <div class="vc-name">Laxton Group (→ DNP 자회사)</div>
+      <div class="vc-hq">The Hague, Netherlands</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Subsidiary</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2004</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~201</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">14개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Chameleon D 다중생체인식 태블릿</span><span class="vc-tag">BRK 생체인식 등록 키트</span><span class="vc-tag">Athena 신원관리 플랫폼</span><span class="vc-tag">ePoll Book</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>MOZ · ZWE · GHA · TZA · LBR</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">20년+ 50개국 3억명+ 생체등록 — 아프리카 ECO 브랜드 인지도 1위</li><li style="color:#525252;margin-bottom:3px">하드웨어+소프트웨어 자체 설계/제조(2만㎡ 공장) — 공급망 통제</li><li style="color:#525252;margin-bottom:3px">DNP 인수($9.5B 부모사) + MOSIP SI 인증(2026.3) — 세계은행·UN 파이프라인</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">투표집계 기계(OMR·EVM·BMD) 없음 — 유권자등록/인증만</li><li style="color:#525252;margin-bottom:3px">라이베리아 계약 논란(2022~2023 2회 거부 후 3번째 낙찰)</li><li style="color:#525252;margin-bottom:3px">DNP 인수 전 $35M 소형사 — 다국가 동시 대규모 배포 역량 제한</li></ul></div>
+    <div class="vc-news">2025.6 DNP 75% 지분 인수 / 2026.3 MOSIP SI 파트너 인증 / 2026.4 마다가스카르 250만명 생체등록 풀배포</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.laxton.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.laxton.com/solutions/biometric-voter-id" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇸🇰</div>
+    <div class="vc-info">
+      <div class="vc-name">Innovatrics</div>
+      <div class="vc-hq">Bratislava, Slovakia</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2004</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~210</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">7개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">ABIS</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Innovatrics ABIS 자동생체식별</span><span class="vc-tag">Voter Management Platform</span><span class="vc-tag">DOT 디지털온보딩 SDK</span><span class="vc-tag">SmartFace 안면인식</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>GIN · UGA · ALB</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">NIST ELFT 잠재지문 정확도 1위(2025.1) + 안면인식 상위 3위</li><li style="color:#525252;margin-bottom:3px">하드웨어 무관 클라우드 ABIS — 1억 인구 단일 AWS 인스턴스 처리</li><li style="color:#525252;margin-bottom:3px">MOSIP 컴플라이언트 ABIS(2026.6) — 29개국 GovStack 파이프라인</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">소프트웨어/생체인식 전용 — 시스템통합사(Smartmatic 등)에 납품 구조</li><li style="color:#525252;margin-bottom:3px">~210명 소형사 — 다국가 동시 배포 역량 제한</li><li style="color:#525252;margin-bottom:3px">투표기계 없음 — 고부가 하드웨어 계약 참여 불가</li></ul></div>
+    <div class="vc-news">2025.1 NIST 지문 1위 탈환 / 2026.5 UIDAI 안면인식 챌린지 1위 / 2026.6 MOSIP 컴플라이언트 + 브라티슬라바 Biometrics House 신사옥</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.innovatrics.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.innovatrics.com/voter-registration/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇨🇭</div>
+    <div class="vc-info">
+      <div class="vc-name">uqudo / TECH5</div>
+      <div class="vc-hq">Geneva (TECH5) / Manchester (uqudo)</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2018</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~120</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">Internet</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Antakhib/Intakhib 모바일 생체인증 선거앱</span><span class="vc-tag">T5-OmniMatch ABIS</span><span class="vc-tag">T5-AirSnap 비접촉 안면/지문캡처</span><span class="vc-tag">NFC 생체ID 리더</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>OMN</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">NIST 최상위 생체인식 알고리즘(지문·안면·홍채)</li><li style="color:#525252;margin-bottom:3px">오만 2022/2023 국가선거 NFC+생체 원격투표 실증 — 유일 벤더</li><li style="color:#525252;margin-bottom:3px">창업자 Aadhaar(13억)/인도네시아 국민ID(1.93억) 경력 — 정부급 스케일 신뢰</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">선거 레퍼런스 오만 단일 — 국제 확장 아직 없음</li><li style="color:#525252;margin-bottom:3px">~120명 소형사 — 대규모 동시 배포 역량 제한</li><li style="color:#525252;margin-bottom:3px">법집행(버지니아 $54M)·DPI가 주 사업 — 선거기술 2차적 포지셔닝</li></ul></div>
+    <div class="vc-news">2026.1 Salica Investments 성장대출 확보 / 2026.3 NIST FRIF 지문 새 벤치마크 / 이라크 거주자 ID 지원(2025.8)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://tech5.ai" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://tech5.ai/uqudo-tech5-free-fair-elections/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #D4870A">
+    <div class="vc-flag">🇹🇼</div>
+    <div class="vc-info">
+      <div class="vc-name">Champtek Inc.</div>
+      <div class="vc-hq">New Taipei City, Taiwan</div>
+    </div>
+    <span class="vc-overlap" style="background:#D4870A18;color:#D4870A;border:1px solid #D4870A44">간접 경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1985</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">11~50</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Biometric</span><span class="vc-cat">OMR</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">X-100 10.1인치 VMD(유권자관리단말)</span><span class="vc-tag">X-55/X-80/X-120/X-130 시리즈</span><span class="vc-tag">Z Series 생체키트</span><span class="vc-tag">십지문 롤스캐너</span></div>
+    <div class="vc-markets">경쟁 시장: <strong>ZAF</strong></div>
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">하드웨어 전용 제조 — 모듈식 생체인식(NFC·홍채·안면·지문) 통합 가능</li><li style="color:#525252;margin-bottom:3px">CHAMPTEK·SCANTECH ID 이중 브랜드 30개국+ 유통망</li><li style="color:#525252;margin-bottom:3px">FBI 인증 지문, AFIS/ABIS 지원 — 정부 조달 공신력</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">남아공 IEC X-100 VMD 2021·2024 선거 모두 현장 중단 — 레퍼런스 손상</li><li style="color:#525252;margin-bottom:3px">11~50명 극소형사 — 대규모 동시 배포 역량 극히 제한</li><li style="color:#525252;margin-bottom:3px">Ren-Form 유통사 의존 — 짐바브웨 스캔들 등 유통사 리스크 전이</li></ul></div>
+    <div class="vc-news">2026.6 Computex 타이페이 / 2026.8 타이페이 물류·IoT 전시회 — 남아공 IEC 재입찰 결정 미발표</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.champtek.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.champtek.com/en/product/136" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div></div>
+</div>
+    
+<div class="vendor-section">
+  <div class="vs-header" style="border-left:3px solid #8C8C8C;background:#8C8C8C0f">
+    <span style="font-size:12px;font-weight:700;color:#8C8C8C">⚫ 비경쟁 (국가 독점 또는 다른 세그먼트)</span>
+    <span style="font-size:10px;color:#8C8C8C;margin-left:8px">9개 사</span>
+  </div>
+  <div class="vcards-grid">
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇺🇸</div>
+    <div class="vc-info">
+      <div class="vc-name">Liberty Vote (구 Dominion)</div>
+      <div class="vc-hq">Denver, CO, USA</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2003</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~250</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">2개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">OMR</span><span class="vc-cat">BMD</span><span class="vc-cat">DRE</span><span class="vc-cat">EMS</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">ImageCast X BMD</span><span class="vc-tag">ImageCast Precinct 2 OMR</span><span class="vc-tag">ImageCast Central</span><span class="vc-tag">Democracy Suite EMS</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">미국 등록유권자 25% 커버 — 27개 주 최대 설치기반</li><li style="color:#525252;margin-bottom:3px">KNOWiNK 인수로 e-pollbook 포함 40개 주 통합 플랫폼</li><li style="color:#525252;margin-bottom:3px">Frontier 1.0 VVSG 2.0 EAC 제출(2025.11) — 차기 조달 포지셔닝</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">2020 음모론 $787.5M 합의 이후 브랜드 독성 여전</li><li style="color:#525252;margin-bottom:3px">국제시장 사실상 전무 — 필리핀 2025 응찰조차 못 함</li><li style="color:#525252;margin-bottom:3px">리브랜딩 후 신규계약 아직 없음</li></ul></div>
+    <div class="vc-news">2025.10 Dominion → Liberty Vote 리브랜딩 / 2025.11 Frontier 1.0 EAC VVSG 2.0 제출 / 2026.2 전 WA 장관 Kim Wyman 영입</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://libertyvote.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇺🇸</div>
+    <div class="vc-info">
+      <div class="vc-name">Hart InterCivic</div>
+      <div class="vc-hq">Austin, TX, USA</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1912</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~100~150</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">OMR</span><span class="vc-cat">BMD</span><span class="vc-cat">DRE</span><span class="vc-cat">EMS</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Verity Vanguard 1.0 (VVSG 2.0 최초 인증)</span><span class="vc-tag">Vanguard Flex BMD</span><span class="vc-tag">Vanguard Vault OMR</span><span class="vc-tag">Verity Count 개표소프트웨어</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">세계 최초 VVSG 2.0 EAC 인증(2025.7) — 규제 선점</li><li style="color:#525252;margin-bottom:3px">바코드 없는 완전 사람이 읽을 수 있는 용지 — EO 14248 완전 준수</li><li style="color:#525252;margin-bottom:3px">20개 주 100년+ 관계</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">미국 단일 시장 — 국제 진출 없음</li><li style="color:#525252;margin-bottom:3px">매출 $30~43M 소형사 — R&D 투자 한계</li><li style="color:#525252;margin-bottom:3px">미국 시장 점유율 15% — ES&S/Dominion 대비 열세</li></ul></div>
+    <div class="vc-news">2025.7 Vanguard VVSG 2.0 최초 인증 / 2026.1 워싱턴·미시시피 첫 배포 / 2026.4 텍사스 6번째 주 인증</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.hartintercivic.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.hartintercivic.com/hybrid/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇧🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">Positivo Tecnologia</div>
+      <div class="vc-hq">Curitiba, Brazil</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Public</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1989</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~8,400</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">DRE</span><span class="vc-cat">EVM</span><span class="vc-cat">Biometric</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">UE2022 DRE 투표기</span><span class="vc-tag">UE2020 DRE</span><span class="vc-tag">생체인식 리더 HID DP5360</span><span class="vc-tag">메사리우 단말 키보드</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">브라질 TSE 유일 DRE 제조사 — 2020 이후 독점 (Smartmatic/Diebold 낙찰가 절반)</li><li style="color:#525252;margin-bottom:3px">국내 공장(Ilhéus·Manaus) 수직통합 — 가격경쟁력 + 국가안보 조달 우선</li><li style="color:#525252;margin-bottom:3px">TSE 공동개발 파트너십 — 하드웨어/펌웨어 Positivo, 앱소프트웨어 TSE</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">브라질 단일 시장 — 국제 수출 없음</li><li style="color:#525252;margin-bottom:3px">순이익 R$85M(2024)→R$12M(2025) 급감, 공공기관 매출 34.7% 감소</li><li style="color:#525252;margin-bottom:3px">DRE 외 제품(OMR·BMD·인터넷투표) 없음</li></ul></div>
+    <div class="vc-news">FY2025 매출 R$4.0B / 순이익 R$12M(86% 감소) / UE2026 신규입찰 미발표</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.positivotecnologia.com.br/en/" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.positivotecnologia.com.br/en/about-us/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇮🇳</div>
+    <div class="vc-info">
+      <div class="vc-name">BEL (Bharat Electronics Limited)</div>
+      <div class="vc-hq">Bengaluru, India</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">State-owned</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1954</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~9,000~11,200</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">7개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">EVM</span><span class="vc-cat">DRE</span><span class="vc-cat">VVPAT</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">EVM M3 Control Unit</span><span class="vc-tag">EVM M3 Ballot Unit</span><span class="vc-tag">VVPAT M3</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">세계 최대 민주주의 인도 9억 유권자 선거 EVM 독점 공급</li><li style="color:#525252;margin-bottom:3px">국방부 산하 Navratna PSU — 진입장벽 극히 높음</li><li style="color:#525252;margin-bottom:3px">나미비아·네팔·부탄·피지·케냐·보츠와나 외교 채널 수출</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">EVM 보안 투명성 비판 — 소프트웨어 감사보고서 공개 거부</li><li style="color:#525252;margin-bottom:3px">선거기술은 전체 매출 소수 — R&D·수출 인프라 취약</li><li style="color:#525252;margin-bottom:3px">국제 수출 전체 매출의 0.5% 미만 — 상업 영업력 부족</li></ul></div>
+    <div class="vc-news">FY2026 매출 ₹27,480크로르(~$3.3B) 신기록 / 수출 33.65% 증가 $141.9M — 방산 위주</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://bel-india.in" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://bel-india.in/product/electronic-voting-machine/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇮🇳</div>
+    <div class="vc-info">
+      <div class="vc-name">ECIL (Electronics Corporation of India)</div>
+      <div class="vc-hq">Hyderabad, India</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">State-owned</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1967</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~3,000~5,000</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">4개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">EVM</span><span class="vc-cat">DRE</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">M3-EVM</span><span class="vc-tag">VVPAT</span><span class="vc-tag">Multi-Post EVM</span><span class="vc-tag">EMS 2.0</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">BEL과 50:50 인도 ECI 공급 독점 — 포획된 시장</li><li style="color:#525252;margin-bottom:3px">EMS 2.0 클라우드 네이티브 + SMF 2.0 보안제조 소프트웨어</li><li style="color:#525252;margin-bottom:3px">Miniratna Category-I 지위 부여(2025.5) — 재무 자율성 향상</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">해외수출 인도-G2G 외교 채널 의존 — 독립 영업력 없음</li><li style="color:#525252;margin-bottom:3px">EVM 기술 특수 목적 설계 — OMR/BMD 국제 입찰 미적용</li><li style="color:#525252;margin-bottom:3px">S3-EVM 공개(2025.3) 외 국제 시장 진출 계획 없음</li></ul></div>
+    <div class="vc-news">2025.3 S3-EVM 공개 / 2025.5 Miniratna Category-I 승격 / FY2025 매출 ₹2,426크로르</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.ecil.co.in" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.ecil.co.in/iteg_evm" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#D4870A;margin-left:auto">신뢰도: Med</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇨🇭</div>
+    <div class="vc-info">
+      <div class="vc-name">Swiss Post e-voting</div>
+      <div class="vc-hq">Bern, Switzerland</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">State-owned</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2014</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~45,000(그룹)/~12(e-voting팀)</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Internet</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">sVote 인터넷투표 시스템</span><span class="vc-tag">Universal Verifiability 검증SW</span><span class="vc-tag">eCH 캔톤 연동 API</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">완전 오픈소스 공개 — 수학적 검증 가능 유일 국가급 시스템</li><li style="color:#525252;margin-bottom:3px">범용 검증가능성(Universal Verifiability) 최초 운용 — 연 Public Intrusion Test</li><li style="color:#525252;margin-bottom:3px">스위스 연방 소유 — 상업 압력 없음, CHF 25만 버그바운티</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">스위스 단일 시장 — 4/26개 캔톤만 활성화, 국제 수출 없음</li><li style="color:#525252;margin-bottom:3px">2019~2023 중단 이력(암호화 결함) — 취리히·추크 등 주요 캔톤 불참</li><li style="color:#525252;margin-bottom:3px">인터넷투표 전용 — OMR·EVM·BMD·생체인식 없음</li></ul></div>
+    <div class="vc-news">2025.6 연방 기본라이선스 4개 캔톤 2027까지 갱신 / 2025 PIT 4회 침투 성공 없음 / 2026.3 투르가우 주민투표 확대</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://swisspost-digital.ch/en/solutions/e-voting" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://swisspost-digital.ch/en/solutions/e-voting/the-e-voting-solution-for-cantons" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇪🇪</div>
+    <div class="vc-info">
+      <div class="vc-name">Cybernetica AS</div>
+      <div class="vc-hq">Tallinn, Estonia</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Private</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1997</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~230</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Internet</span><span class="vc-cat">Software</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">IVXV 인터넷투표 시스템(에스토니아)</span><span class="vc-tag">m-Voting 모바일(2025 파일럿)</span><span class="vc-tag">SplitKey+ 디지털 ID인증</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">20년 유일한 법적 구속력 국가 인터넷투표 운영(에스토니아, 2023년 51%)  </li><li style="color:#525252;margin-bottom:3px">IVXV 오픈소스 투명성 — 독립 감사 가능</li><li style="color:#525252;margin-bottom:3px">40개국 UXP/X-Road 생태계 — i-voting 컨설팅 수출 파이프라인</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">에스토니아 단일 국제 운용 — Smartmatic-Cybernetica JV 매출 €56만/년</li><li style="color:#525252;margin-bottom:3px">Springall/Halderman 2014 감사 절차적 취약 지적 / 2024 EP선거 첫 오류 발생</li><li style="color:#525252;margin-bottom:3px">~230명 소형사 — EU SME 보조금 유지를 위해 250명 상한 자체 제한</li></ul></div>
+    <div class="vc-news">2025.5 m-Voting iOS/Android 공개 파일럿 / 2025.11 양자내성암호 전환 3개 계약 수주 / CEO '2026이 가장 기회 많은 해'</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://cyber.ee" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://cyber.ee/resources/news/first-of-a-kind-global-centre-of-excellence-to-advance-internet-voting/" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇰🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">Samsung SDS</div>
+      <div class="vc-hq">Seoul, South Korea</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Public (KRX:018260)</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">1985</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~26,000</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">0개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Software</span><span class="vc-cat">Biometric</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">Nexsign 생체인증(기업/은행용)</span><span class="vc-tag">Nexledger 블록체인</span><span class="vc-tag">FabriX 생성AI</span><span class="vc-tag">Samsung Cloud Platform</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">삼성그룹 브랜드 + 계열사 안정 수요 — 한국 MSP 점유율 1위</li><li style="color:#525252;margin-bottom:3px">AI·클라우드 풀스택(SCP·FabriX·Brity Works) + KRX 1.22조원 KKR 투자(2026.4)</li><li style="color:#525252;margin-bottom:3px">방글라데시 NID 기반 선거인 확인 레퍼런스</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">삼성 계열사 매출 의존도 — 독립 국제 경쟁력 제한</li><li style="color:#525252;margin-bottom:3px">선거기술 전용 포트폴리오 없음 — Nexsign은 기업/은행 용도</li><li style="color:#525252;margin-bottom:3px">아태 외 국제 브랜드 인지도 낮음</li></ul></div>
+    <div class="vc-news">2026.4 KKR KRW 1.22조(~$820M) 전환사채 투자 / 2026.4 국회 AI 입법지원 플랫폼 / FY2025 매출 KRW 13.93조(+0.7%)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.samsungsds.com/en/index.html" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.samsungsds.com/us/en/solutions/bns/Digital/Identity-platform.html" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div>
+
+<div class="vcard">
+  <div class="vcard-head" style="border-left:4px solid #8C8C8C">
+    <div class="vc-flag">🇫🇷</div>
+    <div class="vc-info">
+      <div class="vc-name">Sopra Steria</div>
+      <div class="vc-hq">Paris, France</div>
+    </div>
+    <span class="vc-overlap" style="background:#8C8C8C18;color:#8C8C8C;border:1px solid #8C8C8C44">비경쟁</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">Public (EPA:SOP)</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">2014</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">~51,000</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">—</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">1개국</span></div>
+    <div style="margin-top:6px"><span class="vc-cat">Software</span><span class="vc-cat">Biometric</span></div>
+    <div style="margin-top:5px"><span class="vc-tag">EU Shared Biometric Matching System(sBMS·IDEMIA 협력)</span><span class="vc-tag">FAED V3 프랑스 형사지문DB</span><span class="vc-tag">선거야간 출구조사 플랫폼(Ipsos 협력)</span></div>
+    
+    <div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#24A148;letter-spacing:.08em">강점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">유럽 공공기관 IT 톱5 — 프랑스·영국·EU 기관 깊은 관계</li><li style="color:#525252;margin-bottom:3px">EU 국경 생체인식(SIS II·sBMS) 계약 — 정부 민감 ID 프로그램 공신력</li><li style="color:#525252;margin-bottom:3px">유럽 디지털 주권 포지셔닝 — ESTIA 클라우드 연합 공동창설</li></ul></div><div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:#EB0414;letter-spacing:.08em">약점</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5"><li style="color:#525252;margin-bottom:3px">선거기술 전용 제품 없음 — 프랑스 출구조사+국경 생체인식에 제한</li><li style="color:#525252;margin-bottom:3px">EDPS 감사(2025): SIS II 수천개 고심각도 취약점, 최대 5.5년 미패치 — 보안 신뢰도 손상</li><li style="color:#525252;margin-bottom:3px">프랑스 43%·영국 16% 매출 집중 — 신흥시장 선거기술 수요 지역 부재</li></ul></div>
+    <div class="vc-news">Q1 2026 매출 +3.4% 반등 / sBMS 2025.8 eu-LISA와 가동 / EDPS 감사 고심각도 취약점 논란(2025.7)</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="https://www.soprasteria.com" target="_blank" class="vc-link">홈페이지 ↗</a>
+    <a href="https://www.soprasteria.com/industries/government" target="_blank" class="vc-link">선거제품 ↗</a>
+    <span style="font-size:9px;color:#24A148;margin-left:auto">신뢰도: High</span>
+  </div>
+</div></div>
+</div>
+  </div>
+</div>
+
+<!-- PANEL 9: About -->
 
 <div id="panel-about" class="panel">
   <div class="ph">

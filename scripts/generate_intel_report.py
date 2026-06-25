@@ -333,6 +333,454 @@ TIER_META = {
     "UNKNOWN":  (B["accent2"], "정보 부족",  "⬜"),
 }
 
+# ─── Vendor Intelligence (워크플로우 리서치 결과 2026-06-25) ──────────────────
+# overlap: Direct=경쟁사, Indirect=시장 겹침, None=비경쟁
+VENDOR_DATA = [
+    {
+        "slug":"smartmatic","name":"Smartmatic","flag":"🇬🇧",
+        "homepage":"https://www.smartmatic.com",
+        "products_url":"https://www.smartmatic.com/elections/",
+        "hq":"London, UK","type":"Private","parent":"SGO Corporation Limited",
+        "founded":"2000","employees":"~600","revenue":"~$175M",
+        "countries_count":24,
+        "key_products":["bSmart BMD 100/155","SAES-1800plus VCM","EMS/EMP Platform","TIVI Internet Voting","VIU-500 Biometric Kit"],
+        "categories":["BMD","DRE","OMR","Biometric","Internet","EMS"],
+        "overlap":"Indirect","overlap_markets":["PHL"],
+        "strengths":[
+            "35+개국 65억 표 처리 — 세계 최대 선거기술 풋프린트",
+            "BMD·OMR·생체인식·인터넷투표 엔드투엔드 포트폴리오",
+            "VVSG 2.0 최초 제출 — EAC 인증 공신력",
+        ],
+        "weaknesses":[
+            "SGO Corporation 형사기소(FCPA, 2025.10) — 필리핀 뇌물 혐의, 기각신청 계류중",
+            "필리핀 시장 영구 상실 — COMELEC 2023 자격박탈 (Miru 2025 수주)",
+            "미국 시장 Dominion 비경쟁 조항으로 사실상 LA카운티 단독만 가능",
+        ],
+        "news":"FCPA 기소(2025.10) 기각신청 계류 / Newsmax 명예훼손 $40M 합의(2024) / Fox News 재판 2026년 예정",
+        "confidence":"High",
+    },
+    {
+        "slug":"liberty_vote","name":"Liberty Vote (구 Dominion)","flag":"🇺🇸",
+        "homepage":"https://libertyvote.com",
+        "products_url":"https://libertyvote.com",
+        "hq":"Denver, CO, USA","type":"Private","parent":None,
+        "founded":"2003","employees":"~250","revenue":"~$100M",
+        "countries_count":2,
+        "key_products":["ImageCast X BMD","ImageCast Precinct 2 OMR","ImageCast Central","Democracy Suite EMS","Frontier 1.0 (VVSG 2.0 제출중)"],
+        "categories":["OMR","BMD","DRE","EMS"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "미국 등록유권자 25% 커버 — 27개 주 최대 설치기반",
+            "KNOWiNK 인수로 e-pollbook 포함 40개 주 통합 플랫폼",
+            "Frontier 1.0 VVSG 2.0 EAC 제출(2025.11) — 차기 조달 포지셔닝",
+        ],
+        "weaknesses":[
+            "2020 음모론 $787.5M 합의 이후 브랜드 독성 여전",
+            "국제시장 사실상 전무 — 필리핀 2025 응찰조차 못 함",
+            "리브랜딩 후 신규계약 아직 없음",
+        ],
+        "news":"2025.10 Dominion → Liberty Vote 리브랜딩 / 2025.11 Frontier 1.0 EAC VVSG 2.0 제출 / 2026.2 전 WA 장관 Kim Wyman 영입",
+        "confidence":"High",
+    },
+    {
+        "slug":"ess","name":"ES&S (Election Systems & Software)","flag":"🇺🇸",
+        "homepage":"https://www.essvote.com",
+        "products_url":"https://www.essvote.com/products/",
+        "hq":"Omaha, NE, USA","type":"Private","parent":"M-One Capital",
+        "founded":"1979","employees":"~700","revenue":"~$120M",
+        "countries_count":6,
+        "key_products":["DS300/450/950 OMR 스캐너","ExpressVote BMD","ExpressVote XL","Electionware EMS","EVS 7.0 (VVSG 2.0 인증 2026.3)"],
+        "categories":["OMR","BMD","DRE","e-Pollbook","EMS"],
+        "overlap":"Indirect","overlap_markets":["PHL"],
+        "strengths":[
+            "미국 시장 점유율 50~60% — 42개 주 4,500개 지자체",
+            "투표등록·e-pollbook·OMR·BMD·개표 풀스택 번들",
+            "EVS 7.0 VVSG 2.0 EAC 인증(2026.3) — 최신 표준 최초 인증",
+        ],
+        "weaknesses":[
+            "보안 취약점 지속 — 원격접속 프리인스톨(2018), 중국산 부품 우려",
+            "텍사스 e-pollbook 인증 취소(2024.12) — 댈러스 오인쇄 사고",
+            "보안 연구자 소송 — 독립감사 저해, 비당파 양쪽 비판 대상",
+        ],
+        "news":"2024.12 텍사스 e-pollbook 인증취소 / 2025.12 EVS 7.0 EAC 제출 / 2026.3 VVSG 2.0 인증 승인",
+        "confidence":"High",
+    },
+    {
+        "slug":"hart","name":"Hart InterCivic","flag":"🇺🇸",
+        "homepage":"https://www.hartintercivic.com",
+        "products_url":"https://www.hartintercivic.com/hybrid/",
+        "hq":"Austin, TX, USA","type":"Private","parent":"Enlightenment Capital",
+        "founded":"1912","employees":"~100~150","revenue":"~$30~43M",
+        "countries_count":1,
+        "key_products":["Verity Vanguard 1.0 (VVSG 2.0 최초 인증)","Vanguard Flex BMD","Vanguard Vault OMR","Verity Count 개표소프트웨어"],
+        "categories":["OMR","BMD","DRE","EMS"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "세계 최초 VVSG 2.0 EAC 인증(2025.7) — 규제 선점",
+            "바코드 없는 완전 사람이 읽을 수 있는 용지 — EO 14248 완전 준수",
+            "20개 주 100년+ 관계",
+        ],
+        "weaknesses":[
+            "미국 단일 시장 — 국제 진출 없음",
+            "매출 $30~43M 소형사 — R&D 투자 한계",
+            "미국 시장 점유율 15% — ES&S/Dominion 대비 열세",
+        ],
+        "news":"2025.7 Vanguard VVSG 2.0 최초 인증 / 2026.1 워싱턴·미시시피 첫 배포 / 2026.4 텍사스 6번째 주 인증",
+        "confidence":"High",
+    },
+    {
+        "slug":"msa","name":"Grupo MSA / Comitia-MSA","flag":"🇦🇷",
+        "homepage":"https://www.msa.com.ar",
+        "products_url":"https://www.scytl.com",
+        "hq":"Buenos Aires, Argentina","type":"Private","parent":None,
+        "founded":"1995","employees":"~100+","revenue":"~$5.8M (계약 외)",
+        "countries_count":3,
+        "key_products":["Vot.ar / BUE 전자투표용지","Scytl InVote Gov 인터넷투표","sVote (스위스 e-voting)","선거결과 관리 플랫폼"],
+        "categories":["BMD","Internet","Software"],
+        "overlap":"Indirect","overlap_markets":["ARG","PRY"],
+        "strengths":[
+            "아르헨티나 BUE 시장 25년 지배 — CABA 등 11개 이상 주",
+            "2024.6 Scytl 인수로 1,000+ 미국 고객, 4개 대륙 IP 확보",
+            "RFID 칩+종이 혼합 BUE — 감사 내역서 제공, ISO 9001 인증",
+        ],
+        "weaknesses":[
+            "기술 장애 반복 — 2023 CABA PASO '30년 최악' 판사 판정",
+            "RFID 스마트폰 투표 증식 취약점, SSL 인증서 유출(2015)",
+            "단독입찰 반복 패턴 — 파라과이 2025 불법시비 논란",
+        ],
+        "news":"2024.6 Scytl 인수 / 2025.5 CABA $22M 단독입찰 / 2025.12 파라과이 $35M 단독낙찰 논란",
+        "confidence":"High",
+    },
+    {
+        "slug":"scytl","name":"Scytl / Civica Election Services","flag":"🇪🇸",
+        "homepage":"https://www.scytl.com",
+        "products_url":"https://www.scytl.com/online-voting/invote/gov/",
+        "hq":"Barcelona (Scytl) / London (Civica)","type":"Subsidiary","parent":"Comitia MSA / Civica Group (Blackstone)",
+        "founded":"2001","employees":"~125+200","revenue":"~$44M+$35M",
+        "countries_count":30,
+        "key_products":["Invote Gov 인터넷투표","SOE Software ENR","CESvotes 온라인투표(Civica)","Xpress EMS(Civica)","eBallot Delivery"],
+        "categories":["Internet","Software"],
+        "overlap":"Indirect","overlap_markets":["ARE","PRY"],
+        "strengths":[
+            "암호화 인터넷투표 50+ 특허, 25년 R&D 선점",
+            "SOE Software — 미국 24개 주 1,300개 선거구 ENR 제공",
+            "UAE FNC 4연속(2006~) — 세계 최초 100% 디지털 국가선거 레퍼런스",
+        ],
+        "weaknesses":[
+            "노르웨이 2013 이중투표 취약점, 호주 2015 iVote 취약점으로 계약 상실",
+            "2020년 파산(채무 €75M) — 2번의 소유권 변경으로 신뢰도 손상",
+            "유럽·미국에서 인터넷투표 감사가능성 반대 여론 확산",
+        ],
+        "news":"2024.6 COMITIA MSA에 인수 / 2025.12 파라과이 $35M 계약(BUE+인터넷투표)",
+        "confidence":"Med",
+    },
+    {
+        "slug":"positivo","name":"Positivo Tecnologia","flag":"🇧🇷",
+        "homepage":"https://www.positivotecnologia.com.br/en/",
+        "products_url":"https://www.positivotecnologia.com.br/en/about-us/",
+        "hq":"Curitiba, Brazil","type":"Public","parent":"Grupo Positivo",
+        "founded":"1989","employees":"~8,400","revenue":"~$700M",
+        "countries_count":1,
+        "key_products":["UE2022 DRE 투표기","UE2020 DRE","생체인식 리더 HID DP5360","메사리우 단말 키보드"],
+        "categories":["DRE","EVM","Biometric"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "브라질 TSE 유일 DRE 제조사 — 2020 이후 독점 (Smartmatic/Diebold 낙찰가 절반)",
+            "국내 공장(Ilhéus·Manaus) 수직통합 — 가격경쟁력 + 국가안보 조달 우선",
+            "TSE 공동개발 파트너십 — 하드웨어/펌웨어 Positivo, 앱소프트웨어 TSE",
+        ],
+        "weaknesses":[
+            "브라질 단일 시장 — 국제 수출 없음",
+            "순이익 R$85M(2024)→R$12M(2025) 급감, 공공기관 매출 34.7% 감소",
+            "DRE 외 제품(OMR·BMD·인터넷투표) 없음",
+        ],
+        "news":"FY2025 매출 R$4.0B / 순이익 R$12M(86% 감소) / UE2026 신규입찰 미발표",
+        "confidence":"High",
+    },
+    {
+        "slug":"bel_india","name":"BEL (Bharat Electronics Limited)","flag":"🇮🇳",
+        "homepage":"https://bel-india.in",
+        "products_url":"https://bel-india.in/product/electronic-voting-machine/",
+        "hq":"Bengaluru, India","type":"State-owned","parent":"Ministry of Defence (51.14%)",
+        "founded":"1954","employees":"~9,000~11,200","revenue":"~$3.3B",
+        "countries_count":7,
+        "key_products":["EVM M3 Control Unit","EVM M3 Ballot Unit","VVPAT M3"],
+        "categories":["EVM","DRE","VVPAT"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "세계 최대 민주주의 인도 9억 유권자 선거 EVM 독점 공급",
+            "국방부 산하 Navratna PSU — 진입장벽 극히 높음",
+            "나미비아·네팔·부탄·피지·케냐·보츠와나 외교 채널 수출",
+        ],
+        "weaknesses":[
+            "EVM 보안 투명성 비판 — 소프트웨어 감사보고서 공개 거부",
+            "선거기술은 전체 매출 소수 — R&D·수출 인프라 취약",
+            "국제 수출 전체 매출의 0.5% 미만 — 상업 영업력 부족",
+        ],
+        "news":"FY2026 매출 ₹27,480크로르(~$3.3B) 신기록 / 수출 33.65% 증가 $141.9M — 방산 위주",
+        "confidence":"Med",
+    },
+    {
+        "slug":"ecil","name":"ECIL (Electronics Corporation of India)","flag":"🇮🇳",
+        "homepage":"https://www.ecil.co.in",
+        "products_url":"https://www.ecil.co.in/iteg_evm",
+        "hq":"Hyderabad, India","type":"State-owned","parent":"Dept. of Atomic Energy",
+        "founded":"1967","employees":"~3,000~5,000","revenue":"~$290M",
+        "countries_count":4,
+        "key_products":["M3-EVM","VVPAT","Multi-Post EVM","EMS 2.0","S3-EVM (2025년 공개)"],
+        "categories":["EVM","DRE","Software"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "BEL과 50:50 인도 ECI 공급 독점 — 포획된 시장",
+            "EMS 2.0 클라우드 네이티브 + SMF 2.0 보안제조 소프트웨어",
+            "Miniratna Category-I 지위 부여(2025.5) — 재무 자율성 향상",
+        ],
+        "weaknesses":[
+            "해외수출 인도-G2G 외교 채널 의존 — 독립 영업력 없음",
+            "EVM 기술 특수 목적 설계 — OMR/BMD 국제 입찰 미적용",
+            "S3-EVM 공개(2025.3) 외 국제 시장 진출 계획 없음",
+        ],
+        "news":"2025.3 S3-EVM 공개 / 2025.5 Miniratna Category-I 승격 / FY2025 매출 ₹2,426크로르",
+        "confidence":"Med",
+    },
+    {
+        "slug":"swiss_post","name":"Swiss Post e-voting","flag":"🇨🇭",
+        "homepage":"https://swisspost-digital.ch/en/solutions/e-voting",
+        "products_url":"https://swisspost-digital.ch/en/solutions/e-voting/the-e-voting-solution-for-cantons",
+        "hq":"Bern, Switzerland","type":"State-owned","parent":"Swiss Post (스위스 연방 100%)",
+        "founded":"2014","employees":"~45,000(그룹)/~12(e-voting팀)","revenue":"~$8.5B(그룹)",
+        "countries_count":1,
+        "key_products":["sVote 인터넷투표 시스템","Universal Verifiability 검증SW","eCH 캔톤 연동 API"],
+        "categories":["Internet"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "완전 오픈소스 공개 — 수학적 검증 가능 유일 국가급 시스템",
+            "범용 검증가능성(Universal Verifiability) 최초 운용 — 연 Public Intrusion Test",
+            "스위스 연방 소유 — 상업 압력 없음, CHF 25만 버그바운티",
+        ],
+        "weaknesses":[
+            "스위스 단일 시장 — 4/26개 캔톤만 활성화, 국제 수출 없음",
+            "2019~2023 중단 이력(암호화 결함) — 취리히·추크 등 주요 캔톤 불참",
+            "인터넷투표 전용 — OMR·EVM·BMD·생체인식 없음",
+        ],
+        "news":"2025.6 연방 기본라이선스 4개 캔톤 2027까지 갱신 / 2025 PIT 4회 침투 성공 없음 / 2026.3 투르가우 주민투표 확대",
+        "confidence":"High",
+    },
+    {
+        "slug":"cybernetica","name":"Cybernetica AS","flag":"🇪🇪",
+        "homepage":"https://cyber.ee",
+        "products_url":"https://cyber.ee/resources/news/first-of-a-kind-global-centre-of-excellence-to-advance-internet-voting/",
+        "hq":"Tallinn, Estonia","type":"Private","parent":None,
+        "founded":"1997","employees":"~230","revenue":"~$16M",
+        "countries_count":1,
+        "key_products":["IVXV 인터넷투표 시스템(에스토니아)","m-Voting 모바일(2025 파일럿)","SplitKey+ 디지털 ID인증"],
+        "categories":["Internet","Software"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "20년 유일한 법적 구속력 국가 인터넷투표 운영(에스토니아, 2023년 51%)  ",
+            "IVXV 오픈소스 투명성 — 독립 감사 가능",
+            "40개국 UXP/X-Road 생태계 — i-voting 컨설팅 수출 파이프라인",
+        ],
+        "weaknesses":[
+            "에스토니아 단일 국제 운용 — Smartmatic-Cybernetica JV 매출 €56만/년",
+            "Springall/Halderman 2014 감사 절차적 취약 지적 / 2024 EP선거 첫 오류 발생",
+            "~230명 소형사 — EU SME 보조금 유지를 위해 250명 상한 자체 제한",
+        ],
+        "news":"2025.5 m-Voting iOS/Android 공개 파일럿 / 2025.11 양자내성암호 전환 3개 계약 수주 / CEO '2026이 가장 기회 많은 해'",
+        "confidence":"High",
+    },
+    {
+        "slug":"idemia","name":"IDEMIA (→ IN Groupe / Amadeus)","flag":"🇫🇷",
+        "homepage":"https://www.idemia.com",
+        "products_url":"https://www.idemia.com/enrollment-and-authentication",
+        "hq":"Courbevoie, France","type":"Private","parent":"Advent International (분할 중)",
+        "founded":"2017","employees":"~15,000","revenue":"~$3.1B",
+        "countries_count":9,
+        "key_products":["MorphoTablet 2S 생체인식 태블릿","KIEMS(케냐 통합선거관리)","RAVEC(말리 시민ID/유권자등록)","BVR 키트","MSO 시리즈 지문스캐너"],
+        "categories":["Biometric","Software","BVR"],
+        "overlap":"Indirect","overlap_markets":["KEN","NGA","GHA","CIV","COD"],
+        "strengths":[
+            "아프리카 54개국 중 35개국+ 생체선거기술 — 최대 아프리카 풋프린트",
+            "NIST 지문 전 벤치마크 1위(2025.3) — 정부조달 공신력",
+            "ID스크린 태블릿 17만대 이상 배포 — 방대한 설치기반 락인",
+        ],
+        "weaknesses":[
+            "케냐 IEBC '노예 상태' 발언 — 지식이전 거부 비판 / 2017 KIEMS 실패 → 대통령선거 무효",
+            "프랑스 검찰 뇌물수사 진행중(2022~ 카메룬·DRC·가봉·니제르·세네갈·우간다)",
+            "분사 진행 — Smart Identity→IN Groupe(2025.7), IPS→Amadeus(2026.4 발표)",
+        ],
+        "news":"2025.7 Smart Identity 부문 IN Groupe에 ~€1B 매각 / 2026.4 IPS 부문 Amadeus €1.2B 인수 발표(2027 완료 예정)",
+        "confidence":"High",
+    },
+    {
+        "slug":"thales","name":"Thales Group (DIS / 구 Gemalto)","flag":"🇫🇷",
+        "homepage":"https://www.thalesgroup.com",
+        "products_url":"https://www.thalesgroup.com/en/solutions-catalogue/public-security/civil-identity/election-suite",
+        "hq":"La Défense, Paris, France","type":"Public (EPA:HO)","parent":None,
+        "founded":"1893","employees":"~85,000","revenue":"~$24B",
+        "countries_count":15,
+        "key_products":["Thales Election Suite","Coesys Mobile Enrollment Station","Thales ABIS","DactyScan84c 생체인식 스캐너"],
+        "categories":["Biometric","Software"],
+        "overlap":"Indirect","overlap_markets":["COD","GHA","PHL"],
+        "strengths":[
+            "15개국+ 생체선거 배포 — 세계 최대 생체선거 벤더",
+            "20년+ Gemalto 유산으로 프랑코폰 아프리카 깊은 관계",
+            "€22B 그룹 규모 — 여권·국민ID→유권자등록 크로스셀",
+        ],
+        "weaknesses":[
+            "Gemalto 자회사 프랑스 사법조사(2022~) — 카메룬·DRC 등 뇌물 혐의",
+            "투표기계(OMR·EVM·BMD) 없음 — 생체인식/유권자등록만",
+            "방산·항공·사이버 등 전방위 대기업 — 선거기술 전문 집중도 낮음",
+        ],
+        "news":"FY2025 €22.1B 매출 신기록 / Gemalto 프랑스 사법조사 지속(2022~) / HID Global 신분증 부문 Toppan에 매각(2025.1)",
+        "confidence":"High",
+    },
+    {
+        "slug":"laxton","name":"Laxton Group (→ DNP 자회사)","flag":"🇳🇱",
+        "homepage":"https://www.laxton.com",
+        "products_url":"https://www.laxton.com/solutions/biometric-voter-id",
+        "hq":"The Hague, Netherlands","type":"Subsidiary","parent":"Dai Nippon Printing (75% 인수 2025.6)",
+        "founded":"2004","employees":"~201","revenue":"~$35M",
+        "countries_count":14,
+        "key_products":["Chameleon D 다중생체인식 태블릿","BRK 생체인식 등록 키트","Athena 신원관리 플랫폼","ePoll Book","PVC 선거인 ID카드 즉시발급"],
+        "categories":["Biometric","Software"],
+        "overlap":"Indirect","overlap_markets":["MOZ","ZWE","GHA","TZA","LBR"],
+        "strengths":[
+            "20년+ 50개국 3억명+ 생체등록 — 아프리카 ECO 브랜드 인지도 1위",
+            "하드웨어+소프트웨어 자체 설계/제조(2만㎡ 공장) — 공급망 통제",
+            "DNP 인수($9.5B 부모사) + MOSIP SI 인증(2026.3) — 세계은행·UN 파이프라인",
+        ],
+        "weaknesses":[
+            "투표집계 기계(OMR·EVM·BMD) 없음 — 유권자등록/인증만",
+            "라이베리아 계약 논란(2022~2023 2회 거부 후 3번째 낙찰)",
+            "DNP 인수 전 $35M 소형사 — 다국가 동시 대규모 배포 역량 제한",
+        ],
+        "news":"2025.6 DNP 75% 지분 인수 / 2026.3 MOSIP SI 파트너 인증 / 2026.4 마다가스카르 250만명 생체등록 풀배포",
+        "confidence":"High",
+    },
+    {
+        "slug":"innovatrics","name":"Innovatrics","flag":"🇸🇰",
+        "homepage":"https://www.innovatrics.com",
+        "products_url":"https://www.innovatrics.com/voter-registration/",
+        "hq":"Bratislava, Slovakia","type":"Private","parent":None,
+        "founded":"2004","employees":"~210","revenue":"~$18M",
+        "countries_count":7,
+        "key_products":["Innovatrics ABIS 자동생체식별","Voter Management Platform","DOT 디지털온보딩 SDK","SmartFace 안면인식"],
+        "categories":["Biometric","ABIS","Software"],
+        "overlap":"Indirect","overlap_markets":["GIN","UGA","ALB"],
+        "strengths":[
+            "NIST ELFT 잠재지문 정확도 1위(2025.1) + 안면인식 상위 3위",
+            "하드웨어 무관 클라우드 ABIS — 1억 인구 단일 AWS 인스턴스 처리",
+            "MOSIP 컴플라이언트 ABIS(2026.6) — 29개국 GovStack 파이프라인",
+        ],
+        "weaknesses":[
+            "소프트웨어/생체인식 전용 — 시스템통합사(Smartmatic 등)에 납품 구조",
+            "~210명 소형사 — 다국가 동시 배포 역량 제한",
+            "투표기계 없음 — 고부가 하드웨어 계약 참여 불가",
+        ],
+        "news":"2025.1 NIST 지문 1위 탈환 / 2026.5 UIDAI 안면인식 챌린지 1위 / 2026.6 MOSIP 컴플라이언트 + 브라티슬라바 Biometrics House 신사옥",
+        "confidence":"Med",
+    },
+    {
+        "slug":"tech5","name":"uqudo / TECH5","flag":"🇨🇭",
+        "homepage":"https://tech5.ai",
+        "products_url":"https://tech5.ai/uqudo-tech5-free-fair-elections/",
+        "hq":"Geneva (TECH5) / Manchester (uqudo)","type":"Private","parent":None,
+        "founded":"2018","employees":"~120","revenue":"비공개",
+        "countries_count":1,
+        "key_products":["Antakhib/Intakhib 모바일 생체인증 선거앱","T5-OmniMatch ABIS","T5-AirSnap 비접촉 안면/지문캡처","NFC 생체ID 리더"],
+        "categories":["Biometric","Internet","Software"],
+        "overlap":"Indirect","overlap_markets":["OMN"],
+        "strengths":[
+            "NIST 최상위 생체인식 알고리즘(지문·안면·홍채)",
+            "오만 2022/2023 국가선거 NFC+생체 원격투표 실증 — 유일 벤더",
+            "창업자 Aadhaar(13억)/인도네시아 국민ID(1.93억) 경력 — 정부급 스케일 신뢰",
+        ],
+        "weaknesses":[
+            "선거 레퍼런스 오만 단일 — 국제 확장 아직 없음",
+            "~120명 소형사 — 대규모 동시 배포 역량 제한",
+            "법집행(버지니아 $54M)·DPI가 주 사업 — 선거기술 2차적 포지셔닝",
+        ],
+        "news":"2026.1 Salica Investments 성장대출 확보 / 2026.3 NIST FRIF 지문 새 벤치마크 / 이라크 거주자 ID 지원(2025.8)",
+        "confidence":"Med",
+    },
+    {
+        "slug":"champtek","name":"Champtek Inc.","flag":"🇹🇼",
+        "homepage":"https://www.champtek.com",
+        "products_url":"https://www.champtek.com/en/product/136",
+        "hq":"New Taipei City, Taiwan","type":"Private","parent":None,
+        "founded":"1985","employees":"11~50","revenue":"비공개",
+        "countries_count":1,
+        "key_products":["X-100 10.1인치 VMD(유권자관리단말)","X-55/X-80/X-120/X-130 시리즈","Z Series 생체키트","십지문 롤스캐너"],
+        "categories":["Biometric","OMR","Software"],
+        "overlap":"Indirect","overlap_markets":["ZAF"],
+        "strengths":[
+            "하드웨어 전용 제조 — 모듈식 생체인식(NFC·홍채·안면·지문) 통합 가능",
+            "CHAMPTEK·SCANTECH ID 이중 브랜드 30개국+ 유통망",
+            "FBI 인증 지문, AFIS/ABIS 지원 — 정부 조달 공신력",
+        ],
+        "weaknesses":[
+            "남아공 IEC X-100 VMD 2021·2024 선거 모두 현장 중단 — 레퍼런스 손상",
+            "11~50명 극소형사 — 대규모 동시 배포 역량 극히 제한",
+            "Ren-Form 유통사 의존 — 짐바브웨 스캔들 등 유통사 리스크 전이",
+        ],
+        "news":"2026.6 Computex 타이페이 / 2026.8 타이페이 물류·IoT 전시회 — 남아공 IEC 재입찰 결정 미발표",
+        "confidence":"Med",
+    },
+    {
+        "slug":"samsung_sds","name":"Samsung SDS","flag":"🇰🇷",
+        "homepage":"https://www.samsungsds.com/en/index.html",
+        "products_url":"https://www.samsungsds.com/us/en/solutions/bns/Digital/Identity-platform.html",
+        "hq":"Seoul, South Korea","type":"Public (KRX:018260)","parent":"Samsung Group",
+        "founded":"1985","employees":"~26,000","revenue":"~$10.1B",
+        "countries_count":0,
+        "key_products":["Nexsign 생체인증(기업/은행용)","Nexledger 블록체인","FabriX 생성AI","Samsung Cloud Platform"],
+        "categories":["Software","Biometric"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "삼성그룹 브랜드 + 계열사 안정 수요 — 한국 MSP 점유율 1위",
+            "AI·클라우드 풀스택(SCP·FabriX·Brity Works) + KRX 1.22조원 KKR 투자(2026.4)",
+            "방글라데시 NID 기반 선거인 확인 레퍼런스",
+        ],
+        "weaknesses":[
+            "삼성 계열사 매출 의존도 — 독립 국제 경쟁력 제한",
+            "선거기술 전용 포트폴리오 없음 — Nexsign은 기업/은행 용도",
+            "아태 외 국제 브랜드 인지도 낮음",
+        ],
+        "news":"2026.4 KKR KRW 1.22조(~$820M) 전환사채 투자 / 2026.4 국회 AI 입법지원 플랫폼 / FY2025 매출 KRW 13.93조(+0.7%)",
+        "confidence":"High",
+    },
+    {
+        "slug":"sopra_steria","name":"Sopra Steria","flag":"🇫🇷",
+        "homepage":"https://www.soprasteria.com",
+        "products_url":"https://www.soprasteria.com/industries/government",
+        "hq":"Paris, France","type":"Public (EPA:SOP)","parent":None,
+        "founded":"2014","employees":"~51,000","revenue":"~$6.0B",
+        "countries_count":1,
+        "key_products":["EU Shared Biometric Matching System(sBMS·IDEMIA 협력)","FAED V3 프랑스 형사지문DB","선거야간 출구조사 플랫폼(Ipsos 협력)"],
+        "categories":["Software","Biometric"],
+        "overlap":"None","overlap_markets":[],
+        "strengths":[
+            "유럽 공공기관 IT 톱5 — 프랑스·영국·EU 기관 깊은 관계",
+            "EU 국경 생체인식(SIS II·sBMS) 계약 — 정부 민감 ID 프로그램 공신력",
+            "유럽 디지털 주권 포지셔닝 — ESTIA 클라우드 연합 공동창설",
+        ],
+        "weaknesses":[
+            "선거기술 전용 제품 없음 — 프랑스 출구조사+국경 생체인식에 제한",
+            "EDPS 감사(2025): SIS II 수천개 고심각도 취약점, 최대 5.5년 미패치 — 보안 신뢰도 손상",
+            "프랑스 43%·영국 16% 매출 집중 — 신흥시장 선거기술 수요 지역 부재",
+        ],
+        "news":"Q1 2026 매출 +3.4% 반등 / sBMS 2025.8 eu-LISA와 가동 / EDPS 감사 고심각도 취약점 논란(2025.7)",
+        "confidence":"High",
+    },
+]
+
+OVERLAP_META = {
+    "Direct":   (B["red"],    "직접 경쟁"),
+    "Indirect": ("#D4870A",  "간접 경쟁"),
+    "None":     (B["steel"], "비경쟁"),
+}
+
 # ─── KPI 팝업: 국가별 주요 조달 포털 URL 추출 ─────────────────────────────────
 def _primary_url(iso3, portals):
     for name, url, status, primary in portals.get(iso3, []):
@@ -786,6 +1234,104 @@ def bio_panel():
   </div>
   <div class="cards-grid">{cards}</div>
 </div>"""
+
+
+def vendor_panel():
+    total = len(VENDOR_DATA)
+    direct_cnt   = sum(1 for v in VENDOR_DATA if v["overlap"]=="Direct")
+    indirect_cnt = sum(1 for v in VENDOR_DATA if v["overlap"]=="Indirect")
+
+    def vcard(v):
+        oc, ol = OVERLAP_META.get(v["overlap"], (B["steel"],"비경쟁"))
+        is_miru = v["slug"] == "miru_self"
+        border_col = B["primary"] if is_miru else oc
+        miru_flag  = " vcard-miru" if is_miru else ""
+        markets_str = " · ".join(v.get("overlap_markets",[]))
+        markets_html = (f'<div class="vc-markets">경쟁 시장: <strong>{markets_str}</strong></div>'
+                        if markets_str else "")
+        prods_html = "".join(f'<span class="vc-tag">{p}</span>'
+                             for p in v["key_products"][:4])
+        cats_html  = "".join(f'<span class="vc-cat">{c}</span>'
+                             for c in v.get("categories",[])[:5])
+        sw_html = ""
+        for label, items in [("강점", v.get("strengths",[])), ("약점", v.get("weaknesses",[]))]:
+            c2 = B["green"] if label=="강점" else B["red"]
+            rows = "".join(f'<li style="color:{B["slate"]};margin-bottom:3px">{it}</li>' for it in items)
+            sw_html += f'<div style="margin-top:6px"><span style="font-size:9px;font-weight:700;color:{c2};letter-spacing:.08em">{label}</span><ul style="margin:4px 0 0 14px;padding:0;font-size:10px;line-height:1.5">{rows}</ul></div>'
+        conf_col = {"High":B["green"],"Med":"#D4870A","Low":B["red"]}.get(v.get("confidence",""),B["steel"])
+        return f"""
+<div class="vcard{miru_flag}">
+  <div class="vcard-head" style="border-left:4px solid {border_col}">
+    <div class="vc-flag">{v.get("flag","🏳️")}</div>
+    <div class="vc-info">
+      <div class="vc-name">{v["name"]}</div>
+      <div class="vc-hq">{v["hq"]}</div>
+    </div>
+    <span class="vc-overlap" style="background:{oc}18;color:{oc};border:1px solid {oc}44">{ol}</span>
+  </div>
+  <div class="vcard-body">
+    <div class="vc-row"><span class="vc-lbl">유형</span><span class="vc-val">{v["type"]}</span></div>
+    <div class="vc-row"><span class="vc-lbl">설립</span><span class="vc-val">{v.get("founded","—")}</span></div>
+    <div class="vc-row"><span class="vc-lbl">임직원</span><span class="vc-val">{v.get("employees","—")}</span></div>
+    <div class="vc-row"><span class="vc-lbl">매출</span><span class="vc-val">{v.get("annual_revenue_usd","—")}</span></div>
+    <div class="vc-row"><span class="vc-lbl">진출국</span><span class="vc-val">{v["countries_count"]}개국</span></div>
+    <div style="margin-top:6px">{cats_html}</div>
+    <div style="margin-top:5px">{prods_html}</div>
+    {markets_html}
+    {sw_html}
+    <div class="vc-news">{v.get("news","")}</div>
+  </div>
+  <div class="vcard-footer">
+    <a href="{v["homepage"]}" target="_blank" class="vc-link">홈페이지 ↗</a>
+    {f'<a href="{v["products_url"]}" target="_blank" class="vc-link">선거제품 ↗</a>' if v.get("products_url") and v["products_url"] != v["homepage"] else ""}
+    <span style="font-size:9px;color:{conf_col};margin-left:auto">신뢰도: {v.get("confidence","")}</span>
+  </div>
+</div>"""
+
+    cards_direct   = "\n".join(vcard(v) for v in VENDOR_DATA if v["overlap"]=="Direct")
+    cards_indirect = "\n".join(vcard(v) for v in VENDOR_DATA if v["overlap"]=="Indirect")
+    cards_none     = "\n".join(vcard(v) for v in VENDOR_DATA if v["overlap"]=="None")
+
+    def section(title, col, body, cnt):
+        if not body: return ""
+        return f"""
+<div class="vendor-section">
+  <div class="vs-header" style="border-left:3px solid {col};background:{col}0f">
+    <span style="font-size:12px;font-weight:700;color:{col}">{title}</span>
+    <span style="font-size:10px;color:{B['steel']};margin-left:8px">{cnt}개 사</span>
+  </div>
+  <div class="vcards-grid">{body}</div>
+</div>"""
+
+    return f"""
+<div id="panel-vendor" class="panel">
+  <div class="ph">
+    <div class="ph-inner">
+      <div class="ph-left">
+        <div class="ph-eye">Competitive Intelligence</div>
+        <h2 class="ph-title">공급사 인텔리전스</h2>
+        <p class="ph-sub">전 세계 선거기술 벤더 {total}개사 심층 분석 — 홈페이지·제품·재무·Miru 경쟁관계 · 2026-06-25</p>
+      </div>
+      <div class="ph-stats">
+        <div class="ph-stat"><span class="ph-n">{total}</span><span class="ph-l">분석 벤더</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:{B['red']}">{direct_cnt}</span><span class="ph-l">직접 경쟁</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:#D4870A">{indirect_cnt}</span><span class="ph-l">간접 경쟁</span></div>
+        <div class="ph-stat"><span class="ph-n" style="color:{B['steel']}">{total-direct_cnt-indirect_cnt}</span><span class="ph-l">비경쟁</span></div>
+      </div>
+    </div>
+    <div class="ph-pills">
+      <span class="tpill" style="background:{B['red']}">직접 경쟁 — 동일 시장 입찰 경쟁</span>
+      <span class="tpill" style="background:#D4870A">간접 경쟁 — 인접 시장 겹침</span>
+      <span class="tpill" style="background:{B['steel']}">비경쟁 — 국가 독점 또는 다른 시장</span>
+    </div>
+  </div>
+  <div style="padding:24px clamp(12px,3vw,40px)">
+    {section("🔴 직접 경쟁사", B["red"], cards_direct, direct_cnt)}
+    {section("🟠 간접 경쟁사 (시장 겹침)", "#D4870A", cards_indirect, indirect_cnt)}
+    {section("⚫ 비경쟁 (국가 독점 또는 다른 세그먼트)", B["steel"], cards_none, total-direct_cnt-indirect_cnt)}
+  </div>
+</div>"""
+
 
 def about_panel():
     crawler_rows = [
@@ -1327,6 +1873,67 @@ body{{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-
   font-size:11px;font-weight:600;
 }}
 
+/* ── VENDOR CARDS ───────────────────────────── */
+.vendor-section{{margin-bottom:32px;}}
+.vs-header{{
+  display:flex;align-items:center;padding:10px 16px;
+  margin-bottom:16px;
+}}
+.vcards-grid{{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:16px;
+}}
+.vcard{{
+  background:var(--white);border:1px solid var(--line);
+  display:flex;flex-direction:column;
+  transition:box-shadow .18s;
+}}
+.vcard:hover{{box-shadow:0 4px 20px rgba(5,25,94,.1);}}
+.vcard-miru{{border-color:var(--navy);box-shadow:0 0 0 2px var(--navy)22;}}
+.vcard-head{{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;border-bottom:1px solid var(--fog);
+}}
+.vc-flag{{font-size:22px;flex-shrink:0;}}
+.vc-info{{flex:1;min-width:0;}}
+.vc-name{{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.3;}}
+.vc-hq{{font-size:10px;color:var(--steel);margin-top:2px;}}
+.vc-overlap{{
+  font-size:9px;font-weight:700;letter-spacing:.08em;
+  padding:3px 8px;flex-shrink:0;white-space:nowrap;
+}}
+.vcard-body{{flex:1;padding:10px 14px;}}
+.vc-row{{display:flex;align-items:baseline;gap:6px;margin-bottom:3px;}}
+.vc-lbl{{font-size:9.5px;color:var(--accent2);font-weight:600;letter-spacing:.06em;width:46px;flex-shrink:0;}}
+.vc-val{{font-size:11px;color:var(--charcoal);}}
+.vc-tag{{
+  display:inline-block;font-size:9px;padding:1px 7px;margin:2px 2px 0 0;
+  background:var(--fog2);color:var(--slate);border:1px solid var(--line);
+}}
+.vc-cat{{
+  display:inline-block;font-size:9px;padding:1px 7px;margin:2px 2px 0 0;
+  background:var(--navy);color:#fff;
+}}
+.vc-markets{{
+  margin-top:6px;font-size:10px;color:var(--slate);
+  padding:4px 8px;background:var(--fog2);border-left:2px solid var(--red);
+}}
+.vc-news{{
+  margin-top:8px;font-size:10px;color:var(--slate);line-height:1.5;
+  border-top:1px solid var(--fog);padding-top:6px;font-style:italic;
+}}
+.vcard-footer{{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 14px;border-top:1px solid var(--fog);background:var(--fog2);
+}}
+.vc-link{{
+  font-size:10px;font-weight:600;color:var(--navy);
+  text-decoration:none;padding:3px 8px;border:1px solid var(--line);
+  background:var(--white);
+}}
+.vc-link:hover{{background:var(--navy);color:#fff;}}
+
 /* ── RESPONSIVE ─────────────────────────────── */
 @media(max-width:960px){{.chart-row{{grid-template-columns:1fr;}}}}
 @media(max-width:700px){{
@@ -1334,6 +1941,7 @@ body{{font-family:var(--font);background:var(--fog2);color:var(--charcoal);font-
   .cards-grid{{grid-template-columns:1fr;}}
   .nav-kpis{{display:none;}}
   .ph-inner{{flex-direction:column;align-items:flex-start;}}
+  .vcards-grid{{grid-template-columns:1fr;}}
 }}
 """
 
@@ -1398,6 +2006,7 @@ HTML = f"""<!DOCTYPE html>
     <button class="nav-tab" data-panel="mena">Middle East &amp; Central Asia</button>
     <button class="nav-tab" data-panel="bio" style="color:rgba(255,255,255,.55);border-bottom-color:transparent;">🔍 생체인식·결과전송</button>
     <button class="nav-tab" data-panel="opportunity" style="color:#D4870A;border-bottom-color:#D4870A44;font-weight:600">📊 입찰 파이프라인</button>
+    <button class="nav-tab" data-panel="vendor" style="color:rgba(255,255,255,.7);border-bottom-color:transparent;">🏭 공급사 인텔리전스</button>
     <button class="nav-tab" data-panel="about" style="color:rgba(255,255,255,.4);border-bottom-color:transparent;font-size:11px;">ℹ️ About</button>
   </div>
   <div class="nav-kpis">
@@ -1573,7 +2182,10 @@ HTML = f"""<!DOCTYPE html>
 <!-- PANEL 7: Opportunity Pipeline -->
 {opportunity_panel()}
 
-<!-- PANEL 8: About -->
+<!-- PANEL 8: Vendor Intelligence -->
+{vendor_panel()}
+
+<!-- PANEL 9: About -->
 {about_panel()}
 
 <!-- FOOTER -->
