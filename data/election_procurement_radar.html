@@ -189,6 +189,7 @@ main{flex:1;min-height:0;display:flex;position:relative;}
 <script src="_topojson_cache.js"></script>
 <script src="_worldatlas_cache_js.js"></script>
 <script src="portals_data.js"></script>
+<script src="vendor_news.js"></script>
 <script>
 class App {
   constructor() {
@@ -918,6 +919,23 @@ class App {
     const vcard=v=>{
       const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6';
       const ol=OVERLAP_KO[v.overlap]||'비경쟁';
+      const VN=window.MIRU_VENDOR_NEWS;
+      const vnd=VN?.vendors?.[v.slug];
+      const newsItems=(vnd?.items||[]).slice(0,3);
+      const hasFetchErr=!!(vnd?.fetchError) && !newsItems.length;
+      const newsHtml=newsItems.length?`
+        <div style="border-top:1px solid var(--border,#222c3a);padding:9px 15px 6px;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.7px;color:var(--muted,#6b7787);margin-bottom:6px;">공식 사이트 뉴스</div>
+          ${newsItems.map(n=>{
+            const title=n.title.length>60?n.title.slice(0,57)+'…':n.title;
+            const meta=[n.date||'',n.countries?.slice(0,2).join(', ')||''].filter(Boolean).join(' · ');
+            return `<a href="${this.esc(n.url)}" target="_blank" rel="noopener" style="display:block;padding:5px 0;border-bottom:1px solid var(--border,#222c3a);text-decoration:none;color:inherit;" onmouseenter="this.querySelector('.nt').style.color='#3B86D6'" onmouseleave="this.querySelector('.nt').style.color=''">
+              <div class="nt" style="font-size:10px;color:var(--text2,#9aa6b5);line-height:1.4;transition:color .15s;">${this.esc(title)}</div>
+              <div style="font-size:9px;color:var(--muted,#6b7787);margin-top:2px;">${this.esc(meta)}</div>
+            </a>`;
+          }).join('')}
+        </div>`
+        :hasFetchErr?`<div style="border-top:1px solid var(--border,#222c3a);padding:8px 15px;font-size:9px;color:var(--muted,#6b7787);">크롤 불가 (WAF / JS 렌더링 필요)</div>`:'';
       return `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-top:3px solid ${oc};border-radius:11px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px var(--shadow,rgba(0,0,0,.4))'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
         <div style="padding:14px 15px 10px;">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">
@@ -944,6 +962,7 @@ class App {
           </div>
           ${v.news?`<div style="padding:7px 10px;background:var(--surface,#0c1119);border-left:2px solid #3B86D6;border-radius:0 5px 5px 0;font-size:9.5px;color:var(--muted,#6b7787);line-height:1.55;">${this.esc(v.news)}</div>`:''}
         </div>
+        ${newsHtml}
         ${v.homepage?`<div style="padding:0 15px 13px;"><a href="${this.esc(v.homepage)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;height:32px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:7px;font-size:11px;color:var(--text2,#9aa6b5);text-decoration:none;transition:border-color .15s,color .15s;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">사이트 열기 ↗</a></div>`:''}
       </div>`;
     };
@@ -963,7 +982,7 @@ class App {
     el.innerHTML=`
       <div style="margin-bottom:24px;">
         <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">공급사 인텔리전스</div>
-        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">주요 경쟁사·파트너사 ${VD.length}개 프로파일 · 2026-06 기준</div>
+        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">주요 경쟁사·파트너사 ${VD.length}개 프로파일 · 공식 사이트 뉴스 ${Object.values(window.MIRU_VENDOR_NEWS?.vendors||{}).reduce((s,v)=>s+v.items.length,0)}건 (크롤: ${window.MIRU_VENDOR_NEWS?.crawled_at||''})</div>
         <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid #EB051344;border-radius:8px;">
             <span style="width:9px;height:9px;border-radius:2px;background:#EB0513;"></span>
