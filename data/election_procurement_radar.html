@@ -71,6 +71,8 @@ main{flex:1;min-height:0;display:flex;position:relative;}
     <nav style="display:flex;gap:5px;margin-left:10px;">
       <button id="tab-map" class="nav-tab active" onclick="app.setView('map')">지도</button>
       <button id="tab-stats" class="nav-tab" onclick="app.setView('stats')">통계 · 인사이트</button>
+      <button id="tab-vendor" class="nav-tab" onclick="app.setView('vendor')">공급사 인텔</button>
+      <button id="tab-opp" class="nav-tab" onclick="app.setView('opp')">기회 파이프라인</button>
     </nav>
     <div style="flex:1;"></div>
     <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(235,5,19,.55);border-radius:6px;flex:0 0 auto;">
@@ -165,6 +167,16 @@ main{flex:1;min-height:0;display:flex;position:relative;}
         </div>
         <div id="charts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(370px,1fr));gap:16px;"></div>
       </div>
+    </div>
+
+    <!-- VENDOR INTEL VIEW -->
+    <div id="vendor-view" style="flex:1;min-height:0;overflow-y:auto;padding:24px 28px 44px;display:none;">
+      <div id="vendor-content" style="max-width:1360px;margin:0 auto;"></div>
+    </div>
+
+    <!-- OPPORTUNITY PIPELINE VIEW -->
+    <div id="opportunity-view" style="flex:1;min-height:0;overflow-y:auto;padding:24px 28px 44px;display:none;">
+      <div id="opportunity-content" style="max-width:1100px;margin:0 auto;"></div>
     </div>
 
   </main>
@@ -341,7 +353,7 @@ class App {
       const fill = isP ? ((anyF && !aSet.has(geo.id)) ? T.landDim : (MC[c.method]||MC.EVM)) : T.land;
       const op = isP && anyF && !aSet.has(geo.id) ? '0.5' : '1';
       const cur = isP ? 'pointer' : 'default';
-      html += `<path data-id="${geo.id}"${isP?` data-iso="${c.iso3}"`:''}fill="${fill}" stroke="${T.stroke}" stroke-width="0.5" vector-effect="non-scaling-stroke" d="${geo.d}" style="cursor:${cur};opacity:${op};transition:fill .2s,opacity .2s;"></path>`;
+      html += `<path data-id="${geo.id}"${isP?` data-iso="${c.iso3}"`:''} fill="${fill}" stroke="${T.stroke}" stroke-width="0.5" vector-effect="non-scaling-stroke" d="${geo.d}" style="cursor:${cur};opacity:${op};transition:fill .2s,opacity .2s;"></path>`;
     });
     this.state.markers.forEach(m => {
       const c=this.byNum[m.iso_num];
@@ -525,9 +537,15 @@ class App {
     const v=this.state.view;
     document.getElementById('map-view').style.display=v==='map'?'flex':'none';
     document.getElementById('stats-view').style.display=v==='stats'?'block':'none';
+    document.getElementById('vendor-view').style.display=v==='vendor'?'block':'none';
+    document.getElementById('opportunity-view').style.display=v==='opp'?'block':'none';
     document.getElementById('tab-map').className='nav-tab'+(v==='map'?' active':'');
     document.getElementById('tab-stats').className='nav-tab'+(v==='stats'?' active':'');
+    document.getElementById('tab-vendor').className='nav-tab'+(v==='vendor'?' active':'');
+    document.getElementById('tab-opp').className='nav-tab'+(v==='opp'?' active':'');
     if (v==='stats') this.renderStats();
+    if (v==='vendor') this.renderVendorIntel();
+    if (v==='opp') this.renderOpportunity();
   }
 
   // ── Detail panel ──────────────────────────────────────────────────────────
@@ -883,6 +901,158 @@ class App {
   }
   feasKey(p) { return p.feasibility||'__none__'; }
   esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  // ── Vendor Intel view ─────────────────────────────────────────────────────
+  renderVendorIntel() {
+    const el=document.getElementById('vendor-content');
+    if (!el||el.dataset.rendered) return;
+    el.dataset.rendered='1';
+    const d=this.state.theme==='dark';
+    const OVERLAP_COLOR={'Direct':'#EB0513','Indirect':'#D4870A','None':'#8A94A6'};
+    const OVERLAP_KO={'Direct':'직접 경쟁','Indirect':'간접 경쟁','None':'비경쟁'};
+    const VD=window.MIRU_VENDOR_DATA||[];
+    const directCnt=VD.filter(v=>v.overlap==='Direct').length;
+    const indirectCnt=VD.filter(v=>v.overlap==='Indirect').length;
+    const noneCnt=VD.filter(v=>v.overlap==='None').length;
+
+    const vcard=v=>{
+      const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6';
+      const ol=OVERLAP_KO[v.overlap]||'비경쟁';
+      return `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-top:3px solid ${oc};border-radius:11px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px var(--shadow,rgba(0,0,0,.4))'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <div style="padding:14px 15px 10px;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+                <span style="font-size:16px;">${v.flag||''}</span>
+                <span style="font-size:13.5px;font-weight:700;color:var(--text,#e7edf4);line-height:1.25;">${this.esc(v.name)}</span>
+              </div>
+              <div style="font-size:10px;color:var(--muted,#6b7787);margin-top:4px;">${this.esc(v.hq||'')}</div>
+            </div>
+            <span style="flex:0 0 auto;font-size:9.5px;font-weight:700;color:${oc};background:${oc}18;border:1px solid ${oc}44;border-radius:5px;padding:2px 8px;white-space:nowrap;">${ol}</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:9px;">
+            ${(v.categories||[]).map(c=>`<span style="font-size:9px;letter-spacing:.3px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 6px;">${this.esc(c)}</span>`).join('')}
+          </div>
+        </div>
+        <div style="padding:0 15px 12px;flex:1;display:flex;flex-direction:column;gap:9px;">
+          <div style="font-size:11px;color:var(--text2,#9aa6b5);line-height:1.6;">
+            ${(v.key_products||[]).slice(0,2).map(p=>`<div style="display:flex;align-items:flex-start;gap:5px;"><span style="color:#3B86D6;flex:0 0 auto;margin-top:2px;">▸</span><span>${this.esc(p)}</span></div>`).join('')}
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            ${(v.strengths||[]).slice(0,1).map(s=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:10.5px;line-height:1.55;"><span style="color:#5AA0E6;flex:0 0 auto;margin-top:2px;">✓</span><span style="color:var(--text2,#9aa6b5);">${this.esc(s)}</span></div>`).join('')}
+            ${(v.weaknesses||[]).slice(0,1).map(w=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:10.5px;line-height:1.55;"><span style="color:#EB0513;flex:0 0 auto;margin-top:2px;">✗</span><span style="color:var(--text2,#9aa6b5);">${this.esc(w)}</span></div>`).join('')}
+          </div>
+          ${v.news?`<div style="padding:7px 10px;background:var(--surface,#0c1119);border-left:2px solid #3B86D6;border-radius:0 5px 5px 0;font-size:9.5px;color:var(--muted,#6b7787);line-height:1.55;">${this.esc(v.news)}</div>`:''}
+        </div>
+        ${v.homepage?`<div style="padding:0 15px 13px;"><a href="${this.esc(v.homepage)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;height:32px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:7px;font-size:11px;color:var(--text2,#9aa6b5);text-decoration:none;transition:border-color .15s,color .15s;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">사이트 열기 ↗</a></div>`:''}
+      </div>`;
+    };
+
+    const section=(title,col,cnt,items)=>cnt===0?'':
+      `<div style="margin-bottom:30px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <span style="width:11px;height:11px;border-radius:3px;background:${col};"></span>
+          <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(title)}</span>
+          <span style="font-size:11px;color:var(--muted,#6b7787);">${cnt}개사</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:13px;">
+          ${items.map(vcard).join('')}
+        </div>
+      </div>`;
+
+    el.innerHTML=`
+      <div style="margin-bottom:24px;">
+        <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">공급사 인텔리전스</div>
+        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">주요 경쟁사·파트너사 ${VD.length}개 프로파일 · 2026-06 기준</div>
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid #EB051344;border-radius:8px;">
+            <span style="width:9px;height:9px;border-radius:2px;background:#EB0513;"></span>
+            <span style="font-size:11px;color:var(--text,#e7edf4);">직접 경쟁 <strong style="color:#EB0513;">${directCnt}</strong></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid #D4870A44;border-radius:8px;">
+            <span style="width:9px;height:9px;border-radius:2px;background:#D4870A;"></span>
+            <span style="font-size:11px;color:var(--text,#e7edf4);">간접 경쟁 <strong style="color:#D4870A;">${indirectCnt}</strong></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:8px;">
+            <span style="width:9px;height:9px;border-radius:2px;background:#8A94A6;"></span>
+            <span style="font-size:11px;color:var(--text,#e7edf4);">비경쟁 <strong style="color:#8A94A6;">${noneCnt}</strong></span>
+          </div>
+        </div>
+      </div>
+      ${section('직접 경쟁','#EB0513',directCnt,VD.filter(v=>v.overlap==='Direct'))}
+      ${section('간접 경쟁 (시장 겹침)','#D4870A',indirectCnt,VD.filter(v=>v.overlap==='Indirect'))}
+      ${section('비경쟁 (참고 프로파일)','#8A94A6',noneCnt,VD.filter(v=>v.overlap==='None'))}
+    `;
+  }
+
+  // ── Opportunity Pipeline view ─────────────────────────────────────────────
+  renderOpportunity() {
+    const el=document.getElementById('opportunity-content');
+    if (!el||el.dataset.rendered) return;
+    el.dataset.rendered='1';
+    const CD=window.MIRU_CONTRACT_DATA||{};
+    const TM=window.MIRU_TIER_META||{};
+    const COUNTRY_FLAG={'PRY':'🇵🇾','ARG':'🇦🇷','ARE':'🇦🇪','OMN':'🇴🇲','PHL':'🇵🇭','BEL':'🇧🇪','BGR':'🇧🇬','CHE':'🇨🇭','BRA':'🇧🇷','GEO':'🇬🇪','ALB':'🇦🇱','MNG':'🇲🇳','KOR':'🇰🇷','COD':'🇨🇩','IRQ':'🇮🇶','ZAF':'🇿🇦','KGZ':'🇰🇬','BIH':'🇧🇦','IND':'🇮🇳','BTN':'🇧🇹','EST':'🇪🇪','USA':'🇺🇸','VEN':'🇻🇪','IRN':'🇮🇷','UZB':'🇺🇿'};
+    const CTYPE_KO={'lease':'임대','service':'서비스','purchase':'구매','pilot':'파일럿'};
+    const tiers=['CRITICAL','WATCH','MONITOR','LONG','UNKNOWN'];
+
+    const critCnt=Object.values(CD).filter(d=>d.tier==='CRITICAL').length;
+    const watchCnt=Object.values(CD).filter(d=>d.tier==='WATCH').length;
+
+    const row=(iso3,cd)=>{
+      const tm=TM[cd.tier]||{color:'#8A94A6',label:'?',icon:''};
+      const tc=tm.color, tl=tm.label, ti=tm.icon;
+      const c=this.byIso[iso3]||{};
+      const cko=c.country_ko||iso3;
+      const flag=COUNTRY_FLAG[iso3]||'🏳️';
+      const ctype=CTYPE_KO[cd.contract_type]||cd.contract_type||'';
+      return `<div style="display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);transition:background .15s;cursor:default;" onmouseenter="this.style.background='var(--hover,#161d28)'" onmouseleave="this.style.background=''">
+        <div style="flex:0 0 30px;font-size:20px;line-height:1;padding-top:2px;">${flag}</div>
+        <div style="flex:0 0 130px;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(cko)}</div>
+          <div style="font-size:10px;color:var(--muted,#6b7787);margin-top:2px;">${iso3}</div>
+        </div>
+        <div style="flex:0 0 110px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:11px;font-weight:700;color:${tc};">${ti} ${this.esc(tl)}</div>
+          <div style="font-size:10px;color:var(--muted,#6b7787);">다음 입찰 ${this.esc(cd.next_tender||'미정')}</div>
+        </div>
+        <div style="flex:0 0 70px;">
+          <span style="font-size:10px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 7px;">${this.esc(ctype)}</span>
+        </div>
+        <div style="flex:1;font-size:11.5px;color:var(--text2,#9aa6b5);line-height:1.65;">${this.esc(cd.notes||'')}</div>
+      </div>`;
+    };
+
+    const section=(tier,desc)=>{
+      const items=Object.entries(CD).filter(([,d])=>d.tier===tier);
+      if (!items.length) return '';
+      const tm=TM[tier]||{color:'#8A94A6',label:tier,icon:''};
+      return `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-left:4px solid ${tm.color};border-radius:11px;overflow:hidden;margin-bottom:14px;">
+        <div style="padding:13px 16px;border-bottom:1px solid var(--border,#222c3a);background:${tm.color}10;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:14px;">${tm.icon||''}</span>
+            <span style="font-size:13px;font-weight:700;color:${tm.color};">${this.esc(tm.label)}</span>
+            <span style="font-size:10.5px;color:var(--muted,#6b7787);font-weight:400;">— ${this.esc(desc)}</span>
+            <span style="margin-left:auto;font-size:11px;color:var(--muted,#6b7787);">${items.length}개국</span>
+          </div>
+        </div>
+        ${items.map(([iso3,cd])=>row(iso3,cd)).join('')}
+      </div>`;
+    };
+
+    const TIER_DESCS={'CRITICAL':'계약 만료 또는 입찰 진행 중 (≤2026)','WATCH':'제안 준비 필요 (2026~2027 입찰)','MONITOR':'중기 모니터링 (2027~2029)','LONG':'장기 관찰 (2030+)','UNKNOWN':'정보 부족 · 제재 환경'};
+    el.innerHTML=`
+      <div style="margin-bottom:24px;">
+        <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">기회 파이프라인</div>
+        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">계약 인텔 기반 국가별 입찰 타임라인 · 2026-06 기준 · ${Object.keys(CD).length}개국</div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <div style="padding:7px 14px;background:var(--card,#11161f);border:1px solid #EB051344;border-radius:8px;font-size:11px;color:var(--text,#e7edf4);">즉시 대응 <strong style="color:#EB0513;">${critCnt}</strong>개국</div>
+          <div style="padding:7px 14px;background:var(--card,#11161f);border:1px solid #D4870A44;border-radius:8px;font-size:11px;color:var(--text,#e7edf4);">제안 준비 <strong style="color:#D4870A;">${watchCnt}</strong>개국</div>
+        </div>
+      </div>
+      ${tiers.map(t=>section(t,TIER_DESCS[t]||'')).join('')}
+    `;
+  }
 }
 
 const app = new App();
