@@ -2814,7 +2814,7 @@ window.MIRU_CONTRACT_DATA = {
     "next_tender": "2027",
     "contract_end": "2026",
     "contract_type": "lease",
-    "notes": "임대 계약 10월 종료 → 2028 총선 입찰 예정. Miru 기존 참여사."
+    "notes": "Comitia-MSA 임대 계약 10월 종료 → 2028 총선 입찰 예정. MSA 단독낙찰 논란으로 재입찰 가능성."
   },
   "ARG": {
     "tier": "CRITICAL",

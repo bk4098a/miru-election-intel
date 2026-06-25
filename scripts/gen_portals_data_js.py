@@ -196,7 +196,7 @@ VENDOR_DATA = [
 ]
 
 CONTRACT_DATA = {
-    'PRY':{'tier':'CRITICAL','next_tender':'2027','contract_end':'2026','contract_type':'lease','notes':'임대 계약 10월 종료 → 2028 총선 입찰 예정. Miru 기존 참여사.'},
+    'PRY':{'tier':'CRITICAL','next_tender':'2027','contract_end':'2026','contract_type':'lease','notes':'Comitia-MSA 임대 계약 10월 종료 → 2028 총선 입찰 예정. MSA 단독낙찰 논란으로 재입찰 가능성.'},
     'ARG':{'tier':'CRITICAL','next_tender':'2027','contract_end':'2025','contract_type':'service','notes':'CABA 선거별 서비스 계약(MSA 단독입찰 ~$22M) → 2027 재입찰.'},
     'ARE':{'tier':'CRITICAL','next_tender':'2026-2027','contract_end':'2023','contract_type':'service','notes':'FNC 선거별 계약 (Scytl 4연속) → 2027 FNC 선거 입찰 2026년 개시.'},
     'OMN':{'tier':'CRITICAL','next_tender':'2026-2027','contract_end':'unknown','contract_type':'service','notes':'Shura 4년 주기 → 2027 선거 입찰 예상. Iraq 생체카메라 레퍼런스 활용 가능.'},
