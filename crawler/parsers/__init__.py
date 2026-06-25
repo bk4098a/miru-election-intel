@@ -8,19 +8,24 @@ from .zakupki_kg    import parse as parse_zakupki_kg
 from .philgeps      import parse as parse_philgeps
 from .g2b_korea     import parse as parse_g2b_korea
 from .tenders_kenya import parse as parse_tenders_kenya
+from .ihec_iraq     import parse as parse_ihec_iraq
 
+# Each entry: (country, iso3, parse_fn, mode)
+# mode = 'static'     → requests / lxml / BeautifulSoup only
+# mode = 'playwright' → requires Chromium (JS rendering)
 PARSERS = [
-    # Existing portals
-    ('Kazakhstan',    'KAZ', parse_goszakup),
-    ('Brazil',        'BRA', parse_pncp),
-    ('Ghana',         'GHA', parse_ghaneps),
-    ('Bahrain',       'BHR', parse_bahrain),
-    ('Bhutan',        'BTN', parse_ecb_bhutan),
-    ('Albania',       'ALB', parse_kqz_albania),
-    ('Jamaica',       'JAM', parse_gojep),
-    ('Kyrgyzstan',    'KGZ', parse_zakupki_kg),
-    # New portals — Miru active markets + key election monitors
-    ('Philippines',   'PHL', parse_philgeps),
-    ('South Korea',   'KOR', parse_g2b_korea),
-    ('Kenya',         'KEN', parse_tenders_kenya),
+    # ── Static portals ──────────────────────────────────────────────────────
+    ('Kazakhstan',  'KAZ', parse_goszakup,    'static'),    # needs GOSZAKUP_TOKEN
+    ('Brazil',      'BRA', parse_pncp,        'static'),    # ConnectionReset / WAF issues
+    ('Ghana',       'GHA', parse_ghaneps,     'static'),    # login wall on search
+    ('Bahrain',     'BHR', parse_bahrain,     'static'),    # ✅ working
+    ('Bhutan',      'BTN', parse_ecb_bhutan,  'static'),    # WP REST API (may timeout)
+    ('Kyrgyzstan',  'KGZ', parse_zakupki_kg,  'static'),    # OCDS API + JSF fallback
+    ('Philippines', 'PHL', parse_philgeps,    'static'),    # ✅ HTML table scraper
+    ('South Korea', 'KOR', parse_g2b_korea,   'static'),    # needs G2B_SERVICE_KEY
+    ('Kenya',       'KEN', parse_tenders_kenya,'static'),   # JSON API + HTML fallback
+    ('Iraq',        'IRQ', parse_ihec_iraq,   'static'),    # WP site, low signal
+    # ── Playwright portals ─────────────────────────────────────────────────
+    ('Jamaica',     'JAM', parse_gojep,       'playwright'),  # JSF app
+    ('Albania',     'ALB', parse_kqz_albania, 'playwright'),  # Next.js rebuild
 ]

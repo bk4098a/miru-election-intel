@@ -5,6 +5,7 @@ import json
 import os
 import sqlite3
 import re
+from datetime import datetime, timezone
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_intel_tenders.db')
 OUT_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'tenders_data.js')
@@ -60,15 +61,19 @@ REGION_MAP = {
 }
 
 CPV_PATTERNS = [
-    ('election_equipment', re.compile(r'EVM|DRE|VVPAT|VCM|ACM|투표기|전자투표|투표단말|voting machine|ballot machine|optical scanner|tabulator', re.I)),
-    ('biometric', re.compile(r'biometric|fingerprint|facial|iris|BVR|voter registration kit|등록기|생체', re.I)),
-    ('software', re.compile(r'software|system|platform|KIEMS|application|portal|결과전송|집계', re.I)),
-    ('services', re.compile(r'training|maintenance|support|consulting|service|용역|교육|유지', re.I)),
-    ('consumables', re.compile(r'ballot paper|용지|잉크|ink|ribbon|카트리지', re.I)),
+    ('election_equipment', re.compile(
+        r'EVM|DRE|VVPAT|VCM|ACM|투표기|전자투표|투표단말|voting machine|ballot machine'
+        r'|optical scanner|tabulator|ballot paper|용지|잉크|ink|ribbon|카트리지', re.I)),
+    ('biometric', re.compile(
+        r'biometric|fingerprint|facial|iris|BVR|voter registration kit|등록기|생체', re.I)),
+    ('software', re.compile(
+        r'software|system|platform|KIEMS|application|portal|결과전송|집계', re.I)),
+    ('services', re.compile(
+        r'training|maintenance|support|consulting|service|용역|교육|유지', re.I)),
 ]
 
 
-def get_cpv_category(title, snippet):
+def get_category(title, snippet):
     text = f'{title} {snippet}'
     for cat, pat in CPV_PATTERNS:
         if pat.search(text):
@@ -106,7 +111,7 @@ def main():
 
         countries_seen.add(iso3)
         region = REGION_MAP.get(iso3, 'Other')
-        cpv = get_cpv_category(title, snippet)
+        category = get_category(title, snippet)
 
         tenders.append({
             'id': r['id'],
@@ -126,14 +131,14 @@ def main():
             'snippet': snippet,
             'score': r['score'] or 0,
             'crawled_at': crawled,
-            'cpv': cpv,
+            'category': category,
         })
 
     meta = {
         'total': len(tenders),
         'countries': sorted(countries_seen),
         'last_crawled': last_crawled,
-        'generated_at': None,  # stamped by caller or left null
+        'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
     }
 
     js = (

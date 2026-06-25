@@ -7,157 +7,302 @@
 <style>
 @font-face{font-family:'Gmarket Sans';src:url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;background:#070e1a;color:#e7edf4;font-family:'Gmarket Sans',sans-serif;font-size:14px;}
+:root{
+  --bg:#070e1a;--card:#11161f;--surface:#0c1119;
+  --text:#e7edf4;--text2:#9aa6b5;--muted:#6b7787;
+  --border:#222c3a;--hover:#161d28;--shadow:rgba(0,0,0,.4);
+  --red:#EB0513;--blue:#3B86D6;--navy:#04185F;
+}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'Gmarket Sans',sans-serif;font-size:14px;line-height:1.5;}
 ::-webkit-scrollbar{width:8px;height:8px;}
 ::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:#222c3a;border-radius:5px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:5px;}
 a{color:inherit;text-decoration:none;}
+input,select,button{font-family:'Gmarket Sans',sans-serif;}
 
-/* TOP BAR */
-#top-bar{display:flex;align-items:center;gap:14px;height:56px;padding:0 20px;background:#04185F;position:sticky;top:0;z-index:100;}
-#top-bar .logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;white-space:nowrap;}
-#top-bar .logo span{color:#EB0513;}
-#top-bar .nav-link{font-size:12px;color:rgba(255,255,255,.7);padding:5px 11px;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap;}
-#top-bar .nav-link:hover{background:rgba(255,255,255,.1);color:#fff;}
-#top-bar .spacer{flex:1;}
-#alert-btn{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:8px;background:rgba(235,5,19,.12);border:1px solid rgba(235,5,19,.35);color:#EB0513;font-size:12.5px;font-family:'Gmarket Sans',sans-serif;cursor:pointer;transition:background .15s;white-space:nowrap;}
+/* ── TOP BAR ── */
+#top-bar{
+  display:flex;align-items:center;gap:14px;
+  height:56px;padding:0 20px;
+  background:var(--navy);
+  position:sticky;top:0;z-index:100;
+  flex-wrap:nowrap;
+}
+.tb-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.tb-logo img{height:20px;width:auto;display:block;}
+.tb-logo-divider{width:1px;height:24px;background:rgba(255,255,255,.22);}
+.tb-logo-text{line-height:1.15;}
+.tb-logo-text .t1{font-size:15px;font-weight:700;letter-spacing:.2px;color:#fff;}
+.tb-logo-text .t2{font-size:8.5px;font-weight:500;letter-spacing:2px;color:rgba(255,255,255,.5);}
+.tb-nav{display:flex;gap:5px;margin-left:8px;}
+.nav-tab{font-family:'Gmarket Sans',sans-serif;font-size:12.5px;padding:6px 13px;border-radius:7px;cursor:pointer;border:none;white-space:nowrap;transition:all .15s;}
+.nav-tab.back{background:rgba(255,255,255,.1);color:rgba(255,255,255,.72);}
+.nav-tab.back:hover{background:rgba(255,255,255,.18);color:#fff;}
+.nav-tab.current{background:#fff;color:var(--navy);font-weight:700;}
+.tb-spacer{flex:1;}
+.tb-confidential{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(235,5,19,.55);border-radius:6px;flex:0 0 auto;}
+.tb-confidential .dot{width:6px;height:6px;border-radius:50%;background:var(--red);}
+.tb-confidential span{font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.7);}
+#alert-btn{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 14px;border-radius:8px;
+  background:rgba(235,5,19,.12);border:1px solid rgba(235,5,19,.35);
+  color:var(--red);font-size:12.5px;cursor:pointer;
+  transition:background .15s;white-space:nowrap;flex:0 0 auto;
+}
 #alert-btn:hover{background:rgba(235,5,19,.22);}
-#alert-badge{background:#EB0513;color:#fff;border-radius:10px;padding:1px 7px;font-size:10.5px;font-weight:700;display:none;}
+#alert-badge{
+  background:var(--red);color:#fff;border-radius:10px;
+  padding:1px 7px;font-size:10.5px;font-weight:700;display:none;
+}
 
-/* HERO */
-#hero{padding:32px 24px 18px;text-align:center;}
-#hero h1{font-size:24px;font-weight:800;color:#e7edf4;margin-bottom:7px;}
-#hero .sub{font-size:13px;color:#9aa6b5;margin-bottom:0;}
-#hero .stats{display:flex;justify-content:center;gap:22px;margin-top:14px;flex-wrap:wrap;}
-.stat-pill{background:#11161f;border:1px solid #222c3a;border-radius:20px;padding:5px 14px;font-size:12px;color:#9aa6b5;}
-.stat-pill strong{color:#e7edf4;}
+/* ── HERO ── */
+#hero{padding:28px 24px 14px;text-align:center;}
+#hero h1{font-size:24px;font-weight:800;color:var(--text);margin-bottom:6px;}
+#hero .sub{font-size:13px;color:var(--text2);}
+#hero .stats{display:flex;justify-content:center;gap:18px;margin-top:14px;flex-wrap:wrap;}
+.stat-pill{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:5px 14px;font-size:12px;color:var(--text2);
+}
+.stat-pill strong{color:var(--text);}
 
-/* SEARCH + FILTERS */
-#search-bar{max-width:880px;margin:0 auto;padding:0 20px 14px;}
-.search-input-wrap{position:relative;margin-bottom:12px;}
-#search-input{width:100%;padding:11px 42px 11px 16px;border-radius:9px;background:#11161f;border:1.5px solid #222c3a;color:#e7edf4;font-size:14px;font-family:'Gmarket Sans',sans-serif;outline:none;transition:border-color .15s;}
-#search-input:focus{border-color:#3B86D6;}
-#search-input::placeholder{color:#6b7787;}
-.search-icon{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:#6b7787;font-size:16px;pointer-events:none;}
-#clear-search{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7787;font-size:16px;cursor:pointer;display:none;padding:2px;}
-#clear-search:hover{color:#EB0513;}
+/* ── SEARCH ── */
+#search-bar{max-width:960px;margin:0 auto;padding:0 20px 12px;}
+.search-input-wrap{position:relative;margin-bottom:10px;}
+#search-input{
+  width:100%;padding:11px 40px 11px 16px;border-radius:9px;
+  background:var(--card);border:1.5px solid var(--border);
+  color:var(--text);font-size:14px;outline:none;transition:border-color .15s;
+}
+#search-input:focus{border-color:var(--blue);}
+#search-input::placeholder{color:var(--muted);}
+#search-icon-placeholder{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px;pointer-events:none;}
+#clear-search{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;display:none;padding:2px;line-height:1;}
+#clear-search:hover{color:var(--red);}
 
+/* ── FILTERS ── */
 .filters-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-.filter-select{padding:6px 10px;border-radius:7px;background:#11161f;border:1px solid #222c3a;color:#e7edf4;font-family:'Gmarket Sans',sans-serif;font-size:12px;cursor:pointer;outline:none;}
-.filter-select:focus{border-color:#3B86D6;}
+.filter-select{
+  padding:6px 10px;border-radius:7px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text);font-size:12px;cursor:pointer;outline:none;
+  transition:border-color .15s;
+}
+.filter-select:focus{border-color:var(--blue);}
+.filter-select option{background:var(--card);}
 .chips-group{display:flex;gap:5px;flex-wrap:wrap;}
-.fchip{padding:5px 11px;border-radius:20px;background:#11161f;border:1px solid #222c3a;color:#9aa6b5;font-size:11.5px;cursor:pointer;transition:all .12s;white-space:nowrap;font-family:'Gmarket Sans',sans-serif;}
-.fchip:hover{border-color:#3B86D6;color:#e7edf4;}
-.fchip.active{background:#3B86D6;border-color:#3B86D6;color:#fff;font-weight:700;}
-.date-input{padding:6px 10px;border-radius:7px;background:#11161f;border:1px solid #222c3a;color:#e7edf4;font-family:'Gmarket Sans',sans-serif;font-size:12px;outline:none;}
-.date-input:focus{border-color:#3B86D6;}
-.sort-row{display:flex;align-items:center;gap:8px;max-width:880px;margin:0 auto;padding:6px 20px 0;}
-.sort-label{font-size:11.5px;color:#6b7787;}
+.fchip{
+  padding:5px 11px;border-radius:20px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text2);font-size:11.5px;cursor:pointer;
+  transition:all .12s;white-space:nowrap;
+}
+.fchip:hover{border-color:var(--blue);color:var(--text);}
+.fchip.active{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;}
+.date-input{
+  padding:6px 10px;border-radius:7px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text);font-size:12px;outline:none;
+  transition:border-color .15s;
+}
+.date-input:focus{border-color:var(--blue);}
+.date-input::-webkit-calendar-picker-indicator{filter:invert(.6);}
+.filter-sep{width:1px;height:22px;background:var(--border);flex:0 0 auto;}
 
-/* RESULTS */
-#results-wrap{max-width:880px;margin:0 auto;padding:6px 20px 60px;}
-#results-count{font-size:12px;color:#9aa6b5;margin-bottom:10px;}
-#results-count strong{color:#e7edf4;}
+/* ── SORT ROW ── */
+.sort-row{display:flex;align-items:center;gap:8px;max-width:960px;margin:0 auto;padding:4px 20px 8px;}
+.sort-label{font-size:11.5px;color:var(--muted);white-space:nowrap;}
 
-.tender-card{background:#11161f;border:1px solid #222c3a;border-radius:10px;padding:13px 15px;margin-bottom:9px;transition:border-color .15s;}
-.tender-card:hover{border-color:#3B86D6;}
-.tender-card.new-alert{border-color:rgba(235,5,19,.5);box-shadow:0 0 0 1px rgba(235,5,19,.15);}
+/* ── RESULTS ── */
+#results-wrap{max-width:960px;margin:0 auto;padding:0 20px 60px;}
+#results-count{font-size:12px;color:var(--text2);margin-bottom:10px;min-height:18px;}
+#results-count strong{color:var(--text);}
+
+.tender-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:13px 15px;margin-bottom:8px;
+  transition:border-color .15s,box-shadow .15s;
+}
+.tender-card:hover{border-color:var(--blue);}
+.tender-card.new-alert{
+  border-color:rgba(235,5,19,.5);
+  box-shadow:0 0 0 1px rgba(235,5,19,.12),0 2px 12px rgba(235,5,19,.08);
+}
 .tc-top{display:flex;align-items:flex-start;gap:10px;}
-.tc-flag{font-size:19px;line-height:1;flex:0 0 auto;margin-top:1px;}
+.tc-flag{font-size:20px;line-height:1;flex:0 0 auto;margin-top:2px;}
 .tc-main{flex:1;min-width:0;}
-.tc-title{font-size:13.5px;font-weight:700;color:#e7edf4;margin-bottom:4px;line-height:1.4;}
-.tc-title a:hover{color:#3B86D6;}
-.tc-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:11.5px;color:#9aa6b5;}
-.tc-buyer{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tc-title{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.tc-title a{color:var(--text);transition:color .12s;}
+.tc-title a:hover{color:var(--blue);}
+.tc-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:11.5px;color:var(--text2);}
+.tc-buyer{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .tc-right{flex:0 0 auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
 .score-badge{padding:3px 8px;border-radius:5px;font-size:10.5px;font-weight:700;}
-.score-40{background:rgba(235,5,19,.15);color:#EB0513;border:1px solid rgba(235,5,19,.3);}
-.score-15{background:rgba(59,134,214,.12);color:#3B86D6;border:1px solid rgba(59,134,214,.25);}
-.score-0{background:#0c1119;color:#6b7787;border:1px solid #222c3a;}
-.new-badge{background:#EB0513;color:#fff;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:700;}
-.tc-snippet{font-size:11.5px;color:#6b7787;margin-top:5px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.cat-chip{padding:2px 7px;border-radius:4px;font-size:10.5px;background:#0c1119;border:1px solid #222c3a;color:#9aa6b5;}
+.score-40{background:rgba(235,5,19,.14);color:var(--red);border:1px solid rgba(235,5,19,.28);}
+.score-15{background:rgba(59,134,214,.12);color:var(--blue);border:1px solid rgba(59,134,214,.24);}
+.score-0{background:var(--surface);color:var(--muted);border:1px solid var(--border);}
+.new-badge{background:var(--red);color:#fff;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:700;vertical-align:middle;}
+.tc-snippet{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.cat-chip{padding:2px 7px;border-radius:4px;font-size:10.5px;background:var(--surface);border:1px solid var(--border);color:var(--text2);}
 .deadline-warn{color:#f5a623;}
+.amount-text{font-size:11px;color:var(--text2);}
 
-/* PAGINATION */
-#pagination{display:flex;align-items:center;justify-content:center;gap:6px;padding:16px 0 0;}
-.pg-btn{padding:6px 12px;border-radius:7px;background:#11161f;border:1px solid #222c3a;color:#9aa6b5;font-family:'Gmarket Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .12s;}
-.pg-btn:hover{border-color:#3B86D6;color:#e7edf4;}
-.pg-btn.active{background:#3B86D6;border-color:#3B86D6;color:#fff;font-weight:700;}
-.pg-btn:disabled{opacity:.35;cursor:not-allowed;}
+/* ── PAGINATION ── */
+#pagination{display:flex;align-items:center;justify-content:center;gap:5px;padding:18px 0 0;}
+.pg-btn{
+  padding:6px 12px;border-radius:7px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text2);font-size:12px;cursor:pointer;
+  transition:all .12s;
+}
+.pg-btn:hover:not(:disabled){border-color:var(--blue);color:var(--text);}
+.pg-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;}
+.pg-btn:disabled{opacity:.3;cursor:not-allowed;}
+.pg-ellipsis{color:var(--muted);padding:0 4px;font-size:12px;}
 
-/* EMPTY STATE */
-#empty-state{text-align:center;padding:60px 20px;}
-#empty-state .em-icon{font-size:48px;margin-bottom:14px;}
-#empty-state .em-title{font-size:18px;font-weight:700;color:#e7edf4;margin-bottom:8px;}
-#empty-state .em-desc{font-size:13px;color:#9aa6b5;line-height:1.6;}
-#empty-state code{background:#0c1119;padding:2px 6px;border-radius:4px;font-size:12px;color:#9aa6b5;}
+/* ── EMPTY / NO-DATA STATE ── */
+.state-box{text-align:center;padding:60px 20px;}
+.state-box .em-icon{font-size:48px;margin-bottom:14px;}
+.state-box .em-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.state-box .em-desc{font-size:13px;color:var(--text2);line-height:1.7;}
+.state-box code{background:var(--surface);padding:2px 7px;border-radius:4px;font-size:12px;color:var(--text2);font-family:monospace;}
 
-/* NO DATA */
-#no-data-state{text-align:center;padding:60px 20px;display:none;}
-
-/* ALERT SIDEBAR */
+/* ── ALERT SIDEBAR ── */
 #alert-overlay{display:none;position:fixed;inset:0;background:rgba(4,12,28,.6);z-index:200;}
-#alert-sidebar{display:none;position:fixed;top:0;right:0;bottom:0;width:360px;background:#11161f;border-left:1px solid #222c3a;z-index:201;flex-direction:column;box-shadow:-12px 0 40px rgba(0,0,0,.5);}
-#alert-sidebar.open{display:flex;}
 #alert-overlay.open{display:block;}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 14px;border-bottom:1px solid #222c3a;}
-.sidebar-header h2{font-size:15px;font-weight:700;}
-.sidebar-close{background:none;border:none;color:#9aa6b5;font-size:20px;cursor:pointer;padding:2px;}
-.sidebar-close:hover{color:#EB0513;}
+#alert-sidebar{
+  display:none;position:fixed;top:0;right:0;bottom:0;width:360px;
+  background:var(--card);border-left:1px solid var(--border);
+  z-index:201;flex-direction:column;
+  box-shadow:-12px 0 40px rgba(0,0,0,.55);
+}
+#alert-sidebar.open{display:flex;}
+.sidebar-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 18px 14px;border-bottom:1px solid var(--border);flex:0 0 auto;
+}
+.sidebar-header h2{font-size:15px;font-weight:700;color:var(--text);}
+.sidebar-close{background:none;border:none;color:var(--text2);font-size:20px;cursor:pointer;padding:2px;line-height:1;}
+.sidebar-close:hover{color:var(--red);}
 .sidebar-body{flex:1;overflow-y:auto;padding:16px 18px;}
-.form-label{font-size:11.5px;color:#9aa6b5;margin-bottom:5px;display:block;}
-.kw-input{width:100%;padding:9px 12px;border-radius:7px;background:#0c1119;border:1.5px solid #222c3a;color:#e7edf4;font-family:'Gmarket Sans',sans-serif;font-size:13px;outline:none;transition:border-color .15s;}
-.kw-input:focus{border-color:#3B86D6;}
-.kw-hint{font-size:11px;color:#6b7787;margin-top:4px;}
-.kw-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
-.kw-tag{display:flex;align-items:center;gap:5px;padding:4px 9px;background:#0c1119;border:1px solid #222c3a;border-radius:5px;font-size:12px;}
-.kw-tag button{background:none;border:none;color:#6b7787;cursor:pointer;font-size:13px;line-height:1;padding:0;}
-.kw-tag button:hover{color:#EB0513;}
-.alert-save-btn{width:100%;margin-top:16px;padding:10px;border-radius:8px;background:#EB0513;border:none;color:#fff;font-family:'Gmarket Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .15s;}
+.form-label{font-size:11.5px;color:var(--text2);margin-bottom:5px;display:block;}
+.kw-input{
+  width:100%;padding:9px 12px;border-radius:7px;
+  background:var(--surface);border:1.5px solid var(--border);
+  color:var(--text);font-size:13px;outline:none;transition:border-color .15s;
+}
+.kw-input:focus{border-color:var(--blue);}
+.kw-hint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5;}
+.kw-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;min-height:10px;}
+.kw-tag{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 9px;background:var(--surface);
+  border:1px solid var(--border);border-radius:5px;font-size:12px;color:var(--text);
+}
+.kw-tag button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;line-height:1;padding:0;}
+.kw-tag button:hover{color:var(--red);}
+.alert-save-btn{
+  width:100%;margin-top:16px;padding:10px;border-radius:8px;
+  background:var(--red);border:none;color:#fff;font-size:13px;font-weight:700;
+  cursor:pointer;transition:background .15s;
+}
 .alert-save-btn:hover{background:#c20411;}
-.alert-section{margin-top:20px;padding-top:18px;border-top:1px solid #222c3a;}
-.alert-section h3{font-size:12.5px;font-weight:700;margin-bottom:10px;color:#9aa6b5;}
-.alert-match-card{background:#0c1119;border:1px solid rgba(235,5,19,.25);border-radius:8px;padding:9px 11px;margin-bottom:7px;}
-.alert-match-title{font-size:12.5px;font-weight:600;color:#e7edf4;margin-bottom:3px;}
-.alert-match-meta{font-size:11px;color:#9aa6b5;}
+.alert-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);}
+.alert-section h3{font-size:12.5px;font-weight:700;margin-bottom:10px;color:var(--text2);}
+.alert-match-card{
+  background:var(--surface);border:1px solid rgba(235,5,19,.22);
+  border-radius:8px;padding:9px 11px;margin-bottom:7px;
+}
+.alert-match-title{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.alert-match-title a:hover{color:var(--blue);}
+.alert-match-meta{font-size:11px;color:var(--text2);}
+.alert-empty{font-size:12px;color:var(--muted);text-align:center;padding:16px 0;}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  #top-bar{gap:8px;padding:0 12px;}
+  .tb-logo-text .t2{display:none;}
+  .tb-confidential{display:none;}
+  #hero h1{font-size:20px;}
+  #search-bar,.sort-row{padding-left:12px;padding-right:12px;}
+  #results-wrap{padding-left:12px;padding-right:12px;}
+  .tc-right{display:none;}
+  #alert-sidebar{width:100%;}
+}
 </style>
 </head>
 <body>
-<div id="top-bar">
-  <div class="logo">MIRU<span>.</span> 인텔</div>
-  <a class="nav-link" href="election_procurement_radar.html">← 레이더 대시보드</a>
-  <div class="spacer"></div>
+
+<!-- ═══════════ TOP BAR ═══════════ -->
+<header id="top-bar">
+  <div class="tb-logo">
+    <img src="../miru_white_logo_enhanced_transparent.png" alt="MIRU" onerror="this.style.display='none'">
+    <div class="tb-logo-divider"></div>
+    <div class="tb-logo-text">
+      <div class="t1">Market Intelligence</div>
+      <div class="t2">ELECTION&nbsp;PROCUREMENT&nbsp;·&nbsp;GLOBAL</div>
+    </div>
+  </div>
+  <nav class="tb-nav">
+    <a href="election_procurement_radar.html" class="nav-tab back">← 레이더</a>
+    <span class="nav-tab current">조달 공고 검색</span>
+  </nav>
+  <div class="tb-spacer"></div>
+  <div class="tb-confidential">
+    <div class="dot"></div>
+    <span>CONFIDENTIAL</span>
+  </div>
   <button id="alert-btn" onclick="app.openAlerts()">
     🔔 알람 설정
     <span id="alert-badge"></span>
   </button>
-</div>
+</header>
 
+<!-- ═══════════ HERO ═══════════ -->
 <div id="hero">
   <h1>조달 공고 검색</h1>
-  <p class="sub">전 세계 선거 기술 조달 공고 · 키워드·국가·카테고리 필터</p>
-  <div class="stats" id="hero-stats"></div>
+  <p class="sub">전 세계 선거 기술 조달 공고 · 키워드 · 국가 · 카테고리 필터</p>
+  <div class="stats" id="hero-stats">
+    <span class="stat-pill"><strong>—</strong> 건</span>
+    <span class="stat-pill"><strong>—</strong> 개국</span>
+    <span class="stat-pill">최근 수집: <strong>—</strong></span>
+  </div>
 </div>
 
+<!-- ═══════════ SEARCH + FILTERS ═══════════ -->
 <div id="search-bar">
   <div class="search-input-wrap">
-    <input id="search-input" type="text" placeholder="키워드 검색 (예: EVM, voting machine, 선거...)" oninput="app.onSearch(this.value)">
+    <input id="search-input" type="text"
+      placeholder="키워드 검색 (예: EVM, voting machine, biometric, 선거...)"
+      oninput="app.onSearch(this.value)" autocomplete="off">
     <button id="clear-search" onclick="app.clearSearch()" title="지우기">✕</button>
-    <span class="search-icon" id="search-icon-placeholder">🔍</span>
+    <span id="search-icon-placeholder">🔍</span>
   </div>
   <div class="filters-row">
-    <select id="filter-region" class="filter-select" onchange="app.applyFilters()">
+    <select id="filter-region" class="filter-select" onchange="app.onRegionChange()">
       <option value="">모든 지역</option>
-      <option>East Asia</option><option>Southeast Asia</option><option>South Asia</option>
-      <option>Central Asia</option><option>Middle East</option><option>East Africa</option>
-      <option>West Africa</option><option>Central Africa</option><option>Southern Africa</option>
-      <option>North Africa</option><option>Europe</option><option>Latin America</option>
-      <option>Caribbean</option><option>North America</option><option>Other</option>
+      <option value="East Asia">East Asia</option>
+      <option value="Southeast Asia">Southeast Asia</option>
+      <option value="South Asia">South Asia</option>
+      <option value="Central Asia">Central Asia</option>
+      <option value="Middle East">Middle East</option>
+      <option value="East Africa">East Africa</option>
+      <option value="West Africa">West Africa</option>
+      <option value="Central Africa">Central Africa</option>
+      <option value="Southern Africa">Southern Africa</option>
+      <option value="North Africa">North Africa</option>
+      <option value="Europe">Europe</option>
+      <option value="Latin America">Latin America</option>
+      <option value="Caribbean">Caribbean</option>
+      <option value="North America">North America</option>
+      <option value="Oceania">Oceania</option>
+      <option value="Other">Other</option>
     </select>
     <select id="filter-country" class="filter-select" onchange="app.applyFilters()">
       <option value="">모든 국가</option>
     </select>
+    <div class="filter-sep"></div>
     <div class="chips-group" id="cpv-chips">
       <span class="fchip active" data-cpv="" onclick="app.setCpv(this,'')">전체</span>
       <span class="fchip" data-cpv="election_equipment" onclick="app.setCpv(this,'election_equipment')">선거장비</span>
@@ -165,16 +310,20 @@ a{color:inherit;text-decoration:none;}
       <span class="fchip" data-cpv="software" onclick="app.setCpv(this,'software')">소프트웨어</span>
       <span class="fchip" data-cpv="services" onclick="app.setCpv(this,'services')">서비스</span>
     </div>
+    <div class="filter-sep"></div>
     <select id="filter-score" class="filter-select" onchange="app.applyFilters()">
       <option value="0">모든 점수</option>
-      <option value="40">40점 이상 (선거 직접관련)</option>
+      <option value="40">40점 이상 (선거 직접 관련)</option>
       <option value="15">15점 이상 (관련 키워드)</option>
     </select>
+    <div class="filter-sep"></div>
     <input type="date" id="filter-from" class="date-input" title="발행일 시작" onchange="app.applyFilters()">
+    <span style="font-size:11px;color:var(--muted);">~</span>
     <input type="date" id="filter-to" class="date-input" title="발행일 종료" onchange="app.applyFilters()">
   </div>
 </div>
 
+<!-- ═══════════ SORT ROW ═══════════ -->
 <div class="sort-row">
   <span class="sort-label">정렬:</span>
   <div class="chips-group">
@@ -184,19 +333,25 @@ a{color:inherit;text-decoration:none;}
   </div>
 </div>
 
+<!-- ═══════════ RESULTS ═══════════ -->
 <div id="results-wrap">
   <div id="results-count"></div>
   <div id="results-list"></div>
   <div id="pagination"></div>
-  <div id="empty-state" style="display:none">
+
+  <!-- Empty state (no filter matches) -->
+  <div id="empty-state" class="state-box" style="display:none">
     <div class="em-icon">🔍</div>
     <div class="em-title">검색 결과 없음</div>
-    <div class="em-desc">다른 키워드나 필터를 시도해 보세요.</div>
+    <div class="em-desc">다른 키워드나 필터 조건을 시도해 보세요.</div>
   </div>
-  <div id="no-data-state">
+
+  <!-- No data state (tenders_data.js has no records) -->
+  <div id="no-data-state" class="state-box" style="display:none">
     <div class="em-icon">🗄️</div>
     <div class="em-title">데이터 없음</div>
-    <div class="em-desc">크롤러를 실행하여 공고를 수집하세요:<br>
+    <div class="em-desc">
+      크롤러를 실행하여 공고를 수집하세요:<br><br>
       <code>python crawler/crawl.py</code><br><br>
       그 다음 JS 파일 생성:<br>
       <code>python scripts/gen_tenders_js.py</code>
@@ -204,17 +359,19 @@ a{color:inherit;text-decoration:none;}
   </div>
 </div>
 
-<!-- ALERT SIDEBAR -->
+<!-- ═══════════ ALERT SIDEBAR ═══════════ -->
 <div id="alert-overlay" onclick="app.closeAlerts()"></div>
 <div id="alert-sidebar">
   <div class="sidebar-header">
     <h2>🔔 알람 키워드 설정</h2>
-    <button class="sidebar-close" onclick="app.closeAlerts()">✕</button>
+    <button class="sidebar-close" onclick="app.closeAlerts()" title="닫기">✕</button>
   </div>
   <div class="sidebar-body">
-    <label class="form-label">키워드 추가 (Enter로 확인)</label>
-    <input class="kw-input" id="kw-input" type="text" placeholder="예: EVM, COMELEC, 선거장비..." onkeydown="app.onKwInput(event)">
-    <p class="kw-hint">새 공고 중 입력된 키워드를 포함하면 알림을 표시합니다.</p>
+    <label class="form-label">키워드 추가 (Enter 또는 쉼표로 구분)</label>
+    <input class="kw-input" id="kw-input" type="text"
+      placeholder="예: EVM, COMELEC, 선거장비, biometric..."
+      onkeydown="app.onKwInput(event)">
+    <p class="kw-hint">크롤 후 최근 48시간 내 신규 공고 중 해당 키워드가 포함되면 알림 배지를 표시합니다.</p>
     <div class="kw-tags" id="kw-tags"></div>
     <button class="alert-save-btn" onclick="app.saveAlerts()">저장</button>
     <div class="alert-section" id="alert-matches-section" style="display:none">
@@ -224,27 +381,90 @@ a{color:inherit;text-decoration:none;}
   </div>
 </div>
 
+<!-- tenders_data.js must be loaded BEFORE the inline script -->
 <script src="tenders_data.js"></script>
 <script>
+'use strict';
+
+/* ── Constants ── */
 const FLAG_MAP = {
   KOR:'🇰🇷',PHL:'🇵🇭',IRQ:'🇮🇶',COD:'🇨🇩',KGZ:'🇰🇬',KEN:'🇰🇪',GHA:'🇬🇭',BHR:'🇧🇭',
   KAZ:'🇰🇿',BRA:'🇧🇷',BTN:'🇧🇹',ALB:'🇦🇱',JAM:'🇯🇲',IND:'🇮🇳',NGA:'🇳🇬',ZAF:'🇿🇦',
   EGY:'🇪🇬',MAR:'🇲🇦',TZA:'🇹🇿',UGA:'🇺🇬',ETH:'🇪🇹',SEN:'🇸🇳',CMR:'🇨🇲',CIV:'🇨🇮',
   USA:'🇺🇸',GBR:'🇬🇧',FRA:'🇫🇷',DEU:'🇩🇪',MEX:'🇲🇽',ARG:'🇦🇷',COL:'🇨🇴',VEN:'🇻🇪',
-  TZA:'🇹🇿',MWI:'🇲🇼',ZWE:'🇿🇼',ZMB:'🇿🇲',MOZ:'🇲🇿',RWA:'🇷🇼',BGD:'🇧🇩',PAK:'🇵🇰',
+  MWI:'🇲🇼',ZWE:'🇿🇼',ZMB:'🇿🇲',MOZ:'🇲🇿',RWA:'🇷🇼',BGD:'🇧🇩',PAK:'🇵🇰',
   IDN:'🇮🇩',MYS:'🇲🇾',THA:'🇹🇭',VNM:'🇻🇳',MMR:'🇲🇲',NPL:'🇳🇵',LKA:'🇱🇰',
+  TUR:'🇹🇷',UKR:'🇺🇦',POL:'🇵🇱',ROU:'🇷🇴',HRV:'🇭🇷',SRB:'🇷🇸',MNE:'🇲🇪',
+  MKD:'🇲🇰',BIH:'🇧🇦',GEO:'🇬🇪',ARM:'🇦🇲',AZE:'🇦🇿',MDG:'🇲🇬',MLI:'🇲🇱',
+  BFA:'🇧🇫',TCD:'🇹🇩',NER:'🇳🇪',GMB:'🇬🇲',SLE:'🇸🇱',LBR:'🇱🇷',GIN:'🇬🇳',
+  BOL:'🇧🇴',PRY:'🇵🇾',URY:'🇺🇾',ECU:'🇪🇨',PER:'🇵🇪',CHL:'🇨🇱',DOM:'🇩🇴',
+  HTI:'🇭🇹',TTO:'🇹🇹',GTM:'🇬🇹',HND:'🇭🇳',SLV:'🇸🇻',NIC:'🇳🇮',CRI:'🇨🇷',
+  PAN:'🇵🇦',KHM:'🇰🇭',LAO:'🇱🇦',SGP:'🇸🇬',TWN:'🇹🇼',MNG:'🇲🇳',
 };
-const CPV_LABEL = {election_equipment:'선거장비',biometric:'생체인식',software:'소프트웨어',services:'서비스',consumables:'소모품',other:'기타'};
+
+const CPV_LABEL = {
+  election_equipment:'선거장비',
+  biometric:'생체인식',
+  software:'소프트웨어',
+  services:'서비스',
+  consumables:'소모품',
+  other:'기타',
+};
+
+const REGION_MAP = {
+  'East Asia':['KOR','JPN','CHN','TWN','MNG','PRK'],
+  'Southeast Asia':['PHL','IDN','MYS','THA','VNM','MMR','KHM','LAO','SGP','BRN','TLS'],
+  'South Asia':['IND','BGD','PAK','NPL','LKA','BTN','MDV','AFG'],
+  'Central Asia':['KAZ','KGZ','TJK','TKM','UZB'],
+  'Middle East':['BHR','IRQ','SAU','ARE','KWT','OMN','QAT','JOR','LBN','ISR','YEM','SYR','IRN'],
+  'East Africa':['KEN','TZA','UGA','ETH','RWA','SOM','DJI','ERI','BDI','COM','MDG','MUS','SYC'],
+  'West Africa':['NGA','GHA','SEN','CIV','MLI','BFA','NER','TCD','GMB','SLE','LBR','GIN','GNB','CPV'],
+  'Central Africa':['COD','CMR','CAF','GAB','GNQ','COG','AGO'],
+  'Southern Africa':['ZAF','ZMB','ZWE','MOZ','MWI','BWA','LSO','SWZ','NAM'],
+  'North Africa':['EGY','MAR','TUN','DZA','LBA','SDN','MRT'],
+  'Europe':['GBR','FRA','DEU','POL','ROU','HRV','SRB','MNE','MKD','BIH','ALB','GEO','ARM','AZE','UKR','TUR','ESP','ITA','PRT','NLD','BEL','AUT','CHE','SWE','NOR','DNK','FIN'],
+  'Latin America':['BRA','MEX','ARG','COL','VEN','BOL','PRY','URY','ECU','PER','CHL'],
+  'Caribbean':['DOM','HTI','TTO','JAM','CUB','BRB','TCA'],
+  'North America':['USA','CAN'],
+  'Oceania':['AUS','NZL','FJI','PNG'],
+};
+
 const PAGE_SIZE = 20;
 
+/* ── Utility ── */
+function _esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function pagRange(cur, total) {
+  const delta = 2;
+  const range = [];
+  const left = Math.max(2, cur - delta);
+  const right = Math.min(total - 1, cur + delta);
+  range.push(1);
+  if (left > 2) range.push('...');
+  for (let i = left; i <= right; i++) range.push(i);
+  if (right < total - 1) range.push('...');
+  if (total > 1) range.push(total);
+  return range;
+}
+
+function iso3ToRegion(iso3) {
+  for (const [r, codes] of Object.entries(REGION_MAP)) {
+    if (codes.includes(iso3)) return r;
+  }
+  return 'Other';
+}
+
+/* ── App ── */
 class App {
   constructor() {
-    this.allTenders = [];
-    this.filtered = [];
-    this.page = 1;
-    this.sortKey = 'crawled_at';
-    this.cpv = '';
-    this.alertKeywords = JSON.parse(localStorage.getItem('miru_alert_keywords') || '[]');
+    this.allTenders   = [];
+    this.filtered     = [];
+    this.page         = 1;
+    this.sortKey      = 'crawled_at';
+    this.cpv          = '';
+    this.alertKeywords  = JSON.parse(localStorage.getItem('miru_alert_keywords') || '[]');
     this.pendingKeywords = [...this.alertKeywords];
     this._searchTimer = null;
   }
@@ -252,63 +472,79 @@ class App {
   init() {
     const T = window.MIRU_TENDERS;
     const M = window.MIRU_TENDERS_META;
+
+    // Detect missing or empty data
     if (!T || T.length === 0) {
       document.getElementById('no-data-state').style.display = 'block';
-      document.getElementById('results-wrap').querySelector('#results-count').style.display = 'none';
+      document.getElementById('results-count').style.display = 'none';
       return;
     }
-    this.allTenders = T;
+
+    // Enrich tenders with region if missing
+    this.allTenders = T.map(t => ({
+      ...t,
+      region: t.region || iso3ToRegion(t.iso3 || ''),
+    }));
+
     this._populateCountryFilter(M);
     this._renderStats(M);
     this._checkAlerts();
     this.applyFilters();
   }
 
-  _populateCountryFilter(M) {
-    const sel = document.getElementById('filter-country');
-    (M && M.countries || [...new Set(this.allTenders.map(t => t.iso3))].filter(Boolean).sort())
-      .forEach(iso3 => {
-        const t = this.allTenders.find(x => x.iso3 === iso3);
-        const opt = document.createElement('option');
-        opt.value = iso3;
-        opt.textContent = (FLAG_MAP[iso3] || '') + ' ' + (t ? t.country : iso3);
-        sel.appendChild(opt);
-      });
-  }
-
+  /* ── Stats ── */
   _renderStats(M) {
-    const total = M ? M.total : this.allTenders.length;
-    const countries = M ? M.countries.length : new Set(this.allTenders.map(t => t.iso3)).size;
-    const last = M && M.last_crawled ? M.last_crawled.slice(0, 10) : '—';
-    document.getElementById('hero-stats').innerHTML = `
-      <span class="stat-pill"><strong>${total.toLocaleString()}</strong> 건</span>
-      <span class="stat-pill"><strong>${countries}</strong> 개국</span>
-      <span class="stat-pill">최근 수집: <strong>${last}</strong></span>`;
+    const total    = M && M.total    ? M.total    : this.allTenders.length;
+    const cList    = M && M.countries ? M.countries : [...new Set(this.allTenders.map(t => t.iso3))];
+    const countries = cList.length;
+    const last     = M && M.last_crawled ? M.last_crawled.slice(0,10) : '—';
+    document.getElementById('hero-stats').innerHTML =
+      `<span class="stat-pill"><strong>${total.toLocaleString()}</strong> 건</span>
+       <span class="stat-pill"><strong>${countries}</strong> 개국</span>
+       <span class="stat-pill">최근 수집: <strong>${last}</strong></span>`;
   }
 
-  _checkAlerts() {
-    if (!this.alertKeywords.length) return;
-    const cutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
-    const matches = this.allTenders.filter(t => {
-      if (!t.crawled_at || t.crawled_at < cutoff) return false;
-      const text = (t.title + ' ' + t.snippet).toLowerCase();
-      return this.alertKeywords.some(k => text.includes(k.toLowerCase()));
+  /* ── Country dropdown (filtered by region) ── */
+  _populateCountryFilter(M) {
+    this._allIso3s = M && M.countries
+      ? M.countries
+      : [...new Set(this.allTenders.map(t => t.iso3))].filter(Boolean).sort();
+    this._rebuildCountryOptions('');
+  }
+
+  _rebuildCountryOptions(region) {
+    const sel = document.getElementById('filter-country');
+    const prev = sel.value;
+    sel.innerHTML = '<option value="">모든 국가</option>';
+    const iso3s = region
+      ? this._allIso3s.filter(c => iso3ToRegion(c) === region)
+      : this._allIso3s;
+    iso3s.forEach(iso3 => {
+      const t = this.allTenders.find(x => x.iso3 === iso3);
+      const opt = document.createElement('option');
+      opt.value = iso3;
+      opt.textContent = (FLAG_MAP[iso3] || '') + ' ' + (t ? t.country : iso3);
+      sel.appendChild(opt);
     });
-    if (matches.length) {
-      const badge = document.getElementById('alert-badge');
-      badge.textContent = matches.length + '건 NEW';
-      badge.style.display = 'inline';
-    }
-    return matches;
+    // Restore previous selection if still valid
+    if (prev && [...sel.options].some(o => o.value === prev)) sel.value = prev;
+  }
+
+  /* ── Events ── */
+  onRegionChange() {
+    const region = document.getElementById('filter-region').value;
+    this._rebuildCountryOptions(region);
+    this.page = 1;
+    this.applyFilters();
   }
 
   onSearch(val) {
     clearTimeout(this._searchTimer);
     const clear = document.getElementById('clear-search');
-    const icon = document.getElementById('search-icon-placeholder');
+    const icon  = document.getElementById('search-icon-placeholder');
     clear.style.display = val ? 'block' : 'none';
-    icon.style.display = val ? 'none' : 'block';
-    this._searchTimer = setTimeout(() => { this.page = 1; this.applyFilters(); }, 200);
+    icon.style.display  = val ? 'none'  : 'block';
+    this._searchTimer = setTimeout(() => { this.page = 1; this.applyFilters(); }, 220);
   }
 
   clearSearch() {
@@ -334,26 +570,30 @@ class App {
     this.applyFilters();
   }
 
+  /* ── Core filter + sort ── */
   applyFilters() {
-    const q = document.getElementById('search-input').value.trim().toLowerCase();
-    const region = document.getElementById('filter-region').value;
+    const q       = document.getElementById('search-input').value.trim().toLowerCase();
+    const region  = document.getElementById('filter-region').value;
     const country = document.getElementById('filter-country').value;
     const minScore = parseInt(document.getElementById('filter-score').value || '0');
     const fromDate = document.getElementById('filter-from').value;
-    const toDate = document.getElementById('filter-to').value;
-
-    const alertCutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
+    const toDate   = document.getElementById('filter-to').value;
 
     let list = this.allTenders.filter(t => {
-      if (region && t.region !== region) return false;
-      if (country && t.iso3 !== country) return false;
-      if (this.cpv && t.cpv !== this.cpv) return false;
-      if (t.score < minScore) return false;
-      if (fromDate && t.published_date && t.published_date < fromDate) return false;
-      if (toDate && t.published_date && t.published_date > toDate) return false;
+      if (region  && t.region !== region)  return false;
+      if (country && t.iso3   !== country) return false;
+      if (this.cpv && t.cpv   !== this.cpv) return false;
+      if ((t.score || 0) < minScore) return false;
+      if (fromDate && t.published_date && t.published_date.slice(0,10) < fromDate) return false;
+      if (toDate   && t.published_date && t.published_date.slice(0,10) > toDate)   return false;
       if (q) {
-        const text = (t.title + ' ' + t.snippet + ' ' + t.buyer + ' ' + t.country).toLowerCase();
-        if (!text.includes(q)) return false;
+        const haystack = (
+          (t.title  || '') + ' ' +
+          (t.snippet|| '') + ' ' +
+          (t.buyer  || '') + ' ' +
+          (t.country|| '')
+        ).toLowerCase();
+        if (!haystack.includes(q)) return false;
       }
       return true;
     });
@@ -361,13 +601,14 @@ class App {
     // Sort
     const k = this.sortKey;
     list = [...list].sort((a, b) => {
-      if (k === 'crawled_at') return (b.crawled_at || '').localeCompare(a.crawled_at || '');
-      if (k === 'score') return (b.score || 0) - (a.score || 0);
+      if (k === 'score')
+        return (b.score || 0) - (a.score || 0);
       if (k === 'deadline_date') {
         const da = a.deadline_date || '9999', db = b.deadline_date || '9999';
         return da.localeCompare(db);
       }
-      return 0;
+      // default: crawled_at desc
+      return (b.crawled_at || '').localeCompare(a.crawled_at || '');
     });
 
     this.filtered = list;
@@ -377,19 +618,24 @@ class App {
 
   _renderCount() {
     const el = document.getElementById('results-count');
-    const n = this.filtered.length;
-    el.innerHTML = n ? `검색 결과: <strong>${n.toLocaleString()}</strong> 건` : '';
+    const n  = this.filtered.length;
+    el.innerHTML = n
+      ? `검색 결과: <strong>${n.toLocaleString()}</strong> 건`
+      : '';
   }
 
+  /* ── Result cards ── */
   _renderPage() {
-    const list = document.getElementById('results-list');
+    const list  = document.getElementById('results-list');
     const empty = document.getElementById('empty-state');
-    const pg = document.getElementById('pagination');
+    const pg    = document.getElementById('pagination');
     const alertCutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
+    const today = new Date().toISOString().slice(0,10);
+    const week  = new Date(Date.now() + 7 * 86400000).toISOString().slice(0,10);
 
     if (!this.filtered.length) {
       list.innerHTML = '';
-      pg.innerHTML = '';
+      pg.innerHTML   = '';
       empty.style.display = 'block';
       return;
     }
@@ -399,73 +645,114 @@ class App {
     const slice = this.filtered.slice(start, start + PAGE_SIZE);
 
     list.innerHTML = slice.map(t => {
-      const flag = FLAG_MAP[t.iso3] || '🏳️';
+      const flag  = FLAG_MAP[t.iso3] || '🏳';
       const isNew = t.crawled_at && t.crawled_at > alertCutoff;
       const isAlertMatch = isNew && this.alertKeywords.length &&
-        this.alertKeywords.some(k => (t.title + ' ' + t.snippet).toLowerCase().includes(k.toLowerCase()));
-      const scoreClass = t.score >= 40 ? 'score-40' : t.score >= 15 ? 'score-15' : 'score-0';
-      const today = new Date().toISOString().slice(0,10);
-      const deadlineWarn = t.deadline_date && t.deadline_date <= new Date(Date.now() + 7*86400000).toISOString().slice(0,10) && t.deadline_date >= today;
+        this.alertKeywords.some(k =>
+          ((t.title||'') + ' ' + (t.snippet||'')).toLowerCase().includes(k.toLowerCase())
+        );
+
+      const scoreClass = (t.score || 0) >= 40 ? 'score-40'
+                       : (t.score || 0) >= 15 ? 'score-15'
+                       : 'score-0';
+
+      const deadlineWarn = t.deadline_date
+        && t.deadline_date.slice(0,10) <= week
+        && t.deadline_date.slice(0,10) >= today;
+
       const cpvLabel = CPV_LABEL[t.cpv] || '기타';
-      const pub = t.published_date ? t.published_date.slice(0,10) : '';
-      const dead = t.deadline_date ? t.deadline_date.slice(0,10) : '';
-      const url = t.url || '#';
-      const titleHtml = url !== '#'
-        ? `<a href="${url}" target="_blank" rel="noopener">${_esc(t.title)}</a>`
+      const pub  = t.published_date ? t.published_date.slice(0,10) : '';
+      const dead = t.deadline_date  ? t.deadline_date.slice(0,10)  : '';
+      const url  = t.url || '#';
+
+      const titleHtml = (url !== '#')
+        ? `<a href="${_esc(url)}" target="_blank" rel="noopener">${_esc(t.title)}</a>`
         : _esc(t.title);
 
-      return `<div class="tender-card${isAlertMatch?' new-alert':''}">
+      const amountHtml = (t.amount && t.amount > 0)
+        ? `<span class="amount-text">${t.amount.toLocaleString()} ${_esc(t.currency||'')}</span>`
+        : '';
+
+      return `<div class="tender-card${isAlertMatch ? ' new-alert' : ''}">
   <div class="tc-top">
     <div class="tc-flag">${flag}</div>
     <div class="tc-main">
-      <div class="tc-title">${titleHtml}${isAlertMatch?' <span class="new-badge">🔔 NEW</span>':''}</div>
+      <div class="tc-title">
+        ${titleHtml}
+        ${isAlertMatch ? ' <span class="new-badge">🔔 NEW</span>' : ''}
+      </div>
       <div class="tc-meta">
-        <span>${t.country}</span>
+        <span>${_esc(t.country || '')}</span>
         <span class="cat-chip">${cpvLabel}</span>
-        ${t.buyer ? `<span class="tc-buyer" title="${_esc(t.buyer)}">${_esc(t.buyer)}</span>` : ''}
-        ${pub ? `<span>📅 ${pub}</span>` : ''}
-        ${dead ? `<span class="${deadlineWarn?'deadline-warn':''}">⏰ ${dead}${deadlineWarn?' (마감임박!)':''}</span>` : ''}
+        ${t.buyer  ? `<span class="tc-buyer" title="${_esc(t.buyer)}">${_esc(t.buyer)}</span>` : ''}
+        ${pub  ? `<span>📅 ${pub}</span>` : ''}
+        ${dead ? `<span class="${deadlineWarn ? 'deadline-warn' : ''}">⏰ ${dead}${deadlineWarn ? ' (마감임박!)' : ''}</span>` : ''}
       </div>
       ${t.snippet ? `<div class="tc-snippet">${_esc(t.snippet)}</div>` : ''}
     </div>
     <div class="tc-right">
-      <span class="score-badge ${scoreClass}">${t.score}점</span>
-      ${t.amount ? `<span style="font-size:11px;color:#9aa6b5">${t.amount.toLocaleString()} ${t.currency}</span>` : ''}
+      <span class="score-badge ${scoreClass}">${t.score || 0}점</span>
+      ${amountHtml}
     </div>
   </div>
 </div>`;
     }).join('');
 
-    // Pagination
+    /* Pagination */
     const totalPages = Math.ceil(this.filtered.length / PAGE_SIZE);
     if (totalPages <= 1) { pg.innerHTML = ''; return; }
 
-    let html = `<button class="pg-btn" onclick="app.goPage(${this.page-1})" ${this.page===1?'disabled':''}>‹</button>`;
     const range = pagRange(this.page, totalPages);
-    let prev = 0;
+    let html = `<button class="pg-btn" onclick="app.goPage(${this.page - 1})" ${this.page === 1 ? 'disabled' : ''}>‹ 이전</button>`;
     range.forEach(p => {
-      if (p - prev > 1) html += `<span style="color:#6b7787;padding:0 4px">…</span>`;
-      html += `<button class="pg-btn${p===this.page?' active':''}" onclick="app.goPage(${p})">${p}</button>`;
-      prev = p;
+      if (p === '...') {
+        html += `<span class="pg-ellipsis">…</span>`;
+      } else {
+        html += `<button class="pg-btn${p === this.page ? ' active' : ''}" onclick="app.goPage(${p})">${p}</button>`;
+      }
     });
-    html += `<button class="pg-btn" onclick="app.goPage(${this.page+1})" ${this.page===totalPages?'disabled':''}>›</button>`;
+    html += `<button class="pg-btn" onclick="app.goPage(${this.page + 1})" ${this.page === totalPages ? 'disabled' : ''}>다음 ›</button>`;
     pg.innerHTML = html;
   }
 
   goPage(p) {
-    if (p < 1 || p > Math.ceil(this.filtered.length / PAGE_SIZE)) return;
+    const totalPages = Math.ceil(this.filtered.length / PAGE_SIZE);
+    if (p < 1 || p > totalPages) return;
     this.page = p;
     this._renderPage();
-    window.scrollTo({ top: 180, behavior: 'smooth' });
+    window.scrollTo({ top: 200, behavior: 'smooth' });
   }
 
-  // --- Alert system ---
+  /* ── Alert system ── */
+  _checkAlerts() {
+    const matches = this._getAlertMatches();
+    const badge   = document.getElementById('alert-badge');
+    if (matches.length) {
+      badge.textContent  = matches.length + '건 NEW';
+      badge.style.display = 'inline';
+    } else {
+      badge.style.display = 'none';
+    }
+    return matches;
+  }
+
+  _getAlertMatches() {
+    if (!this.alertKeywords.length || !this.allTenders.length) return [];
+    const cutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
+    return this.allTenders.filter(t => {
+      if (!t.crawled_at || t.crawled_at < cutoff) return false;
+      const text = ((t.title||'') + ' ' + (t.snippet||'')).toLowerCase();
+      return this.alertKeywords.some(k => text.includes(k.toLowerCase()));
+    });
+  }
+
   openAlerts() {
     this.pendingKeywords = [...this.alertKeywords];
     this._renderKwTags();
     this._renderAlertMatches();
     document.getElementById('alert-sidebar').classList.add('open');
     document.getElementById('alert-overlay').classList.add('open');
+    document.getElementById('kw-input').focus();
   }
 
   closeAlerts() {
@@ -486,9 +773,10 @@ class App {
   }
 
   _renderKwTags() {
-    document.getElementById('kw-tags').innerHTML = this.pendingKeywords.map((k,i) =>
-      `<div class="kw-tag">${_esc(k)}<button onclick="app.removeKw(${i})" title="삭제">×</button></div>`
-    ).join('');
+    document.getElementById('kw-tags').innerHTML =
+      this.pendingKeywords.map((k, i) =>
+        `<div class="kw-tag">${_esc(k)}<button onclick="app.removeKw(${i})" title="삭제">×</button></div>`
+      ).join('');
   }
 
   removeKw(i) {
@@ -499,53 +787,41 @@ class App {
   saveAlerts() {
     this.alertKeywords = [...this.pendingKeywords];
     localStorage.setItem('miru_alert_keywords', JSON.stringify(this.alertKeywords));
-    const matches = this._checkAlerts();
-    this._renderAlertMatches(matches);
+    this._checkAlerts();
+    this._renderAlertMatches();
     this.closeAlerts();
     this.applyFilters();
   }
 
   _renderAlertMatches(matches) {
-    matches = matches || this._getAlertMatches();
-    const sec = document.getElementById('alert-matches-section');
+    matches = matches !== undefined ? matches : this._getAlertMatches();
+    const sec   = document.getElementById('alert-matches-section');
     const title = document.getElementById('alert-matches-title');
-    const list = document.getElementById('alert-matches-list');
-    if (!matches.length) { sec.style.display = 'none'; return; }
+    const list  = document.getElementById('alert-matches-list');
+
+    if (!matches.length) {
+      sec.style.display = 'none';
+      return;
+    }
     sec.style.display = 'block';
     title.textContent = `최근 48시간 신규 공고 (${matches.length}건)`;
-    list.innerHTML = matches.slice(0,10).map(t =>
+    list.innerHTML = matches.slice(0, 10).map(t =>
       `<div class="alert-match-card">
-        <div class="alert-match-title"><a href="${t.url||'#'}" target="_blank" rel="noopener">${_esc(t.title)}</a></div>
-        <div class="alert-match-meta">${FLAG_MAP[t.iso3]||''} ${t.country} · ${t.crawled_at ? t.crawled_at.slice(0,10) : ''}</div>
+        <div class="alert-match-title">
+          <a href="${_esc(t.url||'#')}" target="_blank" rel="noopener">${_esc(t.title)}</a>
+        </div>
+        <div class="alert-match-meta">
+          ${FLAG_MAP[t.iso3]||''} ${_esc(t.country||'')} · ${t.crawled_at ? t.crawled_at.slice(0,10) : '—'}
+        </div>
       </div>`
     ).join('');
-  }
-
-  _getAlertMatches() {
-    if (!this.alertKeywords.length) return [];
-    const cutoff = new Date(Date.now() - 48*3600000).toISOString();
-    return this.allTenders.filter(t => {
-      if (!t.crawled_at || t.crawled_at < cutoff) return false;
-      const text = (t.title + ' ' + t.snippet).toLowerCase();
-      return this.alertKeywords.some(k => text.includes(k.toLowerCase()));
-    });
+    if (!matches.length) {
+      list.innerHTML = '<p class="alert-empty">일치하는 신규 공고가 없습니다.</p>';
+    }
   }
 }
 
-function _esc(s) {
-  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function pagRange(cur, total) {
-  const delta = 2, range = [], rangeWithDots = [];
-  for (let i = Math.max(2, cur - delta); i <= Math.min(total - 1, cur + delta); i++) range.push(i);
-  if (cur - delta > 2) range.unshift('...');
-  if (cur + delta < total - 1) range.push('...');
-  range.unshift(1);
-  if (total > 1) range.push(total);
-  return range.filter(n => typeof n === 'number');
-}
-
+/* ── Bootstrap ── */
 const app = new App();
 document.addEventListener('DOMContentLoaded', () => app.init());
 </script>
