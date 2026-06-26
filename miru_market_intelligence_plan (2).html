@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIRU Market Intelligence — 기획안 v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+@font-face{font-family:'Gmarket Sans';src:url('fonts/GmarketSansTTFMedium.ttf') format('truetype'),url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#05195E;--navy2:#0A2A6E;--accent:#123A9E;--accent2:#AEB7D6;
+  --red:#EB0414;--green:#24A148;--orange:#E65100;
+  --ink:#161616;--slate:#525252;--steel:#8C8C8C;
+  --fog:#E9ECF4;--panel:#F2F4FA;--line:#C7CEDC;--white:#FFFFFF;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--white);color:var(--ink);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;}
+
+/* ─── NAV ─── */
+#topnav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(5,25,94,.98);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2.4rem;height:52px;border-bottom:1px solid rgba(174,183,214,.25);}
+.nav-logo{display:flex;align-items:center;gap:9px;font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:.92rem;color:#fff;letter-spacing:.02em;}
+.nav-logo span{color:var(--accent2);}
+.nav-links{display:flex;}
+.nav-links a{color:var(--accent2);text-decoration:none;font-size:.78rem;font-weight:500;padding:0 .9rem;height:52px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:.18s;}
+.nav-links a:hover{color:#fff;border-bottom-color:var(--red);}
+section{scroll-margin-top:52px;}
+@media(max-width:900px){.nav-links{display:none;}}
+
+/* ─── COVER ─── */
+#cover{min-height:100vh;background:var(--navy);color:#fff;display:flex;flex-direction:column;padding:7rem 9% 3.5rem;position:relative;overflow:hidden;}
+.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(174,183,214,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(174,183,214,.05) 1px,transparent 1px);background-size:54px 54px;pointer-events:none;}
+.cover-top{display:flex;align-items:center;gap:14px;position:relative;z-index:2;}
+.cover-conf{margin-left:auto;font-size:9.5px;letter-spacing:2px;color:rgba(255,255,255,.85);border:1px solid rgba(235,4,20,.5);border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:6px;}
+.cover-conf b{width:5px;height:5px;border-radius:50%;background:var(--red);}
+.cover-mid{margin-top:auto;position:relative;z-index:2;}
+.cover-eye{font-size:.74rem;font-weight:700;letter-spacing:.28em;color:var(--accent2);text-transform:uppercase;}
+.cover-eye::before{content:"";display:inline-block;width:30px;height:2px;background:var(--red);vertical-align:middle;margin-right:12px;}
+.cover-title{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:clamp(2.4rem,5.2vw,4.3rem);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-top:1.4rem;}
+.cover-title .hi{color:var(--red);}
+.cover-title .dim{color:var(--accent2);}
+.cover-sub{font-size:1.05rem;color:rgba(255,255,255,.72);margin-top:1.5rem;max-width:620px;font-weight:300;line-height:1.8;}
+.cover-meta{display:flex;flex-wrap:wrap;gap:0;margin-top:3.4rem;border-top:1px solid rgba(174,183,214,.22);padding-top:1.6rem;position:relative;z-index:2;}
+.cm{padding-right:3.2rem;border-right:1px solid rgba(174,183,214,.18);margin-right:3.2rem;}
+.cm:last-child{border:none;}
+.cm-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);}
+.cm-val{font-size:.95rem;color:#fff;font-weight:500;margin-top:.2rem;}
+.cover-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.8rem;padding-top:2.8rem;border-top:1px solid rgba(174,183,214,.15);position:relative;z-index:2;}
+.kpi-box{background:rgba(255,255,255,.05);border:1px solid rgba(174,183,214,.18);border-radius:10px;padding:1.4rem 1.2rem;}
+.kpi-num{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1;}
+.kpi-unit{font-size:.92rem;color:var(--accent2);}
+.kpi-label{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:.5rem;letter-spacing:.04em;}
+@media(max-width:700px){.cover-kpi{grid-template-columns:repeat(2,1fr);}}
+
+/* ─── SECTION SHELL ─── */
+.si{max-width:1180px;margin:0 auto;padding:6rem 2.5rem;}
+.si-alt{background:var(--panel);}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.stitle{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:1.85rem;font-weight:700;color:var(--navy);line-height:1.18;margin-bottom:.6rem;}
+.sdivider{width:36px;height:3px;background:var(--red);margin:.7rem 0 2rem;}
+.ssub{font-size:.92rem;color:var(--slate);max-width:600px;line-height:1.75;margin-bottom:2.8rem;}
+
+/* ─── GRID ─── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+@media(max-width:980px){.g3,.g4{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr;}}
+
+/* ─── CARDS ─── */
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1.6rem 1.8rem;transition:.18s;}
+.card:hover{box-shadow:0 8px 24px rgba(5,25,94,.08);transform:translateY(-2px);}
+.card-icon{font-size:1.6rem;margin-bottom:.8rem;}
+.card-title{font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;}
+.card-body{font-size:.82rem;color:var(--slate);line-height:1.65;}
+.card-num{font-size:.7rem;letter-spacing:.1em;color:var(--steel);margin-bottom:.6rem;font-weight:700;}
+
+/* ─── FEATURE CARD ─── */
+.fc{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.5rem 1.7rem;}
+.fc.red{border-left-color:var(--red);}
+.fc.green{border-left-color:var(--green);}
+.fc-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--steel);margin-bottom:.4rem;}
+.fc-title{font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;}
+.fc-body{font-size:.82rem;color:var(--slate);line-height:1.65;}
+.fc-tag{margin-top:.8rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+
+/* ─── BADGES ─── */
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.66rem;font-weight:700;letter-spacing:.05em;padding:.2rem .62rem;border-radius:20px;}
+.bd{background:#E8F5E9;color:#1B5E20;}
+.bw{background:#FFF3E0;color:#E65100;}
+.bp{background:var(--fog);color:var(--accent);}
+.br{background:rgba(235,4,20,.08);color:var(--red);}
+
+/* ─── CHART BOX ─── */
+.cb{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1.6rem 1.8rem;}
+.cb-title{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:1.2rem;letter-spacing:.02em;}
+.ch{position:relative;height:260px;}
+.cl{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.cli{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--slate);}
+.cld{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+/* ─── STAT ROW ─── */
+.sr{display:flex;gap:2rem;flex-wrap:wrap;padding:2rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:1.5rem 0 2.5rem;}
+.si-num{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:2rem;font-weight:700;color:var(--navy);}
+.si-unit{font-size:.88rem;color:var(--accent);}
+.si-label{font-size:.7rem;color:var(--steel);margin-top:.15rem;}
+
+/* ─── INSIGHT ─── */
+.insight{background:var(--fog);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:1rem 1.4rem;font-size:.82rem;color:var(--slate);line-height:1.7;margin:1.5rem 0;}
+.insight strong{color:var(--navy);}
+
+/* ─── PIPELINE ─── */
+.pipeline{display:flex;align-items:stretch;flex-wrap:wrap;gap:0;margin:2rem 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.ps{flex:1;min-width:90px;padding:1.1rem 1rem;text-align:center;border-right:1px solid var(--line);background:var(--white);}
+.ps:last-child{border-right:none;}
+.ps.hi{background:rgba(5,25,94,.04);}
+.ps strong{display:block;font-size:.82rem;font-weight:700;color:var(--navy);}
+.ps span{font-size:.7rem;color:var(--steel);margin-top:.2rem;display:block;}
+
+/* ─── PARSER TABLE ─── */
+.ptable{width:100%;border-collapse:collapse;font-size:.78rem;}
+.ptable th{background:var(--navy);color:#fff;padding:.65rem 1rem;text-align:left;font-size:.7rem;font-weight:700;letter-spacing:.05em;}
+.ptable td{padding:.62rem 1rem;border-bottom:1px solid var(--line);color:var(--slate);}
+.ptable tr:last-child td{border-bottom:none;}
+.ptable tr:hover td{background:var(--fog);}
+td.ok{color:#1B5E20;font-weight:700;}
+td.wn{color:var(--orange);font-weight:700;}
+td.er{color:var(--red);font-weight:700;}
+
+/* ─── URL BOX ─── */
+.urlbox{background:var(--fog);border:1px solid var(--line);border-radius:8px;padding:.8rem 1.2rem;font-size:.8rem;font-family:'Courier New',monospace;color:var(--accent);word-break:break-all;margin:.8rem 0;}
+
+/* ─── ROADMAP ─── */
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2rem;}
+@media(max-width:980px){.roadmap{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.roadmap{grid-template-columns:1fr;}}
+.phase{border:1px solid var(--line);border-radius:10px;padding:1.5rem 1.6rem;background:var(--white);}
+.phase.done{border-top:3px solid var(--green);}
+.phase.now{border-top:3px solid var(--red);}
+.phase.next{border-top:3px solid var(--accent2);}
+.ph-label{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;}
+.phase.done .ph-label{color:var(--green);}
+.phase.now .ph-label{color:var(--red);}
+.phase.next .ph-label{color:var(--steel);}
+.ph-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.9rem;}
+.ph-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.ph-list li{font-size:.78rem;color:var(--slate);padding-left:1rem;position:relative;line-height:1.5;}
+.ph-list li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--line);}
+.phase.done .ph-list li::before{background:var(--green);}
+.phase.now .ph-list li::before{background:var(--red);}
+
+/* ─── CONCLUSION ─── */
+#conclusion{background:var(--navy);}
+#conclusion .stitle{color:#fff;}
+#conclusion .ssub{color:rgba(255,255,255,.65);}
+.conc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:2.5rem;}
+@media(max-width:700px){.conc-grid{grid-template-columns:1fr;}}
+.cc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.6rem 1.8rem;}
+.cc-num{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:2rem;font-weight:700;color:var(--red);line-height:1;margin-bottom:.4rem;}
+.cc-label{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.6rem;letter-spacing:.04em;}
+.cc-divider{width:24px;height:2px;background:rgba(255,255,255,.15);margin:.6rem 0;}
+.cc-body{font-size:.82rem;color:rgba(255,255,255,.78);line-height:1.65;}
+
+/* ─── FOOTER ─── */
+footer{text-align:center;padding:2rem;font-size:.72rem;color:var(--steel);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <div class="nav-logo">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#05195E" stroke="#AEB7D6" stroke-width="1"/><circle cx="10" cy="10" r="3" fill="#EB0414"/><line x1="10" y1="1" x2="10" y2="5" stroke="#AEB7D6" stroke-width="1.5"/><line x1="10" y1="15" x2="10" y2="19" stroke="#AEB7D6" stroke-width="1.5"/><line x1="1" y1="10" x2="5" y2="10" stroke="#AEB7D6" stroke-width="1.5"/><line x1="15" y1="10" x2="19" y2="10" stroke="#AEB7D6" stroke-width="1.5"/></svg>
+    MIRU <span>Intelligence</span>
+  </div>
+  <div class="nav-links">
+    <a href="#background">배경</a>
+    <a href="#problem">문제</a>
+    <a href="#dashboard">대시보드</a>
+    <a href="#tendersearch">공고 검색</a>
+    <a href="#coverage">커버리지</a>
+    <a href="#competitive">경쟁사</a>
+    <a href="#architecture">아키텍처</a>
+    <a href="#roadmap">로드맵</a>
+    <a href="#conclusion">결론</a>
+  </div>
+</nav>
+
+<!-- ═══════════ COVER ═══════════ -->
+<section id="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-top">
+    <div class="cover-conf"><b></b> CONFIDENTIAL</div>
+  </div>
+  <div class="cover-mid">
+    <p class="cover-eye">MIRU SYSTEMS · 기획안 v3 · 2026.06.26</p>
+    <h1 class="cover-title">
+      글로벌 선거 조달<br>
+      <span class="hi">모니터링 플랫폼</span><br>
+      <span class="dim">구축 현황 보고</span>
+    </h1>
+    <p class="cover-sub">
+      전 세계 35개국 기계투표 조달 포털을 자동 수집·분석하는 인텔리전스 레이어.<br>
+      대시보드 + 공고 검색 + 일일 자동 크롤 — <strong style="color:#fff;">Phase 1~3 완료, 운영 중.</strong>
+    </p>
+    <div class="cover-meta">
+      <div class="cm"><div class="cm-label">작성</div><div class="cm-val">김별하 (bhkim@mirusystems.com)</div></div>
+      <div class="cm"><div class="cm-label">최종 업데이트</div><div class="cm-val">2026.06.26</div></div>
+      <div class="cm"><div class="cm-label">버전</div><div class="cm-val">v3</div></div>
+      <div class="cm"><div class="cm-label">상태</div><div class="cm-val" style="color:#4ADE80;">Phase 4 진행 중</div></div>
+    </div>
+    <div class="cover-kpi">
+      <div class="kpi-box"><div class="kpi-num">35<span class="kpi-unit">개국</span></div><div class="kpi-label">기계투표 모니터링</div></div>
+      <div class="kpi-box"><div class="kpi-num">23<span class="kpi-unit">개</span></div><div class="kpi-label">파서 구축 완료</div></div>
+      <div class="kpi-box"><div class="kpi-num">782<span class="kpi-unit">건</span></div><div class="kpi-label">공고 수집 (10개국)</div></div>
+      <div class="kpi-box"><div class="kpi-num">매일<span class="kpi-unit"> 자동</span></div><div class="kpi-label">GitHub Actions 크롤</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 01 배경 ═══════════ -->
+<section id="background">
+  <div class="si">
+    <p class="eyebrow">01 — 배경 · 목적</p>
+    <h2 class="stitle">왜 지금 필요한가</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">MIRU는 한국·필리핀·키르기스스탄·콩고·이라크·파라과이 6개국에 투표·개표 장비를 공급하고 있습니다. 각국 조달 포털은 언어·형식·접근 방식이 제각각이라 담당자가 수동으로 모니터링하는 데 한계가 있었습니다.</p>
+    <div class="g4">
+      <div class="card"><div class="card-icon">🌍</div><div class="card-title">35개국 커버리지</div><div class="card-body">DRE · EVM · OMR 방식의 기계투표 도입 국가 전수 조사 완료. 71개 포털 식별 및 크롤 가능성 분석.</div></div>
+      <div class="card"><div class="card-icon">🎯</div><div class="card-title">6개국 핵심 시장</div><div class="card-body">MIRU 납품 이력 국가(KOR·PHL·KGZ·COD·IRQ·PRY) 우선 모니터링. 재계약·갱신 타이밍 포착.</div></div>
+      <div class="card"><div class="card-icon">⚡</div><div class="card-title">실시간 알림</div><div class="card-body">경쟁사(Smartmatic 등) 동향 추적. 입찰 공고 게시 즉시 감지 → 마감 전 대응 가능.</div></div>
+      <div class="card"><div class="card-icon">🤖</div><div class="card-title">완전 자동화</div><div class="card-body">GitHub Actions 일일 크롤 → DB 업데이트 → 웹 공개. 수동 작업 없이 최신 데이터 유지.</div></div>
+    </div>
+    <div class="insight">
+      <strong>election-monitor와의 역할 분리:</strong> 기존 election-monitor repo(119개 포털 + Streamlit 대시보드)와 분리 운영. 본 프로젝트는 <strong>기계투표(DRE/EVM/OMR) 35개국</strong>에 집중한 전략 인텔리전스 레이어.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 문제 ═══════════ -->
+<section id="problem" class="si-alt">
+  <div class="si">
+    <p class="eyebrow">02 — 문제 정의</p>
+    <h2 class="stitle">분산된 정보, 놓치는 기회</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">71개 포털이 35개국에 분산되어 있고, 언어·접근 방식·공개 수준이 제각각입니다. 수동 모니터링으로는 한계가 있었습니다.</p>
+    <div class="g4">
+      <div class="card" style="border-top:3px solid var(--navy);">
+        <h4 class="card-title">① 분산</h4>
+        <p class="card-body">71개 포털 × 35개국 × 정부조달·선관위·EMB 유형 혼재. 하나의 창구로 볼 수 없음.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--navy);">
+        <h4 class="card-title">② 이질성</h4>
+        <p class="card-body">아랍어·스페인어·몽골어 등 다국어. REST API · HTML · SPA · 로그인 필요 등 접근 방식 다양.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--navy);">
+        <h4 class="card-title">③ 적시성</h4>
+        <p class="card-body">수동 확인 지연 → 마감 후 발견. Kenya 463건처럼 포털에 있는 공고를 실시간으로 포착하지 못함.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--navy);">
+        <h4 class="card-title">④ 경쟁 가시성</h4>
+        <p class="card-body">Smartmatic·Dominion의 계약 갱신 시점 파악 불가. MIRU 납품국의 재입찰 주기 모니터링 체계 없음.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 대시보드 ═══════════ -->
+<section id="dashboard">
+  <div class="si">
+    <p class="eyebrow">03 — 솔루션 A · 완료</p>
+    <h2 class="stitle">Election Procurement Radar</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">지도 중심의 단일 인텔리전스 대시보드. 206개국 투표 방식·공급사 현황을 한눈에 파악하고, 경쟁사 포지셔닝과 계약 기회를 분석합니다.</p>
+    <div class="g3" style="margin-bottom:2rem;">
+      <div class="fc"><div class="fc-num">FEATURE 01</div><div class="fc-title">글로벌 지도 뷰</div><div class="fc-body">35개국 투표 방식별 색상 구분. MIRU 납품국 빨간 링 하이라이트. 줌·드래그·클릭 드릴다운. Standalone HTML — 오프라인 사용 가능.</div></div>
+      <div class="fc"><div class="fc-num">FEATURE 02</div><div class="fc-title">포털 디렉토리</div><div class="fc-body">국가 → 포털 목록 → 상세 정보. 유형·언어·수집 방법·비고 표시. 실제 사이트 링크 연결. 71개 포털 전수 수록.</div></div>
+      <div class="fc"><div class="fc-num">FEATURE 03</div><div class="fc-title">통계 드릴다운</div><div class="fc-body">방식·지역·공급사·우선순위별 분포. 막대 클릭 → 해당 포털 필터링. Chart.js 인터랙티브 차트.</div></div>
+      <div class="fc red"><div class="fc-num">FEATURE 04 <span class="badge bd">완료</span></div><div class="fc-title">경쟁사 탭</div><div class="fc-body">Smartmatic·Dominion 등 주요 경쟁사 포털 커버리지, 지역별 점유, H2H 비교. 클릭 시 상세 슬라이드 패널.</div></div>
+      <div class="fc red"><div class="fc-num">FEATURE 05 <span class="badge bd">완료</span></div><div class="fc-title">계약·기회 탭</div><div class="fc-body">MIRU 기존 계약 만료 연도별 버킷. 2026–2027 재계약 임박 국가 하이라이트. 클릭 → 지도 연동.</div></div>
+      <div class="fc"><div class="fc-num">FEATURE 06</div><div class="fc-title">다크/라이트 모드</div><div class="fc-body">localStorage 연동 테마 전환. 미국 주별 타일맵 포함. Standalone HTML — CDN 없이 완전 동작.</div></div>
+    </div>
+    <div class="urlbox">🌐 https://bk4098a.github.io/miru-election-intel/data/Election%20Procurement%20Radar%20(standalone).html</div>
+  </div>
+</section>
+
+<!-- ═══════════ 04 공고 검색 ═══════════ -->
+<section id="tendersearch" class="si-alt">
+  <div class="si">
+    <p class="eyebrow">04 — 솔루션 B · 신규 완료</p>
+    <h2 class="stitle">조달 공고 검색</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">크롤러가 수집한 10개국 782건의 실제 입찰 공고를 검색·필터링하는 전용 UI. GitHub Actions로 매일 07:00 KST 자동 갱신됩니다.</p>
+
+    <div class="sr">
+      <div><div class="si-num">782<span class="si-unit">건</span></div><div class="si-label">수집 공고</div></div>
+      <div><div class="si-num">10<span class="si-unit">개국</span></div><div class="si-label">커버리지</div></div>
+      <div><div class="si-num">7<span class="si-unit">개</span></div><div class="si-label">번역 언어</div></div>
+      <div><div class="si-num">24h<span class="si-unit"> 주기</span></div><div class="si-label">자동 업데이트</div></div>
+    </div>
+
+    <div class="g2">
+      <div class="cb">
+        <div class="cb-title">국가별 수집 공고 현황 (782건)</div>
+        <div class="ch"><canvas id="countryChart"></canvas></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem;">
+        <div class="fc red">
+          <div class="fc-num">UI 기능</div>
+          <div class="fc-title">키워드 검색 + 필터</div>
+          <div class="fc-body">키워드·국가·지역·날짜 범위 필터. 게시일 기준 최신순 정렬. 한국어 국가명 검색 지원 (예: "케냐"). page 리셋 버그 수정 완료.</div>
+        </div>
+        <div class="fc">
+          <div class="fc-num">UI 기능</div>
+          <div class="fc-title">다국어 번역 표시</div>
+          <div class="fc-body">스페인어(PRY)·아랍어(IRQ)·에스토니아어·조지아어·프랑스어·보스니아어·몽골어 → 영어 자동 번역. title_en 카드에 표시.</div>
+        </div>
+        <div class="fc">
+          <div class="fc-num">UI 기능</div>
+          <div class="fc-title">마감 임박 알림</div>
+          <div class="fc-body">7일 이내 마감 공고 강조 표시. 키워드 알림 설정 (EVM·election·biometric 등). 다크/라이트 모드 연동.</div>
+        </div>
+      </div>
+    </div>
+    <div class="urlbox" style="margin-top:1.5rem;">🌐 https://bk4098a.github.io/miru-election-intel/data/tender_search.html</div>
+  </div>
+</section>
+
+<!-- ═══════════ 05 데이터 커버리지 ═══════════ -->
+<section id="coverage">
+  <div class="si">
+    <p class="eyebrow">05 — 데이터 커버리지</p>
+    <h2 class="stitle">글로벌 커버리지 현황</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">35개국 71개 포털 식별 완료. 23개 파서 구축으로 현재 10개국에서 실시간 데이터를 수집하고 있습니다.</p>
+    <div class="g2" style="margin-bottom:2rem;">
+      <div class="cb">
+        <div class="cb-title">지역별 포털 분포 (71개)</div>
+        <div class="ch"><canvas id="regionChart"></canvas></div>
+      </div>
+      <div class="cb">
+        <div class="cb-title">투표 방식별 국가 수 (35개국)</div>
+        <div class="ch"><canvas id="methodChart"></canvas></div>
+        <div class="cl">
+          <div class="cli"><div class="cld" style="background:#05195E;"></div>혼합형 16개국</div>
+          <div class="cli"><div class="cld" style="background:#123A9E;"></div>OMR 9개국</div>
+          <div class="cli"><div class="cld" style="background:#0A2A6E;"></div>EVM 7개국</div>
+          <div class="cli"><div class="cld" style="background:#AEB7D6;"></div>DRE 3개국</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight">
+      <strong>OMR 9개국이 MIRU 핵심 타깃:</strong> 필리핀·케냐·파라과이 등 OMR(광학마크인식) 국가들은 MIRU의 주력 제품군. 이 국가들의 재계약 주기 모니터링이 최우선 과제.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 06 경쟁사 ═══════════ -->
+<section id="competitive" class="si-alt">
+  <div class="si">
+    <p class="eyebrow">06 — 경쟁 인텔리전스</p>
+    <h2 class="stitle">자사 vs 경쟁사 노출 현황</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">포털 내 공급사 언급 데이터를 기반으로 MIRU와 경쟁사의 포털 커버리지를 비교합니다.</p>
+    <div class="g2">
+      <div class="cb">
+        <div class="cb-title">공급사별 포털 언급 수</div>
+        <div class="ch"><canvas id="vendorChart"></canvas></div>
+      </div>
+      <div>
+        <h3 style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:1.2rem;">MIRU 납품 6개국 수집 현황</h3>
+        <div style="display:flex;flex-direction:column;gap:.7rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(235,4,20,.04);border:1px solid rgba(235,4,20,.18);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--red);">🇰🇷 KOR · 나라장터</span>
+            <span class="badge bw">G2B_SERVICE_KEY 필요</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(18,58,158,.04);border:1px solid var(--line);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--navy);">🇵🇭 PHL · PhilGEPS</span>
+            <span class="badge bd">27건 수집 중</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(18,58,158,.04);border:1px solid var(--line);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--navy);">🇰🇬 KGZ · zakupki.gov.kg</span>
+            <span class="badge bw">테스트 필요</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(18,58,158,.04);border:1px solid var(--line);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--navy);">🇨🇩 COD · marchepublic.cd</span>
+            <span class="badge bw">JSF 세션 필요</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(18,58,158,.04);border:1px solid var(--line);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--navy);">🇮🇶 IRQ · IHEC</span>
+            <span class="badge bd">105건 수집 중</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:rgba(18,58,158,.04);border:1px solid var(--line);border-radius:8px;">
+            <span style="font-size:.82rem;font-weight:700;color:var(--navy);">🇵🇾 PRY · DNCP</span>
+            <span class="badge bd">151건 수집 중</span>
+          </div>
+        </div>
+        <div class="insight" style="margin-top:1.4rem;">
+          <strong>MIRU = Smartmatic (각 7개 포털):</strong> 양사가 동일한 포털 수에 노출. Smartmatic의 계약 갱신 타이밍을 선제 파악하는 것이 핵심 과제.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 07 아키텍처 ═══════════ -->
+<section id="architecture">
+  <div class="si">
+    <p class="eyebrow">07 — 기술 아키텍처</p>
+    <h2 class="stitle">수집 → 분석 → 배포 파이프라인</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">크롤러부터 웹 배포까지 완전 자동화된 파이프라인. GitHub Actions가 매일 07:00 KST에 실행합니다.</p>
+
+    <div class="pipeline">
+      <div class="ps"><strong>71개 포털</strong><span>35개국</span></div>
+      <div class="ps hi"><strong>23개 파서</strong><span>Python</span></div>
+      <div class="ps"><strong>번역 모듈</strong><span>7개 언어 → EN</span></div>
+      <div class="ps hi"><strong>SQLite DB</strong><span>upsert 누적</span></div>
+      <div class="ps"><strong>gen_tenders_js</strong><span>JS 생성</span></div>
+      <div class="ps hi" style="border:none;border-left:2px solid var(--red);"><strong>GitHub Pages</strong><span>자동 배포</span></div>
+    </div>
+
+    <div class="g2" style="margin:2rem 0;">
+      <div class="cb">
+        <div class="cb-title">파서 상태 분류 (23개)</div>
+        <div class="ch"><canvas id="parserChart"></canvas></div>
+        <div class="cl">
+          <div class="cli"><div class="cld" style="background:#24A148;"></div>Active — 수집 중 (7)</div>
+          <div class="cli"><div class="cld" style="background:#123A9E;"></div>신규·테스트 대기 (8)</div>
+          <div class="cli"><div class="cld" style="background:#E65100;"></div>API 키 필요 (3)</div>
+          <div class="cli"><div class="cld" style="background:#AEB7D6;"></div>이슈 있음 (5)</div>
+        </div>
+      </div>
+      <div class="cb">
+        <div class="cb-title">포털 크롤 가능성 분석 (71개)</div>
+        <div class="ch"><canvas id="feasChart"></canvas></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:1rem;">파서 현황 (23개)</h3>
+    <table class="ptable">
+      <thead>
+        <tr><th>파서</th><th>포털</th><th>방식</th><th>상태</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>tenders_kenya.py</td><td>iebc.or.ke</td><td>정적 HTML</td><td class="ok">✅ Active</td><td>463건 수집</td></tr>
+        <tr><td>dncp_paraguay.py</td><td>pncp.dncp.gov.py</td><td>OCDS API</td><td class="ok">✅ Active</td><td>151건 + ES→EN 번역</td></tr>
+        <tr><td>ihec_iraq.py</td><td>ihec.iq</td><td>WP REST API</td><td class="ok">✅ Active</td><td>105건 + AR→EN 번역</td></tr>
+        <tr><td>philgeps.py</td><td>notices.philgeps.gov.ph</td><td>Playwright</td><td class="ok">✅ Active</td><td>27건 수집</td></tr>
+        <tr><td>wp_portals.py</td><td>ecb.bt (부탄)</td><td>WP REST API</td><td class="ok">✅ Active</td><td>13건 수집</td></tr>
+        <tr><td>etenders_za.py</td><td>etenders.gov.za</td><td>DataTables API</td><td class="ok">✅ Active</td><td>5건, IEC 필터</td></tr>
+        <tr><td>bahrain.py</td><td>etendering.tenderboard.gov.bh</td><td>HTML 테이블</td><td class="ok">✅ Active</td><td>1건 수집</td></tr>
+        <tr><td>gpa_mongolia.py</td><td>tender.gov.mn</td><td>HTML 스크래핑</td><td class="wn">🔧 신규</td><td>4건 (서버 DNS 필요)</td></tr>
+        <tr><td>compr_ar.py</td><td>comprar.gob.ar</td><td>HTML 스크래핑</td><td class="wn">🔧 신규</td><td>ASP.NET, 테스트 필요</td></tr>
+        <tr><td>riigihanked_est.py</td><td>riigihanked.riik.ee</td><td>API → HTML 폴백</td><td class="wn">⚠️ 신규</td><td>API 401, ET→EN</td></tr>
+        <tr><td>spa_georgia.py</td><td>tenders.procurement.gov.ge</td><td>REST API</td><td class="wn">🔧 신규</td><td>API 경로 탐색 중</td></tr>
+        <tr><td>ejn_bosnia.py</td><td>ejn.gov.ba</td><td>Angular HTML</td><td class="wn">🔧 신규</td><td>BS→EN</td></tr>
+        <tr><td>armp_drc.py</td><td>marchepublic.cd</td><td>JSF</td><td class="wn">🔧 신규</td><td>세션 필요</td></tr>
+        <tr><td>cppp_india.py</td><td>cppp.gov.in + ECI</td><td>HTML</td><td class="wn">⚠️ 신규</td><td>403/geo-block</td></tr>
+        <tr><td>tenderboard_omn.py</td><td>tenderboard.gov.om</td><td>HTML</td><td class="wn">🔧 신규</td><td>DNS 미달성 (서버 필요)</td></tr>
+        <tr><td>goszakup.py</td><td>goszakup.gov.kz</td><td>REST API v3</td><td class="wn">⚠️ API 키</td><td>GOSZAKUP_TOKEN 필요</td></tr>
+        <tr><td>g2b_korea.py</td><td>g2b.go.kr</td><td>REST API</td><td class="wn">⚠️ API 키</td><td>G2B_SERVICE_KEY 필요</td></tr>
+        <tr><td>samgov_usa.py</td><td>sam.gov</td><td>REST API</td><td class="wn">⚠️ API 키</td><td>SAMGOV_API_KEY 필요</td></tr>
+        <tr><td>pncp.py</td><td>pncp.gov.br</td><td>REST API</td><td class="er">❌ 이슈</td><td>ConnectionReset / TLS WAF</td></tr>
+        <tr><td>ghaneps.py</td><td>ghaneps.gov.gh</td><td>HTML</td><td class="er">❌ 이슈</td><td>로그인 필요</td></tr>
+        <tr><td>gojep.py</td><td>GOJEP 자메이카</td><td>Playwright</td><td class="er">❌ 이슈</td><td>JS 렌더링</td></tr>
+        <tr><td>zakupki_kg.py</td><td>zakupki.gov.kg</td><td>OCDS API</td><td class="wn">🔧 미테스트</td><td>Kyrgyzstan MIRU 납품국</td></tr>
+        <tr><td>wp_portals.py (KQZ)</td><td>kqz.gov.al</td><td>WordPress</td><td class="er">❌ 이슈</td><td>2026 Next.js 재구축 예정</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2.5rem;">
+      <h3 style="font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:1rem;">자동화 인프라</h3>
+      <div class="g3">
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-title">GitHub Actions</div>
+          <div class="card-body"><code style="font-size:.75rem;background:var(--fog);padding:.1rem .4rem;border-radius:4px;">.github/workflows/daily-crawl.yml</code><br>매일 07:00 KST 자동 실행 (<code style="font-size:.75rem;">cron: '0 22 * * *'</code>). <code style="font-size:.75rem;">workflow_dispatch</code>로 수동 실행도 가능.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <div class="card-title">GitHub Pages</div>
+          <div class="card-body">크롤 완료 → <code style="font-size:.75rem;">tenders_data.js</code> 자동 커밋 → Pages 즉시 반영. <code style="font-size:.75rem;">.nojekyll</code> 파일로 Jekyll 빌드 우회.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔐</div>
+          <div class="card-title">Secrets 관리</div>
+          <div class="card-body">API 키는 GitHub Secrets에 보관. <code style="font-size:.75rem;">GOSZAKUP_TOKEN</code> · <code style="font-size:.75rem;">G2B_SERVICE_KEY</code> · <code style="font-size:.75rem;">SAMGOV_API_KEY</code> — 발급 후 즉시 연결 가능.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 로드맵 ═══════════ -->
+<section id="roadmap" class="si-alt">
+  <div class="si">
+    <p class="eyebrow">08 — 로드맵</p>
+    <h2 class="stitle">단계별 실행 계획</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">Phase 1–3 완료. 현재 Phase 4 진행 중입니다.</p>
+    <div class="roadmap">
+      <div class="phase done">
+        <div class="ph-label">PHASE 1 ✅ 완료</div>
+        <div class="ph-title">디렉토리 & 인텔리전스</div>
+        <ul class="ph-list">
+          <li>35개국 71개 포털 조사 완료</li>
+          <li>Election Procurement Radar 구현</li>
+          <li>지도·포털·통계 탭 완성</li>
+          <li>경쟁사·계약기회 탭 구현</li>
+          <li>미국 주별 타일맵</li>
+          <li>크롤 가능성 분석 (66개)</li>
+        </ul>
+      </div>
+      <div class="phase done">
+        <div class="ph-label">PHASE 2 ✅ 완료</div>
+        <div class="ph-title">크롤러 구축</div>
+        <ul class="ph-list">
+          <li>23개 파서 구현 및 등록</li>
+          <li>7개 언어 번역 모듈</li>
+          <li>키워드 점수 시스템</li>
+          <li>10개국 782건 수집</li>
+          <li>SQLite upsert 파이프라인</li>
+          <li>Paraguay 151건 backfill</li>
+        </ul>
+      </div>
+      <div class="phase done">
+        <div class="ph-label">PHASE 3 ✅ 완료</div>
+        <div class="ph-title">공고 검색 & 자동화</div>
+        <ul class="ph-list">
+          <li>tender_search.html UI</li>
+          <li>최신순 정렬·페이지 리셋 수정</li>
+          <li>마감 임박 알림 배지</li>
+          <li>GitHub Actions 일일 크롤</li>
+          <li>GitHub Pages 공개 배포</li>
+          <li>index.html 랜딩 페이지</li>
+        </ul>
+      </div>
+      <div class="phase now">
+        <div class="ph-label">PHASE 4 🔄 진행 중</div>
+        <div class="ph-title">커버리지 확장</div>
+        <ul class="ph-list">
+          <li>API 키 발급 (KAZ·KOR·USA)</li>
+          <li>Kyrgyzstan zakupki 테스트</li>
+          <li>Oman·Mongolia 서버 테스트</li>
+          <li>Georgia API 경로 발견</li>
+          <li>SPA 포털 Playwright 확장</li>
+          <li>election-monitor 통합</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 결론 ═══════════ -->
+<section id="conclusion">
+  <div class="si">
+    <p class="eyebrow" style="color:rgba(255,255,255,.45);">09 — 결론</p>
+    <h2 class="stitle">지금 바로 사용 가능합니다</h2>
+    <div class="sdivider"></div>
+    <p class="ssub">대시보드와 공고 검색 모두 GitHub Pages에서 즉시 접근 가능합니다. Phase 4로 커버리지를 계속 확장합니다.</p>
+    <div class="conc-grid">
+      <div class="cc">
+        <div class="cc-num">782</div>
+        <div class="cc-label">현재 수집된 공고 건수</div>
+        <div class="cc-divider"></div>
+        <div class="cc-body">Kenya 463건, Paraguay 151건, Iraq 105건 등 10개국에서 실데이터 수집 완료. 매일 07:00 KST 자동 업데이트.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-num">23</div>
+        <div class="cc-label">구축된 파서 수</div>
+        <div class="cc-divider"></div>
+        <div class="cc-body">7개 Active 운영 중, 8개 신규 테스트 대기, 3개 API 키 확보 시 즉시 활성화. 다음 단계는 API 키 발급.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-num" style="color:#60A5FA;">자동</div>
+        <div class="cc-label">GitHub Actions + Pages</div>
+        <div class="cc-divider"></div>
+        <div class="cc-body">크롤 → DB 업데이트 → 배포까지 수동 작업 없음. 브라우저 새로고침만으로 최신 데이터 확인 가능.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-num">3</div>
+        <div class="cc-label">즉시 가능한 다음 액션</div>
+        <div class="cc-divider"></div>
+        <div class="cc-body">① API 키 발급 (Kazakhstan·Korea·USA) — 즉시 3개국 추가 ② Kyrgyzstan MIRU 납품국 테스트 ③ Georgia·Oman 서버 테스트.</div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;padding:1.4rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;">
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:.5rem;font-weight:700;letter-spacing:.08em;">LIVE URL</p>
+      <p style="font-size:.9rem;color:var(--accent2);word-break:break-all;font-family:'Courier New',monospace;">https://bk4098a.github.io/miru-election-intel/</p>
+    </div>
+  </div>
+</section>
+
+<footer>MIRU Systems · Election Technology Intelligence · 2026.06.26 · v3</footer>
+
+<script>
+const C = {
+  navy:'#05195E', navy2:'#0A2A6E', accent:'#123A9E', accent2:'#AEB7D6',
+  red:'#EB0414', green:'#24A148', orange:'#E65100',
+  grid:'rgba(5,25,94,0.07)'
+};
+Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#525252';
+
+// 국가별 수집 공고
+new Chart(document.getElementById('countryChart'), {
+  type:'bar',
+  data:{
+    labels:['Kenya','Paraguay','Iraq','Philippines','Bhutan','Ghana','S. Africa','Mongolia','Albania','Bahrain'],
+    datasets:[{
+      data:[463,151,105,27,13,10,5,4,3,1],
+      backgroundColor:[C.red,C.navy,C.navy2,C.accent,'#3B5BAD','#6B7FAB','#8A9BC4','#A9B5D1','#BEC9DC',C.accent2],
+      borderRadius:4,borderSkipped:false
+    }]
+  },
+  options:{
+    indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.raw}건`}}},
+    scales:{
+      x:{grid:{color:C.grid},ticks:{color:'#525252'}},
+      y:{grid:{display:false},ticks:{color:'#525252'}}
+    }
+  }
+});
+
+// 지역별 포털
+new Chart(document.getElementById('regionChart'), {
+  type:'bar',
+  data:{
+    labels:['Americas','Europe','Asia-Pacific','Middle East','Africa','Central Asia'],
+    datasets:[{
+      data:[19,16,14,9,7,6],
+      backgroundColor:[C.navy,C.navy2,C.accent,'#1A4FB8','#3B5BAD',C.accent2],
+      borderRadius:4,borderSkipped:false
+    }]
+  },
+  options:{
+    indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.raw}개 포털`}}},
+    scales:{
+      x:{grid:{color:C.grid}},
+      y:{grid:{display:false}}
+    }
+  }
+});
+
+// 투표 방식
+new Chart(document.getElementById('methodChart'), {
+  type:'doughnut',
+  data:{
+    labels:['혼합형','OMR','EVM','DRE'],
+    datasets:[{
+      data:[16,9,7,3],
+      backgroundColor:[C.navy,C.accent,C.navy2,C.accent2],
+      borderColor:'#fff',borderWidth:2,hoverOffset:5
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,cutout:'58%',
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}개국`}}}
+  }
+});
+
+// 공급사
+new Chart(document.getElementById('vendorChart'), {
+  type:'bar',
+  data:{
+    labels:['MIRU','Smartmatic','Dominion','Thales','Ciela Norma','Ren-Form'],
+    datasets:[{
+      data:[7,7,1,1,1,1],
+      backgroundColor:[C.red,C.navy,C.navy2,C.accent,C.accent2,'#6B7FAB'],
+      borderRadius:4,borderSkipped:false
+    }]
+  },
+  options:{
+    indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.raw}개 포털`}}},
+    scales:{
+      x:{grid:{color:C.grid},max:9},
+      y:{grid:{display:false}}
+    }
+  }
+});
+
+// 파서 상태
+new Chart(document.getElementById('parserChart'), {
+  type:'doughnut',
+  data:{
+    labels:['Active (수집 중)','신규·테스트 대기','API 키 필요','이슈 있음'],
+    datasets:[{
+      data:[7,8,3,5],
+      backgroundColor:[C.green,C.accent,C.orange,C.accent2],
+      borderColor:'#fff',borderWidth:2,hoverOffset:5
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,cutout:'55%',
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}개`}}}
+  }
+});
+
+// 크롤 가능성
+new Chart(document.getElementById('feasChart'), {
+  type:'bar',
+  data:{
+    labels:['High\n즉시 가능','Medium\n조건부','Low\n어려움','N/A\n조달 없음'],
+    datasets:[{
+      data:[11,24,15,21],
+      backgroundColor:[C.red,C.accent,C.navy2,C.accent2],
+      borderRadius:4,borderSkipped:false
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.raw}개 포털`}}},
+    scales:{
+      x:{grid:{display:false}},
+      y:{grid:{color:C.grid}}
+    }
+  }
+});
+</script>
+</body>
+</html>
