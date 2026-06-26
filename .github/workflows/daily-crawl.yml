@@ -1,0 +1,48 @@
+name: Daily Crawler
+
+on:
+  schedule:
+    - cron: '0 22 * * *'   # 매일 07:00 KST (UTC+9)
+  workflow_dispatch:         # GitHub Actions 탭에서 수동 실행 가능
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # tenders_data.js commit/push 권한
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Run crawler
+        env:
+          GOSZAKUP_TOKEN: ${{ secrets.GOSZAKUP_TOKEN }}
+          G2B_SERVICE_KEY: ${{ secrets.G2B_SERVICE_KEY }}
+          SAMGOV_API_KEY: ${{ secrets.SAMGOV_API_KEY }}
+        run: python crawler/crawl.py
+
+      - name: Generate tenders_data.js
+        run: python scripts/gen_tenders_js.py
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/tenders_data.js data/election_intel_tenders.db
+          git diff --staged --quiet && echo "No changes" || (
+            git commit -m "chore: auto-crawl $(date -u +%Y-%m-%d)" &&
+            git push
+          )
