@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miru Election Intelligence</title>
+<style>
+@font-face{font-family:'Gmarket Sans';src:url('fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{min-height:100vh;background:#070e1a;color:#e7edf4;font-family:'Gmarket Sans',sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;}
+.logo{height:36px;margin-bottom:32px;opacity:.9;}
+h1{font-size:20px;font-weight:700;letter-spacing:.04em;margin-bottom:6px;text-align:center;}
+.sub{font-size:13px;color:#9aa6b5;margin-bottom:48px;text-align:center;}
+.cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;width:100%;max-width:720px;}
+.card{flex:1;min-width:280px;max-width:340px;background:#11161f;border:1px solid #222c3a;border-radius:14px;padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s,box-shadow .2s;display:flex;flex-direction:column;gap:12px;}
+.card:hover{border-color:#EB0513;transform:translateY(-3px);box-shadow:0 8px 32px rgba(235,5,19,.15);}
+.card-icon{font-size:32px;}
+.card-title{font-size:16px;font-weight:700;letter-spacing:.02em;}
+.card-desc{font-size:12px;color:#9aa6b5;line-height:1.6;}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-top:4px;width:fit-content;}
+.badge-auto{background:rgba(59,134,214,.15);color:#3B86D6;border:1px solid rgba(59,134,214,.3);}
+.badge-static{background:rgba(154,166,181,.1);color:#9aa6b5;border:1px solid rgba(154,166,181,.2);}
+.footer{margin-top:48px;font-size:11px;color:#3a4558;text-align:center;}
+</style>
+</head>
+<body>
+<img src="miru_white_logo_enhanced_transparent.png" class="logo" alt="Miru Systems">
+<h1>Election Intelligence Platform</h1>
+<p class="sub">전 세계 기계투표 조달 인텔리전스</p>
+
+<div class="cards">
+  <a href="data/Election Procurement Radar (standalone).html" class="card">
+    <div class="card-icon">🌍</div>
+    <div class="card-title">Election Procurement Radar</div>
+    <div class="card-desc">206개국 기계투표 현황 지도 · 경쟁사 분석 · 계약·기회 파이프라인</div>
+    <span class="badge badge-static">대시보드</span>
+  </a>
+
+  <a href="data/tender_search.html" class="card">
+    <div class="card-icon">🔍</div>
+    <div class="card-title">조달 공고 검색</div>
+    <div class="card-desc">10개국 실시간 입찰 공고 · 키워드 검색 · 마감일 알림</div>
+    <span class="badge badge-auto">↻ 매일 자동 업데이트</span>
+  </a>
+</div>
+
+<div class="footer">Miru Systems · Election Technology Intelligence</div>
+</body>
+</html>
