@@ -4,30 +4,10 @@ No auth required. Search by tender.title.
 """
 import requests
 from crawler.keywords import score
+from crawler.translate import translate_to_en
 
 import urllib3
 urllib3.disable_warnings()
-
-_TRANSLATE_CACHE = {}
-
-def _translate_to_en(text):
-    """Translate Spanish text to English using unofficial Google Translate API."""
-    if not text:
-        return text
-    if text in _TRANSLATE_CACHE:
-        return _TRANSLATE_CACHE[text]
-    try:
-        r = requests.get(
-            'https://translate.googleapis.com/translate_a/single',
-            params={'client': 'gtx', 'sl': 'es', 'tl': 'en', 'dt': 't', 'q': text},
-            timeout=8, verify=False,
-        )
-        data = r.json()
-        translated = ''.join(seg[0] for seg in data[0] if seg[0])
-        _TRANSLATE_CACHE[text] = translated
-        return translated
-    except Exception:
-        return text
 
 BASE_API = 'https://www.contrataciones.gov.py/datos/api/v3/doc'
 BASE_WEB = 'https://www.contrataciones.gov.py'
@@ -106,7 +86,7 @@ def parse(country='Paraguay', iso3='PRY'):
             if s <= 0 and is_election_buyer:
                 s = 40  # boost score for TSJE/electoral buyer
 
-            title_en = _translate_to_en(title)
+            title_en = translate_to_en(title, sl='es')
 
             results.append({
                 'country': country, 'iso3': iso3, 'portal_name': PORTAL,
