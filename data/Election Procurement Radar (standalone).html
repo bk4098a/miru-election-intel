@@ -71,8 +71,8 @@ main{flex:1;min-height:0;display:flex;position:relative;}
     <nav style="display:flex;gap:5px;margin-left:10px;">
       <button id="tab-map" class="nav-tab active" onclick="app.setView('map')">지도</button>
       <button id="tab-stats" class="nav-tab" onclick="app.setView('stats')">통계 · 인사이트</button>
-      <button id="tab-vendor" class="nav-tab" onclick="app.setView('vendor')">공급사 인텔</button>
-      <button id="tab-opp" class="nav-tab" onclick="app.setView('opp')">기회 파이프라인</button>
+      <button id="tab-vendor" class="nav-tab" onclick="app.setView('vendor')">경쟁사</button>
+      <button id="tab-opp" class="nav-tab" onclick="app.setView('opp')">계약·기회</button>
       <a href="tender_search.html" class="nav-tab" style="text-decoration:none;">🔍 공고 검색</a>
     </nav>
     <div style="flex:1;"></div>
@@ -4734,7 +4734,9 @@ class App {
       f: { region: [], method: [], vendor: [], priority: [] },
       drill: null, usState: null,
       zoom: 1, panX: 0, panY: 0,
-      ready: false
+      ready: false,
+      vendorSel: 'Smartmatic', vendorDetailSlug: null,
+      vendorSort: { key: 'countries_count', dir: -1 }
     };
     this._drag = null; this._moved = false;
     this.PORTALS = window.MIRU_PORTALS || [];
@@ -4773,6 +4775,7 @@ class App {
     if (prev.selectedIso !== s.selectedIso || prev.selectedPortalId !== s.selectedPortalId) this.renderDetailPanel();
     if (prev.usState !== s.usState) this.updateUSCaption();
     if (prev.drill !== s.drill) this.renderDrill();
+    if (s.view === 'vendor' && (prev.vendorSel !== s.vendorSel || prev.vendorDetailSlug !== s.vendorDetailSlug || JSON.stringify(prev.vendorSort) !== JSON.stringify(s.vendorSort))) this.renderVendorIntel();
   }
 
   // ── Color maps ──────────────────────────────────────────────────────────
@@ -4790,6 +4793,9 @@ class App {
   PRC() { return { High:'#0A66B4', Med:'#07377D', Low:'#8A94A6' }; }
   PRKO() { return { High:'높음', Med:'중간', Low:'낮음' }; }
   VLAB() { return { Miru:'Miru (자사)', Smartmatic:'Smartmatic', Dominion:'Dominion', Thales:'Thales', 'Ciela Norma':'Ciela Norma', 'Ren-Form':'Ren-Form' }; }
+  setVendorSel(v) { this.setState({ vendorSel: v }); }
+  openVendorDetail(slug) { this.setState({ vendorDetailSlug: slug }); }
+  closeVendorDetail() { this.setState({ vendorDetailSlug: null }); }
 
   USTILES() {
     return {
@@ -5480,237 +5486,260 @@ class App {
   feasKey(p) { return p.feasibility||'__none__'; }
   esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  // ── Vendor Intel view ─────────────────────────────────────────────────────
+  // ── Vendor Intel (경쟁사) view ────────────────────────────────────────────
   renderVendorIntel() {
-    const el=document.getElementById('vendor-content');
-    if (!el||el.dataset.rendered) return;
-    el.dataset.rendered='1';
-    const d=this.state.theme==='dark';
-    const OVERLAP_COLOR={'Direct':'#EB0513','Indirect':'#D4870A','None':'#8A94A6'};
-    const OVERLAP_KO={'Direct':'직접 경쟁','Indirect':'간접 경쟁','None':'비경쟁'};
-    const VD=window.MIRU_VENDOR_DATA||[];
-    const directCnt=VD.filter(v=>v.overlap==='Direct').length;
-    const indirectCnt=VD.filter(v=>v.overlap==='Indirect').length;
-    const noneCnt=VD.filter(v=>v.overlap==='None').length;
+    const el = document.getElementById('vendor-content');
+    if (!el) return;
+    const PORTALS = this.PORTALS;
+    const byIso = this.byIso;
+    const VD = window.MIRU_VENDOR_DATA || [];
+    const VN = window.MIRU_VENDOR_NEWS || {};
+    const MC = this.MC(), MLAB = this.MLAB(), RKO = this.RKO(), VLAB = this.VLAB();
+    const T = this.T();
 
-    const vcard=v=>{
-      const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6';
-      const ol=OVERLAP_KO[v.overlap]||'비경쟁';
-      const VN=window.MIRU_VENDOR_NEWS;
-      const vnd=VN?.vendors?.[v.slug];
-      const newsItems=(vnd?.items||[]).slice(0,3);
-      const hasFetchErr=!!(vnd?.fetchError) && !newsItems.length;
-      const newsHtml=newsItems.length?`
-        <div style="border-top:1px solid var(--border,#222c3a);padding:9px 15px 6px;">
-          <div style="font-size:9px;font-weight:700;letter-spacing:.7px;color:var(--muted,#6b7787);margin-bottom:6px;">공식 사이트 뉴스</div>
-          ${newsItems.map(n=>{
-            const title=n.title.length>60?n.title.slice(0,57)+'…':n.title;
-            const meta=[n.date||'',n.countries?.slice(0,2).join(', ')||''].filter(Boolean).join(' · ');
-            return `<a href="${this.esc(n.url)}" target="_blank" rel="noopener" style="display:block;padding:5px 0;border-bottom:1px solid var(--border,#222c3a);text-decoration:none;color:inherit;" onmouseenter="this.querySelector('.nt').style.color='#3B86D6'" onmouseleave="this.querySelector('.nt').style.color=''">
-              <div class="nt" style="font-size:10px;color:var(--text2,#9aa6b5);line-height:1.4;transition:color .15s;">${this.esc(title)}</div>
-              <div style="font-size:9px;color:var(--muted,#6b7787);margin-top:2px;">${this.esc(meta)}</div>
-            </a>`;
-          }).join('')}
-        </div>`
-        :hasFetchErr?`<div style="border-top:1px solid var(--border,#222c3a);padding:8px 15px;font-size:9px;color:var(--muted,#6b7787);">크롤 불가 (WAF / JS 렌더링 필요)</div>`:'';
-      return `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-top:3px solid ${oc};border-radius:11px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px var(--shadow,rgba(0,0,0,.4))'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
-        <div style="padding:14px 15px 10px;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">
-            <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
-                <span style="font-size:16px;">${v.flag||''}</span>
-                <span style="font-size:13.5px;font-weight:700;color:var(--text,#e7edf4);line-height:1.25;">${this.esc(v.name)}</span>
-              </div>
-              <div style="font-size:10px;color:var(--muted,#6b7787);margin-top:4px;">${this.esc(v.hq||'')}</div>
-            </div>
-            <span style="flex:0 0 auto;font-size:9.5px;font-weight:700;color:${oc};background:${oc}18;border:1px solid ${oc}44;border-radius:5px;padding:2px 8px;white-space:nowrap;">${ol}</span>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:9px;">
-            ${(v.categories||[]).map(c=>`<span style="font-size:9px;letter-spacing:.3px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 6px;">${this.esc(c)}</span>`).join('')}
-          </div>
-        </div>
-        <div style="padding:0 15px 12px;flex:1;display:flex;flex-direction:column;gap:9px;">
-          <div style="font-size:11px;color:var(--text2,#9aa6b5);line-height:1.6;">
-            ${(v.key_products||[]).slice(0,2).map(p=>`<div style="display:flex;align-items:flex-start;gap:5px;"><span style="color:#3B86D6;flex:0 0 auto;margin-top:2px;">▸</span><span>${this.esc(p)}</span></div>`).join('')}
-          </div>
-          <div style="display:flex;flex-direction:column;gap:5px;">
-            ${(v.strengths||[]).slice(0,1).map(s=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:10.5px;line-height:1.55;"><span style="color:#5AA0E6;flex:0 0 auto;margin-top:2px;">✓</span><span style="color:var(--text2,#9aa6b5);">${this.esc(s)}</span></div>`).join('')}
-            ${(v.weaknesses||[]).slice(0,1).map(w=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:10.5px;line-height:1.55;"><span style="color:#EB0513;flex:0 0 auto;margin-top:2px;">✗</span><span style="color:var(--text2,#9aa6b5);">${this.esc(w)}</span></div>`).join('')}
-          </div>
-          ${v.news?`<div style="padding:7px 10px;background:var(--surface,#0c1119);border-left:2px solid #3B86D6;border-radius:0 5px 5px 0;font-size:9.5px;color:var(--muted,#6b7787);line-height:1.55;">${this.esc(v.news)}</div>`:''}
-        </div>
-        ${newsHtml}
-        ${v.homepage?`<div style="padding:0 15px 13px;"><a href="${this.esc(v.homepage)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;height:32px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:7px;font-size:11px;color:var(--text2,#9aa6b5);text-decoration:none;transition:border-color .15s,color .15s;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">사이트 열기 ↗</a></div>`:''}
-      </div>`;
+    // Build vstat from portal vendor tags
+    const vstat = {};
+    PORTALS.forEach(p => (p.vendors || []).forEach(v => {
+      const s = vstat[v] || (vstat[v] = { portals: [], countries: new Set(), regions: {}, methods: {} });
+      s.portals.push(p); s.countries.add(p.iso3);
+      s.regions[p.region] = (s.regions[p.region] || 0) + 1;
+      const cc = byIso[p.iso3]; const mth = cc ? cc.method : p.method;
+      if (mth) s.methods[mth] = (s.methods[mth] || 0) + 1;
+    }));
+
+    const vendorNames = Object.keys(vstat).sort((a, b) => a === 'Miru' ? -1 : b === 'Miru' ? 1 : vstat[b].portals.length - vstat[a].portals.length);
+    const competitors = vendorNames.filter(v => v !== 'Miru');
+    const vendorSel = vstat[this.state.vendorSel] ? this.state.vendorSel : (competitors[0] || 'Smartmatic');
+    const vendorSelLabel = VLAB[vendorSel] || vendorSel;
+
+    const M = vstat['Miru'] || { portals: [], countries: new Set(), regions: {}, methods: {} };
+    const S = vstat[vendorSel] || { portals: [], countries: new Set(), regions: {}, methods: {} };
+    const sharedCountries = [...M.countries].filter(c => S.countries.has(c));
+    const mReg = new Set(Object.keys(M.regions));
+    const sReg = new Set(Object.keys(S.regions));
+    const sharedRegions = [...mReg].filter(r => sReg.has(r));
+    const topMethod = st => { const e = Object.entries(st.methods); if (!e.length) return '—'; return MLAB[e.sort((a,b) => b[1]-a[1])[0][0]] || e[0][0]; };
+
+    const h2h = {
+      aPortals: M.portals.length, bPortals: S.portals.length,
+      aCountries: M.countries.size, bCountries: S.countries.size,
+      aMethod: topMethod(M), bMethod: topMethod(S),
+      aRegList: [...mReg].map(r => RKO[r]||r).join(' · ') || '—',
+      bRegList: [...sReg].map(r => RKO[r]||r).join(' · ') || '—',
+      clash: sharedCountries.length,
+      clashText: sharedCountries.length
+        ? '직접 경쟁 ' + sharedCountries.length + '개국: ' + sharedCountries.slice(0,3).map(c => byIso[c] ? byIso[c].country_ko : c).join(', ') + (sharedCountries.length > 3 ? ' 외 ' + (sharedCountries.length-3) + '개' : '')
+        : '동일 국가 경쟁 없음 — 접점 권역: ' + (sharedRegions.map(r => RKO[r]||r).join(', ') || '없음'),
     };
 
-    const section=(title,col,cnt,items)=>cnt===0?'':
-      `<div style="margin-bottom:30px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <span style="width:11px;height:11px;border-radius:3px;background:${col};"></span>
-          <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(title)}</span>
-          <span style="font-size:11px;color:var(--muted,#6b7787);">${cnt}개사</span>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:13px;">
-          ${items.map(vcard).join('')}
-        </div>
-      </div>`;
+    // KPI cards
+    const compStats = [
+      { big: String(M.portals.length), unit: '포털', label: 'Miru 노출', sub: M.countries.size + '개국', color: '#EB0513' },
+      { big: String(S.portals.length), unit: '포털', label: vendorSelLabel + ' 노출', sub: S.countries.size + '개국', color: '#0A66B4' },
+      { big: String(VD.length || competitors.length), unit: '사', label: '추적 경쟁사 프로파일', sub: '글로벌 선거기술 벤더 리서치', color: T.navyTxt },
+      { big: String(sharedCountries.length), unit: '개국', label: 'Miru와 직접 경쟁', sub: sharedCountries.length ? sharedCountries.slice(0,3).map(c => byIso[c] ? byIso[c].country_ko : c).join(', ') + (sharedCountries.length>3?'…':'') : '동일국 경쟁 없음', color: '#C0863A' },
+    ];
+    const kpiHtml = compStats.map(s => `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;padding:16px 18px;"><div style="display:flex;align-items:baseline;gap:5px;"><span style="font-size:25px;font-weight:700;color:${s.color};line-height:1;">${s.big}</span><span style="font-size:11px;color:var(--muted,#6b7787);">${s.unit}</span></div><div style="font-size:12.5px;font-weight:700;color:var(--text,#e7edf4);margin-top:9px;">${this.esc(s.label)}</div><div style="font-size:10.5px;color:var(--text2,#9aa6b5);margin-top:4px;line-height:1.45;">${this.esc(s.sub)}</div></div>`).join('');
 
-    this._vendorSortKey='';
-    this._vendorSortDir=1;
-    this._mkVendorRow=(v,bg)=>{
-      const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6';
-      const ol=OVERLAP_KO[v.overlap]||'비경쟁';
-      const nc=(window.MIRU_VENDOR_NEWS?.vendors?.[v.slug]?.totalRelevant)||0;
-      const mkt=(v.overlap_markets||[]).map(m=>`<span style="font-size:9px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;color:var(--text2,#9aa6b5);">${m}</span>`).join(' ');
-      const cats=(v.categories||[]).slice(0,4).map(c=>`<span style="font-size:9px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;color:var(--text2,#9aa6b5);">${this.esc(c)}</span>`).join(' ');
-      const ncHtml=nc?`<span style="font-size:10px;font-weight:700;color:#3B86D6;background:#3B86D620;border:1px solid #3B86D644;border-radius:4px;padding:2px 7px;">${nc}</span>`:`<span style="color:var(--muted,#6b7787);font-size:10px;">—</span>`;
-      return `<tr style="border-bottom:1px solid var(--border,#222c3a);background:${bg};transition:background .1s;" onmouseenter="this.style.background='var(--hover,#161d28)'" onmouseleave="this.style.background='${bg}'">
-        <td style="padding:9px 14px;white-space:nowrap;"><div style="display:flex;align-items:center;gap:6px;"><span style="font-size:13px;">${v.flag||''}</span><div><div style="font-weight:600;font-size:11.5px;color:var(--text,#e7edf4);">${this.esc(v.name)}</div><div style="font-size:9px;color:var(--muted,#6b7787);margin-top:1px;">${this.esc(v.hq||'')}</div></div></div></td>
-        <td style="padding:9px 14px;white-space:nowrap;"><span style="font-size:9.5px;font-weight:700;color:${oc};background:${oc}18;border:1px solid ${oc}44;border-radius:4px;padding:2px 7px;">${ol}</span></td>
-        <td style="padding:9px 14px;text-align:center;font-weight:700;color:var(--text,#e7edf4);">${v.countries_count||0}</td>
-        <td style="padding:9px 14px;text-align:center;color:var(--text2,#9aa6b5);">${v.founded||'—'}</td>
-        <td style="padding:9px 14px;color:var(--text2,#9aa6b5);white-space:nowrap;">${this.esc(v.revenue||'—')}</td>
-        <td style="padding:9px 14px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${cats||'—'}</div></td>
-        <td style="padding:9px 14px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${mkt||'<span style="color:var(--muted,#6b7787);font-size:10px;">—</span>'}</div></td>
-        <td style="padding:9px 14px;text-align:center;">${ncHtml}</td>
-      </tr>`;
-    };
-    const thStyle='padding:10px 14px;font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--muted,#6b7787);text-transform:uppercase;white-space:nowrap;border-bottom:2px solid var(--border,#222c3a);';
-    const ths=[['name','회사','left'],['overlap','경쟁유형','left'],['countries_count','활동국가','center'],['founded','설립','center'],['revenue','매출','left'],[null,'제품군','left'],[null,'중복시장','left'],['news','뉴스','center']];
-    const thHtml=ths.map(([k,label,align])=>k
-      ?`<th class="vth" data-key="${k}" onclick="app.sortVendorTable('${k}')" style="${thStyle}text-align:${align};cursor:pointer;user-select:none;">${label} <span class="sarrow" style="color:#3B86D6;"></span></th>`
-      :`<th style="${thStyle}text-align:${align};cursor:default;">${label}</th>`
-    ).join('');
-    const initRows=VD.map((v,i)=>this._mkVendorRow(v,i%2?'transparent':'var(--card,#11161f)')).join('');
+    // Brief insights (hardcoded)
+    const briefInsights = [
+      { accent:'#EB0513', tag:'정면 경쟁', title:'Miru vs Smartmatic', body:'두 공급사가 추적 시장에서 가장 넓게 노출 — 관련 공고가 자동 모니터링 1순위.' },
+      { accent:'#0A66B4', tag:'거점 추적', title:'Dominion · Thales', body:'몽골 · 가나 · 이라크 등 거점 시장 중심 — 계약 갱신 시점 추적이 핵심.' },
+      { accent:'#04185F', tag:'기회 포착', title:'예측 × 만료 결합', body:'신규 선거 예측과 계약 만료 추적을 결합하면 기회 누수를 최소화할 수 있다.' },
+    ];
+    const insightsHtml = briefInsights.map(i => `<div style="display:flex;gap:12px;background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:11px;padding:13px 14px;"><span style="flex:0 0 4px;align-self:stretch;background:${i.accent};border-radius:3px;"></span><div style="flex:1;min-width:0;"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-size:9px;font-weight:700;letter-spacing:.6px;color:#fff;background:${i.accent};border-radius:5px;padding:2px 7px;">${this.esc(i.tag)}</span><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(i.title)}</span></div><div style="font-size:11px;color:var(--text2,#9aa6b5);margin-top:6px;line-height:1.55;">${this.esc(i.body)}</div></div></div>`).join('');
 
-    el.innerHTML=`
-      <div style="margin-bottom:24px;">
-        <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">공급사 인텔리전스</div>
-        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">주요 경쟁사·파트너사 ${VD.length}개 프로파일 · 공식 사이트 뉴스 ${Object.values(window.MIRU_VENDOR_NEWS?.vendors||{}).reduce((s,v)=>s+v.items.length,0)}건 (크롤: ${window.MIRU_VENDOR_NEWS?.crawled_at||''})</div>
-        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid #EB051344;border-radius:8px;">
-            <span style="width:9px;height:9px;border-radius:2px;background:#EB0513;"></span>
-            <span style="font-size:11px;color:var(--text,#e7edf4);">직접 경쟁 <strong style="color:#EB0513;">${directCnt}</strong></span>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid #D4870A44;border-radius:8px;">
-            <span style="width:9px;height:9px;border-radius:2px;background:#D4870A;"></span>
-            <span style="font-size:11px;color:var(--text,#e7edf4);">간접 경쟁 <strong style="color:#D4870A;">${indirectCnt}</strong></span>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:8px;">
-            <span style="width:9px;height:9px;border-radius:2px;background:#8A94A6;"></span>
-            <span style="font-size:11px;color:var(--text,#e7edf4);">비경쟁 <strong style="color:#8A94A6;">${noneCnt}</strong></span>
-          </div>
-        </div>
-      </div>
-      <div style="margin-bottom:32px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-          <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">전체 비교 테이블</span>
-          <span style="font-size:10.5px;color:var(--muted,#6b7787);">— 헤더 클릭 시 정렬</span>
-        </div>
-        <div style="overflow-x:auto;border:1px solid var(--border,#222c3a);border-radius:10px;">
-          <table id="vendor-compare-table" style="width:100%;border-collapse:collapse;font-size:11.5px;">
-            <thead><tr style="background:var(--surface,#0c1119);">${thHtml}</tr></thead>
-            <tbody id="vendor-compare-tbody">${initRows}</tbody>
-          </table>
-        </div>
-      </div>
-      ${section('직접 경쟁','#EB0513',directCnt,VD.filter(v=>v.overlap==='Direct'))}
-      ${section('간접 경쟁 (시장 겹침)','#D4870A',indirectCnt,VD.filter(v=>v.overlap==='Indirect'))}
-      ${section('비경쟁 (참고 프로파일)','#8A94A6',noneCnt,VD.filter(v=>v.overlap==='None'))}
-    `;
-  }
+    // Competitor chips
+    const chipsHtml = competitors.map(v => {
+      const sel = v === vendorSel;
+      const lbl = VLAB[v] || v;
+      const st = sel ? 'background:#0A66B4;border:1px solid #0A66B4;color:#fff;' : 'background:var(--chipbg,#0c1119);border:1px solid var(--border,#222c3a);color:var(--text,#e7edf4);';
+      return `<button onclick="app.setVendorSel('${this.esc(v)}')" style="font-family:'Gmarket Sans',sans-serif;font-size:11px;border-radius:7px;padding:5px 11px;cursor:pointer;transition:all .12s;white-space:nowrap;${st}">${this.esc(lbl)}</button>`;
+    }).join('');
 
-  sortVendorTable(key) {
-    const VD=window.MIRU_VENDOR_DATA||[];
-    this._vendorSortDir=key===this._vendorSortKey?-this._vendorSortDir:1;
-    this._vendorSortKey=key;
-    const parseRev=s=>{if(!s)return 0;const m=s.match(/([\d.]+)\s*([MBK]?)/i);if(!m)return 0;const n=parseFloat(m[1]);const u=(m[2]||'').toUpperCase();return u==='B'?n*1000:u==='K'?n/1000:n;};
-    const getVal=(v,k)=>{
-      if(k==='news')return(window.MIRU_VENDOR_NEWS?.vendors?.[v.slug]?.totalRelevant)||0;
+    // Footprint bars
+    const vmaxP = Math.max(1, ...vendorNames.map(v => vstat[v].portals.length));
+    const footprintHtml = vendorNames.map(v => {
+      const st = vstat[v];
+      const color = v === 'Miru' ? '#EB0513' : (v === vendorSel ? '#0A66B4' : (this.state.theme==='dark' ? '#3F6FB0' : '#7FA8D8'));
+      const pct = Math.max(7, st.portals.length / vmaxP * 100);
+      const lbl = VLAB[v] || v;
+      return `<div style="display:flex;align-items:center;gap:10px;padding:7px 0;"><span onclick="app.setVendorSel('${this.esc(v)}')" style="flex:0 0 96px;font-size:11.5px;font-weight:${v==='Miru'?'700':'500'};color:var(--text,#e7edf4);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" onmouseenter="this.style.color='#0A66B4'" onmouseleave="this.style.color=''">${this.esc(lbl)}</span><div style="flex:1;height:20px;background:var(--track,#1a2330);border-radius:5px;overflow:hidden;"><div style="height:100%;width:${pct.toFixed(1)}%;background:${color};border-radius:5px;transition:width .5s;"></div></div><span style="flex:0 0 24px;text-align:right;font-size:12px;font-weight:700;color:var(--text,#e7edf4);">${st.portals.length}</span><span style="flex:0 0 42px;text-align:right;font-size:10px;color:var(--muted,#6b7787);">${st.countries.size}개국</span></div>`;
+    }).join('');
+
+    // Method specialization
+    const methodOrder = ['EVM','OMR','DRE','Mixed'];
+    const specHtml = vendorNames.map(v => {
+      const st = vstat[v];
+      const total = methodOrder.reduce((s,m) => s+(st.methods[m]||0), 0) || 1;
+      const segsHtml = methodOrder.filter(m => st.methods[m]).map(m => `<div style="width:${(st.methods[m]/total*100).toFixed(1)}%;height:100%;background:${MC[m]};" title="${MLAB[m]}"></div>`).join('');
+      return `<div style="margin-bottom:11px;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><span style="font-size:11.5px;color:var(--text,#e7edf4);">${this.esc(VLAB[v]||v)}</span><span style="font-size:10px;color:var(--muted,#6b7787);">${st.portals.length}포털</span></div><div style="display:flex;height:16px;border-radius:5px;overflow:hidden;background:var(--track,#1a2330);">${segsHtml}</div></div>`;
+    }).join('');
+    const legendHtml = methodOrder.map(m => `<span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--text2,#9aa6b5);"><span style="width:9px;height:9px;border-radius:2px;background:${MC[m]};"></span>${MLAB[m]}</span>`).join('');
+
+    // Regional matrix
+    const allRegions = ['Americas','Europe','Asia-Pacific','Middle East','Africa','Central Asia'].filter(r => vendorNames.some(v => vstat[v].regions[r]));
+    const matrixThHtml = vendorNames.map(v => { const c = v==='Miru'?'#EB0513':(v===vendorSel?'#0A66B4':'var(--text2,#9aa6b5)'); return `<th onclick="app.setVendorSel('${this.esc(v)}')" style="padding:8px 6px;font-size:10.5px;font-weight:700;color:${c};cursor:pointer;white-space:nowrap;">${this.esc(VLAB[v]||v)}</th>`; }).join('');
+    const matrixBodyHtml = allRegions.map(r => {
+      const cells = vendorNames.map(v => {
+        const n = vstat[v].regions[r] || 0;
+        const bg = n ? (v==='Miru'?'#EB051330':(v===vendorSel?'#0A66B430':'var(--surface,#0c1119)')) : 'transparent';
+        return `<td style="padding:4px;text-align:center;border-top:1px solid var(--border,#222c3a);"><div style="display:flex;align-items:center;justify-content:center;height:30px;border-radius:6px;background:${bg};color:#fff;font-size:11px;font-weight:700;cursor:${n?'pointer':'default'};">${n||''}</div></td>`;
+      }).join('');
+      return `<tr><td style="padding:7px 10px;font-size:11px;color:var(--text,#e7edf4);white-space:nowrap;border-top:1px solid var(--border,#222c3a);">${this.esc(RKO[r]||r)}</td>${cells}</tr>`;
+    }).join('');
+
+    // Full comparison table
+    const OVERLAP_COLOR = { Direct:'#EB0513', Indirect:'#D4870A', None:'#8A94A6' };
+    const OVERLAP_KO = { Direct:'직접 경쟁', Indirect:'간접 경쟁', None:'비경쟁' };
+    const sortKey = (this.state.vendorSort||{key:'countries_count',dir:-1}).key;
+    const sortDir = (this.state.vendorSort||{key:'countries_count',dir:-1}).dir;
+    const parseRev = s => { if(!s)return 0; const m=s.match(/([\d.]+)\s*([MBK]?)/i); if(!m)return 0; const n=parseFloat(m[1]); const u=(m[2]||'').toUpperCase(); return u==='B'?n*1000:u==='K'?n/1000:n; };
+    const getVVal = (v,k) => {
+      if(k==='news')return(VN.vendors?.[v.slug]?.totalRelevant)||0;
       if(k==='countries_count')return v.countries_count||0;
       if(k==='revenue')return parseRev(v.revenue);
       if(k==='founded')return parseInt(v.founded||0)||0;
       if(k==='overlap'){const o={Direct:0,Indirect:1,None:2};return o[v.overlap]??2;}
       return(v[k]||'').toString().toLowerCase();
     };
-    const dir=this._vendorSortDir;
-    const sorted=[...VD].sort((a,b)=>{const av=getVal(a,key),bv=getVal(b,key);return typeof av==='number'?(av-bv)*dir:(av<bv?-1:av>bv?1:0)*dir;});
-    const tbody=document.getElementById('vendor-compare-tbody');
-    if(tbody)tbody.innerHTML=sorted.map((v,i)=>this._mkVendorRow(v,i%2?'transparent':'var(--card,#11161f)')).join('');
-    document.querySelectorAll('#vendor-compare-table .vth').forEach(th=>{
-      const arr=th.querySelector('.sarrow');
-      if(arr)arr.textContent=th.dataset.key===key?(dir===1?' ↑':' ↓'):'';
-    });
+    const sortedVD = [...VD].sort((a,b) => { const av=getVVal(a,sortKey),bv=getVVal(b,sortKey); return typeof av==='number'?(av-bv)*sortDir:(av<bv?-1:av>bv?1:0)*sortDir; });
+    const thS = 'padding:11px 13px;font-size:9.5px;font-weight:700;letter-spacing:.4px;color:var(--muted,#6b7787);white-space:nowrap;border-bottom:2px solid var(--border,#222c3a);';
+    const thCols = [{k:'name',l:'회사',a:'left'},{k:'overlap',l:'경쟁유형',a:'left'},{k:'countries_count',l:'활동국가',a:'center'},{k:'founded',l:'설립',a:'center'},{k:'revenue',l:'매출',a:'left'},{k:null,l:'제품군',a:'left'},{k:null,l:'중복시장',a:'left'},{k:'news',l:'공식뉴스',a:'center'}];
+    const thHtml = thCols.map(({k,l,a}) => {
+      const active = k && k===sortKey; const arrow = active?(sortDir===1?' ↑':' ↓'):'';
+      return k ? `<th onclick="app.sortVendorTable('${k}')" style="${thS}text-align:${a};cursor:pointer;user-select:none;">${this.esc(l)}<span style="color:#3B86D6;">${arrow}</span></th>`
+               : `<th style="${thS}text-align:${a};cursor:default;">${this.esc(l)}</th>`;
+    }).join('');
+    const tableBodyHtml = sortedVD.map((v,i) => {
+      const oc=OVERLAP_COLOR[v.overlap]||'#8A94A6', ol=OVERLAP_KO[v.overlap]||'비경쟁';
+      const nc=(VN.vendors?.[v.slug]?.totalRelevant)||0;
+      const cats=(v.categories||[]).slice(0,4).map(c=>`<span style="font-size:8.5px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 5px;white-space:nowrap;">${this.esc(c)}</span>`).join(' ');
+      const mkt=(v.overlap_markets||[]).map(m=>`<span style="font-size:8.5px;font-weight:700;color:#D4870A;background:#D4870A18;border:1px solid #D4870A55;border-radius:3px;padding:1px 5px;">${m}</span>`).join(' ');
+      const rowBg = i%2?'transparent':'var(--card,#11161f)';
+      const newsHtml = nc?`<span style="font-size:11px;font-weight:700;color:#3B86D6;background:rgba(59,134,214,.13);border:1px solid rgba(59,134,214,.35);border-radius:4px;padding:2px 7px;">${nc}</span>`:`<span style="font-size:10px;color:var(--muted,#6b7787);">—</span>`;
+      return `<tr onclick="app.openVendorDetail('${this.esc(v.slug)}')" style="background:${rowBg};border-bottom:1px solid var(--border,#222c3a);cursor:pointer;transition:background .1s;" onmouseenter="this.style.background='var(--hover,#161d28)'" onmouseleave="this.style.background='${rowBg}'"><td style="padding:9px 13px;white-space:nowrap;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;flex:0 0 auto;">${v.flag||''}</span><div><div style="font-size:11.5px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(v.name)}</div><div style="font-size:9px;color:var(--muted,#6b7787);margin-top:1px;">${this.esc(v.hq||'')}</div></div></div></td><td style="padding:9px 13px;white-space:nowrap;"><span style="font-size:9.5px;font-weight:700;color:${oc};border:1px solid ${oc};border-radius:4px;padding:2px 8px;">${ol}</span></td><td style="padding:9px 13px;text-align:center;font-size:14px;font-weight:700;color:var(--text,#e7edf4);">${v.countries_count||0}</td><td style="padding:9px 13px;text-align:center;font-size:11px;color:var(--text2,#9aa6b5);">${v.founded||'—'}</td><td style="padding:9px 13px;font-size:11px;color:var(--text2,#9aa6b5);white-space:nowrap;">${this.esc(v.revenue||'—')}</td><td style="padding:9px 13px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${cats||'—'}</div></td><td style="padding:9px 13px;"><div style="display:flex;flex-wrap:wrap;gap:3px;">${mkt||'<span style="font-size:10px;color:var(--muted,#6b7787);">—</span>'}</div></td><td style="padding:9px 13px;text-align:center;">${newsHtml}</td></tr>`;
+    }).join('');
+
+    // Vendor detail overlay
+    const detailSlug = this.state.vendorDetailSlug;
+    const vdet = detailSlug ? VD.find(v => v.slug === detailSlug) : null;
+    let detailHtml = '';
+    if (vdet) {
+      const oc2=OVERLAP_COLOR[vdet.overlap]||'#8A94A6', ol2=OVERLAP_KO[vdet.overlap]||'비경쟁';
+      const vnd = VN.vendors?.[vdet.slug];
+      const newsItems = (vnd?.items||[]).slice(0,5);
+      const detNewsHtml = newsItems.length ? newsItems.map(n => `<a href="${this.esc(n.url)}" target="_blank" rel="noopener" style="display:block;padding:8px 0;border-bottom:1px solid var(--border,#222c3a);text-decoration:none;color:inherit;"><div style="font-size:11px;color:var(--text2,#9aa6b5);line-height:1.4;">${this.esc(n.title.length>80?n.title.slice(0,77)+'…':n.title)}</div><div style="font-size:9.5px;color:var(--muted,#6b7787);margin-top:2px;">${this.esc(n.date||'')}</div></a>`).join('') : `<div style="font-size:11px;color:var(--muted,#6b7787);padding:12px 0;">공식 사이트 뉴스 없음</div>`;
+      detailHtml = `<div onclick="app.closeVendorDetail()" style="position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(4,12,28,.45);z-index:20;"></div><div style="position:fixed;top:132px;right:0;bottom:0;width:432px;background:var(--panel,#11161f);border-left:1px solid var(--border,#222c3a);box-shadow:-12px 0 40px var(--shadow,rgba(0,0,0,.5));z-index:21;display:flex;flex-direction:column;animation:mfade .26s ease;"><div style="padding:18px 18px 15px;border-bottom:1px solid var(--border,#222c3a);"><div style="display:flex;align-items:flex-start;justify-content:space-between;"><div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:20px;">${vdet.flag||''}</span><span style="font-size:18px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(vdet.name)}</span></div><div style="font-size:10.5px;color:var(--muted,#6b7787);">${this.esc(vdet.hq||'')}</div><div style="margin-top:8px;"><span style="font-size:9.5px;font-weight:700;color:${oc2};background:${oc2}18;border:1px solid ${oc2}44;border-radius:5px;padding:2px 8px;">${ol2}</span></div></div><button onclick="app.closeVendorDetail()" style="background:var(--surface,#0c1119);border:1px solid var(--border2,#2c3a4a);border-radius:7px;width:28px;height:28px;color:var(--text2,#9aa6b5);cursor:pointer;font-size:14px;line-height:1;flex:0 0 auto;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">✕</button></div></div><div style="flex:1;overflow-y:auto;padding:14px 18px 24px;">${(vdet.key_products||[]).length?`<div style="margin-bottom:14px;"><div style="font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--muted,#6b7787);margin-bottom:7px;">주요 제품</div>${(vdet.key_products||[]).map(p=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);margin-bottom:4px;"><span style="color:#3B86D6;flex:0 0 auto;">▸</span><span>${this.esc(p)}</span></div>`).join('')}</div>`:''}<div style="margin-bottom:14px;">${(vdet.strengths||[]).map(s=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);margin-bottom:4px;"><span style="color:#5AA0E6;flex:0 0 auto;">✓</span><span>${this.esc(s)}</span></div>`).join('')}${(vdet.weaknesses||[]).map(w=>`<div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--text2,#9aa6b5);margin-bottom:4px;"><span style="color:#EB0513;flex:0 0 auto;">✗</span><span>${this.esc(w)}</span></div>`).join('')}</div><div style="border-top:1px solid var(--border,#222c3a);padding-top:12px;margin-bottom:14px;"><div style="font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--muted,#6b7787);margin-bottom:7px;">공식 사이트 뉴스</div>${detNewsHtml}</div>${vdet.homepage?`<a href="${this.esc(vdet.homepage)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;height:36px;background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:8px;font-size:11px;color:var(--text2,#9aa6b5);text-decoration:none;" onmouseenter="this.style.borderColor='#EB0513';this.style.color='#EB0513'" onmouseleave="this.style.borderColor='';this.style.color=''">사이트 열기 ↗</a>`:''}</div></div>`;
+    }
+
+    el.innerHTML = `
+      <div style="max-width:1280px;margin:0 auto;">
+        <div style="margin-bottom:18px;">
+          <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">경쟁사 인텔리전스</div>
+          <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">포털 공고 키워드로 공급사를 자동 태깅. <span style="color:#3B86D6;font-weight:500;">막대·셀·행을 클릭하면</span> 상세 프로파일이 열립니다.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(208px,1fr));gap:12px;margin-bottom:18px;">${kpiHtml}</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:16px;">${insightsHtml}</div>
+        <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;margin-bottom:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border,#222c3a);flex-wrap:wrap;">
+            <span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">정면 비교 · <span style="color:#EB0513;">Miru</span> vs <span style="color:#0A66B4;">${this.esc(vendorSelLabel)}</span></span>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><span style="font-size:10px;color:var(--muted,#6b7787);margin-right:2px;">비교 대상</span>${chipsHtml}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--border,#222c3a);">
+            <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;background:var(--panel2,#0e131b);"><div style="padding:10px 16px;font-size:10px;letter-spacing:.6px;color:var(--muted,#6b7787);"></div><div style="padding:10px 12px;font-size:12px;font-weight:700;color:#EB0513;text-align:center;border-left:1px solid var(--border,#222c3a);">Miru</div><div style="padding:10px 12px;font-size:12px;font-weight:700;color:#0A66B4;text-align:center;border-left:1px solid var(--border,#222c3a);">${this.esc(vendorSelLabel)}</div></div>
+            <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;background:var(--panel2,#0e131b);"><div style="padding:11px 16px;font-size:11.5px;color:var(--text2,#9aa6b5);">노출 포털</div><div style="padding:11px 12px;font-size:16px;font-weight:700;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${h2h.aPortals}</div><div style="padding:11px 12px;font-size:16px;font-weight:700;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${h2h.bPortals}</div></div>
+            <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;background:var(--panel2,#0e131b);"><div style="padding:11px 16px;font-size:11.5px;color:var(--text2,#9aa6b5);">진출 국가</div><div style="padding:11px 12px;font-size:16px;font-weight:700;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${h2h.aCountries}</div><div style="padding:11px 12px;font-size:16px;font-weight:700;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${h2h.bCountries}</div></div>
+            <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;background:var(--panel2,#0e131b);"><div style="padding:11px 16px;font-size:11.5px;color:var(--text2,#9aa6b5);">주력 투표방식</div><div style="padding:11px 12px;font-size:12px;font-weight:500;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${this.esc(h2h.aMethod)}</div><div style="padding:11px 12px;font-size:12px;font-weight:500;color:var(--text,#e7edf4);text-align:center;border-left:1px solid var(--border,#222c3a);">${this.esc(h2h.bMethod)}</div></div>
+            <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;background:var(--panel2,#0e131b);"><div style="padding:11px 16px;font-size:11.5px;color:var(--text2,#9aa6b5);">진출 권역</div><div style="padding:11px 12px;font-size:10.5px;color:var(--text2,#9aa6b5);text-align:center;border-left:1px solid var(--border,#222c3a);line-height:1.45;">${this.esc(h2h.aRegList)}</div><div style="padding:11px 12px;font-size:10.5px;color:var(--text2,#9aa6b5);text-align:center;border-left:1px solid var(--border,#222c3a);line-height:1.45;">${this.esc(h2h.bRegList)}</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--surface,#0c1119);border-top:1px solid var(--border,#222c3a);"><span style="flex:0 0 auto;font-size:9px;font-weight:700;letter-spacing:.6px;color:#fff;background:#C0863A;border-radius:5px;padding:3px 8px;">접점</span><span style="flex:1;font-size:11.5px;color:var(--text,#e7edf4);line-height:1.5;">${this.esc(h2h.clashText)}</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">시장 풋프린트</span><span style="font-size:10px;color:var(--muted,#6b7787);letter-spacing:.5px;">PORTALS</span></div><div style="padding:10px 14px 14px;">${footprintHtml}</div></div>
+          <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">공급사별 투표방식 특화</span><span style="font-size:10px;color:var(--muted,#6b7787);letter-spacing:.5px;">MIX</span></div><div style="padding:12px 16px 14px;">${specHtml}<div style="display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:12px;">${legendHtml}</div></div></div>
+        </div>
+        <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;overflow:hidden;margin-bottom:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">권역 × 공급사 경쟁 매트릭스</span><span style="font-size:10px;color:var(--muted,#6b7787);letter-spacing:.5px;">셀 클릭=공급사 선택</span></div>
+          <div style="padding:8px 16px 16px;overflow-x:auto;"><table style="border-collapse:collapse;width:100%;min-width:520px;"><thead><tr><th style="text-align:left;padding:8px 10px;font-size:10px;color:var(--muted,#6b7787);font-weight:500;">권역 \\ 공급사</th>${matrixThHtml}</tr></thead><tbody>${matrixBodyHtml}</tbody></table></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;flex-wrap:wrap;gap:8px;"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">전체 비교 테이블 · 경쟁사 ${VD.length}곳</span><span style="font-size:10.5px;color:var(--muted,#6b7787);">헤더 클릭=정렬 · 행 클릭=상세 프로파일</span></div>
+        <div style="overflow-x:auto;border:1px solid var(--border,#222c3a);border-radius:11px;margin-bottom:32px;"><table id="vendor-compare-table" style="width:100%;border-collapse:collapse;min-width:760px;"><thead><tr style="background:var(--surface,#0c1119);">${thHtml}</tr></thead><tbody id="vendor-compare-tbody">${tableBodyHtml}</tbody></table></div>
+      </div>
+      ${detailHtml}
+    `;
   }
 
-  // ── Opportunity Pipeline view ─────────────────────────────────────────────
+  sortVendorTable(key) {
+    const cur = this.state.vendorSort || { key: 'countries_count', dir: -1 };
+    const dir = cur.key === key ? -cur.dir : (key === 'name' ? 1 : -1);
+    this.setState({ vendorSort: { key, dir } });
+  }
+
+  // ── Opportunity (계약·기회) view ──────────────────────────────────────────
   renderOpportunity() {
-    const el=document.getElementById('opportunity-content');
-    if (!el||el.dataset.rendered) return;
-    el.dataset.rendered='1';
-    const CD=window.MIRU_CONTRACT_DATA||{};
-    const TM=window.MIRU_TIER_META||{};
-    const COUNTRY_FLAG={'PRY':'🇵🇾','ARG':'🇦🇷','ARE':'🇦🇪','OMN':'🇴🇲','PHL':'🇵🇭','BEL':'🇧🇪','BGR':'🇧🇬','CHE':'🇨🇭','BRA':'🇧🇷','GEO':'🇬🇪','ALB':'🇦🇱','MNG':'🇲🇳','KOR':'🇰🇷','COD':'🇨🇩','IRQ':'🇮🇶','ZAF':'🇿🇦','KGZ':'🇰🇬','BIH':'🇧🇦','IND':'🇮🇳','BTN':'🇧🇹','EST':'🇪🇪','USA':'🇺🇸','VEN':'🇻🇪','IRN':'🇮🇷','UZB':'🇺🇿'};
-    const CTYPE_KO={'lease':'임대','service':'서비스','purchase':'구매','pilot':'파일럿'};
-    const tiers=['CRITICAL','WATCH','MONITOR','LONG','UNKNOWN'];
+    const el = document.getElementById('opportunity-content');
+    if (!el) return;
+    const CD = window.MIRU_CONTRACT_DATA || {};
+    const TM = window.MIRU_TIER_META || {};
+    const CTYPE = { lease:'임대', service:'서비스', purchase:'구매', pilot:'파일럿' };
+    const tierOrder = { CRITICAL:0, WATCH:1, MONITOR:2, LONG:3, UNKNOWN:4 };
 
-    const critCnt=Object.values(CD).filter(d=>d.tier==='CRITICAL').length;
-    const watchCnt=Object.values(CD).filter(d=>d.tier==='WATCH').length;
+    // Build year buckets
+    const byEnd = {};
+    Object.entries(CD).forEach(([iso, c]) => {
+      const k = c.contract_end || 'unknown';
+      (byEnd[k] = byEnd[k] || []).push(Object.assign({ iso }, c));
+    });
+    const yearKeys = Object.keys(byEnd).filter(k => /^\d{4}$/.test(k)).sort();
+    const specialKeys = ['owned/ongoing','unknown'].filter(k => byEnd[k]);
+    const nowY = 2026;
+    const bucketLabel = k => k === 'owned/ongoing' ? '보유 · 진행중' : k === 'unknown' ? '시기 미정' : k + '년';
 
-    const row=(iso3,cd)=>{
-      const tm=TM[cd.tier]||{color:'#8A94A6',label:'?',icon:''};
-      const tc=tm.color, tl=tm.label, ti=tm.icon;
-      const c=this.byIso[iso3]||{};
-      const cko=c.country_ko||iso3;
-      const flag=COUNTRY_FLAG[iso3]||'🏳️';
-      const ctype=CTYPE_KO[cd.contract_type]||cd.contract_type||'';
-      return `<div style="display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-bottom:1px solid var(--border,#222c3a);transition:background .15s;cursor:default;" onmouseenter="this.style.background='var(--hover,#161d28)'" onmouseleave="this.style.background=''">
-        <div style="flex:0 0 30px;font-size:20px;line-height:1;padding-top:2px;">${flag}</div>
-        <div style="flex:0 0 130px;">
-          <div style="font-size:13.5px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(cko)}</div>
-          <div style="font-size:10px;color:var(--muted,#6b7787);margin-top:2px;">${iso3}</div>
-        </div>
-        <div style="flex:0 0 110px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:11px;font-weight:700;color:${tc};">${ti} ${this.esc(tl)}</div>
-          <div style="font-size:10px;color:var(--muted,#6b7787);">다음 입찰 ${this.esc(cd.next_tender||'미정')}</div>
-        </div>
-        <div style="flex:0 0 70px;">
-          <span style="font-size:10px;color:var(--text2,#9aa6b5);background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:4px;padding:2px 7px;">${this.esc(ctype)}</span>
-        </div>
-        <div style="flex:1;font-size:11.5px;color:var(--text2,#9aa6b5);line-height:1.65;">${this.esc(cd.notes||'')}</div>
-      </div>`;
-    };
+    const oppBuckets = yearKeys.concat(specialKeys).map(k => {
+      const items = byEnd[k].map(c => {
+        const cc = this.byIso[c.iso];
+        const tm = TM[c.tier] || {};
+        return { iso: c.iso, name: cc ? cc.country_ko : c.iso, tier: c.tier, tierColor: tm.color||'#8A94A6', ctype: CTYPE[c.contract_type]||c.contract_type||'—', nextTender: c.next_tender||'—', isMiru: cc ? !!cc.isMiru : false, hasCountry: !!cc };
+      }).sort((a, b) => ((tierOrder[a.tier]??9) - (tierOrder[b.tier]??9)));
+      const yr = /^\d{4}$/.test(k) ? +k : null;
+      const isNear = yr != null && yr >= nowY && yr <= nowY + 1;
+      const isPast = yr != null && yr < nowY;
+      return { key: k, label: bucketLabel(k), count: items.length, items, isNear, isPast, accent: isNear ? '#EB0513' : (isPast ? '#C0863A' : (yr == null ? '#8A94A6' : '#0A66B4')), tag: isNear ? '임박' : (isPast ? '만료됨' : (yr == null ? '' : '예정')) };
+    });
 
-    const section=(tier,desc)=>{
-      const items=Object.entries(CD).filter(([,d])=>d.tier===tier);
-      if (!items.length) return '';
-      const tm=TM[tier]||{color:'#8A94A6',label:tier,icon:''};
-      return `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-left:4px solid ${tm.color};border-radius:11px;overflow:hidden;margin-bottom:14px;">
-        <div style="padding:13px 16px;border-bottom:1px solid var(--border,#222c3a);background:${tm.color}10;">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:14px;">${tm.icon||''}</span>
-            <span style="font-size:13px;font-weight:700;color:${tm.color};">${this.esc(tm.label)}</span>
-            <span style="font-size:10.5px;color:var(--muted,#6b7787);font-weight:400;">— ${this.esc(desc)}</span>
-            <span style="margin-left:auto;font-size:11px;color:var(--muted,#6b7787);">${items.length}개국</span>
-          </div>
-        </div>
-        ${items.map(([iso3,cd])=>row(iso3,cd)).join('')}
-      </div>`;
-    };
+    const tierCounts = {};
+    Object.values(CD).forEach(c => tierCounts[c.tier] = (tierCounts[c.tier]||0) + 1);
+    const oppTierKpis = ['CRITICAL','WATCH','MONITOR','LONG','UNKNOWN'].filter(t => tierCounts[t]).map(t => { const tm = TM[t]||{}; return { key: t, n: tierCounts[t], label: tm.label||t, icon: tm.icon||'', color: tm.color||'#8A94A6' }; });
+    const nearCount = oppBuckets.filter(b => b.isNear).reduce((s, b) => s + b.count, 0);
 
-    const TIER_DESCS={'CRITICAL':'계약 만료 또는 입찰 진행 중 (≤2026)','WATCH':'제안 준비 필요 (2026~2027 입찰)','MONITOR':'중기 모니터링 (2027~2029)','LONG':'장기 관찰 (2030+)','UNKNOWN':'정보 부족 · 제재 환경'};
-    el.innerHTML=`
-      <div style="margin-bottom:24px;">
-        <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">기회 파이프라인</div>
-        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">계약 인텔 기반 국가별 입찰 타임라인 · 2026-06 기준 · ${Object.keys(CD).length}개국</div>
-        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
-          <div style="padding:7px 14px;background:var(--card,#11161f);border:1px solid #EB051344;border-radius:8px;font-size:11px;color:var(--text,#e7edf4);">즉시 대응 <strong style="color:#EB0513;">${critCnt}</strong>개국</div>
-          <div style="padding:7px 14px;background:var(--card,#11161f);border:1px solid #D4870A44;border-radius:8px;font-size:11px;color:var(--text,#e7edf4);">제안 준비 <strong style="color:#D4870A;">${watchCnt}</strong>개국</div>
-        </div>
+    const tierKpiHtml = oppTierKpis.map(t => `<div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:12px;padding:15px 16px;"><div style="display:flex;align-items:baseline;gap:6px;"><span style="font-size:24px;font-weight:700;color:${t.color};line-height:1;">${t.n}</span><span style="font-size:11px;">${this.esc(t.icon)}</span></div><div style="font-size:11px;font-weight:700;color:var(--text,#e7edf4);margin-top:8px;">${this.esc(t.label)}</div><div style="font-size:9.5px;color:var(--text2,#9aa6b5);margin-top:3px;">tier · ${t.key}</div></div>`).join('');
+
+    const bucketsHtml = oppBuckets.map(b => {
+      const itemsHtml = b.items.map(i => `<div style="background:var(--surface,#0c1119);border:1px solid var(--border,#222c3a);border-radius:9px;padding:9px 10px;cursor:${i.hasCountry?'pointer':'default'};transition:border-color .15s,background .15s;" ${i.hasCountry?`onclick="app.selectCountry('${i.iso}')"`:''} onmouseenter="${i.hasCountry?`this.style.borderColor='${i.tierColor}';this.style.background='var(--hover,#161d28)'`:''}" onmouseleave="${i.hasCountry?`this.style.borderColor='';this.style.background='var(--surface,#0c1119)'`:''}"><div style="display:flex;align-items:center;gap:7px;"><span style="width:8px;height:8px;border-radius:50%;background:${i.tierColor};flex:0 0 8px;"></span><span style="flex:1;min-width:0;font-size:12px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(i.name)}</span>${i.isMiru?'<span style="font-size:8px;font-weight:700;color:#fff;background:#EB0513;border-radius:3px;padding:1px 5px;">자사</span>':''}</div><div style="display:flex;align-items:center;gap:6px;margin-top:7px;flex-wrap:wrap;"><span style="font-size:8.5px;color:var(--text2,#9aa6b5);background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-radius:3px;padding:1px 6px;">${this.esc(i.ctype)}</span><span style="font-size:9px;color:var(--muted,#6b7787);">다음 입찰 ${this.esc(i.nextTender)}</span></div></div>`).join('');
+      const tagHtml = b.tag ? `<span style="font-size:8.5px;font-weight:700;color:#fff;background:${b.accent};border-radius:4px;padding:2px 6px;">${b.tag}</span>` : '';
+      return `<div style="flex:0 0 224px;background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-top:3px solid ${b.accent};border-radius:12px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border,#222c3a);"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">${this.esc(b.label)}</span>${tagHtml}</div><div style="padding:9px 11px 12px;display:flex;flex-direction:column;gap:7px;">${itemsHtml}</div></div>`;
+    }).join('');
+
+    const legendHtml = oppTierKpis.map(t => `<span style="display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--text2,#9aa6b5);"><span style="width:9px;height:9px;border-radius:50%;background:${t.color};"></span>${this.esc(t.label)} (${t.key})</span>`).join('');
+
+    el.innerHTML = `<div style="max-width:1280px;margin:0 auto;">
+      <div style="margin-bottom:18px;">
+        <div style="font-weight:700;font-size:21px;color:var(--text,#e7edf4);">계약 만료 · 기회 파이프라인</div>
+        <div style="font-size:12.5px;color:var(--text2,#9aa6b5);margin-top:5px;">${Object.keys(CD).length}개국 계약 만료 시점을 타임라인으로 정렬. <span style="color:#3B86D6;font-weight:500;">국가를 클릭하면</span> 지도 패널에서 상세를 확인합니다.</div>
       </div>
-      ${tiers.map(t=>section(t,TIER_DESCS[t]||'')).join('')}
-    `;
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px;">
+        <div style="background:var(--card,#11161f);border:1px solid var(--border,#222c3a);border-top:3px solid #EB0513;border-radius:12px;padding:15px 16px;">
+          <div style="font-size:24px;font-weight:700;color:#EB0513;line-height:1;">${nearCount}</div>
+          <div style="font-size:11px;font-weight:700;color:var(--text,#e7edf4);margin-top:8px;">임박 만료 (2026–27)</div>
+          <div style="font-size:9.5px;color:var(--text2,#9aa6b5);margin-top:3px;">최우선 입찰 대응 대상</div>
+        </div>
+        ${tierKpiHtml}
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:13px;font-weight:700;color:var(--text,#e7edf4);">계약 만료 타임라인</span><span style="font-size:10.5px;color:var(--muted,#6b7787);">— 좌→우 시간순 · 색상=tier</span></div>
+      <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;align-items:flex-start;">${bucketsHtml}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;padding-top:14px;border-top:1px solid var(--border,#222c3a);">${legendHtml}</div>
+    </div>`;
   }
 }
 
