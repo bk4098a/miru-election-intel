@@ -19,6 +19,7 @@ html.light{
   --border:#d1d9e4;--hover:#e8edf4;--shadow:rgba(0,0,0,.12);
 }
 *{transition:background-color .15s,color .15s,border-color .15s;}
+#results-list *{transition:none;}
 html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'Gmarket Sans',sans-serif;font-size:14px;line-height:1.5;}
 ::-webkit-scrollbar{width:8px;height:8px;}
 ::-webkit-scrollbar-track{background:transparent;}
@@ -418,8 +419,8 @@ function googleTranslateElementInit(){
   </div>
 </div>
 
-<!-- tenders_data.js must be loaded BEFORE the inline script -->
-<script src="tenders_data.js"></script>
+<!-- tenders_data.js: defer lets the page render first, executes before DOMContentLoaded -->
+<script src="tenders_data.js" defer></script>
 <script>
 'use strict';
 
@@ -572,11 +573,19 @@ class App {
       return;
     }
 
-    // Enrich tenders with region if missing
-    this.allTenders = T.map(t => ({
-      ...t,
-      region: t.region || iso3ToRegion(t.iso3 || ''),
-    }));
+    // Enrich tenders with region + pre-computed search/sort keys
+    this.allTenders = T.map(t => {
+      const base = { ...t, region: t.region || iso3ToRegion(t.iso3 || '') };
+      base._haystack = ((t.title||'') + ' ' + (t.title_en||'') + ' ' + (t.snippet||'') + ' ' +
+                       (t.buyer||'') + ' ' + (t.country||'') + ' ' + (t.iso3||'') + ' ' +
+                       (COUNTRY_KO_NAME[t.iso3]||'')).toLowerCase();
+      base._pubSort = /^\d{4}-\d{2}-\d{2}/.test(t.published_date||'')
+        ? t.published_date.slice(0,10) : (t.crawled_at||'');
+      return base;
+    });
+    this._alertCutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
+    this._today = new Date().toISOString().slice(0,10);
+    this._week  = new Date(Date.now() + 7 * 86400000).toISOString().slice(0,10);
 
     this._populateCountryFilter(M);
     this._renderStats(M);
@@ -770,6 +779,7 @@ class App {
     document.querySelectorAll('.sort-row .fchip').forEach(c => c.classList.remove('active'));
     el.classList.add('active');
     this.sortKey = key;
+    this.page = 1;
     this.applyFilters();
   }
 
@@ -780,30 +790,23 @@ class App {
     const country = document.getElementById('filter-country').value;
     const fromDate = document.getElementById('filter-from').value;
     const toDate   = document.getElementById('filter-to').value;
+    this.page = 1;
 
     let list = this.allTenders.filter(t => {
       if (region  && t.region !== region)  return false;
       if (country && t.iso3   !== country) return false;
       if (this.cpv && t.cpv   !== this.cpv) return false;
-      if (fromDate && t.published_date && t.published_date.slice(0,10) < fromDate) return false;
-      if (toDate   && t.published_date && t.published_date.slice(0,10) > toDate)   return false;
+      const pubDate = /^\d{4}-\d{2}-\d{2}/.test(t.published_date || '') ? t.published_date.slice(0,10) : null;
+      if (fromDate && pubDate && pubDate < fromDate) return false;
+      if (toDate   && pubDate && pubDate > toDate)   return false;
       if (q) {
         // Korean alias exact match → filter by ISO3
         const koIso = COUNTRY_KO[q];
         if (koIso) {
           if (t.iso3 !== koIso) return false;
         } else {
-          const haystack = (
-            (t.title    || '') + ' ' +
-            (t.title_en || '') + ' ' +
-            (t.snippet  || '') + ' ' +
-            (t.buyer    || '') + ' ' +
-            (t.country  || '') + ' ' +
-            (t.iso3     || '') + ' ' +
-            (COUNTRY_KO_NAME[t.iso3] || '')
-          ).toLowerCase();
           const re = KW_REGEX[q];
-          if (re ? !re.test(haystack) : !haystack.includes(q)) return false;
+          if (re ? !re.test(t._haystack) : !t._haystack.includes(q)) return false;
         }
       }
       return true;
@@ -815,11 +818,12 @@ class App {
       if (k === 'score')
         return (b.score || 0) - (a.score || 0);
       if (k === 'deadline_date') {
-        const da = a.deadline_date || '9999', db = b.deadline_date || '9999';
+        const da = /^\d{4}-\d{2}-\d{2}/.test(a.deadline_date || '') ? a.deadline_date.slice(0,10) : '9999';
+        const db = /^\d{4}-\d{2}-\d{2}/.test(b.deadline_date || '') ? b.deadline_date.slice(0,10) : '9999';
         return da.localeCompare(db);
       }
-      // default: crawled_at desc
-      return (b.crawled_at || '').localeCompare(a.crawled_at || '');
+      // default: published_date desc (fallback crawled_at) — pre-computed at init
+      return (b._pubSort || '').localeCompare(a._pubSort || '');
     });
 
     this.filtered = list;
@@ -840,9 +844,9 @@ class App {
     const list  = document.getElementById('results-list');
     const empty = document.getElementById('empty-state');
     const pg    = document.getElementById('pagination');
-    const alertCutoff = new Date(Date.now() - 48 * 3600 * 1000).toISOString();
-    const today = new Date().toISOString().slice(0,10);
-    const week  = new Date(Date.now() + 7 * 86400000).toISOString().slice(0,10);
+    const alertCutoff = this._alertCutoff;
+    const today = this._today;
+    const week  = this._week;
 
     if (!this.filtered.length) {
       list.innerHTML = '';
@@ -867,14 +871,13 @@ class App {
         && t.deadline_date.slice(0,10) <= week
         && t.deadline_date.slice(0,10) >= today;
 
-      const hayText = ((t.title || '') + ' ' + (t.title_en || '') + ' ' + (t.snippet || '')).toLowerCase();
       const matchedKws = KW_DETECT.filter(kw => {
         const re = KW_REGEX[kw.toLowerCase()];
-        return re ? re.test(hayText) : hayText.includes(kw.toLowerCase());
+        return re ? re.test(t._haystack) : t._haystack.includes(kw.toLowerCase());
       }).slice(0, 4);
       const kwHtml = matchedKws.map(k => `<span class="kw-tag">${_esc(k)}</span>`).join('');
-      const pub  = t.published_date ? t.published_date.slice(0,10) : '';
-      const dead = t.deadline_date  ? t.deadline_date.slice(0,10)  : '';
+      const pub  = /^\d{4}-\d{2}-\d{2}/.test(t.published_date || '') ? t.published_date.slice(0,10) : '';
+      const dead = /^\d{4}-\d{2}-\d{2}/.test(t.deadline_date  || '') ? t.deadline_date.slice(0,10)  : '';
       const url  = t.url || '#';
 
       const displayTitle = (t.title_en && t.title_en !== t.title) ? t.title_en : t.title;

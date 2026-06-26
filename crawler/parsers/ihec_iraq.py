@@ -20,6 +20,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from crawler.keywords import score
+from crawler.translate import translate_to_en
 
 import urllib3
 urllib3.disable_warnings()
@@ -251,11 +252,13 @@ def parse(country: str = 'Iraq', iso3: str = 'IRQ') -> list:
         if s <= 0 and _IRAQ_KW.search(f"{title} {row['snippet']}"):
             s = 15
 
+        title_en = translate_to_en(title, sl='ar')
         results.append({
             'country': country,
             'iso3': iso3,
             'portal_name': PORTAL,
             'title': title,
+            'title_en': title_en,
             'url': url,
             'published_date': row.get('published_date', ''),
             'deadline_date': row.get('deadline_date', ''),

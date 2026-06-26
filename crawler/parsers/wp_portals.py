@@ -7,6 +7,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from crawler.keywords import score
+from crawler.translate import translate_to_en
 
 import urllib3
 urllib3.disable_warnings()
@@ -177,9 +178,10 @@ def parse_kqz_albania(country='Albania', iso3='ALB'):
                 s = score(title, parent_text)
                 if s <= 0:
                     s = 15  # minimum for Albanian electoral context
+                title_en = translate_to_en(title, sl='sq')
                 results.append({
                     'country': country, 'iso3': iso3, 'portal_name': 'kqz.gov.al',
-                    'title': title, 'url': full_url,
+                    'title': title, 'title_en': title_en, 'url': full_url,
                     'published_date': '', 'deadline_date': '',
                     'status': 'Open',
                     'buyer': 'Komisioni Qendror i Zgjedhjeve (KQZ)',

@@ -2,12 +2,19 @@
 Portal: https://tender.gov.mn
 REST API or HTML scraping. Mongolian (mn) → English translation.
 """
+import re
 import requests
 import urllib3
 urllib3.disable_warnings()
 from bs4 import BeautifulSoup
 from crawler.keywords import score
 from crawler.translate import translate_to_en
+
+
+def _extract_date(text):
+    """Extract first YYYY-MM-DD date from raw text."""
+    m = re.search(r'\d{4}-\d{2}-\d{2}', text or '')
+    return m.group(0) if m else ''
 
 BASE = 'https://tender.gov.mn'
 PORTAL = 'tender.gov.mn'
@@ -73,10 +80,14 @@ def _scrape_html(session, keyword=''):
                     href = a['href'] if a else ''
                     link = (href if href.startswith('http') else f'{BASE}{href}') if href else url
                     td_texts = [td.get_text(strip=True) for td in tds]
+                    # td[1] contains deadline datetime; td[2] contains "Зарласан огноо<date>" (published)
+                    raw1 = td_texts[1] if len(td_texts) > 1 else ''
+                    raw2 = td_texts[2] if len(td_texts) > 2 else ''
+                    pub = _extract_date(raw2) or _extract_date(raw1)
+                    deadline = _extract_date(raw1) if _extract_date(raw1) != pub else ''
                     rows.append({'title': title, 'url': link,
-                                 'snippet': ' | '.join(td_texts[:4]),
-                                 'pub': td_texts[1] if len(td_texts) > 1 else '',
-                                 'deadline': td_texts[2] if len(td_texts) > 2 else ''})
+                                 'snippet': (title + ' | ' + ' '.join(td_texts[1:3]))[:300],
+                                 'pub': pub, 'deadline': deadline})
 
             # Cards
             if not rows:
