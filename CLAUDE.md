@@ -85,59 +85,81 @@ Matplotlib Miru 브랜드 테마 유틸리티. `data/*.html` 지역별 보고서
 
 ---
 
-## 현재 파서 상태 (`crawler/parsers/`)
+## 현재 파서 상태 (`crawler/parsers/`) — 23개 파서
 
+### 작동 중 (Static)
 | 파일 | 포털 | 상태 |
 |---|---|---|
-| `goszakup.py` | 카자흐스탄 goszakup.gov.kz | ⚠️ API 토큰 필요 (`GOSZAKUP_TOKEN` 환경변수) |
-| `pncp.py` | 브라질 pncp.gov.br | ⚠️ ConnectionReset — TLS/WAF 이슈 |
-| `ghaneps.py` | 가나 ghaneps.gov.gh | ⚠️ 검색 기능 로그인 필요 |
-| `bahrain.py` | 바레인 etendering.tenderboard.gov.bh | ✅ 루트 URL 수정 완료 |
-| `wp_portals.py` | 부탄 ECB / 알바니아 KQZ | ⚠️ ECB 타임아웃 / KQZ Next.js 재구축 |
-| `gojep.py` | 자메이카 GOJEP | ⚠️ JS 렌더링 필요 (Playwright 전환) |
+| `bahrain.py` | 바레인 etendering.tenderboard.gov.bh | ✅ HTML 테이블 파싱 |
+| `tenders_kenya.py` | 케냐 iebc.or.ke | ✅ IEBC 정적 HTML — PDF 링크, 313건 |
+| `ihec_iraq.py` | 이라크 ihec.iq | ✅ WP 사이트, 점수 메타데이터 |
+| `etenders_za.py` | 남아공 etenders.gov.za | ✅ DataTables GET API, IEC 필터 |
+| `dncp_paraguay.py` | 파라과이 pncp.dncp.gov.py | ✅ OCDS API, ES→EN 번역 |
+
+### 작동 중 (Playwright)
+| 파일 | 포털 | 상태 |
+|---|---|---|
+| `philgeps.py` | 필리핀 notices.philgeps.gov.ph | ✅ 선거 키워드 검색 |
+
+### 신규 추가 (테스트 필요)
+| 파일 | 포털 | 상태 |
+|---|---|---|
+| `compr_ar.py` | 아르헨티나 comprar.gob.ar + cne.gov.ar | 🔧 HTML 스크래핑 (ASP.NET, REST API 없음) |
+| `riigihanked_est.py` | 에스토니아 riigihanked.riik.ee | ⚠️ API 401 — HTML 폴백, ET→EN |
+| `spa_georgia.py` | 조지아 tenders.procurement.gov.ge | 🔧 루트 URL 작동 확인, API 경로 탐색 중 |
+| `tenderboard_omn.py` | 오만 tenderboard.gov.om | 🔧 DNS 미달성 (서버에서 테스트 필요) |
+| `cppp_india.py` | 인도 ECI + cppp.gov.in | ⚠️ 403/geo-block |
+| `armp_drc.py` | 콩고민주공화국 marchepublic.cd | ⚠️ JSF 세션 필요 |
+| `ejn_bosnia.py` | 보스니아 ejn.gov.ba | 🔧 Angular 포털, HTML 경로 탐색 중 |
+| `gpa_mongolia.py` | 몽골 tender.gov.mn | 🔧 DNS 미달성 (서버에서 테스트 필요) |
+
+### 조건부 작동 (API 키 필요)
+| 파일 | 포털 | 상태 |
+|---|---|---|
+| `goszakup.py` | 카자흐스탄 goszakup.gov.kz | ⚠️ `GOSZAKUP_TOKEN` 환경변수 필요 |
+| `g2b_korea.py` | 한국 나라장터 g2b.go.kr | ⚠️ `G2B_SERVICE_KEY` 필요 |
+| `samgov_usa.py` | 미국 sam.gov | ⚠️ `SAMGOV_API_KEY` 필요 |
+
+### 이슈 있음
+| 파일 | 포털 | 상태 |
+|---|---|---|
+| `pncp.py` | 브라질 pncp.gov.br | ⚠️ ConnectionReset — TLS/WAF |
+| `ghaneps.py` | 가나 ghaneps.gov.gh | ⚠️ 로그인 필요 |
+| `wp_portals.py` | 부탄 ECB | ⚠️ 타임아웃 |
+| `wp_portals.py` | 알바니아 KQZ | ⚠️ Next.js 재구축 |
 | `zakupki_kg.py` | 키르기스스탄 zakupki.gov.kg | 🔧 미테스트 |
-| `philgeps.py` | 필리핀 notices.philgeps.gov.ph | ✅ Playwright — 선거 키워드 검색 (COMELEC/election/ballot/voting/biometric/precinct) |
-| `g2b_korea.py` | 한국 나라장터 g2b.go.kr | ✅ 신규 — data.go.kr API (`G2B_SERVICE_KEY` 필요) |
-| `tenders_kenya.py` | 케냐 iebc.or.ke | ✅ IEBC 정적 HTML — PDF 직접 링크, 313건, 최소 score=15 |
-| `ihec_iraq.py` | 이라크 ihec.iq | ✅ WP 사이트, 타이틀 12자 이상 필터, 점수 메타데이터만 |
-| `etenders_za.py` | 남아공 etenders.gov.za | ✅ 국가재무부 공식 포털, DataTables GET API, IEC 선거위 + 선거키워드 필터 |
+| `gojep.py` | 자메이카 GOJEP | ⚠️ JS 렌더링 필요 (Playwright) |
 
 ---
 
 ## 즉시 해야 할 작업
 
-### 1. ✅ Bahrain 파서 수정 — 완료
+### ✅ 완료
+- Bahrain 파서 수정
+- 23개 파서 등록 (8개 신규: ARG, EST, GEO, OMN, IND, COD, BIH, MNG)
+- `crawler/translate.py` 공용 번역 모듈 (ES/ET/KA/AR/FR/BS/MN→EN)
+- Paraguay 기존 151건 title_en 마이그레이션
+- `data/tender_search.html` 다크/라이트 모드 연동 (`localStorage('miru_theme')`)
+- 점수 필터 UI 제거 (score는 메타데이터만)
+- South Africa etenders.gov.za 파서 추가
 
-### 2. zakupki.gov.kg 테스트 (1~2시간)
-- OCDS API (`ocds.zakupki.gov.kg/api/`) 접근 여부 확인
-- 실패 시 JSF ViewState 방식 폴백
+### 1. 외부 작업: API 키 발급
+- **Kazakhstan**: `https://ows.goszakup.gov.kz` → `.env`에 `GOSZAKUP_TOKEN=...`
+- **Korea**: `https://www.data.go.kr` "나라장터 입찰공고정보서비스" → `.env`에 `G2B_SERVICE_KEY=...`
+- **USA**: SAM.gov API key → `.env`에 `SAMGOV_API_KEY=...`
+
+### 2. zakupki.gov.kg 테스트
 - Miru가 CEC Kyrgyzstan에 납품한 국가라 모니터링 필수
+- OCDS API (`ocds.zakupki.gov.kg/api/`) 접근 여부 확인
 
-### 3. goszakup API 토큰 발급 (외부 작업)
-- `https://ows.goszakup.gov.kz` 에서 개발자 토큰 신청 → `.env`에 `GOSZAKUP_TOKEN=...`
-- 토큰 없이 쓸 수 있는 공개 웹 검색(`/ru/search/lots`) 파서 fallback 추가
+### 3. 신규 파서 서버 테스트 (네트워크 이슈)
+- Oman (`tenderboard.gov.om`), Mongolia (`tender.gov.mn`): 개발 PC에서 DNS 불가 → 서버에서 테스트
+- Georgia (`tenders.procurement.gov.ge`): API 경로 발견 필요
+- Estonia: API 401 → HTML 폴백 경로 확인
 
-### 4. Korea G2B API Key 발급 (외부 작업)
-- `https://www.data.go.kr` → 검색: "나라장터 입찰공고정보서비스" → 활용 신청
-- `.env`에 `G2B_SERVICE_KEY=...` 추가
-- 무료 발급, 승인 1~2일 소요
-
-### 5. PNCP Brazil 엔드포인트 재확인
-- 현재 `https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes` → ConnectionReset
-- 대안: `https://pncp.gov.br/api/pncp/v1/` 또는 공식 문서 `https://pncp.gov.br/app/api`
-
-### 6. KQZ Albania — Next.js 전환
-- `kqz.gov.al` WordPress → Next.js 재구축됨. wp-json 경로 없음
-- `/procurimet` 또는 `/tendera` 경로 탐색 (SSR이면 requests 정적 파싱 가능)
-
-### 7. GOJEP Jamaica — Playwright 전환
-- `gojep.gov.jm` JSF 렌더링 필요
-- `python -m playwright install chromium` 후 파서 재작성
-
-### 8. 공고 검색 UI 사용법
+### 4. 공고 검색 UI 사용법
 - 크롤 완료 후: `python scripts/gen_tenders_js.py` → `data/tenders_data.js` 생성
 - `data/tender_search.html` 브라우저에서 열기
-- 키워드·지역·카테고리·점수 필터 + 알람 설정 (localStorage)
 
 ---
 
@@ -148,7 +170,8 @@ notice_key    TEXT UNIQUE  -- SHA1(iso3|url|title[:120])[:20]
 country       TEXT
 iso3          TEXT         -- ISO 3166-1 alpha-3
 portal_name   TEXT
-title         TEXT
+title         TEXT         -- 원문 제목 (notice_key 안정성 유지)
+title_en      TEXT         -- 영어 번역 제목 (UI 표시용)
 url           TEXT
 published_date TEXT
 deadline_date  TEXT
