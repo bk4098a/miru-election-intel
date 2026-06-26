@@ -68,10 +68,6 @@ def parse(country='United States', iso3='USA'):
         deadline = (n.get('responseDeadLine') or '')[:10]
         snippet = f"{title} | {dept} | {desc[:200]}"
 
-        s = score(title, snippet)
-        if s <= 0:
-            continue
-
         results.append({
             'country': country, 'iso3': iso3, 'portal_name': PORTAL,
             'title': title, 'url': url,
@@ -81,7 +77,7 @@ def parse(country='United States', iso3='USA'):
             'buyer': dept,
             'amount': None, 'currency': 'USD',
             'snippet': snippet[:300],
-            'score': s,
+            'score': score(title, snippet),
         })
 
     print(f'  [samgov_usa] {len(results)} notices found')

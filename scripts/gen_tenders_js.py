@@ -94,11 +94,15 @@ def main():
     rows = conn.execute(
         f'SELECT * FROM tenders ORDER BY crawled_at DESC, score DESC LIMIT {LIMIT}'
     ).fetchall()
-    conn.close()
 
     tenders = []
     countries_seen = set()
     last_crawled = None
+
+    # Determine if title_en column exists (graceful for old DBs)
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(tenders)").fetchall()}
+    has_title_en = 'title_en' in cols
+    conn.close()
 
     for r in rows:
         iso3 = r['iso3'] or ''
@@ -112,6 +116,7 @@ def main():
         countries_seen.add(iso3)
         region = REGION_MAP.get(iso3, 'Other')
         category = get_category(title, snippet)
+        title_en = (r['title_en'] or '') if has_title_en else ''
 
         tenders.append({
             'id': r['id'],
@@ -121,6 +126,7 @@ def main():
             'region': region,
             'portal_name': r['portal_name'],
             'title': title,
+            'title_en': title_en,
             'url': r['url'],
             'published_date': r['published_date'] or '',
             'deadline_date': r['deadline_date'] or '',

@@ -19,7 +19,7 @@ not a structured live tender listing.  The parser therefore:
 import re
 import requests
 from bs4 import BeautifulSoup
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 import urllib3
 urllib3.disable_warnings()
@@ -187,10 +187,8 @@ def _resolve(href: str, page_url: str) -> str:
 
 
 def _is_relevant(title: str, snippet: str) -> bool:
-    """Return True if the item passes the Iraq-specific keyword check OR the
-    generic election keyword engine."""
     combined = f'{title} {snippet}'
-    return bool(_IRAQ_KW.search(combined)) or is_election_related(title, snippet)
+    return bool(_IRAQ_KW.search(combined))
 
 
 # ---------------------------------------------------------------------------
@@ -225,10 +223,11 @@ def parse(country: str = 'Iraq', iso3: str = 'IRQ') -> list:
                 continue
             rows = _html_rows(html, url)
 
-        # Keep only election-relevant candidates
         for row in rows:
-            if _is_relevant(row['title'], row['snippet']):
-                all_rows.append(row)
+            # Basic structural filter: skip nav/menu links (too short or just language names)
+            if len(row['title']) < 12:
+                continue
+            all_rows.append(row)
 
         # If we already found notices from a working HTML page, no need to
         # continue scanning every URL — but do still try WP JSON endpoints so
@@ -249,15 +248,8 @@ def parse(country: str = 'Iraq', iso3: str = 'IRQ') -> list:
         seen.add(url)
 
         s = score(title, row['snippet'])
-        # For Iraq/IHEC context, give a minimum score to items that matched
-        # our local keyword filter even if the generic scorer gave 0, so they
-        # are not silently dropped when the generic keywords list doesn't cover
-        # Arabic terms that are present only in snippet.
         if s <= 0 and _IRAQ_KW.search(f"{title} {row['snippet']}"):
-            s = 15  # treat as weak-keyword match
-
-        if s <= 0:
-            continue
+            s = 15
 
         results.append({
             'country': country,

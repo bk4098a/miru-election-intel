@@ -1,7 +1,7 @@
 """Bahrain — Tender Board (HTML table parser)"""
 import requests
 from bs4 import BeautifulSoup
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 BASE = 'https://etendering.tenderboard.gov.bh'
 SEARCH_URLS = [
@@ -68,9 +68,6 @@ def parse(country='Bahrain', iso3='BHR'):
         seen.add(url)
         tds = row['tds']
         snippet = ' | '.join(tds[:4])
-        if not is_election_related(title, snippet):
-            continue
-
         results.append({
             'country': country, 'iso3': iso3, 'portal_name': PORTAL,
             'title': title, 'url': url,

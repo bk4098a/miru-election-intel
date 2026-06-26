@@ -6,7 +6,7 @@ KQZ Albania: Moved to Next.js in 2026 — wp-json gone → Playwright scrape
 import re
 import requests
 from bs4 import BeautifulSoup
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 import urllib3
 urllib3.disable_warnings()
@@ -22,7 +22,11 @@ ECB_PORTALS = [
     {'api': 'https://www.ecb.bt/wp-json/wp/v2/posts', 'params': {'per_page': 50, 'search': 'tender'}},
     {'api': 'https://www.ecb.bt/wp-json/wp/v2/posts', 'params': {'per_page': 50, 'search': 'procurement'}},
     {'api': 'https://www.ecb.bt/wp-json/wp/v2/posts', 'params': {'per_page': 50, 'search': 'election'}},
+    # Alternative: procurement notice category
+    {'api': 'https://www.ecb.bt/wp-json/wp/v2/posts', 'params': {'per_page': 50, 'categories': 'tenders'}},
 ]
+
+ECB_STATIC_URL = 'https://www.ecb.bt/procurement-notices/'
 
 
 def _strip_html(html):
@@ -32,16 +36,18 @@ def _strip_html(html):
         return re.sub(r'<[^>]+>', '', html).strip()
 
 
-def parse_ecb_bhutan(country='Bhutan', iso3='BTN'):
-    results = []
-    seen = set()
+def _parse_ecb_wp(results, seen, country, iso3):
+    """Try WordPress REST API endpoints."""
     for cfg in ECB_PORTALS:
         try:
-            r = requests.get(cfg['api'], params=cfg['params'], headers=HEADERS, timeout=45, verify=False)
-            r.raise_for_status()
+            r = requests.get(cfg['api'], params=cfg['params'], headers=HEADERS, timeout=15, verify=False)
+            if r.status_code != 200:
+                continue
             posts = r.json()
+            if not isinstance(posts, list):
+                continue
         except Exception as e:
-            print(f'  [ecb_bhutan] error: {e}')
+            print(f'  [ecb_bhutan] wp error: {e}')
             continue
 
         for post in posts:
@@ -50,8 +56,6 @@ def parse_ecb_bhutan(country='Bhutan', iso3='BTN'):
             if not title or url in seen:
                 continue
             snippet = _strip_html((post.get('excerpt') or {}).get('rendered', ''))
-            if not is_election_related(title, snippet):
-                continue
             seen.add(url)
             date = (post.get('date') or '')[:10]
             results.append({
@@ -65,6 +69,47 @@ def parse_ecb_bhutan(country='Bhutan', iso3='BTN'):
                 'score': score(title, snippet),
             })
 
+
+def _parse_ecb_static(results, seen, country, iso3):
+    """Fallback: scrape procurement notices page directly."""
+    try:
+        r = requests.get(ECB_STATIC_URL, headers=HEADERS, timeout=15, verify=False)
+        if r.status_code != 200:
+            return
+        soup = BeautifulSoup(r.text, 'lxml')
+        for a in soup.find_all('a', href=True):
+            title = a.get_text(strip=True)
+            if not title or len(title) < 10:
+                continue
+            href = a['href']
+            url = href if href.startswith('http') else f'https://www.ecb.bt{href}'
+            if url in seen:
+                continue
+            seen.add(url)
+            parent_text = (a.parent or a).get_text(' ', strip=True)[:300]
+            s = score(title, parent_text)
+            if s <= 0:
+                s = 15
+            results.append({
+                'country': country, 'iso3': iso3, 'portal_name': 'ecb.bt',
+                'title': title, 'url': url,
+                'published_date': '', 'deadline_date': '',
+                'status': 'Open',
+                'buyer': 'Election Commission of Bhutan',
+                'amount': None, 'currency': 'BTN',
+                'snippet': parent_text,
+                'score': s,
+            })
+    except Exception as e:
+        print(f'  [ecb_bhutan] static error: {e}')
+
+
+def parse_ecb_bhutan(country='Bhutan', iso3='BTN'):
+    results = []
+    seen = set()
+    _parse_ecb_wp(results, seen, country, iso3)
+    if not results:
+        _parse_ecb_static(results, seen, country, iso3)
     print(f'  [ecb_bhutan] {len(results)} notices found')
     return results
 

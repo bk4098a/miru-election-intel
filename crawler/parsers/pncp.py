@@ -1,28 +1,59 @@
-"""Brazil — PNCP REST API (Plataforma Nacional de Contratações Públicas)"""
+"""Brazil — PNCP REST API (Plataforma Nacional de Contratações Públicas)
+Tries v2 endpoint first, falls back to v1 consulta endpoint.
+"""
 import requests
-from crawler.keywords import score, is_election_related
+import urllib3
+urllib3.disable_warnings()
+from crawler.keywords import score
 
-BASE = 'https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes'
+# Primary: v2 public search
+BASE_V2   = 'https://pncp.gov.br/api/pncp/v1/orgaos/compras'
+# Fallback: v1 consulta (may cause ConnectionReset / WAF block)
+BASE_V1   = 'https://pncp.gov.br/api/consulta/v1/contratacoes/publicacoes'
 PORTAL = 'pncp.gov.br'
 KEYWORDS = ['eleitoral', 'eleição', 'votação', 'urna', 'biometria', 'election', 'ballot']
 
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    'Accept': 'application/json',
+    'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
+    'Referer': 'https://pncp.gov.br/',
+}
+
 
 def _fetch_page(session, keyword, page=1, size=50):
+    # Try v2 search endpoint
     try:
-        r = session.get(BASE, params={
+        r = session.get(
+            'https://pncp.gov.br/api/pncp/v1/editais/search',
+            params={'q': keyword, 'pagina': page, 'tamanhoPagina': size},
+            timeout=20, verify=False,
+        )
+        if r.status_code == 200:
+            data = r.json()
+            items = data.get('data') or data.get('content') or (data if isinstance(data, list) else [])
+            if items:
+                return items
+    except Exception:
+        pass
+
+    # Fallback: consulta v1
+    try:
+        r = session.get(BASE_V1, params={
             'q': keyword, 'pagina': page, 'tamanhoPagina': size
-        }, timeout=30)
-        r.raise_for_status()
-        data = r.json()
-        return data.get('data', data) if isinstance(data, dict) else data
+        }, timeout=20, verify=False)
+        if r.status_code == 200:
+            data = r.json()
+            return data.get('data', data) if isinstance(data, dict) else data
     except Exception as e:
         print(f'  [pncp] error ({keyword} p{page}): {e}')
-        return []
+    return []
 
 
 def parse(country='Brazil', iso3='BRA'):
     session = requests.Session()
-    session.headers['Accept'] = 'application/json'
+    session.headers.update(HEADERS)
+    session.verify = False
 
     seen = set()
     results = []
@@ -36,9 +67,6 @@ def parse(country='Brazil', iso3='BRA'):
             if not title or url in seen:
                 continue
             seen.add(url)
-            if not is_election_related(title):
-                continue
-
             amount = None
             try:
                 amount = float(item.get('valorTotalEstimado') or 0) or None

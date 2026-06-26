@@ -32,7 +32,7 @@ import os
 import re
 import requests
 from datetime import datetime, timedelta
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 import urllib3
 urllib3.disable_warnings()
@@ -224,12 +224,6 @@ def parse(country='South Korea', iso3='KOR'):
         detail   = _detail_url(item)
 
         snippet = ' | '.join(filter(None, [buyer, method, contract, pub_date]))
-
-        # Apply election-relevance filter — skip notices that slipped through
-        # keyword search but are not election-related (e.g. '선거' appearing in
-        # an unrelated context).
-        if not is_election_related(title, snippet):
-            continue
 
         results.append({
             'country':        country,

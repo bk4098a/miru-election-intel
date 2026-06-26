@@ -1,7 +1,7 @@
 """Kyrgyzstan — zakupki.gov.kg (JSF portal + OCDS fallback)"""
 import requests
 from bs4 import BeautifulSoup
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 BASE = 'https://zakupki.gov.kg'
 SEARCH_PATH = '/epps/quickSearchAction.do'
@@ -31,7 +31,7 @@ def _try_ocds(session):
                 tender = item.get('tender', item)
                 title = tender.get('title', '') or item.get('title', '')
                 url = item.get('url') or f"{BASE}/epps/contract.do?id={item.get('id','')}"
-                if not title or not is_election_related(title):
+                if not title:
                     continue
                 results.append({
                     'title': title, 'url': url,
@@ -80,7 +80,7 @@ def _try_html(session):
                     title = link.get_text(strip=True) if link else tds[0].get_text(strip=True)
                     href = (link['href'] if link else '')
                     url = (BASE + '/' + href.lstrip('/')) if href and not href.startswith('http') else href
-                    if not title or not is_election_related(title):
+                    if not title:
                         continue
                     td_texts = [td.get_text(strip=True) for td in tds]
                     results.append({

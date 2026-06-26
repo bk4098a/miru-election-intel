@@ -1,7 +1,7 @@
 """Kazakhstan — goszakup.gov.kz REST API v3"""
 import os
 import requests
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 BASE = 'https://ows.goszakup.gov.kz/v3/trd-buy'
 KEYWORDS = ['election', 'выборы', 'избирательн', 'голосован', 'биометр']
@@ -44,8 +44,6 @@ def parse(country='Kazakhstan', iso3='KAZ'):
                 continue
             seen.add(url)
             snippet = item.get('subject_type', {}).get('name_ru', '') if isinstance(item.get('subject_type'), dict) else ''
-            if not is_election_related(title, snippet):
-                continue
 
             amount = None
             try:

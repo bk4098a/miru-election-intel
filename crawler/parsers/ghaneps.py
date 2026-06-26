@@ -1,7 +1,7 @@
 """Ghana — GHANEPS (Struts HTML table parser)"""
 import requests
 from bs4 import BeautifulSoup
-from crawler.keywords import score, is_election_related
+from crawler.keywords import score
 
 SEARCH_URL = 'https://www.ghaneps.gov.gh/epps/quickSearchAction.do'
 DETAIL_BASE = 'https://www.ghaneps.gov.gh/epps/'
@@ -87,9 +87,6 @@ def parse(country='Ghana', iso3='GHA'):
         seen.add(url)
         tds = row['tds']
         snippet = ' | '.join(tds[:4]) if tds else ''
-        if not is_election_related(title, snippet):
-            continue
-
         results.append({
             'country': country, 'iso3': iso3, 'portal_name': PORTAL,
             'title': title, 'url': url,

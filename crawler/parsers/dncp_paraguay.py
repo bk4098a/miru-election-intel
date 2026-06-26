@@ -8,6 +8,27 @@ from crawler.keywords import score
 import urllib3
 urllib3.disable_warnings()
 
+_TRANSLATE_CACHE = {}
+
+def _translate_to_en(text):
+    """Translate Spanish text to English using unofficial Google Translate API."""
+    if not text:
+        return text
+    if text in _TRANSLATE_CACHE:
+        return _TRANSLATE_CACHE[text]
+    try:
+        r = requests.get(
+            'https://translate.googleapis.com/translate_a/single',
+            params={'client': 'gtx', 'sl': 'es', 'tl': 'en', 'dt': 't', 'q': text},
+            timeout=8, verify=False,
+        )
+        data = r.json()
+        translated = ''.join(seg[0] for seg in data[0] if seg[0])
+        _TRANSLATE_CACHE[text] = translated
+        return translated
+    except Exception:
+        return text
+
 BASE_API = 'https://www.contrataciones.gov.py/datos/api/v3/doc'
 BASE_WEB = 'https://www.contrataciones.gov.py'
 PORTAL = 'contrataciones.gov.py'
@@ -82,16 +103,14 @@ def parse(country='Paraguay', iso3='PRY'):
             snippet = f"{title} | {buyer_name} | {status}"
 
             s = score(title, snippet)
-            # If buyer is TSJE/electoral, give minimum score even if title keywords don't match
             if s <= 0 and is_election_buyer:
-                s = 40
+                s = 40  # boost score for TSJE/electoral buyer
 
-            if s <= 0:
-                continue
+            title_en = _translate_to_en(title)
 
             results.append({
                 'country': country, 'iso3': iso3, 'portal_name': PORTAL,
-                'title': title, 'url': url,
+                'title': title, 'title_en': title_en, 'url': url,
                 'published_date': pub_date,
                 'deadline_date': deadline,
                 'status': status or 'active',

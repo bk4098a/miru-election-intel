@@ -65,9 +65,10 @@ crawler/crawl.py          # CLI 오케스트레이터
 |---|---|---|
 | +40 | 강키워드 | election, EVM, DRE, VVPAT, выборы, eleição |
 | +15 | 약키워드 | biometric, voter, OMR, tabulation, KIEMS |
-| -30 | 노이즈 (자동 제외) | employee election, board election, union election |
+| -30 | 노이즈 | employee election, board election, union election |
 
-`score > 0`인 공고만 DB에 저장.
+**중요: `score`는 UI 정렬/필터용 메타데이터. 점수 무관 모든 공고를 DB에 저장.**  
+파서에서 `score > 0` 게이트를 제거했음. 사용자가 UI에서 키워드/점수로 직접 필터링.
 
 ### 빌드 스크립트 (`scripts/`)
 
@@ -95,9 +96,11 @@ Matplotlib Miru 브랜드 테마 유틸리티. `data/*.html` 지역별 보고서
 | `wp_portals.py` | 부탄 ECB / 알바니아 KQZ | ⚠️ ECB 타임아웃 / KQZ Next.js 재구축 |
 | `gojep.py` | 자메이카 GOJEP | ⚠️ JS 렌더링 필요 (Playwright 전환) |
 | `zakupki_kg.py` | 키르기스스탄 zakupki.gov.kg | 🔧 미테스트 |
-| `philgeps.py` | 필리핀 philgeps.gov.ph | ✅ 신규 — `/Indexes/` HTML 테이블 파싱 |
+| `philgeps.py` | 필리핀 notices.philgeps.gov.ph | ✅ Playwright — 선거 키워드 검색 (COMELEC/election/ballot/voting/biometric/precinct) |
 | `g2b_korea.py` | 한국 나라장터 g2b.go.kr | ✅ 신규 — data.go.kr API (`G2B_SERVICE_KEY` 필요) |
-| `tenders_kenya.py` | 케냐 tenders.go.ke | ✅ 신규 — JSON API + HTML fallback |
+| `tenders_kenya.py` | 케냐 iebc.or.ke | ✅ IEBC 정적 HTML — PDF 직접 링크, 313건, 최소 score=15 |
+| `ihec_iraq.py` | 이라크 ihec.iq | ✅ WP 사이트, 타이틀 12자 이상 필터, 점수 메타데이터만 |
+| `etenders_za.py` | 남아공 etenders.gov.za | ✅ 국가재무부 공식 포털, DataTables GET API, IEC 선거위 + 선거키워드 필터 |
 
 ---
 

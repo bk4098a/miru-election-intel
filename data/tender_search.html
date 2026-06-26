@@ -13,6 +13,12 @@
   --border:#222c3a;--hover:#161d28;--shadow:rgba(0,0,0,.4);
   --red:#EB0513;--blue:#3B86D6;--navy:#04185F;
 }
+html.light{
+  --bg:#f0f3f7;--card:#ffffff;--surface:#f5f7fa;
+  --text:#0d1421;--text2:#4a5568;--muted:#8090a4;
+  --border:#d1d9e4;--hover:#e8edf4;--shadow:rgba(0,0,0,.12);
+}
+*{transition:background-color .15s,color .15s,border-color .15s;}
 html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'Gmarket Sans',sans-serif;font-size:14px;line-height:1.5;}
 ::-webkit-scrollbar{width:8px;height:8px;}
 ::-webkit-scrollbar-track{background:transparent;}
@@ -147,6 +153,27 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
 .cat-chip{padding:2px 7px;border-radius:4px;font-size:10.5px;background:var(--surface);border:1px solid var(--border);color:var(--text2);}
 .deadline-warn{color:#f5a623;}
 .amount-text{font-size:11px;color:var(--text2);}
+.kw-tag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;
+  background:rgba(59,134,214,.13);color:var(--blue);border:1px solid rgba(59,134,214,.28);}
+
+/* ── AUTOCOMPLETE ── */
+#search-suggestions{
+  position:absolute;top:100%;left:0;right:0;z-index:200;
+  background:var(--card);border:1px solid var(--blue);
+  border-radius:0 0 9px 9px;box-shadow:0 6px 24px rgba(0,0,0,.4);
+  display:none;
+}
+.sug-item{
+  padding:9px 14px;cursor:pointer;
+  font-size:13px;color:var(--text2);
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--border);
+  transition:background .1s;
+}
+.sug-item:last-child{border-bottom:none;}
+.sug-item:hover,.sug-item.active{background:var(--hover);color:var(--text);}
+.sug-icon{font-size:14px;flex:0 0 auto;}
+.sug-type{font-size:10px;color:var(--muted);margin-left:auto;flex:0 0 auto;}
 
 /* ── PAGINATION ── */
 #pagination{display:flex;align-items:center;justify-content:center;gap:5px;padding:18px 0 0;}
@@ -253,16 +280,28 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
     <div class="dot"></div>
     <span>CONFIDENTIAL</span>
   </div>
+  <div id="google_translate_element" style="flex:0 0 auto;"></div>
+  <button id="theme-btn" onclick="app.toggleTheme()" title="테마 전환" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 11px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:7px;color:#fff;font-size:11.5px;cursor:pointer;white-space:nowrap;flex:0 0 auto;">☀ 라이트</button>
   <button id="alert-btn" onclick="app.openAlerts()">
     🔔 알람 설정
     <span id="alert-badge"></span>
   </button>
 </header>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'auto',
+    includedLanguages:'en,ko,ar,es,ru,fr',
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+  },'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <!-- ═══════════ HERO ═══════════ -->
 <div id="hero">
   <h1>조달 공고 검색</h1>
-  <p class="sub">전 세계 선거 기술 조달 공고 · 키워드 · 국가 · 카테고리 필터</p>
+  <p class="sub">전 세계 선거·조달 공고 전체 수집 · 키워드 · 국가 · 점수 필터 · 번역 지원</p>
   <div class="stats" id="hero-stats">
     <span class="stat-pill"><strong>—</strong> 건</span>
     <span class="stat-pill"><strong>—</strong> 개국</span>
@@ -272,12 +311,16 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
 
 <!-- ═══════════ SEARCH + FILTERS ═══════════ -->
 <div id="search-bar">
-  <div class="search-input-wrap">
+  <div class="search-input-wrap" id="search-wrap">
     <input id="search-input" type="text"
-      placeholder="키워드 검색 (예: EVM, voting machine, biometric, 선거...)"
-      oninput="app.onSearch(this.value)" autocomplete="off">
+      placeholder="키워드 검색 — EVM, ballot, 파라과이, Kenya, 선거..."
+      oninput="app.onSearch(this.value)"
+      onkeydown="app.onSearchKey(event)"
+      onfocus="app.onSearch(this.value)"
+      autocomplete="off">
     <button id="clear-search" onclick="app.clearSearch()" title="지우기">✕</button>
     <span id="search-icon-placeholder">🔍</span>
+    <div id="search-suggestions"></div>
   </div>
   <div class="filters-row">
     <select id="filter-region" class="filter-select" onchange="app.onRegionChange()">
@@ -303,19 +346,14 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
       <option value="">모든 국가</option>
     </select>
     <div class="filter-sep"></div>
-    <div class="chips-group" id="cpv-chips">
-      <span class="fchip active" data-cpv="" onclick="app.setCpv(this,'')">전체</span>
-      <span class="fchip" data-cpv="election_equipment" onclick="app.setCpv(this,'election_equipment')">선거장비</span>
-      <span class="fchip" data-cpv="biometric" onclick="app.setCpv(this,'biometric')">생체인식</span>
-      <span class="fchip" data-cpv="software" onclick="app.setCpv(this,'software')">소프트웨어</span>
-      <span class="fchip" data-cpv="services" onclick="app.setCpv(this,'services')">서비스</span>
+    <div class="chips-group" id="kw-chips">
+      <span class="fchip active" data-kw="" onclick="app.setKwChip(this,'')">전체</span>
+      <span class="fchip" data-kw="ballot" onclick="app.setKwChip(this,'ballot')">ballot</span>
+      <span class="fchip" data-kw="print" onclick="app.setKwChip(this,'print')">print</span>
+      <span class="fchip" data-kw="vote" onclick="app.setKwChip(this,'vote')">vote</span>
+      <span class="fchip" data-kw="election" onclick="app.setKwChip(this,'election')">election</span>
+      <span class="fchip" data-kw="biometric" onclick="app.setKwChip(this,'biometric')">biometric</span>
     </div>
-    <div class="filter-sep"></div>
-    <select id="filter-score" class="filter-select" onchange="app.applyFilters()">
-      <option value="0">모든 점수</option>
-      <option value="40">40점 이상 (선거 직접 관련)</option>
-      <option value="15">15점 이상 (관련 키워드)</option>
-    </select>
     <div class="filter-sep"></div>
     <input type="date" id="filter-from" class="date-input" title="발행일 시작" onchange="app.applyFilters()">
     <span style="font-size:11px;color:var(--muted);">~</span>
@@ -328,7 +366,6 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
   <span class="sort-label">정렬:</span>
   <div class="chips-group">
     <span class="fchip active" data-sort="crawled_at" onclick="app.setSort(this,'crawled_at')">최신순</span>
-    <span class="fchip" data-sort="score" onclick="app.setSort(this,'score')">점수순</span>
     <span class="fchip" data-sort="deadline_date" onclick="app.setSort(this,'deadline_date')">마감임박순</span>
   </div>
 </div>
@@ -402,14 +439,52 @@ const FLAG_MAP = {
   PAN:'🇵🇦',KHM:'🇰🇭',LAO:'🇱🇦',SGP:'🇸🇬',TWN:'🇹🇼',MNG:'🇲🇳',
 };
 
-const CPV_LABEL = {
-  election_equipment:'선거장비',
-  biometric:'생체인식',
-  software:'소프트웨어',
-  services:'서비스',
-  consumables:'소모품',
-  other:'기타',
+/* Korean country name → ISO3 aliases */
+const COUNTRY_KO = {
+  '파라과이':'PRY','케냐':'KEN','이라크':'IRQ','필리핀':'PHL','알바니아':'ALB','바레인':'BHR',
+  '한국':'KOR','대한민국':'KOR','코리아':'KOR','카자흐스탄':'KAZ','키르기스스탄':'KGZ',
+  '가나':'GHA','브라질':'BRA','자메이카':'JAM','부탄':'BTN','미국':'USA',
+  '남아공':'ZAF','남아프리카공화국':'ZAF','남아프리카':'ZAF',
+  '영국':'GBR','프랑스':'FRA','독일':'DEU','인도':'IND','인도네시아':'IDN',
+  '나이지리아':'NGA','이집트':'EGY','모로코':'MAR','탄자니아':'TZA','우간다':'UGA',
+  '에티오피아':'ETH','르완다':'RWA','중국':'CHN','일본':'JPN','베트남':'VNM',
+  '태국':'THA','말레이시아':'MYS','방글라데시':'BGD','파키스탄':'PAK','네팔':'NPL',
+  '아르헨티나':'ARG','멕시코':'MEX','콜롬비아':'COL','페루':'PER','칠레':'CHL',
+  '우루과이':'URY','도미니카':'DOM','아이티':'HTI','볼리비아':'BOL','에콰도르':'ECU',
+  '조지아':'GEO','아르메니아':'ARM','아제르바이잔':'AZE','우크라이나':'UKR',
+  '터키':'TUR','폴란드':'POL','루마니아':'ROU','세르비아':'SRB','크로아티아':'HRV',
+  '몬테네그로':'MNE','마케도니아':'MKD','보스니아':'BIH','몽골':'MNG','대만':'TWN',
+  '캄보디아':'KHM','미얀마':'MMR','싱가포르':'SGP','콩고':'COD','카메룬':'CMR',
+  '세네갈':'SEN','잠비아':'ZMB','짐바브웨':'ZWE','모잠비크':'MOZ','말라위':'MWI',
+  '수단':'SDN','남수단':'SSD','소말리아':'SOM','사우디':'SAU','아랍에미리트':'ARE',
+  '쿠웨이트':'KWT','오만':'OMN','카타르':'QAT','요르단':'JOR','이란':'IRN','이스라엘':'ISR',
 };
+
+/* ISO3 → Korean display name (for suggestions) */
+const COUNTRY_KO_NAME = Object.fromEntries(
+  Object.entries(COUNTRY_KO).map(([k,v])=>[v,k])
+);
+
+/* Regex overrides for keyword chips — prevents false matches like "selection"/"electricity" */
+const KW_REGEX = {
+  'election': /\belect/i,   // elect, election, electoral — NOT selection, electricity
+};
+
+/* Keywords to detect matches in card metadata */
+const KW_DETECT = [
+  'ballot','print','vote','election','biometric',
+  'EVM','DRE','VVPAT','VCM','ACM','PCOS','OMR',
+  'COMELEC','IEBC','IHEC','KIEMS','BVR',
+  'tabulation','voter registration','indelible ink','optical scanner',
+  'выборы','انتخابات',
+];
+
+/* Suggestions shown in autocomplete dropdown */
+const SUGGEST_KW = [
+  'ballot','print','vote','election','biometric',
+  'EVM','DRE','VVPAT','COMELEC','IEBC','KIEMS',
+  'tabulation','voter registration','indelible ink','optical scanner',
+];
 
 const REGION_MAP = {
   'East Asia':['KOR','JPN','CHN','TWN','MNG','PRK'],
@@ -467,9 +542,26 @@ class App {
     this.alertKeywords  = JSON.parse(localStorage.getItem('miru_alert_keywords') || '[]');
     this.pendingKeywords = [...this.alertKeywords];
     this._searchTimer = null;
+    this._sugIdx = -1;
+  }
+
+  /* ── Theme ── */
+  _applyTheme(t) {
+    document.documentElement.classList.toggle('light', t === 'light');
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = t === 'light' ? '☾ 다크' : '☀ 라이트';
+    localStorage.setItem('miru_theme', t);
+  }
+
+  toggleTheme() {
+    const isLight = document.documentElement.classList.contains('light');
+    this._applyTheme(isLight ? 'dark' : 'light');
   }
 
   init() {
+    const saved = localStorage.getItem('miru_theme');
+    if (saved === 'dark' || saved === 'light') this._applyTheme(saved);
+
     const T = window.MIRU_TENDERS;
     const M = window.MIRU_TENDERS_META;
 
@@ -544,6 +636,7 @@ class App {
     const icon  = document.getElementById('search-icon-placeholder');
     clear.style.display = val ? 'block' : 'none';
     icon.style.display  = val ? 'none'  : 'block';
+    this._showSuggestions(val);
     this._searchTimer = setTimeout(() => { this.page = 1; this.applyFilters(); }, 220);
   }
 
@@ -551,8 +644,118 @@ class App {
     document.getElementById('search-input').value = '';
     document.getElementById('clear-search').style.display = 'none';
     document.getElementById('search-icon-placeholder').style.display = 'block';
+    this.hideSuggestions();
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    const allChip = document.querySelector('#kw-chips .fchip[data-kw=""]');
+    if (allChip) allChip.classList.add('active');
     this.page = 1;
     this.applyFilters();
+  }
+
+  setKwChip(el, kw) {
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    const inp = document.getElementById('search-input');
+    inp.value = kw;
+    document.getElementById('clear-search').style.display = kw ? 'block' : 'none';
+    document.getElementById('search-icon-placeholder').style.display = kw ? 'none' : 'block';
+    this.hideSuggestions();
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  selectSuggestion(val) {
+    const inp = document.getElementById('search-input');
+    inp.value = val;
+    document.getElementById('clear-search').style.display = 'block';
+    document.getElementById('search-icon-placeholder').style.display = 'none';
+    this.hideSuggestions();
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    const allChip = document.querySelector('#kw-chips .fchip[data-kw=""]');
+    if (allChip) allChip.classList.add('active');
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  hideSuggestions() {
+    document.getElementById('search-suggestions').style.display = 'none';
+    this._sugIdx = -1;
+  }
+
+  onSearchKey(e) {
+    const sug   = document.getElementById('search-suggestions');
+    const items = sug.querySelectorAll('.sug-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      this._sugIdx = Math.min((this._sugIdx >= 0 ? this._sugIdx : -1) + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('active', i === this._sugIdx));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      this._sugIdx = Math.max((this._sugIdx >= 0 ? this._sugIdx : 0) - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('active', i === this._sugIdx));
+    } else if (e.key === 'Enter') {
+      if (this._sugIdx >= 0 && items[this._sugIdx]) {
+        items[this._sugIdx].click();
+      } else {
+        this.hideSuggestions();
+      }
+    } else if (e.key === 'Escape') {
+      this.hideSuggestions();
+    }
+  }
+
+  _showSuggestions(val) {
+    const sug = document.getElementById('search-suggestions');
+    if (!val || val.length < 1) { sug.style.display = 'none'; return; }
+    const q = val.toLowerCase();
+    const items = [];
+
+    // Korean country aliases
+    const koMatches = Object.entries(COUNTRY_KO)
+      .filter(([ko]) => ko.startsWith(q) || ko.includes(q))
+      .slice(0, 4);
+    koMatches.forEach(([ko, iso]) => {
+      const t = this.allTenders.find(x => x.iso3 === iso);
+      const en = t ? t.country : iso;
+      const flag = FLAG_MAP[iso] || '🌐';
+      items.push({ icon: flag, label: `${ko} (${en})`, val: ko, type: '국가' });
+    });
+
+    // English country names
+    const enCountries = [...new Set(this.allTenders.map(t => t.country).filter(Boolean))];
+    enCountries
+      .filter(c => c.toLowerCase().startsWith(q) || c.toLowerCase().includes(q))
+      .slice(0, 3)
+      .forEach(c => {
+        const t = this.allTenders.find(x => x.country === c);
+        const flag = FLAG_MAP[t && t.iso3] || '🌐';
+        if (!items.some(it => it.val === c)) {
+          items.push({ icon: flag, label: c, val: c, type: '국가' });
+        }
+      });
+
+    // Keywords — also match if typed prefix triggers KW_REGEX (e.g. "elect" → shows "election")
+    SUGGEST_KW
+      .filter(kw => {
+        const kwl = kw.toLowerCase();
+        if (kwl.includes(q)) return true;
+        const re = KW_REGEX[kwl];
+        return re ? re.test(q) : false;
+      })
+      .slice(0, 4)
+      .forEach(kw => items.push({ icon: '🔑', label: kw, val: kw, type: '키워드' }));
+
+    if (!items.length) { sug.style.display = 'none'; return; }
+
+    sug.innerHTML = items.slice(0, 8).map(it =>
+      `<div class="sug-item" onclick="app.selectSuggestion('${_esc(it.val)}')">
+        <span class="sug-icon">${it.icon}</span>
+        <span>${_esc(it.label)}</span>
+        <span class="sug-type">${it.type}</span>
+      </div>`
+    ).join('');
+    sug.style.display = 'block';
+    this._sugIdx = -1;
   }
 
   setCpv(el, val) {
@@ -575,7 +778,6 @@ class App {
     const q       = document.getElementById('search-input').value.trim().toLowerCase();
     const region  = document.getElementById('filter-region').value;
     const country = document.getElementById('filter-country').value;
-    const minScore = parseInt(document.getElementById('filter-score').value || '0');
     const fromDate = document.getElementById('filter-from').value;
     const toDate   = document.getElementById('filter-to').value;
 
@@ -583,17 +785,26 @@ class App {
       if (region  && t.region !== region)  return false;
       if (country && t.iso3   !== country) return false;
       if (this.cpv && t.cpv   !== this.cpv) return false;
-      if ((t.score || 0) < minScore) return false;
       if (fromDate && t.published_date && t.published_date.slice(0,10) < fromDate) return false;
       if (toDate   && t.published_date && t.published_date.slice(0,10) > toDate)   return false;
       if (q) {
-        const haystack = (
-          (t.title  || '') + ' ' +
-          (t.snippet|| '') + ' ' +
-          (t.buyer  || '') + ' ' +
-          (t.country|| '')
-        ).toLowerCase();
-        if (!haystack.includes(q)) return false;
+        // Korean alias exact match → filter by ISO3
+        const koIso = COUNTRY_KO[q];
+        if (koIso) {
+          if (t.iso3 !== koIso) return false;
+        } else {
+          const haystack = (
+            (t.title    || '') + ' ' +
+            (t.title_en || '') + ' ' +
+            (t.snippet  || '') + ' ' +
+            (t.buyer    || '') + ' ' +
+            (t.country  || '') + ' ' +
+            (t.iso3     || '') + ' ' +
+            (COUNTRY_KO_NAME[t.iso3] || '')
+          ).toLowerCase();
+          const re = KW_REGEX[q];
+          if (re ? !re.test(haystack) : !haystack.includes(q)) return false;
+        }
       }
       return true;
     });
@@ -652,22 +863,24 @@ class App {
           ((t.title||'') + ' ' + (t.snippet||'')).toLowerCase().includes(k.toLowerCase())
         );
 
-      const scoreClass = (t.score || 0) >= 40 ? 'score-40'
-                       : (t.score || 0) >= 15 ? 'score-15'
-                       : 'score-0';
-
       const deadlineWarn = t.deadline_date
         && t.deadline_date.slice(0,10) <= week
         && t.deadline_date.slice(0,10) >= today;
 
-      const cpvLabel = CPV_LABEL[t.cpv] || '기타';
+      const hayText = ((t.title || '') + ' ' + (t.title_en || '') + ' ' + (t.snippet || '')).toLowerCase();
+      const matchedKws = KW_DETECT.filter(kw => {
+        const re = KW_REGEX[kw.toLowerCase()];
+        return re ? re.test(hayText) : hayText.includes(kw.toLowerCase());
+      }).slice(0, 4);
+      const kwHtml = matchedKws.map(k => `<span class="kw-tag">${_esc(k)}</span>`).join('');
       const pub  = t.published_date ? t.published_date.slice(0,10) : '';
       const dead = t.deadline_date  ? t.deadline_date.slice(0,10)  : '';
       const url  = t.url || '#';
 
+      const displayTitle = (t.title_en && t.title_en !== t.title) ? t.title_en : t.title;
       const titleHtml = (url !== '#')
-        ? `<a href="${_esc(url)}" target="_blank" rel="noopener">${_esc(t.title)}</a>`
-        : _esc(t.title);
+        ? `<a href="${_esc(url)}" target="_blank" rel="noopener">${_esc(displayTitle)}</a>`
+        : _esc(displayTitle);
 
       const amountHtml = (t.amount && t.amount > 0)
         ? `<span class="amount-text">${t.amount.toLocaleString()} ${_esc(t.currency||'')}</span>`
@@ -682,8 +895,8 @@ class App {
         ${isAlertMatch ? ' <span class="new-badge">🔔 NEW</span>' : ''}
       </div>
       <div class="tc-meta">
-        <span>${_esc(t.country || '')}</span>
-        <span class="cat-chip">${cpvLabel}</span>
+        <span>${flag} ${_esc(t.country || '')}</span>
+        ${kwHtml}
         ${t.buyer  ? `<span class="tc-buyer" title="${_esc(t.buyer)}">${_esc(t.buyer)}</span>` : ''}
         ${pub  ? `<span>📅 ${pub}</span>` : ''}
         ${dead ? `<span class="${deadlineWarn ? 'deadline-warn' : ''}">⏰ ${dead}${deadlineWarn ? ' (마감임박!)' : ''}</span>` : ''}
@@ -691,7 +904,6 @@ class App {
       ${t.snippet ? `<div class="tc-snippet">${_esc(t.snippet)}</div>` : ''}
     </div>
     <div class="tc-right">
-      <span class="score-badge ${scoreClass}">${t.score || 0}점</span>
       ${amountHtml}
     </div>
   </div>
@@ -823,7 +1035,12 @@ class App {
 
 /* ── Bootstrap ── */
 const app = new App();
-document.addEventListener('DOMContentLoaded', () => app.init());
+document.addEventListener('DOMContentLoaded', () => {
+  app.init();
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#search-wrap')) app.hideSuggestions();
+  });
+});
 </script>
 </body>
 </html>

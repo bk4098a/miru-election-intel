@@ -115,8 +115,6 @@ def parse(country='Jamaica', iso3='JAM'):
         title = row['title']
         if not title or title in seen_titles:
             continue
-        if not _is_relevant(title):
-            continue
         seen_titles.add(title)
         snippet = row.get('snippet', title)
         results.append({
