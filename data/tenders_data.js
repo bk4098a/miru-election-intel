@@ -18,7 +18,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Rezultate zgjedhore Pjesëmarrja në zgjedhje Subjektet zgjedhore Kandidatët Dokumentet e kandidimit Formularët e dekriminalizimit Komisionet Zgjedhore Verifikimi paszgjedhor www.cec.org.al Arkiva.kqz.gov.al",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:55Z",
+    "crawled_at": "2026-06-27T23:09:09Z",
     "category": "other"
   },
   {
@@ -39,7 +39,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Qendra ime e votimit Subjektet zgjedhore Procedura e votimit Kandidatët",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:55Z",
+    "crawled_at": "2026-06-27T23:09:09Z",
     "category": "other"
   },
   {
@@ -60,7 +60,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Qendra ime e votimit Subjektet zgjedhore Procedura e votimit Kandidatët",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:55Z",
+    "crawled_at": "2026-06-27T23:09:09Z",
     "category": "other"
   },
   {
@@ -81,7 +81,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "2 | 19/06/2026 | 10/07/2026 09:00 AM | Supply, Delivery and Installation of Automated Biometrics Identification System (ABIS) Solution with Database Inter-Connectivity, Information Technology ,COMMISSION ON ELECTIONS",
     "score": 55,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "biometric"
   },
   {
@@ -102,7 +102,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "5 | 06/06/2026 | 03/07/2026 08:00 AM | Supply and Delivery of Document Scanners for COMELEC Main and Field Offices (Project ID No. 13-2026-DSCAN), Information Technology ,COMMISSION ON ELECTIONS",
     "score": 55,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -116,14 +116,14 @@ window.MIRU_TENDERS = [
     "title_en": "",
     "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13084587&highlight=true",
     "published_date": "2026-06-26",
-    "deadline_date": "2026-06-29",
+    "deadline_date": "",
     "status": "Open",
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "20 | 26/06/2026 | 29/06/2026 10:00 AM | Purchase of supplies and materials for Solo Parent Orientation and Election of New Officer, Office Supplies and Devices ,MUNICIPALITY OF BUENAVISTA, BOHOL",
+    "snippet": "PublishClosingTitle2126/06/202629/06/2026 10:00 AMPurchase of supplies and materials for Solo Parent Orientation and Election of New Officer, Office Supplies and Devices ,MUNICIPALITY OF BUENAVISTA, BOHOL |  | Publish | Closing",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -142,9 +142,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "19 | 26/06/2026 | 29/06/2026 10:00 AM | Meals and Snacks for Solo Parent Orientation on RA 8972 and Election of New Officer, Catering Services ,MUNICIPALITY OF BUENAVISTA, BOHOL",
+    "snippet": "20 | 26/06/2026 | 29/06/2026 10:00 AM | Meals and Snacks for Solo Parent Orientation on RA 8972 and Election of New Officer, Catering Services ,MUNICIPALITY OF BUENAVISTA, BOHOL",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "services"
   },
   {
@@ -163,9 +163,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "18 | 24/06/2026 | 29/06/2026 01:00 PM | Supply and delivery of Food and Accommodation  for use during  YFCP  Start Up (Open Category) Selection and Screening of Applicants 2026  for Provincial and Regional Level (per lot basis), Hotel and Lodging and Meeting Facilities ,DEPARTMENT OF AGRICULTURE - R",
+    "snippet": "19 | 24/06/2026 | 29/06/2026 01:00 PM | Supply and delivery of Food and Accommodation  for use during  YFCP  Start Up (Open Category) Selection and Screening of Applicants 2026  for Provincial and Regional Level (per lot basis), Hotel and Lodging and Meeting Facilities ,DEPARTMENT OF AGRICULTURE - R",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -184,9 +184,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "17 | 26/06/2026 | 30/06/2026 09:30 AM | Provision of Meals and Snacks re: Children Assembly Cum Election, Catering Services ,CITY OF PALAYAN, NUEVA ECIJA",
+    "snippet": "18 | 26/06/2026 | 30/06/2026 09:30 AM | Provision of Meals and Snacks re: Children Assembly Cum Election, Catering Services ,CITY OF PALAYAN, NUEVA ECIJA",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "election_equipment"
   },
   {
@@ -205,9 +205,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "16 | 24/06/2026 | 30/06/2026 10:00 AM | Catering Sevices, Venue and Accommodation for the Training on Blood Donor Selection and Recruitment, Retention and Basic Phlebotomy for HRH on September 28-30, 2026 in a Hotel in Masbate City, Catering Services ,DEPARTMENT OF HEALTH - CENTER FOR HEALTH DEVELOP",
+    "snippet": "17 | 24/06/2026 | 30/06/2026 10:00 AM | Catering Sevices, Venue and Accommodation for the Training on Blood Donor Selection and Recruitment, Retention and Basic Phlebotomy for HRH on September 28-30, 2026 in a Hotel in Masbate City, Catering Services ,DEPARTMENT OF HEALTH - CENTER FOR HEALTH DEVELOP",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "services"
   },
   {
@@ -226,9 +226,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "15 | 26/06/2026 | 30/06/2026 12:00 PM | PROCUREMENT OF DIGITAL DUPLICATING MACHINE FOR USE OF OPES - NIR (PROJECT ID: NIR2026008), Printing Supplies ,COMMISSION ON ELECTION - DUMAGUTE CITY, NEGROS ORIENTAL",
+    "snippet": "16 | 26/06/2026 | 30/06/2026 12:00 PM | PROCUREMENT OF DIGITAL DUPLICATING MACHINE FOR USE OF OPES - NIR (PROJECT ID: NIR2026008), Printing Supplies ,COMMISSION ON ELECTION - DUMAGUTE CITY, NEGROS ORIENTAL",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -247,9 +247,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "14 | 25/06/2026 | 30/06/2026 04:00 PM | Procurement of Banaag Trophies for the 2026 PRAISE Awarding Ceremony  (Project ID No.  SVP-2026-084-PRAISE-TROPHY), Tokens and Awards ,COMMISSION ON ELECTIONS",
+    "snippet": "15 | 25/06/2026 | 30/06/2026 04:00 PM | Procurement of Banaag Trophies for the 2026 PRAISE Awarding Ceremony  (Project ID No.  SVP-2026-084-PRAISE-TROPHY), Tokens and Awards ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -268,9 +268,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "13 | 25/06/2026 | 30/06/2026 04:00 PM | Procurement of Customized Sablay for the 2026 PRAISE  Awarding Ceremony  (Project ID No. SVP-2026-085-PRAISE-SABLAY), Tokens and Awards ,COMMISSION ON ELECTIONS",
+    "snippet": "14 | 25/06/2026 | 30/06/2026 04:00 PM | Procurement of Customized Sablay for the 2026 PRAISE  Awarding Ceremony  (Project ID No. SVP-2026-085-PRAISE-SABLAY), Tokens and Awards ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -291,7 +291,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "12 | 26/06/2026 | 30/06/2026 05:00 PM | Supply and Delivery of Senior Executive Chair for use of the  Clerk of the Commission (Project ID No. SVP-2026-083-EXECHAIR), Furniture ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -310,9 +310,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "11 | 25/06/2026 | 30/06/2026 05:00 PM | Supply, Delivery and Installation of One (1) Lot Glass Partition and Glass Door for BSD conference Room Facade, PMD, Construction Projects ,COMMISSION ON ELECTIONS",
+    "snippet": "13 | 25/06/2026 | 30/06/2026 05:00 PM | Supply, Delivery and Installation of One (1) Lot Glass Partition and Glass Door for BSD conference Room Facade, PMD, Construction Projects ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -331,9 +331,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "10 | 26/06/2026 | 30/06/2026 05:00 PM | Provision of Printing Service Provider for the 2026 PRAISE Awarding Ceremony Souvenir Programme  (Project ID No. SVP-2026-091-PRINTING PROVIDER), Printing Services ,COMMISSION ON ELECTIONS",
+    "snippet": "11 | 26/06/2026 | 30/06/2026 05:00 PM | Provision of Printing Service Provider for the 2026 PRAISE Awarding Ceremony Souvenir Programme  (Project ID No. SVP-2026-091-PRINTING PROVIDER), Printing Services ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "services"
   },
   {
@@ -352,9 +352,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "9 | 26/06/2026 | 01/07/2026 05:00 PM | Supply, Delivery and Installation of One (1) Unit 5 TR Split-Type Floor-Mounted Air-Conditioning Unit with Feeder Line and Circuit Breaker with Nema 3R Enclosure, Airconditioning and Airconditioning Systems ,COMMISSION ON ELECTIONS",
+    "snippet": "10 | 26/06/2026 | 01/07/2026 05:00 PM | Supply, Delivery and Installation of One (1) Unit 5 TR Split-Type Floor-Mounted Air-Conditioning Unit with Feeder Line and Circuit Breaker with Nema 3R Enclosure, Airconditioning and Airconditioning Systems ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "software"
   },
   {
@@ -375,7 +375,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "4 | 11/06/2026 | 03/07/2026 08:30 AM | SUPPLY AND DELIVERY OF CORRUGATED BOXES AND BOARD PADDINGS FOR USE IN THE 2026 BARANGAY AND SANGGUNIANG KABATAAN ELECTIONS (BSKE) (Project ID No. 06-2026-BSKE-CB), Paper Materials and Products ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -396,7 +396,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "8 | 12/06/2026 | 02/07/2026 09:00 AM | Supply and Delivery of Indelible Ink for use in the 14 September 2026 BARMM Parliamentary Elections (SBAC Ref No. 03-2026-INK), Office Equipment Supplies and Consumables ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "election_equipment"
   },
   {
@@ -417,7 +417,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "6 | 04/06/2026 | 03/07/2026 08:00 AM | Supply, Delivery, Installation, and Testing of Dedicated Internet Access (DIA) for the Offices of the City Election Officers (OCEOs) in the Highly Urbanized Cities (HUCs) (Project ID No. 12-2026-DIA), Internet Services ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "services"
   },
   {
@@ -438,7 +438,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "3 | 18/06/2026 | 08/07/2026 09:00 AM | Supply and Delivery of Laptop Computers for use in the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM) Parliamentary Elections, Information Technology ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -459,8 +459,29 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "2 | 22/05/2026 | 03/07/2026 08:00 AM | Supply and Delivery of All-in-One Printer for the COMELEC Main and Field Offices  (Project ID No. 11-2026-PRINTER), Information Technology ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
+  },
+  {
+    "id": 1865,
+    "notice_key": "30ef859c488dd2c5fe57",
+    "country": "Philippines",
+    "iso3": "PHL",
+    "region": "Southeast Asia",
+    "portal_name": "philgeps.gov.ph",
+    "title": "Supply, Delivery, Installation, Repair and Preventive Maintenance Services for Access Door and Biometrics Access Control System with Devices for ITD  (Project ID No. SVP-2026-089-CONTROL SYTEM)",
+    "title_en": "",
+    "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13090509&highlight=true",
+    "published_date": "2026-06-28",
+    "deadline_date": "2026-07-01",
+    "status": "Open",
+    "buyer": "PhilGEPS",
+    "amount": null,
+    "currency": "PHP",
+    "snippet": "9 | 28/06/2026 | 01/07/2026 05:00 PM | Supply, Delivery, Installation, Repair and Preventive Maintenance Services for Access Door and Biometrics Access Control System with Devices for ITD  (Project ID No. SVP-2026-089-CONTROL SYTEM), Security Surveillance and Detection Equipment ,COMMISSION ON ELECT",
+    "score": 15,
+    "crawled_at": "2026-06-27T23:08:20Z",
+    "category": "biometric"
   },
   {
     "id": 250,
@@ -480,7 +501,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "PublishClosingTitle119/06/202614/07/2026 10:00 AMCONSTRUCTION OF BACOLOD CITY POLICE PRECINCT 8, TANGUB, BACOLOD CITY, Construction Projects ,PHILIPPINE NATIONAL POLICE - REGION VI |  | Publish | Closing",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -499,9 +520,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "6 | 24/06/2026 | 29/06/2026 01:00 AM | PR#26-06-0126-I Additional Fingerprint Biometric and Software for employees of the City Government, CHRMO (CMIS), Office Equipment ,CITY GOVERNMENT OF STO. TOMAS, BATANGAS",
+    "snippet": "7 | 24/06/2026 | 29/06/2026 01:00 AM | PR#26-06-0126-I Additional Fingerprint Biometric and Software for employees of the City Government, CHRMO (CMIS), Office Equipment ,CITY GOVERNMENT OF STO. TOMAS, BATANGAS",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "biometric"
   },
   {
@@ -520,9 +541,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "5 | 20/06/2026 | 30/06/2026 08:30 AM | SUPPLY AND DELIVERY OF 22 UNITS BIOMETRIC MACHINE FOR 22 IDENTIFIED CHILD DEVELOPMENT CENTERS UNDER SUPPLEMENTAL BUDGET CY 2026, Office Supplies and Devices ,MUNICIPALITY OF MANOLO FORTICH, BUKIDNON",
+    "snippet": "6 | 20/06/2026 | 30/06/2026 08:30 AM | SUPPLY AND DELIVERY OF 22 UNITS BIOMETRIC MACHINE FOR 22 IDENTIFIED CHILD DEVELOPMENT CENTERS UNDER SUPPLEMENTAL BUDGET CY 2026, Office Supplies and Devices ,MUNICIPALITY OF MANOLO FORTICH, BUKIDNON",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "biometric"
   },
   {
@@ -541,9 +562,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "4 | 24/06/2026 | 01/07/2026 09:00 AM | PROVISION OF BIOMETRIC ATTENDANCE SYSTEM AND HEAVY - DUTY MULTIFUNCTION PRINTER FOR THE RURAL HEALTH UNIT OF PRESENTACION, Office Equipment ,MUNICIPALITY OF PRESENTACION, CAMARINES SUR",
+    "snippet": "5 | 24/06/2026 | 01/07/2026 09:00 AM | PROVISION OF BIOMETRIC ATTENDANCE SYSTEM AND HEAVY - DUTY MULTIFUNCTION PRINTER FOR THE RURAL HEALTH UNIT OF PRESENTACION, Office Equipment ,MUNICIPALITY OF PRESENTACION, CAMARINES SUR",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "biometric"
   },
   {
@@ -564,7 +585,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "PublishClosingTitle125/06/202614/07/2026 09:00 AMIB NO. 2026-45 Supply, Delivery, Installation, Configuration and Commissioning of Human Resource Information System Inclusive of Brand New, Branded Biometric Hardware and Computer Stations with NAS, R, Information Technology ,EASTERN VISAYAS MEDICAL C",
     "score": 15,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "biometric"
   },
   {
@@ -585,7 +606,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "5 | 25/06/2026 | 29/06/2026 10:00 AM | Purchase of Office Blinds and Tables to be used at Mayor's Office, HR Office, Comelec Office and MTC Office, LGU-Mangatarem, Pangasinan, Furniture ,MUNICIPALITY OF MANGATAREM, PANGASINAN",
     "score": 0,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -606,7 +627,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "4 | 26/06/2026 | 29/06/2026 02:00 PM | FABRICATION AND INSTALLATION OF ALUMINUM GLASS CABINET AT COMELEC OFFICE, Construction Projects ,MUNICIPALITY OF RAMON, ISABELA",
     "score": 0,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -627,7 +648,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "3 | 26/06/2026 | 30/06/2026 10:00 AM | SUPPLY AND DELIVERY OF OFFICE EQUIPMENT AND OTHER SUPPLIES FOR USE AT MAYOR’S, ICT, COA, COMELEC AND MDRRMO., Office Equipment ,MUNICIPALITY OF CAUAYAN, NEGROS OCCIDENTAL",
     "score": 0,
-    "crawled_at": "2026-06-26T23:12:06Z",
+    "crawled_at": "2026-06-27T23:08:20Z",
     "category": "other"
   },
   {
@@ -648,7 +669,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "0010570012 | Electoral Commission (IEC) | Supplies: General | National",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "other"
   },
   {
@@ -669,7 +690,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "EWCBID01/2025 RE-ADV | Ekurhuleni West TVET College | Office administrative, office support and other business support activities | Gauteng",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "services"
   },
   {
@@ -690,7 +711,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "IEC/LG-04/2026 | Electoral Commission (IEC) | Printing and reproduction of recorded media | National",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "election_equipment"
   },
   {
@@ -711,7 +732,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "IEC/ICT-04/2026 | Electoral Commission (IEC) | Services: Professional | National",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "software"
   },
   {
@@ -732,7 +753,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "0010566886 | Electoral Commission (IEC) | Information and communication | National",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "other"
   },
   {
@@ -753,7 +774,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "WRC 002-2026/27 | Water Research Commission | Services: Professional | Gauteng",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:23Z",
+    "crawled_at": "2026-06-27T23:06:35Z",
     "category": "biometric"
   },
   {
@@ -774,7 +795,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "MANTENIMIENTO Y REPARACIÓN DE LA SEDE DEL TRIBUNAL ELECTORAL DE SAN JUAN BAUTISTA - DEPARTAMENTO DE MISIONES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -795,7 +816,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESION DE BOLETINES DE VOTO PARA LA JUSTICIA ELECTORAL PLURIANUAL 2017/2018 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -816,7 +837,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE BOLETINES DE VOTO PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -837,7 +858,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "REMODELACIÓN Y AMPLIACIÓN DEL BLOQUE H DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL PARA EL DEPÓSITO Y RESGUARDO DE BIENES INSTITUCIONALES Y BOLETINES DE VOTO EN EL MARCO DE LA LEY N° 6318/19 - PLURIANUAL 2021/2022 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -858,7 +879,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE BOLETINES DE VOTO PARA LA ELECCIÓN DE INTENDENTE MUNICIPAL DE CIUDAD DEL ESTE | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -879,7 +900,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMÁTICOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - AD REFÉRENDUM A LA AMPLIACIÓN PRESUPUESTARIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -900,7 +921,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN E INSTALACIÓN DE ELEVADOR DE CARGA DE ALTA CAPACIDAD EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -921,7 +942,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS MÓVILES PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - AD REFERENDUM A LA AMPLIACIÓN PRESUPUESTARIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -942,7 +963,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MÓDEMS PORTÁTILES PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -963,7 +984,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE IMPRESORAS MULTIFUNCIÓN DE ALTA PRODUCCIÓN PARA EXPEDIENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -984,7 +1005,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN E INSTALACIÓN DE ELEVADOR DE CARGA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PLAN FINANCIERO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1005,7 +1026,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MUEBLES, ACCESORIOS, EQUIPOS INFORMÁTICOS Y DE OFICINA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1026,7 +1047,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MAQUINARIAS, HERRAMIENTAS Y EQUIPOS VARIOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1047,7 +1068,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ESTANTES METÁLICOS CON ESTRUCTURAS REFORZADAS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PLAN FINANCIERO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1068,7 +1089,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS AUDIOVISUALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1089,7 +1110,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS DE COMUNICACIÓN PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1110,7 +1131,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE HOTELERÍA Y ALQUILER DE SALONES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1131,7 +1152,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COMUNICACIÓN POR APN, TELEFONÍA MÓVIL, ENLACES DE FIBRA ÓPTICA Y VM CLOUD PARA LA IMPLEMENTACIÓN DEL TREP E INTERNET DE CONTINGENCIA, SEGURIDAD DE SITIOS WEB Y CORREOS ELECTRÓNICOS PARA LA JUSTICIA ELECTORAL EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PL",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1152,7 +1173,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1173,7 +1194,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN RADIO EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1194,7 +1215,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE CARTELERÍA EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023 - AD REFERÉNDUM AL PRESUPUESTO 2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1215,7 +1236,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS DIGITALES Y REDES SOCIALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1236,7 +1257,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE TEXTILES, CALZADOS Y VESTUARIOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023 - AD REFERÉNDUM AL PRESUPUESTO 2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1257,7 +1278,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1278,7 +1299,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE TRANSPORTE DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA, MATERIALES, ÚTILES, DOCUMENTOS Y AGENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1299,7 +1320,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES EN CUMPLIMIENTO DE LO DISPUESTO EN EL CÓDIGO ELECTORAL EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1320,7 +1341,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASISTENCIA TÉCNICA PARA LA ACTUALIZACIÓN, ADECUACIÓN Y MODIFICACIÓN DEL SISTEMA DE TRANSMISIÓN DE RESULTADOS ELECTORALES PRELIMINARES (TREP) EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE)",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1341,7 +1362,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "APLICACIÓN DEL SISTEMA DE VOTACIÓN Y ESCRUTINIO ELECTRÓNICO PARA LAS ELECCIONES INTERNAS SIMULTÁNEAS 2022 Y LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023, EN EL MARCO DE LO DISPUESTO EN LA LEY N° 6318/2019, BAJO LA MODALIDAD DE ARRENDAMIENTO - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1362,7 +1383,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE TRANSPORTE DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA, MATERIALES, ÚTILES, DOCUMENTOS Y AGENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1383,7 +1404,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN CARTELES LED EN SITIOS DE ALTA CONCURRENCIA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1404,7 +1425,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1425,7 +1446,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1446,7 +1467,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ALQUILER DE TOLDOS, MESAS, SILLAS, TARIMAS, EQUIPOS AUDIOVISUALES Y ELEMENTOS VARIOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1467,7 +1488,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE INSUMOS METALICOS Y NO METALICOS, CAUCHOS Y HERRAMIENTAS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2020 - PLURIANUAL 2019/2020 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1488,7 +1509,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS ESCRITOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1509,7 +1530,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ARRENDAMIENTO DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA Y SERVICIOS CONEXOS PARA LA APLICACIÓN DEL SISTEMA DE VOTACIÓN Y ESCRUTINIO ELECTRÓNICO PARA LAS ELECCIONES MUNICIPALES 2026, AD REFERÉNDUM AL PRESUPUESTO 2026. | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1530,7 +1551,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Textiles, Calzados Y Vestuarios, En El Marco De Las Elecciones Municipales 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1551,7 +1572,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COMUNICACIÓN POR APN, TELEFONÍA MÓVIL, ENLACES DE FIBRA ÓPTICA Y VM CLOUD PARA LA IMPLEMENTACIÓN DEL TREP EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1572,7 +1593,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS DIGITALES Y REDES SOCIALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1593,7 +1614,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1614,7 +1635,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN RADIO EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1635,7 +1656,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Impresión En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1656,7 +1677,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS ESCRITOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1677,7 +1698,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASISTENCIA TÉCNICA PARA LA ACTUALIZACIÓN, ADECUACIÓN Y MODIFICACIÓN DEL SISTEMA DE TRANSMISIÓN DE RESULTADOS ELECTORALES PRELIMINARES (TREP) EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1698,7 +1719,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Hotelería, Alquiler De Salones Y Gastronómicos En El Marco De Las Elecciones Municipales 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1719,7 +1740,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Transporte De Materiales, Útiles, Documentos, Agentes Electorales Y Máquinas De Votación Electrónica, En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Plan Financiero 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1740,7 +1761,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ALQUILER DE TOLDOS, MESAS, SILLAS, TARIMAS, EQUIPOS AUDIOVISUALES Y ELEMENTOS VARIOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1761,7 +1782,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Tóner, Útiles De Escritorio, Oficina Y Enseñanza, En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1782,7 +1803,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE CARGA Y DESCARGA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1803,7 +1824,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN (TRECE - UNICANAL) EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 - SEGUNDA CONVOCATORIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1824,7 +1845,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Impresión De Cartelería En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1845,7 +1866,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Mantenimiento, Reparación, Extensión De Garantía Y Soporte Técnico Del Data Center De La Justicia Electoral - Plurianual 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1866,7 +1887,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS DE SEGURIDAD Y RENOVACIÓN DE LICENCIAS DE SISTEMA DE PROTECCIÓN PARA EL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1887,7 +1908,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTOR GENERADOR DE LA MARCA SDMO PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1908,7 +1929,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "AMPLIACIÓN DEL STORAGE DEL DATA CENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1929,7 +1950,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN, MONTAJE E INSTALACIÓN DE EQUIPOS AUDIOVISUALES PARA EL SALÓN AUDITORIO Y LA SALA DE SESIONES DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1950,7 +1971,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1971,7 +1992,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE CONSTRUCCIÓN DE POZO ARTESIANO PARA LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -1992,7 +2013,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONSTRUCCIÓN DE DEPÓSITO Y OFICINAS PARA EL RESGUARDO DE EQUIPOS INSTITUCIONALES Y ZONAS DE TRABAJO PARA LA ORGANIZACIÓN DE ELECCIONES, EN EL PLAN DE RECUPERACIÓN DE ESPACIOS EDILICIOS DENTRO DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL - PLURIANUAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2013,7 +2034,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DEL PARQUE AUTOMOTOR DE LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2034,7 +2055,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASEO Y FUMIGACIÓN PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2024/2025 (SEGUNDA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2055,7 +2076,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PLATAFORMA PARA ALMACENAMIENTO DE RESPALDO DEL DATACENTER DE LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2076,7 +2097,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS DE SEGURIDAD PARA EL DATACENTER DE LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2097,7 +2118,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ELEMENTOS DE LIMPIEZA PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2118,7 +2139,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EXTINTORES PARA DEPENDENCIAS Y MÓVILES INSTITUCIONALES DE LA JUSTICIA ELECTORAL - (SEGUNDA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2139,7 +2160,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COURIER PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2160,7 +2181,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS INFORMÁTICOS PARA LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2181,7 +2202,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DE MONTACARGA Y ELEVADOR PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2202,7 +2223,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SEGUROS PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2223,7 +2244,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DE LAS MARCAS KIA Y JEEP PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2244,7 +2265,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE AGUA MINERAL PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2265,7 +2286,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE SERVIDORES Y EQUIPOS PARA LA TERCERA ETAPA DE RENOVACIÓN DEL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2286,7 +2307,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTORES GENERADORES Y TRANSFORMADORES PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2307,7 +2328,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTORES GENERADORES Y TRANSFORMADORES PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 - SEGUNDA CONVOCATORIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2328,7 +2349,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES PARA LA ELECCIÓN DE INTENDENTE DE CIUDAD DEL ESTE - AD REFERENDUM A LA EXCEPCIÓN REQUERIDA POR LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2349,7 +2370,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ARTÍCULOS ELÉCTRICOS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2370,7 +2391,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE TÓNER, ÚTILES DE ESCRITORIO, OFICINA Y ENSEÑANZA PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2391,7 +2412,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2412,7 +2433,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE INSUMOS METÁLICOS Y NO METÁLICOS, CAUCHOS Y HERRAMIENTAS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2433,7 +2454,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2454,7 +2475,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN, INSTALACIÓN Y PUESTA EN MARCHA DE DISPOSITIVOS DE SEGURIDAD PARA EL CONTROL DE ACCESO DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2475,7 +2496,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE LICENCIAS DE ADMINISTRACION Y SEGURIDAD ORACLE PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2496,7 +2517,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ACTUALIZACIÓN DE LICENCIAS DEL SISTEMA DE PROTECCIÓN DEL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2517,7 +2538,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DEL ASCENSOR DEL BLOQUE B DE LA JUSTICIA ELECTORAL-PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2538,7 +2559,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 (TERCERA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2559,7 +2580,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DE LAS MARCAS ISUZU Y HYUNDAI PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2580,7 +2601,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO DE ASCENSORES DE LOS BLOQUES A Y B DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL / PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2601,7 +2622,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO DE VEHÍCULOS DE LAS MARCAS TOYOTA, HINO, KIA, JEEP, HYUNDAI E ISUZU PARA LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PRESUPUESTO 2024 - PLURIANUAL 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2622,7 +2643,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PRODUCTOS DE PINTURA Y DERIVADOS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2643,7 +2664,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Renovación De Licencias Oracle Para La Justicia Electoral - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2664,7 +2685,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PRECINTOS DE SEGURIDAD PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2685,7 +2706,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACION DE SERVICIO DE SUSCRIPCION EN LINEA PARA EL ACCESO A LEYES, JURISPRUDENCIA Y DOCTRINA PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2026/2027/2028 - AD REFERÉNDUM AL PLAN FINANCIERO 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2706,7 +2727,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación de Servicios de Courier para la Justicia Electoral - Plurianual 2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2727,7 +2748,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2748,7 +2769,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Productos De Papel, Cartón E Impresos Con Criterios De Sustentabilidad Para La Justicia Electoral,  En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2769,7 +2790,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES EN CUMPLIMIENTO DE LO DISPUESTO EN EL ART. 192 DEL CÓDIGO ELECTORAL PARA LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2790,7 +2811,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Solución De Seguridad De Sitio Web, Correo Electrónico, Conectividad, Respaldo E Internet Secundario De Contingencia Para La Justicia Electoral | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2811,7 +2832,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE LECTORES DE ALTO RENDIMIENTO PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2832,7 +2853,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SEGUROS PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2853,7 +2874,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS PARA LA READECUACIÓN DE ESPACIOS FÍSICOS DEL BLOQUE G DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2874,7 +2895,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DEL PARQUE AUTOMOTOR DE LA JUSTICIA ELECTORAL - PLURIANUAL 2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "other"
   },
   {
@@ -2895,7 +2916,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMÁTICOS Y RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -2916,7 +2937,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -2937,7 +2958,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisicion de Reloj Marcador Biometrico | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -2958,7 +2979,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMATICOS VARIOS Y RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -2979,7 +3000,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD SICOM N° 15/2016, \"ADQUISICION DE EQUIPO DE CONTROL DE ENTRADA Y SALIDA PARA FUNCIONARIOS - RELOJ BIOMETRICO PARA LA SICOM\". | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3000,7 +3021,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 03/16 - ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3021,7 +3042,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 17/16 ADQUISICION DE RELOJ BIOMETRICO SEGUNDO LLAMADO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3042,7 +3063,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE SERVICIOS DE MANTENIMIENTO Y REPARACION DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3063,7 +3084,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Lector Biometrico | Ministerio de Desarrollo Social (MDS) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3084,7 +3105,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQ DE SERVIDOR, COMPUTADORAS, NOTEBOOK, IMPRESORAS,UPS, Y RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3105,7 +3126,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de reloj biometrico para el Parlamento del Mercosur | Congreso Nacional (C.N.) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3126,7 +3147,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Capiatá | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3147,7 +3168,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3168,7 +3189,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Equipos Informaticos, marcador biometrico y camaras digitales para la Institución Municipal | Municipalidad de Tomás Romero Pereira | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3189,7 +3210,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisicion de Servicios de Mantenimiento y Reparacion de Circuito Cerrado y Reloj Biometrico | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3210,7 +3231,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3231,7 +3252,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD 12 - ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3252,7 +3273,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de reloj biometrico para Casa Matriz, Filiales y Centro de Adiestramiento en Servicio | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3273,7 +3294,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3294,7 +3315,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Dirección Nacional de Aeronáutica Civil (DINAC) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3315,7 +3336,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Jurado de Enjuiciamiento de Magistrados (JEM) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3336,7 +3357,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Direccion Nacional de Propiedad Intelectual (DINAPI) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3357,7 +3378,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Congreso Nacional (C.N.) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3378,7 +3399,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Nueva Colombia | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3399,7 +3420,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Marcador Biometrico y Otro | Ministerio de la Niñez y la Adolescencia (MINNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3420,7 +3441,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÒN DE RELOJ BIOMETRICO Y CAMARA DIGITAL PARA LA CONACOM | Comisión Nacional de Competencia (CONACOM) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3441,7 +3462,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO PARA CONTROL DE ASISTENCIA | Instituto Forestal Nacional (INFONA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3462,7 +3483,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACION DIRECTA N° 83/2021 CON ID N° 400523 - ADQUISICION DE RELOJ BIOMETRICO Y EQUIPO DE ANTENA | Municipalidad de Luque | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3483,7 +3504,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3504,7 +3525,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Instituto Paraguayo de Artesania (IPA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3525,7 +3546,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Provisión e Instalación de Reloj Marcador Biometrico | Ministerio del Interior (M.I.) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3546,7 +3567,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO, EQUIPOS INFORMATICOS Y OTROS PARA EL HOSPITAL SAN JORGE | Ministerio de Salud Pública y Bienestar Social (MSPBS) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3567,7 +3588,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3588,7 +3609,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "(CD) Nº 06, ADQUISICION DE RELOJ BIOMETRICO PARA LA MARCACION DE LOS FUNCIONARIOS DE LA INSTITUCION. | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3609,7 +3630,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE MARCADORES DE ASISTENCIA CON LECTOR BIOMETRICO PARA LA INSTITUCION | Municipalidad de San Lorenzo | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3630,7 +3651,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO PARA EL MINNA | Ministerio de la Niñez y la Adolescencia (MINNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3651,7 +3672,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3672,7 +3693,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Nueva Esperanza | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3693,7 +3714,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO PARA LA FACULTAD DE CIENCIAS VETERINARIA DE LA UNIVERSIDAD NACIONAL DE ASUNCION | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3714,7 +3735,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 04 2023 - ADQUISICION DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3735,7 +3756,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "\"ADQUISICION DE RELOJ BIOMETRICO PARA LA STP\" | Ministerio de Economía y Finanzas | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3756,7 +3777,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3777,7 +3798,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3798,7 +3819,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO PARA LA OSN | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3819,7 +3840,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Instituto Paraguayo del Indígena (INDI) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3840,7 +3861,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO Y EQUIPO DE VIDEOCONFERENCIA | Autoridad Reguladora Radiologica y Nuclear (ARRN) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3861,7 +3882,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ DE MARCACION BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3882,7 +3903,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Reloj Biometrico Para La Dinacopa | Dirección Nacional de Correos del Paraguay (DINACOPA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3903,7 +3924,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO PARA LA FACULTAD DE CIENCIAS VETERINARIAS DE LA UNIVERSIDAD NACIONAL DE ASUNCIÓN | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3924,7 +3945,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO PARA LA DINACOPA 2° CONVOCATORIA | Dirección Nacional de Correos del Paraguay (DINACOPA) | ",
     "score": 15,
-    "crawled_at": "2026-06-26T23:10:14Z",
+    "crawled_at": "2026-06-27T23:06:27Z",
     "category": "biometric"
   },
   {
@@ -3945,7 +3966,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت مفوضية الانتخابات اليوم الاحد الموافق 2025/12/28 ورشة العمل المخصصة لمديري مكاتب المحافظات الانتخابية ومعاونيهم تحت عنوان الدروس المستخلصة لانتخابات مجلس النواب العراقي 2025 ، والتي كانت بحضور السيد رئيس الادارة الانتخابية القاضي عامر الحسيني ومعاونيه السيد مهند فاضل عباس للشؤون الفنية والسيد",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -3966,7 +3987,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ضمن خطة تعزيز العمل التطوعي داخل الوزارات وبالشراكة مع منظمات المجتمع المدني عقدت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات اليوم الخميس الموافق 2026/1/8 الاجتماع الاول في مقر المفوضية لمناقشة الخطة السنوية لتنفيذ الاعمال التطوعية في المفوضية. وتضمنت محاور الاجتماع تشكيل لجان فرعية م",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -3987,7 +4008,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد مجلس المفوضين في مفوضية الانتخابات جلسته الاعتيادية لانتخاب رئيسا للإدارة الانتخابية خلفا للقاضي عامر الحسيني الذي انتهت مدة تسنمه للمنصب، حيث قرر مجلس المفوضين انتخاب القاضي حسين عبد السادة بهير رئيساً للإدارة الانتخابية للمرحلة المقبلة. وأعرب مجلس المفوضين عن شكره وتقديره للقاضي عامر الحسيني ع",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4008,7 +4029,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ترأس السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير اجتماعاً موسعاً في مقر المكتب الوطني اليوم الاربعاء الموافق 28 كانون الثاني 2026 بحضور معاونيه السيد مهند فاضل عباس للشؤون الفنية والسيد علي صالح الساعدي للشؤون الإدارية والمالية، وعدد من مديري الدوائر والأقسام ومسؤولي الشعب في المكتب ال",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4029,7 +4050,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أستضافت المفوضية العليا المستقلة للانتخابات/ قسم التدريب والتطوير ورشة عمل توعوية لموظفي المكتب الوطني في مقرها بالتعاون مع وزارة النفط/ الشركة العامة لتعبئة وخدمات الغاز لتسليط الضوء على (آليات عمل منظومات غاز السيارات وشبكات غاز المباني ) لمعرفة بدائل الطاقة الآمنة والاقتصادية . وتضمنت الورشة استع",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4050,7 +4071,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "حضر رئيس الإدارة الانتخابية القاضي حسين عبدالسادة بهير ووفد من مفوضية الانتخابات اليوم الاحد الموافق 1 شباط 2026 معرض بغداد الدولي حيث افتتح المعرض معالي وزير التجارة العراقي وفي ذات السياق زار القاضي حسين بهير الجناح الخاص بالمفوضية العليا المستقلة للانتخابات المقام في معرض بغداد الدولي في دورته 49",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4071,7 +4092,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أفتتحت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير/ دورة حتمية لعدد من موظفي المكتب الوطني تحت عنوان  (المهارات القيادية والتفاوضية ) التي ستستمر لغاية 2026/2/19 لترفيع الموظفين المستحقين لدرجة اعلى. وتتضمن محاور الدورة الحتمية التي يحاضر فيها مدربو قسم التدريب والتطوير محاور عديدة من",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4092,7 +4113,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تابع نائب رئيس مجلس المفوضين في المفوضية العليا المستقلة للانتخابات ورئيس لجنة تبسيط الإجراءات الحكومية القاضي فياض ياسين حسين عمل لجنة تبسيط الإجراءات الحكومية المستهدفة من قبل الدوائر في مفوضية الانتخابات يوم الاربعاء الموافق ٤ آذار ٢٠٢٦. حيث يسعى رئيس واعضاء اللجنة لتحقيق هذه الأهداف من خلال التع",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4113,7 +4134,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / فريق دعم المرأة الانتخابي، بالشراكة الفاعلة مع الفريق الوطني للمرأة العراقية في المجلس الاعلى للمرأة في مجلس الوزراء، الجلسة الثالثة من سلسلة جلسات “محور التوعية والتثقيف” للفصل الأول من العام الحالي، وذلك بالتعاون مع مؤسسة العراق لتعزيز الديمقراطية وحقوق",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4134,7 +4155,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "زار رئيس مجلس المفوضين القاضي عمر احمد محمد ورئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير ونائب رئيس المجلس القاضي فياض ياسين واعضاء مجلس المفوضين مقر مكتب انتخابات بغداد الكرخ الجديد رافقهم الامين العام لمجلس المفوضين ومعاون رئيس الادارة الانتخابية للشؤون الادارية والمالية وذلك اليوم الاثنين",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4155,7 +4176,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير اليوم الخميس الموافق 2026/4/9 دورة حتمية لعدد من موظفي المكتب الوطني تحت عنوان  (التخطيط الاداري الحديث وادارة المخاطر) لترفيع الموظفين المستحقين لدرجة اعلى. وتضمنت الورشة على مدى ايام اقامتها التي بدأت من 2026/4/5 والتي حاضر فيها مدر",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4176,7 +4197,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "في إطار التواصل مع الدوائر المعنية لتطوير عمل مفوضية الانتخابات عقد السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير اجتماعا حضره معاونه الفني السيد مهند فاضل عباس وعدد من مدراء الدوائر في المكتب الوطني وذلك يوم الأربعاء الموافق ١٥ نيسان ٢٠٢٦. حيث تضمن الاجتماع مراجعة واسعة للجوانب الإيجابي",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4197,7 +4218,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "زار وفد المفوضية العليا المستقلة للانتخابات وزارة الموارد المائية وذلك يوم الأربعاء الموافق 15 نيسان وضم الوفد كل من مدير قسم التدريب والتطوير د. علي امان ومدير قسم الجودة السيدة انعام عطية ومعاون مدير الدائرة القانونية السيد زياد طارق . وكان في استقبال الوفد الوكيل الإداري للوزارة السيد أسامة جمعة ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4218,7 +4239,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير اليوم الخميس الموافق ١٦ / ٤ / ٢٠٢٦ الدورة الحتمية لعدد من موظفي المكتب الوطني تحت عنوان (التخطيط الاداري الحديث وادارة المخاطر) لترفيع الموظفين المستحقين لدرجة اعلى. وتضمنت الورشة على مدى ايام اقامتها التي بدأت من يوم الاحد الموافق ١٢",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4239,7 +4260,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت اللجنة القانونية برئاسة القاضي فياض ياسين حسين نائب رئيس مجلس المفوضين وعضو مجلس المفوضين المستشار فتاح محمد حسين واعضاء اللجنة اجتماعا تشاوريا بشأن تنفيذ الاطار التنفيذي لدعم العملية الانتخابية وترسيخ النظام الديمقراطي والمقترح المقدم من قبل مستشارية الامن القومي بمشاركة فريق قسم الجودة والتطو",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4260,7 +4281,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "السيد رئيس الإدارة الانتخابية القاضي حسين بهير بحضور معاونه للشؤون الفنية السيد مهند فاضل عباس يواصل عقد الاجتماعات مع مديري عدد من الدوائر في المكتب الوطني وذلك يوم الاثنين الموافق ٢٠ نيسان ٢٠٢٦. حيث تم في الاجتماع مراجعة اهم ما جاء في الدروس المستخلصة لانتخابات مجلس النواب العراقي 2025 ومناقشة تطب",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4281,7 +4302,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات اجتماعها الثاني الذي ضم مدراء المكاتب الانتخابية في المحافظات لمناقشة اجندة العمل المستقبلية للجنة وذلك يوم الثلاثاء الموافق 2026/4/21. وقد ناقشت اللجنة عدد من المقترحات المقدمة ومنها تنسيق الاعمال المناطة بها وترشيح أعضاء ارتباط من كل م",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4302,7 +4323,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بحضور رئيس مجلس المفوضين القاضي عمر احمد محمد ورئيس مجلس الادارة القاضي حسين عبد السادة بهير ورئيس لجنة الشفافية في المفوضية القاضي علي رشيد وعضو مجلس المفوضين القاضي عماد فارس وعدد من مدراء الدوائر والاقسام والشعب في المكتب الوطني اقامت المفوضية العليا المستقلة للانتخابات ندوة تثقيفية بالتنسيق بين ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4323,7 +4344,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "لبحث تنفيذ برامج تدريبية انتخابية زار ممثل المفوضية العليا المستقلة للانتخابات/ قسم التدريب والتطوير السيد سمير حسن حافظ وزارة الشباب والرياضة وكان في استقباله مدير قسم المجلس الوطني للشباب السيد علي لفتة حمد وعدد من أعضاء القسم. وجرى خلال اللقاء استعراض سبل التعاون المشترك بين المؤسستين ومناقشة منه",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4344,7 +4365,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تنفيذا لتوجيهات رئيس الإدارة الانتخابية زار وفد من المكتب الوطني في المفوضية مبنى الأمانة العامة لمجلس الوزراء لتطوير العمل المالي في المفوضية العليا المستقلة للانتخابات وذلك يوم الاحد الموافق 3/5/2026، وكان في استقبال الوفد معاون مدير عام الدائرة الإدارية والمالية في ديوان الأمانة د. عبد علي عبد ال",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4365,7 +4386,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بتاريخ 2026/5/3 عقدت المفوضية العليا المستقلة للانتخابات وبالتعاون مع وزارة الموارد المائية ورشة عمل متخصصة بعنوان مناقشة آلية تعديل الخطة الاستراتيجية ووضع الأهداف الذكية في محافظة السليمانية، والتي ستستمر لمدة خمسة أيام، بمشاركة رئيس مجلس المفوضين القاضي عمر احمد وعدد من اعضاء المجلس ومدير عام دائ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4386,7 +4407,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "استقبلت المفوضية العليا المستقلة للانتخابات يوم الثلاثاء الموافق 12/5/2026 وفداً من اللجنة العليا لتبسيط الإجراءات والخدمات الحكومية، في زيارة دورية هدفت إلى متابعة تنفيذ برامج تبسيط الإجراءات والارتقاء بمستوى الخدمات الحكومية. وعُقد خلال الزيارة اجتماع موسع ترأسه نائب رئيس مجلس المفوضين ورئيس لجنة ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4407,7 +4428,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير، وبحضور معاونيه للشؤون الفنية السيد مهند فاضل عباس، والاداري والمالي السيد علي صالح الساعدي اجتماعاً مع مديري الدوائر في المكتب الوطني، يوم الثلاثاء الموافق  2026/5/12، وذلك في إطار الجهود الرامية إلى تطوير العمل المؤسسي والارتقاء بالأداء",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4428,7 +4449,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عبر دائرة الكترونية مغلقة عقدت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات اجتماعا لاعضاء لجنة الارتباط في المكاتب الانتخابية للمحافظات لمناقشة المهام الملقاة على عاتقهم وذلك يوم الاربعاء الموافق 2026/5/13. حيث ناقشت اللجنة المهام والاعمال الموكلة لكل عضو ارتباط فيها   من كل مكتب انتخا",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4449,7 +4470,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الحوكمة الالكترونية في المفوضية العليا المستقلة للانتخابات اجتماعا صباح اليوم الاربعاء ١٣  / ٥ / ٢٠٢٦ بحضور رئيس اللجنة القاضي عباس الفتلاوي والأمين العام لمجلس المفوضين السيد علي فيصل دحام ومعاون رئيس الادارة الانتخابية للشؤون الفنية السيد مهند فاضل عباس وعدد من اعضاء اللجنة لمناقشة المحا",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4470,7 +4491,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير يوم الخميس الموافق 2026/5/14 الدورة الحتمية لعدد من موظفيها تحت عنوان (الأسس والمفاهيم الإدارية والمالية والقانونية) لترفيع الموظفين المستحقين لدرجة اعلى، والتي استمرت لمدة أسبوعين. حيث تضمنت الورشة التي حاضر فيها عدد من مدربي المكتب ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4491,7 +4512,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بالتنسيق بين المفوضية العليا المستقلة للانتخابات ووزارة الشباب والرياضة اختتمت في وزارة الشباب / قسم المجلس الوطني للشباب، الورشة الخاصة بإجراءات الاقتراع والعد والفرز للتصويتين الخاص والعام، وذلك على قاعة دائرة العلاقات والتعاون الدولي في مقر الوزارة واستمرت لثلاثة ايام وشارك في الورشة عدد من موظفي",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4512,7 +4533,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت الورشة التدريبية المشتركة بين المفوضية العليا للانتخابات والمديرية العامة لشؤون المخدرات والمؤثرات العقلية في وزارة الداخلية لعدد من موظفي المفوضية . وقد تضمنت الورشة عددا من المحاور كانت تهدف إلى تعزيز الوعي الأمني والمجتمعي بمخاطر هذه الافة . وشهدت الورشة التعريف بأبرز العوامل المؤثرة التي ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4533,7 +4554,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات/ قسم التدريب والتطوير، ورشة تدريبية بعنوان (سلامة اللغة العربية في المخاطبات الرسمية) للمدة من 17 إلى 21 آيار 2026 في دائرة شؤون الأحزاب والتنظيمات السياسية لعدد من موظفيها. إذ ركّز مدرب الورشة الدكتور عماد شاكر محمود في محاورها على الإطار القانوني والتنفيذ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4554,7 +4575,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شارك رئيس الإدارة الانتخابية القاضي حسين عبد السادة والوفد المرافق له في اجتماع اللجنة الوطنية لمنتدى التوعية الانتخابية الذي نظمته منظمة تموز للتنمية الاجتماعية لمناقشة تقرير تحالف شبكات المراقبة الخاص بانتخابات مجلس النواب 2025، وذلك يوم الخميس الموافق 2025/5/21. وحضر الاجتماع مستشار رئاسة الجمهور",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4575,7 +4596,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير الورشة الحتمية المعنونة (الأسس والمفاهيم الإدارية والمالية والقانونية) لعدد من موظفيها بحضور رئيس الادارة الانتخابية القاضي حسين عبد السادة وذلك يوم الاثنين الموافق25 أيار واستمرت لمدة اسبوعين لترفيع المستحقين من الموظفين لدرجة اعلى. ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4596,7 +4617,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد فريق ايزو الطاقة في المفوضية العليا المستقلة للانتخابات برئاسة السيد علي سلمان نصار وبحضور اعضاء الفريق يوم الاربعاء الموافق ٣ حزيران ٢٠٢٦ في دائرة الأحزاب والتنظيمات السياسية حيث ناقش الفريق خطة دعم الطاقة للمفوضية العليا المستقلة للانتخابات ٢٠٢٦ والتي شملت عدد من المحاور التي تخص تطوير وتدريب ",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4617,7 +4638,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شارك وفد المفوضية العليا المستقلة للانتخابات ممثلا عضو مجلس المفوضين المستشار د. فتاح محمد حسين ومعاون رئيس الإدارة الانتخابية للشؤون المالية والإدارية السيد علي صالح الساعدي في اللقاء الإقليمي العربي التشاوري بشأن دعم الإدارات الانتخابية لمؤسسة العمل التطوعي في المجال الانتخابي الذي نظمته المنظمة ا",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4638,7 +4659,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بالتنسيق بين المفوضية العليا المستقلة للانتخابات ووزارة الشباب والرياضة اختتمت في وزارة الشباب / قسم المجلس الوطني للشباب، الورشة الخاصة بإجراءات الاقتراع والعد والفرز للتصويتين الخاص والعام، وذلك على قاعة دائرة العلاقات والتعاون الدولي في مقر الوزارة واستمرت لثلاثة ايام من ٩-١١/ ٦ /٢٠٢٦ وشارك في ال",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4659,7 +4680,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بتوجيه رئيس الإدارة الانتخابية القاضي حسين بهير وبرعاية معاونه للشؤون الإدارية والمالية السيد علي صالح الساعدي وبإشراف اللجنة المنظمة للبطولة اقامت المفوضية العليا المستقلة للانتخابات بطولة لخماسي الكرة لدوائر واقسام المؤسسة . وشارك في البطولة ثمانية فرق اربعة منها من المكتب الوطني ، فريق الهندسية و",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4680,7 +4701,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شاركت المفوضية العليا المستقلة للانتخابات متمثلة برئيس الإدارة الانتخابية القاضي حسين بهير ومعاونه للشؤون الإدارية والمالية السيد علي صالح الساعدي وعدد من موظفيها في الندوة التي أقامتها مفوضية حقوق الانسان وعدد من تجمع الشبكات ومنظمات المجتمع المدني يوم الاحد ١٤ حزيران ٢٠٢٦ , على قاعة حقوق الانسان ح",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4701,7 +4722,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير الورشة الحتمية المعنونة (الاتجاهات الحديثة في الادارة ) لعدد من موظفيها   وذلك يوم الاحد  الموافق ٢١  حزيران واستمرت لمدة اسبوع واحد  لترفيع المستحقين من الموظفين لدرجة اعلى. حيث تناولت الورشة مفهوم الادارة ووظائفها والتخطيط الاستراتي",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4722,7 +4743,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الحوكمة الالكترونية في المفوضية العليا المستقلة للانتخابات اجتماعا برئاسة القاضي عباس الفتلاوي عضو مجلس المفوضين ورئيس اللجنة المذكورة ، والسيد علي دحام الامين العام لمجلس المفوضين والسيد مهند فاضل عباس معاون رئيس الادارة الانتخابية للشؤون الفنية صباح يوم الاحد الموافق ٢١ / ٦ / ٢٠٢٦ . وحضر",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4743,7 +4764,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "لترسيخ التعاون المثمر بين المؤسستين ترأس القاضي حسين عبد السادة بهير رئيس الإدارة الانتخابية  وفد المفوضية العليا المستقلة للانتخابات في زيارة الى وزارة التجارة وذلك يوم الاحد الموافق 21/6/2026. وكان في استقبال الوفد وزير التجارة السيد مصطفى نزار جمعة ووكيل الوزارة السيد غسان المحمدي. في بداية اللقا",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4764,7 +4785,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "التقى السيد رئيس مجلس المفوضين في مفوضية الانتخابات القاضي عمر احمد محمد وفد بعثة الاتحاد الاوربي برئاسة السيد كليمينس سميتنر سفير الاتحاد الأوروبي لدى العراق والسيد غابريل ليندن، سكرتير أول في القسم السياسي، بمكتبه في بغداد صباح يوم الاربعاء الموافق ٢٤ / ٦ / ٢٠٢٦. ورحب رئيس المجلس القاضي عمر أحمد م",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4785,7 +4806,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات ، ورشة تدريبية متخصصة لفريق دعم المرأة الانتخابي، بحضور ، رئيس الفريق عضو مجلس المفوضين الدكتورة احلام الجابري ، وعضو مجلس المفوضين القاضي عماد فارس رشيد ، في محافظة السليمانية من 20 إلى 24 تموز 2025. وشارك في الورشة منسقات الفريق في بغداد والمكاتب الانتخاب",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4806,7 +4827,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شاركت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات في حفل افتتاح المقر العام لتجمع ذوي الهمم في العراق، وذلك تلبيةً للدعوة الموجهة من قبل التجمع، وبحضور عدد من الشخصيات الرسمية والدبلوماسية وممثلي منظمات المجتمع المدني والجهات الداعمة. وتأتي هذه المشاركة تجسيداً لالتزام المفوضية بمسؤولي",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4827,7 +4848,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "◄ The Board of Commissioners decided on the selection of the auditing company. ◄ The Board of Commissioners decided on the voting procedures by the use of the results acceleration devices. The Board of Commissioners certified on the selection of the British company (PWC) , the auditing company which",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4848,7 +4869,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "►continuous of VRU process. ►continuous of Registration of political parties and alliances’ process. ►IHEC will hold a conference with political parties and alliances on coming Tuesday. IHEC has announced the final timelines for the processes of political alliances registration ended on 1/05/2021, r",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4869,7 +4890,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Regarding its believing in public opinion, the Independent High Electoral Commission to inform the public with the most important developments and preparations of the electoral process; Based on the principle of transparency adopted by the Board of Commissioners, and to ensure that the Commission wi",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4890,7 +4911,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "نتائج الانتخابات",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4911,7 +4932,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تعليمات توزيع المقاعد لانتخابات مجلس النواب العراقي 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4932,7 +4953,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "القوانين والانظمة قرارات مجلس المفوضين الانظمة والتعليمات تعليمات توزيع المقاعد لانتخابات مجلس النواب العراقي 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4953,7 +4974,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "مراكز الاقتراع لانتخابات مجلس النواب العراقي 2025",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4974,7 +4995,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral information",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -4995,7 +5016,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Departments and divisions Complaints and appeals department Candidates Affairs political parties and organizations department Tenders and contracts Operations Department training and development Electoral information",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "services"
   },
   {
@@ -5016,7 +5037,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral Applications",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "software"
   },
   {
@@ -5037,7 +5058,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Previous Elections",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5058,7 +5079,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "The results of the Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5079,7 +5100,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Instructions for distributing seats for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5100,7 +5121,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Laws and regulations Decisions of the Board of Commissioners Regulations and instructions Instructions for distributing seats for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5121,7 +5142,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Polling centers for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5142,7 +5163,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Find Your Polling Center",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5163,7 +5184,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral Culture",
     "score": 40,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5184,7 +5205,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "المناقصات والعقود",
     "score": 15,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5205,7 +5226,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دوائر وأقسام المكتب الوطني قسم الشكاوى والطعون شؤون المرشحين دائرة الاحزاب والتنظيمات السياسية المناقصات والعقود دائرة العمليات التدريب والتطوير المعلومات الانتخابية",
     "score": 15,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5226,7 +5247,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Tenders and contracts",
     "score": 15,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5247,7 +5268,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Biometric Registration",
     "score": 15,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "biometric"
   },
   {
@@ -5268,7 +5289,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "استقبل السيد رئيس مجلس المفوضين القاضي عمر احمد محمد في مكتبه صباح اليوم الاثنين ٢ / ٢ / ٢٠٢٦ رئيس جهاز التقييس والسيطرة النوعية الدكتور فياض محمد عبد الدليمي والوفد المرافق له وحضر اللقاء عضو مجلس المفوضين القاضي عباس الفتلاوي رئيس لجنة الحوكمة الالكترونية في المفوضية و الامين العام للمجلس السيد عل",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5289,7 +5310,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شارك فريق دعم المرأة الانتخابي في أعمال المؤتمر الوطني لضمان دور المرأة في التحول الرقمي، الذي أقامته مستشارية الأمن القومي العراقية / مركز التميز، يوم الأحد 16 شباط 2026، على قاعة المسرح في مركز النهرين للدراسات الاستراتيجية في بغداد، وبمشاركة واسعة من المؤسسات الحكومية والجهات الأكاديمية والمنظمات",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5310,7 +5331,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد رئيس الادارة الانتخابية القاضي حسين عبد السادة رئيس لجنة ادارة المخاطر اجتماعا دوريا مع اعضاء اللجنة بحضور الامين العام لمجلس المفوضين السيد علي دحام وباقي اعضاء اللجنة من مديري الدوائر والاقسام في المكتب الوطني. وناقشت اللجنة العديد من النقاط المهمة منها استعراض المذكرات المرفوعة منذ بداية العا",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5331,7 +5352,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "كرم السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير أمين الصندوق في المكتب الوطني السيد ( صباح نوري ) الموظف في الدائرة الادارية والمالية بدرع الوفاء والتقدير بعد أكماله السن القانونية للتقاعد ، بحضور معاون رئيس الادارة الانتخابية للشؤون الادارية والمالية السيد علي صالح جعفر ، ومدير الدائر",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5352,7 +5373,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير اجتماعا ضم عدد من مدراء الدوائر في المؤسسة، وذلك يوم الاثنين الموافق ١٣ / ٤ / ٢٠٢٦ وحضر الاجتماع معاون رئيس الادارة الانتخابية للشؤون الفنية السيد مهند فاضل ومعاون رئيس الادارة للشؤون الادارية والمالية السيد علي صالح . وقام المجتمعون بمرا",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5373,7 +5394,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ضمن جهود تعزيز المشاركة السياسية للمرأة، شارك فريق دعم المرأة الانتخابي في الندوة العلمية الموسومة “تفعيل الكوتا التنفيذية نحو تمثيل عادل للنساء في مؤسسات الدولة”، والتي أقيمت في مركز الدراسات الاستراتيجية والدولية / جامعة بغداد، بتنظيم مشترك مع المجلس الأعلى لشؤون المرأة – الفريق الوطني للمرأة وحقي",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5394,7 +5415,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة مجمع اسكان موظفي المفوضية برئاسة القاضي السيد عامر موسى الحسيني وبحضور عددا من اعضاء مجلس المفوضين واعضاء اللجنة، اجتماعا بحضور ممثلين عن الشركتين المستثمرتين للمجمع، صباح يوم الثلاثاء الموافق ١٢ / ٥ / ٢٠٢٦ في المكتب الوطني حول إنشاء المجمع. حيث تم التباحث مع الشركات المستثمرة وإعلام اللجن",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5415,7 +5436,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير، وبحضور معاونيه للشؤون الفنية السيد مهند فاضل عباس والاداري والمالي السيد علي صالح الساعدي اجتماعاً عبر الدائرة الالكترونية مع مديري مكاتب الهيئة ومحافظات الاقليم الانتخابية وذلك يوم الاحد الموافق ١٧ / ٥ / ٢٠٢٦ ، في إطار الجهود الرامية إل",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5436,7 +5457,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "استقبل السيد رئيس مجلس المفوضين القاضي عمر احمد محمد رئيس مركز التميز للأبداع والتطوير في الجامعة الأمريكية الدكتور زياد والوفد المرافق له وبحضور السيد رئيس الإدارة الانتخابية القاضي حسين بهير والقاضي عباس فرحان يوم الاثنين الموافق ١٥ حزيران ٢٠٢٦ في مقر المفوضية. حيث رحب السيد رئيس المجلس بالضيوف، ش",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5457,7 +5478,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أُختتمت يوم امس الخميس المصادف ٢٠٢١/٤/١ اعمال الورشة التدريبية الحتمية التي أُقيمت في مكتب هيئة اقليم كوردستان للأنتخابات بواقع ٢٠ ساعه من الفترة ٢٠٢١/٣/٢٨ ولغاية ٢٠٢١/٤/١ والتي تندرج من ضمن التعليمات الواردة من الدائرة الإداريه والماليه في المكتب الوطني لأجراء ورش تدريبية حتمية للشعب الفنية لأغراض ",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5478,7 +5499,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الشركاء الدوليين",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5499,7 +5520,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شهداء المفوضية",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5520,7 +5541,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "سياسة الجودة",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5541,7 +5562,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الاستراتيجية وخطة العمل",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5562,7 +5583,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الأجور والخدمات",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5583,7 +5604,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "حول المفوضية الأجور والخدمات الاستراتيجية وخطة العمل سياسة الجودة شهداء المفوضية الشركاء الدوليين",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5604,7 +5625,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "المعلومات الانتخابية",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5625,7 +5646,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "التدريب والتطوير",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5646,7 +5667,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دائرة العمليات",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5667,7 +5688,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دائرة الاحزاب والتنظيمات السياسية",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5688,7 +5709,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شؤون المرشحين",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5709,7 +5730,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "قسم الشكاوى والطعون",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5730,7 +5751,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تطبيقات انتخابية",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5751,7 +5772,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الانظمة والتعليمات",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5772,7 +5793,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "قرارات مجلس المفوضين",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5793,7 +5814,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "البحث عن مركز التسجيل",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5814,7 +5835,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ثقافة انتخابية",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5835,7 +5856,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Download File",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5856,7 +5877,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "International Partners",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5877,7 +5898,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Quality Policy",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5898,7 +5919,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Strategy and work plan",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5919,7 +5940,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "training and development",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "services"
   },
   {
@@ -5940,7 +5961,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Operations Department",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5961,7 +5982,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "political parties and organizations department",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -5982,7 +6003,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Candidates Affairs",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -6003,7 +6024,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Complaints and appeals department",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -6024,7 +6045,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Regulations and instructions",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -6045,7 +6066,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Decisions of the Board of Commissioners",
     "score": 0,
-    "crawled_at": "2026-06-26T23:08:49Z",
+    "crawled_at": "2026-06-27T23:05:25Z",
     "category": "other"
   },
   {
@@ -6066,7 +6087,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Addendum | Feb 2nd, 2017 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6087,7 +6108,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RT/01/2019-2020 | Aug 14th, 2019 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6108,7 +6129,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6129,7 +6150,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6150,7 +6171,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6171,7 +6192,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6192,7 +6213,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6213,7 +6234,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6234,7 +6255,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6255,7 +6276,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6276,7 +6297,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6297,7 +6318,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6318,7 +6339,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6339,7 +6360,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6360,7 +6381,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2021/2022 | Oct 7th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6381,7 +6402,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6402,7 +6423,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6423,7 +6444,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6444,7 +6465,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6465,7 +6486,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/11/25/2024 - 2025 | Mar 11th, 2025 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6486,7 +6507,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/11/25/2024 - 2025 | Mar 11th, 2025 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6507,7 +6528,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6528,7 +6549,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6549,7 +6570,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6570,7 +6591,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/B/26/2025 -2026 | Apr 27th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6591,7 +6612,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/B/26/2025 -2026 | Apr 27th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6612,7 +6633,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/76/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6633,7 +6654,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/48/2016-2017 | May 4th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -6654,7 +6675,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/92/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6675,7 +6696,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/70/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6696,7 +6717,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/63/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6717,7 +6738,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/99/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6738,7 +6759,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/71/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6759,7 +6780,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/72/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6780,7 +6801,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/73/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6801,7 +6822,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/74/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6822,7 +6843,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/75/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6843,7 +6864,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/62/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6864,7 +6885,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/64/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -6885,7 +6906,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/OT/20/05 /2020-2021 | Jan 6th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6906,7 +6927,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/OT/20/06/2020-2021 | Feb 3rd, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6927,7 +6948,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/06/2020-2021 | Jun 15th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6948,7 +6969,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/06/2020-2021 | Jun 15th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -6969,7 +6990,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -6990,7 +7011,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/OT/21/003/2021-2022 | Aug 30th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7011,7 +7032,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7032,7 +7053,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7053,7 +7074,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7074,7 +7095,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/02/2021-2022 | Dec 14th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7095,7 +7116,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/012/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7116,7 +7137,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/012/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7137,7 +7158,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/035/2021-2022 | Mar 25th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7158,7 +7179,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/033/2021-2022 | Mar 29th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7179,7 +7200,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/37/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7200,7 +7221,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/37/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7221,7 +7242,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/36/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7242,7 +7263,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/36/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7263,7 +7284,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/01/2021/2022 | Jul 11th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7284,7 +7305,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/01/2021/2022 | Jul 11th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7305,7 +7326,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/001/2022/2023 | Jul 15th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -7326,7 +7347,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "TENDER NO: IEBC/KBU/OT/001/2022 - 2023 | Jul 15th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -7347,7 +7368,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/07/25/2024 - 2025 | Jan 28th, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -7368,7 +7389,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/25/2024-2025 & IEBC/OT/20/25/2024 - 2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7389,7 +7410,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/25/2024 - 2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7410,7 +7431,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/25/2024-2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7431,7 +7452,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/52/2017-2018 | Mar 2nd, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7452,7 +7473,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/52/2017-2018 | Feb 2nd, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7473,7 +7494,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/01/2018 | Aug 24th, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7494,7 +7515,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/01/2018 | Aug 24th, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7515,7 +7536,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/54/2017-2018 | Jan 30th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7536,7 +7557,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Tender NO: IEBC/REST/05/2018-2019 | Apr 24th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "biometric"
   },
   {
@@ -7557,7 +7578,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Tender No: IEBC/REST/06/2018-2019 | Apr 24th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7578,7 +7599,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/11/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7599,7 +7620,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/08/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7620,7 +7641,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/07/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7641,7 +7662,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/09/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7662,7 +7683,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/10/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7683,7 +7704,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/2018-2019/002 | Jun 17th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7704,7 +7725,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/RT/2/2019/2020 | Feb 13th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7725,7 +7746,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/02/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7746,7 +7767,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/OT/FC/3/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7767,7 +7788,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/01/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7788,7 +7809,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2019-2020 | May 12th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7809,7 +7830,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "REF: IEBC/REG/01/2020-2022 | May 15th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7830,7 +7851,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/04/2019-2020 | Jun 26th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7851,7 +7872,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/04/2019-2020 | Jun 26th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7872,7 +7893,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/RFP/01/2020-2021 | Sep 23rd, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7893,7 +7914,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/03/2020 2021 | Sep 25th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -7914,7 +7935,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/02/2020-2021 | Sep 28th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "biometric"
   },
   {
@@ -7935,7 +7956,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/01/2020-2021 | Sep 24th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -7956,7 +7977,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/2020-2021 | Sep 29th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -7977,7 +7998,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/02/2020-2021 - IEBC/OT/20/03/2020-2021 | Sep 28th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -7998,7 +8019,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/05 2020 2021 | Nov 9th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8019,7 +8040,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/05 2020 2021 | Nov 9th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8040,7 +8061,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/01/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8061,7 +8082,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/02/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8082,7 +8103,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/03/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8103,7 +8124,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/07/2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8124,7 +8145,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/06/2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8145,7 +8166,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC /OT/20/09 /2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8166,7 +8187,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/08/2020 2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -8187,7 +8208,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/10/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8208,7 +8229,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/21/01/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8229,7 +8250,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/10/2020 2021 | Feb 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8250,7 +8271,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/10/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8271,7 +8292,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EOI/21/01/2020-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8292,7 +8313,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2020-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8313,7 +8334,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2002-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8334,7 +8355,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2002-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8355,7 +8376,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/03/2020-2021 | Apr 15th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8376,7 +8397,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/03/2020-2021 | Apr 22nd, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8397,7 +8418,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/04/2020-2021 | Apr 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8418,7 +8439,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/05/2020-2021 | May 25th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8439,7 +8460,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 4th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -8460,7 +8481,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2020-2021 | Jun 21st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8481,7 +8502,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2020-2021 | Jun 21st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8502,7 +8523,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/07/2020-2021 | Jun 28th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8523,7 +8544,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/07/2020-2021 | Jun 28th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8544,7 +8565,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/2020-2021 | Jun 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8565,7 +8586,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/2020-2021 | Jun 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8586,7 +8607,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/09/2020-2021 | Jul 26th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8607,7 +8628,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/001/2021-2022 | Sep 1st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8628,7 +8649,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/002/2021-2022 | Aug 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8649,7 +8670,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/002/2021-2022 | Aug 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8670,7 +8691,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/005/2021-2022 | Sep 8th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8691,7 +8712,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/006/2021-2022 | Sep 13th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8712,7 +8733,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8733,7 +8754,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8754,7 +8775,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8775,7 +8796,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2021/2022 | Oct 8th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8796,7 +8817,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8817,7 +8838,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8838,7 +8859,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8859,7 +8880,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/2021-2022 | Nov 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8880,7 +8901,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/009/2021-2022 | Nov 19th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -8901,7 +8922,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/013/2021-2022 | Nov 24th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8922,7 +8943,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/014/21/2021/2022 | Dec 14th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "biometric"
   },
   {
@@ -8943,7 +8964,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/011/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8964,7 +8985,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/011/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -8985,7 +9006,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/03/2021-2022 | Dec 20th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9006,7 +9027,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/014/21/2021/2022 | Dec 14th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "biometric"
   },
   {
@@ -9027,7 +9048,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/017/2021-2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9048,7 +9069,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/016/21/2021/2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9069,7 +9090,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/015/21/2021/2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9090,7 +9111,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/018/2021-2022 | Jan 21st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9111,7 +9132,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/020/2021-2022 | Jan 27th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9132,7 +9153,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/2021/2022 | Feb 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9153,7 +9174,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/026/2021/2022 | Feb 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9174,7 +9195,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/019/2021-2022 | Feb 8th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9195,7 +9216,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9216,7 +9237,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/025/2021-2022 | Feb 15th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9237,7 +9258,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/28/2021/2022 | Feb 18th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9258,7 +9279,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/023/2021/2022 | Feb 11th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9279,7 +9300,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/03/B/2021-2022 | Feb 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9300,7 +9321,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9321,7 +9342,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9342,7 +9363,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9363,7 +9384,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9384,7 +9405,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/28/B/2021/2022 | Mar 1st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9405,7 +9426,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9426,7 +9447,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/031/2021/2022 | Mar 2nd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9447,7 +9468,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9468,7 +9489,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/018/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9489,7 +9510,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/021/2021-2022 | Mar 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9510,7 +9531,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9531,7 +9552,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/021/2021-2022 | Mar 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -9552,7 +9573,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/031/2021-2022 | Mar 24th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "election_equipment"
   },
   {
@@ -9573,7 +9594,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/032/2021/2022 | Mar 24th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9594,7 +9615,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/020/B/2021-2022 | Apr 5th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9615,7 +9636,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/B/2021/2022 | Mar 31st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9636,7 +9657,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/B/2021/2022 | Mar 31st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9657,7 +9678,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/032/2021/2022 | Apr 19th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9678,7 +9699,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/037/2021/2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9699,7 +9720,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/038/2021-2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9720,7 +9741,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/037/2021/2022 & IEBC/OT/22/038/2021-2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9741,7 +9762,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/039/2021/2022 | May 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9762,7 +9783,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/039/2021/2022 | Jun 10th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9783,7 +9804,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2021-2022 | Jun 21st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9804,7 +9825,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/040/2021/2022 | Jun 20th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9825,7 +9846,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/039/B/2021/2022 | Jul 8th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9846,7 +9867,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/01/2022-2023 | Nov 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9867,7 +9888,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/02/2022-2023 | Jan 30th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9888,7 +9909,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/04/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -9909,7 +9930,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9930,7 +9951,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9951,7 +9972,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/0T/23/06/2022-2023 | Mar 22nd, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9972,7 +9993,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -9993,7 +10014,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10014,7 +10035,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NDC/01/2023-2024 | Apr 5th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10035,7 +10056,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/23/05/2022-2023 | Apr 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10056,7 +10077,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10077,7 +10098,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10098,7 +10119,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10119,7 +10140,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/KNC/01/2023-2024 | Sep 6th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10140,7 +10161,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NYC/01/2023-2024 | Sep 7th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10161,7 +10182,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NYC/01/2023-2024 | Sep 7th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10182,7 +10203,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/KNC/01/2023-2024 | Sep 6th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10203,7 +10224,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/23/2023-2024 | Oct 17th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -10224,7 +10245,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/23/2023-2024 | Oct 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10245,7 +10266,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/03/23/2023-2024 | Nov 16th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -10266,7 +10287,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/03/23/2023-2024 | Nov 16th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -10287,7 +10308,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2023-2025 | Dec 20th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10308,7 +10329,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WJR/OT/01/2023-2024 | Dec 5th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10329,7 +10350,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/23/2023-2024 | Dec 8th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10350,7 +10371,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/23/B/2023-2024 | Dec 15th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -10371,7 +10392,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10392,7 +10413,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10413,7 +10434,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10434,7 +10455,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2023-2024 | Dec 21st, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10455,7 +10476,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2023-2024 | Dec 21st, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10476,7 +10497,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/06/23/2023-2024 | Jan 24th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10497,7 +10518,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/05/23/2023-2024 | Jan 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -10518,7 +10539,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/B/01/2023-2024 | Jan 30th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10539,7 +10560,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/OT/01/2023-2024 | Feb 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10560,7 +10581,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/OT/01/2023-2024 | Feb 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10581,7 +10602,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/07/23/2023-2024 | Feb 20th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10602,7 +10623,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MRU/REG/2023-2025 | Feb 20th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10623,7 +10644,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2023-2025 | Feb 21st, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10644,7 +10665,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EMB/REG/2023-2025 | Feb 22nd, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10665,7 +10686,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Mar 7th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10686,7 +10707,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/C/01/2023-2024 | Mar 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10707,7 +10728,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/C/01/2023-2024 | Mar 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10728,7 +10749,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Mar 7th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10749,7 +10770,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/24/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10770,7 +10791,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/24/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10791,7 +10812,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -10812,7 +10833,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/24/2023-2024 | May 9th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10833,7 +10854,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/CNTY/REG/01/2024-2026 | Aug 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10854,7 +10875,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MRG /CNTY/REG/01/2024-2026 | Sep 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10875,7 +10896,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2024-2025 | Sep 17th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10896,7 +10917,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2024-2025 | Sep 17th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10917,7 +10938,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/24/2024-2025 | Oct 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10938,7 +10959,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/24/2024-2025 | Oct 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10959,7 +10980,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/24/2024-2025 | Oct 31st, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -10980,7 +11001,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/25/2024 - 2025 | Jan 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11001,7 +11022,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/06/25/2024 - 2025 | Jan 31st, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11022,7 +11043,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/05/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11043,7 +11064,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/05/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11064,7 +11085,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/06/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11085,7 +11106,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/25/2024 – 2025 | Mar 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11106,7 +11127,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/25/2024 - 2025 | Mar 12th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11127,7 +11148,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/25/2024 - 2025 | Mar 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11148,7 +11169,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/25/2024 - 2025 | Mar 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11169,7 +11190,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/25/2024 – 2025 | Mar 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11190,7 +11211,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/25/2024 - 2025 | Mar 12th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11211,7 +11232,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11232,7 +11253,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11253,7 +11274,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11274,7 +11295,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/13/25/2024 - 2025 | Apr 22nd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11295,7 +11316,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/B/25/2024 - 2025 | Apr 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11316,7 +11337,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/B/25/2024 - 2025 | Apr 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11337,7 +11358,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11358,7 +11379,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/LAMU /COUNTY/REG/1/2025-2027 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11379,7 +11400,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/14/25/2024 - 2025 | May 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11400,7 +11421,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11421,7 +11442,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11442,7 +11463,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/15/25/2024 - 2025 | May 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11463,7 +11484,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/NRB/CNTY/REG/01/2025-2027 | Jun 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11484,7 +11505,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/OT/17/25/2024-2025 | Jun 4th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11505,7 +11526,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/25/2024 - 2025 | Jun 3rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11526,7 +11547,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/25/2024 - 2025 | Jun 3rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11547,7 +11568,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EMB/REG/2025-2027 | Jun 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11568,7 +11589,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/18/25/2024-2025 | Jun 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11589,7 +11610,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KJD/CNTY/REG/01/2025-2027 | Jun 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11610,7 +11631,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2025-2027 | Jun 18th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11631,7 +11652,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2025-2027 | Jun 18th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11652,7 +11673,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/NRK/CNTY/REG/01/2025-2027 | Jun 25th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11673,7 +11694,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KSM/REG/01/2025-2027 | Jun 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11694,7 +11715,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11715,7 +11736,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11736,7 +11757,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2025-2027 | Jun 23rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11757,7 +11778,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2025/2026/2027 | Jun 23rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11778,7 +11799,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/19/25/2024-2025 | Jun 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11799,7 +11820,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/HBY/REG/01/2025-2027 | Jul 2nd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11820,7 +11841,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11841,7 +11862,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/SYA/REG/01/2025-2027 | Jul 4th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11862,7 +11883,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2025-2026 | Dec 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11883,7 +11904,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/002/2025-2026 | Dec 16th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11904,7 +11925,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2025-2026 | Dec 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11925,7 +11946,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/NY/001/2025/2026 | Jan 16th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11946,7 +11967,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/NY/001/2025/2026 | Jan 16th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -11967,7 +11988,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/001/26/2025 – 2026 | Feb 2nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -11988,7 +12009,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/002/26/2025 – 2026 | Feb 2nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12009,7 +12030,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/26/2025 - 2026 | Feb 19th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12030,7 +12051,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/007/26/2025 – 2026 | Apr 24th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12051,7 +12072,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/006/26/2025 - 2026 | Apr 24th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12072,7 +12093,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/C/26/2025-2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12093,7 +12114,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/014/26/2025 - 2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12114,7 +12135,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/010/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12135,7 +12156,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/008/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12156,7 +12177,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/010/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12177,7 +12198,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/008/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12198,7 +12219,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12219,7 +12240,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12240,7 +12261,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/005/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12261,7 +12282,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/005/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12282,7 +12303,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12303,7 +12324,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12324,7 +12345,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12345,7 +12366,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12366,7 +12387,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "software"
   },
   {
@@ -12387,7 +12408,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/26/2025 – 2026 | May 22nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12408,7 +12429,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/009/26/2025-2026 | May 22nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12429,7 +12450,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/B/26/2025 – 2026 | May 26th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12450,7 +12471,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/B/26/2025 – 2026 | May 26th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12471,7 +12492,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/003/26/2025-2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12492,7 +12513,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12513,7 +12534,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12534,7 +12555,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12555,7 +12576,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 & IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
   },
   {
@@ -12576,7 +12597,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12597,7 +12618,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/003/26/2025-2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "services"
   },
   {
@@ -12618,8 +12639,239 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/017/26/2025 - 2026 | Jun 19th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-06-26T23:06:51Z",
+    "crawled_at": "2026-06-27T23:03:27Z",
     "category": "other"
+  },
+  {
+    "id": 1282,
+    "notice_key": "cf7bd3408c9f6291f8cf",
+    "country": "Bahrain",
+    "iso3": "BHR",
+    "region": "Middle East",
+    "portal_name": "tenderboard.gov.bh",
+    "title": "274/2026/BTB (PHC/129/2026)(Supply & Installation of mod.....)",
+    "title_en": "",
+    "url": "https://etendering.tenderboard.gov.bh",
+    "published_date": "Bahrain Tender Board",
+    "deadline_date": "",
+    "status": "Open",
+    "buyer": "Tender Board Bahrain",
+    "amount": null,
+    "currency": "BHD",
+    "snippet": "274/2026/BTB (PHC/129/2026)(Supply & Installation of mod.....) | Bahrain Tender Board | 21 Days -11 Hours",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:41Z",
+    "category": "other"
+  },
+  {
+    "id": 1272,
+    "notice_key": "169cc9b0eea6fa311730",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Procurement of Pick-up Vehicle",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3113012",
+    "published_date": "Public Records And Archives Administration Department",
+    "deadline_date": "",
+    "status": "Sat Jun 27 18:46:26 GMT 2026",
+    "buyer": "Procurement of Pick-up Vehicle",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "1 | Procurement of Pick-up Vehicle | Public Records And Archives Administration Department | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 667,
+    "notice_key": "588a9d5be8c4c2b05af7",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "SUPPLY OF CONGREGATION SOUVENIRS",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3085052",
+    "published_date": "University of Professional Studies Accra",
+    "deadline_date": "",
+    "status": "Tue Jun 23 18:29:22 GMT 2026",
+    "buyer": "SUPPLY OF CONGREGATION SOUVENIRS",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "10 | SUPPLY OF CONGREGATION SOUVENIRS | University of Professional Studies Accra | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 666,
+    "notice_key": "fdb7b8888fdee581baba",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "SUPPLY OF MEDICINE",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3085006",
+    "published_date": "University of Professional Studies Accra",
+    "deadline_date": "",
+    "status": "Tue Jun 23 19:19:04 GMT 2026",
+    "buyer": "SUPPLY OF MEDICINE",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "9 | SUPPLY OF MEDICINE | University of Professional Studies Accra | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 665,
+    "notice_key": "e4bec067a3d7bd8f5020",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3084952",
+    "published_date": "University of Professional Studies Accra",
+    "deadline_date": "",
+    "status": "Wed Jun 24 15:34:26 GMT 2026",
+    "buyer": "SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "8 | SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES | University of Professional Studies Accra | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 664,
+    "notice_key": "ae6a796dfd5d46658414",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3093136",
+    "published_date": "TANO SOUTH MUNICIPAL ASSEMBLY",
+    "deadline_date": "",
+    "status": "Wed Jun 24 15:42:49 GMT 2026",
+    "buyer": "COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "7 | COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL | TANO SOUTH MUNICIPAL ASSEMBLY | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 663,
+    "notice_key": "5c0cd60ad0723099ef83",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Procure 1700 No Dual Desks for Public Primary Schools",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3095394",
+    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
+    "deadline_date": "",
+    "status": "Wed Jun 24 18:31:45 GMT 2026",
+    "buyer": "Procure 1700 No Dual Desks for Public Primary Schools",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "6 | Procure 1700 No Dual Desks for Public Primary Schools | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 662,
+    "notice_key": "34bb7a137e3a83b2a11a",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Construction and Furnishing of CHPS Compound at Gordon",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3099172",
+    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
+    "deadline_date": "",
+    "status": "Thu Jun 25 11:41:22 GMT 2026",
+    "buyer": "Construction and Furnishing of CHPS Compound at Gordon",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "5 | Construction and Furnishing of CHPS Compound at Gordon | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 661,
+    "notice_key": "dffb696187e82a94601a",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3101183",
+    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
+    "deadline_date": "",
+    "status": "Thu Jun 25 13:30:33 GMT 2026",
+    "buyer": "Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "4 | Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 660,
+    "notice_key": "072a8040338f2954111e",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Supply and Delivery of IT Equipment and Accessories",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3058187",
+    "published_date": "NATIONAL INSURANCE COMMISSION",
+    "deadline_date": "",
+    "status": "Fri Jun 26 14:20:54 GMT 2026",
+    "buyer": "Supply and Delivery of IT Equipment and Accessories",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "3 | Supply and Delivery of IT Equipment and Accessories | NATIONAL INSURANCE COMMISSION | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "other"
+  },
+  {
+    "id": 659,
+    "notice_key": "45c865a6449c9c057f44",
+    "country": "Ghana",
+    "iso3": "GHA",
+    "region": "West Africa",
+    "portal_name": "ghaneps.gov.gh",
+    "title": "Supply and Delivery Service Vehicles",
+    "title_en": "",
+    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3058275",
+    "published_date": "NATIONAL INSURANCE COMMISSION",
+    "deadline_date": "",
+    "status": "Fri Jun 26 14:44:38 GMT 2026",
+    "buyer": "Supply and Delivery Service Vehicles",
+    "amount": null,
+    "currency": "GHS",
+    "snippet": "2 | Supply and Delivery Service Vehicles | NATIONAL INSURANCE COMMISSION | ",
+    "score": 0,
+    "crawled_at": "2026-06-27T23:00:38Z",
+    "category": "services"
   },
   {
     "id": 223,
@@ -12662,195 +12914,6 @@ window.MIRU_TENDERS = [
     "score": 0,
     "crawled_at": "2026-06-26T23:04:03Z",
     "category": "other"
-  },
-  {
-    "id": 667,
-    "notice_key": "588a9d5be8c4c2b05af7",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "SUPPLY OF CONGREGATION SOUVENIRS",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3085052",
-    "published_date": "University of Professional Studies Accra",
-    "deadline_date": "",
-    "status": "Tue Jun 23 18:29:22 GMT 2026",
-    "buyer": "SUPPLY OF CONGREGATION SOUVENIRS",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "9 | SUPPLY OF CONGREGATION SOUVENIRS | University of Professional Studies Accra | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 666,
-    "notice_key": "fdb7b8888fdee581baba",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "SUPPLY OF MEDICINE",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3085006",
-    "published_date": "University of Professional Studies Accra",
-    "deadline_date": "",
-    "status": "Tue Jun 23 19:19:04 GMT 2026",
-    "buyer": "SUPPLY OF MEDICINE",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "8 | SUPPLY OF MEDICINE | University of Professional Studies Accra | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 665,
-    "notice_key": "e4bec067a3d7bd8f5020",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3084952",
-    "published_date": "University of Professional Studies Accra",
-    "deadline_date": "",
-    "status": "Wed Jun 24 15:34:26 GMT 2026",
-    "buyer": "SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "7 | SUPPLY OF LABORATORY REAGENTS AND CONSUMABLES | University of Professional Studies Accra | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 664,
-    "notice_key": "ae6a796dfd5d46658414",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3093136",
-    "published_date": "TANO SOUTH MUNICIPAL ASSEMBLY",
-    "deadline_date": "",
-    "status": "Wed Jun 24 15:42:49 GMT 2026",
-    "buyer": "COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "6 | COMPLETION OF 1No. OUTPATIENT DEPARTMENT (OPD) AND ADMINISTRATION BLOCK AT BECHEM GOVERNMENT HOSPITAL | TANO SOUTH MUNICIPAL ASSEMBLY | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 663,
-    "notice_key": "5c0cd60ad0723099ef83",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "Procure 1700 No Dual Desks for Public Primary Schools",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3095394",
-    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
-    "deadline_date": "",
-    "status": "Wed Jun 24 18:31:45 GMT 2026",
-    "buyer": "Procure 1700 No Dual Desks for Public Primary Schools",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "5 | Procure 1700 No Dual Desks for Public Primary Schools | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 662,
-    "notice_key": "34bb7a137e3a83b2a11a",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "Construction and Furnishing of CHPS Compound at Gordon",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3099172",
-    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
-    "deadline_date": "",
-    "status": "Thu Jun 25 11:41:22 GMT 2026",
-    "buyer": "Construction and Furnishing of CHPS Compound at Gordon",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "4 | Construction and Furnishing of CHPS Compound at Gordon | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 661,
-    "notice_key": "dffb696187e82a94601a",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3101183",
-    "published_date": "PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY",
-    "deadline_date": "",
-    "status": "Thu Jun 25 13:30:33 GMT 2026",
-    "buyer": "Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "3 | Construction of Lorry Park at Bogoso - Paving of Floor of the Lorry Park | PRESTEA HUNI-VALLEY MUNICIPAL ASSEMBLY | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 660,
-    "notice_key": "072a8040338f2954111e",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "Supply and Delivery of IT Equipment and Accessories",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3058187",
-    "published_date": "NATIONAL INSURANCE COMMISSION",
-    "deadline_date": "",
-    "status": "Fri Jun 26 14:20:54 GMT 2026",
-    "buyer": "Supply and Delivery of IT Equipment and Accessories",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "2 | Supply and Delivery of IT Equipment and Accessories | NATIONAL INSURANCE COMMISSION | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "other"
-  },
-  {
-    "id": 659,
-    "notice_key": "45c865a6449c9c057f44",
-    "country": "Ghana",
-    "iso3": "GHA",
-    "region": "West Africa",
-    "portal_name": "ghaneps.gov.gh",
-    "title": "Supply and Delivery Service Vehicles",
-    "title_en": "",
-    "url": "https://www.ghaneps.gov.gh/epps/epps/cft/prepareViewCfTWS.do?resourceId=3058275",
-    "published_date": "NATIONAL INSURANCE COMMISSION",
-    "deadline_date": "",
-    "status": "Fri Jun 26 14:44:38 GMT 2026",
-    "buyer": "Supply and Delivery Service Vehicles",
-    "amount": null,
-    "currency": "GHS",
-    "snippet": "1 | Supply and Delivery Service Vehicles | NATIONAL INSURANCE COMMISSION | ",
-    "score": 0,
-    "crawled_at": "2026-06-26T23:04:03Z",
-    "category": "services"
   },
   {
     "id": 292,
@@ -16087,4 +16150,4 @@ window.MIRU_TENDERS = [
     "category": "software"
   }
 ];
-window.MIRU_TENDERS_META = {"total": 766, "countries": ["ALB", "BHR", "GHA", "IRQ", "KEN", "PHL", "PRY", "ZAF"], "last_crawled": "2026-06-26T23:12:55Z", "generated_at": "2026-06-26T23:12:55Z"};
+window.MIRU_TENDERS_META = {"total": 769, "countries": ["ALB", "BHR", "GHA", "IRQ", "KEN", "PHL", "PRY", "ZAF"], "last_crawled": "2026-06-27T23:09:09Z", "generated_at": "2026-06-27T23:09:09Z"};
