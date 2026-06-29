@@ -32,7 +32,7 @@ for r in c.fetchall():
         {'type':r[1],'name':r[2],'url':r[3],'access':r[4],'priority':r[5],'notes':r[6],'http':r[7]})
 conn.close()
 
-MIRU_ISO={'PHL','KOR','KGZ','IRQ','PRY','COD'}
+MIRU_ISO={'PHL','KOR','KGZ','IRQ','COD'}
 FLAG={'COD':'🇨🇩','GHA':'🇬🇭','KEN':'🇰🇪','ZAF':'🇿🇦','ARG':'🇦🇷','BRA':'🇧🇷','DOM':'🇩🇴',
       'HND':'🇭🇳','JAM':'🇯🇲','PAN':'🇵🇦','PRY':'🇵🇾','SLV':'🇸🇻','USA':'🇺🇸','VEN':'🇻🇪',
       'BTN':'🇧🇹','IND':'🇮🇳','MNG':'🇲🇳','PHL':'🇵🇭','KOR':'🇰🇷','KAZ':'🇰🇿','KGZ':'🇰🇬',
