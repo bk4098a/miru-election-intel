@@ -85,7 +85,7 @@ Matplotlib Miru 브랜드 테마 유틸리티. `data/*.html` 지역별 보고서
 
 ---
 
-## 현재 파서 상태 (`crawler/parsers/`) — 23개 파서
+## 현재 파서 상태 (`crawler/parsers/`) — 24개 파서
 
 ### 작동 중 (Static)
 | 파일 | 포털 | 상태 |
@@ -95,6 +95,7 @@ Matplotlib Miru 브랜드 테마 유틸리티. `data/*.html` 지역별 보고서
 | `ihec_iraq.py` | 이라크 ihec.iq | ✅ WP 사이트, 점수 메타데이터 |
 | `etenders_za.py` | 남아공 etenders.gov.za | ✅ DataTables GET API, IEC 필터 |
 | `dncp_paraguay.py` | 파라과이 pncp.dncp.gov.py | ✅ OCDS API, ES→EN 번역 |
+| `bcn_barcelona.py` | 스페인 licitacions.bcn.cat | ✅ HTML 스크래핑, CA→EN 번역, 18건 |
 
 ### 작동 중 (Playwright)
 | 파일 | 포털 | 상태 |
