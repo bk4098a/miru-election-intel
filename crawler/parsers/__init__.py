@@ -21,6 +21,7 @@ from .cppp_india       import parse as parse_cppp_india
 from .armp_drc         import parse as parse_armp_drc
 from .ejn_bosnia       import parse as parse_ejn_bosnia
 from .gpa_mongolia     import parse as parse_gpa_mongolia
+from .bcn_barcelona    import parse as parse_bcn_barcelona
 
 # Each entry: (country, iso3, parse_fn, mode)
 # mode = 'static'     → requests / lxml / BeautifulSoup only
@@ -47,6 +48,7 @@ PARSERS = [
     ('Dem. Rep. Congo',         'COD', parse_armp_drc,         'static'),  # ARMP HTML + FR→EN
     ('Bosnia and Herzegovina',  'BIH', parse_ejn_bosnia,       'static'),  # eJN HTML + BS→EN
     ('Mongolia',                'MNG', parse_gpa_mongolia,     'static'),  # GPA API/HTML + MN→EN
+    ('Spain',                   'ESP', parse_bcn_barcelona,    'static'),      # ✅ Barcelona City procurement
     # ── Playwright portals ─────────────────────────────────────────────────
     ('Philippines',             'PHL', parse_philgeps,         'playwright'),  # ✅ PhilGEPS keyword search
     ('Jamaica',                 'JAM', parse_gojep,            'playwright'),  # JSF app
