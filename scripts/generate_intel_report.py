@@ -1,238 +1,866 @@
-"""Generate election_tech_report.html from election_technology_world.db"""
-import sqlite3, sys, os
+"""
+Generate data/election_tech_report.html
+Multi-page tab-based dark-theme intelligence report for Miru Systems.
+"""
+import sqlite3, json, os, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-DB = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_technology_world.db')
+DB  = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_technology_world.db')
 OUT = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_tech_report.html')
 
+# ── Procurement category overrides ─────────────────────────────────────────
+PROCUREMENT_CATEGORY = {
+    'BRA': 'both', 'PHL': 'both', 'ZAF': 'both', 'JAM': 'both', 'BTN': 'both',
+    'IRQ': 'emb_only', 'KEN': 'emb_only',
+    'KAZ': 'gov_only', 'USA': 'gov_only', 'ARG': 'gov_only', 'EST': 'gov_only',
+    'COD': 'gov_only', 'BIH': 'gov_only', 'MNG': 'gov_only', 'OMN': 'gov_only',
+    'ALB': 'gov_only', 'PRY': 'gov_only', 'KGZ': 'gov_only', 'BEL': 'gov_only',
+    'CHE': 'gov_only', 'ARE': 'gov_only', 'IND': 'gov_only', 'BHR': 'gov_only',
+    'UZB': 'gov_only', 'DOM': 'gov_only', 'SLV': 'gov_only', 'HND': 'gov_only',
+    'BGR': 'gov_only', 'MKD': 'gov_only', 'PAN': 'gov_only',
+    'GHA': 'login_req', 'IRN': 'login_req', 'KOR': 'login_req', 'GEO': 'login_req',
+    'VEN': 'opaque',
+}
+
+CAT_META = {
+    'both':      {'label': '국가조달 + 선관위 공동',  'label_en': 'National + EMB',    'color': '#22c55e', 'bg': '#052e16'},
+    'emb_only':  {'label': '선관위 직접공고',          'label_en': 'EMB Direct Only',   'color': '#a78bfa', 'bg': '#2e1065'},
+    'gov_only':  {'label': '국가조달 전용',            'label_en': 'National Only',     'color': '#38bdf8', 'bg': '#082f49'},
+    'login_req': {'label': '로그인/등록 필요',         'label_en': 'Login Required',    'color': '#fb923c', 'bg': '#431407'},
+    'opaque':    {'label': '수의계약/불투명',           'label_en': 'Opaque / Direct',   'color': '#94a3b8', 'bg': '#0f172a'},
+}
+
+REGIONS = {
+    '아프리카':    ['COD', 'GHA', 'KEN', 'ZAF'],
+    '아시아·중동': ['ARE', 'BHR', 'BTN', 'IND', 'IRN', 'IRQ', 'KAZ', 'KGZ', 'KOR', 'MNG', 'OMN', 'PHL', 'UZB'],
+    '유럽·CIS':   ['ALB', 'BEL', 'BGR', 'BIH', 'CHE', 'EST', 'GEO', 'MKD'],
+    '아메리카':   ['ARG', 'BRA', 'DOM', 'HND', 'JAM', 'PAN', 'PRY', 'SLV', 'USA', 'VEN'],
+}
+
+MIRU_ISO = {'PHL', 'KOR', 'KGZ', 'IRQ', 'COD'}
+
+FLAG = {
+    'COD':'🇨🇩','GHA':'🇬🇭','KEN':'🇰🇪','ZAF':'🇿🇦',
+    'ARG':'🇦🇷','BRA':'🇧🇷','DOM':'🇩🇴','HND':'🇭🇳','JAM':'🇯🇲','PAN':'🇵🇦','PRY':'🇵🇾','SLV':'🇸🇻','USA':'🇺🇸','VEN':'🇻🇪',
+    'BTN':'🇧🇹','IND':'🇮🇳','MNG':'🇲🇳','PHL':'🇵🇭','KOR':'🇰🇷','KAZ':'🇰🇿','KGZ':'🇰🇬','UZB':'🇺🇿',
+    'ALB':'🇦🇱','BEL':'🇧🇪','BGR':'🇧🇬','BIH':'🇧🇦','CHE':'🇨🇭','EST':'🇪🇪','GEO':'🇬🇪','MKD':'🇲🇰',
+    'ARE':'🇦🇪','BHR':'🇧🇭','IRN':'🇮🇷','IRQ':'🇮🇶','OMN':'🇴🇲',
+}
+
+# ── DB queries ──────────────────────────────────────────────────────────────
 conn = sqlite3.connect(DB)
-c = conn.cursor()
+cur  = conn.cursor()
 
-c.execute("""
-SELECT iso3,country,country_ko,region,voting_method,machine_type,machine_model,
-       vendor_name,biometric_voter_reg,biometric_voter_verify,evoting,
-       contract_year,deployment_scale,notes,machine_voting,
-       last_election_date,next_election_date
-FROM countries
-WHERE iso3 IN (SELECT DISTINCT iso3 FROM machine_voting_portals)
-ORDER BY region,country
+cur.execute("""
+    SELECT iso3,country,country_ko,region,voting_method,machine_type,machine_model,
+           vendor_name,biometric_voter_reg,biometric_voter_verify,evoting,
+           contract_year,deployment_scale,notes,machine_voting
+    FROM countries
+    WHERE iso3 IN (SELECT DISTINCT iso3 FROM machine_voting_portals WHERE iso3!='ESP')
+    ORDER BY region,country
 """)
-cols=['iso3','country','country_ko','region','voting_method','machine_type','machine_model',
-      'vendor','bio_reg','bio_verify','evoting','contract_year','deploy_scale','notes',
-      'machine_voting','last_election','next_election']
-countries=[dict(zip(cols,r)) for r in c.fetchall()]
+cols = ['iso3','country','country_ko','region','voting_method','machine_type','machine_model',
+        'vendor','bio_reg','bio_verify','evoting','contract_year','deploy_scale','notes','machine_voting']
+countries = [dict(zip(cols, r)) for r in cur.fetchall()]
 
-c.execute("""
-SELECT iso3,portal_type,portal_name,url,access,priority,notes,http_status
-FROM machine_voting_portals ORDER BY iso3,portal_type
+cur.execute("""
+    SELECT iso3,portal_type,portal_name,url,access,priority,notes,http_status
+    FROM machine_voting_portals WHERE iso3!='ESP' ORDER BY iso3,portal_type
 """)
-portals_by_iso={}
-for r in c.fetchall():
-    portals_by_iso.setdefault(r[0],[]).append(
-        {'type':r[1],'name':r[2],'url':r[3],'access':r[4],'priority':r[5],'notes':r[6],'http':r[7]})
+portals_raw = cur.fetchall()
 conn.close()
 
-MIRU_ISO={'PHL','KOR','KGZ','IRQ','COD'}
-FLAG={'COD':'🇨🇩','GHA':'🇬🇭','KEN':'🇰🇪','ZAF':'🇿🇦','ARG':'🇦🇷','BRA':'🇧🇷','DOM':'🇩🇴',
-      'HND':'🇭🇳','JAM':'🇯🇲','PAN':'🇵🇦','PRY':'🇵🇾','SLV':'🇸🇻','USA':'🇺🇸','VEN':'🇻🇪',
-      'BTN':'🇧🇹','IND':'🇮🇳','MNG':'🇲🇳','PHL':'🇵🇭','KOR':'🇰🇷','KAZ':'🇰🇿','KGZ':'🇰🇬',
-      'UZB':'🇺🇿','ALB':'🇦🇱','BEL':'🇧🇪','BGR':'🇧🇬','BIH':'🇧🇦','CHE':'🇨🇭','EST':'🇪🇪',
-      'GEO':'🇬🇪','MKD':'🇲🇰','ARE':'🇦🇪','BHR':'🇧🇭','IRN':'🇮🇷','IRQ':'🇮🇶','OMN':'🇴🇲'}
+portals_by_iso = {}
+for r in portals_raw:
+    portals_by_iso.setdefault(r[0], []).append(
+        {'type': r[1], 'name': r[2], 'url': r[3], 'access': r[4],
+         'priority': r[5], 'notes': r[6], 'http': r[7]})
 
-def portal_route(iso):
-    types=[p['type'] for p in portals_by_iso.get(iso,[])]
-    has_gov=any('국가조달' in t for t in types)
-    has_emb=any(t=='EMB조달' for t in types)
-    has_site=any(t in('선거위','선거주관','선거위(e-voting)') for t in types)
-    if has_emb and has_gov: return 'both'
-    if has_emb: return 'emb_only'
-    if has_gov and has_site: return 'gov_plus_site'
-    if has_gov: return 'gov_only'
-    return 'unknown'
+# ── Helpers ─────────────────────────────────────────────────────────────────
+def get_cat(iso):
+    return PROCUREMENT_CATEGORY.get(iso, 'gov_only')
 
-ROUTE={'both':('국가조달 + EMB 직접공고','#1B5E20','#E8F5E9'),
-       'gov_plus_site':('국가조달 → 선거위 연동','#0D47A1','#E3F2FD'),
-       'gov_only':('국가조달 전용','#E65100','#FFF3E0'),
-       'emb_only':('선거위 직접공고','#4A148C','#F3E5F5'),
-       'unknown':('미분류','#525252','#F5F5F5')}
+def portal_status_html(p, iso):
+    """Return colored status badge + optional note for a portal row."""
+    http = (p.get('http') or '').strip()
+    access = (p.get('access') or '').strip()
+    # Special overrides
+    if iso == 'KEN':
+        return '<span class="ps-na">— Inaccessible</span>', '선관위 직접공고 확인됨'
+    note = (p.get('notes') or '').replace('<','&lt;').replace('>','&gt;')
+    # GHA EC Ghana note
+    if iso == 'GHA' and 'EC Ghana' in (p.get('name') or ''):
+        note = '공고 없음 (직접공고 미확인)' + ((' / ' + note) if note else '')
+    if http in ('200', '200 OK', 'Working') or http.startswith('2'):
+        badge = '<span class="ps-ok">✓ Working</span>'
+    elif http in ('Dead', '404', '403', '410') or http.startswith(('4','5')):
+        badge = '<span class="ps-dead">✗ Dead</span>'
+    elif http == 'Login' or access == 'Login':
+        badge = '<span class="ps-login">⚠ Login</span>'
+    elif http == 'Info_only':
+        badge = '<span class="ps-info">ℹ Info only</span>'
+    elif http == 'JS_rendered':
+        badge = '<span class="ps-js">⚠ JS render</span>'
+    elif http == 'Blocked':
+        badge = '<span class="ps-dead">✗ Blocked</span>'
+    else:
+        badge = '<span class="ps-na">— Unverified</span>'
+    return badge, note
 
-def ml(mv):
-    return {'Yes':('전체 도입','#1B5E20','#E8F5E9'),
-            'Pilot':('파일럿/부분','#E65100','#FFF3E0')}.get(mv,('생체인식만','#0D47A1','#E3F2FD'))
+def portal_table(iso):
+    portals = portals_by_iso.get(iso, [])
+    if not portals:
+        return '<p class="no-portals">포털 데이터 없음</p>'
+    rows = ''
+    for p in portals:
+        url  = p['url'] or '#'
+        name = (p['name'] or url).replace('<','&lt;')
+        ptype = (p['type'] or '').replace('<','&lt;')
+        badge, note = portal_status_html(p, iso)
+        # Portal type badge colour
+        if '국가조달' in ptype:
+            type_span = f'<span class="pt-gov">{ptype}</span>'
+        elif 'EMB' in ptype or '선거위' in ptype or '선거주관' in ptype or '선관위' in ptype:
+            type_span = f'<span class="pt-emb">{ptype}</span>'
+        else:
+            type_span = f'<span class="pt-other">{ptype}</span>'
+        note_cell = f'<span class="portal-note">{note}</span>' if note else ''
+        rows += (f'<tr>'
+                 f'<td>{type_span}</td>'
+                 f'<td><a href="{url}" target="_blank" rel="noopener">{name}</a></td>'
+                 f'<td>{badge} {note_cell}</td>'
+                 f'</tr>')
+    return (f'<table class="ptbl">'
+            f'<thead><tr><th>유형</th><th>포털명</th><th>상태</th></tr></thead>'
+            f'<tbody>{rows}</tbody>'
+            f'</table>')
 
-def pb(pt):
-    if '국가조달' in pt: return f'<span class="ptg">{pt}</span>'
-    if pt=='EMB조달':    return f'<span class="pte">{pt}</span>'
-    return f'<span class="pts">{pt}</span>'
+def country_card(ctr):
+    iso   = ctr['iso3']
+    flag  = FLAG.get(iso, '🏳')
+    cat   = get_cat(iso)
+    cm    = CAT_META[cat]
+    miru  = iso in MIRU_ISO
+    bio_r = '✅' if ctr['bio_reg']  == 'Y' else '—'
+    bio_v = '✅' if ctr['bio_verify']== 'Y' else '—'
+    mtype = ctr['machine_type'] or ctr['voting_method'] or '—'
+    miru_badge = '<span class="miru-badge">★ MIRU</span>' if miru else ''
+    cat_badge  = f'<span class="cat-badge" style="color:{cm["color"]};background:{cm["bg"]}">{cm["label"]}</span>'
+    mtype_badge = f'<span class="mtype-badge">{mtype}</span>'
+    bio_html = f'<span class="bio-item">등록 {bio_r}</span><span class="bio-item">현장확인 {bio_v}</span>'
+    ptbl = portal_table(iso)
+    return (
+        f'<div class="ccard" id="c-{iso}">'
+        f'  <div class="ccard-head">'
+        f'    <span class="cflag">{flag}</span>'
+        f'    <div class="cname">'
+        f'      <div class="cname-ko">{ctr["country_ko"]}</div>'
+        f'      <div class="cname-en">{ctr["country"]} · {iso}</div>'
+        f'    </div>'
+        f'    <div class="cbadges">{miru_badge}{cat_badge}{mtype_badge}</div>'
+        f'  </div>'
+        f'  <div class="ccard-body">'
+        f'    <div class="cbio">'
+        f'      <span class="bio-label">생체인식</span>'
+        f'      {bio_html}'
+        f'    </div>'
+        f'    {ptbl}'
+        f'  </div>'
+        f'</div>'
+    )
 
-def country_panel(ctr):
-    iso=ctr['iso3']; flag=FLAG.get(iso,'🏳')
-    miru=iso in MIRU_ISO
-    rl,rc,rbg=ROUTE[portal_route(iso)]
-    mll,mlc,mlbg=ml(ctr['machine_voting'])
-    bio='유권자 등록 '+('✅' if ctr['bio_reg']=='Y' else '—')+'  투표소 확인 '+('✅' if ctr['bio_verify']=='Y' else '—')
-    ps=portals_by_iso.get(iso,[])
-    mb='<span class="mb">★ MIRU 납품국</span>' if miru else ''
+def region_tab_content(region_name):
+    isos = REGIONS[region_name]
+    cards = ''
+    for iso in isos:
+        ctr = next((c for c in countries if c['iso3'] == iso), None)
+        if ctr:
+            cards += country_card(ctr)
+    return f'<div class="region-grid">{cards}</div>'
 
-    ptbl=''
-    for p in ps:
-        url=p['url'] or '#'; nh=(p['notes'] or '')
-        hc='hok' if (p['http'] or '').startswith('2') else ('her' if (p['http'] or '').startswith(('4','5')) else 'hna')
-        hb=f'<span class="{hc}">{p["http"]}</span>' if p['http'] else ''
-        ptbl+=f'<tr><td>{pb(p["type"])}</td><td><a href="{url}" target="_blank">{p["name"] or url}</a></td><td class="pn">{nh} {hb}</td></tr>'
-
-    minfo=''
-    for lbl,key in [('유형','machine_type'),('모델','machine_model'),('공급사','vendor'),('계약','contract_year'),('규모','deploy_scale')]:
-        if ctr[key]: minfo+=f'<div class="ir"><span class="il">{lbl}</span><span class="iv">{ctr[key]}</span></div>'
-    notes_h=f'<div class="cn">{ctr["notes"]}</div>' if ctr['notes'] else ''
-
-    return f'''<div class="cc" id="{iso}">
-  <div class="ch">
-    <span class="cf">{flag}</span>
-    <div class="cn2"><div class="cn3">{ctr["country_ko"]}</div><div class="cn4">{ctr["country"]} · {iso}</div></div>
-    <div class="cbdg">{mb}<span class="bm" style="background:{mlbg};color:{mlc};">{mll}</span><span class="br2" style="background:{rbg};color:{rc};">{rl}</span></div>
-  </div>
-  <div class="cb2">
-    <div class="col">
-      <div class="ct">🗳 투표 장비</div>
-      <div class="ir"><span class="il">방식</span><span class="iv">{ctr["voting_method"] or "—"}</span></div>
-      {minfo}{notes_h}
-    </div>
-    <div class="col">
-      <div class="ct">🔍 생체인식</div>
-      <div class="ir"><span class="il">등록</span><span class="iv">{"✅ 적용" if ctr["bio_reg"]=="Y" else "미사용"}</span></div>
-      <div class="ir"><span class="il">투표소</span><span class="iv">{"✅ 적용" if ctr["bio_verify"]=="Y" else "미사용"}</span></div>
-      <div class="ir"><span class="il">e-voting</span><span class="iv">{"✅" if ctr["evoting"]=="Y" else "—"}</span></div>
-    </div>
-    <div class="col colw">
-      <div class="ct">📋 조달 경로</div>
-      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody>{ptbl}</tbody></table>
-    </div>
-  </div>
-</div>'''
-
-total=len(countries)
-machine_yes=sum(1 for x in countries if x['machine_voting']=='Yes')
-machine_pilot=sum(1 for x in countries if x['machine_voting']=='Pilot')
-bio_use=sum(1 for x in countries if x['bio_reg']=='Y' or x['bio_verify']=='Y')
-route_counts={}
+# ── Stats for overview ───────────────────────────────────────────────────────
+total_countries = len([c for c in countries if c['iso3'] != 'ESP'])
+cat_counts = {}
 for ctr in countries:
-    r=portal_route(ctr['iso3']); route_counts[r]=route_counts.get(r,0)+1
+    cat = get_cat(ctr['iso3'])
+    cat_counts[cat] = cat_counts.get(cat, 0) + 1
 
-REGION_ORDER=['Africa','Americas','Asia-Pacific','Central Asia','Europe','Middle East']
-REGION_KO={'Africa':'아프리카','Americas':'아메리카','Asia-Pacific':'아시아·태평양',
-           'Central Asia':'중앙아시아','Europe':'유럽','Middle East':'중동'}
-regions={}
-for ctr in countries: regions.setdefault(ctr['region'],[]).append(ctr)
-
-panels=''
-for reg in REGION_ORDER:
-    ctrs=regions.get(reg,[])
-    if not ctrs: continue
-    panels+=f'<section class="rs" id="r-{reg.lower().replace(" ","-")}"><div class="rh"><span class="rn">{REGION_KO[reg]}</span><span class="rs2">{reg} · {len(ctrs)}개국</span></div>'
-    for ctr in ctrs: panels+=country_panel(ctr)
-    panels+='</section>'
-
-nav_rows=''
+cat_country_lists = {}
 for ctr in countries:
-    iso=ctr['iso3']; rl,rc,rbg=ROUTE[portal_route(iso)]
-    nav_rows+=f'<tr><td>{REGION_KO.get(ctr["region"],ctr["region"])}</td><td><a href="#{iso}">{FLAG.get(iso,"🏳")} {ctr["country_ko"]}</a></td><td style="color:#8C8C8C">{iso}</td><td>{ctr["voting_method"] or "—"}</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:{rbg};color:{rc};">{rl}</span></td><td style="color:#EB0414;font-weight:700;">{"★" if iso in MIRU_ISO else ""}</td></tr>'
+    cat = get_cat(ctr['iso3'])
+    cat_country_lists.setdefault(cat, []).append(ctr['country_ko'])
 
-sum_route=''
-for r,lbl in ROUTE.items():
-    cnt=route_counts.get(r,0)
-    if cnt: sum_route+=f'<div class="si2"><span class="sn" style="color:{lbl[1]};">{cnt}</span><span class="sl">{lbl[0]}</span></div>'
+emb_direct_count = cat_counts.get('both', 0) + cat_counts.get('emb_only', 0)
+inaccessible_count = cat_counts.get('login_req', 0) + cat_counts.get('opaque', 0)
 
-HTML=f'''<!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>선거 장비 도입국 조달 경로 분석 — MIRU</title>
+# Stat cards HTML
+def stat_cards_html():
+    html = ''
+    for cat, cm in CAT_META.items():
+        cnt   = cat_counts.get(cat, 0)
+        names = ', '.join(cat_country_lists.get(cat, []))
+        html += (
+            f'<div class="stat-card">'
+            f'  <div class="sc-count" style="color:{cm["color"]}">{cnt}</div>'
+            f'  <div class="sc-label">{cm["label"]}</div>'
+            f'  <div class="sc-label-en">{cm["label_en"]}</div>'
+            f'  <div class="sc-countries">{names}</div>'
+            f'</div>'
+        )
+    return html
+
+# ── JSON embed for charts and CSV ────────────────────────────────────────────
+chart_data = {
+    'donut': {
+        'labels': [CAT_META[k]['label_en'] for k in CAT_META],
+        'values': [cat_counts.get(k, 0) for k in CAT_META],
+        'colors': [CAT_META[k]['color'] for k in CAT_META],
+    },
+    'bar': {
+        'regions': list(REGIONS.keys()),
+        'cats': list(CAT_META.keys()),
+        'colors': [CAT_META[k]['color'] for k in CAT_META],
+        'data': {}
+    }
+}
+for reg, isos in REGIONS.items():
+    reg_cats = {}
+    for iso in isos:
+        cat = get_cat(iso)
+        reg_cats[cat] = reg_cats.get(cat, 0) + 1
+    chart_data['bar']['data'][reg] = [reg_cats.get(k, 0) for k in CAT_META]
+
+# CSV rows
+csv_rows = []
+for ctr in countries:
+    iso   = ctr['iso3']
+    cat   = get_cat(iso)
+    cm    = CAT_META[cat]
+    region_ko = next((rk for rk, isos in REGIONS.items() if iso in isos), ctr['region'])
+    portals = portals_by_iso.get(iso, [])
+    portal_names = ' | '.join(p['name'] or p['url'] for p in portals if p['name'] or p['url'])
+    portal_statuses = ' | '.join(p.get('http') or '—' for p in portals)
+    csv_rows.append({
+        'iso3': iso,
+        'country': ctr['country'],
+        'country_ko': ctr['country_ko'],
+        'region': region_ko,
+        'machine_type': ctr['machine_type'] or ctr['voting_method'] or '—',
+        'bio_reg': ctr['bio_reg'] or '—',
+        'bio_verify': ctr['bio_verify'] or '—',
+        'cat': cm['label_en'],
+        'portal_names': portal_names,
+        'portal_statuses': portal_statuses,
+        'miru': '★' if iso in MIRU_ISO else '',
+    })
+
+# Full table rows HTML
+def full_table_rows():
+    html = ''
+    for row in csv_rows:
+        iso = row['iso3']
+        cat = get_cat(iso)
+        cm  = CAT_META[cat]
+        miru_cell = '<span style="color:#ef4444;font-weight:700;">★ MIRU</span>' if row['miru'] else ''
+        cat_cell  = f'<span class="cat-badge" style="color:{cm["color"]};background:{cm["bg"]}">{cm["label_en"]}</span>'
+        html += (
+            f'<tr data-cat="{cat}">'
+            f'<td>{FLAG.get(iso,"🏳")} {row["country_ko"]}</td>'
+            f'<td style="color:#9aa6b5">{row["region"]}</td>'
+            f'<td style="color:#9aa6b5">{row["machine_type"]}</td>'
+            f'<td style="text-align:center">{row["bio_reg"]}&nbsp;/&nbsp;{row["bio_verify"]}</td>'
+            f'<td>{cat_cell}</td>'
+            f'<td style="font-size:11px;color:#9aa6b5;max-width:220px;word-break:break-all">{row["portal_names"]}</td>'
+            f'<td style="text-align:center">{miru_cell}</td>'
+            f'</tr>'
+        )
+    return html
+
+# ── Assemble final HTML ──────────────────────────────────────────────────────
+CHART_DATA_JSON = json.dumps(chart_data, ensure_ascii=False)
+CSV_DATA_JSON   = json.dumps(csv_rows, ensure_ascii=False)
+
+HTML = f'''<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>조달 경로 분석 — Miru Systems Intelligence</title>
 <style>
-*{{box-sizing:border-box;margin:0;padding:0}}
-:root{{--navy:#05195E;--red:#EB0414;--accent:#123A9E;--accent2:#AEB7D6;--ink:#161616;--slate:#525252;--steel:#8C8C8C;--fog:#F2F4FA;--line:#C7CEDC;--white:#fff}}
-body{{font-family:'Noto Sans KR',-apple-system,sans-serif;font-size:14px;color:var(--ink);background:#f8f9fc;line-height:1.65}}
-a{{color:var(--accent)}}a:hover{{text-decoration:underline}}
-.hdr{{background:var(--navy);color:#fff;padding:2.5rem 2rem 2rem}}
-.hdr-eye{{font-size:.68rem;letter-spacing:.18em;color:var(--accent2);text-transform:uppercase;margin-bottom:.5rem}}
-.hdr-title{{font-size:1.55rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}}
-.hdr-sub{{font-size:.84rem;color:rgba(255,255,255,.62);max-width:640px;margin-bottom:1.2rem}}
-.hdr-meta{{font-size:.7rem;color:rgba(255,255,255,.4)}}
-.sbar{{background:var(--white);border-bottom:1px solid var(--line);padding:1.1rem 2rem;display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center}}
-.skpi{{text-align:center;min-width:64px}}.skn{{font-size:1.55rem;font-weight:700;color:var(--navy);line-height:1}}.skl{{font-size:.66rem;color:var(--steel);margin-top:.2rem}}
-.sdiv{{width:1px;height:32px;background:var(--line)}}
-.sroute{{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}}
-.si2{{display:flex;align-items:center;gap:.4rem;font-size:.74rem}}.sn{{font-size:1.05rem;font-weight:700}}.sl{{color:var(--slate)}}
-.fbox{{max-width:960px;margin:1.4rem auto;padding:0 1.4rem}}
-.f{{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 7px 7px 0;padding:.9rem 1.3rem;margin-bottom:.7rem;font-size:.83rem;color:var(--slate);line-height:1.7}}
-.f strong{{color:var(--navy)}}
-.nwrap{{max-width:960px;margin:1rem auto;padding:0 1.4rem}}
-.ntbl{{width:100%;border-collapse:collapse;font-size:.77rem;background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden}}
-.ntbl th{{background:var(--navy);color:#fff;padding:.52rem .9rem;text-align:left;font-size:.7rem;letter-spacing:.04em}}
-.ntbl td{{padding:.48rem .9rem;border-bottom:1px solid var(--line)}}.ntbl tr:last-child td{{border-bottom:none}}.ntbl tr:hover td{{background:var(--fog)}}
-.rs{{max-width:960px;margin:2rem auto;padding:0 1.4rem}}
-.rh{{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:2px solid var(--navy)}}
-.rn{{font-size:1.05rem;font-weight:700;color:var(--navy)}}.rs2{{font-size:.73rem;color:var(--steel)}}
-.cc{{background:var(--white);border:1px solid var(--line);border-radius:8px;margin-bottom:.9rem;overflow:hidden}}
-.ch{{display:flex;align-items:center;gap:.9rem;padding:.8rem 1.1rem;background:var(--fog);border-bottom:1px solid var(--line);flex-wrap:wrap}}
-.cf{{font-size:1.7rem}}.cn2{{flex:1;min-width:130px}}.cn3{{font-size:.93rem;font-weight:700;color:var(--navy)}}.cn4{{font-size:.7rem;color:var(--steel)}}
-.cbdg{{display:flex;flex-wrap:wrap;gap:.35rem}}
-.mb{{display:inline-flex;font-size:.64rem;font-weight:700;padding:.18rem .6rem;background:rgba(235,4,20,.08);color:var(--red);border:1px solid rgba(235,4,20,.22);border-radius:20px}}
-.bm,.br2{{font-size:.64rem;font-weight:700;padding:.18rem .6rem;border-radius:20px}}
-.cb2{{display:grid;grid-template-columns:1fr 1fr 2fr}}
-.col{{padding:.9rem 1.1rem;border-right:1px solid var(--line)}}.col:last-child{{border-right:none}}
-.ct{{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--steel);margin-bottom:.6rem}}
-.ir{{display:flex;gap:.4rem;margin-bottom:.28rem;font-size:.79rem}}.il{{color:var(--steel);flex-shrink:0;width:54px}}.iv{{color:var(--ink);font-weight:500}}
-.cn{{font-size:.73rem;color:var(--slate);margin-top:.5rem;line-height:1.5;background:var(--fog);padding:.45rem .6rem;border-radius:4px}}
-.pt{{width:100%;border-collapse:collapse;font-size:.76rem}}
-.pt th{{font-size:.66rem;font-weight:700;color:var(--steel);padding:.28rem .45rem;border-bottom:1px solid var(--line);text-align:left}}
-.pt td{{padding:.36rem .45rem;border-bottom:1px solid var(--fog);vertical-align:top}}.pt tr:last-child td{{border-bottom:none}}
-.pn{{font-size:.7rem;color:var(--slate)}}
-.ptg{{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#E3F2FD;color:#0D47A1;border-radius:3px;white-space:nowrap}}
-.pte{{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#FCE4EC;color:#B71C1C;border-radius:3px;white-space:nowrap}}
-.pts{{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#F3E5F5;color:#4A148C;border-radius:3px;white-space:nowrap}}
-.hok{{font-size:.63rem;background:#E8F5E9;color:#1B5E20;padding:.1rem .35rem;border-radius:3px}}
-.her{{font-size:.63rem;background:#FFEBEE;color:#B71C1C;padding:.1rem .35rem;border-radius:3px}}
-.hna{{font-size:.63rem;background:#F5F5F5;color:#757575;padding:.1rem .35rem;border-radius:3px}}
-@media(max-width:680px){{.cb2{{grid-template-columns:1fr}}.col{{border-right:none;border-bottom:1px solid var(--line)}}}}
-footer{{text-align:center;padding:1.8rem;font-size:.7rem;color:var(--steel);border-top:1px solid var(--line);margin-top:2rem;background:var(--white)}}
-</style></head><body>
+@font-face{{font-family:'Gmarket Sans';src:url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}}
+*{{box-sizing:border-box;margin:0;padding:0;}}
+:root{{
+  --bg:#070e1a;--card:#11161f;--surface:#0c1119;
+  --text:#e7edf4;--text2:#9aa6b5;--muted:#6b7787;
+  --border:#222c3a;--hover:#161d28;--shadow:rgba(0,0,0,.4);
+  --red:#EB0513;--blue:#3B86D6;--navy:#04185F;
+  --green:#22c55e;--purple:#a78bfa;--sky:#38bdf8;--orange:#fb923c;--slate:#94a3b8;
+}}
+html.light{{
+  --bg:#f0f3f7;--card:#ffffff;--surface:#f5f7fa;
+  --text:#0d1421;--text2:#4a5568;--muted:#8090a4;
+  --border:#d1d9e4;--hover:#e8edf4;--shadow:rgba(0,0,0,.12);
+}}
+*{{transition:background-color .15s,color .15s,border-color .15s;}}
+html,body{{min-height:100%;background:var(--bg);color:var(--text);font-family:'Gmarket Sans',sans-serif;font-size:14px;line-height:1.5;}}
+::-webkit-scrollbar{{width:8px;height:8px;}}
+::-webkit-scrollbar-track{{background:transparent;}}
+::-webkit-scrollbar-thumb{{background:var(--border);border-radius:5px;}}
+a{{color:var(--blue);text-decoration:none;}}
+a:hover{{text-decoration:underline;}}
+input,select,button{{font-family:'Gmarket Sans',sans-serif;}}
 
-<div class="hdr">
-  <div class="hdr-eye">MIRU SYSTEMS · INTELLIGENCE REPORT · CONFIDENTIAL</div>
-  <h1 class="hdr-title">선거 장비 도입국 35개국 조달 경로 분석</h1>
-  <p class="hdr-sub">기계투표(DRE·EVM·OMR) 및 생체인식 장비 사용 국가들이<br>조달 공고를 <strong style="color:#fff">국가조달 포털</strong>에 올리는지 <strong style="color:#fff">자체 선관위 사이트</strong>에 올리는지 분석</p>
-  <div class="hdr-meta">작성: bhkim@mirusystems.com · 2026.06.29</div>
+/* TOP BAR */
+#top-bar{{
+  display:flex;align-items:center;gap:12px;
+  height:56px;padding:0 20px;
+  background:var(--navy);
+  position:sticky;top:0;z-index:200;
+  flex-wrap:nowrap;
+}}
+.tb-logo{{display:flex;align-items:center;gap:10px;flex:0 0 auto;}}
+.tb-logo img{{height:20px;width:auto;display:block;}}
+.tb-logo-divider{{width:1px;height:24px;background:rgba(255,255,255,.22);}}
+.tb-logo-text .t1{{font-size:15px;font-weight:700;letter-spacing:.2px;color:#fff;}}
+.tb-logo-text .t2{{font-size:8.5px;font-weight:500;letter-spacing:2px;color:rgba(255,255,255,.5);}}
+.tb-nav{{display:flex;gap:4px;margin-left:6px;overflow-x:auto;}}
+.tb-nav::-webkit-scrollbar{{height:0;}}
+.nav-tab{{
+  font-family:'Gmarket Sans',sans-serif;font-size:12px;padding:6px 12px;
+  border-radius:7px;cursor:pointer;border:none;white-space:nowrap;
+  background:rgba(255,255,255,.1);color:rgba(255,255,255,.72);
+  transition:all .15s;
+}}
+.nav-tab:hover{{background:rgba(255,255,255,.18);color:#fff;}}
+.nav-tab.active{{background:#fff;color:var(--navy);font-weight:700;}}
+.tb-spacer{{flex:1;min-width:8px;}}
+.tb-actions{{display:flex;gap:8px;flex:0 0 auto;}}
+#csv-btn{{
+  display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:7px;
+  background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);
+  color:var(--sky);font-size:12px;cursor:pointer;white-space:nowrap;
+}}
+#csv-btn:hover{{background:rgba(56,189,248,.22);}}
+#theme-btn{{
+  width:32px;height:32px;border-radius:7px;border:none;cursor:pointer;
+  background:rgba(255,255,255,.1);color:#fff;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}}
+#theme-btn:hover{{background:rgba(255,255,255,.18);}}
+
+/* TAB PAGES */
+.tab-page{{display:none;}}
+.tab-page.active{{display:block;}}
+
+/* HERO */
+.hero{{padding:36px 24px 24px;text-align:center;}}
+.hero h1{{font-size:26px;font-weight:800;color:var(--text);margin-bottom:6px;}}
+.hero .sub{{font-size:13px;color:var(--text2);margin-bottom:20px;}}
+.hero-stats{{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}}
+.hstat{{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:12px 18px;text-align:center;min-width:90px;
+}}
+.hstat-n{{font-size:22px;font-weight:800;line-height:1;}}
+.hstat-l{{font-size:11px;color:var(--text2);margin-top:4px;}}
+
+/* STAT CARDS */
+.stat-cards{{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:14px;max-width:1100px;margin:0 auto 32px;padding:0 20px;
+}}
+.stat-card{{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:18px 16px;
+}}
+.sc-count{{font-size:36px;font-weight:800;line-height:1;margin-bottom:4px;}}
+.sc-label{{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}}
+.sc-label-en{{font-size:11px;color:var(--text2);margin-bottom:8px;}}
+.sc-countries{{font-size:11px;color:var(--muted);line-height:1.6;}}
+
+/* CHARTS */
+.charts-row{{
+  display:grid;grid-template-columns:1fr 1.6fr;
+  gap:20px;max-width:1100px;margin:0 auto 28px;padding:0 20px;
+}}
+@media(max-width:700px){{.charts-row{{grid-template-columns:1fr;}}}}
+.chart-card{{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px;
+}}
+.chart-title{{font-size:13px;font-weight:700;color:var(--text2);margin-bottom:14px;letter-spacing:.04em;}}
+.chart-wrap{{position:relative;}}
+#donutChart{{max-height:240px;}}
+#barChart{{max-height:280px;}}
+
+/* INSIGHT BOXES */
+.insights{{max-width:1100px;margin:0 auto 32px;padding:0 20px;display:flex;flex-direction:column;gap:10px;}}
+.insight-box{{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  border-left:4px solid var(--blue);padding:14px 18px;
+  font-size:13px;color:var(--text2);line-height:1.7;
+}}
+.insight-box strong{{color:var(--text);}}
+.insight-box.green{{border-left-color:var(--green);}}
+.insight-box.orange{{border-left-color:var(--orange);}}
+
+/* REGION PAGE */
+.region-page-wrap{{max-width:1100px;margin:0 auto;padding:20px;}}
+.region-header{{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}}
+.region-header h2{{font-size:18px;font-weight:800;color:var(--text);}}
+.region-header .rcount{{font-size:12px;color:var(--muted);margin-top:3px;}}
+.region-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:16px;}}
+@media(max-width:600px){{.region-grid{{grid-template-columns:1fr;}}}}
+
+/* COUNTRY CARD */
+.ccard{{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;
+}}
+.ccard-head{{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;background:var(--surface);
+  border-bottom:1px solid var(--border);flex-wrap:wrap;
+}}
+.cflag{{font-size:22px;line-height:1;}}
+.cname{{flex:1;min-width:100px;}}
+.cname-ko{{font-size:14px;font-weight:700;color:var(--text);}}
+.cname-en{{font-size:11px;color:var(--muted);}}
+.cbadges{{display:flex;flex-wrap:wrap;gap:5px;align-items:center;}}
+.miru-badge{{
+  font-size:11px;font-weight:700;padding:3px 8px;
+  background:rgba(235,5,19,.1);color:#ef4444;
+  border:1px solid rgba(235,5,19,.25);border-radius:20px;
+}}
+.cat-badge{{font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap;}}
+.mtype-badge{{
+  font-size:11px;padding:3px 8px;border-radius:20px;
+  background:rgba(255,255,255,.07);color:var(--text2);
+}}
+.ccard-body{{padding:12px 16px;}}
+.cbio{{
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  margin-bottom:10px;font-size:12px;
+}}
+.bio-label{{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.04em;}}
+.bio-item{{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:6px;padding:2px 8px;font-size:11px;color:var(--text2);
+}}
+
+/* PORTAL TABLE */
+.ptbl{{width:100%;border-collapse:collapse;font-size:12px;}}
+.ptbl th{{
+  font-size:10px;font-weight:700;letter-spacing:.05em;
+  color:var(--muted);padding:5px 8px;
+  border-bottom:1px solid var(--border);text-align:left;
+}}
+.ptbl td{{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top;}}
+.ptbl tr:last-child td{{border-bottom:none;}}
+.ptbl a{{color:var(--blue);font-size:12px;word-break:break-all;}}
+.pt-gov{{
+  font-size:10px;font-weight:700;padding:2px 6px;
+  background:rgba(56,189,248,.12);color:var(--sky);border-radius:4px;white-space:nowrap;
+}}
+.pt-emb{{
+  font-size:10px;font-weight:700;padding:2px 6px;
+  background:rgba(167,139,250,.12);color:var(--purple);border-radius:4px;white-space:nowrap;
+}}
+.pt-other{{
+  font-size:10px;font-weight:700;padding:2px 6px;
+  background:rgba(255,255,255,.06);color:var(--text2);border-radius:4px;white-space:nowrap;
+}}
+.ps-ok{{font-size:11px;font-weight:700;color:#22c55e;}}
+.ps-dead{{font-size:11px;font-weight:700;color:#ef4444;}}
+.ps-login{{font-size:11px;font-weight:700;color:#fb923c;}}
+.ps-info{{font-size:11px;color:var(--muted);}}
+.ps-js{{font-size:11px;font-weight:700;color:#fb923c;}}
+.ps-na{{font-size:11px;color:var(--muted);}}
+.portal-note{{font-size:10px;color:var(--muted);margin-left:4px;}}
+.no-portals{{font-size:12px;color:var(--muted);padding:8px 0;}}
+
+/* FULL LIST PAGE */
+.list-wrap{{max-width:1100px;margin:0 auto;padding:20px;}}
+.list-header{{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;margin-bottom:16px;
+}}
+.list-header h2{{font-size:18px;font-weight:800;}}
+.filter-chips{{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;}}
+.chip{{
+  font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;
+  cursor:pointer;border:1px solid transparent;transition:all .15s;
+  background:var(--card);color:var(--text2);border-color:var(--border);
+}}
+.chip.active{{color:#fff;}}
+.chip[data-cat="all"].active{{background:var(--blue);border-color:var(--blue);}}
+.chip[data-cat="both"].active{{background:#052e16;border-color:#22c55e;color:#22c55e;}}
+.chip[data-cat="emb_only"].active{{background:#2e1065;border-color:#a78bfa;color:#a78bfa;}}
+.chip[data-cat="gov_only"].active{{background:#082f49;border-color:#38bdf8;color:#38bdf8;}}
+.chip[data-cat="login_req"].active{{background:#431407;border-color:#fb923c;color:#fb923c;}}
+.chip[data-cat="opaque"].active{{background:#0f172a;border-color:#94a3b8;color:#94a3b8;}}
+.full-tbl{{width:100%;border-collapse:collapse;font-size:12.5px;}}
+.full-tbl th{{
+  background:var(--surface);border-bottom:2px solid var(--border);
+  padding:10px 12px;text-align:left;font-size:11px;font-weight:700;
+  color:var(--text2);letter-spacing:.05em;cursor:pointer;user-select:none;
+  white-space:nowrap;
+}}
+.full-tbl th:hover{{color:var(--text);}}
+.full-tbl td{{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}}
+.full-tbl tr:hover td{{background:var(--hover);}}
+.full-tbl tr.hidden{{display:none;}}
+
+footer{{
+  text-align:center;padding:24px;font-size:11px;color:var(--muted);
+  border-top:1px solid var(--border);margin-top:20px;
+}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="top-bar">
+  <div class="tb-logo">
+    <img src="../miru_white_logo_enhanced_transparent.png" alt="Miru" onerror="this.style.display='none'">
+    <div class="tb-logo-divider"></div>
+    <div class="tb-logo-text">
+      <div class="t1">Market Intelligence</div>
+      <div class="t2">MIRU SYSTEMS · CONFIDENTIAL</div>
+    </div>
+  </div>
+  <div class="tb-nav">
+    <button class="nav-tab" onclick="location.href='tender_search.html'">← 홈</button>
+    <button class="nav-tab active" data-tab="overview" onclick="showTab('overview')">개요</button>
+    <button class="nav-tab" data-tab="africa" onclick="showTab('africa')">아프리카</button>
+    <button class="nav-tab" data-tab="asia" onclick="showTab('asia')">아시아·중동</button>
+    <button class="nav-tab" data-tab="europe" onclick="showTab('europe')">유럽·CIS</button>
+    <button class="nav-tab" data-tab="americas" onclick="showTab('americas')">아메리카</button>
+    <button class="nav-tab" data-tab="fulllist" onclick="showTab('fulllist')">전체 목록</button>
+  </div>
+  <div class="tb-spacer"></div>
+  <div class="tb-actions">
+    <button id="csv-btn" onclick="downloadCSV()">⬇ CSV 다운로드</button>
+    <button id="theme-btn" onclick="toggleTheme()" title="테마 전환">☀</button>
+  </div>
 </div>
 
-<div class="sbar">
-  <div class="skpi"><div class="skn">{total}</div><div class="skl">모니터링 국가</div></div>
-  <div class="sdiv"></div>
-  <div class="skpi"><div class="skn">{machine_yes}</div><div class="skl">기계투표 전체</div></div>
-  <div class="skpi"><div class="skn">{machine_pilot}</div><div class="skl">파일럿·부분</div></div>
-  <div class="skpi"><div class="skn">{bio_use}</div><div class="skl">생체인식 활용</div></div>
-  <div class="skpi"><div class="skn" style="color:var(--red);">{len(MIRU_ISO)}</div><div class="skl">MIRU 납품국</div></div>
-  <div class="sdiv"></div>
-  <div class="sroute">{sum_route}</div>
+<!-- ══════════════════════════════════════════════════════════════
+     TAB 1: 개요
+══════════════════════════════════════════════════════════════ -->
+<div id="tab-overview" class="tab-page active">
+
+  <div class="hero">
+    <h1>35개국 조달 경로 분석</h1>
+    <div class="sub">기계투표·생체인식 도입국 전략 인텔리전스 · 2026.06.29</div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n" style="color:var(--sky)">{total_countries}</div><div class="hstat-l">모니터링 국가</div></div>
+      <div class="hstat"><div class="hstat-n" style="color:var(--green)">{emb_direct_count}</div><div class="hstat-l">선관위 직접공고</div></div>
+      <div class="hstat"><div class="hstat-n" style="color:var(--orange)">{inaccessible_count}</div><div class="hstat-l">접근 불가</div></div>
+      <div class="hstat"><div class="hstat-n" style="color:#ef4444">{len(MIRU_ISO)}</div><div class="hstat-l">MIRU 납품국</div></div>
+    </div>
+  </div>
+
+  <div class="stat-cards">
+    {stat_cards_html()}
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">조달 경로 분포</div>
+      <div class="chart-wrap"><canvas id="donutChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">지역별 카테고리 분포</div>
+      <div class="chart-wrap"><canvas id="barChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="insights">
+    <div class="insight-box green">
+      <strong>선관위 직접공고 ({emb_direct_count}개국)</strong> &nbsp;
+      Iraq (IHEC), Kenya (IEBC), Philippines (COMELEC), Brazil (TSE), South Africa (IEC), Jamaica (EOJ) — 이 6개국은 선관위가 자체 사이트에 조달 공고를 직접 게시합니다.
+      국가조달 포털과 선관위 포털을 병행 모니터링해야 합니다.
+    </div>
+    <div class="insight-box orange">
+      <strong>접근 불가 포털 ({inaccessible_count}개국)</strong> &nbsp;
+      로그인 필요(Ghana, Iran, Korea, Georgia) 또는 완전 불투명(Venezuela) — 공개 크롤로는 공고 수집이 불가능합니다.
+      파트너사 계정 또는 현지 네트워크를 통한 우회 모니터링이 필요합니다.
+    </div>
+    <div class="insight-box">
+      <strong>국가조달 전용 ({cat_counts.get("gov_only", 0)}개국)</strong> &nbsp;
+      대부분의 국가는 단일 국가 전자조달 포털에 모든 공고를 의무 게시합니다.
+      정부 조달법상 의무 게시이므로 국가조달 포털 모니터링만으로 충분합니다.
+    </div>
+  </div>
+
 </div>
 
-<div class="fbox">
-  <div class="f"><strong>핵심 결론 ①</strong> &nbsp;35개국 전부 <strong>국가조달 포털이 1차 공고 채널</strong>. 정부 조달법상 의무 게시이므로 전자조달 포털에 반드시 올라옵니다.</div>
-  <div class="f"><strong>핵심 결론 ②</strong> &nbsp;브라질(TSE)·부탄(ECB)·인도(ECI/CPPP)·자메이카(EOJ)·필리핀(COMELEC) <strong>5개국은 선관위가 자체 사이트에도 직접 공고</strong>. 국가조달 포털과 병행 게시.</div>
-  <div class="f"><strong>핵심 결론 ③</strong> &nbsp;나머지 국가의 선관위 사이트는 <strong>정보 제공 목적</strong>. 입찰 공고는 국가조달 포털에만 올라가며, 선관위 사이트에서 포털로 링크 안내하는 형태.</div>
-  <div class="f"><strong>생체인식 현황</strong> &nbsp;<strong>{bio_use}개국</strong> 생체인식 활용 중. 유권자 등록(생체DB 구축)과 투표소 현장 본인확인(지문·얼굴인식)으로 구분. 이라크·오만·키르기스스탄은 두 가지 모두 적용.</div>
+<!-- ══════════════════════════════════════════════════════════════
+     TAB 2-5: Regional pages
+══════════════════════════════════════════════════════════════ -->
+<div id="tab-africa" class="tab-page">
+  <div class="region-page-wrap">
+    <div class="region-header">
+      <h2>🌍 아프리카</h2>
+      <div class="rcount">{len(REGIONS["아프리카"])}개국</div>
+    </div>
+    {region_tab_content('아프리카')}
+  </div>
 </div>
 
-<div class="nwrap">
-  <table class="ntbl">
-    <thead><tr><th>지역</th><th>국가</th><th>ISO</th><th>투표방식</th><th>조달경로</th><th>MIRU</th></tr></thead>
-    <tbody>{nav_rows}</tbody>
-  </table>
+<div id="tab-asia" class="tab-page">
+  <div class="region-page-wrap">
+    <div class="region-header">
+      <h2>🌏 아시아·중동</h2>
+      <div class="rcount">{len(REGIONS["아시아·중동"])}개국</div>
+    </div>
+    {region_tab_content('아시아·중동')}
+  </div>
 </div>
 
-{panels}
+<div id="tab-europe" class="tab-page">
+  <div class="region-page-wrap">
+    <div class="region-header">
+      <h2>🌍 유럽·CIS</h2>
+      <div class="rcount">{len(REGIONS["유럽·CIS"])}개국</div>
+    </div>
+    {region_tab_content('유럽·CIS')}
+  </div>
+</div>
 
-<footer>MIRU Systems · Election Technology Intelligence · 2026.06.29 · 총 {total}개국 {len([p for ps in portals_by_iso.values() for p in ps])}개 포털</footer>
-</body></html>'''
+<div id="tab-americas" class="tab-page">
+  <div class="region-page-wrap">
+    <div class="region-header">
+      <h2>🌎 아메리카</h2>
+      <div class="rcount">{len(REGIONS["아메리카"])}개국</div>
+    </div>
+    {region_tab_content('아메리카')}
+  </div>
+</div>
 
-with open(OUT,'w',encoding='utf-8') as f: f.write(HTML)
+<!-- ══════════════════════════════════════════════════════════════
+     TAB 6: 전체 목록
+══════════════════════════════════════════════════════════════ -->
+<div id="tab-fulllist" class="tab-page">
+  <div class="list-wrap">
+    <div class="list-header">
+      <h2>전체 목록 ({total_countries}개국)</h2>
+      <button id="csv-btn2" onclick="downloadCSV()" style="
+        display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:7px;
+        background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);
+        color:var(--sky);font-size:12px;cursor:pointer;">⬇ CSV 다운로드</button>
+    </div>
+    <div class="filter-chips">
+      <button class="chip active" data-cat="all" onclick="filterTable('all')">전체</button>
+      <button class="chip" data-cat="both" onclick="filterTable('both')">국가조달 + 선관위 공동</button>
+      <button class="chip" data-cat="emb_only" onclick="filterTable('emb_only')">선관위 직접공고</button>
+      <button class="chip" data-cat="gov_only" onclick="filterTable('gov_only')">국가조달 전용</button>
+      <button class="chip" data-cat="login_req" onclick="filterTable('login_req')">로그인 필요</button>
+      <button class="chip" data-cat="opaque" onclick="filterTable('opaque')">수의계약/불투명</button>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="full-tbl" id="fullTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">국가 ↕</th>
+            <th onclick="sortTable(1)">지역 ↕</th>
+            <th onclick="sortTable(2)">투표장비 ↕</th>
+            <th style="text-align:center">생체인식<br><span style="font-weight:400;font-size:10px">등록/확인</span></th>
+            <th onclick="sortTable(4)">조달 카테고리 ↕</th>
+            <th>포털</th>
+            <th style="text-align:center">MIRU</th>
+          </tr>
+        </thead>
+        <tbody id="fullTableBody">
+          {full_table_rows()}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Miru Systems · Election Technology Intelligence · 2026.06.29 · 총 {total_countries}개국 {len(portals_raw)}개 포털
+</footer>
+
+<!-- Chart.js (local cache) -->
+<script src="_chartjs_cache.js"></script>
+<script>
+/* ── Embedded data ────────────────────────────────────────── */
+const CHART_DATA = {CHART_DATA_JSON};
+const CSV_DATA   = {CSV_DATA_JSON};
+
+/* ── Tab navigation ─────────────────────────────────────────── */
+function showTab(name) {{
+  document.querySelectorAll('.tab-page').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab[data-tab]').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  const btn = document.querySelector('.nav-tab[data-tab="' + name + '"]');
+  if (btn) btn.classList.add('active');
+  // Init charts on first open of overview
+  if (name === 'overview') initCharts();
+}}
+
+/* ── Theme toggle ─────────────────────────────────────────── */
+function toggleTheme() {{
+  const isLight = document.documentElement.classList.toggle('light');
+  document.getElementById('theme-btn').textContent = isLight ? '🌙' : '☀';
+  localStorage.setItem('miru_theme', isLight ? 'light' : 'dark');
+}}
+(function() {{
+  if (localStorage.getItem('miru_theme') === 'light') {{
+    document.documentElement.classList.add('light');
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = '🌙';
+  }}
+}})();
+
+/* ── Charts ───────────────────────────────────────────────── */
+let chartsInited = false;
+function initCharts() {{
+  if (chartsInited || typeof Chart === 'undefined') return;
+  chartsInited = true;
+
+  const isDark = !document.documentElement.classList.contains('light');
+  const gridColor = isDark ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.07)';
+  const labelColor = isDark ? '#9aa6b5' : '#4a5568';
+
+  // Donut chart
+  new Chart(document.getElementById('donutChart'), {{
+    type: 'doughnut',
+    data: {{
+      labels: CHART_DATA.donut.labels,
+      datasets: [{{
+        data: CHART_DATA.donut.values,
+        backgroundColor: CHART_DATA.donut.colors,
+        borderColor: isDark ? '#11161f' : '#ffffff',
+        borderWidth: 3,
+        hoverOffset: 6,
+      }}]
+    }},
+    options: {{
+      responsive: true,
+      cutout: '62%',
+      plugins: {{
+        legend: {{
+          position: 'bottom',
+          labels: {{ color: labelColor, boxWidth: 12, padding: 12, font: {{ size: 11 }} }}
+        }},
+        tooltip: {{
+          callbacks: {{
+            label: ctx => ` ${{ctx.label}}: ${{ctx.raw}}개국`
+          }}
+        }}
+      }}
+    }}
+  }});
+
+  // Horizontal bar chart
+  const regions = CHART_DATA.bar.regions;
+  const cats = CHART_DATA.bar.cats;
+  const catLabels = {json.dumps([CAT_META[k]['label_en'] for k in CAT_META])};
+  const datasets = cats.map((cat, i) => ({{
+    label: catLabels[i],
+    data: regions.map(r => CHART_DATA.bar.data[r][i]),
+    backgroundColor: CHART_DATA.bar.colors[i],
+    borderRadius: 3,
+    borderSkipped: false,
+  }}));
+
+  new Chart(document.getElementById('barChart'), {{
+    type: 'bar',
+    data: {{ labels: regions, datasets }},
+    options: {{
+      indexAxis: 'y',
+      responsive: true,
+      scales: {{
+        x: {{
+          stacked: true,
+          grid: {{ color: gridColor }},
+          ticks: {{ color: labelColor, font: {{ size: 11 }}, stepSize: 1 }},
+        }},
+        y: {{
+          stacked: true,
+          grid: {{ color: gridColor }},
+          ticks: {{ color: labelColor, font: {{ size: 12 }} }},
+        }}
+      }},
+      plugins: {{
+        legend: {{
+          position: 'bottom',
+          labels: {{ color: labelColor, boxWidth: 12, padding: 10, font: {{ size: 11 }} }}
+        }},
+        tooltip: {{
+          mode: 'index',
+          callbacks: {{
+            label: ctx => ctx.raw > 0 ? ` ${{ctx.dataset.label}}: ${{ctx.raw}}개국` : null
+          }}
+        }}
+      }}
+    }}
+  }});
+}}
+
+// Init charts immediately (overview is shown first)
+if (document.readyState === 'loading') {{
+  document.addEventListener('DOMContentLoaded', initCharts);
+}} else {{
+  initCharts();
+}}
+
+/* ── Full list: filter chips ─────────────────────────────── */
+function filterTable(cat) {{
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  const activeChip = document.querySelector('.chip[data-cat="' + cat + '"]');
+  if (activeChip) activeChip.classList.add('active');
+  document.querySelectorAll('#fullTableBody tr').forEach(tr => {{
+    if (cat === 'all' || tr.dataset.cat === cat) {{
+      tr.classList.remove('hidden');
+    }} else {{
+      tr.classList.add('hidden');
+    }}
+  }});
+}}
+
+/* ── Full list: sort ─────────────────────────────────────── */
+let sortState = {{ col: -1, asc: true }};
+function sortTable(col) {{
+  const tbody = document.getElementById('fullTableBody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const asc = sortState.col === col ? !sortState.asc : true;
+  sortState = {{ col, asc }};
+  rows.sort((a, b) => {{
+    const ta = a.cells[col]?.textContent.trim() || '';
+    const tb = b.cells[col]?.textContent.trim() || '';
+    return asc ? ta.localeCompare(tb, 'ko') : tb.localeCompare(ta, 'ko');
+  }});
+  rows.forEach(r => tbody.appendChild(r));
+}}
+
+/* ── CSV download ────────────────────────────────────────── */
+function downloadCSV() {{
+  const headers = ['iso3','country','country_ko','region','machine_type','bio_reg','bio_verify','category','portal_names','portal_statuses','miru'];
+  const rows = CSV_DATA.map(r => headers.map(h => {{
+    const v = String(r[h] || '').replace(/"/g, '""');
+    return v.includes(',') || v.includes('"') || v.includes('\\n') ? '"' + v + '"' : v;
+  }}).join(','));
+  const csv = [headers.join(','), ...rows].join('\\n');
+  const blob = new Blob(['\\uFEFF' + csv], {{ type: 'text/csv;charset=utf-8;' }});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'miru_election_intel_portals.csv';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}}
+</script>
+</body>
+</html>'''
+
+with open(OUT, 'w', encoding='utf-8') as f:
+    f.write(HTML)
+
+line_count = HTML.count('\n') + 1
 print(f'Done: {OUT}')
-print(f'{total} countries | {len([p for ps in portals_by_iso.values() for p in ps])} portals')
+print(f'{total_countries} countries | {len(portals_raw)} portals (excl. ESP)')
+print(f'Line count: {line_count}')
