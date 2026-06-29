@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>기타 포털 공고 — Miru Systems</title>
+<style>
+@font-face{font-family:'Gmarket Sans';src:url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');font-weight:300 800;font-display:swap;}
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#070e1a;--card:#11161f;--surface:#0c1119;
+  --text:#e7edf4;--text2:#9aa6b5;--muted:#6b7787;
+  --border:#222c3a;--hover:#161d28;--shadow:rgba(0,0,0,.4);
+  --red:#EB0513;--blue:#3B86D6;--navy:#04185F;
+  --green:#22c55e;
+}
+html.light{
+  --bg:#f0f3f7;--card:#ffffff;--surface:#f5f7fa;
+  --text:#0d1421;--text2:#4a5568;--muted:#8090a4;
+  --border:#d1d9e4;--hover:#e8edf4;--shadow:rgba(0,0,0,.12);
+}
+*{transition:background-color .15s,color .15s,border-color .15s;}
+#results-list *{transition:none;}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'Gmarket Sans',sans-serif;font-size:14px;line-height:1.5;}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:5px;}
+a{color:inherit;text-decoration:none;}
+input,select,button{font-family:'Gmarket Sans',sans-serif;}
+
+/* ── TOP BAR ── */
+#top-bar{
+  display:flex;align-items:center;gap:14px;
+  height:56px;padding:0 20px;
+  background:var(--navy);
+  position:sticky;top:0;z-index:100;
+  flex-wrap:nowrap;
+}
+.tb-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.tb-logo img{height:20px;width:auto;display:block;}
+.tb-logo-divider{width:1px;height:24px;background:rgba(255,255,255,.22);}
+.tb-logo-text{line-height:1.15;}
+.tb-logo-text .t1{font-size:15px;font-weight:700;letter-spacing:.2px;color:#fff;}
+.tb-logo-text .t2{font-size:8.5px;font-weight:500;letter-spacing:2px;color:rgba(255,255,255,.5);}
+.tb-nav{display:flex;gap:5px;margin-left:8px;}
+.nav-tab{font-family:'Gmarket Sans',sans-serif;font-size:12.5px;padding:6px 13px;border-radius:7px;cursor:pointer;border:none;white-space:nowrap;transition:all .15s;}
+.nav-tab.back{background:rgba(255,255,255,.1);color:rgba(255,255,255,.72);}
+.nav-tab.back:hover{background:rgba(255,255,255,.18);color:#fff;}
+.nav-tab.current{background:#fff;color:var(--navy);font-weight:700;}
+.tb-spacer{flex:1;}
+.tb-confidential{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(235,5,19,.55);border-radius:6px;flex:0 0 auto;}
+.tb-confidential .dot{width:6px;height:6px;border-radius:50%;background:var(--red);}
+.tb-confidential span{font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.7);}
+
+/* ── HERO ── */
+#hero{padding:28px 24px 14px;text-align:center;}
+#hero h1{font-size:24px;font-weight:800;color:var(--text);margin-bottom:6px;}
+#hero .sub{font-size:13px;color:var(--text2);}
+#hero .stats{display:flex;justify-content:center;gap:18px;margin-top:14px;flex-wrap:wrap;}
+.stat-pill{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--text2);}
+.stat-pill strong{color:var(--text);}
+.portal-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:10px;padding:5px 14px;border-radius:20px;
+  background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
+  font-size:11.5px;color:var(--green);
+}
+
+/* ── SEARCH ── */
+#search-bar{max-width:960px;margin:0 auto;padding:0 20px 12px;}
+.search-input-wrap{position:relative;margin-bottom:10px;}
+#search-input{
+  width:100%;padding:11px 40px 11px 16px;border-radius:9px;
+  background:var(--card);border:1.5px solid var(--border);
+  color:var(--text);font-size:14px;outline:none;transition:border-color .15s;
+}
+#search-input:focus{border-color:var(--blue);}
+#search-input::placeholder{color:var(--muted);}
+#search-icon-placeholder{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px;pointer-events:none;}
+#clear-search{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;display:none;padding:2px;line-height:1;}
+#clear-search:hover{color:var(--red);}
+
+/* ── FILTERS ── */
+.filters-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.filter-select{padding:6px 10px;border-radius:7px;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:12px;cursor:pointer;outline:none;transition:border-color .15s;}
+.filter-select:focus{border-color:var(--blue);}
+.filter-select option{background:var(--card);}
+.chips-group{display:flex;gap:5px;flex-wrap:wrap;}
+.fchip{padding:5px 11px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:11.5px;cursor:pointer;transition:all .12s;white-space:nowrap;}
+.fchip:hover{border-color:var(--blue);color:var(--text);}
+.fchip.active{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;}
+.date-input{padding:6px 10px;border-radius:7px;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:12px;outline:none;transition:border-color .15s;}
+.date-input:focus{border-color:var(--blue);}
+.date-input::-webkit-calendar-picker-indicator{filter:invert(.6);}
+.filter-sep{width:1px;height:22px;background:var(--border);flex:0 0 auto;}
+
+/* ── SORT ROW ── */
+.sort-row{display:flex;align-items:center;gap:8px;max-width:960px;margin:0 auto;padding:4px 20px 8px;}
+.sort-label{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+
+/* ── RESULTS ── */
+#results-wrap{max-width:960px;margin:0 auto;padding:0 20px 60px;}
+#results-count{font-size:12px;color:var(--text2);margin-bottom:10px;min-height:18px;}
+#results-count strong{color:var(--text);}
+.tender-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px;margin-bottom:8px;transition:border-color .15s,box-shadow .15s;}
+.tender-card:hover{border-color:var(--blue);}
+.tc-top{display:flex;align-items:flex-start;gap:10px;}
+.tc-flag{font-size:20px;line-height:1;flex:0 0 auto;margin-top:2px;}
+.tc-main{flex:1;min-width:0;}
+.tc-title{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.tc-title a{color:var(--text);transition:color .12s;}
+.tc-title a:hover{color:var(--blue);}
+.tc-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:11.5px;color:var(--text2);}
+.tc-buyer{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tc-right{flex:0 0 auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
+.amount-text{font-size:11px;color:var(--text2);}
+.kw-tag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;background:rgba(59,134,214,.13);color:var(--blue);border:1px solid rgba(59,134,214,.28);}
+.tc-snippet{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.deadline-warn{color:#f5a623;}
+.portal-chip{padding:2px 7px;border-radius:4px;font-size:10px;background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.25);}
+
+/* ── AUTOCOMPLETE ── */
+#search-suggestions{position:absolute;top:100%;left:0;right:0;z-index:200;background:var(--card);border:1px solid var(--blue);border-radius:0 0 9px 9px;box-shadow:0 6px 24px rgba(0,0,0,.4);display:none;}
+.sug-item{padding:9px 14px;cursor:pointer;font-size:13px;color:var(--text2);display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);transition:background .1s;}
+.sug-item:last-child{border-bottom:none;}
+.sug-item:hover,.sug-item.active{background:var(--hover);color:var(--text);}
+.sug-icon{font-size:14px;flex:0 0 auto;}
+.sug-type{font-size:10px;color:var(--muted);margin-left:auto;flex:0 0 auto;}
+
+/* ── PAGINATION ── */
+#pagination{display:flex;align-items:center;justify-content:center;gap:5px;padding:18px 0 0;}
+.pg-btn{padding:6px 12px;border-radius:7px;background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:12px;cursor:pointer;transition:all .12s;}
+.pg-btn:hover:not(:disabled){border-color:var(--blue);color:var(--text);}
+.pg-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;}
+.pg-btn:disabled{opacity:.3;cursor:not-allowed;}
+.pg-ellipsis{color:var(--muted);padding:0 4px;font-size:12px;}
+
+/* ── EMPTY / NO-DATA STATE ── */
+.state-box{text-align:center;padding:60px 20px;}
+.state-box .em-icon{font-size:48px;margin-bottom:14px;}
+.state-box .em-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.state-box .em-desc{font-size:13px;color:var(--text2);line-height:1.7;}
+.state-box code{background:var(--surface);padding:2px 7px;border-radius:4px;font-size:12px;color:var(--text2);font-family:monospace;}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  #top-bar{gap:8px;padding:0 12px;}
+  .tb-logo-text .t2{display:none;}
+  .tb-confidential{display:none;}
+  #hero h1{font-size:20px;}
+  #search-bar,.sort-row{padding-left:12px;padding-right:12px;}
+  #results-wrap{padding-left:12px;padding-right:12px;}
+  .tc-right{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ TOP BAR ═══════════ -->
+<header id="top-bar">
+  <div class="tb-logo">
+    <img src="../miru_white_logo_enhanced_transparent.png" alt="MIRU" onerror="this.style.display='none'">
+    <div class="tb-logo-divider"></div>
+    <div class="tb-logo-text">
+      <div class="t1">Market Intelligence</div>
+      <div class="t2">ELECTION&nbsp;PROCUREMENT&nbsp;·&nbsp;GLOBAL</div>
+    </div>
+  </div>
+  <nav class="tb-nav">
+    <a href="Election Procurement Radar (standalone).html" class="nav-tab back">← 레이더</a>
+    <a href="tender_search.html" class="nav-tab back">조달 공고 검색 (35개국)</a>
+    <span class="nav-tab current">기타 포털 공고</span>
+  </nav>
+  <div class="tb-spacer"></div>
+  <div class="tb-confidential">
+    <div class="dot"></div>
+    <span>CONFIDENTIAL</span>
+  </div>
+  <button id="theme-btn" onclick="app.toggleTheme()" title="테마 전환" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 11px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:7px;color:#fff;font-size:11.5px;cursor:pointer;white-space:nowrap;flex:0 0 auto;">☀ 라이트</button>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div id="hero">
+  <h1>기타 포털 공고</h1>
+  <p class="sub">35개국 기계투표·생체인식 대상 외 · 참고용 포털 공고 모음</p>
+  <div class="stats" id="hero-stats">
+    <span class="stat-pill"><strong>—</strong> 건</span>
+    <span class="stat-pill"><strong>—</strong> 개 포털</span>
+    <span class="stat-pill">최근 수집: <strong>—</strong></span>
+  </div>
+  <div id="portal-list" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px;"></div>
+</div>
+
+<!-- ═══════════ SEARCH + FILTERS ═══════════ -->
+<div id="search-bar">
+  <div class="search-input-wrap" id="search-wrap">
+    <input id="search-input" type="text"
+      placeholder="키워드 검색 — elecció, ballot, biometric, Barcelona..."
+      oninput="app.onSearch(this.value)"
+      onkeydown="app.onSearchKey(event)"
+      onfocus="app.onSearch(this.value)"
+      autocomplete="off">
+    <button id="clear-search" onclick="app.clearSearch()" title="지우기">✕</button>
+    <span id="search-icon-placeholder">🔍</span>
+    <div id="search-suggestions"></div>
+  </div>
+  <div class="filters-row">
+    <select id="filter-country" class="filter-select" onchange="app.applyFilters()">
+      <option value="">모든 포털</option>
+    </select>
+    <div class="filter-sep"></div>
+    <div class="chips-group" id="kw-chips">
+      <span class="fchip active" data-kw="" onclick="app.setKwChip(this,'')">전체</span>
+      <span class="fchip" data-kw="election" onclick="app.setKwChip(this,'election')">election</span>
+      <span class="fchip" data-kw="biometric" onclick="app.setKwChip(this,'biometric')">biometric</span>
+      <span class="fchip" data-kw="ballot" onclick="app.setKwChip(this,'ballot')">ballot</span>
+      <span class="fchip" data-kw="vote" onclick="app.setKwChip(this,'vote')">vote</span>
+    </div>
+    <div class="filter-sep"></div>
+    <input type="date" id="filter-from" class="date-input" title="발행일 시작" onchange="app.applyFilters()">
+    <span style="font-size:11px;color:var(--muted);">~</span>
+    <input type="date" id="filter-to" class="date-input" title="발행일 종료" onchange="app.applyFilters()">
+  </div>
+</div>
+
+<!-- ═══════════ SORT ROW ═══════════ -->
+<div class="sort-row">
+  <span class="sort-label">정렬:</span>
+  <div class="chips-group">
+    <span class="fchip active" data-sort="crawled_at" onclick="app.setSort(this,'crawled_at')">최신순</span>
+    <span class="fchip" data-sort="deadline_date" onclick="app.setSort(this,'deadline_date')">마감임박순</span>
+  </div>
+</div>
+
+<!-- ═══════════ RESULTS ═══════════ -->
+<div id="results-wrap">
+  <div id="results-count"></div>
+  <div id="results-list"></div>
+  <div id="pagination"></div>
+  <div id="empty-state" class="state-box" style="display:none">
+    <div class="em-icon">🔍</div>
+    <div class="em-title">검색 결과 없음</div>
+    <div class="em-desc">다른 키워드나 필터 조건을 시도해 보세요.</div>
+  </div>
+  <div id="no-data-state" class="state-box" style="display:none">
+    <div class="em-icon">🗄️</div>
+    <div class="em-title">데이터 없음</div>
+    <div class="em-desc">크롤러 실행 후 JS 생성:<br><code>python crawler/crawl.py --targets ESP</code><br><code>python scripts/gen_tenders_js.py</code></div>
+  </div>
+</div>
+
+<script src="tenders_data.js" defer></script>
+<script>
+'use strict';
+
+/* ISO3 codes for non-35-country ("other") portals */
+const OTHER_ISO = new Set(['ESP']);
+
+const FLAG_MAP = {
+  ESP:'🇪🇸',
+  KOR:'🇰🇷',PHL:'🇵🇭',IRQ:'🇮🇶',COD:'🇨🇩',KGZ:'🇰🇬',KEN:'🇰🇪',GHA:'🇬🇭',BHR:'🇧🇭',
+  KAZ:'🇰🇿',BRA:'🇧🇷',BTN:'🇧🇹',ALB:'🇦🇱',JAM:'🇯🇲',IND:'🇮🇳',NGA:'🇳🇬',ZAF:'🇿🇦',
+  USA:'🇺🇸',ARG:'🇦🇷',EST:'🇪🇪',GEO:'🇬🇪',OMN:'🇴🇲',BIH:'🇧🇦',MNG:'🇲🇳',PRY:'🇵🇾',
+};
+
+const PORTAL_NAMES = {
+  'ESP': 'Barcelona (licitacions.bcn.cat)',
+};
+
+const COUNTRY_NAMES = {
+  '스페인': 'ESP',
+  'barcelona': 'ESP',
+};
+
+const KW_REGEX = {
+  'election': /\belect/i,
+};
+
+const KW_DETECT = [
+  'ballot','vote','election','biometric','elecció','votació','cens electoral',
+  'EVM','DRE','tabulation','voter','indelible ink',
+];
+
+const SUGGEST_KW = ['ballot','vote','election','biometric','elecció','votació'];
+
+const PAGE_SIZE = 20;
+
+function _esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function pagRange(cur, total) {
+  const delta = 2, range = [], left = Math.max(2, cur-delta), right = Math.min(total-1, cur+delta);
+  range.push(1);
+  if (left > 2) range.push('...');
+  for (let i = left; i <= right; i++) range.push(i);
+  if (right < total-1) range.push('...');
+  if (total > 1) range.push(total);
+  return range;
+}
+
+class App {
+  constructor() {
+    this.allTenders = [];
+    this.filtered   = [];
+    this.page       = 1;
+    this.sortKey    = 'crawled_at';
+    this._searchTimer = null;
+    this._sugIdx = -1;
+  }
+
+  _applyTheme(t) {
+    document.documentElement.classList.toggle('light', t === 'light');
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = t === 'light' ? '☾ 다크' : '☀ 라이트';
+    localStorage.setItem('miru_theme', t);
+  }
+
+  toggleTheme() {
+    this._applyTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light');
+  }
+
+  init() {
+    const saved = localStorage.getItem('miru_theme');
+    if (saved === 'dark' || saved === 'light') this._applyTheme(saved);
+
+    const T = window.MIRU_TENDERS;
+    const M = window.MIRU_TENDERS_META;
+
+    if (!T || T.length === 0) {
+      document.getElementById('no-data-state').style.display = 'block';
+      document.getElementById('results-count').style.display = 'none';
+      return;
+    }
+
+    // Only other-portal ISO3 codes
+    this.allTenders = T.filter(t => OTHER_ISO.has(t.iso3)).map(t => {
+      const base = { ...t };
+      base._haystack = ((t.title||'') + ' ' + (t.title_en||'') + ' ' + (t.snippet||'') + ' ' +
+                       (t.buyer||'') + ' ' + (t.country||'') + ' ' + (t.portal_name||'')).toLowerCase();
+      base._pubSort = /^\d{4}-\d{2}-\d{2}/.test(t.published_date||'')
+        ? t.published_date.slice(0,10) : (t.crawled_at||'');
+      return base;
+    });
+
+    this._today = new Date().toISOString().slice(0,10);
+    this._week  = new Date(Date.now() + 7*86400000).toISOString().slice(0,10);
+
+    this._populateCountryFilter();
+    this._renderStats(M);
+    this._renderPortalBadges();
+    this.applyFilters();
+  }
+
+  _renderStats(M) {
+    const count   = this.allTenders.length;
+    const portals = [...new Set(this.allTenders.map(t => t.iso3))].length;
+    const last    = M && M.last_crawled ? M.last_crawled.slice(0,10) : '—';
+    document.getElementById('hero-stats').innerHTML =
+      `<span class="stat-pill"><strong>${count.toLocaleString()}</strong> 건</span>
+       <span class="stat-pill"><strong>${portals}</strong> 개 포털</span>
+       <span class="stat-pill">최근 수집: <strong>${last}</strong></span>`;
+  }
+
+  _renderPortalBadges() {
+    const iso3s = [...new Set(this.allTenders.map(t => t.iso3))];
+    const el = document.getElementById('portal-list');
+    el.innerHTML = iso3s.map(iso => {
+      const name = PORTAL_NAMES[iso] || iso;
+      const flag = FLAG_MAP[iso] || '🌐';
+      return `<span class="portal-badge">${flag} ${_esc(name)}</span>`;
+    }).join('');
+  }
+
+  _populateCountryFilter() {
+    const sel = document.getElementById('filter-country');
+    const iso3s = [...new Set(this.allTenders.map(t => t.iso3))].filter(Boolean).sort();
+    sel.innerHTML = '<option value="">모든 포털</option>';
+    iso3s.forEach(iso3 => {
+      const t = this.allTenders.find(x => x.iso3 === iso3);
+      const opt = document.createElement('option');
+      opt.value = iso3;
+      opt.textContent = (FLAG_MAP[iso3]||'') + ' ' + (t ? t.country : iso3);
+      sel.appendChild(opt);
+    });
+  }
+
+  onSearch(val) {
+    clearTimeout(this._searchTimer);
+    const clear = document.getElementById('clear-search');
+    const icon  = document.getElementById('search-icon-placeholder');
+    clear.style.display = val ? 'block' : 'none';
+    icon.style.display  = val ? 'none'  : 'block';
+    this._showSuggestions(val);
+    this._searchTimer = setTimeout(() => { this.page = 1; this.applyFilters(); }, 220);
+  }
+
+  clearSearch() {
+    document.getElementById('search-input').value = '';
+    document.getElementById('clear-search').style.display = 'none';
+    document.getElementById('search-icon-placeholder').style.display = 'block';
+    this.hideSuggestions();
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    const allChip = document.querySelector('#kw-chips .fchip[data-kw=""]');
+    if (allChip) allChip.classList.add('active');
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  setKwChip(el, kw) {
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    const inp = document.getElementById('search-input');
+    inp.value = kw;
+    document.getElementById('clear-search').style.display = kw ? 'block' : 'none';
+    document.getElementById('search-icon-placeholder').style.display = kw ? 'none' : 'block';
+    this.hideSuggestions();
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  selectSuggestion(val) {
+    const inp = document.getElementById('search-input');
+    inp.value = val;
+    document.getElementById('clear-search').style.display = 'block';
+    document.getElementById('search-icon-placeholder').style.display = 'none';
+    this.hideSuggestions();
+    document.querySelectorAll('#kw-chips .fchip').forEach(c => c.classList.remove('active'));
+    const allChip = document.querySelector('#kw-chips .fchip[data-kw=""]');
+    if (allChip) allChip.classList.add('active');
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  hideSuggestions() {
+    document.getElementById('search-suggestions').style.display = 'none';
+    this._sugIdx = -1;
+  }
+
+  onSearchKey(e) {
+    const sug   = document.getElementById('search-suggestions');
+    const items = sug.querySelectorAll('.sug-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      this._sugIdx = Math.min((this._sugIdx >= 0 ? this._sugIdx : -1) + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('active', i === this._sugIdx));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      this._sugIdx = Math.max((this._sugIdx >= 0 ? this._sugIdx : 0) - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('active', i === this._sugIdx));
+    } else if (e.key === 'Enter') {
+      if (this._sugIdx >= 0 && items[this._sugIdx]) items[this._sugIdx].click();
+      else this.hideSuggestions();
+    } else if (e.key === 'Escape') {
+      this.hideSuggestions();
+    }
+  }
+
+  _showSuggestions(val) {
+    const sug = document.getElementById('search-suggestions');
+    if (!val || val.length < 1) { sug.style.display = 'none'; return; }
+    const q = val.toLowerCase();
+    const items = [];
+
+    // Korean aliases
+    Object.entries(COUNTRY_NAMES)
+      .filter(([ko]) => ko.includes(q))
+      .slice(0, 3)
+      .forEach(([ko, iso]) => {
+        const t = this.allTenders.find(x => x.iso3 === iso);
+        items.push({ icon: FLAG_MAP[iso]||'🌐', label: `${ko} (${t ? t.country : iso})`, val: ko, type: '국가' });
+      });
+
+    // Keywords
+    SUGGEST_KW
+      .filter(kw => kw.toLowerCase().includes(q))
+      .slice(0, 5)
+      .forEach(kw => items.push({ icon: '🔑', label: kw, val: kw, type: '키워드' }));
+
+    if (!items.length) { sug.style.display = 'none'; return; }
+    sug.innerHTML = items.slice(0, 7).map(it =>
+      `<div class="sug-item" onclick="app.selectSuggestion('${_esc(it.val)}')">
+        <span class="sug-icon">${it.icon}</span>
+        <span>${_esc(it.label)}</span>
+        <span class="sug-type">${it.type}</span>
+      </div>`
+    ).join('');
+    sug.style.display = 'block';
+    this._sugIdx = -1;
+  }
+
+  setSort(el, key) {
+    document.querySelectorAll('.sort-row .fchip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    this.sortKey = key;
+    this.page = 1;
+    this.applyFilters();
+  }
+
+  applyFilters() {
+    const q       = document.getElementById('search-input').value.trim().toLowerCase();
+    const country = document.getElementById('filter-country').value;
+    const fromDate = document.getElementById('filter-from').value;
+    const toDate   = document.getElementById('filter-to').value;
+    this.page = 1;
+
+    let list = this.allTenders.filter(t => {
+      if (country && t.iso3 !== country) return false;
+      const pubDate = /^\d{4}-\d{2}-\d{2}/.test(t.published_date||'') ? t.published_date.slice(0,10) : null;
+      if (fromDate && pubDate && pubDate < fromDate) return false;
+      if (toDate   && pubDate && pubDate > toDate)   return false;
+      if (q) {
+        const koIso = COUNTRY_NAMES[q];
+        if (koIso) { if (t.iso3 !== koIso) return false; }
+        else {
+          const re = KW_REGEX[q];
+          if (re ? !re.test(t._haystack) : !t._haystack.includes(q)) return false;
+        }
+      }
+      return true;
+    });
+
+    const k = this.sortKey;
+    list = [...list].sort((a, b) => {
+      if (k === 'deadline_date') {
+        const da = /^\d{4}-\d{2}-\d{2}/.test(a.deadline_date||'') ? a.deadline_date.slice(0,10) : '9999';
+        const db = /^\d{4}-\d{2}-\d{2}/.test(b.deadline_date||'') ? b.deadline_date.slice(0,10) : '9999';
+        return da.localeCompare(db);
+      }
+      return (b._pubSort||'').localeCompare(a._pubSort||'');
+    });
+
+    this.filtered = list;
+    this._renderCount();
+    this._renderPage();
+  }
+
+  _renderCount() {
+    const el = document.getElementById('results-count');
+    const n  = this.filtered.length;
+    el.innerHTML = n ? `검색 결과: <strong>${n.toLocaleString()}</strong> 건` : '';
+  }
+
+  _renderPage() {
+    const list  = document.getElementById('results-list');
+    const empty = document.getElementById('empty-state');
+    const pg    = document.getElementById('pagination');
+    const today = this._today;
+    const week  = this._week;
+
+    if (!this.filtered.length) {
+      list.innerHTML = '';
+      pg.innerHTML   = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+
+    const start = (this.page - 1) * PAGE_SIZE;
+    const slice = this.filtered.slice(start, start + PAGE_SIZE);
+
+    list.innerHTML = slice.map(t => {
+      const flag = FLAG_MAP[t.iso3] || '🏳';
+      const deadlineWarn = t.deadline_date
+        && t.deadline_date.slice(0,10) <= week
+        && t.deadline_date.slice(0,10) >= today;
+
+      const matchedKws = KW_DETECT.filter(kw => {
+        const re = KW_REGEX[kw.toLowerCase()];
+        return re ? re.test(t._haystack) : t._haystack.includes(kw.toLowerCase());
+      }).slice(0, 4);
+      const kwHtml = matchedKws.map(k => `<span class="kw-tag">${_esc(k)}</span>`).join('');
+
+      const pub  = /^\d{4}-\d{2}-\d{2}/.test(t.published_date||'') ? t.published_date.slice(0,10) : '';
+      const dead = /^\d{4}-\d{2}-\d{2}/.test(t.deadline_date ||'') ? t.deadline_date.slice(0,10)  : '';
+      const url  = t.url || '#';
+      const displayTitle = (t.title_en && t.title_en !== t.title) ? t.title_en : t.title;
+      const titleHtml = (url !== '#')
+        ? `<a href="${_esc(url)}" target="_blank" rel="noopener">${_esc(displayTitle)}</a>`
+        : _esc(displayTitle);
+      const amountHtml = (t.amount && t.amount > 0)
+        ? `<span class="amount-text">${t.amount.toLocaleString()} ${_esc(t.currency||'')}</span>` : '';
+
+      return `<div class="tender-card">
+  <div class="tc-top">
+    <div class="tc-flag">${flag}</div>
+    <div class="tc-main">
+      <div class="tc-title">${titleHtml}</div>
+      <div class="tc-meta">
+        <span>${flag} ${_esc(t.country||'')}</span>
+        ${t.portal_name ? `<span class="portal-chip">${_esc(t.portal_name)}</span>` : ''}
+        ${kwHtml}
+        ${t.buyer  ? `<span class="tc-buyer" title="${_esc(t.buyer)}">${_esc(t.buyer)}</span>` : ''}
+        ${pub  ? `<span>📅 ${pub}</span>` : ''}
+        ${dead ? `<span class="${deadlineWarn ? 'deadline-warn' : ''}">⏰ ${dead}${deadlineWarn ? ' (마감임박!)' : ''}</span>` : ''}
+      </div>
+      ${t.snippet ? `<div class="tc-snippet">${_esc(t.snippet)}</div>` : ''}
+    </div>
+    <div class="tc-right">${amountHtml}</div>
+  </div>
+</div>`;
+    }).join('');
+
+    const totalPages = Math.ceil(this.filtered.length / PAGE_SIZE);
+    if (totalPages <= 1) { pg.innerHTML = ''; return; }
+    const range = pagRange(this.page, totalPages);
+    let html = `<button class="pg-btn" onclick="app.goPage(${this.page-1})" ${this.page===1?'disabled':''}>‹ 이전</button>`;
+    range.forEach(p => {
+      if (p === '...') html += `<span class="pg-ellipsis">…</span>`;
+      else html += `<button class="pg-btn${p===this.page?' active':''}" onclick="app.goPage(${p})">${p}</button>`;
+    });
+    html += `<button class="pg-btn" onclick="app.goPage(${this.page+1})" ${this.page===totalPages?'disabled':''}>다음 ›</button>`;
+    pg.innerHTML = html;
+  }
+
+  goPage(p) {
+    const totalPages = Math.ceil(this.filtered.length / PAGE_SIZE);
+    if (p < 1 || p > totalPages) return;
+    this.page = p;
+    this._renderPage();
+    window.scrollTo({ top: 200, behavior: 'smooth' });
+  }
+}
+
+const app = new App();
+document.addEventListener('DOMContentLoaded', () => {
+  app.init();
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#search-wrap')) app.hideSuggestions();
+  });
+});
+</script>
+</body>
+</html>

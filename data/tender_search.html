@@ -274,7 +274,8 @@ input,select,button{font-family:'Gmarket Sans',sans-serif;}
   </div>
   <nav class="tb-nav">
     <a href="Election Procurement Radar (standalone).html" class="nav-tab back">← 레이더</a>
-    <span class="nav-tab current">조달 공고 검색</span>
+    <span class="nav-tab current">조달 공고 검색 (35개국)</span>
+    <a href="other_portals.html" class="nav-tab back">기타 포털 →</a>
   </nav>
   <div class="tb-spacer"></div>
   <div class="tb-confidential">
@@ -425,6 +426,9 @@ function googleTranslateElementInit(){
 'use strict';
 
 /* ── Constants ── */
+/* ISO3 codes for non-35-country portals — excluded from this page */
+const OTHER_ISO = new Set(['ESP']);
+
 const FLAG_MAP = {
   KOR:'🇰🇷',PHL:'🇵🇭',IRQ:'🇮🇶',COD:'🇨🇩',KGZ:'🇰🇬',KEN:'🇰🇪',GHA:'🇬🇭',BHR:'🇧🇭',
   KAZ:'🇰🇿',BRA:'🇧🇷',BTN:'🇧🇹',ALB:'🇦🇱',JAM:'🇯🇲',IND:'🇮🇳',NGA:'🇳🇬',ZAF:'🇿🇦',
@@ -437,7 +441,7 @@ const FLAG_MAP = {
   BFA:'🇧🇫',TCD:'🇹🇩',NER:'🇳🇪',GMB:'🇬🇲',SLE:'🇸🇱',LBR:'🇱🇷',GIN:'🇬🇳',
   BOL:'🇧🇴',PRY:'🇵🇾',URY:'🇺🇾',ECU:'🇪🇨',PER:'🇵🇪',CHL:'🇨🇱',DOM:'🇩🇴',
   HTI:'🇭🇹',TTO:'🇹🇹',GTM:'🇬🇹',HND:'🇭🇳',SLV:'🇸🇻',NIC:'🇳🇮',CRI:'🇨🇷',
-  PAN:'🇵🇦',KHM:'🇰🇭',LAO:'🇱🇦',SGP:'🇸🇬',TWN:'🇹🇼',MNG:'🇲🇳',
+  PAN:'🇵🇦',KHM:'🇰🇭',LAO:'🇱🇦',SGP:'🇸🇬',TWN:'🇹🇼',MNG:'🇲🇳',ESP:'🇪🇸',
 };
 
 /* Korean country name → ISO3 aliases */
@@ -455,7 +459,7 @@ const COUNTRY_KO = {
   '조지아':'GEO','아르메니아':'ARM','아제르바이잔':'AZE','우크라이나':'UKR',
   '터키':'TUR','폴란드':'POL','루마니아':'ROU','세르비아':'SRB','크로아티아':'HRV',
   '몬테네그로':'MNE','마케도니아':'MKD','보스니아':'BIH','몽골':'MNG','대만':'TWN',
-  '캄보디아':'KHM','미얀마':'MMR','싱가포르':'SGP','콩고':'COD','카메룬':'CMR',
+  '캄보디아':'KHM','미얀마':'MMR','싱가포르':'SGP','콩고':'COD','카메룬':'CMR','스페인':'ESP',
   '세네갈':'SEN','잠비아':'ZMB','짐바브웨':'ZWE','모잠비크':'MOZ','말라위':'MWI',
   '수단':'SDN','남수단':'SSD','소말리아':'SOM','사우디':'SAU','아랍에미리트':'ARE',
   '쿠웨이트':'KWT','오만':'OMN','카타르':'QAT','요르단':'JOR','이란':'IRN','이스라엘':'ISR',
@@ -573,8 +577,8 @@ class App {
       return;
     }
 
-    // Enrich tenders with region + pre-computed search/sort keys
-    this.allTenders = T.map(t => {
+    // Enrich tenders with region + pre-computed search/sort keys (exclude other portals)
+    this.allTenders = T.filter(t => !OTHER_ISO.has(t.iso3)).map(t => {
       const base = { ...t, region: t.region || iso3ToRegion(t.iso3 || '') };
       base._haystack = ((t.title||'') + ' ' + (t.title_en||'') + ' ' + (t.snippet||'') + ' ' +
                        (t.buyer||'') + ' ' + (t.country||'') + ' ' + (t.iso3||'') + ' ' +
