@@ -114,8 +114,9 @@ def parse(country: str = 'South Africa', iso3: str = 'ZAF') -> list[dict]:
                 continue
             seen.add(dedup_key)
 
-            # URL: portal page (document download requires auth)
-            url = f'{BASE}/Home/opportunities?id=1'
+            # URL: direct link to this tender's detail page
+            tender_id = item.get('id')
+            url = f'{BASE}/Home/opportunities?id={tender_id}' if tender_id else f'{BASE}/Home/opportunities?id=1'
 
             pub      = (item.get('date_Published') or '')[:10]
             deadline = (item.get('closing_Date')   or '')[:10]

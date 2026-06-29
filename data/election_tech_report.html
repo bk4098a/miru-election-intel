@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>선거 장비 도입국 조달 경로 분석 — MIRU</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#05195E;--red:#EB0414;--accent:#123A9E;--accent2:#AEB7D6;--ink:#161616;--slate:#525252;--steel:#8C8C8C;--fog:#F2F4FA;--line:#C7CEDC;--white:#fff}
+body{font-family:'Noto Sans KR',-apple-system,sans-serif;font-size:14px;color:var(--ink);background:#f8f9fc;line-height:1.65}
+a{color:var(--accent)}a:hover{text-decoration:underline}
+.hdr{background:var(--navy);color:#fff;padding:2.5rem 2rem 2rem}
+.hdr-eye{font-size:.68rem;letter-spacing:.18em;color:var(--accent2);text-transform:uppercase;margin-bottom:.5rem}
+.hdr-title{font-size:1.55rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.hdr-sub{font-size:.84rem;color:rgba(255,255,255,.62);max-width:640px;margin-bottom:1.2rem}
+.hdr-meta{font-size:.7rem;color:rgba(255,255,255,.4)}
+.sbar{background:var(--white);border-bottom:1px solid var(--line);padding:1.1rem 2rem;display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center}
+.skpi{text-align:center;min-width:64px}.skn{font-size:1.55rem;font-weight:700;color:var(--navy);line-height:1}.skl{font-size:.66rem;color:var(--steel);margin-top:.2rem}
+.sdiv{width:1px;height:32px;background:var(--line)}
+.sroute{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.si2{display:flex;align-items:center;gap:.4rem;font-size:.74rem}.sn{font-size:1.05rem;font-weight:700}.sl{color:var(--slate)}
+.fbox{max-width:960px;margin:1.4rem auto;padding:0 1.4rem}
+.f{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 7px 7px 0;padding:.9rem 1.3rem;margin-bottom:.7rem;font-size:.83rem;color:var(--slate);line-height:1.7}
+.f strong{color:var(--navy)}
+.nwrap{max-width:960px;margin:1rem auto;padding:0 1.4rem}
+.ntbl{width:100%;border-collapse:collapse;font-size:.77rem;background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ntbl th{background:var(--navy);color:#fff;padding:.52rem .9rem;text-align:left;font-size:.7rem;letter-spacing:.04em}
+.ntbl td{padding:.48rem .9rem;border-bottom:1px solid var(--line)}.ntbl tr:last-child td{border-bottom:none}.ntbl tr:hover td{background:var(--fog)}
+.rs{max-width:960px;margin:2rem auto;padding:0 1.4rem}
+.rh{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:2px solid var(--navy)}
+.rn{font-size:1.05rem;font-weight:700;color:var(--navy)}.rs2{font-size:.73rem;color:var(--steel)}
+.cc{background:var(--white);border:1px solid var(--line);border-radius:8px;margin-bottom:.9rem;overflow:hidden}
+.ch{display:flex;align-items:center;gap:.9rem;padding:.8rem 1.1rem;background:var(--fog);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.cf{font-size:1.7rem}.cn2{flex:1;min-width:130px}.cn3{font-size:.93rem;font-weight:700;color:var(--navy)}.cn4{font-size:.7rem;color:var(--steel)}
+.cbdg{display:flex;flex-wrap:wrap;gap:.35rem}
+.mb{display:inline-flex;font-size:.64rem;font-weight:700;padding:.18rem .6rem;background:rgba(235,4,20,.08);color:var(--red);border:1px solid rgba(235,4,20,.22);border-radius:20px}
+.bm,.br2{font-size:.64rem;font-weight:700;padding:.18rem .6rem;border-radius:20px}
+.cb2{display:grid;grid-template-columns:1fr 1fr 2fr}
+.col{padding:.9rem 1.1rem;border-right:1px solid var(--line)}.col:last-child{border-right:none}
+.ct{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--steel);margin-bottom:.6rem}
+.ir{display:flex;gap:.4rem;margin-bottom:.28rem;font-size:.79rem}.il{color:var(--steel);flex-shrink:0;width:54px}.iv{color:var(--ink);font-weight:500}
+.cn{font-size:.73rem;color:var(--slate);margin-top:.5rem;line-height:1.5;background:var(--fog);padding:.45rem .6rem;border-radius:4px}
+.pt{width:100%;border-collapse:collapse;font-size:.76rem}
+.pt th{font-size:.66rem;font-weight:700;color:var(--steel);padding:.28rem .45rem;border-bottom:1px solid var(--line);text-align:left}
+.pt td{padding:.36rem .45rem;border-bottom:1px solid var(--fog);vertical-align:top}.pt tr:last-child td{border-bottom:none}
+.pn{font-size:.7rem;color:var(--slate)}
+.ptg{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#E3F2FD;color:#0D47A1;border-radius:3px;white-space:nowrap}
+.pte{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#FCE4EC;color:#B71C1C;border-radius:3px;white-space:nowrap}
+.pts{font-size:.63rem;font-weight:700;padding:.12rem .45rem;background:#F3E5F5;color:#4A148C;border-radius:3px;white-space:nowrap}
+.hok{font-size:.63rem;background:#E8F5E9;color:#1B5E20;padding:.1rem .35rem;border-radius:3px}
+.her{font-size:.63rem;background:#FFEBEE;color:#B71C1C;padding:.1rem .35rem;border-radius:3px}
+.hna{font-size:.63rem;background:#F5F5F5;color:#757575;padding:.1rem .35rem;border-radius:3px}
+@media(max-width:680px){.cb2{grid-template-columns:1fr}.col{border-right:none;border-bottom:1px solid var(--line)}}
+footer{text-align:center;padding:1.8rem;font-size:.7rem;color:var(--steel);border-top:1px solid var(--line);margin-top:2rem;background:var(--white)}
+</style></head><body>
+
+<div class="hdr">
+  <div class="hdr-eye">MIRU SYSTEMS · INTELLIGENCE REPORT · CONFIDENTIAL</div>
+  <h1 class="hdr-title">선거 장비 도입국 35개국 조달 경로 분석</h1>
+  <p class="hdr-sub">기계투표(DRE·EVM·OMR) 및 생체인식 장비 사용 국가들이<br>조달 공고를 <strong style="color:#fff">국가조달 포털</strong>에 올리는지 <strong style="color:#fff">자체 선관위 사이트</strong>에 올리는지 분석</p>
+  <div class="hdr-meta">작성: bhkim@mirusystems.com · 2026.06.29</div>
+</div>
+
+<div class="sbar">
+  <div class="skpi"><div class="skn">35</div><div class="skl">모니터링 국가</div></div>
+  <div class="sdiv"></div>
+  <div class="skpi"><div class="skn">19</div><div class="skl">기계투표 전체</div></div>
+  <div class="skpi"><div class="skn">5</div><div class="skl">파일럿·부분</div></div>
+  <div class="skpi"><div class="skn">24</div><div class="skl">생체인식 활용</div></div>
+  <div class="skpi"><div class="skn" style="color:var(--red);">6</div><div class="skl">MIRU 납품국</div></div>
+  <div class="sdiv"></div>
+  <div class="sroute"><div class="si2"><span class="sn" style="color:#1B5E20;">5</span><span class="sl">국가조달 + EMB 직접공고</span></div><div class="si2"><span class="sn" style="color:#0D47A1;">23</span><span class="sl">국가조달 → 선거위 연동</span></div><div class="si2"><span class="sn" style="color:#E65100;">7</span><span class="sl">국가조달 전용</span></div></div>
+</div>
+
+<div class="fbox">
+  <div class="f"><strong>핵심 결론 ①</strong> &nbsp;35개국 전부 <strong>국가조달 포털이 1차 공고 채널</strong>. 정부 조달법상 의무 게시이므로 전자조달 포털에 반드시 올라옵니다.</div>
+  <div class="f"><strong>핵심 결론 ②</strong> &nbsp;브라질(TSE)·부탄(ECB)·인도(ECI/CPPP)·자메이카(EOJ)·필리핀(COMELEC) <strong>5개국은 선관위가 자체 사이트에도 직접 공고</strong>. 국가조달 포털과 병행 게시.</div>
+  <div class="f"><strong>핵심 결론 ③</strong> &nbsp;나머지 국가의 선관위 사이트는 <strong>정보 제공 목적</strong>. 입찰 공고는 국가조달 포털에만 올라가며, 선관위 사이트에서 포털로 링크 안내하는 형태.</div>
+  <div class="f"><strong>생체인식 현황</strong> &nbsp;<strong>24개국</strong> 생체인식 활용 중. 유권자 등록(생체DB 구축)과 투표소 현장 본인확인(지문·얼굴인식)으로 구분. 이라크·오만·키르기스스탄은 두 가지 모두 적용.</div>
+</div>
+
+<div class="nwrap">
+  <table class="ntbl">
+    <thead><tr><th>지역</th><th>국가</th><th>ISO</th><th>투표방식</th><th>조달경로</th><th>MIRU</th></tr></thead>
+    <tbody><tr><td>아프리카</td><td><a href="#COD">🇨🇩 콩고(킨샤사)</a></td><td style="color:#8C8C8C">COD</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>아프리카</td><td><a href="#GHA">🇬🇭 가나</a></td><td style="color:#8C8C8C">GHA</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아프리카</td><td><a href="#KEN">🇰🇪 케냐</a></td><td style="color:#8C8C8C">KEN</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아프리카</td><td><a href="#ZAF">🇿🇦 남아공</a></td><td style="color:#8C8C8C">ZAF</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#ARG">🇦🇷 아르헨티나</a></td><td style="color:#8C8C8C">ARG</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#BRA">🇧🇷 브라질</a></td><td style="color:#8C8C8C">BRA</td><td>DRE</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#DOM">🇩🇴 도미니카공화국</a></td><td style="color:#8C8C8C">DOM</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#SLV">🇸🇻 엘살바도르</a></td><td style="color:#8C8C8C">SLV</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#HND">🇭🇳 온두라스</a></td><td style="color:#8C8C8C">HND</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#JAM">🇯🇲 자메이카</a></td><td style="color:#8C8C8C">JAM</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#PAN">🇵🇦 파나마</a></td><td style="color:#8C8C8C">PAN</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#PRY">🇵🇾 파라과이</a></td><td style="color:#8C8C8C">PRY</td><td>DRE</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>아메리카</td><td><a href="#USA">🇺🇸 미국</a></td><td style="color:#8C8C8C">USA</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아메리카</td><td><a href="#VEN">🇻🇪 베네수엘라</a></td><td style="color:#8C8C8C">VEN</td><td>DRE</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아시아·태평양</td><td><a href="#BTN">🇧🇹 부탄</a></td><td style="color:#8C8C8C">BTN</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아시아·태평양</td><td><a href="#IND">🇮🇳 인도</a></td><td style="color:#8C8C8C">IND</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아시아·태평양</td><td><a href="#MNG">🇲🇳 몽골</a></td><td style="color:#8C8C8C">MNG</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>아시아·태평양</td><td><a href="#PHL">🇵🇭 필리핀</a></td><td style="color:#8C8C8C">PHL</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>아시아·태평양</td><td><a href="#KOR">🇰🇷 대한민국</a></td><td style="color:#8C8C8C">KOR</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>중앙아시아</td><td><a href="#KAZ">🇰🇿 카자흐스탄</a></td><td style="color:#8C8C8C">KAZ</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>중앙아시아</td><td><a href="#KGZ">🇰🇬 키르기스스탄</a></td><td style="color:#8C8C8C">KGZ</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>중앙아시아</td><td><a href="#UZB">🇺🇿 우즈베키스탄</a></td><td style="color:#8C8C8C">UZB</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#ALB">🇦🇱 알바니아</a></td><td style="color:#8C8C8C">ALB</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#BEL">🇧🇪 벨기에</a></td><td style="color:#8C8C8C">BEL</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#BIH">🇧🇦 보스니아헤르체고비나</a></td><td style="color:#8C8C8C">BIH</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#BGR">🇧🇬 불가리아</a></td><td style="color:#8C8C8C">BGR</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#EST">🇪🇪 에스토니아</a></td><td style="color:#8C8C8C">EST</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#GEO">🇬🇪 조지아</a></td><td style="color:#8C8C8C">GEO</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#MKD">🇲🇰 북마케도니아</a></td><td style="color:#8C8C8C">MKD</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>유럽</td><td><a href="#CHE">🇨🇭 스위스</a></td><td style="color:#8C8C8C">CHE</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>중동</td><td><a href="#BHR">🇧🇭 바레인</a></td><td style="color:#8C8C8C">BHR</td><td>OMR</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>중동</td><td><a href="#IRN">🇮🇷 이란</a></td><td style="color:#8C8C8C">IRN</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>중동</td><td><a href="#IRQ">🇮🇶 이라크</a></td><td style="color:#8C8C8C">IRQ</td><td>Mixed</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;">★</td></tr><tr><td>중동</td><td><a href="#OMN">🇴🇲 오만</a></td><td style="color:#8C8C8C">OMN</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#FFF3E0;color:#E65100;">국가조달 전용</span></td><td style="color:#EB0414;font-weight:700;"></td></tr><tr><td>중동</td><td><a href="#ARE">🇦🇪 아랍에미리트</a></td><td style="color:#8C8C8C">ARE</td><td>EVM</td><td><span style="font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></td><td style="color:#EB0414;font-weight:700;"></td></tr></tbody>
+  </table>
+</div>
+
+<section class="rs" id="r-africa"><div class="rh"><span class="rn">아프리카</span><span class="rs2">Africa · 4개국</span></div><div class="cc" id="COD">
+  <div class="ch">
+    <span class="cf">🇨🇩</span>
+    <div class="cn2"><div class="cn3">콩고(킨샤사)</div><div class="cn4">DRC · COD</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">BMD</span></div><div class="ir"><span class="il">모델</span><span class="iv">DEV (Dispositif Electronique de Vote)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Miru Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">MIRU BMS 터치스크린+VSAT 결과전송. 2018·2023 공급</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://marchepublic.cd/" target="_blank">ARMP (marchepublic.cd)</a></td><td class="pn">Form 기반 검색. CENI 기관명으로 필터. CENI 자체 사이트(ceni.cd)는 조달 없음 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="GHA">
+  <div class="ch">
+    <span class="cf">🇬🇭</span>
+    <div class="cn2"><div class="cn3">가나</div><div class="cn4">Ghana · GHA</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Laxton BVD + manual count</span></div><div class="cn">BVD+OMR 광학스캐너. 2020 BVMS Thales 낙찰(Miru 입찰 참가)</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.ghaneps.gov.gh/epps/home.do" target="_blank">Ghana e-Procurement</a></td><td class="pn">PPA(Public Procurement Authority). EC Ghana 입찰도 여기 게시 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://ec.gov.gh/" target="_blank">EC Ghana</a></td><td class="pn">Electoral Commission. BVMS/OMR 조달공고 직접 게시 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="KEN">
+  <div class="ch">
+    <span class="cf">🇰🇪</span>
+    <div class="cn2"><div class="cn3">케냐</div><div class="cn4">Kenya · KEN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic KIEMS BVD</span></div><div class="cn">Smartmatic KIEMS BVD+전자결과전송. 2017 논란 후 유지</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://tenders.go.ke/tenders" target="_blank">Tenders.go.ke</a></td><td class="pn">Smartmatic KIEMS BVD+결과전송. PPRA 관할 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.iebc.or.ke/" target="_blank">IEBC Kenya</a></td><td class="pn">독립선거경계위원회. 자체 입찰공고 게시 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="ZAF">
+  <div class="ch">
+    <span class="cf">🇿🇦</span>
+    <div class="cn2"><div class="cn3">남아공</div><div class="cn4">South Africa · ZAF</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Ren-Form VMD (voter ID only, manual count)</span></div><div class="cn">Ren-Form Litho R566.1M VMD 4만대. OMR 개표. 2024 해외인쇄</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://etenders.treasury.gov.za/" target="_blank">eTenders Treasury</a></td><td class="pn">국고부 전자입찰. IEC 조달공고도 여기 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.elections.org.za/" target="_blank">IEC South Africa</a></td><td class="pn">VMD 입찰공고 직접 게시. Ren-Form Litho R566M 계약 </td></tr></tbody></table>
+    </div>
+  </div>
+</div></section><section class="rs" id="r-americas"><div class="rh"><span class="rn">아메리카</span><span class="rs2">Americas · 10개국</span></div><div class="cc" id="ARG">
+  <div class="ch">
+    <span class="cf">🇦🇷</span>
+    <div class="cn2"><div class="cn3">아르헨티나</div><div class="cn4">Argentina · ARG</div></div>
+    <div class="cbdg"><span class="bm" style="background:#FFF3E0;color:#E65100;">파일럿/부분</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">BMD</span></div><div class="ir"><span class="il">모델</span><span class="iv">BUE (Boleta Única Electrónica)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Grupo MSA</span></div><div class="ir"><span class="il">계약</span><span class="iv">2025</span></div><div class="ir"><span class="il">규모</span><span class="iv">Partial</span></div><div class="cn">BUE(Boleta Única Electrónica) 일부 주 사용. 전자결과전송</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://comprar.gob.ar" target="_blank">COMPR.AR</a></td><td class="pn">연방 전기관 의무. DINE 발주 공고 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.electoral.gob.ar" target="_blank">Cámara Nacional Electoral</a></td><td class="pn">사법기관. 자체 조달 없음. 내무부 Dirección Electoral이 조달. COMPR.AR 사용 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="BRA">
+  <div class="ch">
+    <span class="cf">🇧🇷</span>
+    <div class="cn2"><div class="cn3">브라질</div><div class="cn4">Brazil · BRA</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">DRE</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">DRE</span></div><div class="ir"><span class="il">모델</span><span class="iv">Urna Eletrônica UE2022</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Positivo Tecnologia</span></div><div class="ir"><span class="il">계약</span><span class="iv">2021</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">전국 DRE 1996년 도입. 1.4억 유권자</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.tse.jus.br/transparencia-e-prestacao-de-contas/licitacoes-e-contratos/licitacoes" target="_blank">TSE 조달공고</a></td><td class="pn">URL 변경됨: /transparencia/gestao-de-contratacoes → /transparencia-e-prestacao-de-contas/... <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달</span></td><td><a href="https://pncp.gov.br/app/editais" target="_blank">Compras.gov.br (PNCP)</a></td><td class="pn">연방 전기관 의무게시. PNCP=Portal Nacional de Contratações Públicas <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달(구)</span></td><td><a href="https://www.gov.br/compras/pt-br" target="_blank">ComprasNet</a></td><td class="pn">구 ComprasNet → PNCP 전환 중. 병행 운영 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="DOM">
+  <div class="ch">
+    <span class="cf">🇩🇴</span>
+    <div class="cn2"><div class="cn3">도미니카공화국</div><div class="cn4">Dominican Republic · DOM</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Manual count (Indra/OMR system decommissioned 2023)</span></div><div class="cn">OMR 전국도입. 생체cédula 9.4M장</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.dgcp.gob.do/consultas/" target="_blank">DGCP Dominican Republic</a></td><td class="pn">Dirección General de Contrataciones Públicas </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://jce.gob.do/" target="_blank">JCE (Junta Central Electoral)</a></td><td class="pn">JCE 직접 OMR+생체 장비 조달 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="SLV">
+  <div class="ch">
+    <span class="cf">🇸🇻</span>
+    <div class="cn2"><div class="cn3">엘살바도르</div><div class="cn4">El Salvador · SLV</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Paper ballot + DUI verification</span></div><div class="cn">생체DUI 인증+전자결과전송</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.comprasal.gob.sv/" target="_blank">COMPRASAL</a></td><td class="pn">재무부 국가조달. TSE 입찰 여기 게시 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://tse.gob.sv/" target="_blank">TSE El Salvador</a></td><td class="pn">최고선거재판소. 생체DUI+결과전송 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="HND">
+  <div class="ch">
+    <span class="cf">🇭🇳</span>
+    <div class="cn2"><div class="cn3">온두라스</div><div class="cn4">Honduras · HND</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic VIU biometric</span></div><div class="cn">Smartmatic VIU 생체인증+결과전송. 2025 시스템 다운 사고</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://honducompras.gob.hn/" target="_blank">Honducompras</a></td><td class="pn">Smartmatic VIU 2만대. 2025 시스템다운 사고 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="JAM">
+  <div class="ch">
+    <span class="cf">🇯🇲</span>
+    <div class="cn2"><div class="cn3">자메이카</div><div class="cn4">Jamaica · JAM</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">EVIS biometric e-pollbook (Thales)</span></div><div class="cn">EVIS 생체e-pollbook 7→63개 선거구 확대 조달</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.gojep.gov.jm/epps/prepareViewCAOrganisation.do?id=1936" target="_blank">EOJ on GOJEP</a></td><td class="pn">GOJEP 내 Electoral Office of Jamaica 기관 페이지 </td></tr><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.gojep.gov.jm/" target="_blank">GOJEP</a></td><td class="pn">Jamaica e-Procurement. EOJ id=1936 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.eoj.com.jm/" target="_blank">EOJ Official</a></td><td class="pn">Electoral Office of Jamaica </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="PAN">
+  <div class="ch">
+    <span class="cf">🇵🇦</span>
+    <div class="cn2"><div class="cn3">파나마</div><div class="cn4">Panama · PAN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">TER (electronic results only)</span></div><div class="cn">종이+전자집계</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.panamacompra.gob.pa/Inicio/" target="_blank">PanamaCompra</a></td><td class="pn">전기관 의무. TE 조달도 여기 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="PRY">
+  <div class="ch">
+    <span class="cf">🇵🇾</span>
+    <div class="cn2"><div class="cn3">파라과이</div><div class="cn4">Paraguay · PRY</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">DRE</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">BMD</span></div><div class="ir"><span class="il">모델</span><span class="iv">BUE (Boleta Única Electrónica)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Consorcio Comitia-MSA</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">전국 DRE(브라질기기+TSJE SW)+생체인증재추진</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.contrataciones.gov.py/" target="_blank">DNCP (Contrataciones)</a></td><td class="pn">OCDS 표준 API 제공. Miru 타깃 포털 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="USA">
+  <div class="ch">
+    <span class="cf">🇺🇸</span>
+    <div class="cn2"><div class="cn3">미국</div><div class="cn4">United States · USA</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR/BMD/DRE</span></div><div class="ir"><span class="il">모델</span><span class="iv">varies by jurisdiction</span></div><div class="ir"><span class="il">공급사</span><span class="iv">ES&S / Dominion / Hart</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">주별 상이(OMR/DRE/BMD/Paper). 연방 통일 없음</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://sam.gov/opportunities" target="_blank">SAM.gov</a></td><td class="pn">연방 포털. 주(州) 입찰은 별도: CA=caleprocure.ca.gov, TX=txsmartbuy.gov, FL=vendor.myfloridamarketplace.com <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.eac.gov/" target="_blank">EAC (Election Assistance Commission)</a></td><td class="pn">인증/표준 기관. 조달 없음. EAC 자체 계약은 SAM.gov에 게재 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="VEN">
+  <div class="ch">
+    <span class="cf">🇻🇪</span>
+    <div class="cn2"><div class="cn3">베네수엘라</div><div class="cn4">Venezuela · VEN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">DRE</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">DRE</span></div><div class="ir"><span class="il">모델</span><span class="iv">EC-21</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Ex-Clé Soluciones Biométricas</span></div><div class="ir"><span class="il">계약</span><span class="iv">2020</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">전국 DRE. Smartmatic→CNE 자체운영. 2024 선거 조작 의혹</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.snc.gob.ve/" target="_blank">SNC (Servicio Nacional de Contrataciones)</a></td><td class="pn">직접 입찰 목록 없음. 홈페이지 Servicios en Línea 통해 접근. CNE는 비공개 조달 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.cne.gob.ve/" target="_blank">CNE</a></td><td class="pn">사이트 접근 불가 (ECONNREFUSED). CNE는 공개 조달 없음. SNC로 대체 <span class="hna">Dead</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div></section><section class="rs" id="r-asia-pacific"><div class="rh"><span class="rn">아시아·태평양</span><span class="rs2">Asia-Pacific · 5개국</span></div><div class="cc" id="BTN">
+  <div class="ch">
+    <span class="cf">🇧🇹</span>
+    <div class="cn2"><div class="cn3">부탄</div><div class="cn4">Bhutan · BTN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">EVM</span></div><div class="ir"><span class="il">모델</span><span class="iv">BEL/ECIL EVM (M2-era)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">BEL + ECIL</span></div><div class="ir"><span class="il">계약</span><span class="iv">2008</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">인도산 EVM 1618대. 809개 투표소</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.ecb.bt/tender" target="_blank">ECB Tender</a></td><td class="pn">/tender-information/ 는 2017년 아카이브. 현행 URL: /tender <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.egp.gov.bt/" target="_blank">e-GP Bhutan</a></td><td class="pn">재무부 전자조달. 전기관 의무 게시 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="IND">
+  <div class="ch">
+    <span class="cf">🇮🇳</span>
+    <div class="cn2"><div class="cn3">인도</div><div class="cn4">India · IND</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">EVM</span></div><div class="ir"><span class="il">모델</span><span class="iv">M3 EVM + VVPAT</span></div><div class="ir"><span class="il">공급사</span><span class="iv">BEL + ECIL</span></div><div class="ir"><span class="il">계약</span><span class="iv">2013</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">M3 EVM 전국 사용. BVR=N(EPIC는 사진ID만)</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.eci.gov.in/notification/tenders" target="_blank">ECI Tender</a></td><td class="pn">403 반환. eprocure.gov.in에서 ECI 기관 필터 사용 권장 <span class="hna">Dead</span></td></tr><tr><td><span class="ptg">국가조달</span></td><td><a href="https://eprocure.gov.in/cppp/tendersearch" target="_blank">eProcure (GeM/CPPP)</a></td><td class="pn">ECI EVM 조달은 BEL·ECIL 직접계약(정부간). eProcure에 공고 <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달(부)</span></td><td><a href="https://eprocure.gov.in/cppp/tendersearch" target="_blank">CPPP</a></td><td class="pn">Central Public Procurement Portal <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="MNG">
+  <div class="ch">
+    <span class="cf">🇲🇳</span>
+    <div class="cn2"><div class="cn3">몽골</div><div class="cn4">Mongolia · MNG</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">Dominion ImageCast (New ImageCast)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Dominion Voting Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2012</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">Dominion ImageCast OMR</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.tender.gov.mn/en" target="_blank">State Procurement Platform</a></td><td class="pn">403 Forbidden — 접근 불가. e-tender.mn 사용 권장 <span class="hna">Dead</span></td></tr><tr><td><span class="ptg">국가조달(부)</span></td><td><a href="https://www.e-tender.mn/" target="_blank">GPA e-Tender</a></td><td class="pn">Government Procurement Agency <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://m-election.mn/en" target="_blank">GEC Mongolia</a></td><td class="pn">선거위원회 정보 사이트. 조달 없음. e-tender.mn 사용 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="PHL">
+  <div class="ch">
+    <span class="cf">🇵🇭</span>
+    <div class="cn2"><div class="cn3">필리핀</div><div class="cn4">Philippines · PHL</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E8F5E9;color:#1B5E20;">국가조달 + EMB 직접공고</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">ACM (FASTrAC project)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Miru Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2024</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">Miru Systems ACM 110620대 ₱17.9B. Smartmatic 교체</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.comelec.gov.ph/?r=Procurement" target="_blank">COMELEC Procurement</a></td><td class="pn">COMELEC 직접 입찰공고. Miru 계약 공개 <span class="hna">Working</span></td></tr><tr><td><span class="pte">EMB조달</span></td><td><a href="https://www.comelec.gov.ph/index.html?r=Procurement/LatestUpdates" target="_blank">COMELEC Latest Updates</a></td><td class="pn">최신 조달공고 직접 링크 <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달</span></td><td><a href="https://notices.philgeps.gov.ph/" target="_blank">PhilGEPS</a></td><td class="pn">Miru ACM 110,620대 ₱17.9B. 필리핀 전자조달 허브 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="KOR">
+  <div class="ch">
+    <span class="cf">🇰🇷</span>
+    <div class="cn2"><div class="cn3">대한민국</div><div class="cn4">South Korea · KOR</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">투표지분류기 (ballot sorter/counter)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Miru Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2013</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">OMR 개표기. 2025-06-03 대선. MIRU 공급</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.g2b.go.kr/" target="_blank">나라장터 (G2B)</a></td><td class="pn">SSO 로그인 필요 (OIDC). 공개 URL 없음. PPS OpenAPI 대안 검토 필요 <span class="hna">Login</span></td></tr><tr><td><span class="ptg">국가조달(구)</span></td><td><a href="https://eva.g2b.go.kr/" target="_blank">EVA G2B</a></td><td class="pn">G2B 선거 전용 서브도메인 <span class="hna">Login</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.nec.go.kr/site/eng/main.do" target="_blank">중앙선거관리위원회</a></td><td class="pn">NEC는 자체 입찰 없음. 모든 조달은 G2B 통해 공고 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div></section><section class="rs" id="r-central-asia"><div class="rh"><span class="rn">중앙아시아</span><span class="rs2">Central Asia · 3개국</span></div><div class="cc" id="KAZ">
+  <div class="ch">
+    <span class="cf">🇰🇿</span>
+    <div class="cn2"><div class="cn3">카자흐스탄</div><div class="cn4">Kazakhstan · KAZ</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Paper ballot only (Sailau EVM discontinued 2011)</span></div><div class="cn">종이+EVM 병행. 2026-04 CEC 전자투표 도입 안 함 발표</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.goszakup.gov.kz/" target="_blank">goszakup.gov.kz</a></td><td class="pn">국가조달시스템. CEC 입찰도 여기 게시 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://election.gov.kz/eng/" target="_blank">CEC Kazakhstan</a></td><td class="pn">중앙선거위원회 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="KGZ">
+  <div class="ch">
+    <span class="cf">🇰🇬</span>
+    <div class="cn2"><div class="cn3">키르기스스탄</div><div class="cn4">Kyrgyzstan · KGZ</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">Miru PCOS 5-in-1</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Miru Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2018</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">5-in-1 복합기: 여권바이오+지문/얼굴+투표지인쇄+집계. MIRU PCOS(2018)+AI-CCTV(2024/25)</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="http://zakupki.gov.kg/popp/view/order/list.xhtml" target="_blank">zakupki.gov.kg</a></td><td class="pn">공개 검색 가능. OCDS API: http://ocds.zakupki.gov.kg/dashboard/weekly <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.shailoo.gov.kg" target="_blank">CEC Kyrgyzstan</a></td><td class="pn">선거 정보 사이트. 조달은 zakupki.gov.kg에서 ЦИК로 검색 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="UZB">
+  <div class="ch">
+    <span class="cf">🇺🇿</span>
+    <div class="cn2"><div class="cn3">우즈베키스탄</div><div class="cn4">Uzbekistan · UZB</div></div>
+    <div class="cbdg"><span class="bm" style="background:#FFF3E0;color:#E65100;">파일럿/부분</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">EVM</span></div><div class="ir"><span class="il">모델</span><span class="iv">E-Saylov domestic EVM</span></div><div class="ir"><span class="il">공급사</span><span class="iv">domestic (unidentified)</span></div><div class="ir"><span class="il">계약</span><span class="iv">2024</span></div><div class="ir"><span class="il">규모</span><span class="iv">Pilot</span></div><div class="cn">최초 EVM 파일럿(타슈켄트 37대). 종이+전자 선택</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://xarid.uzex.uz/" target="_blank">xarid.uzex.uz</a></td><td class="pn">JS 렌더링. 뷰: 공개. 입찰참여: 등록+EDS 필요. etender.uzex.uz도 확인 <span class="hna">JS_rendered</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://saylov.uz/en" target="_blank">CEC Uzbekistan</a></td><td class="pn">정보 사이트. 조달은 xarid.uzex.uz에서 CEC로 검색 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div></section><section class="rs" id="r-europe"><div class="rh"><span class="rn">유럽</span><span class="rs2">Europe · 8개국</span></div><div class="cc" id="ALB">
+  <div class="ch">
+    <span class="cf">🇦🇱</span>
+    <div class="cn2"><div class="cn3">알바니아</div><div class="cn4">Albania · ALB</div></div>
+    <div class="cbdg"><span class="bm" style="background:#FFF3E0;color:#E65100;">파일럿/부분</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">EVM</span></div><div class="ir"><span class="il">모델</span><span class="iv">Smartmatic A4-517</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic + Innovatrics</span></div><div class="ir"><span class="il">계약</span><span class="iv">2025</span></div><div class="ir"><span class="il">규모</span><span class="iv">Pilot</span></div><div class="cn">Smartmatic EVM+Innovatrics 지문인증 전국확대 법제화</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://app.gov.al/e-procurement/" target="_blank">APP e-Procurement</a></td><td class="pn">Public Procurement Agency. Smartmatic EVM 계약 공고 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://kqz.gov.al/" target="_blank">KQZ (CEC Albania)</a></td><td class="pn">Next.js 재구축. 조달 섹션 없음. APP e-Procurement에서 KQZ 기관명으로 검색 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="BEL">
+  <div class="ch">
+    <span class="cf">🇧🇪</span>
+    <div class="cn2"><div class="cn3">벨기에</div><div class="cn4">Belgium · BEL</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">EVM</span></div><div class="ir"><span class="il">모델</span><span class="iv">Smartmatic bSmart500 / SAES-3370</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic</span></div><div class="ir"><span class="il">계약</span><span class="iv">2024</span></div><div class="ir"><span class="il">규모</span><span class="iv">Partial</span></div><div class="cn">Smartmatic bSmart500 EVM. 의무투표</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://enot.publicprocurement.be/enot-war/searchNotice.do" target="_blank">e-Notification (publicprocurement.be)</a></td><td class="pn">EU 외부에서 연결 차단될 수 있음. BOSA eProcurement 시스템 <span class="hna">Working</span></td></tr><tr><td><span class="ptg">국가조달(제출)</span></td><td><a href="https://www.publicprocurement.be/etendering/home.do" target="_blank">e-Tendering Belgium</a></td><td class="pn">입찰서 제출용 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="BIH">
+  <div class="ch">
+    <span class="cf">🇧🇦</span>
+    <div class="cn2"><div class="cn3">보스니아헤르체고비나</div><div class="cn4">Bosnia and Herzegovina · BIH</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">Smartmatic ballot scanner</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic</span></div><div class="ir"><span class="il">계약</span><span class="iv">2026</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">Smartmatic EUR 38.1M 계약. 2026 대선·총선</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://next.ejn.gov.ba/Announcement/Search" target="_blank">eJN Bosnia</a></td><td class="pn">ejn.gov.ba → next.ejn.gov.ba로 이전 중. 신규 URL 사용 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.izbori.ba/Default.aspx?Lang=8" target="_blank">CIK BiH</a></td><td class="pn">izbori.ba는 선거결과 사이트. CIK 조달은 eJN에서 'Centralna izborna komisija' 검색 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="BGR">
+  <div class="ch">
+    <span class="cf">🇧🇬</span>
+    <div class="cn2"><div class="cn3">불가리아</div><div class="cn4">Bulgaria · BGR</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">DRE</span></div><div class="ir"><span class="il">모델</span><span class="iv">Smartmatic A4-517 (BMD mode since 2022)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic / Ciela Norma</span></div><div class="ir"><span class="il">계약</span><span class="iv">2020</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">Ciela Norma OMR. 전자투표 논쟁 중</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://app.eop.bg/today" target="_blank">eOP (app.eop.bg)</a></td><td class="pn">React/Angular SPA — 정적 파서 불가. Playwright 필요. Negometrix 기반 <span class="hna">JS_rendered</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.cik.bg/bg/zop" target="_blank">CIK Bulgaria</a></td><td class="pn">403 반환. CIK 입찰은 app.eop.bg에서 ЦИК 기관명으로 검색 <span class="hna">Dead</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="EST">
+  <div class="ch">
+    <span class="cf">🇪🇪</span>
+    <div class="cn2"><div class="cn3">에스토니아</div><div class="cn4">Estonia · EST</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">Internet</span></div><div class="ir"><span class="il">모델</span><span class="iv">i-Voting platform</span></div><div class="ir"><span class="il">공급사</span><span class="iv">RIA (state)</span></div><div class="ir"><span class="il">계약</span><span class="iv">2005</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">i-Voting 2005년 세계 최초. 2023년 51.1% 온라인투표</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://riigihanked.riik.ee" target="_blank">Riigihangete Register</a></td><td class="pn">i-Voting 51.1%. RIK 조달도 여기 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.valimised.ee/en" target="_blank">State Electoral Office</a></td><td class="pn">선거 정보 사이트. 조달은 Riigihangete Register에서 Riigi Valimisteenistus 검색 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="GEO">
+  <div class="ch">
+    <span class="cf">🇬🇪</span>
+    <div class="cn2"><div class="cn3">조지아</div><div class="cn4">Georgia · GEO</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">Smartmatic SAES-1800Plus (bScan1800Plus)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Smartmatic</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">bScan1800Plus 4876대. 계약 54215254 GEL</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://tenders.procurement.gov.ge" target="_blank">SPA Procurement Georgia</a></td><td class="pn">Hash URL (#/en/...) 정적 파싱 불가. 기본 URL 사용. 2026-06-01 신규 중앙조달청 ctd.cpb.gov.ge도 확인 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://cesko.ge/" target="_blank">CEC Georgia</a></td><td class="pn">403 반환. CEC 조달은 tenders.procurement.gov.ge에서 선거관리청 명칭으로 검색 <span class="hna">Dead</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="MKD">
+  <div class="ch">
+    <span class="cf">🇲🇰</span>
+    <div class="cn2"><div class="cn3">북마케도니아</div><div class="cn4">North Macedonia · MKD</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Biometric fingerprint e-pollbook</span></div><div class="cn">생체지문확인. 혼합투표방식</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.e-nabavki.gov.mk/" target="_blank">e-nabavki.gov.mk</a></td><td class="pn">전자조달 포털. SEC 조달 게시 </td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://www.sec.mk/" target="_blank">SEC Macedonia</a></td><td class="pn">State Electoral Commission </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="CHE">
+  <div class="ch">
+    <span class="cf">🇨🇭</span>
+    <div class="cn2"><div class="cn3">스위스</div><div class="cn4">Switzerland · CHE</div></div>
+    <div class="cbdg"><span class="bm" style="background:#FFF3E0;color:#E65100;">파일럿/부분</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">Internet</span></div><div class="ir"><span class="il">모델</span><span class="iv">Swiss Post e-voting</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Swiss Post</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">Partial</span></div><div class="cn">Post e-voting 파일럿. 제한적 온라인투표</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://www.simap.ch/en" target="_blank">SIMAP Switzerland</a></td><td class="pn">2024-07 이후 입찰만 포함. /en/publications 경로 폐기됨. 홈페이지 검색 사용 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위(e-voting)</span></td><td><a href="https://www.bk.admin.ch/bk/en/home/politische-rechte/e-voting.html" target="_blank">Bundeskanzlei e-Voting</a></td><td class="pn">정보 페이지. 입찰 없음. SIMAP 사용 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div></section><section class="rs" id="r-middle-east"><div class="rh"><span class="rn">중동</span><span class="rs2">Middle East · 5개국</span></div><div class="cc" id="BHR">
+  <div class="ch">
+    <span class="cf">🇧🇭</span>
+    <div class="cn2"><div class="cn3">바레인</div><div class="cn4">Bahrain · BHR</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E3F2FD;color:#0D47A1;">생체인식만</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">OMR</span></div>
+      <div class="ir"><span class="il">공급사</span><span class="iv">Paper ballot, likely manual count (OMR only in private BCCI elections)</span></div><div class="cn">종이투표지+OMR 스캐너 개표. 야당 배제</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">—</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://etendering.tenderboard.gov.bh" target="_blank">Tender Board Bahrain</a></td><td class="pn">OMR 스캐너 개표. 야당 배제 형식적 선거 </td></tr><tr><td><span class="ptg">국가조달(홈)</span></td><td><a href="https://www.tenderboard.gov.bh" target="_blank">Tender Board Homepage</a></td><td class="pn">국가조달위원회 홈페이지 </td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="IRN">
+  <div class="ch">
+    <span class="cf">🇮🇷</span>
+    <div class="cn2"><div class="cn3">이란</div><div class="cn4">Iran · IRN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#FFF3E0;color:#E65100;">파일럿/부분</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">DRE</span></div><div class="ir"><span class="il">모델</span><span class="iv">domestic EVM (type unconfirmed)</span></div><div class="ir"><span class="il">공급사</span><span class="iv">domestic</span></div><div class="ir"><span class="il">계약</span><span class="iv">2024</span></div><div class="ir"><span class="il">규모</span><span class="iv">Partial</span></div><div class="cn">의회선거 EVM 일부(테헤란 등). 대통령선거는 종이. 최고지도자 체제</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">미사용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://setadiran.ir/setad/cms" target="_blank">SETAD Iran</a></td><td class="pn">이란 외부에서 geo-차단. Farsi 전용. irantenders.com 대리 모니터링 고려 <span class="hna">Blocked</span></td></tr><tr><td><span class="pts">선거주관</span></td><td><a href="https://keshvar.moi.ir/" target="_blank">MoI Iran (내무부)</a></td><td class="pn">403 반환. 이란 외부 접근 불가 <span class="hna">Blocked</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="IRQ">
+  <div class="ch">
+    <span class="cf">🇮🇶</span>
+    <div class="cn2"><div class="cn3">이라크</div><div class="cn4">Iraq · IRQ</div></div>
+    <div class="cbdg"><span class="mb">★ MIRU 납품국</span><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">Mixed</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">OMR</span></div><div class="ir"><span class="il">모델</span><span class="iv">PCOS/CCOS optical scanner</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Miru Systems</span></div><div class="ir"><span class="il">계약</span><span class="iv">2017</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">OMR 광학스캐너(Miru PCOS)+투표소 지문+FRT 본인확인. 2025선거 FRT 신규 추가</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://mop.gov.iq/en/general-government-contracts-department" target="_blank">MoP Iraq (계획부)</a></td><td class="pn">규제/감독 기관. 입찰 발주기관 아님. IHEC가 직접 조달 <span class="hna">Info_only</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://ihec.iq/en/" target="_blank">IHEC Iraq</a></td><td class="pn">PDF 아카이브만 존재. 실시간 입찰 DB 없음. PDF 업로드 주기 모니터링 필요 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="OMN">
+  <div class="ch">
+    <span class="cf">🇴🇲</span>
+    <div class="cn2"><div class="cn3">오만</div><div class="cn4">Oman · OMN</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#FFF3E0;color:#E65100;">국가조달 전용</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">Internet</span></div><div class="ir"><span class="il">모델</span><span class="iv">Intakhib mobile app</span></div><div class="ir"><span class="il">공급사</span><span class="iv">uqudo + Tech5 / Oracle OCI</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">National</span></div><div class="cn">2023 완전 디지털화. AI 얼굴인식+NFC. 앱으로 온라인투표</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://etendering.tenderboard.gov.om" target="_blank">Tender Board Oman</a></td><td class="pn">공개 대시보드 2,262개+ 공고. /ctm/Am/PublicSearchTender.html WAF 차단됨 <span class="hna">Working</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div><div class="cc" id="ARE">
+  <div class="ch">
+    <span class="cf">🇦🇪</span>
+    <div class="cn2"><div class="cn3">아랍에미리트</div><div class="cn4">UAE · ARE</div></div>
+    <div class="cbdg"><span class="bm" style="background:#E8F5E9;color:#1B5E20;">전체 도입</span><span class="br2" style="background:#E3F2FD;color:#0D47A1;">국가조달 → 선거위 연동</span></div>
+  </div>
+  <div class="cb2">
+    <div class="col">
+      <div class="ct">🗳 투표 장비</div>
+      <div class="ir"><span class="il">방식</span><span class="iv">EVM</span></div>
+      <div class="ir"><span class="il">유형</span><span class="iv">Internet</span></div><div class="ir"><span class="il">모델</span><span class="iv">Scytl internet voting kiosk</span></div><div class="ir"><span class="il">공급사</span><span class="iv">Scytl</span></div><div class="ir"><span class="il">계약</span><span class="iv">2023</span></div><div class="ir"><span class="il">규모</span><span class="iv">Partial</span></div><div class="cn">FNC 40석 중 20석 선출. 스마트ID 생체인증+EVM</div>
+    </div>
+    <div class="col">
+      <div class="ct">🔍 생체인식</div>
+      <div class="ir"><span class="il">등록</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">투표소</span><span class="iv">✅ 적용</span></div>
+      <div class="ir"><span class="il">e-voting</span><span class="iv">✅</span></div>
+    </div>
+    <div class="col colw">
+      <div class="ct">📋 조달 경로</div>
+      <table class="pt"><thead><tr><th>유형</th><th>포털명</th><th>비고</th></tr></thead><tbody><tr><td><span class="ptg">국가조달</span></td><td><a href="https://mof.gov.ae/en/public-finance/government-procurement/current-business-opportunities/" target="_blank">Federal e-Procurement UAE</a></td><td class="pn">procurement.gov.ae는 로그인 전용. MoF 공개 목록 페이지 사용 <span class="hna">Working</span></td></tr><tr><td><span class="pts">선거위</span></td><td><a href="https://uaenec.ae/en" target="_blank">UAE NEC</a></td><td class="pn">NEC 정보 사이트. 조달 없음. FNC 선거는 제한된 선거인단 방식 <span class="hna">Info_only</span></td></tr></tbody></table>
+    </div>
+  </div>
+</div></section>
+
+<footer>MIRU Systems · Election Technology Intelligence · 2026.06.29 · 총 35개국 71개 포털</footer>
+</body></html>
