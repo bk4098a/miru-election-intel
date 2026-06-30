@@ -5,8 +5,18 @@ Multi-page tab-based dark-theme intelligence report for Miru Systems.
 import sqlite3, json, os, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-DB  = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_technology_world.db')
-OUT = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_tech_report.html')
+DB       = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_technology_world.db')
+OUT      = os.path.join(os.path.dirname(__file__), '..', 'data', 'election_tech_report.html')
+CHARTJS  = os.path.join(os.path.dirname(__file__), '..', 'data', '_chartjs_cache.js')
+
+# Inline Chart.js for fully self-contained HTML
+_chartjs_src = ''
+if os.path.exists(CHARTJS):
+    with open(CHARTJS, encoding='utf-8') as _f:
+        _chartjs_src = _f.read()
+else:
+    # Fallback to CDN if local cache missing
+    _chartjs_src = None
 
 # ── Procurement category overrides ─────────────────────────────────────────
 PROCUREMENT_CATEGORY = {
@@ -753,8 +763,8 @@ footer{{
   Miru Systems · Election Technology Intelligence · 2026.06.29 · 총 {total_countries}개국 {len(portals_raw)}개 포털
 </footer>
 
-<!-- Chart.js (local cache) -->
-<script src="_chartjs_cache.js"></script>
+<!-- Chart.js (inlined for self-contained HTML) -->
+{"<script>" + _chartjs_src + "</script>" if _chartjs_src else '<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>'}
 <script>
 /* ── Embedded data ────────────────────────────────────────── */
 const CHART_DATA = {CHART_DATA_JSON};
