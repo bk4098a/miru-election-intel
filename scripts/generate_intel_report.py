@@ -33,11 +33,11 @@ PROCUREMENT_CATEGORY = {
 }
 
 CAT_META = {
-    'both':      {'label': '국가조달 + 선관위 공동',  'label_en': 'National + EMB',    'color': '#22c55e', 'bg': '#052e16'},
-    'emb_only':  {'label': '선관위 직접공고',          'label_en': 'EMB Direct Only',   'color': '#a78bfa', 'bg': '#2e1065'},
-    'gov_only':  {'label': '국가조달 전용',            'label_en': 'National Only',     'color': '#38bdf8', 'bg': '#082f49'},
-    'login_req': {'label': '로그인/등록 필요',         'label_en': 'Login Required',    'color': '#fb923c', 'bg': '#431407'},
-    'opaque':    {'label': '수의계약/불투명',           'label_en': 'Opaque / Direct',   'color': '#94a3b8', 'bg': '#0f172a'},
+    'both':      {'label': '국가조달 + 선관위 공동',  'label_en': 'National + EMB',    'color': '#24A148', 'bg': 'rgba(36,161,72,.1)'},
+    'emb_only':  {'label': '선관위 직접공고',          'label_en': 'EMB Direct Only',   'color': '#AEB7D6', 'bg': 'rgba(174,183,214,.08)'},
+    'gov_only':  {'label': '국가조달 전용',            'label_en': 'National Only',     'color': '#8898CC', 'bg': 'rgba(18,58,158,.12)'},
+    'login_req': {'label': '로그인/등록 필요',         'label_en': 'Login Required',    'color': '#B87878', 'bg': 'rgba(235,4,20,.08)'},
+    'opaque':    {'label': '수의계약/불투명',           'label_en': 'Opaque / Direct',   'color': '#6E78A8', 'bg': 'rgba(110,120,168,.06)'},
 }
 
 REGIONS = {
@@ -88,11 +88,11 @@ CRAWL_STATUS = {
 }
 
 CRAWL_STATUS_META = {
-    'confirmed':          {'icon': '✅', 'label': '수집 확인',   'color': '#22c55e'},
-    'needs_key':          {'icon': '🔑', 'label': 'API키 필요',  'color': '#38bdf8'},
-    'parser_unconfirmed': {'icon': '⚠️', 'label': '파서 미확인', 'color': '#fb923c'},
-    'login_req':          {'icon': '🔒', 'label': '로그인 필요', 'color': '#f87171'},
-    'not_investigated':   {'icon': '❓', 'label': '미조사',       'color': '#6b7787'},
+    'confirmed':          {'icon': '✅', 'label': '수집 확인',   'color': '#24A148'},
+    'needs_key':          {'icon': '🔑', 'label': 'API키 필요',  'color': '#AEB7D6'},
+    'parser_unconfirmed': {'icon': '⚠️', 'label': '파서 미확인', 'color': '#B87878'},
+    'login_req':          {'icon': '🔒', 'label': '로그인 필요', 'color': '#B87878'},
+    'not_investigated':   {'icon': '❓', 'label': '미조사',       'color': '#6E78A8'},
 }
 
 def get_crawl_status(iso):
@@ -328,7 +328,7 @@ def full_table_rows():
         cm  = CAT_META[cat]
         cs  = get_crawl_status(iso)
         csm = CRAWL_STATUS_META[cs]
-        miru_cell   = '<span style="color:#ef4444;font-weight:700;">★ MIRU</span>' if row['miru'] else ''
+        miru_cell   = '<span style="color:#EB0414;font-weight:700;">★ MIRU</span>' if row['miru'] else ''
         cat_cell    = f'<span class="cat-badge" style="color:{cm["color"]};background:{cm["bg"]}">{cm["label_en"]}</span>'
         crawl_cell  = f'<span style="font-size:11px;color:{csm["color"]};font-weight:700">{csm["icon"]} {csm["label"]}</span>'
         html += (
@@ -362,8 +362,8 @@ HTML = f'''<!DOCTYPE html>
   --bg:#070e1a;--card:#11161f;--surface:#0c1119;
   --text:#e7edf4;--text2:#9aa6b5;--muted:#6b7787;
   --border:#222c3a;--hover:#161d28;--shadow:rgba(0,0,0,.4);
-  --red:#EB0513;--blue:#3B86D6;--navy:#04185F;
-  --green:#22c55e;--purple:#a78bfa;--sky:#38bdf8;--orange:#fb923c;--slate:#94a3b8;
+  --red:#EB0414;--blue:#4B6FD4;--navy:#05195E;
+  --green:#24A148;--purple:#8898CC;--sky:#AEB7D6;--orange:#B87878;--slate:#6E78A8;
 }}
 html.light{{
   --bg:#f0f3f7;--card:#ffffff;--surface:#f5f7fa;
@@ -406,10 +406,10 @@ input,select,button{{font-family:'Gmarket Sans',sans-serif;}}
 .tb-actions{{display:flex;gap:8px;flex:0 0 auto;}}
 #csv-btn{{
   display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:7px;
-  background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);
+  background:rgba(174,183,214,.1);border:1px solid rgba(174,183,214,.25);
   color:var(--sky);font-size:12px;cursor:pointer;white-space:nowrap;
 }}
-#csv-btn:hover{{background:rgba(56,189,248,.22);}}
+#csv-btn:hover{{background:rgba(174,183,214,.18);}}
 #theme-btn{{
   width:32px;height:32px;border-radius:7px;border:none;cursor:pointer;
   background:rgba(255,255,255,.1);color:#fff;font-size:14px;
@@ -498,8 +498,8 @@ input,select,button{{font-family:'Gmarket Sans',sans-serif;}}
 .cbadges{{display:flex;flex-wrap:wrap;gap:5px;align-items:center;}}
 .miru-badge{{
   font-size:11px;font-weight:700;padding:3px 8px;
-  background:rgba(235,5,19,.1);color:#ef4444;
-  border:1px solid rgba(235,5,19,.25);border-radius:20px;
+  background:rgba(235,4,20,.1);color:#EB0414;
+  border:1px solid rgba(235,4,20,.25);border-radius:20px;
 }}
 .cat-badge{{font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap;}}
 .mtype-badge{{
@@ -529,21 +529,21 @@ input,select,button{{font-family:'Gmarket Sans',sans-serif;}}
 .ptbl a{{color:var(--blue);font-size:12px;word-break:break-all;}}
 .pt-gov{{
   font-size:10px;font-weight:700;padding:2px 6px;
-  background:rgba(56,189,248,.12);color:var(--sky);border-radius:4px;white-space:nowrap;
+  background:rgba(18,58,158,.12);color:var(--text2);border-radius:4px;white-space:nowrap;
 }}
 .pt-emb{{
   font-size:10px;font-weight:700;padding:2px 6px;
-  background:rgba(167,139,250,.12);color:var(--purple);border-radius:4px;white-space:nowrap;
+  background:rgba(174,183,214,.08);color:var(--text2);border-radius:4px;white-space:nowrap;
 }}
 .pt-other{{
   font-size:10px;font-weight:700;padding:2px 6px;
   background:rgba(255,255,255,.06);color:var(--text2);border-radius:4px;white-space:nowrap;
 }}
-.ps-ok{{font-size:11px;font-weight:700;color:#22c55e;}}
-.ps-dead{{font-size:11px;font-weight:700;color:#ef4444;}}
-.ps-login{{font-size:11px;font-weight:700;color:#fb923c;}}
+.ps-ok{{font-size:11px;font-weight:700;color:#24A148;}}
+.ps-dead{{font-size:11px;font-weight:700;color:#EB0414;}}
+.ps-login{{font-size:11px;font-weight:700;color:#B87878;}}
 .ps-info{{font-size:11px;color:var(--muted);}}
-.ps-js{{font-size:11px;font-weight:700;color:#fb923c;}}
+.ps-js{{font-size:11px;font-weight:700;color:#B87878;}}
 .ps-na{{font-size:11px;color:var(--muted);}}
 .portal-note{{font-size:10px;color:var(--muted);margin-left:4px;}}
 .no-portals{{font-size:12px;color:var(--muted);padding:8px 0;}}
@@ -564,11 +564,11 @@ input,select,button{{font-family:'Gmarket Sans',sans-serif;}}
 }}
 .chip.active{{color:#fff;}}
 .chip[data-cat="all"].active{{background:var(--blue);border-color:var(--blue);}}
-.chip[data-cat="both"].active{{background:#052e16;border-color:#22c55e;color:#22c55e;}}
-.chip[data-cat="emb_only"].active{{background:#2e1065;border-color:#a78bfa;color:#a78bfa;}}
-.chip[data-cat="gov_only"].active{{background:#082f49;border-color:#38bdf8;color:#38bdf8;}}
-.chip[data-cat="login_req"].active{{background:#431407;border-color:#fb923c;color:#fb923c;}}
-.chip[data-cat="opaque"].active{{background:#0f172a;border-color:#94a3b8;color:#94a3b8;}}
+.chip[data-cat="both"].active{{background:rgba(36,161,72,.1);border-color:#24A148;color:#24A148;}}
+.chip[data-cat="emb_only"].active{{background:rgba(174,183,214,.08);border-color:#AEB7D6;color:#AEB7D6;}}
+.chip[data-cat="gov_only"].active{{background:rgba(18,58,158,.15);border-color:#8898CC;color:#8898CC;}}
+.chip[data-cat="login_req"].active{{background:rgba(235,4,20,.08);border-color:#B87878;color:#B87878;}}
+.chip[data-cat="opaque"].active{{background:rgba(110,120,168,.08);border-color:#6E78A8;color:#6E78A8;}}
 .full-tbl{{width:100%;border-collapse:collapse;font-size:12.5px;}}
 .full-tbl th{{
   background:var(--surface);border-bottom:2px solid var(--border);
@@ -627,7 +627,7 @@ footer{{
       <div class="hstat"><div class="hstat-n" style="color:var(--sky)">{total_countries}</div><div class="hstat-l">모니터링 국가</div></div>
       <div class="hstat"><div class="hstat-n" style="color:var(--green)">{emb_direct_count}</div><div class="hstat-l">선관위 직접공고</div></div>
       <div class="hstat"><div class="hstat-n" style="color:var(--orange)">{inaccessible_count}</div><div class="hstat-l">접근 불가</div></div>
-      <div class="hstat"><div class="hstat-n" style="color:#ef4444">{len(MIRU_ISO)}</div><div class="hstat-l">MIRU 납품국</div></div>
+      <div class="hstat"><div class="hstat-n" style="color:var(--red)">{len(MIRU_ISO)}</div><div class="hstat-l">MIRU 납품국</div></div>
     </div>
   </div>
 
@@ -662,7 +662,7 @@ footer{{
       대부분의 국가는 단일 국가 전자조달 포털에 모든 공고를 의무 게시합니다.
       정부 조달법상 의무 게시이므로 국가조달 포털 모니터링만으로 충분합니다.
     </div>
-    <div class="insight-box" style="border-left-color:#38bdf8">
+    <div class="insight-box">
       <strong>수집 상태 현황</strong><br>
       ✅ 수집 확인 {sum(1 for c in countries if get_crawl_status(c["iso3"])=="confirmed")}개국 (BHR · KEN · IRQ · ZAF · PRY · PHL) &nbsp;|&nbsp;
       🔑 API키 필요 {sum(1 for c in countries if get_crawl_status(c["iso3"])=="needs_key")}개국 (KAZ · KOR · USA) &nbsp;|&nbsp;
