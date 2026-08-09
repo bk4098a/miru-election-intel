@@ -18,7 +18,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Njoftim për publikim për vendin e lirë të punës në Sekretar i Përgjithshëm në Komisionin Qendror të Zgjedhjeve. 7/8/2026 Në zbatim të nenit 32 të ligjit nr.152 datë 30.05.2013 “Për nëpunësin civil”, i ndryshuar, të Kreut VIII të Vendimit nr. 118, datë 05.03.2014 Këshillit të Ministrave “Për procedur",
     "score": 15,
-    "crawled_at": "2026-08-08T22:33:49Z",
+    "crawled_at": "2026-08-09T22:35:45Z",
     "category": "other"
   },
   {
@@ -39,7 +39,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Rezultate zgjedhore Pjesëmarrja në zgjedhje Subjektet zgjedhore Kandidatët Dokumentet e kandidimit Formularët e dekriminalizimit Komisionet Zgjedhore Verifikimi paszgjedhor www.cec.org.al Arkiva.kqz.gov.al",
     "score": 15,
-    "crawled_at": "2026-08-08T22:33:49Z",
+    "crawled_at": "2026-08-09T22:35:45Z",
     "category": "other"
   },
   {
@@ -60,7 +60,7 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Qendra ime e votimit Subjektet zgjedhore Procedura e votimit Kandidatët",
     "score": 15,
-    "crawled_at": "2026-08-08T22:33:49Z",
+    "crawled_at": "2026-08-09T22:35:45Z",
     "category": "other"
   },
   {
@@ -81,7 +81,28 @@ window.MIRU_TENDERS = [
     "currency": "ALL",
     "snippet": "Qendra ime e votimit Subjektet zgjedhore Procedura e votimit Kandidatët",
     "score": 15,
-    "crawled_at": "2026-08-08T22:33:49Z",
+    "crawled_at": "2026-08-09T22:35:45Z",
+    "category": "other"
+  },
+  {
+    "id": 29105,
+    "notice_key": "7e2de1af01455aa51140",
+    "country": "Philippines",
+    "iso3": "PHL",
+    "region": "Southeast Asia",
+    "portal_name": "philgeps.gov.ph",
+    "title": "Supply and Delivery of Food Packs for Voter's Education: A Role of Youth in the Elections Orientation",
+    "title_en": "",
+    "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13182825&highlight=true",
+    "published_date": "2026-08-10",
+    "deadline_date": "2026-08-13",
+    "status": "Open",
+    "buyer": "PhilGEPS",
+    "amount": null,
+    "currency": "PHP",
+    "snippet": "10 | 10/08/2026 | 13/08/2026 01:00 AM | Supply and Delivery of Food Packs for Voter's Education: A Role of Youth in the Elections Orientation, Food Stuff ,BARANGAY SINIPIAN, NAGCARLAN, LAGUNA",
+    "score": 55,
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -102,8 +123,29 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "6 | 19/06/2026 | 14/08/2026 09:00 AM | Supply, Delivery and Installation of Automated Biometrics Identification System (ABIS) Solution with Database Inter-Connectivity, Information Technology ,COMMISSION ON ELECTIONS",
     "score": 55,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "biometric"
+  },
+  {
+    "id": 29104,
+    "notice_key": "784aa6d337a0294679ba",
+    "country": "Philippines",
+    "iso3": "PHL",
+    "region": "Southeast Asia",
+    "portal_name": "philgeps.gov.ph",
+    "title": "PROVISION OF CATERING SERVICES INTENDED FOR ELECTORAL ACTIVITIES IN CONNECTION WITH THE BARANGAY AND SANGGUNIANG KABATAAN ELECTION, THIS MUNICIPALITY",
+    "title_en": "",
+    "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13182127&highlight=true",
+    "published_date": "2026-08-10",
+    "deadline_date": "2026-08-13",
+    "status": "Open",
+    "buyer": "PhilGEPS",
+    "amount": null,
+    "currency": "PHP",
+    "snippet": "8 | 10/08/2026 | 13/08/2026 03:00 PM | PROVISION OF CATERING SERVICES INTENDED FOR ELECTORAL ACTIVITIES IN CONNECTION WITH THE BARANGAY AND SANGGUNIANG KABATAAN ELECTION, THIS MUNICIPALITY, Catering Services ,MUNICIPALITY OF SAN VICENTE, PALAWAN",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:34:55Z",
+    "category": "services"
   },
   {
     "id": 27746,
@@ -121,9 +163,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "10 | 08/08/2026 | 12/08/2026 05:00 PM | Supply and Delivery of One (1) Lot Various Office Supplies for Official Use of the Vulnerable Sectors Office  (Project ID No. SVP-2026-120-VOS-VSO), Office Supplies and Devices ,COMMISSION ON ELECTIONS",
+    "snippet": "12 | 08/08/2026 | 12/08/2026 05:00 PM | Supply and Delivery of One (1) Lot Various Office Supplies for Official Use of the Vulnerable Sectors Office  (Project ID No. SVP-2026-120-VOS-VSO), Office Supplies and Devices ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -142,9 +184,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "9 | 08/08/2026 | 12/08/2026 05:00 PM | Supply and Delivery of Prepaid Load Cards for use of the Vulnerable Sectors Office (Project ID No. SVP-2026-118-VSO-PREPAID LOAD), Communication Equipment & Parts and Accessories ,COMMISSION ON ELECTIONS",
+    "snippet": "11 | 08/08/2026 | 12/08/2026 05:00 PM | Supply and Delivery of Prepaid Load Cards for use of the Vulnerable Sectors Office (Project ID No. SVP-2026-118-VSO-PREPAID LOAD), Communication Equipment & Parts and Accessories ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -165,7 +207,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "5 | 08/08/2026 | 14/08/2026 03:00 PM | SVP-26-07-0619-JANITORIALSUPPLIES  Supply and Delivery of Janitorial Supplies in Region 6 for the 3rd Quarter of 2026, Janitorial Supplies ,COMMISSION ON ELECTION - REGION VI",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -186,7 +228,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "4 | 08/08/2026 | 14/08/2026 03:00 PM | SVP-26-07-0618-OFFICESUPPLIES Supply and Delivery of Common Office Supplies in Region 6 for the 3rd Quarter of 2026, Office Supplies and Devices ,COMMISSION ON ELECTION - REGION VI",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -207,7 +249,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "3 | 08/08/2026 | 14/08/2026 03:00 PM | SVP-26-07-0620-INKSTONERSSUPPLIES Supply and Delivery of Inks, Toners and other printing consumables in Region 6 for the 3rd Quarter of 2026, Printing Supplies ,COMMISSION ON ELECTION - REGION VI",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "election_equipment"
   },
   {
@@ -226,9 +268,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "15 | 07/08/2026 | 10/08/2026 10:00 AM | PROVISION OF CATERING SERVICES FOR 2026 BARANGAY & SK ELECTION, Catering Services ,MUNICIPALITY OF PINAMUNGAJAN, CEBU",
+    "snippet": "17 | 07/08/2026 | 10/08/2026 10:00 AM | PROVISION OF CATERING SERVICES FOR 2026 BARANGAY & SK ELECTION, Catering Services ,MUNICIPALITY OF PINAMUNGAJAN, CEBU",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
   },
   {
@@ -249,7 +291,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "11 | 05/08/2026 | 10/08/2026 09:00 AM | Request for Quotation on Election Reserve- Comelec, Office Supplies and Devices ,MUNICIPALITY OF SAN JUAN, SIQUIJOR",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -270,7 +312,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "8 | 06/08/2026 | 11/08/2026 10:00 AM | Catering Services for Various Election Activities of COMELEC Pavia, Catering Services ,MUNICIPALITY OF PAVIA, ILOILO",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
   },
   {
@@ -291,7 +333,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "7 | 06/08/2026 | 12/08/2026 12:00 PM | Supply and Delivery of Various Inks and Toners to be used by the Different Offices in COMELEC Region IX for Third (3rd) Quarter 2026, Office Equipment Supplies and Consumables ,COMMISSION ON ELECTION - ZAMBOANGA CITY",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "election_equipment"
   },
   {
@@ -312,7 +354,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "6 | 06/08/2026 | 12/08/2026 12:00 PM | Supply and Delivery of Various Office Furniture and Equipment for the Different Offices in COMELEC Region IX for Third (3rd) Quarter 2026, Office Equipment ,COMMISSION ON ELECTION - ZAMBOANGA CITY",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -326,14 +368,14 @@ window.MIRU_TENDERS = [
     "title_en": "",
     "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13171901&highlight=true",
     "published_date": "2026-08-04",
-    "deadline_date": "2026-08-10",
+    "deadline_date": "2026-08-11",
     "status": "Open",
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "14 | 04/08/2026 | 10/08/2026 11:00 AM | Procurement of Solid-State Drive (SSD) for the Dasmariñas City Special Election, Office Equipment Supplies and Consumables ,CITY OF DASMARIÑAS, CAVITE",
+    "snippet": "15 | 04/08/2026 | 11/08/2026 11:00 AM | Procurement of Solid-State Drive (SSD) for the Dasmariñas City Special Election, Office Equipment Supplies and Consumables ,CITY OF DASMARIÑAS, CAVITE",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -354,7 +396,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "2 | 02/08/2026 | 24/08/2026 08:00 AM | Procurement of Catering Services for the 2026 PRAISE Awarding Ceremony and 86th COMELEC Anniversary Thanksgiving Program, Catering Services ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
   },
   {
@@ -375,7 +417,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "PublishClosingTitle131/07/202624/08/2026 04:00 PMOne (1) Lot - Supply and Delivery of Various Supplies for the Use of Treasury Department of San Juan for the Barangay and SK Elections, General Merchandise ,CITY OF SAN JUAN202/08/202624/08/2026 08:00 AMProcurement of Catering Services for the 2026 PR",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
   },
   {
@@ -394,9 +436,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "17 | 17/07/2026 | 10/08/2026 08:30 AM | SUPPLY AND DELIVERY OF PLASTIC ACETATE FOR USE IN THE 2026 BARANGAY AND SANGGUNIANG KABATAAN ELECTIONS (BSKE) (Project ID No. 07-2026-BSKE-PA), Plastic Products ,COMMISSION ON ELECTIONS",
+    "snippet": "19 | 17/07/2026 | 10/08/2026 08:30 AM | SUPPLY AND DELIVERY OF PLASTIC ACETATE FOR USE IN THE 2026 BARANGAY AND SANGGUNIANG KABATAAN ELECTIONS (BSKE) (Project ID No. 07-2026-BSKE-PA), Plastic Products ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -417,7 +459,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "3 | 17/07/2026 | 14/08/2026 08:00 AM | Supply and Delivery of All-in-One Printer for the COMELEC Main and Field Offices – 2nd Bidding (Project ID No. 11-2026-PRINTER), Information Technology ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -438,8 +480,29 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "5 | 16/07/2026 | 13/08/2026 08:00 AM | Supply, Delivery, Installation, Testing, Deployment, and Commissioning of Low Earth Orbit (LEO) Satellite Internet Services for Selected COMELEC Field Offices (Project ID No. 14-2026-LEO), Internet Services ,COMMISSION ON ELECTIONS",
     "score": 40,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
+  },
+  {
+    "id": 29111,
+    "notice_key": "214032d4bea75980b720",
+    "country": "Philippines",
+    "iso3": "PHL",
+    "region": "Southeast Asia",
+    "portal_name": "philgeps.gov.ph",
+    "title": "Procurement of Biometrics Machine, Uninterruptible Power Supply (UPS), All-in-One Printer with Scanner, and Laptop Computer - PESO",
+    "title_en": "",
+    "url": "https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashBidNoticeAbstractUI.aspx?menuIndex=3&refID=13178906&highlight=true",
+    "published_date": "2026-08-10",
+    "deadline_date": "2026-08-13",
+    "status": "Open",
+    "buyer": "PhilGEPS",
+    "amount": null,
+    "currency": "PHP",
+    "snippet": "2 | 10/08/2026 | 13/08/2026 10:00 AM | Procurement of Biometrics Machine, Uninterruptible Power Supply (UPS), All-in-One Printer with Scanner, and Laptop Computer - PESO, Information Technology ,MUNICIPALITY OF TOBIAS FORNIER,  ANTIQUE",
+    "score": 15,
+    "crawled_at": "2026-08-09T22:34:55Z",
+    "category": "biometric"
   },
   {
     "id": 26493,
@@ -457,9 +520,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "2 | 05/08/2026 | 10/08/2026 10:00 AM | PROCUREMENT OF SUPPLY, DELIVERY, AND INSTALLATION OF TWO (2) BIOMETRIC ATTENDANCE MONITORING AND PAYROLL SYSTEM WITH CUSTOMIZED REPORTS AND PAYSLIP DISTRIBUTION UNITS FOR VFP-HQ AND VFP-VC., Information Technology ,VETERANS FEDERATION OF THE PHILIPPINES",
+    "snippet": "3 | 05/08/2026 | 10/08/2026 10:00 AM | PROCUREMENT OF SUPPLY, DELIVERY, AND INSTALLATION OF TWO (2) BIOMETRIC ATTENDANCE MONITORING AND PAYROLL SYSTEM WITH CUSTOMIZED REPORTS AND PAYSLIP DISTRIBUTION UNITS FOR VFP-HQ AND VFP-VC., Information Technology ,VETERANS FEDERATION OF THE PHILIPPINES",
     "score": 15,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "biometric"
   },
   {
@@ -478,9 +541,9 @@ window.MIRU_TENDERS = [
     "buyer": "PhilGEPS",
     "amount": null,
     "currency": "PHP",
-    "snippet": "3 | 22/07/2026 | 10/08/2026 09:00 AM | Procurement of Biometric Data Capture Services for Postal ID Project, Services ,PHILIPPINE POSTAL CORPORATION",
+    "snippet": "4 | 22/07/2026 | 10/08/2026 09:00 AM | Procurement of Biometric Data Capture Services for Postal ID Project, Services ,PHILIPPINE POSTAL CORPORATION",
     "score": 15,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "biometric"
   },
   {
@@ -501,7 +564,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "4 | 08/08/2026 | 13/08/2026 09:00 AM | PROCUREMENT OF JANITORIAL SUPPLIES (COMELEC), Janitorial Supplies ,CITY OF DIGOS, DAVAO DEL SUR",
     "score": 0,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -522,7 +585,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "9 | 01/08/2026 | 10/08/2026 11:30 AM | Bid No. 26-0643  PROCUREMENT OF OFFICE SUPPLIES - MO/COMELEC, MIO/ MUNICIPALE-LIBRARY, MIO/CDIAP, MO/MCA, MACCO/COA, MO/MCMC, Office Equipment Supplies and Consumables ,MUNICIPALITY OF MARAGUSAN COMPOSTELA VALLEY",
     "score": 0,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -543,7 +606,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "10 | 01/08/2026 | 10/08/2026 11:30 AM | Bid No. 26-0642  PROCUREMENT OF OTHER SUPPLIES - FOR MTDMO/TAGBIBINTA FALLS MOUNTAIN RESORT MAINTENANCE (MTDMO, MO/COMELEC), General Merchandise ,MUNICIPALITY OF MARAGUSAN COMPOSTELA VALLEY",
     "score": 0,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "services"
   },
   {
@@ -564,7 +627,7 @@ window.MIRU_TENDERS = [
     "currency": "PHP",
     "snippet": "2 | 26/07/2026 | 17/08/2026 10:00 AM | Purchase of IT Equipment for Mayor’s, BOSS,4Ps, Assessor, PNP, MTO,Tourism, MHO, PWD, MPDC, COMELEC and MEO, Information Technology ,MUNICIPALITY OF CAUAYAN, NEGROS OCCIDENTAL",
     "score": 0,
-    "crawled_at": "2026-08-08T22:32:58Z",
+    "crawled_at": "2026-08-09T22:34:55Z",
     "category": "other"
   },
   {
@@ -585,7 +648,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/623.2026.009 | Barcelona d'Infraestructures Municipals, SA",
     "score": 40,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -606,7 +669,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/603.2026.118 | Barcelona d'Infraestructures Municipals, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -627,7 +690,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/602.2025.057 - Fase 3 | Barcelona d'Infraestructures Municipals, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -638,7 +701,7 @@ window.MIRU_TENDERS = [
     "region": "Other",
     "portal_name": "licitacions.bcn.cat",
     "title": "Subministrament i col·locació mobiliari i senyalètica per a la rehabilitació i adequació de la Casa Hurtado, situat a l¿avinguda de Pedralbes 46-48, al barri de Pedralbes, al districte de les Corts, a Barcelona. LOT 01. Mobiliari estàndard ¿ LOT 02. Mobiliari a mida i senyalística.",
-    "title_en": "Supply and placement of furniture and signage for the rehabilitation and adaptation of Casa Hurtado, located at 46-48 Avinguda de Pedralbes, in the neighborhood of Pedralbes, in the Corts district, in Barcelona. LOT 01. Standard furniture ¿ LOT 02. Tailored furniture and signage.",
+    "title_en": "Supply and placement of furniture and signage for the rehabilitation and adaptation of Casa Hurtado, located at 46-48 Avinguda de Pedralbes, in the neighborhood of Pedralbes, in the district of Les Corts, in Barcelona. LOT 01. Standard furniture ¿ LOT 02. Tailored furniture and signage.",
     "url": "https://licitacions.bcn.cat/licitacion/licitaciones/detalle?id=17764444",
     "published_date": "",
     "deadline_date": "2026-09-16",
@@ -648,7 +711,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/604.2026.029 | Barcelona d'Infraestructures Municipals, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -669,7 +732,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "001_26003670 | Ajuntament de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -690,7 +753,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "018/59/26 | Barcelona Activa SAU SPM",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -711,7 +774,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/999.2026.027 | Barcelona d'Infraestructures Municipals, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -732,7 +795,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "073/168/26 | Consorci del Besòs",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -753,7 +816,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "004_26000140 | Institut Municipal de Parcs i Jardins de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -774,7 +837,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "080_26000422 | Consorci Museu d'Art Contemporani de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -795,7 +858,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "008/26000571 | Institut Municipal de Mercats de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -816,7 +879,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "025/F260000512 | Foment de Ciutat, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -837,7 +900,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "006_P2601342 | Institut de Cultura de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -858,7 +921,28 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "006_P2601325 | Institut de Cultura de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
+    "category": "other"
+  },
+  {
+    "id": 26463,
+    "notice_key": "daf5ab06b60f992fd77e",
+    "country": "Spain",
+    "iso3": "ESP",
+    "region": "Other",
+    "portal_name": "licitacions.bcn.cat",
+    "title": "Verificació i Calibració d'instruments de control i mesura del soroll 2027 - 2030 amb mesures de contractació pública sostenible",
+    "title_en": "Verification and Calibration of noise control and measurement instruments 2027 - 2030 with sustainable public procurement measures",
+    "url": "https://licitacions.bcn.cat/licitacion/licitaciones/detalle?id=17740159",
+    "published_date": "",
+    "deadline_date": "2026-09-15",
+    "status": "Publicat",
+    "buyer": "Ajuntament de Barcelona",
+    "amount": 138707.2,
+    "currency": "EUR",
+    "snippet": "001_26003191 | Ajuntament de Barcelona",
+    "score": 0,
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -879,7 +963,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "006_26001867 | Institut de Cultura de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -900,7 +984,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "080_26000323 | Consorci Museu d'Art Contemporani de Barcelona",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -921,7 +1005,7 @@ window.MIRU_TENDERS = [
     "currency": "EUR",
     "snippet": "026/601.2026.115 | Barcelona d'Infraestructures Municipals, SA",
     "score": 0,
-    "crawled_at": "2026-08-08T22:31:59Z",
+    "crawled_at": "2026-08-09T22:34:01Z",
     "category": "other"
   },
   {
@@ -942,7 +1026,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "0010574048 | Electoral Commission (IEC) | Supplies: Computer Equipment | National",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "other"
   },
   {
@@ -963,7 +1047,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "IEC/LG-05/2026 | Electoral Commission (IEC) | Services: Professional | National",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "election_equipment"
   },
   {
@@ -984,7 +1068,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "IEC/LP-03/2026 | Electoral Commission (IEC) | Accommodation | Limpopo",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "other"
   },
   {
@@ -1005,7 +1089,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "0010570637 | Electoral Commission (IEC) | Information and communication | National",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "other"
   },
   {
@@ -1026,7 +1110,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "0010562824 | Electoral Commission (IEC) | Information and communication | National",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "other"
   },
   {
@@ -1047,7 +1131,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "SASSA:06-26-ICT-HO | South African Social Security Agency | Other service activities | National",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "biometric"
   },
   {
@@ -1068,7 +1152,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "RFQ 202042 | SA Bureau of Standards | Services: General | Mpumalanga",
     "score": 0,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "services"
   },
   {
@@ -1089,7 +1173,7 @@ window.MIRU_TENDERS = [
     "currency": "ZAR",
     "snippet": "MDB001-2026/2027 | Municipal Demarcation Board | Administrative and support activities | Gauteng",
     "score": 0,
-    "crawled_at": "2026-08-08T22:30:55Z",
+    "crawled_at": "2026-08-09T22:32:26Z",
     "category": "services"
   },
   {
@@ -1110,7 +1194,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "MANTENIMIENTO Y REPARACIÓN DE LA SEDE DEL TRIBUNAL ELECTORAL DE SAN JUAN BAUTISTA - DEPARTAMENTO DE MISIONES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1131,7 +1215,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESION DE BOLETINES DE VOTO PARA LA JUSTICIA ELECTORAL PLURIANUAL 2017/2018 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1152,7 +1236,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE BOLETINES DE VOTO PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1173,7 +1257,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "REMODELACIÓN Y AMPLIACIÓN DEL BLOQUE H DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL PARA EL DEPÓSITO Y RESGUARDO DE BIENES INSTITUCIONALES Y BOLETINES DE VOTO EN EL MARCO DE LA LEY N° 6318/19 - PLURIANUAL 2021/2022 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1194,7 +1278,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE BOLETINES DE VOTO PARA LA ELECCIÓN DE INTENDENTE MUNICIPAL DE CIUDAD DEL ESTE | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1215,7 +1299,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMÁTICOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - AD REFÉRENDUM A LA AMPLIACIÓN PRESUPUESTARIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1236,7 +1320,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN E INSTALACIÓN DE ELEVADOR DE CARGA DE ALTA CAPACIDAD EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1257,7 +1341,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS MÓVILES PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - AD REFERENDUM A LA AMPLIACIÓN PRESUPUESTARIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1278,7 +1362,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MÓDEMS PORTÁTILES PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1299,7 +1383,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE IMPRESORAS MULTIFUNCIÓN DE ALTA PRODUCCIÓN PARA EXPEDIENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1320,7 +1404,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN E INSTALACIÓN DE ELEVADOR DE CARGA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PLAN FINANCIERO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1341,7 +1425,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MUEBLES, ACCESORIOS, EQUIPOS INFORMÁTICOS Y DE OFICINA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1362,7 +1446,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE MAQUINARIAS, HERRAMIENTAS Y EQUIPOS VARIOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1383,7 +1467,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ESTANTES METÁLICOS CON ESTRUCTURAS REFORZADAS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PLAN FINANCIERO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1404,7 +1488,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS AUDIOVISUALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1425,7 +1509,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS DE COMUNICACIÓN PARA LA IMPLEMENTACIÓN DEL SISTEMA TREP EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1446,7 +1530,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE HOTELERÍA Y ALQUILER DE SALONES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1467,7 +1551,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COMUNICACIÓN POR APN, TELEFONÍA MÓVIL, ENLACES DE FIBRA ÓPTICA Y VM CLOUD PARA LA IMPLEMENTACIÓN DEL TREP E INTERNET DE CONTINGENCIA, SEGURIDAD DE SITIOS WEB Y CORREOS ELECTRÓNICOS PARA LA JUSTICIA ELECTORAL EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PL",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1488,7 +1572,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1509,7 +1593,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN RADIO EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1530,7 +1614,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN DE CARTELERÍA EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023 - AD REFERÉNDUM AL PRESUPUESTO 2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1551,7 +1635,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS DIGITALES Y REDES SOCIALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1572,7 +1656,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE TEXTILES, CALZADOS Y VESTUARIOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023 - AD REFERÉNDUM AL PRESUPUESTO 2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1593,7 +1677,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1614,7 +1698,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE TRANSPORTE DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA, MATERIALES, ÚTILES, DOCUMENTOS Y AGENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1635,7 +1719,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES EN CUMPLIMIENTO DE LO DISPUESTO EN EL CÓDIGO ELECTORAL EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1656,7 +1740,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASISTENCIA TÉCNICA PARA LA ACTUALIZACIÓN, ADECUACIÓN Y MODIFICACIÓN DEL SISTEMA DE TRANSMISIÓN DE RESULTADOS ELECTORALES PRELIMINARES (TREP) EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE)",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1677,7 +1761,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "APLICACIÓN DEL SISTEMA DE VOTACIÓN Y ESCRUTINIO ELECTRÓNICO PARA LAS ELECCIONES INTERNAS SIMULTÁNEAS 2022 Y LAS ELECCIONES NACIONALES Y DEPARTAMENTALES 2023, EN EL MARCO DE LO DISPUESTO EN LA LEY N° 6318/2019, BAJO LA MODALIDAD DE ARRENDAMIENTO - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1698,7 +1782,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE TRANSPORTE DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA, MATERIALES, ÚTILES, DOCUMENTOS Y AGENTES ELECTORALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1719,7 +1803,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN CARTELES LED EN SITIOS DE ALTA CONCURRENCIA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2021 - AD REFERÉNDUM AL PRESUPUESTO 2021 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1740,7 +1824,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1761,7 +1845,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1782,7 +1866,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ALQUILER DE TOLDOS, MESAS, SILLAS, TARIMAS, EQUIPOS AUDIOVISUALES Y ELEMENTOS VARIOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1803,7 +1887,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE INSUMOS METALICOS Y NO METALICOS, CAUCHOS Y HERRAMIENTAS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2020 - PLURIANUAL 2019/2020 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1824,7 +1908,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS ESCRITOS EN EL MARCO DE LAS ELECCIONES NACIONALES Y DEPARTAMENTALES - PLURIANUAL 2022/2023 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1845,7 +1929,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ARRENDAMIENTO DE MÁQUINAS DE VOTACIÓN ELECTRÓNICA Y SERVICIOS CONEXOS PARA LA APLICACIÓN DEL SISTEMA DE VOTACIÓN Y ESCRUTINIO ELECTRÓNICO PARA LAS ELECCIONES MUNICIPALES 2026, AD REFERÉNDUM AL PRESUPUESTO 2026. | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1866,7 +1950,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Textiles, Calzados Y Vestuarios, En El Marco De Las Elecciones Municipales 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1887,7 +1971,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COMUNICACIÓN POR APN, TELEFONÍA MÓVIL, ENLACES DE FIBRA ÓPTICA Y VM CLOUD PARA LA IMPLEMENTACIÓN DEL TREP EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1908,7 +1992,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS DIGITALES Y REDES SOCIALES EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1929,7 +2013,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1950,7 +2034,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN RADIO EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1971,7 +2055,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Impresión En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -1992,7 +2076,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN MEDIOS ESCRITOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2013,7 +2097,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASISTENCIA TÉCNICA PARA LA ACTUALIZACIÓN, ADECUACIÓN Y MODIFICACIÓN DEL SISTEMA DE TRANSMISIÓN DE RESULTADOS ELECTORALES PRELIMINARES (TREP) EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2034,7 +2118,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Hotelería, Alquiler De Salones Y Gastronómicos En El Marco De Las Elecciones Municipales 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2055,7 +2139,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Transporte De Materiales, Útiles, Documentos, Agentes Electorales Y Máquinas De Votación Electrónica, En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Plan Financiero 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2076,7 +2160,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ALQUILER DE TOLDOS, MESAS, SILLAS, TARIMAS, EQUIPOS AUDIOVISUALES Y ELEMENTOS VARIOS EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2097,7 +2181,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Tóner, Útiles De Escritorio, Oficina Y Enseñanza, En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2118,7 +2202,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE CARGA Y DESCARGA EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2139,7 +2223,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN TELEVISIÓN (TRECE - UNICANAL) EN EL MARCO DE LAS ELECCIONES MUNICIPALES 2026 - SEGUNDA CONVOCATORIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2160,7 +2244,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Impresión De Cartelería En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2181,7 +2265,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Mantenimiento, Reparación, Extensión De Garantía Y Soporte Técnico Del Data Center De La Justicia Electoral - Plurianual 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2202,7 +2286,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS DE SEGURIDAD Y RENOVACIÓN DE LICENCIAS DE SISTEMA DE PROTECCIÓN PARA EL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2223,7 +2307,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTOR GENERADOR DE LA MARCA SDMO PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2244,7 +2328,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "AMPLIACIÓN DEL STORAGE DEL DATA CENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2265,7 +2349,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN, MONTAJE E INSTALACIÓN DE EQUIPOS AUDIOVISUALES PARA EL SALÓN AUDITORIO Y LA SALA DE SESIONES DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2286,7 +2370,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2307,7 +2391,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE CONSTRUCCIÓN DE POZO ARTESIANO PARA LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2328,7 +2412,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONSTRUCCIÓN DE DEPÓSITO Y OFICINAS PARA EL RESGUARDO DE EQUIPOS INSTITUCIONALES Y ZONAS DE TRABAJO PARA LA ORGANIZACIÓN DE ELECCIONES, EN EL PLAN DE RECUPERACIÓN DE ESPACIOS EDILICIOS DENTRO DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL - PLURIANUAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2349,7 +2433,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DEL PARQUE AUTOMOTOR DE LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2370,7 +2454,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE ASEO Y FUMIGACIÓN PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2024/2025 (SEGUNDA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2391,7 +2475,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PLATAFORMA PARA ALMACENAMIENTO DE RESPALDO DEL DATACENTER DE LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2412,7 +2496,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS DE SEGURIDAD PARA EL DATACENTER DE LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2433,7 +2517,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ELEMENTOS DE LIMPIEZA PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2454,7 +2538,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EXTINTORES PARA DEPENDENCIAS Y MÓVILES INSTITUCIONALES DE LA JUSTICIA ELECTORAL - (SEGUNDA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2465,7 +2549,7 @@ window.MIRU_TENDERS = [
     "region": "Latin America",
     "portal_name": "contrataciones.gov.py",
     "title": "CONTRATACIÓN DE SERVICIOS DE COURIER PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024",
-    "title_en": "CONTRACTING OF COURIER SERVICES FOR ELECTORAL JUSTICE - MULTY-ANNUAL 2023/2024",
+    "title_en": "CONTRACTING OF COURIER SERVICES FOR ELECTORAL JUSTICE - MULTI-YEAR 2023/2024",
     "url": "https://www.contrataciones.gov.py/licitaciones/convocatoria/434294.html",
     "published_date": "2023-09-22",
     "deadline_date": "2023-10-09",
@@ -2475,7 +2559,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE COURIER PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2496,7 +2580,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE DISPOSITIVOS INFORMÁTICOS PARA LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PLAN FINANCIERO 2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2517,7 +2601,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DE MONTACARGA Y ELEVADOR PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2538,7 +2622,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SEGUROS PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2559,7 +2643,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DE LAS MARCAS KIA Y JEEP PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2580,7 +2664,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE AGUA MINERAL PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2601,7 +2685,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE SERVIDORES Y EQUIPOS PARA LA TERCERA ETAPA DE RENOVACIÓN DEL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2622,7 +2706,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTORES GENERADORES Y TRANSFORMADORES PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2643,7 +2727,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE MOTORES GENERADORES Y TRANSFORMADORES PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 - SEGUNDA CONVOCATORIA | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2664,7 +2748,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES PARA LA ELECCIÓN DE INTENDENTE DE CIUDAD DEL ESTE - AD REFERENDUM A LA EXCEPCIÓN REQUERIDA POR LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2685,7 +2769,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE ARTÍCULOS ELÉCTRICOS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2706,7 +2790,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE TÓNER, ÚTILES DE ESCRITORIO, OFICINA Y ENSEÑANZA PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2727,7 +2811,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2748,7 +2832,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE INSUMOS METÁLICOS Y NO METÁLICOS, CAUCHOS Y HERRAMIENTAS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2769,7 +2853,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE STREAMING Y SOPORTE TÉCNICO PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2790,7 +2874,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN, INSTALACIÓN Y PUESTA EN MARCHA DE DISPOSITIVOS DE SEGURIDAD PARA EL CONTROL DE ACCESO DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2811,7 +2895,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE LICENCIAS DE ADMINISTRACION Y SEGURIDAD ORACLE PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2832,7 +2916,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ACTUALIZACIÓN DE LICENCIAS DEL SISTEMA DE PROTECCIÓN DEL DATACENTER DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2853,7 +2937,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DEL ASCENSOR DEL BLOQUE B DE LA JUSTICIA ELECTORAL-PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2874,7 +2958,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE PUBLICIDAD EN REVISTA PARA LA JUSTICIA ELECTORAL- PLURIANUAL 2025/2026 (TERCERA CONVOCATORIA) | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2895,7 +2979,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DE LAS MARCAS ISUZU Y HYUNDAI PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2916,7 +3000,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO DE ASCENSORES DE LOS BLOQUES A Y B DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL / PLURIANUAL 2023/2024 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2937,7 +3021,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO DE VEHÍCULOS DE LAS MARCAS TOYOTA, HINO, KIA, JEEP, HYUNDAI E ISUZU PARA LA JUSTICIA ELECTORAL - AD REFERÉNDUM AL PRESUPUESTO 2024 - PLURIANUAL 2024/2025 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2958,7 +3042,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PRODUCTOS DE PINTURA Y DERIVADOS PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -2979,7 +3063,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Renovación De Licencias Oracle Para La Justicia Electoral - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3000,7 +3084,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE PRECINTOS DE SEGURIDAD PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3021,7 +3105,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACION DE SERVICIO DE SUSCRIPCION EN LINEA PARA EL ACCESO A LEYES, JURISPRUDENCIA Y DOCTRINA PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2026/2027/2028 - AD REFERÉNDUM AL PLAN FINANCIERO 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3042,7 +3126,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación de Servicios de Courier para la Justicia Electoral - Plurianual 2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3063,7 +3147,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE IMPRESIÓN PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3084,7 +3168,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición De Productos De Papel, Cartón E Impresos Con Criterios De Sustentabilidad Para La Justicia Electoral,  En El Marco De Las Elecciones Municipales 2026 - Ad Referéndum Al Presupuesto 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3105,7 +3189,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "PROVISIÓN DE ALIMENTOS Y BEBIDAS SIN ALCOHOL PARA AGENTES ELECTORALES EN CUMPLIMIENTO DE LO DISPUESTO EN EL ART. 192 DEL CÓDIGO ELECTORAL PARA LAS ELECCIONES MUNICIPALES 2026 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3126,7 +3210,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Contratación De Servicios De Solución De Seguridad De Sitio Web, Correo Electrónico, Conectividad, Respaldo E Internet Secundario De Contingencia Para La Justicia Electoral | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3147,7 +3231,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE LECTORES DE ALTO RENDIMIENTO PARA LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3168,7 +3252,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SEGUROS PARA LA JUSTICIA ELECTORAL - PLURIANUAL 2025/2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3179,7 +3263,7 @@ window.MIRU_TENDERS = [
     "region": "Latin America",
     "portal_name": "contrataciones.gov.py",
     "title": "CONTRATACIÓN DE SERVICIOS PARA LA READECUACIÓN DE ESPACIOS FÍSICOS DEL BLOQUE G DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL",
-    "title_en": "CONTRACTING OF SERVICES FOR THE REPRODUCTION OF PHYSICAL SPACES IN BLOCK G OF THE CENTRAL HEADQUARTERS OF THE ELECTORAL JUSTICE",
+    "title_en": "CONTRACTING OF SERVICES FOR THE REFURBISHMENT OF PHYSICAL SPACES IN BLOCK G OF THE CENTRAL HEADQUARTERS OF THE ELECTORAL JUSTICE",
     "url": "https://www.contrataciones.gov.py/licitaciones/convocatoria/489492.html",
     "published_date": "2026-06-08",
     "deadline_date": "2026-06-25",
@@ -3189,7 +3273,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS PARA LA READECUACIÓN DE ESPACIOS FÍSICOS DEL BLOQUE G DE LA SEDE CENTRAL DE LA JUSTICIA ELECTORAL | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3210,7 +3294,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACIÓN DE SERVICIOS DE MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS DEL PARQUE AUTOMOTOR DE LA JUSTICIA ELECTORAL - PLURIANUAL 2026/2027 | Tribunal Superior de Justicia Electoral (TSJE) | ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "other"
   },
   {
@@ -3231,7 +3315,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMÁTICOS Y RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3252,7 +3336,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3273,7 +3357,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisicion de Reloj Marcador Biometrico | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3294,7 +3378,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE EQUIPOS INFORMATICOS VARIOS Y RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3315,7 +3399,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD SICOM N° 15/2016, \"ADQUISICION DE EQUIPO DE CONTROL DE ENTRADA Y SALIDA PARA FUNCIONARIOS - RELOJ BIOMETRICO PARA LA SICOM\". | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3336,7 +3420,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 03/16 - ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3347,7 +3431,7 @@ window.MIRU_TENDERS = [
     "region": "Latin America",
     "portal_name": "contrataciones.gov.py",
     "title": "CD N° 17/16 ADQUISICION DE RELOJ BIOMETRICO SEGUNDO LLAMADO",
-    "title_en": "CD N° 17/16 ACQUISITION OF SECOND CALL BIOMETRIC CLOCK",
+    "title_en": "CD N° 17/16 ACQUISITION OF SECOND CALLED BIOMETRIC CLOCK",
     "url": "https://www.contrataciones.gov.py/licitaciones/convocatoria/305561.html",
     "published_date": "2016-06-01",
     "deadline_date": "2016-06-28",
@@ -3357,7 +3441,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 17/16 ADQUISICION DE RELOJ BIOMETRICO SEGUNDO LLAMADO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3378,7 +3462,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE SERVICIOS DE MANTENIMIENTO Y REPARACION DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3399,7 +3483,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Lector Biometrico | Ministerio de Desarrollo Social (MDS) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3420,7 +3504,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQ DE SERVIDOR, COMPUTADORAS, NOTEBOOK, IMPRESORAS,UPS, Y RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3441,7 +3525,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de reloj biometrico para el Parlamento del Mercosur | Congreso Nacional (C.N.) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3462,7 +3546,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Capiatá | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3483,7 +3567,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3504,7 +3588,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Equipos Informaticos, marcador biometrico y camaras digitales para la Institución Municipal | Municipalidad de Tomás Romero Pereira | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3525,7 +3609,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisicion de Servicios de Mantenimiento y Reparacion de Circuito Cerrado y Reloj Biometrico | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3546,7 +3630,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3567,7 +3651,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD 12 - ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3588,7 +3672,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de reloj biometrico para Casa Matriz, Filiales y Centro de Adiestramiento en Servicio | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3609,7 +3693,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3630,7 +3714,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Dirección Nacional de Aeronáutica Civil (DINAC) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3651,7 +3735,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Jurado de Enjuiciamiento de Magistrados (JEM) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3672,7 +3756,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Direccion Nacional de Propiedad Intelectual (DINAPI) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3693,7 +3777,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Biometrico | Congreso Nacional (C.N.) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3714,7 +3798,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Nueva Colombia | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3735,7 +3819,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Adquisición de Reloj Marcador Biometrico y Otro | Ministerio de la Niñez y la Adolescencia (MINNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3756,7 +3840,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÒN DE RELOJ BIOMETRICO Y CAMARA DIGITAL PARA LA CONACOM | Comisión Nacional de Competencia (CONACOM) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3777,7 +3861,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO PARA CONTROL DE ASISTENCIA | Instituto Forestal Nacional (INFONA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3798,7 +3882,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CONTRATACION DIRECTA N° 83/2021 CON ID N° 400523 - ADQUISICION DE RELOJ BIOMETRICO Y EQUIPO DE ANTENA | Municipalidad de Luque | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3819,7 +3903,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3840,7 +3924,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Instituto Paraguayo de Artesania (IPA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3861,7 +3945,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Provisión e Instalación de Reloj Marcador Biometrico | Ministerio del Interior (M.I.) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3882,7 +3966,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO, EQUIPOS INFORMATICOS Y OTROS PARA EL HOSPITAL SAN JORGE | Ministerio de Salud Pública y Bienestar Social (MSPBS) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3903,7 +3987,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3924,7 +4008,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "(CD) Nº 06, ADQUISICION DE RELOJ BIOMETRICO PARA LA MARCACION DE LOS FUNCIONARIOS DE LA INSTITUCION. | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3945,7 +4029,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE MARCADORES DE ASISTENCIA CON LECTOR BIOMETRICO PARA LA INSTITUCION | Municipalidad de San Lorenzo | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3966,7 +4050,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO PARA EL MINNA | Ministerio de la Niñez y la Adolescencia (MINNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -3987,7 +4071,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4008,7 +4092,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ MARCADOR BIOMETRICO | Municipalidad de Nueva Esperanza | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4029,7 +4113,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO PARA LA FACULTAD DE CIENCIAS VETERINARIA DE LA UNIVERSIDAD NACIONAL DE ASUNCION | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4050,7 +4134,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "CD N° 04 2023 - ADQUISICION DE RELOJ BIOMETRICO | Ministerio de Justicia  (MJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4071,7 +4155,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "\"ADQUISICION DE RELOJ BIOMETRICO PARA LA STP\" | Ministerio de Economía y Finanzas | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4092,7 +4176,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICIÓN DE RELOJ BIOMETRICO | Ministerio de Defensa Nacional (MDN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4113,7 +4197,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4134,7 +4218,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ MARCADOR BIOMETRICO PARA LA OSN | Presidencia de la República | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4155,7 +4239,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO | Instituto Paraguayo del Indígena (INDI) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4176,7 +4260,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO Y EQUIPO DE VIDEOCONFERENCIA | Autoridad Reguladora Radiologica y Nuclear (ARRN) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4197,7 +4281,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ DE MARCACION BIOMETRICO | Corte Suprema de Justicia (CSJ) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4218,7 +4302,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "Reloj Biometrico Para La Dinacopa | Dirección Nacional de Correos del Paraguay (DINACOPA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4239,7 +4323,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO PARA LA FACULTAD DE CIENCIAS VETERINARIAS DE LA UNIVERSIDAD NACIONAL DE ASUNCIÓN | Universidad Nacional de Asunción (UNA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4260,7 +4344,7 @@ window.MIRU_TENDERS = [
     "currency": "PYG",
     "snippet": "ADQUISICION DE RELOJ BIOMETRICO PARA LA DINACOPA 2° CONVOCATORIA | Dirección Nacional de Correos del Paraguay (DINACOPA) | ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:30:44Z",
+    "crawled_at": "2026-08-09T22:32:16Z",
     "category": "biometric"
   },
   {
@@ -4281,7 +4365,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "زار اعضاء مجلس المفوضين كل من القاضي علي رشيد والدكتورة أحلام الجابري مكتب انتخابات نينوى، وكان في استقبالهم مدير المكتب السيد فرحان المعماري للاطلاع على سير العمل والاستعدادات الإدارية والفنية في المكتب، وذلك يوم الثلاثاء الموافق 2026/7/28. وتم اللقاء بإدارة المكتب وعدد من ملاكاته من الموظفين، كذلك",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4302,7 +4386,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شاركت المفوضية العليا المستقلة للانتخابات، ممثلة بعضو مجلس المفوضين ورئيس فريق دعم المرأة الانتخابي الدكتورة أحلام الجابري وعدد من عضوات الفريق، في الاجتماع النصف سنوي لـ “حقيبة المشاركة السياسية – الفريق الوطني للمرأة”، والذي عُقد في مقر رابطة المصارف العراقية، برعاية مؤسسة العراق لتعزيز الديمقراطي",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4323,7 +4407,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اقامت المفوضية العليا المستقلة للانتخابات /قسم التدريب والتطوير/ شعبة التطوير وبالتعاون مع هيئة النزاهة الاتحادية ندوة تثقيفية بعنوان (تنمية ثقافة النزاهة وآليات مكافحة الفساد) لموظفي المكتب الوطني وذلك يوم الاحد الموافق 2016/7/19. وقد ركزت الورشة التي ادارها محاضرون من هيئة النزاهة على محور دور الم",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4344,7 +4428,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ترأس القاضي عمر احمد رئيس مجلس المفوضين وفد المفوضية العليا المستقلة للانتخابات في زيارة إلى ديوان الرقابة المالية الاتحادي وكان في استقباله الدكتور عمار صبحي خلف رئيس الديوان وذلك صباح اليوم الخميس الموافق 2026/7/16 ، وقد ضم الوفد كلا من السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير واع",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4365,7 +4449,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "باشرت لجنة العمل الطوعي المركزية في المفوضية العليا المستقلة للانتخابات مع متطوعي دائرة الاحزاب ومكتب انتخابات الرصافة ومراكزه الفرعية بزراعة شتلات شجرة ( المكدونيا ) كمرحلة أولى للتشجير. وتأتي هذه المشاركة تجسيداً لالتزام المفوضية بمسؤوليتها المجتمعية وحرصها على دعم المبادرات الإنسانية والطوعية الت",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4386,7 +4470,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الاشراف على اللجنة الفنية القانونية للاستفادة من البطاقة الوطنية في التصويت مع بطاقة الناخب الالكترونية البايومترية اجتماعا لمناقشة الموضوع المذكور برئاسة القاضي فياض ياسين حسين نائب رئيس مجلس المفوضين وعضوية كل من عضوي المجلس القاضي عباس الفتلاوي والقاضي عماد فارس وبحضور المعاون الفني لرئ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4407,7 +4491,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الحوكمة الالكترونية في المفوضية العليا المستقلة للانتخابات اجتماعها الدوري بحضور رئيس اللجنة عضو مجلس المفوضين القاضي عباس الفتلاوي والأمين العام لمجلس المفوضين السيد علي فيصل دحام ومعاون رئيس الادارة الانتخابية للشؤون الفنية السيد مهند فاضل عباس واعضاء اللجنة وعدد من مدراء الدوائر والاقسا",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4428,7 +4512,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ترأس عضو مجلس المفوضين القاضي عامر الحسيني وفد المفوضية العليا المستقلة للانتخابات للمشاركة في منتدى التوعية الانتخابية الذي أقيم برعاية بعثة الاتحاد الأوربي في العراق وذلك يوم الاثنين الموافق ٦ تموز ٢٠٢٦ في فندق بغداد، بمشاركة عدد من منظمات المجتمع المدني المهتمة بالشأن الانتخابي. وضم الوفد كل من م",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4449,7 +4533,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "من خلال التنسيق بين المفوضية العليا المستقلة للانتخابات ووزارة الكهرباء اختتمت في دائرة التدريب وبحوث الطاقة / مركز تدريب كهرباء بغداد ، الورشة الخاصة بإجراءات الاقتراع والعد والفرز للتصويتين الخاص والعام للمدة من ٢٨ لغاية ٣٠ / ٦ / ٢٠٢٦، وشارك في الورشة عدد من موظفي المفوضية العليا المستقلة للانتخاب",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4470,7 +4554,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اقامت المفوضية العليا المستقلة للانتخابات الورشة التدريبية الخاصة الموسومة ( حوكمة منظومة تبسيط الإجراءات والخدمات الحكومية) صباح يوم الاربعاء الموافق ١ / ٧ / ٢٠٢٦ ولمدة يومين في المكتب الوطني. وتناول مدربو قسمي ادارة الجودة الشاملة والتطوير المؤسسي والتدريب والتطوير في المفوضية محاور عديدة، منها ال",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4491,7 +4575,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "زار رئيس مجلس المفوضين القاضي عمر احمد محمد ورئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير ونائب رئيس المجلس القاضي فياض ياسين واعضاء مجلس المفوضين مقر مكتب انتخابات بغداد الكرخ الجديد رافقهم الامين العام لمجلس المفوضين ومعاون رئيس الادارة الانتخابية للشؤون الادارية والمالية وذلك اليوم الاثنين",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4512,7 +4596,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير اليوم الخميس الموافق 2026/4/9 دورة حتمية لعدد من موظفي المكتب الوطني تحت عنوان  (التخطيط الاداري الحديث وادارة المخاطر) لترفيع الموظفين المستحقين لدرجة اعلى. وتضمنت الورشة على مدى ايام اقامتها التي بدأت من 2026/4/5 والتي حاضر فيها مدر",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4533,7 +4617,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "في إطار التواصل مع الدوائر المعنية لتطوير عمل مفوضية الانتخابات عقد السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير اجتماعا حضره معاونه الفني السيد مهند فاضل عباس وعدد من مدراء الدوائر في المكتب الوطني وذلك يوم الأربعاء الموافق ١٥ نيسان ٢٠٢٦. حيث تضمن الاجتماع مراجعة واسعة للجوانب الإيجابي",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4554,7 +4638,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "زار وفد المفوضية العليا المستقلة للانتخابات وزارة الموارد المائية وذلك يوم الأربعاء الموافق 15 نيسان وضم الوفد كل من مدير قسم التدريب والتطوير د. علي امان ومدير قسم الجودة السيدة انعام عطية ومعاون مدير الدائرة القانونية السيد زياد طارق . وكان في استقبال الوفد الوكيل الإداري للوزارة السيد أسامة جمعة ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4575,7 +4659,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير اليوم الخميس الموافق ١٦ / ٤ / ٢٠٢٦ الدورة الحتمية لعدد من موظفي المكتب الوطني تحت عنوان (التخطيط الاداري الحديث وادارة المخاطر) لترفيع الموظفين المستحقين لدرجة اعلى. وتضمنت الورشة على مدى ايام اقامتها التي بدأت من يوم الاحد الموافق ١٢",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4596,7 +4680,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت اللجنة القانونية برئاسة القاضي فياض ياسين حسين نائب رئيس مجلس المفوضين وعضو مجلس المفوضين المستشار فتاح محمد حسين واعضاء اللجنة اجتماعا تشاوريا بشأن تنفيذ الاطار التنفيذي لدعم العملية الانتخابية وترسيخ النظام الديمقراطي والمقترح المقدم من قبل مستشارية الامن القومي بمشاركة فريق قسم الجودة والتطو",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4617,7 +4701,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "السيد رئيس الإدارة الانتخابية القاضي حسين بهير بحضور معاونه للشؤون الفنية السيد مهند فاضل عباس يواصل عقد الاجتماعات مع مديري عدد من الدوائر في المكتب الوطني وذلك يوم الاثنين الموافق ٢٠ نيسان ٢٠٢٦. حيث تم في الاجتماع مراجعة اهم ما جاء في الدروس المستخلصة لانتخابات مجلس النواب العراقي 2025 ومناقشة تطب",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4638,7 +4722,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات اجتماعها الثاني الذي ضم مدراء المكاتب الانتخابية في المحافظات لمناقشة اجندة العمل المستقبلية للجنة وذلك يوم الثلاثاء الموافق 2026/4/21. وقد ناقشت اللجنة عدد من المقترحات المقدمة ومنها تنسيق الاعمال المناطة بها وترشيح أعضاء ارتباط من كل م",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4659,7 +4743,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بحضور رئيس مجلس المفوضين القاضي عمر احمد محمد ورئيس مجلس الادارة القاضي حسين عبد السادة بهير ورئيس لجنة الشفافية في المفوضية القاضي علي رشيد وعضو مجلس المفوضين القاضي عماد فارس وعدد من مدراء الدوائر والاقسام والشعب في المكتب الوطني اقامت المفوضية العليا المستقلة للانتخابات ندوة تثقيفية بالتنسيق بين ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4680,7 +4764,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "لبحث تنفيذ برامج تدريبية انتخابية زار ممثل المفوضية العليا المستقلة للانتخابات/ قسم التدريب والتطوير السيد سمير حسن حافظ وزارة الشباب والرياضة وكان في استقباله مدير قسم المجلس الوطني للشباب السيد علي لفتة حمد وعدد من أعضاء القسم. وجرى خلال اللقاء استعراض سبل التعاون المشترك بين المؤسستين ومناقشة منه",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4701,7 +4785,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تنفيذا لتوجيهات رئيس الإدارة الانتخابية زار وفد من المكتب الوطني في المفوضية مبنى الأمانة العامة لمجلس الوزراء لتطوير العمل المالي في المفوضية العليا المستقلة للانتخابات وذلك يوم الاحد الموافق 3/5/2026، وكان في استقبال الوفد معاون مدير عام الدائرة الإدارية والمالية في ديوان الأمانة د. عبد علي عبد ال",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4722,7 +4806,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بتاريخ 2026/5/3 عقدت المفوضية العليا المستقلة للانتخابات وبالتعاون مع وزارة الموارد المائية ورشة عمل متخصصة بعنوان مناقشة آلية تعديل الخطة الاستراتيجية ووضع الأهداف الذكية في محافظة السليمانية، والتي ستستمر لمدة خمسة أيام، بمشاركة رئيس مجلس المفوضين القاضي عمر احمد وعدد من اعضاء المجلس ومدير عام دائ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4743,7 +4827,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "استقبلت المفوضية العليا المستقلة للانتخابات يوم الثلاثاء الموافق 12/5/2026 وفداً من اللجنة العليا لتبسيط الإجراءات والخدمات الحكومية، في زيارة دورية هدفت إلى متابعة تنفيذ برامج تبسيط الإجراءات والارتقاء بمستوى الخدمات الحكومية. وعُقد خلال الزيارة اجتماع موسع ترأسه نائب رئيس مجلس المفوضين ورئيس لجنة ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4764,7 +4848,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير، وبحضور معاونيه للشؤون الفنية السيد مهند فاضل عباس، والاداري والمالي السيد علي صالح الساعدي اجتماعاً مع مديري الدوائر في المكتب الوطني، يوم الثلاثاء الموافق  2026/5/12، وذلك في إطار الجهود الرامية إلى تطوير العمل المؤسسي والارتقاء بالأداء",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4785,7 +4869,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عبر دائرة الكترونية مغلقة عقدت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات اجتماعا لاعضاء لجنة الارتباط في المكاتب الانتخابية للمحافظات لمناقشة المهام الملقاة على عاتقهم وذلك يوم الاربعاء الموافق 2026/5/13. حيث ناقشت اللجنة المهام والاعمال الموكلة لكل عضو ارتباط فيها   من كل مكتب انتخا",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4806,7 +4890,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الحوكمة الالكترونية في المفوضية العليا المستقلة للانتخابات اجتماعا صباح اليوم الاربعاء ١٣  / ٥ / ٢٠٢٦ بحضور رئيس اللجنة القاضي عباس الفتلاوي والأمين العام لمجلس المفوضين السيد علي فيصل دحام ومعاون رئيس الادارة الانتخابية للشؤون الفنية السيد مهند فاضل عباس وعدد من اعضاء اللجنة لمناقشة المحا",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4827,7 +4911,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير يوم الخميس الموافق 2026/5/14 الدورة الحتمية لعدد من موظفيها تحت عنوان (الأسس والمفاهيم الإدارية والمالية والقانونية) لترفيع الموظفين المستحقين لدرجة اعلى، والتي استمرت لمدة أسبوعين. حيث تضمنت الورشة التي حاضر فيها عدد من مدربي المكتب ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4848,7 +4932,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بالتنسيق بين المفوضية العليا المستقلة للانتخابات ووزارة الشباب والرياضة اختتمت في وزارة الشباب / قسم المجلس الوطني للشباب، الورشة الخاصة بإجراءات الاقتراع والعد والفرز للتصويتين الخاص والعام، وذلك على قاعة دائرة العلاقات والتعاون الدولي في مقر الوزارة واستمرت لثلاثة ايام وشارك في الورشة عدد من موظفي",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4869,7 +4953,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت الورشة التدريبية المشتركة بين المفوضية العليا للانتخابات والمديرية العامة لشؤون المخدرات والمؤثرات العقلية في وزارة الداخلية لعدد من موظفي المفوضية . وقد تضمنت الورشة عددا من المحاور كانت تهدف إلى تعزيز الوعي الأمني والمجتمعي بمخاطر هذه الافة . وشهدت الورشة التعريف بأبرز العوامل المؤثرة التي ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4890,7 +4974,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات/ قسم التدريب والتطوير، ورشة تدريبية بعنوان (سلامة اللغة العربية في المخاطبات الرسمية) للمدة من 17 إلى 21 آيار 2026 في دائرة شؤون الأحزاب والتنظيمات السياسية لعدد من موظفيها. إذ ركّز مدرب الورشة الدكتور عماد شاكر محمود في محاورها على الإطار القانوني والتنفيذ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4911,7 +4995,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شارك رئيس الإدارة الانتخابية القاضي حسين عبد السادة والوفد المرافق له في اجتماع اللجنة الوطنية لمنتدى التوعية الانتخابية الذي نظمته منظمة تموز للتنمية الاجتماعية لمناقشة تقرير تحالف شبكات المراقبة الخاص بانتخابات مجلس النواب 2025، وذلك يوم الخميس الموافق 2025/5/21. وحضر الاجتماع مستشار رئاسة الجمهور",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4932,7 +5016,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير الورشة الحتمية المعنونة (الأسس والمفاهيم الإدارية والمالية والقانونية) لعدد من موظفيها بحضور رئيس الادارة الانتخابية القاضي حسين عبد السادة وذلك يوم الاثنين الموافق25 أيار واستمرت لمدة اسبوعين لترفيع المستحقين من الموظفين لدرجة اعلى. ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4953,7 +5037,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد فريق ايزو الطاقة في المفوضية العليا المستقلة للانتخابات برئاسة السيد علي سلمان نصار وبحضور اعضاء الفريق يوم الاربعاء الموافق ٣ حزيران ٢٠٢٦ في دائرة الأحزاب والتنظيمات السياسية حيث ناقش الفريق خطة دعم الطاقة للمفوضية العليا المستقلة للانتخابات ٢٠٢٦ والتي شملت عدد من المحاور التي تخص تطوير وتدريب ",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4974,7 +5058,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شارك وفد المفوضية العليا المستقلة للانتخابات ممثلا عضو مجلس المفوضين المستشار د. فتاح محمد حسين ومعاون رئيس الإدارة الانتخابية للشؤون المالية والإدارية السيد علي صالح الساعدي في اللقاء الإقليمي العربي التشاوري بشأن دعم الإدارات الانتخابية لمؤسسة العمل التطوعي في المجال الانتخابي الذي نظمته المنظمة ا",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -4995,7 +5079,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بالتنسيق بين المفوضية العليا المستقلة للانتخابات ووزارة الشباب والرياضة اختتمت في وزارة الشباب / قسم المجلس الوطني للشباب، الورشة الخاصة بإجراءات الاقتراع والعد والفرز للتصويتين الخاص والعام، وذلك على قاعة دائرة العلاقات والتعاون الدولي في مقر الوزارة واستمرت لثلاثة ايام من ٩-١١/ ٦ /٢٠٢٦ وشارك في ال",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5016,7 +5100,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "بتوجيه رئيس الإدارة الانتخابية القاضي حسين بهير وبرعاية معاونه للشؤون الإدارية والمالية السيد علي صالح الساعدي وبإشراف اللجنة المنظمة للبطولة اقامت المفوضية العليا المستقلة للانتخابات بطولة لخماسي الكرة لدوائر واقسام المؤسسة . وشارك في البطولة ثمانية فرق اربعة منها من المكتب الوطني ، فريق الهندسية و",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5037,7 +5121,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شاركت المفوضية العليا المستقلة للانتخابات متمثلة برئيس الإدارة الانتخابية القاضي حسين بهير ومعاونه للشؤون الإدارية والمالية السيد علي صالح الساعدي وعدد من موظفيها في الندوة التي أقامتها مفوضية حقوق الانسان وعدد من تجمع الشبكات ومنظمات المجتمع المدني يوم الاحد ١٤ حزيران ٢٠٢٦ , على قاعة حقوق الانسان ح",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5058,7 +5142,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات / قسم التدريب والتطوير الورشة الحتمية المعنونة (الاتجاهات الحديثة في الادارة ) لعدد من موظفيها   وذلك يوم الاحد  الموافق ٢١  حزيران واستمرت لمدة اسبوع واحد  لترفيع المستحقين من الموظفين لدرجة اعلى. حيث تناولت الورشة مفهوم الادارة ووظائفها والتخطيط الاستراتي",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5079,7 +5163,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة الحوكمة الالكترونية في المفوضية العليا المستقلة للانتخابات اجتماعا برئاسة القاضي عباس الفتلاوي عضو مجلس المفوضين ورئيس اللجنة المذكورة ، والسيد علي دحام الامين العام لمجلس المفوضين والسيد مهند فاضل عباس معاون رئيس الادارة الانتخابية للشؤون الفنية صباح يوم الاحد الموافق ٢١ / ٦ / ٢٠٢٦ . وحضر",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5100,7 +5184,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "لترسيخ التعاون المثمر بين المؤسستين ترأس القاضي حسين عبد السادة بهير رئيس الإدارة الانتخابية  وفد المفوضية العليا المستقلة للانتخابات في زيارة الى وزارة التجارة وذلك يوم الاحد الموافق 21/6/2026. وكان في استقبال الوفد وزير التجارة السيد مصطفى نزار جمعة ووكيل الوزارة السيد غسان المحمدي. في بداية اللقا",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5121,7 +5205,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "التقى السيد رئيس مجلس المفوضين في مفوضية الانتخابات القاضي عمر احمد محمد وفد بعثة الاتحاد الاوربي برئاسة السيد كليمينس سميتنر سفير الاتحاد الأوروبي لدى العراق والسيد غابريل ليندن، سكرتير أول في القسم السياسي، بمكتبه في بغداد صباح يوم الاربعاء الموافق ٢٤ / ٦ / ٢٠٢٦. ورحب رئيس المجلس القاضي عمر أحمد م",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5142,7 +5226,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "اختتمت المفوضية العليا المستقلة للانتخابات ، ورشة تدريبية متخصصة لفريق دعم المرأة الانتخابي، بحضور ، رئيس الفريق عضو مجلس المفوضين الدكتورة احلام الجابري ، وعضو مجلس المفوضين القاضي عماد فارس رشيد ، في محافظة السليمانية من 20 إلى 24 تموز 2025. وشارك في الورشة منسقات الفريق في بغداد والمكاتب الانتخاب",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5163,7 +5247,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شاركت لجنة العمل التطوعي في المفوضية العليا المستقلة للانتخابات في حفل افتتاح المقر العام لتجمع ذوي الهمم في العراق، وذلك تلبيةً للدعوة الموجهة من قبل التجمع، وبحضور عدد من الشخصيات الرسمية والدبلوماسية وممثلي منظمات المجتمع المدني والجهات الداعمة. وتأتي هذه المشاركة تجسيداً لالتزام المفوضية بمسؤولي",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5184,7 +5268,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "◄ The Board of Commissioners decided on the selection of the auditing company. ◄ The Board of Commissioners decided on the voting procedures by the use of the results acceleration devices. The Board of Commissioners certified on the selection of the British company (PWC) , the auditing company which",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5205,7 +5289,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "►continuous of VRU process. ►continuous of Registration of political parties and alliances’ process. ►IHEC will hold a conference with political parties and alliances on coming Tuesday. IHEC has announced the final timelines for the processes of political alliances registration ended on 1/05/2021, r",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5226,7 +5310,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Regarding its believing in public opinion, the Independent High Electoral Commission to inform the public with the most important developments and preparations of the electoral process; Based on the principle of transparency adopted by the Board of Commissioners, and to ensure that the Commission wi",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5247,7 +5331,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "نتائج الانتخابات",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5268,7 +5352,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تعليمات توزيع المقاعد لانتخابات مجلس النواب العراقي 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5289,7 +5373,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "القوانين والانظمة قرارات مجلس المفوضين الانظمة والتعليمات تعليمات توزيع المقاعد لانتخابات مجلس النواب العراقي 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5300,7 +5384,7 @@ window.MIRU_TENDERS = [
     "region": "Middle East",
     "portal_name": "ihec.iq",
     "title": "مراكز الاقتراع لانتخابات مجلس النواب العراقي 2025",
-    "title_en": "Polling centers for the 2025 Iraqi Parliament elections",
+    "title_en": "Polling centers for the 2025 Iraqi Council of Representatives elections",
     "url": "https://ihec.iq/polling-station/",
     "published_date": "",
     "deadline_date": "",
@@ -5310,7 +5394,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "مراكز الاقتراع لانتخابات مجلس النواب العراقي 2025",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5331,7 +5415,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral information",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5352,7 +5436,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Departments and divisions Complaints and appeals department Candidates Affairs political parties and organizations department Tenders and contracts Operations Department training and development Electoral information",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "services"
   },
   {
@@ -5373,7 +5457,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral Applications",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "software"
   },
   {
@@ -5394,7 +5478,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Previous Elections",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5415,7 +5499,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "The results of the Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5436,7 +5520,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Instructions for distributing seats for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5457,7 +5541,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Laws and regulations Decisions of the Board of Commissioners Regulations and instructions Instructions for distributing seats for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5478,7 +5562,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Polling centers for the Iraqi Parliament elections 2021",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5499,7 +5583,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Find Your Polling Center",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5520,7 +5604,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Electoral Culture",
     "score": 40,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5541,7 +5625,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ترأس نائب رئيس مجلس المفوضين ورئيس لجنة الاشراف على تهيئة المتطلبات الفنية لاستخدام البطاقة الوطنية في التصويت القاضي فياض ياسين البجاري وفد المفوضية الذي ضم عضو مجلس المفوضين القاضي عباس الفتلاوي ومعاون رئيس الإدارة الانتخابية للشؤون الفنية السيد مهند فاضل ومدير دائرة العمليات وتكنولوجيا المعلومات ",
     "score": 15,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5562,7 +5646,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "المناقصات والعقود",
     "score": 15,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5583,7 +5667,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دوائر وأقسام المكتب الوطني قسم الشكاوى والطعون شؤون المرشحين دائرة الاحزاب والتنظيمات السياسية المناقصات والعقود دائرة العمليات التدريب والتطوير المعلومات الانتخابية",
     "score": 15,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5604,7 +5688,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Tenders and contracts",
     "score": 15,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5625,7 +5709,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Biometric Registration",
     "score": 15,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "biometric"
   },
   {
@@ -5646,7 +5730,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "كرمت عضو مجلس المفوضين ورئيسة فريق دعم المرأة الانتخابي الدكتورة أحلام الجابري الموظفة في قسم التدريب والتطوير في المكتب الوطني السيدة ( بشرى غلام مراد ) بدرع الوفاء والتقدير بعد أكمالها السن القانونية للتقاعد، بحضور عدد من موظفات المكتب الوطني وذلك يوم الأربعاء الموافق 22/7/2026. واوضحت الدكتورة ال",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5667,7 +5751,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "كرم السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير أمين الصندوق في المكتب الوطني السيد ( صباح نوري ) الموظف في الدائرة الادارية والمالية بدرع الوفاء والتقدير بعد أكماله السن القانونية للتقاعد ، بحضور معاون رئيس الادارة الانتخابية للشؤون الادارية والمالية السيد علي صالح جعفر ، ومدير الدائر",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5688,7 +5772,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الادارة الانتخابية القاضي حسين عبد السادة بهير اجتماعا ضم عدد من مدراء الدوائر في المؤسسة، وذلك يوم الاثنين الموافق ١٣ / ٤ / ٢٠٢٦ وحضر الاجتماع معاون رئيس الادارة الانتخابية للشؤون الفنية السيد مهند فاضل ومعاون رئيس الادارة للشؤون الادارية والمالية السيد علي صالح . وقام المجتمعون بمرا",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5709,7 +5793,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ضمن جهود تعزيز المشاركة السياسية للمرأة، شارك فريق دعم المرأة الانتخابي في الندوة العلمية الموسومة “تفعيل الكوتا التنفيذية نحو تمثيل عادل للنساء في مؤسسات الدولة”، والتي أقيمت في مركز الدراسات الاستراتيجية والدولية / جامعة بغداد، بتنظيم مشترك مع المجلس الأعلى لشؤون المرأة – الفريق الوطني للمرأة وحقي",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5730,7 +5814,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقدت لجنة مجمع اسكان موظفي المفوضية برئاسة القاضي السيد عامر موسى الحسيني وبحضور عددا من اعضاء مجلس المفوضين واعضاء اللجنة، اجتماعا بحضور ممثلين عن الشركتين المستثمرتين للمجمع، صباح يوم الثلاثاء الموافق ١٢ / ٥ / ٢٠٢٦ في المكتب الوطني حول إنشاء المجمع. حيث تم التباحث مع الشركات المستثمرة وإعلام اللجن",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5751,7 +5835,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "عقد السيد رئيس الإدارة الانتخابية القاضي حسين عبد السادة بهير، وبحضور معاونيه للشؤون الفنية السيد مهند فاضل عباس والاداري والمالي السيد علي صالح الساعدي اجتماعاً عبر الدائرة الالكترونية مع مديري مكاتب الهيئة ومحافظات الاقليم الانتخابية وذلك يوم الاحد الموافق ١٧ / ٥ / ٢٠٢٦ ، في إطار الجهود الرامية إل",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5772,7 +5856,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "استقبل السيد رئيس مجلس المفوضين القاضي عمر احمد محمد رئيس مركز التميز للأبداع والتطوير في الجامعة الأمريكية الدكتور زياد والوفد المرافق له وبحضور السيد رئيس الإدارة الانتخابية القاضي حسين بهير والقاضي عباس فرحان يوم الاثنين الموافق ١٥ حزيران ٢٠٢٦ في مقر المفوضية. حيث رحب السيد رئيس المجلس بالضيوف، ش",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5793,7 +5877,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "أُختتمت يوم امس الخميس المصادف ٢٠٢١/٤/١ اعمال الورشة التدريبية الحتمية التي أُقيمت في مكتب هيئة اقليم كوردستان للأنتخابات بواقع ٢٠ ساعه من الفترة ٢٠٢١/٣/٢٨ ولغاية ٢٠٢١/٤/١ والتي تندرج من ضمن التعليمات الواردة من الدائرة الإداريه والماليه في المكتب الوطني لأجراء ورش تدريبية حتمية للشعب الفنية لأغراض ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5814,7 +5898,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الشركاء الدوليين",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5835,7 +5919,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شهداء المفوضية",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5856,7 +5940,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "سياسة الجودة",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5877,7 +5961,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الاستراتيجية وخطة العمل",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5898,7 +5982,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الأجور والخدمات",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5919,7 +6003,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "حول المفوضية الأجور والخدمات الاستراتيجية وخطة العمل سياسة الجودة شهداء المفوضية الشركاء الدوليين",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5940,7 +6024,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "المعلومات الانتخابية",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5961,7 +6045,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "التدريب والتطوير",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -5982,7 +6066,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دائرة العمليات",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6003,7 +6087,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "دائرة الاحزاب والتنظيمات السياسية",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6024,7 +6108,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "شؤون المرشحين",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6045,7 +6129,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "قسم الشكاوى والطعون",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6066,7 +6150,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "تطبيقات انتخابية",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6087,7 +6171,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "الانظمة والتعليمات",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6108,7 +6192,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "قرارات مجلس المفوضين",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6129,7 +6213,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "البحث عن مركز التسجيل",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6150,7 +6234,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "ثقافة انتخابية",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6171,7 +6255,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Download File",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6192,7 +6276,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "International Partners",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6213,7 +6297,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Quality Policy",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6234,7 +6318,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Strategy and work plan",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6255,7 +6339,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "training and development",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "services"
   },
   {
@@ -6276,7 +6360,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Operations Department",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6297,7 +6381,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "political parties and organizations department",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6318,7 +6402,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Candidates Affairs",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6339,7 +6423,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Complaints and appeals department",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6360,7 +6444,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Regulations and instructions",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6381,7 +6465,7 @@ window.MIRU_TENDERS = [
     "currency": "IQD",
     "snippet": "Decisions of the Board of Commissioners",
     "score": 0,
-    "crawled_at": "2026-08-08T22:29:42Z",
+    "crawled_at": "2026-08-09T22:30:45Z",
     "category": "other"
   },
   {
@@ -6402,7 +6486,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Addendum | Feb 2nd, 2017 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6423,7 +6507,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RT/01/2019-2020 | Aug 14th, 2019 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6444,7 +6528,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6465,7 +6549,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6486,7 +6570,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6507,7 +6591,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6528,7 +6612,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6549,7 +6633,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6570,7 +6654,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6591,7 +6675,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6612,7 +6696,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6633,7 +6717,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6654,7 +6738,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6675,7 +6759,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/002/21/2021/2022 | Sep 10th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6696,7 +6780,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2021/2022 | Oct 7th, 2021 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6717,7 +6801,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6738,7 +6822,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6759,7 +6843,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6780,7 +6864,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/27/2021/2022 | Mar 4th, 2022 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6801,7 +6885,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/11/25/2024 - 2025 | Mar 11th, 2025 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -6822,7 +6906,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/11/25/2024 - 2025 | Mar 11th, 2025 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -6843,7 +6927,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6864,7 +6948,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6885,7 +6969,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/26/2025 - 2026 | Feb 24th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6906,7 +6990,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/B/26/2025 -2026 | Apr 27th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6927,7 +7011,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/B/26/2025 -2026 | Apr 27th, 2026 | Closed",
     "score": 55,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -6948,7 +7032,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/76/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -6969,7 +7053,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/48/2016-2017 | May 4th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -6990,7 +7074,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/92/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7011,7 +7095,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/70/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7032,7 +7116,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/63/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7053,7 +7137,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/99/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7074,7 +7158,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/71/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7095,7 +7179,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/72/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7116,7 +7200,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/73/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7137,7 +7221,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/74/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7158,7 +7242,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/75/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7179,7 +7263,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/62/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7200,7 +7284,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/64/2016-2017 | Jun 29th, 2017 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7221,7 +7305,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/OT/20/05 /2020-2021 | Jan 6th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7242,7 +7326,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/OT/20/06/2020-2021 | Feb 3rd, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7263,7 +7347,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/06/2020-2021 | Jun 15th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7284,7 +7368,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/06/2020-2021 | Jun 15th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7305,7 +7389,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 18th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -7326,7 +7410,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/OT/21/003/2021-2022 | Aug 30th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7347,7 +7431,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7368,7 +7452,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7389,7 +7473,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/007/2021-2022 | Oct 7th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7410,7 +7494,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/02/2021-2022 | Dec 14th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7431,7 +7515,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/012/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7452,7 +7536,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/012/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7473,7 +7557,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/035/2021-2022 | Mar 25th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7494,7 +7578,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/033/2021-2022 | Mar 29th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7515,7 +7599,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/37/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7536,7 +7620,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/37/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7557,7 +7641,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/36/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7578,7 +7662,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/36/2021/2022 | May 20th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7599,7 +7683,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/01/2021/2022 | Jul 11th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7620,7 +7704,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/01/2021/2022 | Jul 11th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7641,7 +7725,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/OT/001/2022/2023 | Jul 15th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -7662,7 +7746,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "TENDER NO: IEBC/KBU/OT/001/2022 - 2023 | Jul 15th, 2022 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -7683,7 +7767,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/07/25/2024 - 2025 | Jan 28th, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -7704,7 +7788,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/25/2024-2025 & IEBC/OT/20/25/2024 - 2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7725,7 +7809,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/25/2024 - 2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7746,7 +7830,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/25/2024-2025 | Jun 23rd, 2025 | Closed",
     "score": 40,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7767,7 +7851,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/52/2017-2018 | Mar 2nd, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7788,7 +7872,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/52/2017-2018 | Feb 2nd, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7809,7 +7893,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/01/2018 | Aug 24th, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7830,7 +7914,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/01/2018 | Aug 24th, 2018 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7851,7 +7935,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/54/2017-2018 | Jan 30th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7872,7 +7956,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Tender NO: IEBC/REST/05/2018-2019 | Apr 24th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "biometric"
   },
   {
@@ -7893,7 +7977,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "Tender No: IEBC/REST/06/2018-2019 | Apr 24th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7914,7 +7998,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/11/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7935,7 +8019,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/08/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7956,7 +8040,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/07/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -7977,7 +8061,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/09/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -7998,7 +8082,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/10/2018-2019 | May 21st, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8019,7 +8103,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/2018-2019/002 | Jun 17th, 2019 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8040,7 +8124,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/RT/2/2019/2020 | Feb 13th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8061,7 +8145,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/02/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8082,7 +8166,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/OT/FC/3/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8103,7 +8187,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/01/2019-2020 | Mar 19th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8124,7 +8208,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2019-2020 | May 12th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8145,7 +8229,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "REF: IEBC/REG/01/2020-2022 | May 15th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8166,7 +8250,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/04/2019-2020 | Jun 26th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8187,7 +8271,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/04/2019-2020 | Jun 26th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8208,7 +8292,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PROC/RFP/01/2020-2021 | Sep 23rd, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8229,7 +8313,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/03/2020 2021 | Sep 25th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -8250,7 +8334,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/02/2020-2021 | Sep 28th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "biometric"
   },
   {
@@ -8271,7 +8355,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/01/2020-2021 | Sep 24th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -8292,7 +8376,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/2020-2021 | Sep 29th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8313,7 +8397,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/02/2020-2021 - IEBC/OT/20/03/2020-2021 | Sep 28th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8334,7 +8418,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/05 2020 2021 | Nov 9th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8355,7 +8439,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/05 2020 2021 | Nov 9th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8376,7 +8460,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/01/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8397,7 +8481,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/02/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8418,7 +8502,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WKS/20/03/2020-2021 | Dec 17th, 2020 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8439,7 +8523,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/07/2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8460,7 +8544,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/06/2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8481,7 +8565,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC /OT/20/09 /2020-2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8502,7 +8586,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/08/2020 2021 | Jan 6th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -8523,7 +8607,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/10/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8544,7 +8628,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/21/01/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8565,7 +8649,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/20/10/2020 2021 | Feb 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8586,7 +8670,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/FC/20/10/2020-2021 | Jan 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8607,7 +8691,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EOI/21/01/2020-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8628,7 +8712,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2020-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8649,7 +8733,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2002-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8670,7 +8754,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/02/2002-2021 | Mar 30th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8691,7 +8775,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/03/2020-2021 | Apr 15th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8712,7 +8796,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/03/2020-2021 | Apr 22nd, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8733,7 +8817,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/04/2020-2021 | Apr 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8754,7 +8838,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/05/2020-2021 | May 25th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8775,7 +8859,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2020/2021 | Jun 4th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -8796,7 +8880,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2020-2021 | Jun 21st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8817,7 +8901,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/PRQ/01/2020-2021 | Jun 21st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8838,7 +8922,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/07/2020-2021 | Jun 28th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8859,7 +8943,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/07/2020-2021 | Jun 28th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8880,7 +8964,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/2020-2021 | Jun 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8901,7 +8985,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/2020-2021 | Jun 29th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8922,7 +9006,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/09/2020-2021 | Jul 26th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8943,7 +9027,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/001/2021-2022 | Sep 1st, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -8964,7 +9048,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/002/2021-2022 | Aug 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -8985,7 +9069,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/002/2021-2022 | Aug 27th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9006,7 +9090,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/005/2021-2022 | Sep 8th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9027,7 +9111,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/006/2021-2022 | Sep 13th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9048,7 +9132,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9069,7 +9153,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9090,7 +9174,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/01/2021-2022 | Oct 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9111,7 +9195,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/001/21/2021/2022 | Oct 8th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9132,7 +9216,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9153,7 +9237,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9174,7 +9258,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/008/2021-2022 | Nov 5th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9195,7 +9279,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/2021-2022 | Nov 12th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9216,7 +9300,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/009/2021-2022 | Nov 19th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9237,7 +9321,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/013/2021-2022 | Nov 24th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9258,7 +9342,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/014/21/2021/2022 | Dec 14th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "biometric"
   },
   {
@@ -9279,7 +9363,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/011/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9300,7 +9384,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/011/2021-2022 | Dec 17th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9321,7 +9405,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/03/2021-2022 | Dec 20th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9342,7 +9426,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OIT/014/21/2021/2022 | Dec 14th, 2021 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "biometric"
   },
   {
@@ -9363,7 +9447,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/017/2021-2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9384,7 +9468,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/016/21/2021/2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9405,7 +9489,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/015/21/2021/2022 | Jan 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9426,7 +9510,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/018/2021-2022 | Jan 21st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9447,7 +9531,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/020/2021-2022 | Jan 27th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9468,7 +9552,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/2021/2022 | Feb 4th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9489,7 +9573,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/026/2021/2022 | Feb 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9510,7 +9594,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/019/2021-2022 | Feb 8th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9531,7 +9615,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9552,7 +9636,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/025/2021-2022 | Feb 15th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9573,7 +9657,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/28/2021/2022 | Feb 18th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9594,7 +9678,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/023/2021/2022 | Feb 11th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9615,7 +9699,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/21/03/B/2021-2022 | Feb 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9636,7 +9720,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9657,7 +9741,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9678,7 +9762,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9699,7 +9783,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/24/2021-2022 | Feb 16th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9720,7 +9804,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/022/28/B/2021/2022 | Mar 1st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9741,7 +9825,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/030/2021/2022 | Feb 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9762,7 +9846,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/031/2021/2022 | Mar 2nd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9783,7 +9867,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9804,7 +9888,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/018/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9825,7 +9909,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/021/2021-2022 | Mar 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9846,7 +9930,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/010/B/2021-2022 | Mar 3rd, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -9867,7 +9951,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/021/2021-2022 | Mar 9th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -9888,7 +9972,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/031/2021-2022 | Mar 24th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "election_equipment"
   },
   {
@@ -9909,7 +9993,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/032/2021/2022 | Mar 24th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9930,7 +10014,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/020/B/2021-2022 | Apr 5th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9951,7 +10035,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/B/2021/2022 | Mar 31st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9972,7 +10056,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/022/B/2021/2022 | Mar 31st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -9993,7 +10077,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/032/2021/2022 | Apr 19th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10014,7 +10098,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/037/2021/2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10035,7 +10119,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/038/2021-2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10056,7 +10140,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/037/2021/2022 & IEBC/OT/22/038/2021-2022 | May 12th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10077,7 +10161,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/21/039/2021/2022 | May 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10098,7 +10182,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/039/2021/2022 | Jun 10th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10119,7 +10203,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2021-2022 | Jun 21st, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10140,7 +10224,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/040/2021/2022 | Jun 20th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10161,7 +10245,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/039/B/2021/2022 | Jul 8th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10182,7 +10266,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/01/2022-2023 | Nov 17th, 2022 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10203,7 +10287,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/02/2022-2023 | Jan 30th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10224,7 +10308,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/04/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10245,7 +10329,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10266,7 +10350,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10287,7 +10371,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/0T/23/06/2022-2023 | Mar 22nd, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10308,7 +10392,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10329,7 +10413,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/03/2022-2023 | Mar 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10350,7 +10434,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NDC/01/2023-2024 | Apr 5th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10371,7 +10455,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/23/05/2022-2023 | Apr 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10392,7 +10476,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10413,7 +10497,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10434,7 +10518,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/07/2022-2023 | Jul 13th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10455,7 +10539,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/KNC/01/2023-2024 | Sep 6th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10476,7 +10560,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NYC/01/2023-2024 | Sep 7th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10497,7 +10581,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/NYC/01/2023-2024 | Sep 7th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10518,7 +10602,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/KNC/01/2023-2024 | Sep 6th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10539,7 +10623,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/23/2023-2024 | Oct 17th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -10560,7 +10644,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/23/2023-2024 | Oct 24th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10581,7 +10665,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/03/23/2023-2024 | Nov 16th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -10602,7 +10686,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/03/23/2023-2024 | Nov 16th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -10623,7 +10707,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2023-2025 | Dec 20th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10644,7 +10728,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/WJR/OT/01/2023-2024 | Dec 5th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10665,7 +10749,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/23/2023-2024 | Dec 8th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10686,7 +10770,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/23/B/2023-2024 | Dec 15th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -10707,7 +10791,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10728,7 +10812,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10749,7 +10833,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/01/2023-2024 | Dec 11th, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10770,7 +10854,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2023-2024 | Dec 21st, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10791,7 +10875,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2023-2024 | Dec 21st, 2023 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10812,7 +10896,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/06/23/2023-2024 | Jan 24th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10833,7 +10917,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/0T/05/23/2023-2024 | Jan 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -10854,7 +10938,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/B/01/2023-2024 | Jan 30th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10875,7 +10959,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/OT/01/2023-2024 | Feb 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10896,7 +10980,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MKS/OT/01/2023-2024 | Feb 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10917,7 +11001,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/07/23/2023-2024 | Feb 20th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -10938,7 +11022,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MRU/REG/2023-2025 | Feb 20th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10959,7 +11043,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2023-2025 | Feb 21st, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -10980,7 +11064,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EMB/REG/2023-2025 | Feb 22nd, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11001,7 +11085,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Mar 7th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11022,7 +11106,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/C/01/2023-2024 | Mar 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11043,7 +11127,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/GRC/OT/C/01/2023-2024 | Mar 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11064,7 +11148,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Mar 7th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11085,7 +11169,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/24/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11106,7 +11190,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/24/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11127,7 +11211,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/ISLO/OT/01/2023-2024 | Apr 11th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11148,7 +11232,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/24/2023-2024 | May 9th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11169,7 +11253,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KBU/CNTY/REG/01/2024-2026 | Aug 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11190,7 +11274,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/MRG /CNTY/REG/01/2024-2026 | Sep 5th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11211,7 +11295,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2024-2025 | Sep 17th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11232,7 +11316,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/01/2024-2025 | Sep 17th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11253,7 +11337,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/24/2024-2025 | Oct 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11274,7 +11358,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/01/24/2024-2025 | Oct 29th, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11295,7 +11379,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/02/24/2024-2025 | Oct 31st, 2024 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11316,7 +11400,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/25/2024 - 2025 | Jan 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11337,7 +11421,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/06/25/2024 - 2025 | Jan 31st, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11358,7 +11442,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/05/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11379,7 +11463,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/05/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11400,7 +11484,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/06/25/2024 - 2025 | Jan 29th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11421,7 +11505,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/25/2024 – 2025 | Mar 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11442,7 +11526,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/25/2024 - 2025 | Mar 12th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11463,7 +11547,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/25/2024 - 2025 | Mar 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11484,7 +11568,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/09/25/2024 - 2025 | Mar 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11505,7 +11589,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/10/25/2024 – 2025 | Mar 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11526,7 +11610,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/08/25/2024 - 2025 | Mar 12th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11547,7 +11631,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11568,7 +11652,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11589,7 +11673,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12/25/2024-2025 | Apr 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11610,7 +11694,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/13/25/2024 - 2025 | Apr 22nd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11631,7 +11715,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/B/25/2024 - 2025 | Apr 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11652,7 +11736,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/04/B/25/2024 - 2025 | Apr 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11673,7 +11757,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11694,7 +11778,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/LAMU /COUNTY/REG/1/2025-2027 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11715,7 +11799,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/14/25/2024 - 2025 | May 14th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11736,7 +11820,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11757,7 +11841,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/12B/25/2024-2025 | May 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11778,7 +11862,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/15/25/2024 - 2025 | May 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11799,7 +11883,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/NRB/CNTY/REG/01/2025-2027 | Jun 5th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11820,7 +11904,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "EBC/OT/17/25/2024-2025 | Jun 4th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11841,7 +11925,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/25/2024 - 2025 | Jun 3rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11862,7 +11946,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/25/2024 - 2025 | Jun 3rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -11883,7 +11967,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/EMB/REG/2025-2027 | Jun 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11904,7 +11988,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/18/25/2024-2025 | Jun 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11925,7 +12009,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KJD/CNTY/REG/01/2025-2027 | Jun 13th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11946,7 +12030,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2025-2027 | Jun 18th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11967,7 +12051,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/TN/REG/2025-2027 | Jun 18th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -11988,7 +12072,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/NRK/CNTY/REG/01/2025-2027 | Jun 25th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12009,7 +12093,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/KSM/REG/01/2025-2027 | Jun 30th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12030,7 +12114,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12051,7 +12135,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/23/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12072,7 +12156,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2025-2027 | Jun 23rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12093,7 +12177,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/CRC/CNTIES/REG/2025/2026/2027 | Jun 23rd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12114,7 +12198,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/19/25/2024-2025 | Jun 17th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12135,7 +12219,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/HBY/REG/01/2025-2027 | Jul 2nd, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12156,7 +12240,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/22/25/2024 - 2025 | Jun 24th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12177,7 +12261,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/SYA/REG/01/2025-2027 | Jul 4th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12198,7 +12282,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2025-2026 | Dec 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12219,7 +12303,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/REG/002/2025-2026 | Dec 16th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12240,7 +12324,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/DLS/REG/001/2025-2026 | Dec 9th, 2025 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12261,7 +12345,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/NY/001/2025/2026 | Jan 16th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12282,7 +12366,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/NY/001/2025/2026 | Jan 16th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12303,7 +12387,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/001/26/2025 – 2026 | Feb 2nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12324,7 +12408,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/002/26/2025 – 2026 | Feb 2nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12345,7 +12429,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/26/2025 - 2026 | Feb 19th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12366,7 +12450,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/007/26/2025 – 2026 | Apr 24th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12387,7 +12471,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/006/26/2025 - 2026 | Apr 24th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12408,7 +12492,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/003/C/26/2025-2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12429,7 +12513,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/014/26/2025 - 2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12450,7 +12534,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/010/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12471,7 +12555,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/008/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12492,7 +12576,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/010/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12513,7 +12597,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/008/26/2025 – 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12534,7 +12618,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12555,7 +12639,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12576,7 +12660,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/005/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12597,7 +12681,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/005/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12618,7 +12702,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 27th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12639,7 +12723,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/012/26/2025 - 2026 | Apr 28th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12660,7 +12744,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12681,7 +12765,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12702,7 +12786,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/013/26/2025-2026 | May 25th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "software"
   },
   {
@@ -12723,7 +12807,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/16/26/2025 – 2026 | May 22nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12744,7 +12828,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/009/26/2025-2026 | May 22nd, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12765,7 +12849,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/B/26/2025 – 2026 | May 26th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12786,7 +12870,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/004/B/26/2025 – 2026 | May 26th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12807,7 +12891,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/003/26/2025-2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12828,7 +12912,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12849,7 +12933,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12870,7 +12954,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12891,7 +12975,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/002/26/2025 -2026 & IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
@@ -12912,7 +12996,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/001/26/2025 -2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12933,7 +13017,7 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/RFP/003/26/2025-2026 | Jun 5th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "services"
   },
   {
@@ -12954,29 +13038,2108 @@ window.MIRU_TENDERS = [
     "currency": "KES",
     "snippet": "IEBC/OT/017/26/2025 - 2026 | Jun 19th, 2026 | Closed",
     "score": 15,
-    "crawled_at": "2026-08-08T22:28:03Z",
+    "crawled_at": "2026-08-09T22:29:04Z",
     "category": "other"
   },
   {
-    "id": 3121,
-    "notice_key": "fca58f4afc1175525794",
+    "id": 13062,
+    "notice_key": "0da4f264c56e7cd5b0da",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "First Phase of the Fourth Local Government Elections: Dzongkhag  Thromde Tshogde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/first-phase-of-the-fourth-local-government-elections-dzongkhag-thromde-tshogde-elections-2026/",
+    "published_date": "2026-07-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The polls held on 15 July 2026 in  the two Dzongkhag Thromdes of Phuentshogling and Thimphu pertains to the first phase of the Fourth Local Government Elections. The details of the elections and the polls are as follows: 1.Registered Voters Upon the freezing of the Electoral Roll on 14 June 2026, a ",
+    "score": 55,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5664,
+    "notice_key": "8d89fded878f5540008a",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Registration of Postal Voters for the Dzongkhag Thromdes of Phuentshogling and Thimphu for the Thromde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/registration-of-postal-voters-for-the-dzongkhag-thromdes-of-phuentshogling-and-thimphu-for-the-thromde-elections-2026/",
+    "published_date": "2026-05-25",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the registered voters of Thimphu and Phuentshogling Thromdes eligible for postal ballot facilities under Section 331 of the Election Act of the Kingdom of Bhutan, 2008, to register for the postal ballot facility for the upcoming Thromde Electio",
+    "score": 55,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5663,
+    "notice_key": "90718e9bfaf07e747e8c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Amendment of Electoral By-Laws",
+    "title_en": "",
+    "url": "https://www.ecb.bt/amendment-of-electoral-by-laws/",
+    "published_date": "2026-05-26",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan, during its 16th and 20th Commission Meetings held on 30 April 2026 and 25 May 2026 made amendments to the Rules on Elections Conduct in the Kingdom of Bhutan, 2022, Media Coverage of Elections Rules and Regulations of the Kingdom of Bhutan, 2021 and the Electronic ",
+    "score": 55,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5659,
+    "notice_key": "30ea8180ab78756f188c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Issuance of the Final Electoral Roll for the Dzongkhag Thromdes of Phentshogling and Thimphu for the Thromde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/issuance-of-the-final-electoral-roll-for-the-dzongkhag-thromdes-of-phentshogling-and-thimphu-for-the-thromde-elections-2026/",
+    "published_date": "2026-06-15",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan, pursuant to Notification No. ECB/NOTIF-01/2025-2026/2752 dated 4th June 2026 and in accordance with Section 118 of the Election Act of the Kingdom of Bhutan, 2008, is pleased to issue the Final Electoral Roll for the Thromde Elections, 2026.  Following the incorpor",
+    "score": 55,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 25227,
+    "notice_key": "ec888f236960f8b8e43e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Advance Notification on Completion of Term of the Third Local Governments and Conduct of the Fourth Local Government Elections, 2027",
+    "title_en": "",
+    "url": "https://www.ecb.bt/advance-notification-on-completion-of-term-of-the-third-local-governments-and-conduct-of-the-fourth-local-government-elections-2027/",
+    "published_date": "2026-07-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan hereby notifies the general public that, under Article 22(21) of the Constitution and Section 194 of the Election Act of the Kingdom of Bhutan, 2008, the term of office of the 205 Gewog Tshogdes and Samdrup Jongkhar Thromde shall conclude on 21 January 2027. Followi",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 18333,
+    "notice_key": "2a96f584e3da0ff7708e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Vacancy Announcement For The Post Of Driver",
+    "title_en": "",
+    "url": "https://www.ecb.bt/vacancy-announcement-for-the-post-of-driver/",
+    "published_date": "2026-07-24",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) would like to invite interested Bhutanese citizens to apply for the following vacancy: Post: Driver Position Level: O4 Slots: 1 Qualification: Class X passed with a valid driving license (minimum of 5 Years of driving experience) Placement: ECB, HQ Employment ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17601,
+    "notice_key": "c7a80cf4f6720ec964b9",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Conduct of Functional Literacy and Possession of Skills Test (FLT) for the Second Phase of the Fourth Local Government Elections, 2027",
+    "title_en": "",
+    "url": "https://www.ecb.bt/conduct-of-functional-literacy-and-possession-of-skills-test-flt-for-the-second-phase-of-the-fourth-local-government-elections-2027/",
+    "published_date": "2026-07-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 178 (d) of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby notifies the general public that the Functional Literacy and Possession of Skills Test (FLT) for the aspiring candidates of all the Gewogs in the country and Samdrup Jongkh",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17598,
+    "notice_key": "9a707d80c649a2646059",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notification",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notification-3/",
+    "published_date": "2013-05-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission, noting the public concerns on the eligibility of the Candidates-Designate tendered by the Political Parties in their Letter of Intent, would like to inform the public that the Scrutiny of Candidates’ Nomination Papers by Returning Officers will be carried out strictly to ens",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17597,
+    "notice_key": "6d7c5c6cb961a16e92d2",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender Inviting Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation/",
+    "published_date": "2013-06-21",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of the following items: Stationery Items Election Materials Annual Maintenance of Pool Vehicles Catering Hire of Vehicles and Office Furniture   Documents containing detailed requiremen",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 17596,
+    "notice_key": "737704c78bbe977ba34e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Press Release on the Cases Related to the General Election 2013",
+    "title_en": "",
+    "url": "https://www.ecb.bt/press-release-on-the-cases-related-to-the-general-election-2013-2/",
+    "published_date": "2013-07-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to inform the general public that another fifteen cases have been filed since the last public update issued on 4th of July 2013 on the Election Disputes related to the on-going General Election 2013 bringing the total number of cases to thirty-seven. A su",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17595,
+    "notice_key": "6dc353ca3f01fc45df94",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender inviting Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-2/",
+    "published_date": "2014-01-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of following items:   1. Desktop 2. Laptop 3. Photo Copier 4. Printer   Click here for more detail",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17594,
+    "notice_key": "2d619f4aee5eb1634155",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Inviting of Air Ticketing Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/inviting-of-air-ticketing-quotation/",
+    "published_date": "2016-03-08",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following terms and conditions Sl# No. Pax Date Sector Class/Type Remarks 01 2 06/04/2016 Paro-Bangkok J-Class & E-Class 02 2 08/04/2016 Bangkok-Incheon J-C",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17590,
+    "notice_key": "11dd19aa72dd57fbc054",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "NOTICE INVITING TENDER",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-tender/",
+    "published_date": "2016-05-18",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the  Valid Trade License Holders to print andsupply the below mentioned items.   Sl. No. Particulars Qty Remarks 01 Election Diary Book 500 Nos. 02 Election Diary Pen with Print 500 Nos.   TERMS AND CONDITIONS The price quo",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17588,
+    "notice_key": "fbaebf912c8968556671",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "TENDER INVITING QUOTATION",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-6/",
+    "published_date": "2016-06-30",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the pruchase of air tickets as per the following sector/routes;   Sl. No. Sector/Route Class / Type 01 Paro-Srilangka-Paro E-Class 02 Paro-Katmandu-Paro E-Class 03 Paro-Male-Bangkok – Paro",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17583,
+    "notice_key": "a56c2065ef01acad8768",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender inviting quotation for Server Equipment, Printing of Posters and Heating System",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-for-server-equipment-printing-of-posters-and-heating-system/",
+    "published_date": "2017-03-20",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of Server Equipment, Printing of Posters and Heating Systems. The last day for tender submission is on 19th April 2017 at 1200 hours.   Standard Bidding Documents [pdf] [word] Annexure ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 17579,
+    "notice_key": "a6d3983275d191cb1738",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Supply of Office Stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (Spare parts, repairing and maintenance) and ICT Equipment.",
+    "title_en": "",
+    "url": "https://www.ecb.bt/supply-of-office-stationery-furniture-election-materials-electrical-item-catering-pool-vehicle-spare-parts-repairing-and-maintenance-and-ict-equipment/",
+    "published_date": "2017-06-29",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from valid license holder for the supply of Office Stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (Spare parts, repairing and maintenance) and ICT Equipment.   Catering [SDB] [Annexure-I] Stat",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 17578,
+    "notice_key": "f938940395c63651f0ea",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Purchase and Issue of air tickets",
+    "title_en": "",
+    "url": "https://www.ecb.bt/purchase-and-issue-of-air-tickets/",
+    "published_date": "2017-07-07",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested travel/ticketing agents having valid license for the purchase and issue of air tickets for: Class:  Business & Economy class Number of Pax : 2 (1 Business Class AND 1 Economy Class) Sector & Dates Paro-BKK : 29 August 2017 BKK- Ro",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17577,
+    "notice_key": "47d681f28d633e21aa80",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Addendum-1",
+    "title_en": "",
+    "url": "https://www.ecb.bt/addendum-1-2/",
+    "published_date": "2017-07-07",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "This has reference to Notice Inviting Tender Vide Notification #ECB/Pro/AFD/2016-17/3203 dated 24 June 2017 for the supply of Office stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (spare parts, repairing/maintenance & Tyres) and ICT Equipment for the FY 2017-18. W",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 17576,
+    "notice_key": "c2488e08f708b7aee313",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Hire of Vehicle for the FY2017-18",
+    "title_en": "",
+    "url": "https://www.ecb.bt/5063/",
+    "published_date": "2017-08-22",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation for the Hire of Vehicle for the FY2017-18 from valid license holder.   A detailed set of bidding document can be downloaded from [here]   The deadline for the tender submission is on or before 23 September 2017 at 10AM and shall",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17575,
+    "notice_key": "d9da9e7985d0703048af",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation- Air Ticketing",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing/",
+    "published_date": "2017-09-01",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested travel/ticketing agents having valid license for the purchase and issue of air tickets for: Class: : Business & Economy class Number of Pax: : 1(Business Class) AND 2 (Economy Class) Sector Dates Paro-Delhi- Kabul : 23 September 2",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17574,
+    "notice_key": "ded81ab7d56723ddb2b8",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Purchase and Issue of air ticket",
+    "title_en": "",
+    "url": "https://www.ecb.bt/purchase-and-issue-of-air-ticket/",
+    "published_date": "2017-09-08",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation for the purchase and issue of air ticket. A detailed set of bidding document can be downloaded from here.   The deadline for the tender submission is on or before 19 September 2017 at 10AM and shall be opened on the same day at…",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17573,
+    "notice_key": "58eee0527e4e378ff27c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender Information",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-information/",
+    "published_date": "2017-10-06",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan re-invites sealed quotation from valid license holder for the supply of Office Stationery/Furniture/Election Materials/Electrical Items/ and ICT Equipment for the FY2017-18. Besides, we would also like to invite sealed quotation from the valid license holder for the",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17572,
+    "notice_key": "44ef522ad1eb89f86d84",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Supply of Election Materials and Printing of Electoral Documents for the FY2018-19",
+    "title_en": "",
+    "url": "https://www.ecb.bt/supply-of-election-materials-and-printing-of-electoral-documents-for-the-fy2018-19/",
+    "published_date": "2018-04-26",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed quotation from valid license holder for the supply of Election Materials and Printing of Electoral Documents for the FY2018-19. A detailed set of bidding document can be downloaded from the website www.ecb.bt from 31 March 2018. The deadline for the s",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17571,
+    "notice_key": "df94f243583478289706",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Supply of Election Materials/ Stationery/ Furniture/Electrical Items/Catering Services/Pool Vehicle Maintenance &#038; Spare Parts for the FY2018-19",
+    "title_en": "",
+    "url": "https://www.ecb.bt/supply-of-election-materials-stationery-furnitureelectrical-itemscatering-servicespool-vehicle-maintenance-spare-parts-for-the-fy2018-19/",
+    "published_date": "2018-06-22",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed quotation from valid license holder for the supply of Election Materials/ Stationery/ Furniture/Electrical Items/Catering Services/Pool Vehicle Maintenance & Spare Parts for the FY2018-19. A detailed set of bidding document can be downloaded from the ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 17570,
+    "notice_key": "763a64e3698f8dbfdae6",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Purchase and Issue of air tickets",
+    "title_en": "",
+    "url": "https://www.ecb.bt/purchase-and-issue-of-air-tickets-3/",
+    "published_date": "2018-07-04",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Delhi: 8 July 2018 Delhi-Paro: 14 July 2018 The rates quoted should be submitted to this office by 6 July 2018 before 10:30AM. The tender wi",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17569,
+    "notice_key": "c0a8b6d162f4f838e9b6",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-2/",
+    "published_date": "2018-08-02",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Sri Lanka- 26 August 2018 Sri Lanka- Bangkok- 29 August 2018 Bangkok- Paro-1 September 2018 The quotation must be submitted to this office b",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17568,
+    "notice_key": "bc604f98f60d6dd74ca9",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Air Ticketing",
+    "title_en": "",
+    "url": "https://www.ecb.bt/air-ticketing/",
+    "published_date": "2018-09-26",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok- 5 October 2018 Bangkok- Philippines- 6 October 2018 Philippines- Bangkok- 11 October 2018 Bangkok-Paro- 13 October 2018 The quotati",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17567,
+    "notice_key": "29364c515d9b9e1713bc",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-3/",
+    "published_date": "2018-10-23",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro – Bangkok – 5th November 2018 Bangkok – Incheon (South Korea) – 6th November 2018 Incheon (South Korea) – Bangkok – 17th November 2018 Bangk",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17566,
+    "notice_key": "d66aa36ae515aa1a9b3c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-4/",
+    "published_date": "2019-01-09",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Delhi- 23 January 2019 Delhi-Paro- 26 January 2019 The quotation must be submitted to this office by 10 January 2019 before 10AM. The tender",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17565,
+    "notice_key": "0f73e5b2aa9d095dd068",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-5/",
+    "published_date": "2019-03-22",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok- 14 April 2019 Bangkok-Jakarta, Indonesia- 15 April 2019 {preferred arrival time after 2PM (Indonesian time)} Jakarta, Indonesia- Ba",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17564,
+    "notice_key": "fb1a7b258131a800df21",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-6/",
+    "published_date": "2019-03-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: New Delhi-Paro- 4 April 2019 Paro-New Delhi- 7 April 2019 The quotation must be submitted to this office by 2 April 2019 before 10AM. The tender ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17563,
+    "notice_key": "f65da6dd55878b7bc9d3",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-7/",
+    "published_date": "2019-04-04",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok: – 10 May 2019 Bangkok-Philippines (Manila): – 11 May 2019 {(Preferred afternoon flight) BKK Time} Philippines-Singapore: – 15 May 2",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17562,
+    "notice_key": "6825c4427f5870462477",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-8/",
+    "published_date": "2019-04-05",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro- New Delhi- 10 May 2019 New Delhi- Paro 13 May 2019 The quotation must be submitted to this office by 8 April 2019 before 10AM. The tender w",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17560,
+    "notice_key": "efb3b37234e9809d7f22",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Inviting sealed quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/inviting-sealed-quotation/",
+    "published_date": "2019-05-15",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of office stationery/Electrical & Plumbing Items/ICT Equipment/ Office Equipment/Catering Services/ Hire of Vehicle/ Vehicle maintenance & s",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 17558,
+    "notice_key": "4b4416a5eaf33c43cb60",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-9/",
+    "published_date": "2019-07-19",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Kolkata-Mumbai- 26 July 2019 Aurangabad-Kolkata- Paro- 31 July 2019 The quotation must be submitted to this office by 22 July 2019 before 10",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17557,
+    "notice_key": "e514c0b18f660df3cc28",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Air Ticketing (Re-announcement)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/air-ticketing-re-announcement/",
+    "published_date": "2019-07-22",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Kolkata-Mumbai- 26 July 2019 Aurangabad-Kolkata- Paro- 31 July 2019 The quotation must be submitted to this office by 22 July 2019 before 10",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17556,
+    "notice_key": "a3e8bea415d322bc8a92",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "LIMITED TENDER",
+    "title_en": "",
+    "url": "https://www.ecb.bt/limited-tender/",
+    "published_date": "2019-07-25",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of office furniture/ICT Equipmet/ Ofice partition Works and supply of Floor Carpet for the FY2019-20. A detailed set of Standard Bidding Doc",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17555,
+    "notice_key": "64638194866338362a8c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-10/",
+    "published_date": "2019-08-19",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangalore (Via New Delhi)- 2 September 2019 Bangalore- Paro (Via New Delhi)- 5 September 2019 The quotation must be submitted in sealed enve",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17554,
+    "notice_key": "0da5371bcac01a24945e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-11/",
+    "published_date": "2019-11-04",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok-Srilanka – 13 November 2019 Srilanka-Bangkok-18 November 2019 (Required afternoon flight) Bangkok- Paro- 20 November 2019 The quotat",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17553,
+    "notice_key": "78fb17e84bf0547389e9",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Air ticketing",
+    "title_en": "",
+    "url": "https://www.ecb.bt/air-ticketing-2/",
+    "published_date": "2020-02-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Dhaka, Bangladesh – 1 March 2020 Dhaka, Bangladesh- Paro-4 March 2020 The quotation must be submitted in sealed envelope to this office on o",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 17552,
+    "notice_key": "224bf5a4eed93017ccc2",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Tender (Air Ticketing)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-tender-air-ticketing/",
+    "published_date": "2024-03-27",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan invites sealed quotations from interested ticketing agents having valid licenses for the purchase and issue of air tickets for the below-mentioned sectors: Sl.No. Sector No. of PAX/ Class Date of arrival/ Departure Remarks 1. Paro-Male(Maldives) 2 Economy 19th April",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 13061,
+    "notice_key": "611e0a5ace8398ebb5ee",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of Results: Dzongkhag Thromde Tshogde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-results-dzongkhag-thromde-tshogde-elections-2026/",
+    "published_date": "2026-07-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Thromde Elections held on 15 July 2026 for the two Dzongkhag Thromde Tshogdes of Phuentshogling and Thimphu. The details of the candidates elected to",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 11744,
+    "notice_key": "7fa6c8c1edc132f7ac81",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Thromde Elections, 2026: Poll Day, No Campaign Period and Exit Polls",
+    "title_en": "",
+    "url": "https://www.ecb.bt/thromde-elections-2026-poll-day-no-campaign-period-and-exit-polls/",
+    "published_date": "2026-07-10",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the general public of the Poll Day arrangements and the No Campaign Period and Exit Poll restrictions applicable to the ongoing Dzongkhag Thromde Tshogde Elections, 2026 in Phuentshogling and Thimphu as follows: Part A: Poll Day Poll Day is on ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5701,
+    "notice_key": "8eac98a17616fe6e0f0f",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Result Announcement for the post of Dy. Chief Electoral Officer &amp; Dzongkhag Electoral Officer",
+    "title_en": "",
+    "url": "https://www.ecb.bt/result-announcement-for-the-post-of-dy-chief-electoral-officer-dzongkhag-electoral-officer/",
+    "published_date": "2025-09-30",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to announce the results of the vacancies for following positions through an open competitive selection procedure that was held from September 22, 2025– September 25, 2025. 1.Dy. Chief Election Officer 2. Dzongkhag Electoral Officer Documents that need to ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5700,
+    "notice_key": "e7749e26adc1dccc1aa6",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "General notice to the public of Damchhekha_Uezhi Chiwog under Doongna Gewog, Chhukha Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/general-notice-to-the-public-of-damchhekha_uezhi-chiwog-under-doongna-gewog-chhukha-dzongkhag/",
+    "published_date": "2025-10-06",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to inform the general public of Damchhekha_Uezhi Chiwog under Doongna Gewog, Chhukha Dzongkhag, that incessant rainfall has caused landslides and swelling of rivers/streams in the locality, thereby resulting in roadblocks and damages to the bridges connec",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5699,
+    "notice_key": "ad8621817acded40f970",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Wishes for Royal Wedding Anniversary",
+    "title_en": "",
+    "url": "https://www.ecb.bt/wishes-for-royal-wedding-anniversary/",
+    "published_date": "2025-10-13",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "On the joyous occasion of the 14th Wedding Anniversary of His Majesty The King and Her Majesty The Gyaltsuen, the Election Commission of Bhutan extends its heartfelt warm wishes and sincere prayers for Their Majesties’ continued good health and long life. May Their Majesties be eternally blessed wit",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5698,
+    "notice_key": "aee99de3168415149b72",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Completion of Tenure of the 3rd Election Commission",
+    "title_en": "",
+    "url": "https://www.ecb.bt/completion-of-tenure-of-the-3rd-election-commission/",
+    "published_date": "2025-10-15",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan bade farewell to the Chief Election Commissioner Dasho Sonam Topgay, Commissioner Ugyen Chewang and Commissioner Dawa Tenzin upon successfully completing  the 3rd Election Commission’s five-year tenure on 13th October 2025. Dasho Sonam Topgay, the Hon’ble Chief Elec",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5697,
+    "notice_key": "7a0293ebe9276f5dc20d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Welcoming the 4th Election Commission",
+    "title_en": "",
+    "url": "https://www.ecb.bt/welcoming-the-4th-election-commission/",
+    "published_date": "2025-10-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The ECB family extends its heartfelt congratulations to Hon’ble Chief Election Commissioner (CEC) Deki Pema, Commissioner Jigme Thinlye Namgyal, and Commissioner Sonam Pelden Thaye on their appointments as the 4th Election Commission Members. The ECB warmly welcomes them and wishes every success in ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5696,
+    "notice_key": "8b720afe59f702f5a53c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Bye-Election in the Local Government",
+    "title_en": "",
+    "url": "https://www.ecb.bt/bye-election-in-the-local-government-5/",
+    "published_date": "2025-11-06",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "In pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the position of Gewog Tshogde Tshogpa in Tashigang Chiwog under Getana Gewog, Chhukha Dzongkhag due to the removal of the incumbent Tshogpa, ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5695,
+    "notice_key": "3b12647b76049dbd5e1c",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tribute to His Majesty the Fourth Druk Gyalpo on His 70th Birth Anniversary",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tribute-to-his-majesty-the-fourth-druk-gyalpo-on-his-70th-birth-anniversary/",
+    "published_date": "2025-11-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "On this auspicious occasion of the 70th Birth Anniversary of His Majesty the Fourth Druk Gyalpo, Jigme Singye Wangchuck, the Election Commission of Bhutan joins the nation in offering our deepest respect, heartfelt felicitations, and sincere prayers for His Majesty’s long life, good health, and endu",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5694,
+    "notice_key": "44c22eed75999efe3874",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Release of Report on the State Finance and Election Returns of the Bye-Election for Nubi_Tangsibji Demkhong, Trongsa Dzongkhag, 2025",
+    "title_en": "",
+    "url": "https://www.ecb.bt/release-of-report-on-the-state-finance-and-election-returns-of-the-bye-election-for-nubi_tangsibji-demkhong-trongsa-dzongkhag-2025/",
+    "published_date": "2025-11-20",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan, as required under the Public Election Fund Act of the Kingdom of Bhutan, 2008 herein informs the general public that the Report on the State Finance and Election Returns pertaining to the Election Campaign for the Bye-Election of Nubi_Tangsibji Demkhong under Trong",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5693,
+    "notice_key": "942ac6903a1dd32438b2",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of the Results of Bye-Elections in Two Gewog Tshogde Tshogpa Demkhongs under Chhukha Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-the-results-of-bye-elections-in-local-government-2025-3/",
+    "published_date": "2025-11-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "In accordance  with the provision enshrined under Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Bye-Elections conducted to fill the vacant posts of the Local Government. The Elections were conducted in Two G",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5692,
+    "notice_key": "b4bd67f7ac6076fb14d0",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "ECB Celebrates Completion of DeSuung Training by Tsheten Dorji, Language Officer",
+    "title_en": "",
+    "url": "https://www.ecb.bt/ecb-celebrates-completion-of-desuung-training-by-tsheten-dorji-language-officer/",
+    "published_date": "2025-12-08",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) proudly welcomed back Mr. Tsheten Dorji, Language Officer upon successful completion of three-week (21-day) DeSuung Training Programme. Tsheten Dorji participated in the 71st batch of Accelerated DeSuung Training Programme from 7th to 28th at Khotokha, Wangdue",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 5691,
+    "notice_key": "86966687b0048017669d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Royal Civil Service Medal Award Ceremony, 2025",
+    "title_en": "",
+    "url": "https://www.ecb.bt/royal-civil-service-medal-award-ceremony-2025/",
+    "published_date": "2025-12-11",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) held the Annual Royal Civil Service Award ceremony today on December 11, 2025, for 2 recipients for their dedicated service to the Tsa-Wa-Sum: 1. Bronze Medal for 15 years of service was awarded to Needup, Dy Chief Planning Officer who joined the service in Au",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 5690,
+    "notice_key": "69367c25d186bc2cf656",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Commemorating the 118th National Day of the Kingdom of Bhutan",
+    "title_en": "",
+    "url": "https://www.ecb.bt/commemorating-the-118th-national-day-of-the-kingdom-of-bhutan/",
+    "published_date": "2025-12-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) joins the nation in commemorating the 118 years of the sacred institution of Monarchy in the Kingdom of Bhutan. On this auspicious 118th National Day, the ECB extends its heartfelt felicitations and deep reverence to the farsighted, wise and benevolent leaders",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5689,
+    "notice_key": "0042765a70613b0410b9",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "ECB celebrates 20th Foundation Day",
+    "title_en": "",
+    "url": "https://www.ecb.bt/ecb-celebrates-20th-foundation-day/",
+    "published_date": "2025-12-31",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "As we marked the 20th Foundation Day of the Election Commission of Bhutan, we were honoured to come together with members of the ECB family—past and present. The programme was graced by the First Chief Election Commissioner, the Third Chief Election Commissioner, Former Commissioner Dasho Dawa Tenzi",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5688,
+    "notice_key": "9a15e29e86e30b95d541",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Bye-Election in the Local Government",
+    "title_en": "",
+    "url": "https://www.ecb.bt/bye-election-in-the-local-government-6/",
+    "published_date": "2026-01-01",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "In pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the position of Gewog Tshogde Tshogpa in Mendrel_Uesuna Chiwog of Dokar Gewog under Paro Dzongkhag due to the voluntary resignation by the in",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "election_equipment"
+  },
+  {
+    "id": 5687,
+    "notice_key": "9aa5fcecf37d544b465d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "ECB Hosts Annual Nyilo Celebration Programme",
+    "title_en": "",
+    "url": "https://www.ecb.bt/ecb-hosts-annual-nyilo-celebration-programme/",
+    "published_date": "2026-01-05",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The annual Nyilo celebration, organized by the Folk Heritage Museum, Kawajangsa, was held at the Election Commission of Bhutan on 5th January 2025 at 9:30 a.m. in the ECB Lounge. The programme was conducted by a team comprising 22 students and five coordinators. As part of the celebration, the stude",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5686,
+    "notice_key": "7627d312a6704df34b5d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "ECB Welcomes Officials after Completion of Pelsung Immersion Programme at GMC",
+    "title_en": "",
+    "url": "https://www.ecb.bt/ecb-welcomes-officials-after-completion-of-pelsung-immersion-programme-at-gmc/",
+    "published_date": "2026-01-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) warmly welcomed back the officials who had completed three-month Pelsung Immersion Programme at Gelephu Mindfulness City (GMC) in a session graced by the Hon’ble Chief Election Commissioner. The event was organized to  honour Miss Dechen Seldon, Miss Sonam Cho",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5685,
+    "notice_key": "309c237e9a616f1032cb",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Twenty Years of Upholding Democracy: ECB Inauguration Day Celebration",
+    "title_en": "",
+    "url": "https://www.ecb.bt/twenty-years-of-upholding-democracy-ecb-inauguration-day-celebration/",
+    "published_date": "2026-01-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan commemorated its Inauguration Day, marking 20 years of dedicated service to the Tsa-Wa-Sum. The milestone provided an opportunity to reflect on two decades of strengthening democratic processes, upholding constitutional mandates, and fostering public trust through i",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 5684,
+    "notice_key": "72f8a35a7a40edcea20d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "ECB Observes Annual Rimdo 2026 Coinciding with 20th Office Establishment Anniversary",
+    "title_en": "",
+    "url": "https://www.ecb.bt/ecb-observes-annual-rimdo-2026-coinciding-with-20th-office-establishment-anniversary/",
+    "published_date": "2026-01-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Annual Rimdo of the Election Commission of Bhutan (ECB) for the year 2026 was conducted coinciding with the commemoration of the 20th anniversary of the establishment of the ECB Office in 2006 at Motithang, Thimphu. The Rimdo was performed by Tsipey Lopens from Pangrizamgpa, Dechencholing. The s",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5683,
+    "notice_key": "f39f6c7848d01e9ea0c1",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "January 2026 Promotions",
+    "title_en": "",
+    "url": "https://www.ecb.bt/january-2026-promotions/",
+    "published_date": "2026-01-21",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan extends its warm congratulations to Ugyen and Sangay on their promotion. We thank them for their contributions and wish them continued success as they take on greater responsibilities.",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5682,
+    "notice_key": "5214f72938d28dd6390e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of the Bye-Election Result of Tshogpa of Mendrel_Uesuna Chiwog of Dokar Gewog, Paro",
+    "title_en": "",
+    "url": "https://www.ecb.bt/bye-election-results-for-mendrel_uesuna-chiwog-parodeclaration-of-the-result-of-local-government-bye-electiobye-election-results-for-mendrel_uesuna-chiwog-paro/",
+    "published_date": "2026-01-30",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "In accordance with the provision enshrined under Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gewog Tshogde Tshogpa of Mendrel_Uesuna Chiwog of Dokar Gew",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "election_equipment"
+  },
+  {
+    "id": 5681,
+    "notice_key": "adf24a08b8685ab2d0fa",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Local Government Bye-Elections",
+    "title_en": "",
+    "url": "https://www.ecb.bt/local-government-bye-elections/",
+    "published_date": "2026-02-05",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Elections to fill up the vacant posts in the following Demkhongs. 1.Tshogpa ofGarzhikha_Omchheygang Chiwog ofBjenag Gewog under Wangdue Phodrang Dzongkhag du",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5680,
+    "notice_key": "4e4ee789e66ade7b5587",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Amendment to Chapter 4 (Recruitment, Selection and Appointment), Section 4.3.6.7 of the ECBSRR 2025",
+    "title_en": "",
+    "url": "https://www.ecb.bt/amendment-to-chapter-4-recruitment-selection-and-appointment-section-4-3-6-7-of-the-ecbsrr-2025/",
+    "published_date": "2026-02-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Notification on Amendment to Chapter 4 ( Recruitment, Selection and Appointment), Section 4.3.6.7 of the ECBSRR 2025 The Election Commission of Bhutan (ECB) hereby amends Chapter 4, Section 4.3.6.7 of the ECBSRR 2025 as follows: The Existing provision states: “In the event the selected candidate wit",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5679,
+    "notice_key": "6b6a2c4d69a1d2f3b139",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Bye-Election for Gewog Tshogde Tshogpa, Dhangkhar_Trong Chiwog under Zhemgang Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/bye-election-for-gewog-tshogde-tshogpa-dhangkhar_trong-chiwog-under-zhemgang-dzongkhag/",
+    "published_date": "2026-02-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election to fill up the Gewog Tshogde Tshogpa post at Dhangkhar_Trong Chiwog under Zhemgang Dzongkhag due to the demise of the incumbent member. The Election",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5678,
+    "notice_key": "37cbc535e89ab2b3d736",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of Local Government Bye-Election Results in Garzhikha_Omchheygang Chiwog under Bjenag Gewog &amp; Zamding Chiwog under Ruebisa Gewog under Wandue Phodrang Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-local-government-bye-election-results-in-garzhikha_omchheygang-chiwog-under-bjenag-gewog-zamding-chiwog-under-ruebisa-gewog-under-wandue-phodrang-dzongkhag/",
+    "published_date": "2026-03-03",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Bye-Elections conducted to fill the vacant posts for the following Demkhongs: Sl. No. Dzongkhag Gewog Chiwog Candidate Post 1.   Wangdue Phodrang Bje",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5677,
+    "notice_key": "ca914c97f941b77cfe9e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of the Result of Bye-Election for the post of the Gewog Tshogde Tshogpa in Dhangkhar_Trong Chiwog of Trong Gewog under Zhemgang Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-the-result-of-bye-election-in-local-government-in/",
+    "published_date": "2026-03-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gewog Tshogde Tshogpa in Dhangkhar_Trong Chiwog of Trong Gewog under Zhemgang Dzongkhag. Ugyen C",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5676,
+    "notice_key": "171b3761dacf410b0fbf",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Dispute Settlement Capacity Enhancement Workshop, 2026, from 9th to 14th March in Tsirang",
+    "title_en": "",
+    "url": "https://www.ecb.bt/dispute-settlement-capacity-enhancement-workshop-2026-from-9th-to-14th-march-in-tsirang/",
+    "published_date": "2026-03-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) successfully conducted the Dispute Settlement Capacity Enhancement Workshop, 2026, from 9th to 14th March in Tsirang, with the participation of 62 officials. The workshop aimed to strengthen institutional capacity, enhance operational readiness, and uphold ele",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5675,
+    "notice_key": "dd597d845fe97804968e",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notification for Bye-Election for the Post of Gup in Lingmukha Gewog, Punakha",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notification-for-bye-election-for-the-post-of-gup-in-lingmukha-gewog-punakha/",
+    "published_date": "2026-03-19",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the post of Gup of Lingmukha Gewog under Punakha Dzongkhag, following the voluntary resignation by the incumbent. The Election Schedule and the ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5674,
+    "notice_key": "55a5d8ee55415bd524a3",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Electoral Leadership Excellence Programme for ECB Officials",
+    "title_en": "",
+    "url": "https://www.ecb.bt/electoral-leadership-excellence-programme-for-ecb-officials/",
+    "published_date": "2026-04-01",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan, in partnership with the Royal Institute of Management, has commenced the Electoral Leadership Excellence Programme for 26 senior officials of the Commission. The programme focuses on strengthening leadership capability through a combination of practical learning an",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5673,
+    "notice_key": "c0fbc133ba759f59a73d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notification calling bye-Election for the post of Tshogpa Post in Changche_Matshigpogto Chiwog under Gase Tshogongm, Wandue Phodrang",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notification-calling-bye-election-for-the-post-of-tshogpa-post-in-changche_matshipogto-chiwog-under-gase-tshogongm-wandue-phodrang/",
+    "published_date": "2026-04-02",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election to fill up the Gewog Tshogde Tshogpa post at Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag due to voluntary ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5672,
+    "notice_key": "880e30416c24cbfe2706",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Vacancy Announcement for the post of Asst ICT Officers &amp; Asst. Dzongkhag Electoral Registration Officers (DzERO)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/vacancy-announcement-new/",
+    "published_date": "2026-04-07",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) is pleased to announce the following vacancies for regular appointment:  Post Position Slots Minimum Qualification Placement Asst ICT Officer P5 2 Bachelor’s Degree (4 Years Degree) in IT/Computer Science or related field  Head Office Asst. Dzongkhag Electoral",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5671,
+    "notice_key": "ac818275c3447dcf9b4b",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Bye-Election Result declaration for the post of Gup in Lingmukha Gewog under Punakha Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/bye-election-result-declaration-for-the-post-of-gup-in-lingmukha-gewog-under-punakha-dzongkhag/",
+    "published_date": "2026-04-17",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gup of Lingmukha Gewog under Punakha Dzongkhag. Mr. Kinley Tenzin, holdingCID No. 11006000011, h",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5670,
+    "notice_key": "11d89f008a2b20ba03a3",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Conduct of Functional Literacy and Possession of Skills Test (FLT) in the Dzongkhag Thromdes of Phuentshogling and Thimphu",
+    "title_en": "",
+    "url": "https://www.ecb.bt/conduct-of-functional-literacy-and-possession-of-skills-test-flt-in-the-dzongkhag-thromdes-of-phuentshogling-and-thimphu/",
+    "published_date": "2026-04-29",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB), pursuant to Section 178(d) of the Election Act of the Kingdom of Bhutan, 2008, hereby notifies the general public that the Functional Literacy and Possession of Skills Test (FLT) for aspiring candidates to the two Dzongkhag Thromdes of Phuentshogling and Thim",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5669,
+    "notice_key": "673d6589cbde2dc900f6",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Press Release on the Conduct of the Functional Literacy  Test (FLT) for the Thromde Elections 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/press-release-on-the-conduct-of-the-functional-literacy-test-flt-for-the-thromde-elections-2026/",
+    "published_date": "2026-04-29",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) would like to inform the general public that the term of office of the Thromde Tshogdes of Gelephu, Phuentshogling, and Thimphu will be completing as follows:  1.Gelephu on 27 May 2026; and  2. Phuentshogling and Thimphu on 6 June 2026.  Accordingly, the prepa",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5668,
+    "notice_key": "a7b5655c0545ed2a2e6d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of the result of the Bye-Election conducted to fill the vacant post of the Tshogpa of Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-the-result-of-local-government-bye-election/",
+    "published_date": "2026-04-30",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Tshogpa of Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5667,
+    "notice_key": "962f59f2c536af3f1804",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Result Announcement for the Post of Assistant Dzongkhag Electoral Registration Officers and Assistant ICT Officer",
+    "title_en": "",
+    "url": "https://www.ecb.bt/result-announcement-for-the-post-of-assistant-dzongkhag-electoral-registration-officers-and-assistant-ict-officer/",
+    "published_date": "2026-05-04",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to announce the results of the recruitment for the posts of Assistant Dzongkhag Electoral Registration Officers and Assistant ICT Officer, conducted from 28 April to 01 May 2026.  Selected candidates are required to submit a valid drug test report along w",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5666,
+    "notice_key": "4617bc7f262cde422019",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Public Notification on Social and Religious Events During the 4th Dzongkhag Thromde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/public-notification-on-social-and-religious-events-during-the-4th-dzongkhag-thromde-elections-2026/",
+    "published_date": "2026-05-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) hereby notify all concerned that the 3rd   Dzongkhag Thromde Tshogde of Phuentshogling and Thimphu Thromdes with the first sitting  on 7June 2021, will complete the Five-Year tenure on 6June 2026. Thereafter, the ECB shall be issuing a notification calling the",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5665,
+    "notice_key": "b4aea204d34483cdaac4",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Declaration of Results of the Functional Literacy and Possession of Skills Test (FLT) for Phuentshogling &amp; Thimphu Thromdes",
+    "title_en": "",
+    "url": "https://www.ecb.bt/declaration-of-results-of-the-functional-literacy-and-possession-of-skills-test-flt-for-phuentshogling-thimphu-thromdes/",
+    "published_date": "2026-05-25",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) conducted Functional Literacy and Possession of Skills Test (FLT) on 22 May 2026, for aspiring Thromde Tshogpa candidates of Phuentshogling and Thimphu Thromdes.  A total of thirteen candidates in the two Thromdes, seven in Phuentshogling and six in Thimphu re",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5662,
+    "notice_key": "aa017ec9d16622a00eb7",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Public Notification for processing Local Government  documents by Aspiring Candidates",
+    "title_en": "",
+    "url": "https://www.ecb.bt/public-notification-for-processing-local-government-documents-by-aspiring-candidates/",
+    "published_date": "2026-05-29",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the general public that the tenure of the Third Thromde Tshogdes of Phuentshogling and Thimphu Thromdes shall complete on 6 June 2026. In preparation for the upcoming Thromde Elections, all interested and eligible individuals wishing to contest",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5661,
+    "notice_key": "fe43443fd7ec96f8f4df",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Issuance of the Draft Electoral Roll for the Fourth Thromde Elections in Chhukha and Thimphu Dzongkhags for Public Inspection and Filing of Claims and Objections",
+    "title_en": "",
+    "url": "https://www.ecb.bt/issuance-of-the-draft-electoral-roll-for-the-fourth-thromde-elections-in-chhukha-and-thimphu-dzongkhags-for-public-inspection-and-filing-of-claims-and-objections/",
+    "published_date": "2026-06-05",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan, in accordance with Sections 112 and 113 of the Election Act of the Kingdom of Bhutan, 2008, hereby issues the Draft Electoral Roll for the Dzongkhag Thromdes of Phuentshogling and Thimphu for public inspection and for the filing of Claims and Objections. The Draft ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5660,
+    "notice_key": "433090d0126cbf819dbc",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notification on Fourth Local Government Elections: Dzongkhag Thromde Tshogde Elections, 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notification-on-fourth-local-government-elections-dzongkhag-thromde-tshogde-elections-2026/",
+    "published_date": "2026-06-11",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB), pursuant to Section 202 of the Election Act of the Kingdom of Bhutan, 2008 under the Constitution of the Kingdom of Bhutan, calls the Local Government Elections: Dzongkhag Thromde Tshogde Elections, 2026 (Thromde Elections 2026) in the following Dzongkhag Thr",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 5658,
+    "notice_key": "1d013cab72aad5121749",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Status update on Fourth Dzongkhag Thromde Tshogde Elections 2026",
+    "title_en": "",
+    "url": "https://www.ecb.bt/status-update-on-fourth-dzongkhag-thromde-tshogde-elections-2026/",
+    "published_date": "2026-06-23",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) would like to update the general public on the nomination process and related electoral activities that have been completed in accordance with the Election Schedule as provided in the Notification calling the Fourth Dzongkhag Thromde Tshogde Elections in Phuen",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 682,
+    "notice_key": "666ad5d368487d5e4794",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender Inviting Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-3/",
+    "published_date": "2016-03-21",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of the following   Sl No. Tender Particular Division Concerned 01 Procurement & Supply of Library Books AFD,ECB   Documents containing details requirements / Specifications will be avai",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 681,
+    "notice_key": "2905ec7cd975130d11a7",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "རིན༌བསྡུར།",
+    "title_en": "",
+    "url": "https://www.ecb.bt/dzo/%e0%bd%a2%e0%bd%b2%e0%bd%93%e0%bc%8c%e0%bd%96%e0%bd%a6%e0%be%a1%e0%bd%b4%e0%bd%a2%e0%bc%8d/",
+    "published_date": "2016-03-23",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the FY: 2016-2017 as follows;   Supply of Office Stationery, Toners & electrical items Bidding Document Supply of Vehicle Spare parts, Maintenance and Tyres & tubes Bidding Document Supply",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 680,
+    "notice_key": "02058e65ad5fd45618ed",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Tender Inviting Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-4/",
+    "published_date": "2016-04-26",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotations from the licensed suppliers for the supply of the following items.   Sl.No. Component Details Qty 01 Layer 2 POE Switch –          24 ports 10/100/1000 BaseT + 4 SFP –          POE + Ports, 4XSFP Ports –          Switching Capa",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 679,
+    "notice_key": "96050165afe6a55bae05",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "TENDER INVITING QUOTATION",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-5/",
+    "published_date": "2016-05-23",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the FY: 2016-2017 as follows;   Supply of Office Stationery, Toners & electrical items Bidding Document Supply of Vehicle Spare parts, Maintenance and Tyres & tubes Bidding Document Supply",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "services"
+  },
+  {
+    "id": 678,
+    "notice_key": "c674fa84c9b8cc8f3e41",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "TENDER INVITING QUOTATION",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-7/",
+    "published_date": "2016-07-22",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible bidders for the purchase of  the following items as per the specifications & details mentioned in the Tender Document; Furniture  [Download Bidding Document] Sound System & LED HD Screen [Download Bidding Documen",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 677,
+    "notice_key": "4656a8d695ac650041f8",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Limited Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/limited-quotation/",
+    "published_date": "2016-09-30",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible bidders for the printing & supply of Posters, Banners & Placards as per the specifications & details mentioned in the Tender Document; Sl. No. Particulars Specification Quantity Rate (Nu) Remarks 01 Posters 28” x",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 676,
+    "notice_key": "5bcd83d243a77caf7e7d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "TENDER INVITING QUOTATION",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-8/",
+    "published_date": "2016-10-20",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following details given below:   Sl# No. Pax Date Sector/Route Class/Type 01 12 12/11/2016 Paro-Bangkok E-Class 02 12 13/11/2016 Bangkok-Copenhagen E-Class ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 675,
+    "notice_key": "88913f1065695aa2d230",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "TENDER INVITING QUOTATION",
+    "title_en": "",
+    "url": "https://www.ecb.bt/tender-inviting-quotation-9/",
+    "published_date": "2016-11-28",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following terms and conditions. Sl# No. Pax Sector/Route Class/Type 01 5 Paro-Delhi-Paro E-Class 02 1 Paro-Bangkok-Male-Bangkok-Paro J-Class Tenders should ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 673,
+    "notice_key": "5d22f3dcd41314a323eb",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Procurement of ICT related Equipment, Carpet, Heating System and Library Books 2016-17",
+    "title_en": "",
+    "url": "https://www.ecb.bt/procurement-of-ict-related-equipment-carpet-heating-system-and-library-books-2016-17/",
+    "published_date": "2017-05-01",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the valid license holder for the supply of ICT Equipment, Library Books, Heater and Carpet. A detailed set of bidding document can be downloaded from below: Standard Bidding Document (SBD) [pdf][word] Integrity Pact Annexur",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 672,
+    "notice_key": "4ed547e8800c69ddbb24",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Notice Inviting Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/notice-inviting-quotation/",
+    "published_date": "2019-04-12",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of Books/ Office Equipment and Printing Works. A detailed set of Standard Bidding Document (SBD) can be downloaded as below: Standard Biddin",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 671,
+    "notice_key": "72b205819381ccb472ae",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Invite expression of interest",
+    "title_en": "",
+    "url": "https://www.ecb.bt/invite-expression-of-interest/",
+    "published_date": "2019-05-16",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) would like to invite expression of interest from the eligible Bhutanese firm/individual having valid license for the Procurement of Consulting Services (SRFP) for the “Development and Implementation of the System for the Management of Political parties Members",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 670,
+    "notice_key": "096c40bf82496e10ce52",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Inviting Expression of Interest (EoI)",
+    "title_en": "",
+    "url": "https://www.ecb.bt/inviting-expression-of-interest-eoi/",
+    "published_date": "2019-11-29",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite Expression of Interest (EoI) from the eligible Bhutanese firms having valid license for the enhancement of Bhutan Electoral Registration Management System (BERMS). A detailed set of documents can be downloaded from below. Standard Request ",
+    "score": 40,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 17582,
+    "notice_key": "62d47669775e8d66a58d",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Addendum to the Technical Specifications of the Server Equipment",
+    "title_en": "",
+    "url": "https://www.ecb.bt/addendum-to-the-technical-specifications-of-the-server-equipment/",
+    "published_date": "2017-03-21",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "This has reference to the announcement made in Kuensel dated 18th March 2017 regarding the Supply of Server Equipment, Printing of Posters and Heating System. The Addendum is only for Technical Specification for the Supply and Installation of Server Equipment. However, the deadline for the submissio",
+    "score": 0,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 17580,
+    "notice_key": "4e6bd53bca9c3514e62b",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Addendum-1",
+    "title_en": "",
+    "url": "https://www.ecb.bt/addendum-1/",
+    "published_date": "2017-05-04",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "This has reference to tender announcement made vide Kuensel on 28 April 2017 for the supply of Heating System, Carpets and Library Books. In this regard, we would like to request all interested bidders to kindly consider the list of items mentioned in “Annexure-I(Addendum)” and not the lists mention",
+    "score": 0,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "software"
+  },
+  {
+    "id": 674,
+    "notice_key": "fb54ad2a56bbf6ec0c7f",
+    "country": "Bhutan",
+    "iso3": "BTN",
+    "region": "South Asia",
+    "portal_name": "ecb.bt",
+    "title": "Air Ticket Quotation",
+    "title_en": "",
+    "url": "https://www.ecb.bt/air-ticket-quotation/",
+    "published_date": "2017-04-06",
+    "deadline_date": "",
+    "status": "publish",
+    "buyer": "Election Commission of Bhutan",
+    "amount": null,
+    "currency": "BTN",
+    "snippet": "Sealed rates are invited from authorized travel agents for air ticket for the following sector. Class :  Economy class Number of Pax :  1 (One). (Mr. Sangay Dendup) Type of Airline : Mention the name of Airline & Airport and Itinerary clearly Sector & Dates Paro-Bangkok : 2 May 2017 Bangkok- Male, M",
+    "score": 0,
+    "crawled_at": "2026-08-09T22:27:13Z",
+    "category": "other"
+  },
+  {
+    "id": 28396,
+    "notice_key": "e9c0785cd632afb50ea9",
     "country": "Bahrain",
     "iso3": "BHR",
     "region": "Middle East",
     "portal_name": "tenderboard.gov.bh",
-    "title": "320/2026/BTB (MOE/2026/27)(Maintenance and management o.....)",
+    "title": "3/2026/EWB (EWB/006/2026)(Access Control System Enhanc.....)",
     "title_en": "",
     "url": "https://etendering.tenderboard.gov.bh",
-    "published_date": "Bahrain Tender Board",
+    "published_date": "Exhibition World Bahrain W.L.....",
     "deadline_date": "",
     "status": "Open",
     "buyer": "Tender Board Bahrain",
     "amount": null,
     "currency": "BHD",
-    "snippet": "320/2026/BTB (MOE/2026/27)(Maintenance and management o.....) | Bahrain Tender Board | 17 Days -12 Hours",
+    "snippet": "3/2026/EWB (EWB/006/2026)(Access Control System Enhanc.....) | Exhibition World Bahrain W.L..... | 23 Days -12 Hours",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:55Z",
-    "category": "services"
+    "crawled_at": "2026-08-09T22:26:58Z",
+    "category": "software"
   },
   {
     "id": 27756,
@@ -12996,7 +15159,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "1 | Procurement  of Photocopier Machine | COLLEGE OF HEALTH YAMFO | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13017,7 +15180,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "5 | SUPPLY OF FURNITURE TO SCHOOLS DISTRICT WIDE | ADAKLU DISTRICT ASSEMBLY | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13038,7 +15201,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "4 | PROCUREMENT OF 2NO. 4 x 4 DOUBLE CABIN PICKUP | CAPE COAST METROPOLITAN ASSEMBLY | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13059,7 +15222,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "3 | Procurement and Supply of Pick-up Vehicle | Public Records And Archives Administration Department | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13080,7 +15243,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "2 | Office Furniture | MINISTRY of COMMUNICATIONS DIGITAL TECHNOLOGY and INNOVATIONS | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13101,7 +15264,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "7 | Construction of 1No. 1-Storey Girls Dormitory Block at Mim Senior High School -Ground Floor Only | ASUNAFO NORTH MUNICIPAL ASSEMBLY | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13122,7 +15285,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "6 | PROCUREMENT AND SUPPLY OF FURNITURE FOR SCHOOLS IN THE BEREKUM WEST DISTRICT | BEREKUM WEST DISTRICT ASSEMBLY | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13143,7 +15306,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "10 | Demolishing and Reconstruction of 3NO.  3-Unit Classroom With Office and Store at St. Peter's Anglican Basic School , at Ofankor | GA NORTH MUNICIPAL ASSEMBLY | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "other"
   },
   {
@@ -13164,7 +15327,7 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "9 | Supply and Delivery of Merchandise, Frozen Foods, Local Food and Stationery Items | NURSING AND MIDWIFERY TRAINING COLLEGE KOFORIDUA | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
     "category": "services"
   },
   {
@@ -13185,7 +15348,28 @@ window.MIRU_TENDERS = [
     "currency": "GHS",
     "snippet": "8 | Framework Agreement for Hiring of Conference Facilities and Hotel Services | Ghana Statistical Service | ",
     "score": 0,
-    "crawled_at": "2026-08-08T22:24:52Z",
+    "crawled_at": "2026-08-09T22:26:55Z",
+    "category": "services"
+  },
+  {
+    "id": 3121,
+    "notice_key": "fca58f4afc1175525794",
+    "country": "Bahrain",
+    "iso3": "BHR",
+    "region": "Middle East",
+    "portal_name": "tenderboard.gov.bh",
+    "title": "320/2026/BTB (MOE/2026/27)(Maintenance and management o.....)",
+    "title_en": "",
+    "url": "https://etendering.tenderboard.gov.bh",
+    "published_date": "Bahrain Tender Board",
+    "deadline_date": "",
+    "status": "Open",
+    "buyer": "Tender Board Bahrain",
+    "amount": null,
+    "currency": "BHD",
+    "snippet": "320/2026/BTB (MOE/2026/27)(Maintenance and management o.....) | Bahrain Tender Board | 17 Days -12 Hours",
+    "score": 0,
+    "crawled_at": "2026-08-08T22:24:55Z",
     "category": "services"
   },
   {
@@ -13226,27 +15410,6 @@ window.MIRU_TENDERS = [
     "amount": 12280.5,
     "currency": "EUR",
     "snippet": "006_P2601340 | Institut de Cultura de Barcelona",
-    "score": 0,
-    "crawled_at": "2026-08-07T22:39:15Z",
-    "category": "other"
-  },
-  {
-    "id": 26463,
-    "notice_key": "daf5ab06b60f992fd77e",
-    "country": "Spain",
-    "iso3": "ESP",
-    "region": "Other",
-    "portal_name": "licitacions.bcn.cat",
-    "title": "Verificació i Calibració d'instruments de control i mesura del soroll 2027 - 2030 amb mesures de contractació pública sostenible",
-    "title_en": "Verification and Calibration of noise control and measurement instruments 2027 - 2030 with sustainable public procurement measures",
-    "url": "https://licitacions.bcn.cat/licitacion/licitaciones/detalle?id=17740159",
-    "published_date": "",
-    "deadline_date": "2026-09-15",
-    "status": "Publicat",
-    "buyer": "Ajuntament de Barcelona",
-    "amount": 138707.2,
-    "currency": "EUR",
-    "snippet": "001_26003191 | Ajuntament de Barcelona",
     "score": 0,
     "crawled_at": "2026-08-07T22:39:15Z",
     "category": "other"
@@ -13795,2085 +15958,6 @@ window.MIRU_TENDERS = [
     "snippet": "012_P2600123 | Institut Municipal de Paisatge Urba i la Qualitat de Vida",
     "score": 0,
     "crawled_at": "2026-08-04T23:08:01Z",
-    "category": "other"
-  },
-  {
-    "id": 13062,
-    "notice_key": "0da4f264c56e7cd5b0da",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "First Phase of the Fourth Local Government Elections: Dzongkhag  Thromde Tshogde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/first-phase-of-the-fourth-local-government-elections-dzongkhag-thromde-tshogde-elections-2026/",
-    "published_date": "2026-07-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The polls held on 15 July 2026 in  the two Dzongkhag Thromdes of Phuentshogling and Thimphu pertains to the first phase of the Fourth Local Government Elections. The details of the elections and the polls are as follows: 1.Registered Voters Upon the freezing of the Electoral Roll on 14 June 2026, a ",
-    "score": 55,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5664,
-    "notice_key": "8d89fded878f5540008a",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Registration of Postal Voters for the Dzongkhag Thromdes of Phuentshogling and Thimphu for the Thromde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/registration-of-postal-voters-for-the-dzongkhag-thromdes-of-phuentshogling-and-thimphu-for-the-thromde-elections-2026/",
-    "published_date": "2026-05-25",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the registered voters of Thimphu and Phuentshogling Thromdes eligible for postal ballot facilities under Section 331 of the Election Act of the Kingdom of Bhutan, 2008, to register for the postal ballot facility for the upcoming Thromde Electio",
-    "score": 55,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5663,
-    "notice_key": "90718e9bfaf07e747e8c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Amendment of Electoral By-Laws",
-    "title_en": "",
-    "url": "https://www.ecb.bt/amendment-of-electoral-by-laws/",
-    "published_date": "2026-05-26",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan, during its 16th and 20th Commission Meetings held on 30 April 2026 and 25 May 2026 made amendments to the Rules on Elections Conduct in the Kingdom of Bhutan, 2022, Media Coverage of Elections Rules and Regulations of the Kingdom of Bhutan, 2021 and the Electronic ",
-    "score": 55,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5659,
-    "notice_key": "30ea8180ab78756f188c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Issuance of the Final Electoral Roll for the Dzongkhag Thromdes of Phentshogling and Thimphu for the Thromde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/issuance-of-the-final-electoral-roll-for-the-dzongkhag-thromdes-of-phentshogling-and-thimphu-for-the-thromde-elections-2026/",
-    "published_date": "2026-06-15",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan, pursuant to Notification No. ECB/NOTIF-01/2025-2026/2752 dated 4th June 2026 and in accordance with Section 118 of the Election Act of the Kingdom of Bhutan, 2008, is pleased to issue the Final Electoral Roll for the Thromde Elections, 2026.  Following the incorpor",
-    "score": 55,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 25227,
-    "notice_key": "ec888f236960f8b8e43e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Advance Notification on Completion of Term of the Third Local Governments and Conduct of the Fourth Local Government Elections, 2027",
-    "title_en": "",
-    "url": "https://www.ecb.bt/advance-notification-on-completion-of-term-of-the-third-local-governments-and-conduct-of-the-fourth-local-government-elections-2027/",
-    "published_date": "2026-07-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan hereby notifies the general public that, under Article 22(21) of the Constitution and Section 194 of the Election Act of the Kingdom of Bhutan, 2008, the term of office of the 205 Gewog Tshogdes and Samdrup Jongkhar Thromde shall conclude on 21 January 2027. Followi",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 18333,
-    "notice_key": "2a96f584e3da0ff7708e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Vacancy Announcement For The Post Of Driver",
-    "title_en": "",
-    "url": "https://www.ecb.bt/vacancy-announcement-for-the-post-of-driver/",
-    "published_date": "2026-07-24",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) would like to invite interested Bhutanese citizens to apply for the following vacancy: Post: Driver Position Level: O4 Slots: 1 Qualification: Class X passed with a valid driving license (minimum of 5 Years of driving experience) Placement: ECB, HQ Employment ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17601,
-    "notice_key": "c7a80cf4f6720ec964b9",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Conduct of Functional Literacy and Possession of Skills Test (FLT) for the Second Phase of the Fourth Local Government Elections, 2027",
-    "title_en": "",
-    "url": "https://www.ecb.bt/conduct-of-functional-literacy-and-possession-of-skills-test-flt-for-the-second-phase-of-the-fourth-local-government-elections-2027/",
-    "published_date": "2026-07-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 178 (d) of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby notifies the general public that the Functional Literacy and Possession of Skills Test (FLT) for the aspiring candidates of all the Gewogs in the country and Samdrup Jongkh",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17598,
-    "notice_key": "9a707d80c649a2646059",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notification",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notification-3/",
-    "published_date": "2013-05-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission, noting the public concerns on the eligibility of the Candidates-Designate tendered by the Political Parties in their Letter of Intent, would like to inform the public that the Scrutiny of Candidates’ Nomination Papers by Returning Officers will be carried out strictly to ens",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17597,
-    "notice_key": "6d7c5c6cb961a16e92d2",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender Inviting Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation/",
-    "published_date": "2013-06-21",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of the following items: Stationery Items Election Materials Annual Maintenance of Pool Vehicles Catering Hire of Vehicles and Office Furniture   Documents containing detailed requiremen",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 17596,
-    "notice_key": "737704c78bbe977ba34e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Press Release on the Cases Related to the General Election 2013",
-    "title_en": "",
-    "url": "https://www.ecb.bt/press-release-on-the-cases-related-to-the-general-election-2013-2/",
-    "published_date": "2013-07-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to inform the general public that another fifteen cases have been filed since the last public update issued on 4th of July 2013 on the Election Disputes related to the on-going General Election 2013 bringing the total number of cases to thirty-seven. A su",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17595,
-    "notice_key": "6dc353ca3f01fc45df94",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender inviting Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-2/",
-    "published_date": "2014-01-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of following items:   1. Desktop 2. Laptop 3. Photo Copier 4. Printer   Click here for more detail",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17594,
-    "notice_key": "2d619f4aee5eb1634155",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Inviting of Air Ticketing Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/inviting-of-air-ticketing-quotation/",
-    "published_date": "2016-03-08",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following terms and conditions Sl# No. Pax Date Sector Class/Type Remarks 01 2 06/04/2016 Paro-Bangkok J-Class & E-Class 02 2 08/04/2016 Bangkok-Incheon J-C",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17590,
-    "notice_key": "11dd19aa72dd57fbc054",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "NOTICE INVITING TENDER",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-tender/",
-    "published_date": "2016-05-18",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the  Valid Trade License Holders to print andsupply the below mentioned items.   Sl. No. Particulars Qty Remarks 01 Election Diary Book 500 Nos. 02 Election Diary Pen with Print 500 Nos.   TERMS AND CONDITIONS The price quo",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17588,
-    "notice_key": "fbaebf912c8968556671",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "TENDER INVITING QUOTATION",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-6/",
-    "published_date": "2016-06-30",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the pruchase of air tickets as per the following sector/routes;   Sl. No. Sector/Route Class / Type 01 Paro-Srilangka-Paro E-Class 02 Paro-Katmandu-Paro E-Class 03 Paro-Male-Bangkok – Paro",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17583,
-    "notice_key": "a56c2065ef01acad8768",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender inviting quotation for Server Equipment, Printing of Posters and Heating System",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-for-server-equipment-printing-of-posters-and-heating-system/",
-    "published_date": "2017-03-20",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of Server Equipment, Printing of Posters and Heating Systems. The last day for tender submission is on 19th April 2017 at 1200 hours.   Standard Bidding Documents [pdf] [word] Annexure ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 17579,
-    "notice_key": "a6d3983275d191cb1738",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Supply of Office Stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (Spare parts, repairing and maintenance) and ICT Equipment.",
-    "title_en": "",
-    "url": "https://www.ecb.bt/supply-of-office-stationery-furniture-election-materials-electrical-item-catering-pool-vehicle-spare-parts-repairing-and-maintenance-and-ict-equipment/",
-    "published_date": "2017-06-29",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from valid license holder for the supply of Office Stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (Spare parts, repairing and maintenance) and ICT Equipment.   Catering [SDB] [Annexure-I] Stat",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 17578,
-    "notice_key": "f938940395c63651f0ea",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Purchase and Issue of air tickets",
-    "title_en": "",
-    "url": "https://www.ecb.bt/purchase-and-issue-of-air-tickets/",
-    "published_date": "2017-07-07",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested travel/ticketing agents having valid license for the purchase and issue of air tickets for: Class:  Business & Economy class Number of Pax : 2 (1 Business Class AND 1 Economy Class) Sector & Dates Paro-BKK : 29 August 2017 BKK- Ro",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17577,
-    "notice_key": "47d681f28d633e21aa80",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Addendum-1",
-    "title_en": "",
-    "url": "https://www.ecb.bt/addendum-1-2/",
-    "published_date": "2017-07-07",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "This has reference to Notice Inviting Tender Vide Notification #ECB/Pro/AFD/2016-17/3203 dated 24 June 2017 for the supply of Office stationery, Furniture, Election Materials, Electrical Item, Catering, Pool Vehicle (spare parts, repairing/maintenance & Tyres) and ICT Equipment for the FY 2017-18. W",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 17576,
-    "notice_key": "c2488e08f708b7aee313",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Hire of Vehicle for the FY2017-18",
-    "title_en": "",
-    "url": "https://www.ecb.bt/5063/",
-    "published_date": "2017-08-22",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation for the Hire of Vehicle for the FY2017-18 from valid license holder.   A detailed set of bidding document can be downloaded from [here]   The deadline for the tender submission is on or before 23 September 2017 at 10AM and shall",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17575,
-    "notice_key": "d9da9e7985d0703048af",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation- Air Ticketing",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing/",
-    "published_date": "2017-09-01",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested travel/ticketing agents having valid license for the purchase and issue of air tickets for: Class: : Business & Economy class Number of Pax: : 1(Business Class) AND 2 (Economy Class) Sector Dates Paro-Delhi- Kabul : 23 September 2",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17574,
-    "notice_key": "ded81ab7d56723ddb2b8",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Purchase and Issue of air ticket",
-    "title_en": "",
-    "url": "https://www.ecb.bt/purchase-and-issue-of-air-ticket/",
-    "published_date": "2017-09-08",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation for the purchase and issue of air ticket. A detailed set of bidding document can be downloaded from here.   The deadline for the tender submission is on or before 19 September 2017 at 10AM and shall be opened on the same day at…",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17573,
-    "notice_key": "58eee0527e4e378ff27c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender Information",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-information/",
-    "published_date": "2017-10-06",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan re-invites sealed quotation from valid license holder for the supply of Office Stationery/Furniture/Election Materials/Electrical Items/ and ICT Equipment for the FY2017-18. Besides, we would also like to invite sealed quotation from the valid license holder for the",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17572,
-    "notice_key": "44ef522ad1eb89f86d84",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Supply of Election Materials and Printing of Electoral Documents for the FY2018-19",
-    "title_en": "",
-    "url": "https://www.ecb.bt/supply-of-election-materials-and-printing-of-electoral-documents-for-the-fy2018-19/",
-    "published_date": "2018-04-26",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed quotation from valid license holder for the supply of Election Materials and Printing of Electoral Documents for the FY2018-19. A detailed set of bidding document can be downloaded from the website www.ecb.bt from 31 March 2018. The deadline for the s",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17571,
-    "notice_key": "df94f243583478289706",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Supply of Election Materials/ Stationery/ Furniture/Electrical Items/Catering Services/Pool Vehicle Maintenance &#038; Spare Parts for the FY2018-19",
-    "title_en": "",
-    "url": "https://www.ecb.bt/supply-of-election-materials-stationery-furnitureelectrical-itemscatering-servicespool-vehicle-maintenance-spare-parts-for-the-fy2018-19/",
-    "published_date": "2018-06-22",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed quotation from valid license holder for the supply of Election Materials/ Stationery/ Furniture/Electrical Items/Catering Services/Pool Vehicle Maintenance & Spare Parts for the FY2018-19. A detailed set of bidding document can be downloaded from the ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 17570,
-    "notice_key": "763a64e3698f8dbfdae6",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Purchase and Issue of air tickets",
-    "title_en": "",
-    "url": "https://www.ecb.bt/purchase-and-issue-of-air-tickets-3/",
-    "published_date": "2018-07-04",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Delhi: 8 July 2018 Delhi-Paro: 14 July 2018 The rates quoted should be submitted to this office by 6 July 2018 before 10:30AM. The tender wi",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17569,
-    "notice_key": "c0a8b6d162f4f838e9b6",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-2/",
-    "published_date": "2018-08-02",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Sri Lanka- 26 August 2018 Sri Lanka- Bangkok- 29 August 2018 Bangkok- Paro-1 September 2018 The quotation must be submitted to this office b",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17568,
-    "notice_key": "bc604f98f60d6dd74ca9",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Air Ticketing",
-    "title_en": "",
-    "url": "https://www.ecb.bt/air-ticketing/",
-    "published_date": "2018-09-26",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok- 5 October 2018 Bangkok- Philippines- 6 October 2018 Philippines- Bangkok- 11 October 2018 Bangkok-Paro- 13 October 2018 The quotati",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17567,
-    "notice_key": "29364c515d9b9e1713bc",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-3/",
-    "published_date": "2018-10-23",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro – Bangkok – 5th November 2018 Bangkok – Incheon (South Korea) – 6th November 2018 Incheon (South Korea) – Bangkok – 17th November 2018 Bangk",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17566,
-    "notice_key": "d66aa36ae515aa1a9b3c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-4/",
-    "published_date": "2019-01-09",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Delhi- 23 January 2019 Delhi-Paro- 26 January 2019 The quotation must be submitted to this office by 10 January 2019 before 10AM. The tender",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17565,
-    "notice_key": "0f73e5b2aa9d095dd068",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-5/",
-    "published_date": "2019-03-22",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok- 14 April 2019 Bangkok-Jakarta, Indonesia- 15 April 2019 {preferred arrival time after 2PM (Indonesian time)} Jakarta, Indonesia- Ba",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17564,
-    "notice_key": "fb1a7b258131a800df21",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-6/",
-    "published_date": "2019-03-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: New Delhi-Paro- 4 April 2019 Paro-New Delhi- 7 April 2019 The quotation must be submitted to this office by 2 April 2019 before 10AM. The tender ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17563,
-    "notice_key": "f65da6dd55878b7bc9d3",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-7/",
-    "published_date": "2019-04-04",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok: – 10 May 2019 Bangkok-Philippines (Manila): – 11 May 2019 {(Preferred afternoon flight) BKK Time} Philippines-Singapore: – 15 May 2",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17562,
-    "notice_key": "6825c4427f5870462477",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-8/",
-    "published_date": "2019-04-05",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro- New Delhi- 10 May 2019 New Delhi- Paro 13 May 2019 The quotation must be submitted to this office by 8 April 2019 before 10AM. The tender w",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17560,
-    "notice_key": "efb3b37234e9809d7f22",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Inviting sealed quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/inviting-sealed-quotation/",
-    "published_date": "2019-05-15",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of office stationery/Electrical & Plumbing Items/ICT Equipment/ Office Equipment/Catering Services/ Hire of Vehicle/ Vehicle maintenance & s",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 17558,
-    "notice_key": "4b4416a5eaf33c43cb60",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-9/",
-    "published_date": "2019-07-19",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Kolkata-Mumbai- 26 July 2019 Aurangabad-Kolkata- Paro- 31 July 2019 The quotation must be submitted to this office by 22 July 2019 before 10",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17557,
-    "notice_key": "e514c0b18f660df3cc28",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Air Ticketing (Re-announcement)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/air-ticketing-re-announcement/",
-    "published_date": "2019-07-22",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Kolkata-Mumbai- 26 July 2019 Aurangabad-Kolkata- Paro- 31 July 2019 The quotation must be submitted to this office by 22 July 2019 before 10",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17556,
-    "notice_key": "a3e8bea415d322bc8a92",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "LIMITED TENDER",
-    "title_en": "",
-    "url": "https://www.ecb.bt/limited-tender/",
-    "published_date": "2019-07-25",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of office furniture/ICT Equipmet/ Ofice partition Works and supply of Floor Carpet for the FY2019-20. A detailed set of Standard Bidding Doc",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17555,
-    "notice_key": "64638194866338362a8c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-10/",
-    "published_date": "2019-08-19",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangalore (Via New Delhi)- 2 September 2019 Bangalore- Paro (Via New Delhi)- 5 September 2019 The quotation must be submitted in sealed enve",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17554,
-    "notice_key": "0da5371bcac01a24945e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation-air-ticketing-11/",
-    "published_date": "2019-11-04",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Bangkok-Srilanka – 13 November 2019 Srilanka-Bangkok-18 November 2019 (Required afternoon flight) Bangkok- Paro- 20 November 2019 The quotat",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17553,
-    "notice_key": "78fb17e84bf0547389e9",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Air ticketing",
-    "title_en": "",
-    "url": "https://www.ecb.bt/air-ticketing-2/",
-    "published_date": "2020-02-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed bids from interested ticketing agents having valid license for the purchase and issue of air tickets for: Paro-Dhaka, Bangladesh – 1 March 2020 Dhaka, Bangladesh- Paro-4 March 2020 The quotation must be submitted in sealed envelope to this office on o",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 17552,
-    "notice_key": "224bf5a4eed93017ccc2",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Tender (Air Ticketing)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-tender-air-ticketing/",
-    "published_date": "2024-03-27",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan invites sealed quotations from interested ticketing agents having valid licenses for the purchase and issue of air tickets for the below-mentioned sectors: Sl.No. Sector No. of PAX/ Class Date of arrival/ Departure Remarks 1. Paro-Male(Maldives) 2 Economy 19th April",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 13061,
-    "notice_key": "611e0a5ace8398ebb5ee",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of Results: Dzongkhag Thromde Tshogde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-results-dzongkhag-thromde-tshogde-elections-2026/",
-    "published_date": "2026-07-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Thromde Elections held on 15 July 2026 for the two Dzongkhag Thromde Tshogdes of Phuentshogling and Thimphu. The details of the candidates elected to",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 11744,
-    "notice_key": "7fa6c8c1edc132f7ac81",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Thromde Elections, 2026: Poll Day, No Campaign Period and Exit Polls",
-    "title_en": "",
-    "url": "https://www.ecb.bt/thromde-elections-2026-poll-day-no-campaign-period-and-exit-polls/",
-    "published_date": "2026-07-10",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the general public of the Poll Day arrangements and the No Campaign Period and Exit Poll restrictions applicable to the ongoing Dzongkhag Thromde Tshogde Elections, 2026 in Phuentshogling and Thimphu as follows: Part A: Poll Day Poll Day is on ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5701,
-    "notice_key": "8eac98a17616fe6e0f0f",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Result Announcement for the post of Dy. Chief Electoral Officer &amp; Dzongkhag Electoral Officer",
-    "title_en": "",
-    "url": "https://www.ecb.bt/result-announcement-for-the-post-of-dy-chief-electoral-officer-dzongkhag-electoral-officer/",
-    "published_date": "2025-09-30",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to announce the results of the vacancies for following positions through an open competitive selection procedure that was held from September 22, 2025– September 25, 2025. 1.Dy. Chief Election Officer 2. Dzongkhag Electoral Officer Documents that need to ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5700,
-    "notice_key": "e7749e26adc1dccc1aa6",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "General notice to the public of Damchhekha_Uezhi Chiwog under Doongna Gewog, Chhukha Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/general-notice-to-the-public-of-damchhekha_uezhi-chiwog-under-doongna-gewog-chhukha-dzongkhag/",
-    "published_date": "2025-10-06",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to inform the general public of Damchhekha_Uezhi Chiwog under Doongna Gewog, Chhukha Dzongkhag, that incessant rainfall has caused landslides and swelling of rivers/streams in the locality, thereby resulting in roadblocks and damages to the bridges connec",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5699,
-    "notice_key": "ad8621817acded40f970",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Wishes for Royal Wedding Anniversary",
-    "title_en": "",
-    "url": "https://www.ecb.bt/wishes-for-royal-wedding-anniversary/",
-    "published_date": "2025-10-13",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "On the joyous occasion of the 14th Wedding Anniversary of His Majesty The King and Her Majesty The Gyaltsuen, the Election Commission of Bhutan extends its heartfelt warm wishes and sincere prayers for Their Majesties’ continued good health and long life. May Their Majesties be eternally blessed wit",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5698,
-    "notice_key": "aee99de3168415149b72",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Completion of Tenure of the 3rd Election Commission",
-    "title_en": "",
-    "url": "https://www.ecb.bt/completion-of-tenure-of-the-3rd-election-commission/",
-    "published_date": "2025-10-15",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan bade farewell to the Chief Election Commissioner Dasho Sonam Topgay, Commissioner Ugyen Chewang and Commissioner Dawa Tenzin upon successfully completing  the 3rd Election Commission’s five-year tenure on 13th October 2025. Dasho Sonam Topgay, the Hon’ble Chief Elec",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5697,
-    "notice_key": "7a0293ebe9276f5dc20d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Welcoming the 4th Election Commission",
-    "title_en": "",
-    "url": "https://www.ecb.bt/welcoming-the-4th-election-commission/",
-    "published_date": "2025-10-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The ECB family extends its heartfelt congratulations to Hon’ble Chief Election Commissioner (CEC) Deki Pema, Commissioner Jigme Thinlye Namgyal, and Commissioner Sonam Pelden Thaye on their appointments as the 4th Election Commission Members. The ECB warmly welcomes them and wishes every success in ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5696,
-    "notice_key": "8b720afe59f702f5a53c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Bye-Election in the Local Government",
-    "title_en": "",
-    "url": "https://www.ecb.bt/bye-election-in-the-local-government-5/",
-    "published_date": "2025-11-06",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "In pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the position of Gewog Tshogde Tshogpa in Tashigang Chiwog under Getana Gewog, Chhukha Dzongkhag due to the removal of the incumbent Tshogpa, ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5695,
-    "notice_key": "3b12647b76049dbd5e1c",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tribute to His Majesty the Fourth Druk Gyalpo on His 70th Birth Anniversary",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tribute-to-his-majesty-the-fourth-druk-gyalpo-on-his-70th-birth-anniversary/",
-    "published_date": "2025-11-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "On this auspicious occasion of the 70th Birth Anniversary of His Majesty the Fourth Druk Gyalpo, Jigme Singye Wangchuck, the Election Commission of Bhutan joins the nation in offering our deepest respect, heartfelt felicitations, and sincere prayers for His Majesty’s long life, good health, and endu",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5694,
-    "notice_key": "44c22eed75999efe3874",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Release of Report on the State Finance and Election Returns of the Bye-Election for Nubi_Tangsibji Demkhong, Trongsa Dzongkhag, 2025",
-    "title_en": "",
-    "url": "https://www.ecb.bt/release-of-report-on-the-state-finance-and-election-returns-of-the-bye-election-for-nubi_tangsibji-demkhong-trongsa-dzongkhag-2025/",
-    "published_date": "2025-11-20",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan, as required under the Public Election Fund Act of the Kingdom of Bhutan, 2008 herein informs the general public that the Report on the State Finance and Election Returns pertaining to the Election Campaign for the Bye-Election of Nubi_Tangsibji Demkhong under Trong",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5693,
-    "notice_key": "942ac6903a1dd32438b2",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of the Results of Bye-Elections in Two Gewog Tshogde Tshogpa Demkhongs under Chhukha Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-the-results-of-bye-elections-in-local-government-2025-3/",
-    "published_date": "2025-11-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "In accordance  with the provision enshrined under Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Bye-Elections conducted to fill the vacant posts of the Local Government. The Elections were conducted in Two G",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5692,
-    "notice_key": "b4bd67f7ac6076fb14d0",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "ECB Celebrates Completion of DeSuung Training by Tsheten Dorji, Language Officer",
-    "title_en": "",
-    "url": "https://www.ecb.bt/ecb-celebrates-completion-of-desuung-training-by-tsheten-dorji-language-officer/",
-    "published_date": "2025-12-08",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) proudly welcomed back Mr. Tsheten Dorji, Language Officer upon successful completion of three-week (21-day) DeSuung Training Programme. Tsheten Dorji participated in the 71st batch of Accelerated DeSuung Training Programme from 7th to 28th at Khotokha, Wangdue",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 5691,
-    "notice_key": "86966687b0048017669d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Royal Civil Service Medal Award Ceremony, 2025",
-    "title_en": "",
-    "url": "https://www.ecb.bt/royal-civil-service-medal-award-ceremony-2025/",
-    "published_date": "2025-12-11",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) held the Annual Royal Civil Service Award ceremony today on December 11, 2025, for 2 recipients for their dedicated service to the Tsa-Wa-Sum: 1. Bronze Medal for 15 years of service was awarded to Needup, Dy Chief Planning Officer who joined the service in Au",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 5690,
-    "notice_key": "69367c25d186bc2cf656",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Commemorating the 118th National Day of the Kingdom of Bhutan",
-    "title_en": "",
-    "url": "https://www.ecb.bt/commemorating-the-118th-national-day-of-the-kingdom-of-bhutan/",
-    "published_date": "2025-12-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) joins the nation in commemorating the 118 years of the sacred institution of Monarchy in the Kingdom of Bhutan. On this auspicious 118th National Day, the ECB extends its heartfelt felicitations and deep reverence to the farsighted, wise and benevolent leaders",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5689,
-    "notice_key": "0042765a70613b0410b9",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "ECB celebrates 20th Foundation Day",
-    "title_en": "",
-    "url": "https://www.ecb.bt/ecb-celebrates-20th-foundation-day/",
-    "published_date": "2025-12-31",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "As we marked the 20th Foundation Day of the Election Commission of Bhutan, we were honoured to come together with members of the ECB family—past and present. The programme was graced by the First Chief Election Commissioner, the Third Chief Election Commissioner, Former Commissioner Dasho Dawa Tenzi",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5688,
-    "notice_key": "9a15e29e86e30b95d541",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Bye-Election in the Local Government",
-    "title_en": "",
-    "url": "https://www.ecb.bt/bye-election-in-the-local-government-6/",
-    "published_date": "2026-01-01",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "In pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the position of Gewog Tshogde Tshogpa in Mendrel_Uesuna Chiwog of Dokar Gewog under Paro Dzongkhag due to the voluntary resignation by the in",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "election_equipment"
-  },
-  {
-    "id": 5687,
-    "notice_key": "9aa5fcecf37d544b465d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "ECB Hosts Annual Nyilo Celebration Programme",
-    "title_en": "",
-    "url": "https://www.ecb.bt/ecb-hosts-annual-nyilo-celebration-programme/",
-    "published_date": "2026-01-05",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The annual Nyilo celebration, organized by the Folk Heritage Museum, Kawajangsa, was held at the Election Commission of Bhutan on 5th January 2025 at 9:30 a.m. in the ECB Lounge. The programme was conducted by a team comprising 22 students and five coordinators. As part of the celebration, the stude",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5686,
-    "notice_key": "7627d312a6704df34b5d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "ECB Welcomes Officials after Completion of Pelsung Immersion Programme at GMC",
-    "title_en": "",
-    "url": "https://www.ecb.bt/ecb-welcomes-officials-after-completion-of-pelsung-immersion-programme-at-gmc/",
-    "published_date": "2026-01-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) warmly welcomed back the officials who had completed three-month Pelsung Immersion Programme at Gelephu Mindfulness City (GMC) in a session graced by the Hon’ble Chief Election Commissioner. The event was organized to  honour Miss Dechen Seldon, Miss Sonam Cho",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5685,
-    "notice_key": "309c237e9a616f1032cb",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Twenty Years of Upholding Democracy: ECB Inauguration Day Celebration",
-    "title_en": "",
-    "url": "https://www.ecb.bt/twenty-years-of-upholding-democracy-ecb-inauguration-day-celebration/",
-    "published_date": "2026-01-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan commemorated its Inauguration Day, marking 20 years of dedicated service to the Tsa-Wa-Sum. The milestone provided an opportunity to reflect on two decades of strengthening democratic processes, upholding constitutional mandates, and fostering public trust through i",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 5684,
-    "notice_key": "72f8a35a7a40edcea20d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "ECB Observes Annual Rimdo 2026 Coinciding with 20th Office Establishment Anniversary",
-    "title_en": "",
-    "url": "https://www.ecb.bt/ecb-observes-annual-rimdo-2026-coinciding-with-20th-office-establishment-anniversary/",
-    "published_date": "2026-01-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Annual Rimdo of the Election Commission of Bhutan (ECB) for the year 2026 was conducted coinciding with the commemoration of the 20th anniversary of the establishment of the ECB Office in 2006 at Motithang, Thimphu. The Rimdo was performed by Tsipey Lopens from Pangrizamgpa, Dechencholing. The s",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5683,
-    "notice_key": "f39f6c7848d01e9ea0c1",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "January 2026 Promotions",
-    "title_en": "",
-    "url": "https://www.ecb.bt/january-2026-promotions/",
-    "published_date": "2026-01-21",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan extends its warm congratulations to Ugyen and Sangay on their promotion. We thank them for their contributions and wish them continued success as they take on greater responsibilities.",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5682,
-    "notice_key": "5214f72938d28dd6390e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of the Bye-Election Result of Tshogpa of Mendrel_Uesuna Chiwog of Dokar Gewog, Paro",
-    "title_en": "",
-    "url": "https://www.ecb.bt/bye-election-results-for-mendrel_uesuna-chiwog-parodeclaration-of-the-result-of-local-government-bye-electiobye-election-results-for-mendrel_uesuna-chiwog-paro/",
-    "published_date": "2026-01-30",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "In accordance with the provision enshrined under Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gewog Tshogde Tshogpa of Mendrel_Uesuna Chiwog of Dokar Gew",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "election_equipment"
-  },
-  {
-    "id": 5681,
-    "notice_key": "adf24a08b8685ab2d0fa",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Local Government Bye-Elections",
-    "title_en": "",
-    "url": "https://www.ecb.bt/local-government-bye-elections/",
-    "published_date": "2026-02-05",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Elections to fill up the vacant posts in the following Demkhongs. 1.Tshogpa ofGarzhikha_Omchheygang Chiwog ofBjenag Gewog under Wangdue Phodrang Dzongkhag du",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5680,
-    "notice_key": "4e4ee789e66ade7b5587",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Amendment to Chapter 4 (Recruitment, Selection and Appointment), Section 4.3.6.7 of the ECBSRR 2025",
-    "title_en": "",
-    "url": "https://www.ecb.bt/amendment-to-chapter-4-recruitment-selection-and-appointment-section-4-3-6-7-of-the-ecbsrr-2025/",
-    "published_date": "2026-02-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Notification on Amendment to Chapter 4 ( Recruitment, Selection and Appointment), Section 4.3.6.7 of the ECBSRR 2025 The Election Commission of Bhutan (ECB) hereby amends Chapter 4, Section 4.3.6.7 of the ECBSRR 2025 as follows: The Existing provision states: “In the event the selected candidate wit",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5679,
-    "notice_key": "6b6a2c4d69a1d2f3b139",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Bye-Election for Gewog Tshogde Tshogpa, Dhangkhar_Trong Chiwog under Zhemgang Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/bye-election-for-gewog-tshogde-tshogpa-dhangkhar_trong-chiwog-under-zhemgang-dzongkhag/",
-    "published_date": "2026-02-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election to fill up the Gewog Tshogde Tshogpa post at Dhangkhar_Trong Chiwog under Zhemgang Dzongkhag due to the demise of the incumbent member. The Election",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5678,
-    "notice_key": "37cbc535e89ab2b3d736",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of Local Government Bye-Election Results in Garzhikha_Omchheygang Chiwog under Bjenag Gewog &amp; Zamding Chiwog under Ruebisa Gewog under Wandue Phodrang Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-local-government-bye-election-results-in-garzhikha_omchheygang-chiwog-under-bjenag-gewog-zamding-chiwog-under-ruebisa-gewog-under-wandue-phodrang-dzongkhag/",
-    "published_date": "2026-03-03",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the results of the Bye-Elections conducted to fill the vacant posts for the following Demkhongs: Sl. No. Dzongkhag Gewog Chiwog Candidate Post 1.   Wangdue Phodrang Bje",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5677,
-    "notice_key": "ca914c97f941b77cfe9e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of the Result of Bye-Election for the post of the Gewog Tshogde Tshogpa in Dhangkhar_Trong Chiwog of Trong Gewog under Zhemgang Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-the-result-of-bye-election-in-local-government-in/",
-    "published_date": "2026-03-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gewog Tshogde Tshogpa in Dhangkhar_Trong Chiwog of Trong Gewog under Zhemgang Dzongkhag. Ugyen C",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5676,
-    "notice_key": "171b3761dacf410b0fbf",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Dispute Settlement Capacity Enhancement Workshop, 2026, from 9th to 14th March in Tsirang",
-    "title_en": "",
-    "url": "https://www.ecb.bt/dispute-settlement-capacity-enhancement-workshop-2026-from-9th-to-14th-march-in-tsirang/",
-    "published_date": "2026-03-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) successfully conducted the Dispute Settlement Capacity Enhancement Workshop, 2026, from 9th to 14th March in Tsirang, with the participation of 62 officials. The workshop aimed to strengthen institutional capacity, enhance operational readiness, and uphold ele",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5675,
-    "notice_key": "dd597d845fe97804968e",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notification for Bye-Election for the Post of Gup in Lingmukha Gewog, Punakha",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notification-for-bye-election-for-the-post-of-gup-in-lingmukha-gewog-punakha/",
-    "published_date": "2026-03-19",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election for the post of Gup of Lingmukha Gewog under Punakha Dzongkhag, following the voluntary resignation by the incumbent. The Election Schedule and the ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5674,
-    "notice_key": "55a5d8ee55415bd524a3",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Electoral Leadership Excellence Programme for ECB Officials",
-    "title_en": "",
-    "url": "https://www.ecb.bt/electoral-leadership-excellence-programme-for-ecb-officials/",
-    "published_date": "2026-04-01",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan, in partnership with the Royal Institute of Management, has commenced the Electoral Leadership Excellence Programme for 26 senior officials of the Commission. The programme focuses on strengthening leadership capability through a combination of practical learning an",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5673,
-    "notice_key": "c0fbc133ba759f59a73d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notification calling bye-Election for the post of Tshogpa Post in Changche_Matshigpogto Chiwog under Gase Tshogongm, Wandue Phodrang",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notification-calling-bye-election-for-the-post-of-tshogpa-post-in-changche_matshipogto-chiwog-under-gase-tshogongm-wandue-phodrang/",
-    "published_date": "2026-04-02",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Sections 577 and 579 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB), hereby calls Bye-Election to fill up the Gewog Tshogde Tshogpa post at Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag due to voluntary ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5672,
-    "notice_key": "880e30416c24cbfe2706",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Vacancy Announcement for the post of Asst ICT Officers &amp; Asst. Dzongkhag Electoral Registration Officers (DzERO)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/vacancy-announcement-new/",
-    "published_date": "2026-04-07",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) is pleased to announce the following vacancies for regular appointment:  Post Position Slots Minimum Qualification Placement Asst ICT Officer P5 2 Bachelor’s Degree (4 Years Degree) in IT/Computer Science or related field  Head Office Asst. Dzongkhag Electoral",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5671,
-    "notice_key": "ac818275c3447dcf9b4b",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Bye-Election Result declaration for the post of Gup in Lingmukha Gewog under Punakha Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/bye-election-result-declaration-for-the-post-of-gup-in-lingmukha-gewog-under-punakha-dzongkhag/",
-    "published_date": "2026-04-17",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Gup of Lingmukha Gewog under Punakha Dzongkhag. Mr. Kinley Tenzin, holdingCID No. 11006000011, h",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5670,
-    "notice_key": "11d89f008a2b20ba03a3",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Conduct of Functional Literacy and Possession of Skills Test (FLT) in the Dzongkhag Thromdes of Phuentshogling and Thimphu",
-    "title_en": "",
-    "url": "https://www.ecb.bt/conduct-of-functional-literacy-and-possession-of-skills-test-flt-in-the-dzongkhag-thromdes-of-phuentshogling-and-thimphu/",
-    "published_date": "2026-04-29",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB), pursuant to Section 178(d) of the Election Act of the Kingdom of Bhutan, 2008, hereby notifies the general public that the Functional Literacy and Possession of Skills Test (FLT) for aspiring candidates to the two Dzongkhag Thromdes of Phuentshogling and Thim",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5669,
-    "notice_key": "673d6589cbde2dc900f6",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Press Release on the Conduct of the Functional Literacy  Test (FLT) for the Thromde Elections 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/press-release-on-the-conduct-of-the-functional-literacy-test-flt-for-the-thromde-elections-2026/",
-    "published_date": "2026-04-29",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) would like to inform the general public that the term of office of the Thromde Tshogdes of Gelephu, Phuentshogling, and Thimphu will be completing as follows:  1.Gelephu on 27 May 2026; and  2. Phuentshogling and Thimphu on 6 June 2026.  Accordingly, the prepa",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5668,
-    "notice_key": "a7b5655c0545ed2a2e6d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of the result of the Bye-Election conducted to fill the vacant post of the Tshogpa of Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-the-result-of-local-government-bye-election/",
-    "published_date": "2026-04-30",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Pursuant to Section 457 of the Election Act of the Kingdom of Bhutan, 2008, the Election Commission of Bhutan (ECB) hereby declares the result of the Bye-Election conducted to fill the vacant post of the Tshogpa of Changche_Matshigpogto Chiwog of Gase Tshogongm Gewog under Wangdue Phodrang Dzongkhag",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5667,
-    "notice_key": "962f59f2c536af3f1804",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Result Announcement for the Post of Assistant Dzongkhag Electoral Registration Officers and Assistant ICT Officer",
-    "title_en": "",
-    "url": "https://www.ecb.bt/result-announcement-for-the-post-of-assistant-dzongkhag-electoral-registration-officers-and-assistant-ict-officer/",
-    "published_date": "2026-05-04",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to announce the results of the recruitment for the posts of Assistant Dzongkhag Electoral Registration Officers and Assistant ICT Officer, conducted from 28 April to 01 May 2026.  Selected candidates are required to submit a valid drug test report along w",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5666,
-    "notice_key": "4617bc7f262cde422019",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Public Notification on Social and Religious Events During the 4th Dzongkhag Thromde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/public-notification-on-social-and-religious-events-during-the-4th-dzongkhag-thromde-elections-2026/",
-    "published_date": "2026-05-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) hereby notify all concerned that the 3rd   Dzongkhag Thromde Tshogde of Phuentshogling and Thimphu Thromdes with the first sitting  on 7June 2021, will complete the Five-Year tenure on 6June 2026. Thereafter, the ECB shall be issuing a notification calling the",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5665,
-    "notice_key": "b4aea204d34483cdaac4",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Declaration of Results of the Functional Literacy and Possession of Skills Test (FLT) for Phuentshogling &amp; Thimphu Thromdes",
-    "title_en": "",
-    "url": "https://www.ecb.bt/declaration-of-results-of-the-functional-literacy-and-possession-of-skills-test-flt-for-phuentshogling-thimphu-thromdes/",
-    "published_date": "2026-05-25",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) conducted Functional Literacy and Possession of Skills Test (FLT) on 22 May 2026, for aspiring Thromde Tshogpa candidates of Phuentshogling and Thimphu Thromdes.  A total of thirteen candidates in the two Thromdes, seven in Phuentshogling and six in Thimphu re",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5662,
-    "notice_key": "aa017ec9d16622a00eb7",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Public Notification for processing Local Government  documents by Aspiring Candidates",
-    "title_en": "",
-    "url": "https://www.ecb.bt/public-notification-for-processing-local-government-documents-by-aspiring-candidates/",
-    "published_date": "2026-05-29",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) hereby notifies the general public that the tenure of the Third Thromde Tshogdes of Phuentshogling and Thimphu Thromdes shall complete on 6 June 2026. In preparation for the upcoming Thromde Elections, all interested and eligible individuals wishing to contest",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5661,
-    "notice_key": "fe43443fd7ec96f8f4df",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Issuance of the Draft Electoral Roll for the Fourth Thromde Elections in Chhukha and Thimphu Dzongkhags for Public Inspection and Filing of Claims and Objections",
-    "title_en": "",
-    "url": "https://www.ecb.bt/issuance-of-the-draft-electoral-roll-for-the-fourth-thromde-elections-in-chhukha-and-thimphu-dzongkhags-for-public-inspection-and-filing-of-claims-and-objections/",
-    "published_date": "2026-06-05",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan, in accordance with Sections 112 and 113 of the Election Act of the Kingdom of Bhutan, 2008, hereby issues the Draft Electoral Roll for the Dzongkhag Thromdes of Phuentshogling and Thimphu for public inspection and for the filing of Claims and Objections. The Draft ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5660,
-    "notice_key": "433090d0126cbf819dbc",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notification on Fourth Local Government Elections: Dzongkhag Thromde Tshogde Elections, 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notification-on-fourth-local-government-elections-dzongkhag-thromde-tshogde-elections-2026/",
-    "published_date": "2026-06-11",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB), pursuant to Section 202 of the Election Act of the Kingdom of Bhutan, 2008 under the Constitution of the Kingdom of Bhutan, calls the Local Government Elections: Dzongkhag Thromde Tshogde Elections, 2026 (Thromde Elections 2026) in the following Dzongkhag Thr",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 5658,
-    "notice_key": "1d013cab72aad5121749",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Status update on Fourth Dzongkhag Thromde Tshogde Elections 2026",
-    "title_en": "",
-    "url": "https://www.ecb.bt/status-update-on-fourth-dzongkhag-thromde-tshogde-elections-2026/",
-    "published_date": "2026-06-23",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) would like to update the general public on the nomination process and related electoral activities that have been completed in accordance with the Election Schedule as provided in the Notification calling the Fourth Dzongkhag Thromde Tshogde Elections in Phuen",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 682,
-    "notice_key": "666ad5d368487d5e4794",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender Inviting Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-3/",
-    "published_date": "2016-03-21",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the licensed suppliers for the supply of the following   Sl No. Tender Particular Division Concerned 01 Procurement & Supply of Library Books AFD,ECB   Documents containing details requirements / Specifications will be avai",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 681,
-    "notice_key": "2905ec7cd975130d11a7",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "རིན༌བསྡུར།",
-    "title_en": "",
-    "url": "https://www.ecb.bt/dzo/%e0%bd%a2%e0%bd%b2%e0%bd%93%e0%bc%8c%e0%bd%96%e0%bd%a6%e0%be%a1%e0%bd%b4%e0%bd%a2%e0%bc%8d/",
-    "published_date": "2016-03-23",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the FY: 2016-2017 as follows;   Supply of Office Stationery, Toners & electrical items Bidding Document Supply of Vehicle Spare parts, Maintenance and Tyres & tubes Bidding Document Supply",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 680,
-    "notice_key": "02058e65ad5fd45618ed",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Tender Inviting Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-4/",
-    "published_date": "2016-04-26",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotations from the licensed suppliers for the supply of the following items.   Sl.No. Component Details Qty 01 Layer 2 POE Switch –          24 ports 10/100/1000 BaseT + 4 SFP –          POE + Ports, 4XSFP Ports –          Switching Capa",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 679,
-    "notice_key": "96050165afe6a55bae05",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "TENDER INVITING QUOTATION",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-5/",
-    "published_date": "2016-05-23",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible & qualified bidders for the FY: 2016-2017 as follows;   Supply of Office Stationery, Toners & electrical items Bidding Document Supply of Vehicle Spare parts, Maintenance and Tyres & tubes Bidding Document Supply",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "services"
-  },
-  {
-    "id": 678,
-    "notice_key": "c674fa84c9b8cc8f3e41",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "TENDER INVITING QUOTATION",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-7/",
-    "published_date": "2016-07-22",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible bidders for the purchase of  the following items as per the specifications & details mentioned in the Tender Document; Furniture  [Download Bidding Document] Sound System & LED HD Screen [Download Bidding Documen",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 677,
-    "notice_key": "4656a8d695ac650041f8",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Limited Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/limited-quotation/",
-    "published_date": "2016-09-30",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed tenders from the eligible bidders for the printing & supply of Posters, Banners & Placards as per the specifications & details mentioned in the Tender Document; Sl. No. Particulars Specification Quantity Rate (Nu) Remarks 01 Posters 28” x",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 676,
-    "notice_key": "5bcd83d243a77caf7e7d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "TENDER INVITING QUOTATION",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-8/",
-    "published_date": "2016-10-20",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following details given below:   Sl# No. Pax Date Sector/Route Class/Type 01 12 12/11/2016 Paro-Bangkok E-Class 02 12 13/11/2016 Bangkok-Copenhagen E-Class ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 675,
-    "notice_key": "88913f1065695aa2d230",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "TENDER INVITING QUOTATION",
-    "title_en": "",
-    "url": "https://www.ecb.bt/tender-inviting-quotation-9/",
-    "published_date": "2016-11-28",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan would like to invite sealed bids from the eligible license holders for the purchase of air tickets as per the following terms and conditions. Sl# No. Pax Sector/Route Class/Type 01 5 Paro-Delhi-Paro E-Class 02 1 Paro-Bangkok-Male-Bangkok-Paro J-Class Tenders should ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 673,
-    "notice_key": "5d22f3dcd41314a323eb",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Procurement of ICT related Equipment, Carpet, Heating System and Library Books 2016-17",
-    "title_en": "",
-    "url": "https://www.ecb.bt/procurement-of-ict-related-equipment-carpet-heating-system-and-library-books-2016-17/",
-    "published_date": "2017-05-01",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan is pleased to invite sealed quotation from the valid license holder for the supply of ICT Equipment, Library Books, Heater and Carpet. A detailed set of bidding document can be downloaded from below: Standard Bidding Document (SBD) [pdf][word] Integrity Pact Annexur",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 672,
-    "notice_key": "4ed547e8800c69ddbb24",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Notice Inviting Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/notice-inviting-quotation/",
-    "published_date": "2019-04-12",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite sealed quotation from the eligible Bhutanese supplier having valid business license for the supply of Books/ Office Equipment and Printing Works. A detailed set of Standard Bidding Document (SBD) can be downloaded as below: Standard Biddin",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "other"
-  },
-  {
-    "id": 671,
-    "notice_key": "72b205819381ccb472ae",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Invite expression of interest",
-    "title_en": "",
-    "url": "https://www.ecb.bt/invite-expression-of-interest/",
-    "published_date": "2019-05-16",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) would like to invite expression of interest from the eligible Bhutanese firm/individual having valid license for the Procurement of Consulting Services (SRFP) for the “Development and Implementation of the System for the Management of Political parties Members",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 670,
-    "notice_key": "096c40bf82496e10ce52",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Inviting Expression of Interest (EoI)",
-    "title_en": "",
-    "url": "https://www.ecb.bt/inviting-expression-of-interest-eoi/",
-    "published_date": "2019-11-29",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "The Election Commission of Bhutan (ECB) is pleased to invite Expression of Interest (EoI) from the eligible Bhutanese firms having valid license for the enhancement of Bhutan Electoral Registration Management System (BERMS). A detailed set of documents can be downloaded from below. Standard Request ",
-    "score": 40,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 17582,
-    "notice_key": "62d47669775e8d66a58d",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Addendum to the Technical Specifications of the Server Equipment",
-    "title_en": "",
-    "url": "https://www.ecb.bt/addendum-to-the-technical-specifications-of-the-server-equipment/",
-    "published_date": "2017-03-21",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "This has reference to the announcement made in Kuensel dated 18th March 2017 regarding the Supply of Server Equipment, Printing of Posters and Heating System. The Addendum is only for Technical Specification for the Supply and Installation of Server Equipment. However, the deadline for the submissio",
-    "score": 0,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 17580,
-    "notice_key": "4e6bd53bca9c3514e62b",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Addendum-1",
-    "title_en": "",
-    "url": "https://www.ecb.bt/addendum-1/",
-    "published_date": "2017-05-04",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "This has reference to tender announcement made vide Kuensel on 28 April 2017 for the supply of Heating System, Carpets and Library Books. In this regard, we would like to request all interested bidders to kindly consider the list of items mentioned in “Annexure-I(Addendum)” and not the lists mention",
-    "score": 0,
-    "crawled_at": "2026-08-04T23:02:09Z",
-    "category": "software"
-  },
-  {
-    "id": 674,
-    "notice_key": "fb54ad2a56bbf6ec0c7f",
-    "country": "Bhutan",
-    "iso3": "BTN",
-    "region": "South Asia",
-    "portal_name": "ecb.bt",
-    "title": "Air Ticket Quotation",
-    "title_en": "",
-    "url": "https://www.ecb.bt/air-ticket-quotation/",
-    "published_date": "2017-04-06",
-    "deadline_date": "",
-    "status": "publish",
-    "buyer": "Election Commission of Bhutan",
-    "amount": null,
-    "currency": "BTN",
-    "snippet": "Sealed rates are invited from authorized travel agents for air ticket for the following sector. Class :  Economy class Number of Pax :  1 (One). (Mr. Sangay Dendup) Type of Airline : Mention the name of Airline & Airport and Itinerary clearly Sector & Dates Paro-Bangkok : 2 May 2017 Bangkok- Male, M",
-    "score": 0,
-    "crawled_at": "2026-08-04T23:02:09Z",
     "category": "other"
   },
   {
@@ -36352,4 +36436,4 @@ window.MIRU_TENDERS = [
     "category": "software"
   }
 ];
-window.MIRU_TENDERS_META = {"total": 1731, "countries": ["ALB", "BHR", "BTN", "ESP", "GHA", "IRQ", "KEN", "MNG", "PHL", "PRY", "ZAF"], "last_crawled": "2026-08-08T22:33:49Z", "generated_at": "2026-08-08T22:33:49Z"};
+window.MIRU_TENDERS_META = {"total": 1735, "countries": ["ALB", "BHR", "BTN", "ESP", "GHA", "IRQ", "KEN", "MNG", "PHL", "PRY", "ZAF"], "last_crawled": "2026-08-09T22:35:45Z", "generated_at": "2026-08-09T22:35:45Z"};
